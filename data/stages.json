@@ -4,7 +4,7 @@
       "id": "foundation",
       "name": "Foundation",
       "shortName": "Found",
-      "employees": "0-2",
+      "employees": "0-1",
       "description": "Don't die, get something out the door",
       "focus": [
         "Survival basics",
@@ -18,7 +18,7 @@
       "id": "first-hires",
       "name": "First Hires",
       "shortName": "1st Hires",
-      "employees": "3-10",
+      "employees": "2-10",
       "description": "Hire well, don't run out of money",
       "focus": [
         "Recruitment process",
@@ -72,8 +72,8 @@
     }
   ],
   "employeeRanges": [
-    { "value": "0-2", "label": "0-2 employees (Just founders)", "stage": "foundation" },
-    { "value": "3-5", "label": "3-5 employees", "stage": "first-hires" },
+    { "value": "0-1", "label": "Just founders, maybe +1", "stage": "foundation" },
+    { "value": "2-5", "label": "3-5 employees", "stage": "first-hires" },
     { "value": "6-10", "label": "6-10 employees", "stage": "first-hires" },
     { "value": "11-25", "label": "11-25 employees", "stage": "early-revenue" },
     { "value": "26-50", "label": "26-50 employees", "stage": "growth" },
