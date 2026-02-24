@@ -263,7 +263,7 @@ function createProcessElement(process, priority) {
     if (process.stageFocus && process.stageFocus[currentStage]) {
         const focusEl = document.createElement('div');
         focusEl.className = 'stage-focus';
-        focusEl.textContent = process.stageFocus[currentStage];
+        focusEl.innerHTML = `<span class="stage-focus-label">For your stage:</span> ${process.stageFocus[currentStage]}`;
         processEl.appendChild(focusEl);
     }
 
@@ -292,13 +292,16 @@ function createDimensionRow(processId, dimensionKey, dimension) {
     const label = document.createElement('span');
     label.className = 'dimension-label';
     label.textContent = dimension.label;
-    label.title = getDimensionExplanation(dimensionKey); // Add browser tooltip
-    
-    // Add visual indicator that there's help available
+
     const helpIcon = document.createElement('span');
     helpIcon.className = 'help-icon';
     helpIcon.textContent = '?';
-    helpIcon.title = getDimensionExplanation(dimensionKey);
+
+    const helpTooltip = document.createElement('span');
+    helpTooltip.className = 'tooltip';
+    helpTooltip.textContent = getDimensionExplanation(dimensionKey);
+
+    helpIcon.appendChild(helpTooltip);
     label.appendChild(helpIcon);
     
     const radioGroup = document.createElement('div');

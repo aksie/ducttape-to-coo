@@ -443,7 +443,7 @@ h1::before {
     margin-top: 10px;
     margin-bottom: 14px;
     padding: 10px 14px;
-    background: var(--green-dim);
+    background: transparent;
     border: 1px solid var(--green);
     border-left: 3px solid var(--green);
     font-size: 0.82rem;
@@ -451,13 +451,7 @@ h1::before {
     color: var(--text);
 }
 
-.stage-focus::before {
-    content: '> ';
-    color: var(--green);
-    font-weight: 700;
-}
-
-.stage-focus strong {
+.stage-focus-label {
     color: var(--green);
     font-weight: 700;
 }
@@ -493,6 +487,7 @@ h1::before {
 }
 
 .help-icon {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -505,6 +500,11 @@ h1::before {
     font-weight: 700;
     cursor: help;
     flex-shrink: 0;
+}
+
+.help-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 /* ─── Radio Buttons ───────────────────────────────── */
