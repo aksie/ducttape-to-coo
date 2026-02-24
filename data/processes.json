@@ -1,0 +1,451 @@
+{
+  "processes": [
+    {
+      "id": "1.1",
+      "category": "strategic",
+      "title": "Planning & Goal-Setting",
+      "description": "How you set priorities and goals, from weekly priorities to formal planning cycles. Starts simple (what are our top 3 things?) and evolves into structured frameworks as you grow.",
+      "stageFocus": {
+        "foundation": "Keep 3 clear priorities for this week/sprint. Have a simple 'why we exist' statement. Review and adjust in weekly team sync.",
+        "first-hires": "Set monthly goals/rocks for the team. Document your mission and share it. Review progress bi-weekly, adjust direction as needed.",
+        "early-revenue": "Implement quarterly OKRs or similar goal framework. Create annual strategic plan. Monthly reviews with team, quarterly strategy discussions.",
+        "growth": "Cascade quarterly goals from company to teams. Establish planning rhythms (weekly standups, monthly reviews, quarterly planning). Track progress in dashboards.",
+        "scaled": "Full planning cycle: annual strategy, quarterly OKRs cascaded to all teams, weekly/monthly/quarterly review cadence. Metrics-driven adjustments."
+      },
+      "stages": {
+        "foundation": "recommended",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.2",
+      "category": "strategic",
+      "title": "Internal Communication",
+      "description": "How information flows in your company, from quick Slack updates to formal all-hands meetings. Starts with staying aligned as a small team, evolves into structured channels and rhythms.",
+      "stageFocus": {
+        "foundation": "Daily quick syncs (standup or async). Use one main channel (Slack/Discord). Share what you're working on and blockers.",
+        "first-hires": "Weekly team meeting for alignment. Simple doc/wiki for key info. Clear communication norms (response times, which channel for what).",
+        "early-revenue": "Monthly all-hands. Department updates shared regularly. Start knowledge base for processes and decisions. Meeting rhythms established.",
+        "growth": "Structured all-hands (monthly/quarterly). Department communication plans. Active knowledge management system. Clear escalation paths.",
+        "scaled": "Full communication strategy: all-hands cadence, department updates, accessible documentation standards, multiple channels for different needs."
+      },
+      "stages": {
+        "foundation": "recommended",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.3",
+      "category": "strategic",
+      "title": "Process Improvement & Optimization",
+      "description": "Process documentation standards and ownership, continuous improvement methodology and culture, efficiency metrics tracking and review, tool stack optimization and rationalization",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.4",
+      "category": "strategic",
+      "title": "Organizational Design",
+      "description": "Org chart maintenance and clarity of reporting lines, role clarity frameworks (RACI/DRI), team structure evolution as company grows",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.5",
+      "category": "strategic",
+      "title": "Data & Reporting Infrastructure",
+      "description": "Company KPI tracking and definition, dashboards, reporting cadence, data quality",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "2.1",
+      "category": "financial",
+      "title": "Cash Flow Management",
+      "description": "Knowing how much money you have and how long it will last. Starts with a simple spreadsheet, evolves into forecasting and scenario planning.",
+      "stageFocus": {
+        "foundation": "Track bank balance weekly. Know your burn rate (how much you spend per month). Keep 6+ months runway visible in a simple spreadsheet.",
+        "first-hires": "Monthly cash flow forecast (3-6 months out). Track burn rate and runway. Alert when runway drops below 6 months. Plan for payroll timing.",
+        "early-revenue": "Rolling 12-month cash forecast. Track against budget monthly. Scenario planning for hiring/spending decisions. Coordinate with fundraising if needed.",
+        "growth": "Automated cash forecasting with actuals vs. forecast variance analysis. Department budget owners track their burn. Quarterly scenario modeling.",
+        "scaled": "Integrated cash management: real-time dashboards, automated forecasts, treasury management, working capital optimization."
+      },
+      "stages": {
+        "foundation": "critical",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "recommended"
+      }
+    },
+    {
+      "id": "2.2",
+      "category": "financial",
+      "title": "Financial Planning, Budgeting & Analysis",
+      "description": "Annual and quarterly budgeting process and timeline, revenue and expense forecasting cadence and accuracy, variance analysis and explanations, department budgets, scenario planning, board/investor reporting package preparation and coordination",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "2.3",
+      "category": "financial",
+      "title": "Accounts Receivable (Outgoing Invoices)",
+      "description": "Invoice generation and delivery timing, payment terms management, collections process and follow-up, revenue recognition procedures",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "2.4",
+      "category": "financial",
+      "title": "Accounts Payable & Expense Management",
+      "description": "Invoice receipt and validation, approval workflows, payment scheduling and execution, employee expenses, corporate card management",
+      "stages": {
+        "foundation": "recommended",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "2.5",
+      "category": "financial",
+      "title": "Financial Administration",
+      "description": "Day-to-day bookkeeping accuracy, account reconciliation procedures, month-end close process, audit trail and documentation standards, chart of accounts management",
+      "stages": {
+        "foundation": "critical",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.1",
+      "category": "people",
+      "title": "HR Administration",
+      "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance, insurance coordination, employee record keeping",
+      "stages": {
+        "foundation": "critical",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.2",
+      "category": "people",
+      "title": "Recruitment & Hiring",
+      "description": "How you find and hire people, from posting on your network to structured interview processes. Quality of early hires makes or breaks a startup.",
+      "stageFocus": {
+        "foundation": "Network-based hiring. 2-3 informal conversations. Check references (actually call them). Make sure values align and they can do the job.",
+        "first-hires": "Basic job post (AngelList, LinkedIn). 2-3 interview rounds with different people. Simple scorecard to compare candidates. Always check references.",
+        "early-revenue": "Defined interview process with scorecards. Headcount planning (know who you need when). Multiple channels for sourcing. Structured reference checks.",
+        "growth": "Full hiring process: role definitions, interview panels, scoring rubrics, hiring manager training. Recruiting pipeline tracked. Diversity sourcing strategies.",
+        "scaled": "Professional recruiting: ATS system, talent pipelines, employer branding, data-driven hiring decisions, structured onboarding integration."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.3",
+      "category": "people",
+      "title": "Onboarding",
+      "description": "Pre-arrival preparation (contracts, equipment, system access), structured first day/week experience, role-specific training, culture introduction, check-in process (e.g., 30-60-90 day)",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.4",
+      "category": "people",
+      "title": "Offboarding",
+      "description": "Resignation and termination procedures, exit interviews, knowledge transfer protocols, equipment and access revocation, final pay and benefits processing",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.5",
+      "category": "people",
+      "title": "Performance Management",
+      "description": "Performance review cycles, goal-setting methodology (OKRs/KPIs), 1-on-1 meeting cadence and quality, career development paths, compensation reviews, promotion criteria and process",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.6",
+      "category": "people",
+      "title": "Employee Satisfaction & Feedback",
+      "description": "Employee engagement survey cadence and methodology, pulse check mechanisms, feedback collection channels (1-on-1s, retrospectives, anonymous)",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "3.7",
+      "category": "people",
+      "title": "Learning & Development",
+      "description": "Recommended from 25+ people. Covers: Training budget allocation and approval, skills development programs, leadership development initiatives, external courses/conference attendance process",
+      "optional": true,
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "future",
+        "growth": "recommended",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.1",
+      "category": "legal",
+      "title": "Legal (above certain size also Compliance)",
+      "description": "Employment contract templates and execution, freelancer/contractor agreement management, IP assignment clauses in all contracts, legal request intake and external counsel coordination, standard commercial contract templates (SaaS, services, NDA), privacy/GDPR compliance (privacy policy, data processing agreements, consent mechanisms), shareholder agreements and cap table maintenance, basic insurance coverage (liability, professional indemnity, D&O for funded companies)",
+      "stages": {
+        "foundation": "critical",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.2",
+      "category": "legal",
+      "title": "Office & Facilities",
+      "description": "Office space management, lease negotiations, office supplies procurement, facilities maintenance, health and safety compliance, remote/hybrid work policies",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.3",
+      "category": "legal",
+      "title": "IT Administration & User Support",
+      "description": "Note: Technical infrastructure and architecture decisions remain with CTO. COO domain focuses on user-facing IT operations. Covers: Device procurement policies and standards (which laptop/screen models to purchase), software and SaaS license management and optimization, user provisioning and deprovisioning workflows, IT support ticket management and helpdesk, baseline security protocols for users (password managers, 2FA), equipment lifecycle management (ordering, setup, return)",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.4",
+      "category": "legal",
+      "title": "Vendor & Procurement",
+      "description": "Formal procurement process recommended from 50+ people. Early stage (10-50 people): Approval thresholds (e.g., >€5K needs CEO approval), budget ownership by department, visibility mechanism (e.g., Slack channel), basic contract review checklist (especially for IP transfer, data processing, and payment terms). Mature stage (50+ people): Vendor selection and approval process, contract negotiation and management, purchase order workflows, vendor relationship management, performance reviews, preferred vendor list maintenance",
+      "optional": true,
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "future",
+        "growth": "recommended",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.1",
+      "category": "revenue",
+      "title": "Sales Operations",
+      "description": "CRM management, sales process and methodology documentation, pipeline management and forecasting accuracy, territory and quota assignment, sales compensation and commission calculation, deal approval workflows, quoting/proposal generation process",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.2",
+      "category": "revenue",
+      "title": "Customer Acquisition & Lead Management",
+      "description": "Lead capture from all channels (website, referrals, marketing, partnerships), lead qualification criteria and scoring, routing and assignment logic, response time SLAs, nurture workflows for different segments",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.3",
+      "category": "revenue",
+      "title": "Customer Onboarding & Activation",
+      "description": "Post-sale handoff from sales to customer success, customer welcome process and kickoff, initial setup and configuration support, time-to-value tracking and optimization, early adoption monitoring, first-value milestone celebration",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.4",
+      "category": "revenue",
+      "title": "Customer Health, Engagement, Satisfaction, Support",
+      "description": "Support ticket management system and workflows, knowledge base maintenance, bug/issue tracking and resolution, customer feedback collection mechanisms. NPS/CSAT measurement cadence and methodology, product feedback aggregation and routing to product team, customer health scoring methodology and tracking, proactive engagement cadence based on segment/tier, regular business reviews with key accounts",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.5",
+      "category": "revenue",
+      "title": "Renewal & Retention",
+      "description": "Renewal timeline and notification process, churn risk identification and intervention, win-back campaigns for churned customers, contract negotiation for renewals, pricing and packaging optimization based on retention data, renewal forecasting accuracy",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.6",
+      "category": "revenue",
+      "title": "Service Delivery",
+      "description": "Project intake and scoping process, resource allocation and capacity planning, delivery methodology and quality standards, project status communication to customers, post-delivery review and lessons learned, incident/error management and remediation",
+      "optional": true,
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "recommended",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "5.7",
+      "category": "revenue",
+      "title": "Customer Data & Analytics",
+      "description": "Customer database management and data quality, interaction tracking across all touchpoints (CRM, support, success), customer analytics and reporting dashboards, churn analysis and cohort tracking, revenue metrics (MRR, ARR, expansion, churn), data-driven customer segmentation",
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    }
+  ],
+  "dimensions": {
+    "reliability": {
+      "label": "Is it working reliably?",
+      "options": [
+        "0 - Frequent failures: Often doesn't work or gets forgotten",
+        "1 - Inconsistent: Works sometimes, depends on who's doing it",
+        "2 - Mostly reliable: Works but requires vigilance",
+        "3 - Reliable: Consistently good outcomes, rare issues",
+        "4 - Optimized: Proactively improved, metrics tracked, exceeds expectations"
+      ]
+    },
+    "ownership": {
+      "label": "Who owns it?",
+      "options": [
+        "0 - No owner: Falls through cracks or CEO does it",
+        "1 - Ad hoc owner: Whoever remembers or cares does it",
+        "2 - Named owner: Someone is responsible but it's not their main job",
+        "3 - Dedicated owner: Someone owns this as part of their role",
+        "4 - Team/function: Multiple people with clear RACI, backup coverage"
+      ]
+    },
+    "documentation": {
+      "label": "Is it documented?",
+      "options": [
+        "0 - Nonexistent: No process, people don't know what to do",
+        "1 - Tribal knowledge: Process exists in someone's head",
+        "2 - Documented: Written down somewhere (Notion, wiki, etc.)",
+        "3 - Accessible: Easy to find, people actually use the documentation",
+        "4 - Living doc: Regularly updated, includes examples/templates"
+      ]
+    },
+    "automation": {
+      "label": "Is it automated?",
+      "options": [
+        "0 - Manual chaos: Everything improvised, email-based, or purely manual",
+        "1 - Spreadsheet reliance: Using generic tools (Excel, Google Sheets, basic forms)",
+        "2 - Dedicated software: Using purpose-built tools for this specific process",
+        "3 - Connected systems: Tools integrated with other systems, workflows partially automated",
+        "4 - Self-service automation: Highly automated with minimal manual intervention, exception-based handling"
+      ]
+    },
+    "scalability": {
+      "label": "Can it scale?",
+      "options": [
+        "0 - Will break immediately: Can't handle current load",
+        "1 - At capacity: Works now but can't handle growth",
+        "2 - Room to grow: Can handle 2x volume without changes",
+        "3 - Designed to scale: Can handle 5-10x with minor tweaks",
+        "4 - Built for scale: Designed for 10x+ growth, modular/flexible"
+      ]
+    }
+  }
+}

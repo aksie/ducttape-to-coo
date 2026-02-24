@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duct Tape or Hire a COO? - Operational Maturity Checklist</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Duct Tape or Hire a COO?</h1>
+            <p class="subtitle">The Operational Maturity Checklist - Stage-based framework for startups</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Pill Selectors -->
+        <div class="pill-selectors">
+            <div class="pill-selector">
+                <label for="employee-select">👥 Team Size:</label>
+                <select id="employee-select">
+                    <!-- Populated by JavaScript -->
+                </select>
+            </div>
+            <div class="pill-selector">
+                <label for="revenue-select">💰 Revenue:</label>
+                <select id="revenue-select">
+                    <!-- Populated by JavaScript -->
+                </select>
+            </div>
+            <div class="pill-selector">
+                <label for="funding-select">💵 Funding:</label>
+                <select id="funding-select">
+                    <!-- Populated by JavaScript -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline-section">
+            <div class="timeline-header">
+                <div class="stage-info">
+                    <h2 id="stage-name">Loading...</h2>
+                    <p id="stage-description">Loading...</p>
+                </div>
+                <button class="preview-btn" onclick="previewNextStage()">Preview Next Stage →</button>
+            </div>
+            <div id="timeline">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Processes -->
+        <div class="processes-section">
+            <div class="processes-header">
+                <div>
+                    <h2>📋 Your Checklist</h2>
+                    <p id="process-count">Loading processes...</p>
+                </div>
+                <div class="export-buttons">
+                    <button onclick="exportToCSV()">📊 Export CSV</button>
+                </div>
+            </div>
+            
+            <div id="processes-container">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <div class="summary">
+                <h3>Overall Average Score</h3>
+                <div id="avg-score">-</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "stages": [
+    {
+      "id": "foundation",
+      "name": "Foundation",
+      "shortName": "Found",
+      "employees": "0-2",
+      "description": "Don't die, get something out the door",
+      "focus": [
+        "Survival basics",
+        "Legal setup",
+        "Basic cash management",
+        "Founder contracts"
+      ],
+      "keyMilestone": "Company formed, founders committed"
+    },
+    {
+      "id": "first-hires",
+      "name": "First Hires",
+      "shortName": "1st Hires",
+      "employees": "3-10",
+      "description": "Hire well, don't run out of money",
+      "focus": [
+        "Recruitment process",
+        "Onboarding new hires",
+        "Basic communication rhythms",
+        "Runway tracking"
+      ],
+      "keyMilestone": "First non-founder employees working well"
+    },
+    {
+      "id": "early-revenue",
+      "name": "Early Revenue",
+      "shortName": "Early Rev",
+      "employees": "11-25",
+      "description": "Repeatable processes, customer success",
+      "focus": [
+        "Sales operations",
+        "Customer onboarding",
+        "Performance management",
+        "Goal setting (OKRs)"
+      ],
+      "keyMilestone": "Repeatable revenue, growing customer base"
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "shortName": "Growth",
+      "employees": "26-50",
+      "description": "Scale systems, departmental structure",
+      "focus": [
+        "Organizational design",
+        "Process documentation",
+        "Department structure",
+        "Data & reporting"
+      ],
+      "keyMilestone": "Departments formed, managers managing managers"
+    },
+    {
+      "id": "scaled",
+      "name": "Scaled",
+      "shortName": "Scaled",
+      "employees": "51+",
+      "description": "Professional operations, efficiency",
+      "focus": [
+        "All processes mature",
+        "Optimization & automation",
+        "Specialized functions",
+        "Continuous improvement"
+      ],
+      "keyMilestone": "Self-sustaining operational excellence"
+    }
+  ],
+  "employeeRanges": [
+    { "value": "0-2", "label": "0-2 employees (Just founders)", "stage": "foundation" },
+    { "value": "3-5", "label": "3-5 employees", "stage": "first-hires" },
+    { "value": "6-10", "label": "6-10 employees", "stage": "first-hires" },
+    { "value": "11-25", "label": "11-25 employees", "stage": "early-revenue" },
+    { "value": "26-50", "label": "26-50 employees", "stage": "growth" },
+    { "value": "51-100", "label": "51-100 employees", "stage": "scaled" },
+    { "value": "100+", "label": "100+ employees", "stage": "scaled" }
+  ],
+  "revenueStages": [
+    { "value": "pre-revenue", "label": "Pre-revenue (Building product)" },
+    { "value": "first-revenue", "label": "First revenue (Initial customers)" },
+    { "value": "recurring", "label": "Recurring revenue (Predictable)" },
+    { "value": "growth", "label": "Growth mode (Scaling fast)" }
+  ],
+  "fundingStages": [
+    { "value": "bootstrapped", "label": "Bootstrapped (Self-funded)" },
+    { "value": "pre-seed", "label": "Pre-seed (<$500K)" },
+    { "value": "seed", "label": "Seed ($500K-$3M)" },
+    { "value": "series-a", "label": "Series A ($3M+)" }
+  ]
+}
