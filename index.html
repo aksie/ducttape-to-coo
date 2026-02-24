@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duct Tape or Hire a COO? - Operational Maturity Checklist</title>
+    <title>Duct Tape or Hire a COO? — Operational Maturity Checklist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Duct Tape or Hire a COO?</h1>
-            <p class="subtitle">The Operational Maturity Checklist - Stage-based framework for startups</p>
+            <p class="subtitle">Operational Maturity Checklist — Stage-based framework for startups</p>
         </div>
     </header>
 
@@ -18,19 +21,19 @@
         <!-- Pill Selectors -->
         <div class="pill-selectors">
             <div class="pill-selector">
-                <label for="employee-select">👥 Team Size:</label>
+                <label for="employee-select">Team Size</label>
                 <select id="employee-select">
                     <!-- Populated by JavaScript -->
                 </select>
             </div>
             <div class="pill-selector">
-                <label for="revenue-select">💰 Revenue:</label>
+                <label for="revenue-select">Revenue</label>
                 <select id="revenue-select">
                     <!-- Populated by JavaScript -->
                 </select>
             </div>
             <div class="pill-selector">
-                <label for="funding-select">💵 Funding:</label>
+                <label for="funding-select">Funding</label>
                 <select id="funding-select">
                     <!-- Populated by JavaScript -->
                 </select>
@@ -55,21 +58,21 @@
         <div class="processes-section">
             <div class="processes-header">
                 <div>
-                    <h2>📋 Your Checklist</h2>
+                    <h2>Your Checklist</h2>
                     <p id="process-count">Loading processes...</p>
                 </div>
                 <div class="export-buttons">
-                    <button onclick="exportToCSV()">📊 Export CSV</button>
+                    <button onclick="exportToCSV()">[ Export CSV ]</button>
                 </div>
             </div>
-            
+
             <div id="processes-container">
                 <!-- Populated by JavaScript -->
             </div>
 
             <div class="summary">
                 <h3>Overall Average Score</h3>
-                <div id="avg-score">-</div>
+                <div id="avg-score">—</div>
             </div>
         </div>
     </div>

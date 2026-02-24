@@ -172,19 +172,19 @@ function renderProcesses() {
     
     // Render critical processes
     if (critical.length > 0) {
-        const section = createProcessSection('🔴 Critical Now', critical, 'critical');
+        const section = createProcessSection('Critical Now', critical, 'critical');
         container.appendChild(section);
     }
     
     // Render recommended processes
     if (recommended.length > 0) {
-        const section = createProcessSection('🟡 Recommended Now', recommended, 'recommended');
+        const section = createProcessSection('Recommended Now', recommended, 'recommended');
         container.appendChild(section);
     }
     
     // Render future processes (collapsed by default)
     if (future.length > 0) {
-        const section = createProcessSection('⚪ Coming Later', future, 'future', true);
+        const section = createProcessSection('Coming Later', future, 'future', true);
         container.appendChild(section);
     }
     
@@ -199,10 +199,10 @@ function createProcessSection(title, processes, priority, collapsed = false) {
     section.className = `process-section ${priority}`;
     
     const header = document.createElement('div');
-    header.className = 'section-header';
+    header.className = `section-header ${priority}-header`;
     header.innerHTML = `
         <h3>${title} <span class="count">(${processes.length})</span></h3>
-        <button class="toggle-btn">${collapsed ? 'Show' : 'Hide'}</button>
+        <button class="toggle-btn">${collapsed ? '[ show ]' : '[ hide ]'}</button>
     `;
     
     const content = document.createElement('div');
@@ -212,7 +212,7 @@ function createProcessSection(title, processes, priority, collapsed = false) {
     }
     
     processes.forEach(process => {
-        const processEl = createProcessElement(process);
+        const processEl = createProcessElement(process, priority);
         content.appendChild(processEl);
     });
     
@@ -230,9 +230,10 @@ function createProcessSection(title, processes, priority, collapsed = false) {
 }
 
 // Create individual process element
-function createProcessElement(process) {
+function createProcessElement(process, priority) {
     const processEl = document.createElement('div');
-    processEl.className = 'process';
+    const priorityClass = priority ? `${priority}-process` : '';
+    processEl.className = `process ${priorityClass}`;
     processEl.dataset.processId = process.id;
     
     const titleEl = document.createElement('div');
@@ -245,15 +246,7 @@ function createProcessElement(process) {
     const descEl = document.createElement('div');
     descEl.className = 'process-description';
     descEl.textContent = process.description;
-    
-    // Add stage-specific focus if available
-    if (process.stageFocus && process.stageFocus[currentStage]) {
-        const focusEl = document.createElement('div');
-        focusEl.className = 'stage-focus';
-        focusEl.innerHTML = `<strong>For your stage:</strong> ${process.stageFocus[currentStage]}`;
-        descEl.appendChild(focusEl);
-    }
-    
+
     const dimensionsEl = document.createElement('div');
     dimensionsEl.className = 'dimensions';
     
@@ -265,6 +258,15 @@ function createProcessElement(process) {
     
     processEl.appendChild(titleEl);
     processEl.appendChild(descEl);
+
+    // Add stage-specific focus if available
+    if (process.stageFocus && process.stageFocus[currentStage]) {
+        const focusEl = document.createElement('div');
+        focusEl.className = 'stage-focus';
+        focusEl.textContent = process.stageFocus[currentStage];
+        processEl.appendChild(focusEl);
+    }
+
     processEl.appendChild(dimensionsEl);
     
     return processEl;
