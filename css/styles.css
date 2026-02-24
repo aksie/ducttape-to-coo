@@ -89,7 +89,8 @@ h1::before {
 .pill-selectors {
     display: flex;
     gap: 12px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    align-items: center;
     margin-bottom: 20px;
     padding: 16px 20px;
     background: var(--surface);
@@ -106,12 +107,13 @@ h1::before {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-dim);
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.05em;
 }
 
 .pill-selector select {
     padding: 6px 12px;
+    width: 200px;
     border: 1px solid var(--border-bright);
     background: var(--surface-raised);
     color: var(--text);
@@ -233,7 +235,7 @@ h1::before {
     font-weight: 600;
     color: var(--text-muted);
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.04em;
 }
 
@@ -277,7 +279,7 @@ h1::before {
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--text);
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.08em;
     margin-bottom: 4px;
 }
@@ -343,7 +345,7 @@ h1::before {
 .section-header h3 {
     font-size: 0.8rem;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.08em;
     color: var(--text-dim);
 }
@@ -417,6 +419,18 @@ h1::before {
     gap: 8px;
 }
 
+.process-category {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.process-breadcrumb-sep {
+    color: var(--border-bright);
+    font-weight: 400;
+    margin: 0 2px;
+}
+
 .optional-tag {
     display: inline-block;
     background: transparent;
@@ -426,7 +440,7 @@ h1::before {
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
+    text-transform: none;
 }
 
 .process-description {
@@ -482,7 +496,7 @@ h1::before {
     align-items: center;
     gap: 6px;
     cursor: help;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.04em;
 }
 
@@ -626,7 +640,7 @@ h1::before {
 
 .summary h3 {
     font-size: 0.75rem;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.1em;
     color: var(--text-muted);
     margin-bottom: 8px;
@@ -691,8 +705,12 @@ h1::before {
 /* ─── Responsive ──────────────────────────────────── */
 @media (max-width: 768px) {
     .pill-selectors {
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 10px;
+    }
+
+    .pill-selector select {
+        width: 100%;
     }
 
     .timeline-label {

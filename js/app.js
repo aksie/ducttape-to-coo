@@ -236,11 +236,20 @@ function createProcessElement(process, priority) {
     processEl.className = `process ${priorityClass}`;
     processEl.dataset.processId = process.id;
     
+    const categoryLabels = {
+        'strategic':          'Strategic Ops',
+        'financial':          'Financial Ops',
+        'people':             'People Ops',
+        'legal-and-other-ops':'Legal & Other Ops',
+        'revenue':            'Revenue & Customer Ops'
+    };
+    const categoryLabel = categoryLabels[process.category] || process.category;
+
     const titleEl = document.createElement('div');
     titleEl.className = 'process-title';
     titleEl.innerHTML = `
-        ${process.id} ${process.title}
-        ${process.optional ? '<span class="optional-tag">OPTIONAL</span>' : ''}
+        <span class="process-category">${categoryLabel}</span><span class="process-breadcrumb-sep"> / </span>${process.id} ${process.title}
+        ${process.optional ? '<span class="optional-tag">Optional</span>' : ''}
     `;
     
     const descEl = document.createElement('div');
