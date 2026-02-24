@@ -13,7 +13,7 @@
         "scaled": "Full planning cycle: annual strategy, quarterly OKRs cascaded to all teams, weekly/monthly/quarterly review cadence. Metrics-driven adjustments."
       },
       "stages": {
-        "foundation": "recommended",
+        "foundation": "critical",
         "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
