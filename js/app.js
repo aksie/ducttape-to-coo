@@ -153,44 +153,114 @@ function updateTimeline() {
 function renderProcesses() {
     const container = document.getElementById('processes-container');
     container.innerHTML = '';
-    
-    // Filter processes by priority
+
     const critical = [];
     const recommended = [];
     const future = [];
-    
+
     processesData.processes.forEach(process => {
         const priority = process.stages[currentStage];
-        if (priority === 'critical') {
-            critical.push(process);
-        } else if (priority === 'recommended') {
-            recommended.push(process);
-        } else {
-            future.push(process);
-        }
+        if (priority === 'critical') critical.push(process);
+        else if (priority === 'recommended') recommended.push(process);
+        else future.push(process);
     });
-    
-    // Render critical processes
+
+    renderOverviewCard(critical, recommended, future);
+
     if (critical.length > 0) {
-        const section = createProcessSection('Critical Now', critical, 'critical');
-        container.appendChild(section);
+        container.appendChild(createProcessSection('Critical Now', critical, 'critical'));
     }
-    
-    // Render recommended processes
     if (recommended.length > 0) {
-        const section = createProcessSection('Recommended Now', recommended, 'recommended');
-        container.appendChild(section);
+        container.appendChild(createProcessSection('Recommended Now', recommended, 'recommended'));
     }
-    
-    // Render future processes (collapsed by default)
     if (future.length > 0) {
-        const section = createProcessSection('Coming Later', future, 'future', true);
-        container.appendChild(section);
+        container.appendChild(createProcessSection('Coming Later', future, 'future', true));
     }
-    
-    // Update count
-    document.getElementById('process-count').textContent = 
-        `${critical.length + recommended.length} processes for your stage`;
+
+    document.getElementById('process-count').textContent = '';
+}
+
+// Render the overview summary card
+function renderOverviewCard(critical, recommended, future) {
+    const card = document.getElementById('overview-card');
+    card.innerHTML = '';
+
+    const categoryLabels = {
+        'strategic':           'Strategic Ops',
+        'financial':           'Financial Ops',
+        'people':              'People Ops',
+        'legal-and-other-ops': 'Legal & Other Ops',
+        'revenue':             'Revenue & Customer Ops'
+    };
+
+    function groupByCategory(items) {
+        const groups = {};
+        items.forEach(p => {
+            const cat = categoryLabels[p.category] || p.category;
+            if (!groups[cat]) groups[cat] = [];
+            groups[cat].push(p);
+        });
+        return groups;
+    }
+
+    function buildList(items) {
+        const groups = groupByCategory(items);
+        return Object.entries(groups).map(([cat, processes]) => `
+            <div class="overview-category-label">${cat}</div>
+            <ul class="overview-list">
+                ${processes.map(p => `<li>${p.id} ${p.title}</li>`).join('')}
+            </ul>
+        `).join('');
+    }
+
+    const groups = [
+        { label: 'Critical now', cls: 'critical',    items: critical,    hidden: false },
+        { label: 'Recommended',  cls: 'recommended', items: recommended, hidden: false },
+        { label: 'Coming later', cls: 'future',      items: future,      hidden: true  },
+    ];
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'overview-card';
+    const cols = document.createElement('div');
+    cols.className = 'overview-cols';
+
+    groups.forEach(g => {
+        const col = document.createElement('div');
+        col.className = 'overview-col';
+
+        const headerRow = document.createElement('div');
+        headerRow.className = 'overview-col-header-row';
+
+        const badge = document.createElement('span');
+        badge.className = `overview-col-header ${g.cls}-badge`;
+        badge.textContent = `${g.label} (${g.items.length})`;
+
+        headerRow.appendChild(badge);
+
+        const content = document.createElement('div');
+        content.className = 'overview-col-content';
+        content.innerHTML = buildList(g.items);
+
+        if (g.hidden) {
+            content.style.display = 'none';
+            const toggle = document.createElement('button');
+            toggle.className = 'overview-toggle';
+            toggle.textContent = '[ show ]';
+            toggle.addEventListener('click', () => {
+                const isHidden = content.style.display === 'none';
+                content.style.display = isHidden ? 'block' : 'none';
+                toggle.textContent = isHidden ? '[ hide ]' : '[ show ]';
+            });
+            headerRow.appendChild(toggle);
+        }
+
+        col.appendChild(headerRow);
+        col.appendChild(content);
+        cols.appendChild(col);
+    });
+
+    wrapper.appendChild(cols);
+    card.appendChild(wrapper);
 }
 
 // Create process section
