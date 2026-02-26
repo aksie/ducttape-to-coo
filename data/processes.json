@@ -464,15 +464,15 @@
       "options": [
         "0 - Nonexistent: No process, people don't know what to do",
         "1 - Tribal knowledge: Process exists in someone's head",
-        "2 - Documented: Written down somewhere (Notion, wiki, etc.)",
-        "3 - Accessible: Easy to find, people actually use the documentation",
-        "4 - Living doc: Regularly updated, includes examples/templates"
+        "2 - Partial and not updated: Something is written down but incomplete or no longer reflects how it actually works",
+        "3 - Written and current: Documented well enough for someone new to follow, and roughly reflects reality",
+        "4 - Accessible and maintained: Easy to find, people actually use it, updated when the process changes"
       ]
     },
     "automation": {
       "label": "Is it automated?",
       "options": [
-        "0 - Manual chaos: Everything improvised, email-based, or purely manual",
+        "0 - Manual: Everything improvised, email-based, or purely manual (no automation)",
         "1 - Spreadsheet reliance: Using generic tools (Excel, Google Sheets, basic forms)",
         "2 - Dedicated software: Using purpose-built tools for this specific process",
         "3 - Connected systems: Tools integrated with other systems, workflows partially automated",
