@@ -168,13 +168,13 @@ function renderProcesses() {
     renderOverviewCard(critical, recommended, future);
 
     if (critical.length > 0) {
-        container.appendChild(createProcessSection('Critical Now', critical, 'critical'));
+        container.appendChild(createProcessSection('Applicable now', critical, 'critical'));
     }
     if (recommended.length > 0) {
-        container.appendChild(createProcessSection('Recommended Now', recommended, 'recommended'));
+        container.appendChild(createProcessSection('Optional', recommended, 'recommended', true));
     }
     if (future.length > 0) {
-        container.appendChild(createProcessSection('Coming Later', future, 'future', true));
+        container.appendChild(createProcessSection('Coming later', future, 'future', true));
     }
 
     document.getElementById('process-count').textContent = '';
@@ -214,8 +214,8 @@ function renderOverviewCard(critical, recommended, future) {
     }
 
     const groups = [
-        { label: 'Critical now', cls: 'critical',    items: critical,    hidden: false },
-        { label: 'Recommended',  cls: 'recommended', items: recommended, hidden: false },
+        { label: 'Applicable now', cls: 'critical',    items: critical,    hidden: false },
+        { label: 'Optional',       cls: 'recommended', items: recommended, hidden: true  },
         { label: 'Coming later', cls: 'future',      items: future,      hidden: true  },
     ];
 
