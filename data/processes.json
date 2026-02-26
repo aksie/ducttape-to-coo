@@ -484,8 +484,8 @@
       "options": [
         "0 - Will break immediately: Can't handle current load",
         "1 - At capacity: Works now but can't handle growth",
-        "2 - Room to grow: Can handle 2x volume without changes",
-        "3 - Designed to scale: Can handle 5-10x with minor tweaks",
+        "2 - Room to grow: Can handle some more volume without changes",
+        "3 - Designed to scale: Can handle 2x-10x with minor tweaks",
         "4 - Built for scale: Designed for 10x+ growth, modular/flexible"
       ]
     }
