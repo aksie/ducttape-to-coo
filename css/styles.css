@@ -12,6 +12,8 @@
     --text-muted:       #6e7681;
     --green:            #3fb950;
     --green-dim:        #1a4726;
+    --green-muted:      #bedeb4;
+    --green-muted-dim:  #1e3a26;
     --blue:             #58a6ff;
     --blue-dim:         #1c3454;
     --orange:           #f0883e;
@@ -27,6 +29,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
 }
 
 /* ─── Base ────────────────────────────────────────── */
@@ -83,6 +95,57 @@ h1::before {
     font-size: 0.85rem;
     color: var(--text-dim);
     font-weight: 300;
+}
+
+/* ─── Progress Bar ────────────────────────────────── */
+.progress-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    min-height: 34px;
+}
+
+.progress-bar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.progress-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 6px;
+    font-family: var(--font);
+    white-space: nowrap;
+}
+
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--border-bright);
+    background: transparent;
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.progress-dot.filled {
+    background: var(--green);
+    border-color: var(--green);
+}
+
+.progress-counter {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-left: 8px;
+    font-family: var(--font);
 }
 
 /* ─── Pill Selectors ──────────────────────────────── */
@@ -339,16 +402,36 @@ h1::before {
     padding: 3px 8px;
     border: 1px solid var(--border-bright);
     color: var(--text-muted);
+}
+
+.critical-badge {
+    border-color: var(--green) !important;
+    color: var(--green) !important;
+}
+
+.recommended-badge {
+    border-color: var(--green-muted) !important;
+    color: var(--green-muted) !important;
+}
+
+.future-badge {
+    border-color: var(--border-bright) !important;
+    color: var(--text-muted) !important;
+}
     display: inline-block;
 }
 
 .overview-toggle {
     padding: 2px 7px;
     background: transparent;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
     border: 1px solid var(--border-bright);
     font-family: var(--font);
     font-size: 0.7rem;
     font-weight: 600;
+    color: var(--text-muted);
     color: var(--text-muted);
     cursor: pointer;
     transition: all 0.15s;
@@ -412,11 +495,11 @@ h1::before {
 }
 
 .section-header.critical-header {
-    border-left-color: var(--red);
+    border-left-color: var(--green);
 }
 
 .section-header.recommended-header {
-    border-left-color: var(--yellow);
+    border-left-color: var(--green-muted);
 }
 
 .section-header.future-header {
@@ -432,11 +515,11 @@ h1::before {
 }
 
 .section-header.critical-header h3 {
-    color: var(--red);
+    color: var(--green);
 }
 
 .section-header.recommended-header h3 {
-    color: var(--yellow);
+    color: var(--green-muted);
 }
 
 .section-header .count {
@@ -448,10 +531,14 @@ h1::before {
 .toggle-btn {
     padding: 3px 8px;
     background: transparent;
+    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
     border: 1px solid var(--border-bright);
     font-family: var(--font);
     font-size: 0.72rem;
     font-weight: 600;
+    color: var(--text-muted);
     color: var(--text-muted);
     cursor: pointer;
     transition: all 0.15s;
@@ -465,6 +552,21 @@ h1::before {
 
 .section-content {
     padding: 0;
+}
+
+/* ─── Category Header between processes ──────────── */
+.process-category-header {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text);
+    padding: 18px 0 6px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8px;
+    letter-spacing: 0.04em;
+}
+
+.process-category-header:first-child {
+    padding-top: 0;
 }
 
 /* ─── Individual Process Card ─────────────────────── */
@@ -482,11 +584,11 @@ h1::before {
 }
 
 .process.critical-process {
-    border-top-color: var(--red);
+    border-left-color: var(--green);
 }
 
 .process.recommended-process {
-    border-top-color: var(--yellow);
+    border-left-color: var(--green-muted);
 }
 
 .process-title {

@@ -149,6 +149,63 @@ function updateTimeline() {
     setupTimeline();
 }
 
+// Progress bar
+function renderProgressBar(criticalProcesses) {
+    const bar = document.getElementById('progress-bar');
+    bar.innerHTML = '';
+
+    if (criticalProcesses.length === 0) return;
+
+    const inner = document.createElement('div');
+    inner.className = 'progress-bar-inner';
+
+    const label = document.createElement('span');
+    label.className = 'progress-label';
+    label.textContent = 'Progress:';
+    inner.appendChild(label);
+
+    criticalProcesses.forEach(p => {
+        const dot = document.createElement('div');
+        dot.className = 'progress-dot';
+        dot.dataset.processId = p.id;
+        dot.title = `${p.id} ${p.title}`;
+        inner.appendChild(dot);
+    });
+
+    const counter = document.createElement('span');
+    counter.className = 'progress-counter';
+    counter.id = 'progress-counter';
+    inner.appendChild(counter);
+
+    bar.appendChild(inner);
+
+    updateProgressDots();
+}
+
+function updateProgressDots() {
+    const bar = document.getElementById('progress-bar');
+    if (!bar) return;
+    const dots = bar.querySelectorAll('.progress-dot');
+    let scored = 0;
+
+    dots.forEach(dot => {
+        const processId = dot.dataset.processId;
+        const hasScore = responses[processId] &&
+            responses[processId].scores &&
+            Object.keys(responses[processId].scores).length > 0;
+
+        if (hasScore) {
+            dot.classList.add('filled');
+            scored++;
+        } else {
+            dot.classList.remove('filled');
+        }
+    });
+
+    const counter = document.getElementById('progress-counter');
+    if (counter) counter.textContent = `${scored} / ${dots.length}`;
+}
+
 // Render processes based on current stage
 function renderProcesses() {
     const container = document.getElementById('processes-container');
@@ -166,6 +223,7 @@ function renderProcesses() {
     });
 
     renderOverviewCard(critical, recommended, future);
+    renderProgressBar(critical);
 
     if (critical.length > 0) {
         container.appendChild(createProcessSection('Applicable now', critical, 'critical'));
@@ -281,9 +339,25 @@ function createProcessSection(title, processes, priority, collapsed = false) {
         content.style.display = 'none';
     }
     
+    const categoryLabels = {
+        'strategic':           'Strategic Ops',
+        'financial':           'Financial Ops',
+        'people':              'People Ops',
+        'legal-and-other-ops': 'Legal & Other Ops',
+        'revenue':             'Revenue & Customer Ops'
+    };
+
+    let lastCategory = null;
     processes.forEach(process => {
-        const processEl = createProcessElement(process, priority);
-        content.appendChild(processEl);
+        const cat = categoryLabels[process.category] || process.category;
+        if (cat !== lastCategory) {
+            const catHeader = document.createElement('div');
+            catHeader.className = 'process-category-header';
+            catHeader.textContent = cat;
+            content.appendChild(catHeader);
+            lastCategory = cat;
+        }
+        content.appendChild(createProcessElement(process, priority));
     });
     
     // Toggle functionality
@@ -472,6 +546,7 @@ function handleScoreChange(processId, dimensionKey, value) {
     responses[processId].scores[dimensionKey] = value;
     saveToLocalStorage();
     updateSummary();
+    updateProgressDots();
 }
 
 // Handle notes changes
