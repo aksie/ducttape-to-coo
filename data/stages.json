@@ -81,10 +81,11 @@
     { "value": "100+", "label": "100+ employees", "stage": "scaled" }
   ],
   "revenueStages": [
-    { "value": "pre-revenue", "label": "Pre-revenue (Building product)" },
-    { "value": "first-revenue", "label": "First revenue (Initial customers)" },
-    { "value": "recurring", "label": "Recurring revenue (Predictable)" },
-    { "value": "growth", "label": "Growth mode (Scaling fast)" }
+    { "value": "pre-revenue", "label": "Pre-revenue" },
+    { "value": "early-customers", "label": "Early customers" },
+    { "value": "scaling-low-complexity", "label": "Scaling, low complexity" },
+    { "value": "enterprise-or-mixed", "label": "Enterprise or mixed" },
+    { "value": "multi-model", "label": "Multi-model / complex" }
   ],
   "fundingStages": [
     { "value": "bootstrapped", "label": "Bootstrapped" },
