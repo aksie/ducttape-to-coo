@@ -73,7 +73,7 @@
   ],
   "employeeRanges": [
     { "value": "0-1", "label": "Just founders, maybe +1", "stage": "foundation" },
-    { "value": "2-5", "label": "3-5 employees", "stage": "first-hires" },
+    { "value": "2-5", "label": "2-5 employees", "stage": "first-hires" },
     { "value": "6-10", "label": "6-10 employees", "stage": "first-hires" },
     { "value": "11-25", "label": "11-25 employees", "stage": "early-revenue" },
     { "value": "26-50", "label": "26-50 employees", "stage": "growth" },
@@ -87,9 +87,10 @@
     { "value": "growth", "label": "Growth mode (Scaling fast)" }
   ],
   "fundingStages": [
-    { "value": "bootstrapped", "label": "Bootstrapped (Self-funded)" },
-    { "value": "pre-seed", "label": "Pre-seed (<$500K)" },
-    { "value": "seed", "label": "Seed ($500K-$3M)" },
-    { "value": "series-a", "label": "Series A ($3M+)" }
+    { "value": "bootstrapped", "label": "Bootstrapped" },
+    { "value": "angel-fff", "label": "Angel / friends & family" },
+    { "value": "venture-early", "label": "Venture-backed (seed/early)" },
+    { "value": "venture-growth", "label": "Venture-backed (growth/PE)" },
+    { "value": "public", "label": "Public company" }
   ]
 }
