@@ -22,6 +22,7 @@
     <div class="container">
         <!-- Pill Selectors -->
         <div class="pill-selectors">
+            <div class="box-label">Your context</div>
             <div class="pill-selector">
                 <label for="employee-select">Team Size</label>
                 <select id="employee-select">
@@ -44,6 +45,7 @@
 
         <!-- Timeline -->
         <div class="timeline-section">
+            <div class="box-label">Your stage</div>
             <div class="timeline-header">
                 <div class="stage-info">
                     <h2 id="stage-name">Loading...</h2>
@@ -60,8 +62,8 @@
         <div class="processes-section">
             <div class="processes-header">
                 <div>
-                    <h2>Your Checklist</h2>
-                    <p id="process-count">Loading processes...</p>
+                    <div class="box-label">Your checklist</div>
+                    <p id="process-count"></p>
                 </div>
                 <div class="export-buttons">
                     <button onclick="exportToCSV()">[ Export CSV ]</button>

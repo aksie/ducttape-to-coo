@@ -148,11 +148,22 @@ h1::before {
     font-family: var(--font);
 }
 
+/* ─── Box Label (shared section label across all boxes) ── */
+.box-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
 /* ─── Pill Selectors ──────────────────────────────── */
 .pill-selectors {
     display: flex;
     gap: 12px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
     padding: 16px 20px;
@@ -222,13 +233,8 @@ h1::before {
 .stage-info h2 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--blue);
+    color: var(--text);
     margin-bottom: 4px;
-}
-
-.stage-info h2::before {
-    content: '> ';
-    color: var(--green);
 }
 
 .stage-info p {
@@ -338,14 +344,6 @@ h1::before {
     border-bottom: 1px solid var(--border);
 }
 
-.processes-header h2 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text);
-    text-transform: none;
-    letter-spacing: 0.08em;
-    margin-bottom: 4px;
-}
 
 #process-count {
     color: var(--text-muted);
