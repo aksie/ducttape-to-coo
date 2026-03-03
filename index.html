@@ -53,7 +53,7 @@
             <div class="timeline-header">
                 <div class="stage-info">
                     <h2 id="stage-name">Loading...</h2>
-                    <p id="stage-description">Loading...</p>
+                    <p id="stage-description"></p>
                 </div>
                 <button class="preview-btn" onclick="previewNextStage()">Preview Next Stage →</button>
             </div>
@@ -64,13 +64,15 @@
 
         <!-- Processes -->
         <div class="processes-section">
-            <div class="box-label">Your checklist</div>
-            <p class="narrative">In this stage, these are the processes that matter. Here's an overview — then we'll go through each one:</p>
             <div class="processes-header">
-                <p id="process-count"></p>
-                <div class="export-buttons">
-                    <button onclick="exportToCSV()">[ Export CSV ]</button>
+                <div class="box-label">Your checklist</div>
+                <div class="processes-header-row">
+                    <p class="narrative">In this stage, these are the processes that matter. Here's an overview — then we'll go through each one:</p>
+                    <div class="export-buttons">
+                        <button onclick="exportToCSV()">[ Export CSV ]</button>
+                    </div>
                 </div>
+                <p id="process-count"></p>
             </div>
 
             <div id="overview-card">

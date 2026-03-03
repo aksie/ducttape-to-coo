@@ -36,6 +36,8 @@ button {
     appearance: none;
     background: transparent;
     background-color: transparent;
+    border: none;
+    outline: none;
     color: inherit;
     font-family: inherit;
     cursor: pointer;
@@ -367,12 +369,24 @@ h1::before {
 }
 
 .processes-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 20px;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--border);
+}
+
+.processes-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.processes-header-row .export-buttons button {
+    white-space: nowrap;
+}
+
+.processes-header-row .narrative {
+    margin-bottom: 0;
 }
 
 
@@ -451,19 +465,18 @@ h1::before {
 }
 
 .overview-toggle {
-    padding: 2px 7px;
+    padding: 0;
     background: transparent;
     background-color: transparent;
     -webkit-appearance: none;
     appearance: none;
-    border: 1px solid var(--border-bright);
+    border: none;
     font-family: var(--font);
     font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    color: var(--text-muted);
+    font-weight: 400;
+    color: var(--text-dim);
     cursor: pointer;
-    transition: all 0.15s;
+    transition: color 0.15s;
 }
 
 .overview-toggle:hover {
