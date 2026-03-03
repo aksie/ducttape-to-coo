@@ -153,6 +153,7 @@ function updateTimeline() {
 function renderProgressBar(criticalProcesses) {
     const bar = document.getElementById('progress-bar');
     bar.innerHTML = '';
+    bar.classList.remove('visible');
 
     if (criticalProcesses.length === 0) return;
 
@@ -180,6 +181,18 @@ function renderProgressBar(criticalProcesses) {
     bar.appendChild(inner);
 
     updateProgressDots();
+
+    // Show the bar only once the questions scroll into view
+    const target = document.getElementById('processes-container');
+    if (target) {
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                bar.classList.add('visible');
+                observer.disconnect();
+            }
+        }, { threshold: 0.05 });
+        observer.observe(target);
+    }
 }
 
 function updateProgressDots() {

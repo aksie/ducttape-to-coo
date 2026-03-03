@@ -97,6 +97,13 @@ h1::before {
     font-weight: 300;
 }
 
+.header-intro {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
 /* ─── Progress Bar ────────────────────────────────── */
 .progress-bar {
     position: sticky;
@@ -104,7 +111,17 @@ h1::before {
     z-index: 100;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    min-height: 34px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.progress-bar.visible {
+    max-height: 60px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .progress-bar-inner {
@@ -146,6 +163,20 @@ h1::before {
     font-weight: 600;
     margin-left: 8px;
     font-family: var(--font);
+}
+
+/* ─── Narrative connectors ────────────────────────────── */
+.narrative {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 16px 0;
+    width: 100%;
+}
+
+.narrative-intro {
+    color: var(--text);
+    margin-bottom: 16px;
 }
 
 /* ─── Box Label (shared section label across all boxes) ── */

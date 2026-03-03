@@ -14,6 +14,8 @@
         <div class="container">
             <h1>Duct Tape or Hire a COO?</h1>
             <p class="subtitle">Operational Maturity Checklist — Stage-based framework for startups</p>
+            <p class="header-intro">This checklist-in-a-web-app will give you a view on what your weakest operational areas are as a startup, so you know what your next actions are to fix them.</p>
+            <p class="header-intro">Fill in the checklist in an interview with an experienced external Ops person. Less optimal: you can do it yourself as well.</p>
         </div>
     </header>
 
@@ -23,6 +25,7 @@
         <!-- Pill Selectors -->
         <div class="pill-selectors">
             <div class="box-label">Your context</div>
+            <p class="narrative">Start by filling in your context:</p>
             <div class="pill-selector">
                 <label for="employee-select">Team Size</label>
                 <select id="employee-select">
@@ -46,6 +49,7 @@
         <!-- Timeline -->
         <div class="timeline-section">
             <div class="box-label">Your stage</div>
+            <p class="narrative">Based on your context, this is the startup stage you're in — and where it sits in the overall journey:</p>
             <div class="timeline-header">
                 <div class="stage-info">
                     <h2 id="stage-name">Loading...</h2>
@@ -60,11 +64,10 @@
 
         <!-- Processes -->
         <div class="processes-section">
+            <div class="box-label">Your checklist</div>
+            <p class="narrative">In this stage, these are the processes that matter. Here's an overview — then we'll go through each one:</p>
             <div class="processes-header">
-                <div>
-                    <div class="box-label">Your checklist</div>
-                    <p id="process-count"></p>
-                </div>
+                <p id="process-count"></p>
                 <div class="export-buttons">
                     <button onclick="exportToCSV()">[ Export CSV ]</button>
                 </div>
