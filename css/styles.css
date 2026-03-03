@@ -70,8 +70,8 @@ body {
 header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    padding: 24px 20px;
-    margin-bottom: 24px;
+    padding: 16px 20px;
+    margin-bottom: 4px;
 }
 
 header .container {
@@ -80,7 +80,7 @@ header .container {
 }
 
 h1 {
-    font-size: 1.5rem;
+    font-size: 2.4rem;
     font-weight: 700;
     color: var(--blue);
     letter-spacing: -0.02em;
@@ -102,8 +102,16 @@ h1::before {
 .header-intro {
     font-size: 0.95rem;
     color: var(--text);
-    margin-top: 12px;
+    margin-top: 4px;
+    margin-bottom: 0;
     line-height: 1.6;
+}
+
+.header-intro-dim {
+    color: var(--text-dim);
+    font-size: 0.88rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 /* ─── Progress Bar ────────────────────────────────── */
