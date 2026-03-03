@@ -742,8 +742,8 @@ h1::before {
     width: 14px;
     height: 14px;
     background: transparent;
-    color: var(--blue);
-    border: 1px solid var(--blue);
+    color: var(--text-dim);
+    border: 1px solid var(--text-dim);
     font-size: 0.6rem;
     font-weight: 700;
     cursor: help;
