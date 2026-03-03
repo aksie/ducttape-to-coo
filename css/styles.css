@@ -188,14 +188,15 @@ h1::before {
     color: var(--text);
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding-bottom: 10px;
+    padding-bottom: 4px;
     width: 100%;
 }
 
 /* ─── Pill Selectors ──────────────────────────────── */
 .pill-selectors {
     display: flex;
-    gap: 12px;
+    row-gap: 4px;
+    column-gap: 12px;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
@@ -266,7 +267,7 @@ h1::before {
 .stage-info h2 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text);
+    color: var(--blue);
     margin-bottom: 4px;
 }
 
