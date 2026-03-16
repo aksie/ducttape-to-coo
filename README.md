@@ -177,6 +177,6 @@ Free to use and modify. If you run a modified version as a service, you must pub
 
 ## Credits
 
-Created as an open-source tool for the startup community.
+Created by @aksie as an open-source tool for the startup community.
 
 Inspired by the Scaling Up / Rockefeller Habits framework and years of operational challenges in growing startups.

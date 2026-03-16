@@ -230,6 +230,11 @@ h1::before {
 .pill-selector select {
     padding: 6px 12px;
     width: 200px;
+
+}
+
+#employee-select {
+    width: 240px;
     border: 1px solid var(--border-bright);
     background: var(--surface-raised);
     color: var(--text);

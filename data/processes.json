@@ -3,14 +3,14 @@
     {
       "id": "1.1",
       "category": "strategic",
-      "title": "Planning & Goal-Setting",
-      "description": "How you set priorities and goals, and build strategy and planning. From weekly priorities to formal planning cycles. Starts simple (what are our top 3 things?) and evolves into structured frameworks as you grow...",
+      "title": "Company-Level Planning & Goals",
+      "description": "How you set priorities and goals for the company as a whole. Starts with simple weekly priorities everyone knows, evolves into formal goal frameworks.",
       "stageFocus": {
-        "foundation": "Clear priorities for this week/sprint and this quarter. Have a simple 'why we exist' statement. Review and adjust in weekly team sync.",
-        "first-hires": "Set monthly goals/rocks for the team. Document your mission and share it. Review progress bi-weekly, adjust direction as needed.",
-        "early-revenue": "Implement quarterly OKRs or similar goal framework. Create annual strategic plan. Monthly reviews with team, quarterly strategy discussions.",
-        "growth": "Cascade quarterly goals from company to teams. Establish planning rhythms (weekly standups, monthly reviews, quarterly planning). Track progress in dashboards.",
-        "scaled": "Full planning cycle: annual strategy, quarterly OKRs cascaded to all teams, weekly/monthly/quarterly review cadence. Metrics-driven adjustments."
+        "foundation": "Top 3 priorities for the company this week/month. Everyone knows them. Review weekly - adjust as you learn.",
+        "first-hires": "Monthly company goals/rocks. Clear mission statement everyone can recite. Bi-weekly progress reviews with whole team.",
+        "early-revenue": "Quarterly company goals (OKRs or similar). Annual themes/direction. Monthly all-hands reviews progress. Everyone knows top 3-5 company priorities.",
+        "growth": "Formal quarterly goal-setting process. Annual strategic planning. Company-wide goals tracked in dashboard. Regular reviews with leadership team.",
+        "scaled": "Structured annual and quarterly planning cycles. Company OKRs set by leadership. Communicated company-wide. Progress tracked and visible."
       },
       "stages": {
         "foundation": "critical",
@@ -21,16 +21,36 @@
       }
     },
     {
+      "id": "1.1b",
+      "category": "strategic",
+      "title": "Team Goals & Cascading Goals",
+      "description": "How individual teams or departments set their own goals that ladder up to company priorities. Not needed until you have actual departments/teams with different focuses.",
+      "stageFocus": {
+        "foundation": "Not needed - you are the team.",
+        "first-hires": "Not needed yet - still one team with shared goals.",
+        "early-revenue": "Each function (eng, sales, customer success) has quarterly goals that clearly support company goals. Document how they connect.",
+        "growth": "Each department sets quarterly goals aligned to company OKRs. Team leads accountable for their goals. Cross-functional dependencies identified and managed.",
+        "scaled": "Full goal cascade: company → department → team → individual. Clear accountability at each level. Regular alignment checks. Dependencies managed systematically."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
       "id": "1.2",
       "category": "strategic",
-      "title": "Internal Communication",
-      "description": "How information flows in your company, from quick Slack updates to formal all-hands meetings. Starts with staying aligned as a small team, evolves into structured channels and rhythms.",
+      "title": "Internal Communication about Strategy",
+      "description": "How the team stays aligned on goals, hears about progress, and gives input on direction. Starts with simple weekly syncs, evolves into structured all-hands and feedback loops.",
       "stageFocus": {
-        "foundation": "Daily quick syncs (standup or async). Use one main channel (Slack/Discord). Share what you're working on, link it to main prios and share and blockers.",
-        "first-hires": "Weekly team meeting for alignment. Simple doc/wiki for key info. Clear communication norms (response times, which channel for what).",
-        "early-revenue": "Monthly all-hands. Department updates shared regularly. Start knowledge base for processes and decisions. Meeting rhythms established.",
-        "growth": "Structured all-hands (monthly/quarterly). Department communication plans. Active knowledge management system. Clear escalation paths.",
-        "scaled": "Full communication strategy: all-hands cadence, department updates, accessible documentation standards, multiple channels for different needs."
+        "foundation": "Weekly standup (15 min). Everyone shares: what I did, what I'm doing, blockers. Quick verbal check on priorities.",
+        "first-hires": "Weekly team meeting for progress against goals. Monthly deeper discussion on direction. Simple way for team to flag issues/ideas (Slack channel or shared doc).",
+        "early-revenue": "Monthly all-hands with progress updates and Q&A. Quarterly planning sessions with team input. Regular retros or feedback sessions on what's working.",
+        "growth": "Structured all-hands (monthly/quarterly) with pre-shared agenda and Q&A. Department updates shared async before meetings. Clear feedback and input mechanisms.",
+        "scaled": "Formal all-hands cadence with pre-submitted questions. Town halls by department. Annual surveys plus ongoing feedback channels. Strategic updates communicated clearly."
       },
       "stages": {
         "foundation": "recommended",
@@ -43,8 +63,55 @@
     {
       "id": "1.3",
       "category": "strategic",
-      "title": "Process Improvement & Optimization",
-      "description": "Process documentation standards and ownership, continuous improvement methodology and culture, efficiency metrics tracking and review, tool stack optimization and rationalization",
+      "title": "Operational Internal Communication Norms",
+      "description": "The rules and channels for daily operations - what goes in Slack vs email, response time expectations, how teams coordinate. Prevents chaos and dropped balls.",
+      "stageFocus": {
+        "foundation": "One main channel (Slack/Discord). Urgent = DM or call. Non-urgent = channel message. Respond same day if you can.",
+        "first-hires": "Clear channel structure (#general, #customer-questions, #bugs). Basic SLAs: bugs flagged by CS = respond in 2 hours, customer questions = 4 hours. Document who owns what.",
+        "early-revenue": "Channel guidelines documented (what goes where, when to DM vs channel). SLAs by type defined. Cross-team communication protocols (e.g., how CS escalates to Engineering). Escalation paths clear.",
+        "growth": "Communication playbook: channel structure, response SLAs by urgency level, escalation matrix, on-call rotations for critical issues. Regular review of what's working.",
+        "scaled": "Full communication architecture: channels organized by purpose and team, SLAs tracked and reported, incident communication protocols, on-call systems, integration with ticketing tools."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.4",
+      "category": "strategic",
+      "title": "Who Decides What",
+      "description": "Clarity on decision rights and authority - who can decide what without asking, and when to escalate. The critical shift from founder-decides-everything to empowered teams.",
+      "stageFocus": {
+        "foundation": "Founders decide everything together. No framework needed - you're small and aligned.",
+        "first-hires": "Write down what needs founder approval (hiring, major spending, pivots). Everything else, team decides. Practice letting go. Common issue: Founders become bottlenecks on decision-making.",
+        "early-revenue": "Clear decision owners per area. Simple escalation rules (budget thresholds, customer impact). Founder gives input, not decisions. Common issue: Decisions get re-litigated when founders weren't in the meeting.",
+        "growth": "RACI or DRI framework documented. Authority levels by role. Leadership decides in their domains, founder only on strategic. Common issue: Teams making conflicting decisions or disagree on who decides what.",
+        "scaled": "Comprehensive decision framework. Authority matrices. Regular audits of decision levels. Common issue: Lack of clarity causes turf wars or excessive escalations."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "recommended",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "1.5",
+      "category": "strategic",
+      "title": "Organizational Design",
+      "description": "Org chart, reporting lines, and team structure. How you organize people into teams and who reports to whom. Evolves as you grow from flat to layered structure.",
+      "stageFocus": {
+        "foundation": "No org chart needed. Everyone reports to founders. Just clarify what each founder owns to avoid gaps.",
+        "first-hires": "Simple structure: who reports to whom. Make it explicit even if informal. Update as you add people and roles emerge.",
+        "early-revenue": "Document team structure as functions form (eng, sales, ops). Define manager roles and spans of control. Revisit quarterly as you grow.",
+        "growth": "Maintain living org chart. Clear reporting lines and team boundaries. Design structure intentionally (functional vs product teams). Plan for middle management layer.",
+        "scaled": "Org design as strategic tool. Regular reviews: does structure enable strategy? Optimize spans of control, layers, and team composition. Common issue: Structure doesn't match how work actually flows."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -54,27 +121,27 @@
       }
     },
     {
-      "id": "1.4",
+      "id": "1.7",
       "category": "strategic",
-      "title": "Roles, Org Chart and Organizational Design",
-      "description": "Role clarity (RACI/DRI), Org chart maintenance and clarity of reporting lines, continuously evolving through the teams phases",
+      "title": "Process Documentation",
+      "description": "How you document and share knowledge about how things work - from simple how-to docs to comprehensive process libraries. Prevents knowledge being stuck in people's heads.",
       "stageFocus": {
-        "foundation": "Get clarity on what each founder owns and where everyone's strengths and blind spots are. No formal org chart needed — just make sure decisions aren't falling through the cracks between you.",
-        "first-hires": "Write down who owns what, even informally. Be explicit with new hires about reporting lines and who to go to for what. Revisit as each person settles in.",
-        "early-revenue": "Document roles and responsibilities as teams form. Use a simple RACI or DRI approach for key decisions. Update as the org evolves — this will change often.",
-        "growth": "Maintain a living org chart. Define spans of control, team structure, and escalation paths. Role clarity becomes critical as middle layers form.",
-        "scaled": "Org design is a strategic lever. Regularly review structure against company goals. Formalize RACI/DRI across functions, with clear accountability at every level."
+        "foundation": "Not needed yet - just talk to each other.",
+        "first-hires": "Start a simple wiki or shared doc. Document the 3-5 most important processes (how to deploy, how to handle customer issues, etc.).",
+        "early-revenue": "Process documentation becomes a habit. New processes get documented. Wiki or Notion space is organized and people actually use it. Review quarterly what needs updating.",
+        "growth": "Process documentation standards: templates, owners, review cycles. Documentation findable and accessible. New hires can self-serve most questions. Continuous improvement culture.",
+        "scaled": "Comprehensive process library. Documentation maintained actively. Automated reminders for reviews. Process improvement methodology (e.g., Lean, Six Sigma) if relevant. Regular process audits."
       },
       "stages": {
-        "foundation": "critical",
-        "first-hires": "critical",
-        "early-revenue": "critical",
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
         "growth": "critical",
         "scaled": "critical"
       }
     },
     {
-      "id": "1.5",
+      "id": "1.6",
       "category": "strategic",
       "title": "Data & Reporting Infrastructure",
       "description": "Company KPI tracking and definition, dashboards, reporting cadence, data quality",
