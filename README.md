@@ -1,4 +1,4 @@
-# Duct Tape or Hire a COO?
+# Duct Tape to COO
 ## The Operational Denial Checklist
 
 An open-source, stage-based operational maturity framework for startups. Know which processes to focus on at each stage of growth — and when to stop duct-taping and actually fix things.
