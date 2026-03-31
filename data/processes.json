@@ -61,6 +61,29 @@
       }
     },
     {
+      "id": "1.2b",
+      "category": "strategic",
+      "title": "Shareholder & Investor Reporting",
+      "description": "How you keep investors and shareholders informed. Covers regular updates, board reporting, and investor relations. Only relevant once you have external investors or shareholders.",
+      "conditions": {
+        "fundingStage": ["angel-fff", "venture-early", "venture-growth", "public"]
+      },
+      "stageFocus": {
+        "foundation": "Not relevant yet - no external investors.",
+        "first-hires": "If you have angels or friends & family investors, send a short monthly or quarterly update. Key metrics, progress against goals, what you need help with. Keep it simple.",
+        "early-revenue": "Regular investor updates (monthly). Board meeting prep (deck, pre-read). Basic cap table management. Coordinate with legal on any shareholder matters.",
+        "growth": "Structured board cadence (monthly or quarterly). Board pack with financials, KPIs, and strategic updates. Investor relations function forming. Legal compliance on reporting obligations.",
+        "scaled": "Formal investor relations function. Board governance framework. Audit committee, compensation committee. Quarterly reporting cadence. Compliance with shareholder agreement obligations."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
       "id": "1.3",
       "category": "strategic",
       "title": "Operational Internal Communication Norms",
@@ -198,6 +221,9 @@
       "category": "financial",
       "title": "Accounts Receivable (Outgoing Invoices)",
       "description": "Invoice generation and delivery timing, collections process and follow-up (relations with ops people at customers), payment terms management, revenue recognition procedures",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -417,6 +443,9 @@
       "category": "revenue",
       "title": "Sales Operations",
       "description": "CRM management, sales process and methodology documentation, pipeline management and forecasting accuracy, territory and quota assignment, sales compensation and commission calculation, deal approval workflows, quoting/proposal generation process",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -430,6 +459,9 @@
       "category": "revenue",
       "title": "Customer Acquisition & Lead Management",
       "description": "Lead capture from all channels (website, referrals, marketing, partnerships), lead qualification criteria and scoring, routing and assignment logic, response time SLAs, nurture workflows for different segments",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -443,6 +475,9 @@
       "category": "revenue",
       "title": "Customer Onboarding & Activation",
       "description": "Post-sale handoff from sales to customer success, customer welcome process and kickoff, initial setup and configuration support, time-to-value tracking and optimization, early adoption monitoring, first-value milestone celebration",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -456,6 +491,9 @@
       "category": "revenue",
       "title": "Customer Health, Engagement, Satisfaction, Support",
       "description": "Support ticket management system and workflows, knowledge base maintenance, bug/issue tracking and resolution, customer feedback collection mechanisms. NPS/CSAT measurement cadence and methodology, product feedback aggregation and routing to product team, customer health scoring methodology and tracking, proactive engagement cadence based on segment/tier, regular business reviews with key accounts",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -469,6 +507,9 @@
       "category": "revenue",
       "title": "Renewal & Retention",
       "description": "Renewal timeline and notification process, churn risk identification and intervention, win-back campaigns for churned customers, contract negotiation for renewals, pricing and packaging optimization based on retention data, renewal forecasting accuracy",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -483,6 +524,9 @@
       "title": "Service Delivery",
       "description": "Project intake and scoping process, resource allocation and capacity planning, delivery methodology and quality standards, project status communication to customers, post-delivery review and lessons learned, incident/error management and remediation",
       "optional": true,
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -496,6 +540,9 @@
       "category": "revenue",
       "title": "Customer Data & Analytics",
       "description": "Customer database management and data quality, interaction tracking across all touchpoints (CRM, support, success), customer analytics and reporting dashboards, churn analysis and cohort tracking, revenue metrics (MRR, ARR, expansion, churn), data-driven customer segmentation",
+      "conditions": {
+        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",

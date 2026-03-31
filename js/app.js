@@ -219,6 +219,18 @@ function updateProgressDots() {
     if (counter) counter.textContent = `${scored} / ${dots.length}`;
 }
 
+// Check whether a process's conditions are met by the user's current selections
+function conditionsMet(process) {
+    if (!process.conditions) return true;
+    if (process.conditions.revenueStage) {
+        if (!process.conditions.revenueStage.includes(userSelections.revenue)) return false;
+    }
+    if (process.conditions.fundingStage) {
+        if (!process.conditions.fundingStage.includes(userSelections.funding)) return false;
+    }
+    return true;
+}
+
 // Render processes based on current stage
 function renderProcesses() {
     const container = document.getElementById('processes-container');
@@ -227,15 +239,22 @@ function renderProcesses() {
     const critical = [];
     const recommended = [];
     const future = [];
+    const notApplicable = [];
 
     processesData.processes.forEach(process => {
+        if (!conditionsMet(process)) {
+            notApplicable.push(process);
+            return;
+        }
         const priority = process.stages[currentStage];
         if (priority === 'critical') critical.push(process);
         else if (priority === 'recommended') recommended.push(process);
         else future.push(process);
     });
 
-    renderOverviewCard(critical, recommended, future);
+    const allFuture = [...future, ...notApplicable];
+
+    renderOverviewCard(critical, recommended, allFuture);
     renderProgressBar(critical);
 
     if (critical.length > 0) {
@@ -244,8 +263,8 @@ function renderProcesses() {
     if (recommended.length > 0) {
         container.appendChild(createProcessSection('Optional', recommended, 'recommended', true));
     }
-    if (future.length > 0) {
-        container.appendChild(createProcessSection('Coming later', future, 'future', true));
+    if (allFuture.length > 0) {
+        container.appendChild(createProcessSection('Coming later', allFuture, 'future', true));
     }
 
     document.getElementById('process-count').textContent = '';
@@ -285,9 +304,9 @@ function renderOverviewCard(critical, recommended, future) {
     }
 
     const groups = [
-        { label: 'Applicable now', cls: 'critical',    items: critical,    hidden: false },
-        { label: 'Optional',       cls: 'recommended', items: recommended, hidden: true  },
-        { label: 'Coming later', cls: 'future',      items: future,      hidden: true  },
+        { label: 'Applicable now',     cls: 'critical',        items: critical,       hidden: false },
+        { label: 'Optional',           cls: 'recommended',     items: recommended,    hidden: true  },
+        { label: 'Coming later',       cls: 'future',          items: future,         hidden: true  },
     ];
 
     const wrapper = document.createElement('div');
