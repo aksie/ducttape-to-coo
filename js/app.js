@@ -4,7 +4,7 @@ let stagesData = null;
 let currentStage = 'first-hires'; // Default
 let userSelections = {
     employees: '3-5',
-    revenue: 'first-revenue',
+    revenue: 'pre-revenue',
     funding: 'bootstrapped'
 };
 let responses = {};
@@ -632,7 +632,14 @@ function loadFromLocalStorage() {
     if (saved) {
         try {
             const data = JSON.parse(saved);
-            if (data.userSelections) userSelections = data.userSelections;
+            if (data.userSelections) {
+                userSelections = data.userSelections;
+                // Validate saved revenue/funding against current valid values; reset if stale
+                const validRevenue = stagesData.revenueStages.map(s => s.value);
+                const validFunding = stagesData.fundingStages.map(s => s.value);
+                if (!validRevenue.includes(userSelections.revenue)) userSelections.revenue = 'pre-revenue';
+                if (!validFunding.includes(userSelections.funding)) userSelections.funding = 'bootstrapped';
+            }
             if (data.currentStage) currentStage = data.currentStage;
             if (data.responses) responses = data.responses;
         } catch (e) {
