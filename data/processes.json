@@ -30,7 +30,7 @@
         "first-hires": "Not needed yet - still one team with shared goals.",
         "early-revenue": "Each function (eng, sales, customer success) has quarterly goals that clearly support company goals. Document how they connect.",
         "growth": "Each department sets quarterly goals aligned to company OKRs. Team leads accountable for their goals. Cross-functional dependencies identified and managed.",
-        "scaled": "Full goal cascade: company → department → team → individual. Clear accountability at each level. Regular alignment checks. Dependencies managed systematically."
+        "scaled": "Full goal cascade: company \u2192 department \u2192 team \u2192 individual. Clear accountability at each level. Regular alignment checks. Dependencies managed systematically."
       },
       "stages": {
         "foundation": "future",
@@ -66,7 +66,12 @@
       "title": "Shareholder & Investor Reporting",
       "description": "How you keep investors and shareholders informed. Covers regular updates, board reporting, and investor relations. Only relevant once you have external investors or shareholders.",
       "conditions": {
-        "fundingStage": ["angel-fff", "venture-early", "venture-growth", "public"]
+        "fundingStage": [
+          "angel-fff",
+          "venture-early",
+          "venture-growth",
+          "public"
+        ]
       },
       "stageFocus": {
         "foundation": "Not relevant yet - no external investors.",
@@ -222,11 +227,16 @@
       "title": "Accounts Receivable (Outgoing Invoices)",
       "description": "Invoice generation and delivery timing, collections process and follow-up (relations with ops people at customers), payment terms management, revenue recognition procedures",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"
@@ -251,7 +261,7 @@
       "title": "Financial Administration",
       "description": "Day-to-day bookkeeping accuracy, account reconciliation procedures, month-end close process, audit trail and documentation standards, chart of accounts management",
       "stageFocus": {
-        "foundation": "Keep it simple and outsourced. Use a bookkeeper or accountant from day one — don't do this yourself. Agree on an API or automation workflow so it will scale later. Set up a basic chart of accounts and make sure receipts and invoices are captured consistently.",
+        "foundation": "Keep it simple and outsourced. Use a bookkeeper or accountant from day one \u2014 don't do this yourself. Agree on an API or automation workflow so it will scale later. Set up a basic chart of accounts and make sure receipts and invoices are captured consistently.",
         "first-hires": "Your external bookkeeper should handle month-end close. Your job is to feed them clean data: receipts in, invoices out, payroll records. Agree on a rhythm and stick to it.",
         "early-revenue": "Move to a monthly close with your accountant. Review a basic P&L monthly. Make sure revenue recognition is handled correctly, especially if you have subscriptions or milestones.",
         "growth": "Bring bookkeeping closer to in-house or use a managed accounting service. Establish a proper month-end close checklist. Start tracking by cost centre or department.",
@@ -271,9 +281,9 @@
       "title": "HR Administration",
       "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance, insurance coordination, employee record keeping",
       "stageFocus": {
-        "foundation": "Use a payroll service from the start — don't run payroll manually. Get founder contracts and IP assignment in place. Everything else can wait.",
+        "foundation": "Use a payroll service from the start \u2014 don't run payroll manually. Get founder contracts and IP assignment in place. Everything else can wait.",
         "first-hires": "Your payroll tool should handle contracts, time-off and basic records. Make sure you're compliant with local labour law for employment contracts. A simple shared doc for time-off tracking is fine at this stage.",
-        "early-revenue": "Standardise employment contracts and onboarding paperwork. Track time off properly — informality breaks down when teams grow. Consider a basic HRIS if you're on 15ish people.",
+        "early-revenue": "Standardise employment contracts and onboarding paperwork. Track time off properly \u2014 informality breaks down when teams grow. Consider a basic HRIS if you're on 15ish people.",
         "growth": "Implement a proper HRIS. HR admin should not be sitting in spreadsheets or inboxes. Benefits administration and compliance reviews become a regular rhythm.",
         "scaled": "Dedicated HR ops function. Automated workflows for contracts, onboarding, offboarding, and compliance. Regular audits of employee records and benefits. Clear escalation paths for HR issues."
       },
@@ -311,7 +321,7 @@
       "title": "Onboarding",
       "description": "Pre-arrival preparation (contracts, equipment, system access), structured first day/week experience, role-specific training, culture introduction, check-in process (e.g., 30-60-90 day)",
       "stageFocus": {
-        "foundation": "Not applicable yet — save the energy for when you hire.",
+        "foundation": "Not applicable yet \u2014 save the energy for when you hire.",
         "first-hires": "Make a simple checklist: laptop ordered, accounts set up, contracts signed before day one. On day one: walk them through what you're building, who does what, and how you work. A bad first week is hard to recover from. Campground rule: every new hire should leave the onboarding docs better than they found them.",
         "early-revenue": "Write down your onboarding checklist so it doesn't live in one person's head. Add a 30-day check-in to catch issues early. Role-specific ramp plans help new hires get to impact faster.",
         "growth": "Onboarding should run without the founder. Create a structured first week with clear milestones, tool access workflows, and culture touchpoints. Assign an onboarding buddy. Track 30-60-90 day progress.",
@@ -360,7 +370,7 @@
         "foundation": "Not a formal process yet, but stay close to each other. Informal check-ins are fine at this stage.",
         "first-hires": "Add a simple start/stop/change question to your weekly team sync: what should we start doing, stop doing, or change? Three questions, five minutes, done. Builds the habit of giving feedback before things fester.",
         "early-revenue": "Start regular 1-on-1s with everyone. Use them to surface what's working and what isn't before it becomes a problem. A quick monthly pulse question (e.g. how are you feeling about work this week, 1-5?) adds signal without overhead.",
-        "growth": "Introduce a lightweight engagement survey once or twice a year. Track trends, not just scores. Make sure feedback actually leads to visible action — otherwise people stop responding.",
+        "growth": "Introduce a lightweight engagement survey once or twice a year. Track trends, not just scores. Make sure feedback actually leads to visible action \u2014 otherwise people stop responding.",
         "scaled": "Structured engagement programme: pulse surveys, annual engagement survey, 1-on-1 cadence enforced across managers, anonymous feedback channels, and a clear process for acting on results."
       },
       "stages": {
@@ -428,7 +438,7 @@
       "id": "4.4",
       "category": "legal-and-other-ops",
       "title": "Vendor & Procurement",
-      "description": "Formal procurement process recommended from 50+ people. Early stage (10-50 people): Approval thresholds (e.g., >€5K needs CEO approval), budget ownership by department, visibility mechanism (e.g., Slack channel), basic contract review checklist (especially for IP transfer, data processing, and payment terms). Mature stage (50+ people): Vendor selection and approval process, contract negotiation and management, purchase order workflows, vendor relationship management, performance reviews, preferred vendor list maintenance",
+      "description": "Formal procurement process recommended from 50+ people. Early stage (10-50 people): Approval thresholds (e.g., >\u20ac5K needs CEO approval), budget ownership by department, visibility mechanism (e.g., Slack channel), basic contract review checklist (especially for IP transfer, data processing, and payment terms). Mature stage (50+ people): Vendor selection and approval process, contract negotiation and management, purchase order workflows, vendor relationship management, performance reviews, preferred vendor list maintenance",
       "optional": true,
       "stages": {
         "foundation": "future",
@@ -444,11 +454,16 @@
       "title": "Sales Operations",
       "description": "CRM management, sales process and methodology documentation, pipeline management and forecasting accuracy, territory and quota assignment, sales compensation and commission calculation, deal approval workflows, quoting/proposal generation process",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"
@@ -460,11 +475,16 @@
       "title": "Customer Acquisition & Lead Management",
       "description": "Lead capture from all channels (website, referrals, marketing, partnerships), lead qualification criteria and scoring, routing and assignment logic, response time SLAs, nurture workflows for different segments",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"
@@ -476,11 +496,16 @@
       "title": "Customer Onboarding & Activation",
       "description": "Post-sale handoff from sales to customer success, customer welcome process and kickoff, initial setup and configuration support, time-to-value tracking and optimization, early adoption monitoring, first-value milestone celebration",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"
@@ -492,11 +517,16 @@
       "title": "Customer Health, Engagement, Satisfaction, Support",
       "description": "Support ticket management system and workflows, knowledge base maintenance, bug/issue tracking and resolution, customer feedback collection mechanisms. NPS/CSAT measurement cadence and methodology, product feedback aggregation and routing to product team, customer health scoring methodology and tracking, proactive engagement cadence based on segment/tier, regular business reviews with key accounts",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"
@@ -508,11 +538,16 @@
       "title": "Renewal & Retention",
       "description": "Renewal timeline and notification process, churn risk identification and intervention, win-back campaigns for churned customers, contract negotiation for renewals, pricing and packaging optimization based on retention data, renewal forecasting accuracy",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "recommended",
         "growth": "critical",
         "scaled": "critical"
@@ -525,11 +560,16 @@
       "description": "Project intake and scoping process, resource allocation and capacity planning, delivery methodology and quality standards, project status communication to customers, post-delivery review and lessons learned, incident/error management and remediation",
       "optional": true,
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "recommended",
         "growth": "recommended",
         "scaled": "critical"
@@ -541,11 +581,16 @@
       "title": "Customer Data & Analytics",
       "description": "Customer database management and data quality, interaction tracking across all touchpoints (CRM, support, success), customer analytics and reporting dashboards, churn analysis and cohort tracking, revenue metrics (MRR, ARR, expansion, churn), data-driven customer segmentation",
       "conditions": {
-        "revenueStage": ["early-customers", "scaling-low-complexity", "enterprise-or-mixed", "multi-model"]
+        "revenueStage": [
+          "early-customers",
+          "scaling-low-complexity",
+          "enterprise-or-mixed",
+          "multi-model"
+        ]
       },
       "stages": {
         "foundation": "future",
-        "first-hires": "future",
+        "first-hires": "critical",
         "early-revenue": "recommended",
         "growth": "critical",
         "scaled": "critical"
