@@ -169,6 +169,26 @@
       }
     },
     {
+      "id": "1.8",
+      "category": "strategic",
+      "title": "Cross-Team Coordination & Collaboration",
+      "description": "How different teams work together and coordinate without bureaucracy or endless meetings. Critical as you grow from single team to multiple departments. Greiner's phases 4-5 issue.",
+      "stageFocus": {
+        "foundation": "Not needed - you are one team working on everything together.",
+        "first-hires": "Not needed yet - still one team, everyone knows what everyone else is doing. Keep it informal.",
+        "early-revenue": "Teams are forming (eng, sales, ops). Set up basic coordination: weekly sync meeting, shared updates (wiki/Slack), clear handoffs between teams (e.g., sales → onboarding → support). Common issue: Teams work in silos, don't know what others are doing.",
+        "growth": "Multiple departments need to coordinate without bureaucracy. Define: which decisions need cross-team input vs can be made autonomously? Regular cross-functional syncs (weekly/bi-weekly). Clear escalation when teams conflict. Shared goals that require collaboration. Common issue: Too many meetings OR teams ignore each other and create conflicts.",
+        "scaled": "Formal coordination mechanisms: cross-functional project teams, clear RACI for multi-team initiatives, regular dependency mapping, collaboration tools and rituals. Balance autonomy with alignment. Common issue: Bureaucracy slows everything down OR too many meetings crisis (endless discussion, not enough decisions)."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "future",
+        "early-revenue": "recommended",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
       "id": "1.6",
       "category": "strategic",
       "title": "Data & Reporting Infrastructure",
