@@ -110,11 +110,6 @@ h1 {
     margin-bottom: 4px;
 }
 
-h1::before {
-    content: '// ';
-    color: var(--text-muted);
-    font-weight: 300;
-}
 
 .subtitle {
     font-size: 0.85rem;
