@@ -5,7 +5,8 @@
       "name": "Foundation",
       "shortName": "Found",
       "employees": "0-1",
-      "description": "Don't die, get something out the door",
+      "tagline": "Build and ship",
+      "description": "Ship something, to real customers",
       "focus": [
         "Survival basics",
         "Legal setup",
@@ -19,7 +20,8 @@
       "name": "First Hires",
       "shortName": "1st Hires",
       "employees": "2-10",
-      "description": "Hire well, don't run out of money",
+      "tagline": "Find product market fit",
+      "description": "Find market fit, hire well, don't run out of money",
       "focus": [
         "Recruitment process",
         "Onboarding new hires",
@@ -33,6 +35,7 @@
       "name": "Early Revenue",
       "shortName": "Early Rev",
       "employees": "11-25",
+      "tagline": "Find your growth engine",
       "description": "Repeatable processes, customer success",
       "focus": [
         "Sales operations",
@@ -47,6 +50,7 @@
       "name": "Growth",
       "shortName": "Growth",
       "employees": "26-50",
+      "tagline": "Don't break as you stretch",
       "description": "Scale systems, departmental structure",
       "focus": [
         "Organizational design",
@@ -61,6 +65,7 @@
       "name": "Scaled",
       "shortName": "Scaled",
       "employees": "51+",
+      "tagline": "Stay true & go to the next level",
       "description": "Professional operations, efficiency",
       "focus": [
         "All processes mature",

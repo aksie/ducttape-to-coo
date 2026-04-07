@@ -285,8 +285,9 @@ h1::before {
 
 .stage-info p {
     font-size: 0.8rem;
-    color: var(--text-dim);
+    color: var(--blue);
     font-weight: 300;
+    font-style: italic;
 }
 
 .preview-btn {

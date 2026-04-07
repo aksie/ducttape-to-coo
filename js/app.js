@@ -141,7 +141,7 @@ function setupTimeline() {
     // Update stage info
     const currentStageData = stagesData.stages.find(s => s.id === currentStage);
     document.getElementById('stage-name').textContent = currentStageData.name;
-    document.getElementById('stage-description').textContent = '';
+    document.getElementById('stage-description').textContent = currentStageData.tagline || '';
 }
 
 // Update timeline (when stage changes)

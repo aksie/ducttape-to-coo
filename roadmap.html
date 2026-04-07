@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duct Tape to COO — Stage Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    padding: 36px 24px 60px;
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  h1 { font-size: 0.85rem; color: #58a6ff; letter-spacing: 0.15em; text-transform: uppercase; }
+  .subtitle { font-size: 0.7rem; color: #484f58; letter-spacing: 0.06em; }
+
+  .track-wrapper { overflow-x: auto; padding-bottom: 16px; }
+  .stage-track { display: flex; gap: 0; align-items: flex-start; width: max-content; }
+
+  .arrow {
+    padding: 0 6px;
+    color: #30363d;
+    font-size: 0.9rem;
+    margin-top: 52px;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.3s;
+    flex-shrink: 0;
+  }
+  .arrow.visible { opacity: 1; }
+
+  .stage-col {
+    width: 480px;
+    border: 1px solid #21262d;
+    flex-shrink: 0;
+    transform: translateX(40px);
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), opacity 0.35s ease;
+  }
+  .stage-col.visible { transform: translateX(0); opacity: 1; }
+
+  .stage-header {
+    background: #161b22;
+    border-bottom: 1px solid #21262d;
+    padding: 10px 14px;
+  }
+  .stage-name { font-size: 0.8rem; font-weight: 700; color: #e6edf3; letter-spacing: 0.04em; }
+  .stage-tagline { font-size: 0.72rem; color: #58a6ff; margin-top: 3px; font-style: italic; }
+  .stage-size { font-size: 0.64rem; color: #484f58; margin-top: 2px; }
+
+  .cat-section { border-top: 1px solid #21262d; }
+  .cat-section:first-child { border-top: none; }
+
+  .cat-header {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #30363d;
+    padding: 8px 14px 3px;
+  }
+
+  .process-list { padding: 0 0 4px; }
+
+  .process-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 4px 14px;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .process-row.visible { opacity: 1; transform: translateY(0); }
+
+  .process-row.optional-row { display: none; }
+  .process-row.optional-row.show-optional { display: flex; }
+
+  .dot { flex-shrink: 0; margin-top: 1px; }
+  .dot.critical { color: #3fb950; }
+  .dot.optional { color: #2ea043; opacity: 0.45; }
+
+  .process-label { color: #8b949e; }
+  .process-label .pid { color: #484f58; margin-right: 5px; font-size: 0.62rem; }
+  .process-label .cond-mark { color: #484f58; font-size: 0.6rem; }
+
+  .row-tooltip-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    width: 13px;
+    height: 13px;
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: #484f58;
+    border: 1px solid #484f58;
+    border-radius: 50%;
+    cursor: default;
+    vertical-align: middle;
+    flex-shrink: 0;
+  }
+  .row-tooltip-wrap:hover { color: #8b949e; border-color: #8b949e; }
+  .row-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 7px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #161b22;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    padding: 8px 10px;
+    border-radius: 4px;
+    width: 280px;
+    white-space: normal;
+    pointer-events: none;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+    z-index: 999;
+  }
+  .row-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #30363d;
+  }
+  .row-tooltip-wrap:hover .row-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @keyframes flash {
+    0%   { background: rgba(63,185,80,0.12); }
+    100% { background: transparent; }
+  }
+  .process-row.new-entry { animation: flash 1s ease-out 0.15s both; }
+
+  .optional-toggle {
+    font-size: 0.62rem;
+    color: #484f58;
+    padding: 5px 14px 8px;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: color 0.15s;
+    display: block;
+    background: none;
+    border: none;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: left;
+  }
+  .optional-toggle:hover { color: #8b949e; }
+
+  .controls { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+  .btn {
+    background: transparent;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 7px 16px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn:hover:not(:disabled) { border-color: #58a6ff; color: #58a6ff; }
+  .btn:disabled { opacity: 0.22; cursor: default; }
+
+  .stage-indicator { font-size: 0.68rem; color: #484f58; }
+
+  .legend { display: flex; gap: 18px; margin-top: 20px; font-size: 0.66rem; color: #484f58; flex-wrap: wrap; }
+  .legend span { display: flex; align-items: center; gap: 5px; }
+
+  .footnotes { margin-top: 12px; font-size: 0.62rem; color: #30363d; line-height: 1.8; }
+
+  #loading { color: #484f58; font-size: 0.8rem; padding: 40px 0; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1>Duct Tape to COO — Stage Roadmap</h1>
+  <span class="subtitle">[ → advance · ← back · or use arrow keys ]</span>
+</div>
+
+<div id="loading">Loading data...</div>
+<div class="track-wrapper" id="track-wrapper" style="display:none">
+  <div class="stage-track" id="track"></div>
+</div>
+
+<div class="controls" id="controls" style="display:none">
+  <button class="btn" id="btn-back" disabled>← back</button>
+  <span class="stage-indicator" id="indicator"></span>
+  <button class="btn" id="btn-next">next →</button>
+</div>
+
+<div class="legend" id="legend" style="display:none">
+  <span><span class="dot critical">●</span> Applicable now</span>
+  <span><span class="dot optional">○</span> Optional (click "+ N optional" to reveal)</span>
+</div>
+<div class="footnotes" id="footnotes" style="display:none"></div>
+
+<script>
+const CATEGORY_LABELS = {
+  'strategic':           'Strategic Ops',
+  'financial':           'Financial Ops',
+  'people':              'People Ops',
+  'legal-and-other-ops': 'Legal & Other Ops',
+  'revenue':             'Revenue & Customer Ops',
+};
+const CATEGORY_ORDER = ['strategic','financial','people','legal-and-other-ops','revenue'];
+
+// Truncate long titles for compact display
+function shorten(title, max = 60) {
+  return title.length > max ? title.slice(0, max - 1) + '…' : title;
+}
+
+async function init() {
+  try {
+    const [pRes, sRes] = await Promise.all([
+      fetch('data/processes.json'),
+      fetch('data/stages.json'),
+    ]);
+    const { processes } = await pRes.json();
+    const stagesData    = await sRes.json();
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('track-wrapper').style.display = '';
+    document.getElementById('controls').style.display = '';
+    document.getElementById('legend').style.display = '';
+    document.getElementById('footnotes').style.display = '';
+
+    // Use first 3 stages
+    const stages = stagesData.stages.slice(0, 3);
+
+    // Build DATA: for each stage → { catLabel: [[id, title, priority, hasConditions], …] }
+    const DATA = stages.map(stage => {
+      const catMap = {};
+      CATEGORY_ORDER.forEach(c => { catMap[c] = []; });
+
+      processes.forEach(p => {
+        // Conditioned processes (revenue/funding-gated) only appear from early-revenue onwards
+        const EARLY_STAGES = new Set(['foundation', 'first-hires']);
+        if (p.conditions && EARLY_STAGES.has(stage.id)) return;
+
+        const stagePriority = p.stages[stage.id];
+        if (stagePriority !== 'critical' && stagePriority !== 'recommended') return;
+        const cat = p.category;
+        if (!catMap[cat]) catMap[cat] = [];
+        catMap[cat].push([
+          p.id,
+          shorten(p.title),
+          stagePriority === 'critical' ? 'critical' : 'optional',
+          !!p.conditions,
+          (p.stageFocus && p.stageFocus[stage.id]) || '',
+        ]);
+      });
+
+      // Build ordered object, skip empty categories
+      const ordered = {};
+      CATEGORY_ORDER.forEach(c => {
+        if (catMap[c].length > 0) {
+          ordered[CATEGORY_LABELS[c] || c] = catMap[c];
+        }
+      });
+      return ordered;
+    });
+
+    // Collect condition footnotes
+    const conditionNotes = new Set();
+    processes.forEach(p => {
+      if (!p.conditions) return;
+      if (p.conditions.revenueStage) conditionNotes.add('* Only shown when company has customers (not pre-revenue)');
+      if (p.conditions.fundingStage) conditionNotes.add('† Only shown when company has external investors (not bootstrapped)');
+    });
+    document.getElementById('footnotes').innerHTML =
+      [...conditionNotes].map(n => `<div>${n}</div>`).join('');
+
+    buildUI(stages, DATA);
+
+  } catch (err) {
+    document.getElementById('loading').textContent =
+      'Error loading data. Run this via the local server (python3 -m http.server 8000).';
+    console.error(err);
+  }
+}
+
+function buildUI(stages, DATA) {
+  const track   = document.getElementById('track');
+  const btnNext = document.getElementById('btn-next');
+  const btnBack = document.getElementById('btn-back');
+  const indicator = document.getElementById('indicator');
+
+  const colEls   = [];
+  const arrowEls = [];
+  let currentStage = 0;
+
+  // Build columns
+  stages.forEach((stage, i) => {
+    if (i > 0) {
+      const arrow = document.createElement('div');
+      arrow.className = 'arrow';
+      arrow.textContent = '──▶';
+      track.appendChild(arrow);
+      arrowEls.push(arrow);
+    }
+    const col = document.createElement('div');
+    col.className = 'stage-col';
+    col.innerHTML = `
+      <div class="stage-header">
+        <div class="stage-name">${stage.name}</div>
+        <div class="stage-tagline">${stage.tagline || ''}</div>
+        <div class="stage-size">${stage.employees} people</div>
+      </div>
+      <div class="col-body" id="body-${i}"></div>
+    `;
+    track.appendChild(col);
+    colEls.push(col);
+  });
+
+  function renderColumn(stageIdx) {
+    const body = document.getElementById(`body-${stageIdx}`);
+    body.innerHTML = '';
+
+    const prevIds = new Set();
+    if (stageIdx > 0) {
+      Object.values(DATA[stageIdx - 1]).forEach(procs =>
+        procs.forEach(([id]) => prevIds.add(id))
+      );
+    }
+
+    let rowDelay = 0;
+
+    Object.entries(DATA[stageIdx]).forEach(([catName, procs]) => {
+      const section = document.createElement('div');
+      section.className = 'cat-section';
+
+      const header = document.createElement('div');
+      header.className = 'cat-header';
+      header.textContent = catName;
+      section.appendChild(header);
+
+      const list = document.createElement('div');
+      list.className = 'process-list';
+      let optCount = 0;
+
+      procs.forEach(([id, label, priority, hasCond, focus]) => {
+        const isNew = !prevIds.has(id);
+        const isOpt = priority === 'optional';
+        const row   = document.createElement('div');
+        row.className = `process-row${isOpt ? ' optional-row' : ''}${isNew && stageIdx > 0 ? ' new-entry' : ''}`;
+        const escapedFocus = focus ? focus.replace(/"/g, '&quot;') : '';
+        row.innerHTML = `
+          <span class="dot ${priority}">${priority === 'critical' ? '●' : '○'}</span>
+          <span class="process-label">
+            <span class="pid">${id}</span>${label}${hasCond ? '<span class="cond-mark"> *</span>' : ''}${focus ? `<span class="row-tooltip-wrap">?<span class="row-tooltip">${focus}</span></span>` : ''}
+          </span>
+        `;
+        list.appendChild(row);
+        if (isOpt) { optCount++; }
+        else {
+          setTimeout(() => row.classList.add('visible'), 60 + rowDelay * 45);
+          rowDelay++;
+        }
+      });
+
+      section.appendChild(list);
+
+      if (optCount > 0) {
+        const toggle = document.createElement('button');
+        toggle.className = 'optional-toggle';
+        toggle.textContent = `+ ${optCount} optional`;
+        toggle.addEventListener('click', () => {
+          const optRows = list.querySelectorAll('.optional-row');
+          const showing = toggle.textContent.startsWith('−');
+          optRows.forEach((r, ri) => {
+            if (!showing) {
+              r.classList.add('show-optional');
+              setTimeout(() => r.classList.add('visible'), 20 + ri * 35);
+            } else {
+              r.classList.remove('show-optional', 'visible');
+            }
+          });
+          toggle.textContent = showing ? `+ ${optCount} optional` : `− ${optCount} optional`;
+        });
+        section.appendChild(toggle);
+      }
+
+      body.appendChild(section);
+    });
+  }
+
+  function showStage(idx) {
+    setTimeout(() => {
+      colEls[idx].classList.add('visible');
+      if (idx > 0) arrowEls[idx - 1].classList.add('visible');
+      renderColumn(idx);
+    }, idx === 0 ? 100 : 40);
+  }
+
+  function hideStage(idx) {
+    colEls[idx].classList.remove('visible');
+    if (idx > 0) arrowEls[idx - 1].classList.remove('visible');
+  }
+
+  function updateControls() {
+    indicator.textContent = `stage ${currentStage + 1} / ${stages.length}`;
+    btnBack.disabled = currentStage === 0;
+    btnNext.disabled = currentStage === stages.length - 1;
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentStage < stages.length - 1) {
+      currentStage++;
+      showStage(currentStage);
+      updateControls();
+    }
+  });
+
+  btnBack.addEventListener('click', () => {
+    if (currentStage > 0) {
+      hideStage(currentStage);
+      currentStage--;
+      updateControls();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') btnNext.click();
+    if (e.key === 'ArrowLeft')  btnBack.click();
+  });
+
+  showStage(0);
+  updateControls();
+}
+
+init();
+</script>
+</body>
+</html>
