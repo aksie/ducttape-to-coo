@@ -23,6 +23,19 @@
     margin-bottom: 32px;
     flex-wrap: wrap;
   }
+  .top-bar-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .top-bar-nav a {
+    font-size: 0.72rem;
+    color: #484f58;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .top-bar-nav a:hover { color: #8b949e; }
   h1 { font-size: 0.85rem; color: #58a6ff; letter-spacing: 0.15em; text-transform: uppercase; }
   .subtitle { font-size: 0.7rem; color: #484f58; letter-spacing: 0.06em; }
 
@@ -200,6 +213,10 @@
 <div class="top-bar">
   <h1>Duct Tape to COO — Stage Roadmap</h1>
   <span class="subtitle">[ → advance · ← back · or use arrow keys ]</span>
+  <span class="top-bar-nav">
+    <a href="index.html">← Home</a>
+    <a href="diagnostic.html">Diagnostic</a>
+  </span>
 </div>
 
 <div id="loading">Loading data...</div>
