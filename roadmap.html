@@ -68,7 +68,6 @@
     transition: color 0.15s;
   }
   .site-header .header-nav a:hover { color: #e6edf3; }
-  .nav-hint { font-size: 0.68rem; color: #484f58; letter-spacing: 0.04em; margin-bottom: 28px; }
 
   .track-wrapper { overflow-x: auto; padding-bottom: 16px; }
   .stage-track { display: flex; gap: 0; align-items: flex-start; width: max-content; }
@@ -214,7 +213,7 @@
   }
   .optional-toggle:hover { color: #8b949e; }
 
-  .controls { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+  .controls { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 20px; }
   .btn {
     background: transparent;
     border: 1px solid #30363d;
@@ -229,12 +228,11 @@
   .btn:hover:not(:disabled) { border-color: #58a6ff; color: #58a6ff; }
   .btn:disabled { opacity: 0.22; cursor: default; }
 
-  .stage-indicator { font-size: 0.68rem; color: #484f58; }
 
-  .legend { display: flex; gap: 18px; margin-top: 20px; font-size: 0.66rem; color: #484f58; flex-wrap: wrap; }
+  .legend { display: flex; gap: 18px; margin-top: 20px; font-size: 0.66rem; color: #484f58; flex-wrap: wrap; justify-content: center; }
   .legend span { display: flex; align-items: center; gap: 5px; }
 
-  .footnotes { margin-top: 12px; font-size: 0.62rem; color: #30363d; line-height: 1.8; }
+  .footnotes { margin-top: 12px; font-size: 0.62rem; color: #30363d; line-height: 1.8; text-align: center; }
 
   #loading { color: #484f58; font-size: 0.8rem; padding: 40px 0; }
 </style>
@@ -246,25 +244,23 @@
     <div class="header-top">
       <h1>Duct Tape to COO</h1>
       <nav class="header-nav">
-        <a href="index.html">← Home</a>
+        <a href="index.html">Overview</a>
         <a href="diagnostic.html">Diagnostic</a>
+        <a href="roadmap.html">Roadmap</a>
       </nav>
     </div>
     <p class="page-subtitle">Check where you are on the roadmap to success</p>
   </div>
 </div>
 <div class="page-content">
-<div class="nav-hint">[ → advance · ← back · or use arrow keys ]</div>
+<div class="controls" id="controls">
+  <button class="btn" id="btn-back" disabled>← back</button>
+  <button class="btn" id="btn-next">next →</button>
+</div>
 
 <div id="loading">Loading data...</div>
 <div class="track-wrapper" id="track-wrapper" style="display:none">
   <div class="stage-track" id="track"></div>
-</div>
-
-<div class="controls" id="controls" style="display:none">
-  <button class="btn" id="btn-back" disabled>← back</button>
-  <span class="stage-indicator" id="indicator"></span>
-  <button class="btn" id="btn-next">next →</button>
 </div>
 
 <div class="legend" id="legend" style="display:none">
@@ -297,9 +293,15 @@ async function init() {
     const { processes } = await pRes.json();
     const stagesData    = await sRes.json();
 
+    // Build a lookup: stage id → employee range label from employeeRanges
+    const sizeLabelMap = {};
+    stagesData.employeeRanges.forEach(r => {
+      if (!sizeLabelMap[r.stage]) sizeLabelMap[r.stage] = r.label;
+    });
+
     document.getElementById('loading').style.display = 'none';
     document.getElementById('track-wrapper').style.display = '';
-    document.getElementById('controls').style.display = '';
+    // controls always visible
     document.getElementById('legend').style.display = '';
     document.getElementById('footnotes').style.display = '';
 
@@ -349,7 +351,7 @@ async function init() {
     document.getElementById('footnotes').innerHTML =
       [...conditionNotes].map(n => `<div>${n}</div>`).join('');
 
-    buildUI(stages, DATA);
+    buildUI(stages, DATA, sizeLabelMap);
 
   } catch (err) {
     document.getElementById('loading').textContent =
@@ -358,11 +360,10 @@ async function init() {
   }
 }
 
-function buildUI(stages, DATA) {
+function buildUI(stages, DATA, sizeLabelMap) {
   const track   = document.getElementById('track');
   const btnNext = document.getElementById('btn-next');
   const btnBack = document.getElementById('btn-back');
-  const indicator = document.getElementById('indicator');
 
   const colEls   = [];
   const arrowEls = [];
@@ -383,7 +384,7 @@ function buildUI(stages, DATA) {
       <div class="stage-header">
         <div class="stage-name">${stage.name}</div>
         <div class="stage-tagline">${stage.tagline || ''}</div>
-        <div class="stage-size">${stage.employees} people</div>
+        <div class="stage-size">${sizeLabelMap[stage.id] || stage.employees}</div>
       </div>
       <div class="col-body" id="body-${i}"></div>
     `;
@@ -477,7 +478,6 @@ function buildUI(stages, DATA) {
   }
 
   function updateControls() {
-    indicator.textContent = `stage ${currentStage + 1} / ${stages.length}`;
     btnBack.disabled = currentStage === 0;
     btnNext.disabled = currentStage === stages.length - 1;
   }
