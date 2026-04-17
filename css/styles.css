@@ -132,6 +132,63 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* ─── Chat intro ───────────────────────────────────── */
+.chat-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0 28px;
+    max-width: 620px;
+}
+
+.chat-bubble {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.bubble-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.bubble-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 16px;
+}
+
+.bubble-left {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.bubble-left .bubble-text {
+    background: var(--surface-raised);
+    color: var(--text);
+    border-bottom-left-radius: 4px;
+}
+
+.bubble-right {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.bubble-right .bubble-text {
+    background: #0b84fe;
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+.bubble-right .bubble-label {
+    text-align: right;
+}
+
 /* ─── Progress Bar ────────────────────────────────── */
 .progress-bar {
     position: sticky;
