@@ -357,18 +357,27 @@ function renderOverviewCard(critical, recommended, future) {
 function createProcessSection(title, processes, priority, collapsed = false) {
     const section = document.createElement('div');
     section.className = `process-section ${priority}`;
-    
-    const header = document.createElement('div');
-    header.className = `section-header ${priority}-header`;
-    header.innerHTML = `
-        <h3>${title} <span class="count">(${processes.length})</span></h3>
-        <button class="toggle-btn">${collapsed ? '[ show ]' : '[ hide ]'}</button>
-    `;
-    
+
     const content = document.createElement('div');
     content.className = 'section-content';
-    if (collapsed) {
-        content.style.display = 'none';
+
+    // Only show the section header for non-critical sections
+    if (priority !== 'critical') {
+        const header = document.createElement('div');
+        header.className = `section-header ${priority}-header`;
+        header.innerHTML = `
+            <h3>${title} <span class="count">(${processes.length})</span></h3>
+            <button class="toggle-btn">${collapsed ? '[ show ]' : '[ hide ]'}</button>
+        `;
+        if (collapsed) {
+            content.style.display = 'none';
+        }
+        header.addEventListener('click', () => {
+            const isHidden = content.style.display === 'none';
+            content.style.display = isHidden ? '' : 'none';
+            header.querySelector('.toggle-btn').textContent = isHidden ? '[ hide ]' : '[ show ]';
+        });
+        section.appendChild(header);
     }
     
     const categoryLabels = {
@@ -392,14 +401,6 @@ function createProcessSection(title, processes, priority, collapsed = false) {
         content.appendChild(createProcessElement(process, priority));
     });
     
-    // Toggle functionality
-    header.querySelector('.toggle-btn').addEventListener('click', function() {
-        const isHidden = content.style.display === 'none';
-        content.style.display = isHidden ? 'block' : 'none';
-        this.textContent = isHidden ? 'Hide' : 'Show';
-    });
-    
-    section.appendChild(header);
     section.appendChild(content);
     
     return section;
