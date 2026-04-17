@@ -254,7 +254,7 @@ function renderProcesses() {
 
     const allFuture = [...future, ...notApplicable];
 
-    renderOverviewCard(critical, recommended, allFuture);
+    // overview card removed — processes are now collapsed by default
     renderProgressBar(critical);
 
     if (critical.length > 0) {
@@ -409,7 +409,7 @@ function createProcessSection(title, processes, priority, collapsed = false) {
 function createProcessElement(process, priority) {
     const processEl = document.createElement('div');
     const priorityClass = priority ? `${priority}-process` : '';
-    processEl.className = `process ${priorityClass}`;
+    processEl.className = `process ${priorityClass} process-collapsed`;
     processEl.dataset.processId = process.id;
     
     const categoryLabels = {
@@ -422,12 +422,18 @@ function createProcessElement(process, priority) {
     const categoryLabel = categoryLabels[process.category] || process.category;
 
     const titleEl = document.createElement('div');
-    titleEl.className = 'process-title';
+    titleEl.className = 'process-title process-toggle';
     titleEl.innerHTML = `
-        <span class="process-category">${categoryLabel}</span><span class="process-breadcrumb-sep"> / </span>${process.id} ${process.title}
-        ${process.optional ? '<span class="optional-tag">Optional</span>' : ''}
+        <span class="process-toggle-icon">▸</span>
+        <span class="process-toggle-label">
+            <span class="process-category">${categoryLabel}</span><span class="process-breadcrumb-sep"> / </span>${process.id} ${process.title}
+            ${process.optional ? '<span class="optional-tag">Optional</span>' : ''}
+        </span>
     `;
-    
+
+    const bodyEl = document.createElement('div');
+    bodyEl.className = 'process-body';
+
     const descEl = document.createElement('div');
     descEl.className = 'process-description';
     descEl.textContent = process.description;
@@ -435,24 +441,29 @@ function createProcessElement(process, priority) {
     const dimensionsEl = document.createElement('div');
     dimensionsEl.className = 'dimensions';
     
-    // Create dimension rows
     Object.entries(processesData.dimensions).forEach(([key, dimension]) => {
         const row = createDimensionRow(process.id, key, dimension);
         dimensionsEl.appendChild(row);
     });
     
-    processEl.appendChild(titleEl);
-    processEl.appendChild(descEl);
+    bodyEl.appendChild(descEl);
 
-    // Add stage-specific focus if available
     if (process.stageFocus && process.stageFocus[currentStage]) {
         const focusEl = document.createElement('div');
         focusEl.className = 'stage-focus';
         focusEl.innerHTML = `<span class="stage-focus-label">For your stage:</span> ${process.stageFocus[currentStage]}`;
-        processEl.appendChild(focusEl);
+        bodyEl.appendChild(focusEl);
     }
 
-    processEl.appendChild(dimensionsEl);
+    bodyEl.appendChild(dimensionsEl);
+
+    titleEl.addEventListener('click', () => {
+        const isCollapsed = processEl.classList.toggle('process-collapsed');
+        titleEl.querySelector('.process-toggle-icon').textContent = isCollapsed ? '▸' : '▾';
+    });
+
+    processEl.appendChild(titleEl);
+    processEl.appendChild(bodyEl);
     
     return processEl;
 }

@@ -665,10 +665,35 @@ h1 {
     background: var(--bg);
     border: none;
     border-top: 1px solid var(--border);
-    padding: 16px 16px 56px;
     margin-bottom: 0;
 }
 
+.process-toggle {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 14px 16px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.process-toggle:hover { background: var(--surface); }
+
+.process-toggle-icon {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.process-toggle-label { flex: 1; }
+
+.process-body {
+    padding: 0 16px 56px 32px;
+}
+
+.process-collapsed .process-body {
+    display: none;
+}
 
 .process.critical-process {
 }
