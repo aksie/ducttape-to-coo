@@ -150,12 +150,31 @@ function updateTimeline() {
 }
 
 // Progress bar
+const CATEGORY_LABELS = {
+    'strategic':           'Strategic Ops',
+    'financial':           'Financial Ops',
+    'people':              'People Ops',
+    'legal-and-other-ops': 'Legal & Other Ops',
+    'revenue':             'Revenue & Customer Ops',
+};
+const CATEGORY_ORDER = ['strategic', 'financial', 'people', 'legal-and-other-ops', 'revenue'];
+
 function renderProgressBar(criticalProcesses) {
     const bar = document.getElementById('progress-bar');
     bar.innerHTML = '';
     bar.classList.remove('visible');
 
     if (criticalProcesses.length === 0) return;
+
+    // Group critical processes by category, preserving order
+    const catProcesses = {};
+    CATEGORY_ORDER.forEach(c => { catProcesses[c] = []; });
+    criticalProcesses.forEach(p => {
+        if (catProcesses[p.category] !== undefined) {
+            catProcesses[p.category].push(p.id);
+        }
+    });
+    const activeCats = CATEGORY_ORDER.filter(c => catProcesses[c].length > 0);
 
     const inner = document.createElement('div');
     inner.className = 'progress-bar-inner';
@@ -165,11 +184,12 @@ function renderProgressBar(criticalProcesses) {
     label.textContent = 'Progress:';
     inner.appendChild(label);
 
-    criticalProcesses.forEach(p => {
+    activeCats.forEach(cat => {
         const dot = document.createElement('div');
         dot.className = 'progress-dot';
-        dot.dataset.processId = p.id;
-        dot.title = `${p.id} ${p.title}`;
+        dot.dataset.category = cat;
+        dot.dataset.processIds = catProcesses[cat].join(',');
+        dot.title = CATEGORY_LABELS[cat] || cat;
         inner.appendChild(dot);
     });
 
@@ -199,24 +219,39 @@ function updateProgressDots() {
     const bar = document.getElementById('progress-bar');
     if (!bar) return;
     const dots = bar.querySelectorAll('.progress-dot');
-    let scored = 0;
+    let doneCats = 0;
+    let firstIncompleteName = null;
+    let firstIncompleteDone = 0;
+    let firstIncompleteTotal = 0;
 
     dots.forEach(dot => {
-        const processId = dot.dataset.processId;
-        const hasScore = responses[processId] &&
-            responses[processId].scores &&
-            Object.keys(responses[processId].scores).length > 0;
+        const ids = dot.dataset.processIds.split(',');
+        const scoredCount = ids.filter(id =>
+            responses[id] && responses[id].scores && Object.keys(responses[id].scores).length > 0
+        ).length;
+        const allDone = scoredCount === ids.length;
 
-        if (hasScore) {
+        if (allDone) {
             dot.classList.add('filled');
-            scored++;
+            doneCats++;
         } else {
             dot.classList.remove('filled');
+            if (!firstIncompleteName) {
+                firstIncompleteName = CATEGORY_LABELS[dot.dataset.category] || dot.dataset.category;
+                firstIncompleteDone = scoredCount;
+                firstIncompleteTotal = ids.length;
+            }
         }
     });
 
     const counter = document.getElementById('progress-counter');
-    if (counter) counter.textContent = `${scored} / ${dots.length}`;
+    if (counter) {
+        if (firstIncompleteName) {
+            counter.textContent = `${firstIncompleteName}: ${doneCats}/${dots.length} Process Categories`;
+        } else {
+            counter.textContent = `${dots.length}/${dots.length} Process Categories — All done!`;
+        }
+    }
 }
 
 // Check whether a process's conditions are met by the user's current selections
