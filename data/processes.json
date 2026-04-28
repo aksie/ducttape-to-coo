@@ -6,7 +6,7 @@
       "title": "Company-Level Planning & Goals",
       "description": "How you set priorities and goals for the company as a whole. Starts with simple weekly priorities everyone knows, evolves into formal goal frameworks.",
       "stageFocus": {
-        "foundation": "Top 3 priorities for the company this week/month. Everyone knows them. Review weekly - adjust as you learn.",
+        "foundation": "Quarterly Top 3 priorities for the company. Everyone knows them. Review weekly - adjust as you learn.",
         "first-hires": "Monthly company goals/rocks. Clear mission statement everyone can recite. Bi-weekly progress reviews with whole team.",
         "early-revenue": "Quarterly company goals (OKRs or similar). Annual themes/direction. Monthly all-hands reviews progress. Everyone knows top 3-5 company priorities.",
         "growth": "Formal quarterly goal-setting process. Annual strategic planning. Company-wide goals tracked in dashboard. Regular reviews with leadership team.",
@@ -28,7 +28,7 @@
       "stageFocus": {
         "foundation": "Not needed - you are the team.",
         "first-hires": "Not needed yet - still one team with shared goals.",
-        "early-revenue": "Each function (eng, sales, customer success) has quarterly goals that clearly support company goals. Document how they connect.",
+        "early-revenue": "Each function (product and tech, commercial, business ops) has quarterly goals that clearly support company goals. Document how they connect.",
         "growth": "Each department sets quarterly goals aligned to company OKRs. Team leads accountable for their goals. Cross-functional dependencies identified and managed.",
         "scaled": "Full goal cascade: company \u2192 department \u2192 team \u2192 individual. Clear accountability at each level. Regular alignment checks. Dependencies managed systematically."
       },
@@ -75,7 +75,7 @@
       },
       "stageFocus": {
         "foundation": "Not relevant yet - no external investors.",
-        "first-hires": "If you have angels or friends & family investors, send a short monthly or quarterly update. Key metrics, progress against goals, what you need help with. Keep it simple.",
+        "first-hires": "If you have angels or friends & family investors, send a short monthly or quarterly update. Key metrics, progress against quarterly goals, what you need help with. Keep it simple.",
         "early-revenue": "Regular investor updates (monthly). Board meeting prep (deck, pre-read). Basic cap table management. Coordinate with legal on any shareholder matters.",
         "growth": "Structured board cadence (monthly or quarterly). Board pack with financials, KPIs, and strategic updates. Investor relations function forming. Legal compliance on reporting obligations.",
         "scaled": "Formal investor relations function. Board governance framework. Audit committee, compensation committee. Quarterly reporting cadence. Compliance with shareholder agreement obligations."
@@ -193,6 +193,13 @@
       "category": "strategic",
       "title": "Data & Reporting Infrastructure",
       "description": "Company KPI tracking and definition, dashboards, reporting cadence, data quality",
+      "stageFocus": {
+        "foundation": "Probably not needed yet — ship first!",
+        "first-hires": "Pick 3-5 metrics that tell you if the business is working (e.g. MRR, burn, key activation rate). Track them in a spreadsheet and review weekly. Automate population with simple scripts when you've settled on KPIs.",
+        "early-revenue": "Define your core KPIs as a team. Introduce a data stack if you're not already on one. Key metrics owned by departments. Weekly/monthly reporting cadence. Move from dirty to scalable before growth hits.",
+        "growth": "Dashboards for entire team, not just leadership. Communicate progress to entire team. Data team or roles beginning to form. Automated dashboards, alerting, and reporting. Single source of truth across all functions.",
+        "scaled": "Data team or roles. Automated dashboards, alerting, and reporting. Single source of truth across all functions."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -254,6 +261,13 @@
           "multi-model"
         ]
       },
+      "stageFocus": {
+        "foundation": "Not applicable yet — no customers.",
+        "first-hires": "Invoice your first customers as soon as the deal is signed. Track payment status in a spreadsheet. Follow up personally if they're late — it's normal to chase at this stage. Build relations with finance ops people at customers so cash doesn't get stuck for admin reasons.",
+        "early-revenue": "Standardise your invoicing: consistent templates, clear payment terms (30 days net is common), automated reminders. Know your average days to collect and watch it weekly.",
+        "growth": "AR should be a structured process: invoice generation on milestone/trigger, automated reminders, escalation for overdue accounts. Revenue recognition should match your contract structure.",
+        "scaled": "Full AR function: automated invoice-to-cash workflow, collections process, revenue recognition policy, integration with your financial systems. DSO (days sales outstanding) tracked and managed."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "critical",
@@ -267,6 +281,13 @@
       "category": "financial",
       "title": "Accounts Payable & Expense Management",
       "description": "Invoice receipt and validation, approval workflows, payment scheduling and execution, employee expenses, corporate card management",
+      "stageFocus": {
+        "foundation": "Keep a simple log of what you owe and when it's due. Pay on time — reputation matters even at this stage. Use a business credit card and expense tracking app from day one.",
+        "first-hires": "Use a tool (Pleo, Spendesk, or similar) for expenses from the start. Agree on approval thresholds: what can people spend without asking? Keep receipts. Make the bookkeeper's life easy.",
+        "early-revenue": "Define an approval workflow: who approves what amount? Set up corporate cards for regular spenders. Make sure every invoice gets coded to the right cost centre before it's paid.",
+        "growth": "AP should be a defined process: invoice intake, approval routing by amount/type, scheduled payment runs. Expense policy documented and signed by all employees.",
+        "scaled": "Automated AP: invoice scanning, approval workflows in your finance system, payment runs scheduled, full audit trail. Expense management integrated with payroll and GL."
+      },
       "stages": {
         "foundation": "recommended",
         "first-hires": "critical",
@@ -360,6 +381,13 @@
       "category": "people",
       "title": "Offboarding",
       "description": "Resignation and termination procedures, exit interviews, knowledge transfer protocols, equipment and access revocation, final pay and benefits processing",
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "When someone leaves, make a checklist: revoke access, return equipment, exit interview, knowledge transfer. Don't let it be improvised on the day. Even at 5 people, a bad offboarding leaves gaps.",
+        "early-revenue": "Offboarding checklist covers IT access, HR paperwork, handover documentation, and an exit conversation. Run it every time. Exit interview insights should feed back into how you hire and manage.",
+        "growth": "Offboarding is a security and knowledge risk. Build a structured process: IT deprovisioning triggered on day 1 of notice, handover plan agreed with manager, exit interview with HR, reference policy clear.",
+        "scaled": "Automated offboarding workflows triggered by HR system. Clear deprovisioning SLAs for IT. Legal review for sensitive roles. Knowledge transfer templates. Exit data tracked and reported to leadership."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "recommended",
@@ -373,6 +401,13 @@
       "category": "people",
       "title": "Performance Management",
       "description": "Performance review cycles, goal-setting methodology (OKRs/KPIs), 1-on-1 meeting cadence and quality, career development paths, compensation reviews, promotion criteria and process",
+      "stageFocus": {
+        "foundation": "Not a formal process yet. Just work closely together and give each other honest feedback directly.",
+        "first-hires": "Have real 1-on-1s — not just status updates. Ask: what's going well, what's hard, what do you need from me? Make feedback a two-way habit before you have managers doing reviews.",
+        "early-revenue": "Introduce a simple review cycle (e.g. quarterly check-ins, annual review). Connect goals to company OKRs. Define what 'doing well' looks like for each role. Don't surprise people with feedback they've never heard before.",
+        "growth": "Formal performance review cycle (bi-annual or annual). Managers trained on giving feedback. Compensation reviews tied to performance. Promotion criteria documented. Common issue: managers avoid hard conversations, letting performance issues fester.",
+        "scaled": "Full performance management system. Structured review cycles, calibration across departments, clear career frameworks, compensation bands. 360 feedback for senior leaders."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -407,6 +442,13 @@
       "title": "Learning & Development",
       "description": "Recommended from 25+ people. Covers: Training budget allocation and approval, skills development programs, leadership development initiatives, external courses/conference attendance process",
       "optional": true,
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Not applicable yet — invest in people's growth through direct feedback and stretch assignments, not formal programmes. If they want to learn something through a course and you can afford it, do it.",
+        "early-revenue": "Not yet a formal process, but make space for it. A learning budget (e.g. €500/year per person) for books, courses, and conferences is enough. No heavy process — just an approval norm and a structured way to store those decisions.",
+        "growth": "Define a learning budget and approval process. Identify key skill gaps as you scale. Leadership development starts here — managers need to learn how to manage. Track what's being used.",
+        "scaled": "Skills development tied to role frameworks, leadership programmes, internal training, onboarding integration. Budget tracked and ROI measured."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -420,6 +462,13 @@
       "category": "legal-and-other-ops",
       "title": "Legal (above certain size also Compliance)",
       "description": "Employment contract templates and execution, freelancer/contractor agreement management, IP assignment clauses in all contracts, legal request intake and external counsel coordination, standard commercial contract templates (SaaS, services, NDA), privacy/GDPR compliance (privacy policy, data processing agreements, consent mechanisms), shareholder agreements and cap table maintenance, basic insurance coverage (liability, professional indemnity, D&O for funded companies)",
+      "stageFocus": {
+        "foundation": "Get the company structure right from day one. Sign a co-founder agreement that covers equity splits, vesting, and what happens if someone leaves. Have every founder assign their IP to the company — this will come up in every future due diligence. Keep it simple: use standard templates and a startup-savvy lawyer, not a corporate firm.",
+        "first-hires": "Every new hire and contractor needs a signed contract with an IP assignment clause before they start. Don't DIY this — use standard templates your lawyer has approved once. If you're handling any personal data (user or employee), put a basic privacy policy in place. Don't let legal slip into 'we'll sort it later'.",
+        "early-revenue": "You need standard commercial contracts: a SaaS agreement, NDA, and contractor template. Get these reviewed once and then use them consistently — don't let every deal become a one-off. Set up a lightweight legal intake (a Slack channel or form) so legal requests don't land in random inboxes. If you're venture-backed or processing customer data, get D&O insurance and a DPA template sorted.",
+        "growth": "Legal volume is growing faster than you expect. Put a legal ops rhythm in place: contract register, external counsel briefed and on retainer, clear authority matrix for who can sign what. GDPR/privacy compliance should be properly documented now, not just theoretical. Compliance requirements (SOC 2, ISO, sector-specific) need an owner.",
+        "scaled": "Time for in-house legal counsel or a dedicated law firm relationship. Build out contract lifecycle management — tracking renewals, obligations, and counterparty risk. Compliance becomes a standalone function: GDPR, SOC 2, and if you're heading toward an exit or IPO, start building the audit trail now. Insurance coverage reviewed annually."
+      },
       "stages": {
         "foundation": "critical",
         "first-hires": "critical",
@@ -433,6 +482,13 @@
       "category": "legal-and-other-ops",
       "title": "Office & Facilities",
       "description": "Office space management, lease negotiations, office supplies procurement, facilities maintenance, health and safety compliance, remote/hybrid work policies",
+      "stageFocus": {
+        "foundation": "If you take office space, agree who is responsible for it: supplies restocked, lease signed by someone, basic health & safety covered. Don't let it be a chaos of 'whose job is this?'",
+        "first-hires": "If you take office space, agree who is responsible for it: supplies restocked, lease signed by someone, basic health & safety covered. Don't let it be a chaos of 'whose job is this?'",
+        "early-revenue": "Define your hybrid/remote policy — where do people work, what's expected? Office facilities have a named owner. Visitor and contractor access managed.",
+        "growth": "Facilities become a real function. Lease management, office capacity planning, health & safety compliance, maintenance contracts. Plan space ahead — don't move in a crisis.",
+        "scaled": "Full facilities function: multi-site management, lease strategy, facilities team, workplace experience design. H&S audited regularly. Business continuity plans for facility disruption."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "recommended",
@@ -446,6 +502,13 @@
       "category": "legal-and-other-ops",
       "title": "IT Administration & User Support",
       "description": "Note: Technical infrastructure and architecture decisions remain with CTO. COO domain focuses on user-facing IT operations. Covers: Device procurement policies and standards (which laptop/screen models to purchase), software and SaaS license management and optimization, user provisioning and deprovisioning workflows, IT support ticket management and helpdesk, baseline security protocols for users (password managers, 2FA), equipment lifecycle management (ordering, setup, return)",
+      "stageFocus": {
+        "foundation": "Not applicable yet — just use whatever tools you need. No process required.",
+        "first-hires": "Set up basics: Google Workspace or Microsoft 365, password manager (1Password or similar), 2FA on everything important. Keep a simple list of who has access to what. Provision and deprovision manually for now.",
+        "early-revenue": "Define your core tech stack and stick to it — every new tool adds admin overhead. Document how to set up a new employee (accounts, devices, access). Deprovisioning is a security risk: make sure it's part of offboarding.",
+        "growth": "IT admin needs a proper owner. SaaS license audit (you're probably paying for things you don't use). Helpdesk process defined. Device management policy (MDM) if you have a growing fleet.",
+        "scaled": "IT as an operations function: MDM, ITSM tooling, SaaS management platform, automated provisioning/deprovisioning tied to HR system. Security baseline enforced (SOC 2 or ISO 27001 if applicable)."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "recommended",
@@ -460,6 +523,13 @@
       "title": "Vendor & Procurement",
       "description": "Formal procurement process recommended from 50+ people. Early stage (10-50 people): Approval thresholds (e.g., >\u20ac5K needs CEO approval), budget ownership by department, visibility mechanism (e.g., Slack channel), basic contract review checklist (especially for IP transfer, data processing, and payment terms). Mature stage (50+ people): Vendor selection and approval process, contract negotiation and management, purchase order workflows, vendor relationship management, performance reviews, preferred vendor list maintenance",
       "optional": true,
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Not applicable yet — just use your judgment. Some afternoon make a list of recurring costs and how to find these invoices (billing portal of vendor, sent to certain email, etc).",
+        "early-revenue": "Not a formal process yet, but set a basic approval norm: anything above \u20acX needs a second set of eyes. Track significant contracts (renewal dates, costs) in a simple list.",
+        "growth": "Define a procurement policy: approval thresholds by amount, standard contract review checklist (IP, data processing, payment terms), preferred vendors for common needs.",
+        "scaled": "Formal vendor management: procurement workflow, RFP process for large contracts, vendor scorecards, contract lifecycle management. Procurement manager or function in place."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "future",
@@ -480,6 +550,13 @@
           "enterprise-or-mixed",
           "multi-model"
         ]
+      },
+      "stageFocus": {
+        "foundation": "Not applicable yet — pre-revenue.",
+        "first-hires": "Keep a deal log in a simple CRM (HubSpot free tier is fine or a board in Clickup). Track: company, contact, stage, expected close, deal size. Review weekly with founders. Don't let deals live only in someone's head.",
+        "early-revenue": "Define your sales stages and exit criteria. Make sure the CRM is the source of truth. Build a simple pipeline forecast. Quota and compensation structure documented and understood by reps.",
+        "growth": "Sales ops becomes a role. CRM hygiene enforced, pipeline reviewed weekly, forecast accuracy tracked. Deal approval workflows for discounts or non-standard terms. Commission calculations automated.",
+        "scaled": "Full sales ops function: CRM administration, territory and quota management, forecast models, compensation plans, deal desk for complex deals. RevOps alignment between sales, marketing, and CS."
       },
       "stages": {
         "foundation": "future",
@@ -502,6 +579,13 @@
           "multi-model"
         ]
       },
+      "stageFocus": {
+        "foundation": "Not applicable yet — pre-revenue.",
+        "first-hires": "Capture every lead somewhere (simple CRM or kanban style board). Know where leads come from. Follow up fast — response speed is a competitive advantage when you're small.",
+        "early-revenue": "Define your lead qualification criteria. Set up routing rules in your CRM. Measure lead-to-close conversion. Response time SLAs defined and monitored.",
+        "growth": "Lead management is a system. Scoring, routing, nurture sequences, and conversion tracking in place. Marketing and sales have agreed definitions for MQL and SQL. Leakage in the funnel identified and addressed.",
+        "scaled": "Full demand gen and lead management operation. Multi-channel attribution. ABM for enterprise. Automated nurture workflows by segment. Marketing ops and sales ops aligned on lead data standards."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "critical",
@@ -522,6 +606,13 @@
           "enterprise-or-mixed",
           "multi-model"
         ]
+      },
+      "stageFocus": {
+        "foundation": "Not applicable yet — pre-revenue.",
+        "first-hires": "Your first customers are your reference cases. Onboard them personally — show up, understand their setup, make sure they succeed. Document what good onboarding looks like so you can replicate it.",
+        "early-revenue": "Write down your onboarding steps so they don't live in one person's head. Define what 'activated' means (the moment a customer gets their first value). Track time-to-activation and iterate.",
+        "growth": "Onboarding playbook defined. Sales-to-CS handoff clean and documented. Kickoff call template in place. Health check at day 30. Common issue: onboarding breaks down at scale because it was never written down.",
+        "scaled": "Onboarding as a product and a process. Self-serve onboarding for lower tiers, high-touch for enterprise. Activation metrics tracked in your data stack. Onboarding feedback loop into product."
       },
       "stages": {
         "foundation": "future",
@@ -544,6 +635,13 @@
           "multi-model"
         ]
       },
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Answer every support request personally and fast — this is your best source of product feedback. Track issues in a simple log. Don't let anything fall through the cracks: at this stage one bad experience can define your reputation.",
+        "early-revenue": "Set up a proper support channel (Intercom, Zendesk, or similar). Define response SLAs and make sure you're hitting them. Start measuring NPS or CSAT — even a simple quarterly email survey is enough. Feed feedback back to the product team systematically.",
+        "growth": "Customer health scoring in place. Proactive outreach to at-risk accounts before they churn. Tiered support by customer segment. Monthly business reviews with strategic accounts. Escalation process defined.",
+        "scaled": "Full CS operations: health score dashboards, automated playbooks for different health segments, QBR templates, NPS programme, voice-of-customer feeding into product roadmap. CS team segmented by customer tier."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "critical",
@@ -564,6 +662,13 @@
           "enterprise-or-mixed",
           "multi-model"
         ]
+      },
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Treat every renewal as a sales motion. Know when every contract expires. Don't let renewals sneak up on you — one churned customer is a huge % of your ARR at this stage.",
+        "early-revenue": "Build a renewal calendar. Start the renewal conversation 90 days before expiry. Identify at-risk accounts early using support tickets, low usage, or NPS signals. Track churn rate as a core metric.",
+        "growth": "Renewal process is a defined playbook. Renewal forecasting in place. At-risk accounts flagged proactively and escalated. Expansion tracked separately from renewal. Churn reasons logged and analysed.",
+        "scaled": "Renewal ops as a function. Automated renewal triggers, forecasting integrated with CRM, win-back campaigns for churned accounts, pricing optimisation based on retention data. Churn reported to board."
       },
       "stages": {
         "foundation": "future",
@@ -587,6 +692,13 @@
           "multi-model"
         ]
       },
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Deliver your first projects personally. Document what you did, what worked, what you'd do differently — that's the start of your delivery methodology.",
+        "early-revenue": "Standardise your delivery approach: project kickoff template, status update cadence, scope change process. Know your capacity and don't over-commit. Post-delivery review becomes a habit.",
+        "growth": "Delivery ops formalised. Resource allocation and capacity planning in place. Project intake with scoping and sign-off. Quality standards documented. Incident process defined for when things go wrong.",
+        "scaled": "Full delivery operation. Methodology documented and trained. Utilisation and margin tracked per project. Customer satisfaction measured at project close. Lessons learned fed into methodology."
+      },
       "stages": {
         "foundation": "future",
         "first-hires": "critical",
@@ -607,6 +719,13 @@
           "enterprise-or-mixed",
           "multi-model"
         ]
+      },
+      "stageFocus": {
+        "foundation": "Not applicable yet.",
+        "first-hires": "Keep a clean CRM from day one — it's much harder to clean up later. Track key revenue metrics (MRR, ARR, churn) in a spreadsheet. Know your numbers.",
+        "early-revenue": "Define your core customer metrics and who owns each one. Build a simple dashboard (ChartMogul, Looker Studio, or similar) for MRR, churn, and NPS. Make sure sales, CS, and finance look at the same numbers.",
+        "growth": "Customer data is a strategic asset. Single source of truth across CRM, support, and product. Cohort analysis and churn analysis run regularly. Expansion revenue tracked separately from new.",
+        "scaled": "Full customer analytics function. Data warehouse with customer data integrated. Real-time health scores, automated alerts, segmentation for targeting. Data used proactively for retention and growth decisions."
       },
       "stages": {
         "foundation": "future",
