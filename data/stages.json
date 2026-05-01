@@ -86,17 +86,77 @@
     { "value": "100+", "label": "100+ employees", "stage": "scaled" }
   ],
   "revenueStages": [
-    { "value": "pre-revenue", "label": "Pre-revenue" },
-    { "value": "early-customers", "label": "Early customers" },
-    { "value": "scaling-low-complexity", "label": "Scaling, low complexity" },
-    { "value": "enterprise-or-mixed", "label": "Enterprise or mixed" },
-    { "value": "multi-model", "label": "Multi-model / complex" }
+    {
+      "value": "pre-revenue",
+      "label": "Pre-revenue",
+      "order": 1,
+      "description": "No paying customers yet. Focus is on building and validation.",
+      "implies_conditions": []
+    },
+    {
+      "value": "early-customers",
+      "label": "Early customers",
+      "order": 2,
+      "description": "First paying customers. Revenue exists but is not yet repeatable.",
+      "implies_conditions": ["has_customers"]
+    },
+    {
+      "value": "scaling-low-complexity",
+      "label": "Scaling, low complexity",
+      "order": 3,
+      "description": "Growing recurring revenue, mostly homogeneous customer base (e.g. SMB SaaS).",
+      "implies_conditions": ["has_customers"]
+    },
+    {
+      "value": "enterprise-or-mixed",
+      "label": "Enterprise or mixed",
+      "order": 4,
+      "description": "Enterprise or mixed customer base. Complex contracts, compliance requirements, longer sales cycles.",
+      "implies_conditions": ["has_customers", "has_enterprise"]
+    },
+    {
+      "value": "multi-model",
+      "label": "Multi-model / complex",
+      "order": 5,
+      "description": "Multiple revenue models (e.g. SaaS + services + marketplace). High operational complexity.",
+      "implies_conditions": ["has_customers", "has_enterprise"]
+    }
   ],
   "fundingStages": [
-    { "value": "bootstrapped", "label": "Bootstrapped" },
-    { "value": "angel-fff", "label": "Angel / friends & family" },
-    { "value": "venture-early", "label": "Venture-backed (seed/early)" },
-    { "value": "venture-growth", "label": "Venture-backed (growth/PE)" },
-    { "value": "public", "label": "Public company" }
+    {
+      "value": "bootstrapped",
+      "label": "Bootstrapped",
+      "order": 1,
+      "description": "Self-funded. No external investors. Cash management is existential.",
+      "implies_conditions": []
+    },
+    {
+      "value": "angel-fff",
+      "label": "Angel / friends & family",
+      "order": 2,
+      "description": "Early informal investors. Light reporting obligations, no formal board.",
+      "implies_conditions": ["has_investors"]
+    },
+    {
+      "value": "venture-early",
+      "label": "Venture-backed (seed/early)",
+      "order": 3,
+      "description": "Institutional investors. Board formed. Investor reporting and board packs required.",
+      "implies_conditions": ["has_investors", "has_board"]
+    },
+    {
+      "value": "venture-growth",
+      "label": "Venture-backed (growth/PE)",
+      "order": 4,
+      "description": "Growth or PE capital. Formal governance, structured board, compliance obligations increase.",
+      "implies_conditions": ["has_investors", "has_board", "has_formal_governance"]
+    },
+    {
+      "value": "public",
+      "label": "Public company",
+      "order": 5,
+      "description": "Listed company. Full regulatory compliance, IR function, audit committee required.",
+      "implies_conditions": ["has_investors", "has_board", "has_formal_governance", "is_public"]
+    }
   ]
 }

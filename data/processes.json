@@ -4,6 +4,8 @@
       "id": "1.1",
       "category": "strategic",
       "title": "Company-Level Planning & Goals",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How you set priorities and goals for the company as a whole. Starts with simple weekly priorities everyone knows, evolves into formal goal frameworks.",
       "stageFocus": {
         "foundation": "Quarterly Top 3 priorities for the company. Everyone knows them. Review weekly - adjust as you learn.",
@@ -24,6 +26,8 @@
       "id": "1.1b",
       "category": "strategic",
       "title": "Team Goals & Cascading Goals",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How individual teams or departments set their own goals that ladder up to company priorities. Not needed until you have actual departments/teams with different focuses.",
       "stageFocus": {
         "foundation": "Not needed - you are the team.",
@@ -44,6 +48,8 @@
       "id": "1.2",
       "category": "strategic",
       "title": "Internal Communication about Strategy",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How the team stays aligned on goals, hears about progress, and gives input on direction. Starts with simple weekly syncs, evolves into structured all-hands and feedback loops.",
       "stageFocus": {
         "foundation": "Weekly standup (15 min). Everyone shares: what I did, what I'm doing, blockers. Quick verbal check on priorities.",
@@ -64,6 +70,8 @@
       "id": "1.2b",
       "category": "strategic",
       "title": "Shareholder & Investor Reporting",
+      "primary_axis": "funding_stage",
+      "sensitivity": "funding_stage",
       "description": "How you keep investors and shareholders informed. Covers regular updates, board reporting, and investor relations. Only relevant once you have external investors or shareholders.",
       "conditions": {
         "fundingStage": [
@@ -92,6 +100,8 @@
       "id": "1.3",
       "category": "strategic",
       "title": "Operational Internal Communication Norms",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "The rules and channels for daily operations - what goes in Slack vs email, response time expectations, how teams coordinate. Prevents chaos and dropped balls.",
       "stageFocus": {
         "foundation": "One main channel (Slack/Discord). Urgent = DM or call. Non-urgent = channel message. Respond same day if you can.",
@@ -112,6 +122,8 @@
       "id": "1.4",
       "category": "strategic",
       "title": "Who Decides What",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Clarity on decision rights and authority - who can decide what without asking, and when to escalate. The critical shift from founder-decides-everything to empowered teams.",
       "stageFocus": {
         "foundation": "Founders decide everything together. No framework needed - you're small and aligned.",
@@ -132,6 +144,8 @@
       "id": "1.5",
       "category": "strategic",
       "title": "Organizational Design",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Org chart, reporting lines, and team structure. How you organize people into teams and who reports to whom. Evolves as you grow from flat to layered structure.",
       "stageFocus": {
         "foundation": "No org chart needed. Everyone reports to founders. Just clarify what each founder owns to avoid gaps.",
@@ -152,6 +166,8 @@
       "id": "1.7",
       "category": "strategic",
       "title": "Process Documentation",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How you document and share knowledge about how things work - from simple how-to docs to comprehensive process libraries. Prevents knowledge being stuck in people's heads.",
       "stageFocus": {
         "foundation": "Not needed yet - just talk to each other.",
@@ -172,6 +188,8 @@
       "id": "1.8",
       "category": "strategic",
       "title": "Cross-Team Coordination & Collaboration",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How different teams work together and coordinate without bureaucracy or endless meetings. Critical as you grow from single team to multiple departments. Greiner's phases 4-5 issue.",
       "stageFocus": {
         "foundation": "Not needed - you are one team working on everything together.",
@@ -192,6 +210,8 @@
       "id": "1.6",
       "category": "strategic",
       "title": "Data & Reporting Infrastructure",
+      "primary_axis": "headcount",
+      "sensitivity": "revenue_stage",
       "description": "Company KPI tracking and definition, dashboards, reporting cadence, data quality",
       "stageFocus": {
         "foundation": "Probably not needed yet — ship first!",
@@ -212,6 +232,8 @@
       "id": "2.1",
       "category": "financial",
       "title": "Cash Flow Management",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "funding_stage",
       "description": "Knowing how much money you have and how long it will last. Starts with a simple spreadsheet, evolves into forecasting and scenario planning.",
       "stageFocus": {
         "foundation": "Track bank balance weekly. Know your burn rate. Keep runway visible in a simple spreadsheet linked to the business plan in your pitch deck.",
@@ -232,6 +254,8 @@
       "id": "2.2",
       "category": "financial",
       "title": "Financial Planning, Budgeting & Analysis",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "funding_stage",
       "description": "Annual and quarterly budgeting process and timeline, revenue and expense forecasting cadence and accuracy, variance analysis and explanations, department budgets, scenario planning, board/investor reporting package preparation and coordination",
       "stageFocus": {
         "foundation": "Focus on cash flow (see 2.1). Know your monthly burn and when you run out of money. A single spreadsheet is enough linked to the business plan in your pitch deck.",
@@ -252,6 +276,8 @@
       "id": "2.3",
       "category": "financial",
       "title": "Accounts Receivable (Outgoing Invoices)",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Invoice generation and delivery timing, collections process and follow-up (relations with ops people at customers), payment terms management, revenue recognition procedures",
       "conditions": {
         "revenueStage": [
@@ -280,6 +306,8 @@
       "id": "2.4",
       "category": "financial",
       "title": "Accounts Payable & Expense Management",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Invoice receipt and validation, approval workflows, payment scheduling and execution, employee expenses, corporate card management",
       "stageFocus": {
         "foundation": "Keep a simple log of what you owe and when it's due. Pay on time — reputation matters even at this stage. Use a business credit card and expense tracking app from day one.",
@@ -300,6 +328,8 @@
       "id": "2.5",
       "category": "financial",
       "title": "Financial Administration",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Day-to-day bookkeeping accuracy, account reconciliation procedures, month-end close process, audit trail and documentation standards, chart of accounts management",
       "stageFocus": {
         "foundation": "Keep it simple and outsourced. Use a bookkeeper or accountant from day one \u2014 don't do this yourself. Agree on an API or automation workflow so it will scale later. Set up a basic chart of accounts and make sure receipts and invoices are captured consistently.",
@@ -320,6 +350,8 @@
       "id": "3.1",
       "category": "people",
       "title": "HR Administration",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance, insurance coordination, employee record keeping",
       "stageFocus": {
         "foundation": "Use a payroll service from the start \u2014 don't run payroll manually. Get founder contracts and IP assignment in place. Everything else can wait.",
@@ -340,6 +372,8 @@
       "id": "3.2",
       "category": "people",
       "title": "Recruitment & Hiring",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "How you find and hire people, from posting on your network to structured interview processes. Quality of early hires makes or breaks a startup.",
       "stageFocus": {
         "foundation": "Agree on job description in founding team, Network-based hiring. 2-3 informal conversations. Check references (actually call them). Make sure values align and they can do the job.",
@@ -360,6 +394,8 @@
       "id": "3.3",
       "category": "people",
       "title": "Onboarding",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Pre-arrival preparation (contracts, equipment, system access), structured first day/week experience, role-specific training, culture introduction, check-in process (e.g., 30-60-90 day)",
       "stageFocus": {
         "foundation": "Not applicable yet \u2014 save the energy for when you hire.",
@@ -380,6 +416,8 @@
       "id": "3.4",
       "category": "people",
       "title": "Offboarding",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Resignation and termination procedures, exit interviews, knowledge transfer protocols, equipment and access revocation, final pay and benefits processing",
       "stageFocus": {
         "foundation": "Not applicable yet.",
@@ -400,6 +438,8 @@
       "id": "3.5",
       "category": "people",
       "title": "Performance Management",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Performance review cycles, goal-setting methodology (OKRs/KPIs), 1-on-1 meeting cadence and quality, career development paths, compensation reviews, promotion criteria and process",
       "stageFocus": {
         "foundation": "Not a formal process yet. Just work closely together and give each other honest feedback directly.",
@@ -420,6 +460,8 @@
       "id": "3.6",
       "category": "people",
       "title": "Employee Satisfaction & Feedback",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Employee engagement survey cadence and methodology, pulse check mechanisms, feedback collection channels (1-on-1s, retrospectives, anonymous)",
       "stageFocus": {
         "foundation": "Not a formal process yet, but stay close to each other. Informal check-ins are fine at this stage.",
@@ -440,6 +482,8 @@
       "id": "3.7",
       "category": "people",
       "title": "Learning & Development",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Recommended from 25+ people. Covers: Training budget allocation and approval, skills development programs, leadership development initiatives, external courses/conference attendance process",
       "optional": true,
       "stageFocus": {
@@ -461,6 +505,8 @@
       "id": "4.1",
       "category": "legal-and-other-ops",
       "title": "Legal (above certain size also Compliance)",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "funding_stage",
       "description": "Employment contract templates and execution, freelancer/contractor agreement management, IP assignment clauses in all contracts, legal request intake and external counsel coordination, standard commercial contract templates (SaaS, services, NDA), privacy/GDPR compliance (privacy policy, data processing agreements, consent mechanisms), shareholder agreements and cap table maintenance, basic insurance coverage (liability, professional indemnity, D&O for funded companies)",
       "stageFocus": {
         "foundation": "Get the company structure right from day one. Sign a co-founder agreement that covers equity splits, vesting, and what happens if someone leaves. Have every founder assign their IP to the company — this will come up in every future due diligence. Keep it simple: use standard templates and a startup-savvy lawyer, not a corporate firm.",
@@ -481,6 +527,8 @@
       "id": "4.2",
       "category": "legal-and-other-ops",
       "title": "Office & Facilities",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Office space management, lease negotiations, office supplies procurement, facilities maintenance, health and safety compliance, remote/hybrid work policies",
       "stageFocus": {
         "foundation": "If you take office space, agree who is responsible for it: supplies restocked, lease signed by someone, basic health & safety covered. Don't let it be a chaos of 'whose job is this?'",
@@ -501,6 +549,8 @@
       "id": "4.3",
       "category": "legal-and-other-ops",
       "title": "IT Administration & User Support",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Note: Technical infrastructure and architecture decisions remain with CTO. COO domain focuses on user-facing IT operations. Covers: Device procurement policies and standards (which laptop/screen models to purchase), software and SaaS license management and optimization, user provisioning and deprovisioning workflows, IT support ticket management and helpdesk, baseline security protocols for users (password managers, 2FA), equipment lifecycle management (ordering, setup, return)",
       "stageFocus": {
         "foundation": "Not applicable yet — just use whatever tools you need. No process required.",
@@ -521,6 +571,8 @@
       "id": "4.4",
       "category": "legal-and-other-ops",
       "title": "Vendor & Procurement",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
       "description": "Formal procurement process recommended from 50+ people. Early stage (10-50 people): Approval thresholds (e.g., >\u20ac5K needs CEO approval), budget ownership by department, visibility mechanism (e.g., Slack channel), basic contract review checklist (especially for IP transfer, data processing, and payment terms). Mature stage (50+ people): Vendor selection and approval process, contract negotiation and management, purchase order workflows, vendor relationship management, performance reviews, preferred vendor list maintenance",
       "optional": true,
       "stageFocus": {
@@ -542,6 +594,8 @@
       "id": "5.1",
       "category": "revenue",
       "title": "Sales Operations",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "CRM management, sales process and methodology documentation, pipeline management and forecasting accuracy, territory and quota assignment, sales compensation and commission calculation, deal approval workflows, quoting/proposal generation process",
       "conditions": {
         "revenueStage": [
@@ -570,6 +624,8 @@
       "id": "5.2",
       "category": "revenue",
       "title": "Customer Acquisition & Lead Management",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Lead capture from all channels (website, referrals, marketing, partnerships), lead qualification criteria and scoring, routing and assignment logic, response time SLAs, nurture workflows for different segments",
       "conditions": {
         "revenueStage": [
@@ -598,6 +654,8 @@
       "id": "5.3",
       "category": "revenue",
       "title": "Customer Onboarding & Activation",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Post-sale handoff from sales to customer success, customer welcome process and kickoff, initial setup and configuration support, time-to-value tracking and optimization, early adoption monitoring, first-value milestone celebration",
       "conditions": {
         "revenueStage": [
@@ -626,6 +684,8 @@
       "id": "5.4",
       "category": "revenue",
       "title": "Customer Health, Engagement, Satisfaction, Support",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Support ticket management system and workflows, knowledge base maintenance, bug/issue tracking and resolution, customer feedback collection mechanisms. NPS/CSAT measurement cadence and methodology, product feedback aggregation and routing to product team, customer health scoring methodology and tracking, proactive engagement cadence based on segment/tier, regular business reviews with key accounts",
       "conditions": {
         "revenueStage": [
@@ -654,6 +714,8 @@
       "id": "5.5",
       "category": "revenue",
       "title": "Renewal & Retention",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Renewal timeline and notification process, churn risk identification and intervention, win-back campaigns for churned customers, contract negotiation for renewals, pricing and packaging optimization based on retention data, renewal forecasting accuracy",
       "conditions": {
         "revenueStage": [
@@ -682,6 +744,8 @@
       "id": "5.6",
       "category": "revenue",
       "title": "Service Delivery",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Project intake and scoping process, resource allocation and capacity planning, delivery methodology and quality standards, project status communication to customers, post-delivery review and lessons learned, incident/error management and remediation",
       "optional": true,
       "conditions": {
@@ -711,6 +775,8 @@
       "id": "5.7",
       "category": "revenue",
       "title": "Customer Data & Analytics",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "revenue_stage",
       "description": "Customer database management and data quality, interaction tracking across all touchpoints (CRM, support, success), customer analytics and reporting dashboards, churn analysis and cohort tracking, revenue metrics (MRR, ARR, expansion, churn), data-driven customer segmentation",
       "conditions": {
         "revenueStage": [
