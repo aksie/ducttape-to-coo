@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duct Tape to COO — Wiki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 16px 20px;
+    flex-shrink: 0;
+    z-index: 100;
+  }
+  .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .site-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #58a6ff;
+    letter-spacing: -0.02em;
+  }
+  .header-nav { display: flex; gap: 20px; flex-shrink: 0; }
+  .header-nav a {
+    font-size: 0.8rem;
+    color: #8b949e;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+  .header-nav a:hover, .header-nav a.active { color: #e6edf3; }
+
+  /* ── Layout ── */
+  .wiki-layout {
+    display: flex;
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 0;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    border-right: 1px solid #21262d;
+    overflow-y: auto;
+    padding: 20px 0 40px;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - 61px);
+  }
+
+  .sidebar-section { margin-bottom: 4px; }
+
+  .sidebar-stage {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #58a6ff;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .sidebar-stage:hover { background: #161b22; }
+  .sidebar-stage .chevron { font-size: 0.6rem; color: #484f58; transition: transform 0.2s; }
+  .sidebar-stage.open .chevron { transform: rotate(90deg); }
+
+  .sidebar-stage-desc {
+    padding: 0 16px 8px;
+    font-size: 0.68rem;
+    color: #484f58;
+    font-family: 'JetBrains Mono', monospace;
+    display: none;
+  }
+  .sidebar-section.open .sidebar-stage-desc { display: block; }
+
+  .sidebar-processes { display: none; }
+  .sidebar-section.open .sidebar-processes { display: block; }
+
+  .sidebar-cat {
+    padding: 6px 16px 2px;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #30363d;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .sidebar-process {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 3px 16px 3px 20px;
+    font-size: 0.7rem;
+    color: #8b949e;
+    cursor: pointer;
+    transition: color 0.15s, background 0.15s;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.4;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sidebar-process:hover { color: #c9d1d9; background: #161b22; }
+  .sidebar-process.active { color: #58a6ff; background: #161b22; }
+  .sidebar-process.stub { color: #30363d; cursor: default; }
+  .sidebar-process.stub:hover { color: #484f58; background: none; }
+  .sidebar-process .pid {
+    font-size: 0.6rem;
+    color: #484f58;
+    flex-shrink: 0;
+  }
+  .sidebar-process.active .pid { color: #388bfd; }
+  .sidebar-process .dot-crit { color: #3fb950; font-size: 0.55rem; flex-shrink: 0; }
+  .sidebar-process .dot-rec  { color: #2ea043; opacity: 0.45; font-size: 0.55rem; flex-shrink: 0; }
+
+  .sidebar-portal-link {
+    display: block;
+    padding: 3px 16px 6px;
+    font-size: 0.65rem;
+    color: #388bfd;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    transition: color 0.15s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sidebar-portal-link:hover { color: #58a6ff; }
+
+  /* ── Main content ── */
+  .wiki-main {
+    flex: 1;
+    overflow-y: auto;
+    padding: 36px 48px 80px;
+    min-width: 0;
+  }
+
+  /* Empty / loading states */
+  .wiki-placeholder {
+    color: #484f58;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    padding: 40px 0;
+  }
+  .wiki-placeholder h2 { font-size: 1rem; color: #8b949e; margin-bottom: 12px; }
+  .wiki-placeholder p { line-height: 1.8; margin-bottom: 8px; }
+  .wiki-placeholder .matrix-hint { color: #30363d; font-size: 0.72rem; margin-top: 24px; }
+
+  .stub-notice {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-left: 3px solid #484f58;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #484f58;
+    line-height: 1.6;
+  }
+  .stub-notice strong { color: #8b949e; }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #484f58;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .breadcrumb a { color: #388bfd; text-decoration: none; cursor: pointer; }
+  .breadcrumb a:hover { color: #58a6ff; }
+  .breadcrumb .sep { color: #30363d; }
+
+  /* Frontmatter badge strip */
+  .meta-strip {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .meta-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid #30363d;
+    color: #8b949e;
+  }
+  .meta-badge.critical { border-color: #3fb950; color: #3fb950; }
+  .meta-badge.recommended { border-color: #2ea043; color: #2ea043; opacity: 0.8; }
+  .meta-badge.future { border-color: #484f58; color: #484f58; }
+
+  /* Markdown rendered content */
+  .wiki-content h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #e6edf3;
+    margin-bottom: 8px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .wiki-content h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e6edf3;
+    margin: 32px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #21262d;
+  }
+  .wiki-content h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c9d1d9;
+    margin: 20px 0 8px;
+  }
+  .wiki-content p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #c9d1d9;
+    margin-bottom: 14px;
+  }
+  .wiki-content blockquote {
+    border-left: 3px solid #388bfd;
+    padding: 10px 16px;
+    margin: 0 0 18px;
+    background: #161b22;
+    color: #8b949e;
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .wiki-content blockquote p { margin: 0; color: #8b949e; }
+  .wiki-content ul, .wiki-content ol {
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+  .wiki-content li {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #c9d1d9;
+    margin-bottom: 4px;
+  }
+  .wiki-content strong { color: #e6edf3; }
+  .wiki-content code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 1px 5px;
+    border-radius: 3px;
+    color: #79c0ff;
+  }
+  .wiki-content pre {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 16px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+    border-radius: 4px;
+  }
+  .wiki-content pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.8rem;
+  }
+  .wiki-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 0.83rem;
+  }
+  .wiki-content th {
+    background: #161b22;
+    color: #8b949e;
+    font-weight: 600;
+    padding: 8px 12px;
+    text-align: left;
+    border: 1px solid #21262d;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+  }
+  .wiki-content td {
+    padding: 7px 12px;
+    border: 1px solid #21262d;
+    color: #c9d1d9;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .wiki-content tr:nth-child(even) td { background: #0d1117; }
+  .wiki-content tr:nth-child(odd) td { background: #111820; }
+  .wiki-content hr {
+    border: none;
+    border-top: 1px solid #21262d;
+    margin: 28px 0;
+  }
+
+  /* Nav between cells */
+  .cell-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid #21262d;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    gap: 12px;
+  }
+  .cell-nav a {
+    color: #388bfd;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 6px 12px;
+    border: 1px solid #21262d;
+    transition: border-color 0.15s, color 0.15s;
+    max-width: 45%;
+  }
+  .cell-nav a:hover { border-color: #388bfd; color: #58a6ff; }
+  .cell-nav .nav-label { font-size: 0.6rem; color: #484f58; display: block; margin-bottom: 2px; }
+  .cell-nav .placeholder { flex: 1; }
+
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .wiki-main { padding: 24px 20px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="header-container">
+    <h1>Duct Tape to COO</h1>
+    <nav class="header-nav">
+      <a href="index.html">Overview</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="wiki.html" class="active">Wiki</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wiki-layout">
+  <nav class="sidebar" id="sidebar">
+    <div id="sidebar-loading" style="padding:20px 16px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#484f58;">Loading...</div>
+  </nav>
+
+  <main class="wiki-main" id="wiki-main">
+    <div class="wiki-placeholder" id="placeholder">
+      <h2>Operational guidance, one process at a time.</h2>
+      <p>Select a stage and process from the sidebar to read the wiki page for that combination.</p>
+      <p>Each page covers what good looks like, what to actually do, warning signs, and how it evolves.</p>
+      <p class="matrix-hint">// 130 process × stage cells · 5 stage portals · content added incrementally</p>
+    </div>
+  </main>
+</div>
+
+<script>
+const CATEGORY_LABELS = {
+  'strategic':           'Strategic Ops',
+  'financial':           'Financial Ops',
+  'people':              'People Ops',
+  'legal-and-other-ops': 'Legal & Other Ops',
+  'revenue':             'Revenue & Customer Ops',
+};
+const CATEGORY_ORDER = ['strategic','financial','people','legal-and-other-ops','revenue'];
+
+const STAGE_PORTAL_FILES = {
+  'foundation':    'wiki/stages/foundation.md',
+  'first-hires':   'wiki/stages/first-hires.md',
+  'early-revenue': 'wiki/stages/early-revenue.md',
+  'growth':        'wiki/stages/growth.md',
+  'scaled':        'wiki/stages/scaled.md',
+};
+
+const PROCESS_FILE_MAP = {};  // populated in init: "1.1--first-hires" → "wiki/processes/strategic/1.1--first-hires.md"
+
+const CAT_TO_FOLDER = {
+  'strategic':           'strategic',
+  'financial':           'financial',
+  'people':              'people',
+  'legal-and-other-ops': 'legal',
+  'revenue':             'revenue',
+};
+
+let allProcesses = [];
+let allStages    = [];
+let currentKey   = null;  // e.g. "1.1--first-hires" or "stage--foundation"
+
+// ── URL hash routing ──────────────────────────────────────────────────────────
+
+function getHash() {
+  return decodeURIComponent(window.location.hash.slice(1));
+}
+function setHash(key) {
+  history.pushState(null, '', '#' + encodeURIComponent(key));
+}
+
+// ── Build process file map ────────────────────────────────────────────────────
+
+function buildFileMap(processes) {
+  processes.forEach(p => {
+    const folder = CAT_TO_FOLDER[p.category] || p.category;
+    Object.keys(p.stages).forEach(stageId => {
+      const key = `${p.id}--${stageId}`;
+      PROCESS_FILE_MAP[key] = `wiki/processes/${folder}/${p.id}--${stageId}.md`;
+    });
+  });
+}
+
+// ── Sidebar ───────────────────────────────────────────────────────────────────
+
+function buildSidebar(processes, stages) {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.innerHTML = '';
+
+  stages.forEach((stage, si) => {
+    const section = document.createElement('div');
+    section.className = 'sidebar-section';
+    section.dataset.stage = stage.id;
+
+    // Stage toggle button
+    const btn = document.createElement('button');
+    btn.className = 'sidebar-stage';
+    btn.innerHTML = `${stage.name} <span class="chevron">▶</span>`;
+    btn.addEventListener('click', () => {
+      const isOpen = section.classList.contains('open');
+      // close all
+      document.querySelectorAll('.sidebar-section').forEach(s => s.classList.remove('open'));
+      document.querySelectorAll('.sidebar-stage').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        section.classList.add('open');
+        btn.classList.add('open');
+      }
+    });
+    section.appendChild(btn);
+
+    // Stage portal link
+    const portalLink = document.createElement('button');
+    portalLink.className = 'sidebar-portal-link';
+    portalLink.textContent = '→ ' + stage.tagline;
+    portalLink.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigateTo('stage--' + stage.id);
+    });
+    section.appendChild(portalLink);
+
+    // Processes by category
+    const procWrapper = document.createElement('div');
+    procWrapper.className = 'sidebar-processes';
+
+    CATEGORY_ORDER.forEach(cat => {
+      const catProcesses = processes.filter(p => {
+        if (p.category !== cat) return false;
+        const priority = p.stages[stage.id];
+        return priority && priority !== 'future';
+      });
+      if (catProcesses.length === 0) return;
+
+      const catEl = document.createElement('div');
+      catEl.className = 'sidebar-cat';
+      catEl.textContent = CATEGORY_LABELS[cat] || cat;
+      procWrapper.appendChild(catEl);
+
+      catProcesses.forEach(p => {
+        const priority = p.stages[stage.id];
+        const key = `${p.id}--${stage.id}`;
+        const link = document.createElement('button');
+        link.className = 'sidebar-process';
+        link.dataset.key = key;
+        link.innerHTML = `
+          <span class="dot-${priority === 'critical' ? 'crit' : 'rec'}">${priority === 'critical' ? '●' : '○'}</span>
+          <span class="pid">${p.id}</span>
+          <span>${shorten(p.title, 28)}</span>
+        `;
+        link.addEventListener('click', () => navigateTo(key));
+        procWrapper.appendChild(link);
+      });
+    });
+
+    section.appendChild(procWrapper);
+    sidebar.appendChild(section);
+  });
+}
+
+function setSidebarActive(key) {
+  document.querySelectorAll('.sidebar-process').forEach(el => {
+    el.classList.toggle('active', el.dataset.key === key);
+  });
+  // Open the relevant stage section
+  if (key && key.startsWith('stage--')) {
+    const stageId = key.replace('stage--', '');
+    openSidebarStage(stageId);
+  } else if (key) {
+    const stageId = key.split('--')[1];
+    openSidebarStage(stageId);
+  }
+}
+
+function openSidebarStage(stageId) {
+  document.querySelectorAll('.sidebar-section').forEach(s => {
+    const isMatch = s.dataset.stage === stageId;
+    s.classList.toggle('open', isMatch);
+    const btn = s.querySelector('.sidebar-stage');
+    if (btn) btn.classList.toggle('open', isMatch);
+  });
+}
+
+// ── Navigation ────────────────────────────────────────────────────────────────
+
+function navigateTo(key) {
+  currentKey = key;
+  setHash(key);
+  setSidebarActive(key);
+  loadContent(key);
+}
+
+async function loadContent(key) {
+  const main = document.getElementById('wiki-main');
+
+  if (!key) {
+    main.innerHTML = document.getElementById('placeholder')?.outerHTML || '';
+    return;
+  }
+
+  // Stage portal
+  if (key.startsWith('stage--')) {
+    const stageId = key.replace('stage--', '');
+    const file = STAGE_PORTAL_FILES[stageId];
+    if (file) await renderMarkdownFile(file, key);
+    return;
+  }
+
+  // Process cell
+  const file = PROCESS_FILE_MAP[key];
+  if (!file) {
+    main.innerHTML = `<div class="wiki-placeholder"><p>Page not found: ${key}</p></div>`;
+    return;
+  }
+  await renderMarkdownFile(file, key);
+}
+
+async function renderMarkdownFile(filePath, key) {
+  const main = document.getElementById('wiki-main');
+  main.innerHTML = `<div class="wiki-placeholder"><p style="color:#484f58;font-family:'JetBrains Mono',monospace;font-size:0.75rem;">Loading...</p></div>`;
+
+  try {
+    const res = await fetch(filePath);
+    if (!res.ok) throw new Error(res.status);
+    const raw = await res.text();
+    renderPage(raw, key, filePath);
+  } catch (e) {
+    renderStub(key, filePath);
+  }
+}
+
+// ── Render a written page ─────────────────────────────────────────────────────
+
+function renderPage(raw, key, filePath) {
+  const main = document.getElementById('wiki-main');
+
+  // Strip YAML frontmatter
+  let frontmatter = {};
+  let body = raw;
+  const fmMatch = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (fmMatch) {
+    fmMatch[1].split('\n').forEach(line => {
+      const [k, ...rest] = line.split(':');
+      if (k && rest.length) frontmatter[k.trim()] = rest.join(':').trim().replace(/^"|"$/g, '');
+    });
+    body = fmMatch[2];
+  }
+
+  // If body is empty or only whitespace, treat as stub
+  if (!body.trim()) {
+    renderStub(key, filePath, frontmatter);
+    return;
+  }
+
+  // Strip contributor comment blocks
+  body = body.replace(/<!--[\s\S]*?-->/g, '').trim();
+
+  const html = marked.parse(body);
+
+  // Breadcrumb
+  const breadcrumb = buildBreadcrumb(key, frontmatter);
+
+  // Meta badges
+  const badges = buildBadges(frontmatter);
+
+  // Cell navigation (prev/next in stage)
+  const cellNav = buildCellNav(key);
+
+  main.innerHTML = `
+    ${breadcrumb}
+    ${badges}
+    <div class="wiki-content">${html}</div>
+    ${cellNav}
+  `;
+  main.scrollTop = 0;
+}
+
+// ── Render a stub (empty file) ────────────────────────────────────────────────
+
+function renderStub(key, filePath, frontmatter = {}) {
+  const main = document.getElementById('wiki-main');
+
+  const isStage = key.startsWith('stage--');
+  const breadcrumb = buildBreadcrumb(key, frontmatter);
+  const badges = frontmatter.priority ? buildBadges(frontmatter) : '';
+  const cellNav = isStage ? '' : buildCellNav(key);
+
+  const label = isStage
+    ? `Stage portal: ${key.replace('stage--', '')}`
+    : `Process ${key.replace('--', ' / ')}`;
+
+  main.innerHTML = `
+    ${breadcrumb}
+    ${badges}
+    <div class="stub-notice">
+      <strong>This page hasn't been written yet.</strong><br><br>
+      This is one of ${Object.keys(PROCESS_FILE_MAP).length} process × stage cells in the wiki.
+      Content is added incrementally — see <code>wiki/processes/_template.md</code> for the contributor template.<br><br>
+      File: <code>${filePath}</code>
+    </div>
+    <div class="wiki-content">
+      ${getStubFallback(key)}
+    </div>
+    ${cellNav}
+  `;
+  main.scrollTop = 0;
+}
+
+// For stubs, show the stageFocus from processes.json as a teaser
+function getStubFallback(key) {
+  if (key.startsWith('stage--')) return '';
+  const [id, stageId] = key.split('--');
+  const process = allProcesses.find(p => p.id === id);
+  if (!process) return '';
+
+  const focus = process.stageFocus && process.stageFocus[stageId];
+  const desc  = process.description;
+
+  return `
+    <h1>${process.title} — ${stageLabel(stageId)}</h1>
+    ${desc ? `<blockquote><p>${desc}</p></blockquote>` : ''}
+    ${focus ? `<h2>What good looks like at this stage</h2><p>${focus}</p>` : ''}
+    <p style="color:#484f58;font-size:0.8rem;font-family:'JetBrains Mono',monospace;margin-top:24px;">// Full page not yet written. The above is drawn from processes.json.</p>
+  `;
+}
+
+// ── Breadcrumb ────────────────────────────────────────────────────────────────
+
+function buildBreadcrumb(key, fm) {
+  const parts = [];
+  parts.push(`<a onclick="navigateTo('')">Wiki</a>`);
+
+  if (key.startsWith('stage--')) {
+    const stageId = key.replace('stage--', '');
+    parts.push(`<span class="sep">/</span>`);
+    parts.push(`<span>${stageLabel(stageId)}</span>`);
+  } else {
+    const [id, stageId] = key.split('--');
+    const process = allProcesses.find(p => p.id === id);
+    if (stageId) {
+      parts.push(`<span class="sep">/</span>`);
+      parts.push(`<a onclick="navigateTo('stage--${stageId}')">${stageLabel(stageId)}</a>`);
+    }
+    if (process) {
+      parts.push(`<span class="sep">/</span>`);
+      parts.push(`<span>${process.title}</span>`);
+    }
+  }
+  return `<div class="breadcrumb">${parts.join(' ')}</div>`;
+}
+
+// ── Meta badges ───────────────────────────────────────────────────────────────
+
+function buildBadges(fm) {
+  if (!fm.process_id && !fm.priority) return '';
+  const badges = [];
+  if (fm.priority) badges.push(`<span class="meta-badge ${fm.priority}">${fm.priority}</span>`);
+  if (fm.primary_axis) badges.push(`<span class="meta-badge">axis: ${fm.primary_axis}</span>`);
+  if (fm.sensitivity && fm.sensitivity !== 'none') badges.push(`<span class="meta-badge">sensitive: ${fm.sensitivity}</span>`);
+  if (fm.conditions && fm.conditions !== '[]') badges.push(`<span class="meta-badge">conditional</span>`);
+  return `<div class="meta-strip">${badges.join('')}</div>`;
+}
+
+// ── Cell navigation ───────────────────────────────────────────────────────────
+
+function buildCellNav(key) {
+  if (key.startsWith('stage--')) return '';
+  const [id, stageId] = key.split('--');
+  const process = allProcesses.find(p => p.id === id);
+  if (!process) return '';
+
+  // Find prev/next process in the same stage (by CATEGORY_ORDER then process order)
+  const stageProcesses = [];
+  CATEGORY_ORDER.forEach(cat => {
+    allProcesses
+      .filter(p => p.category === cat && p.stages[stageId] && p.stages[stageId] !== 'future')
+      .forEach(p => stageProcesses.push(p));
+  });
+
+  const idx  = stageProcesses.findIndex(p => p.id === id);
+  const prev = idx > 0 ? stageProcesses[idx - 1] : null;
+  const next = idx < stageProcesses.length - 1 ? stageProcesses[idx + 1] : null;
+
+  const prevEl = prev
+    ? `<a onclick="navigateTo('${prev.id}--${stageId}')"><span class="nav-label">← previous</span>${shorten(prev.title, 32)}</a>`
+    : `<div class="placeholder"></div>`;
+  const nextEl = next
+    ? `<a onclick="navigateTo('${next.id}--${stageId}')"><span class="nav-label">next →</span>${shorten(next.title, 32)}</a>`
+    : `<div class="placeholder"></div>`;
+
+  return `<div class="cell-nav">${prevEl}${nextEl}</div>`;
+}
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function stageLabel(stageId) {
+  const stage = allStages.find(s => s.id === stageId);
+  return stage ? stage.name : stageId;
+}
+
+function shorten(title, max = 60) {
+  return title.length > max ? title.slice(0, max - 1) + '…' : title;
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+async function init() {
+  try {
+    const [pRes, sRes] = await Promise.all([
+      fetch('data/processes.json'),
+      fetch('data/stages.json'),
+    ]);
+    const { processes } = await pRes.json();
+    const stagesData    = await sRes.json();
+
+    allProcesses = processes;
+    allStages    = stagesData.stages;
+
+    buildFileMap(processes);
+    buildSidebar(processes, stagesData.stages);
+
+    // Configure marked
+    marked.setOptions({ gfm: true, breaks: false });
+
+    // Route from hash
+    const hash = getHash();
+    if (hash) {
+      navigateTo(hash);
+    } else {
+      // Show placeholder
+      document.getElementById('sidebar-loading')?.remove();
+    }
+
+    // Handle back/forward
+    window.addEventListener('popstate', () => {
+      const h = getHash();
+      currentKey = h || null;
+      setSidebarActive(currentKey);
+      loadContent(currentKey);
+    });
+
+  } catch (err) {
+    document.getElementById('sidebar-loading').textContent =
+      'Error loading data. Run via local server.';
+    console.error(err);
+  }
+}
+
+init();
+</script>
+</body>
+</html>

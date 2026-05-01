@@ -140,6 +140,14 @@
   .process-label .pid { color: #484f58; margin-right: 5px; font-size: 0.62rem; }
   .process-label .cond-mark { color: #484f58; font-size: 0.6rem; }
 
+  .process-label-link {
+    color: inherit;
+    text-decoration: none;
+    display: inline;
+  }
+  .process-label-link:hover { color: #58a6ff; }
+  .process-row:hover .process-label { color: #c9d1d9; }
+
   .row-tooltip-wrap {
     position: relative;
     display: inline-flex;
@@ -247,6 +255,7 @@
         <a href="index.html">Overview</a>
         <a href="diagnostic.html">Diagnostic</a>
         <a href="roadmap.html">Roadmap</a>
+        <a href="wiki.html">Wiki</a>
       </nav>
     </div>
     <p class="page-subtitle">Check where you are on the roadmap to success</p>
@@ -395,6 +404,7 @@ function buildUI(stages, DATA, sizeLabelMap) {
   function renderColumn(stageIdx) {
     const body = document.getElementById(`body-${stageIdx}`);
     body.innerHTML = '';
+    const stageId = stages[stageIdx].id;
 
     const prevIds = new Set();
     if (stageIdx > 0) {
@@ -424,10 +434,11 @@ function buildUI(stages, DATA, sizeLabelMap) {
         const row   = document.createElement('div');
         row.className = `process-row${isOpt ? ' optional-row' : ''}${isNew && stageIdx > 0 ? ' new-entry' : ''}`;
         const escapedFocus = focus ? focus.replace(/"/g, '&quot;') : '';
+        const wikiKey = encodeURIComponent(`${id}--${stageId}`);
         row.innerHTML = `
           <span class="dot ${priority}">${priority === 'critical' ? '●' : '○'}</span>
           <span class="process-label">
-            <span class="pid">${id}</span>${label}${hasCond ? '<span class="cond-mark"> *</span>' : ''}${focus ? `<span class="row-tooltip-wrap">?<span class="row-tooltip">${focus}</span></span>` : ''}
+            <span class="pid">${id}</span><a class="process-label-link" href="wiki.html#${wikiKey}" title="Open wiki page">${label}</a>${hasCond ? '<span class="cond-mark"> *</span>' : ''}${focus ? `<span class="row-tooltip-wrap">?<span class="row-tooltip">${focus}</span></span>` : ''}
           </span>
         `;
         list.appendChild(row);
