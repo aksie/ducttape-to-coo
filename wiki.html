@@ -640,6 +640,7 @@ function renderPage(raw, key, filePath) {
     <div class="wiki-content">${html}</div>
     ${cellNav}
   `;
+  interceptContentLinks();
   main.scrollTop = 0;
 }
 
@@ -671,6 +672,7 @@ function renderStub(key, filePath, frontmatter = {}) {
     </div>
     ${cellNav}
   `;
+  interceptContentLinks();
   main.scrollTop = 0;
 }
 
@@ -768,6 +770,37 @@ function stageLabel(stageId) {
 
 function shorten(title, max = 60) {
   return title.length > max ? title.slice(0, max - 1) + '…' : title;
+}
+
+// ── Link interception ─────────────────────────────────────────────────────────
+// Rewires any <a href="...md"> inside .wiki-content into hash navigation
+// so relative markdown links work inside the SPA router.
+
+function interceptContentLinks() {
+  const content = document.querySelector('.wiki-content');
+  if (!content) return;
+
+  content.querySelectorAll('a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
+    // Extract the key from a path like ../processes/financial/2.1--first-hires.md
+    // or wiki/stages/foundation.md
+    const mdMatch = href.match(/([^/]+)\.md$/);
+    if (!mdMatch) return;
+
+    const filename = mdMatch[1]; // e.g. "2.1--first-hires" or "foundation"
+
+    // Stage portal: stages/foundation.md → stage--foundation
+    const stageMatch = filename.match(/^(foundation|first-hires|early-revenue|growth|scaled)$/);
+    const key = stageMatch ? `stage--${filename}` : filename;
+
+    a.setAttribute('href', `#${encodeURIComponent(key)}`);
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      navigateTo(key);
+    });
+  });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────

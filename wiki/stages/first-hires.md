@@ -21,7 +21,7 @@ You have people now. That means process debt starts compounding. The critical pr
 | [1.2 Internal Comms — Strategy](../processes/strategic/1.2--first-hires.md) | Weekly team meeting, simple way to flag issues |
 | [2.1 Cash Flow Management](../processes/financial/2.1--first-hires.md) | 3–6 month rolling forecast. Alert at 6 months runway. |
 | [2.4 Accounts Payable](../processes/financial/2.4--first-hires.md) | Expense tool from day one, approval thresholds agreed |
-| [2.5 Financial Administration](../processes/financial/2.5--financial-admin--first-hires.md) | Bookkeeper on rhythm, you feed them clean data |
+| [2.5 Financial Administration](../processes/financial/2.5--first-hires.md) | Bookkeeper on rhythm, you feed them clean data |
 | [3.1 HR Administration](../processes/people/3.1--first-hires.md) | Contracts, time-off, labour law compliance |
 | [3.2 Recruitment & Hiring](../processes/people/3.2--first-hires.md) | Basic interview process, scorecards, reference checks |
 | [3.3 Onboarding](../processes/people/3.3--first-hires.md) | Checklist before day one. Bad first week is hard to recover. |

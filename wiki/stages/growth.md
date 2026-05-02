@@ -34,10 +34,10 @@ This is the stage where everything that was informal either gets formalized or c
 | [3.1 HR Administration](../processes/people/3.1--growth.md) | HRIS implemented, benefits and compliance reviews on rhythm |
 | [3.2 Recruitment & Hiring](../processes/people/3.2--growth.md) | Full process, scoring rubrics, hiring manager training |
 | [3.3 Onboarding](../processes/people/3.3--growth.md) | Runs without the founder, buddy system, 30-60-90 tracking |
-| [3.4 Offboarding](../processes/people/3.4--offboarding--growth.md) | Security and knowledge risk. IT deprovisioning on day 1 of notice. |
+| [3.4 Offboarding](../processes/people/3.4--growth.md) | Security and knowledge risk. IT deprovisioning on day 1 of notice. |
 | [3.5 Performance Management](../processes/people/3.5--growth.md) | Formal review cycle, managers trained, comp reviews tied to performance |
 | [3.6 Employee Satisfaction](../processes/people/3.6--growth.md) | Lightweight engagement survey, feedback leads to visible action |
-| [4.1 Legal & Compliance](../processes/legal/4.1--legal--growth.md) | Legal ops rhythm, contract register, compliance owner assigned |
+| [4.1 Legal & Compliance](../processes/legal/4.1--growth.md) | Legal ops rhythm, contract register, compliance owner assigned |
 | [4.2 Office & Facilities](../processes/legal/4.2--growth.md) | Facilities function, lease management, capacity planning |
 | [4.3 IT Administration](../processes/legal/4.3--growth.md) | IT owner, SaaS audit, helpdesk process, MDM policy |
 | [5.1 Sales Operations](../processes/revenue/5.1--growth.md) | Sales ops role, CRM hygiene, forecast accuracy, deal approval workflows |
