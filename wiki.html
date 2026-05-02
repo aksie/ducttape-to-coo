@@ -363,6 +363,34 @@
   .cell-nav .nav-label { font-size: 0.6rem; color: #484f58; display: block; margin-bottom: 2px; }
   .cell-nav .placeholder { flex: 1; }
 
+  .github-footer {
+    margin-top: 48px;
+    padding: 16px 20px;
+    border: 1px solid #21262d;
+    border-left: 3px solid #30363d;
+    background: #0d1117;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .github-footer-text {
+    font-size: 0.72rem;
+    color: #484f58;
+    line-height: 1.7;
+  }
+  .github-footer-text a {
+    color: #388bfd;
+    text-decoration: none;
+  }
+  .github-footer-text a:hover { color: #58a6ff; text-decoration: underline; }
+  .github-footer-file {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.62rem;
+    color: #30363d;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .github-footer-file:hover { color: #484f58; }
+
   @media (max-width: 768px) {
     .sidebar { display: none; }
     .wiki-main { padding: 24px 20px 60px; }
@@ -639,6 +667,7 @@ function renderPage(raw, key, filePath) {
     ${badges}
     <div class="wiki-content">${html}</div>
     ${cellNav}
+    ${buildGithubFooter(filePath)}
   `;
   interceptContentLinks();
   main.scrollTop = 0;
@@ -671,6 +700,7 @@ function renderStub(key, filePath, frontmatter = {}) {
       ${getStubFallback(key)}
     </div>
     ${cellNav}
+    ${buildGithubFooter(filePath)}
   `;
   interceptContentLinks();
   main.scrollTop = 0;
@@ -770,6 +800,26 @@ function stageLabel(stageId) {
 
 function shorten(title, max = 60) {
   return title.length > max ? title.slice(0, max - 1) + '…' : title;
+}
+
+// ── GitHub footer ─────────────────────────────────────────────────────────────
+
+const GITHUB_REPO = 'aksie/ducttape-to-coo';
+const GITHUB_BRANCH = 'main';
+
+function buildGithubFooter(filePath) {
+  const editUrl = `https://github.com/${GITHUB_REPO}/edit/${GITHUB_BRANCH}/${filePath}`;
+  const fileUrl = `https://github.com/${GITHUB_REPO}/blob/${GITHUB_BRANCH}/${filePath}`;
+  return `
+    <div class="github-footer">
+      <div class="github-footer-text">
+        Want to suggest additions or improvements to this page?
+        <a href="${editUrl}" target="_blank" rel="noopener">Edit the markdown file on GitHub</a>
+        and submit a pull request — a pull request is simply a way to propose a change that a maintainer can review and accept before it goes live. No coding required, just editing text.
+      </div>
+      <a class="github-footer-file" href="${fileUrl}" target="_blank" rel="noopener">View source: ${filePath}</a>
+    </div>
+  `;
 }
 
 // ── Link interception ─────────────────────────────────────────────────────────
