@@ -1,167 +1,149 @@
 # Duct Tape to COO
-## The Operational Denial Checklist
 
-An open-source, stage-based operational maturity framework for startups. Know which processes to focus on at each stage of growth — and when to stop duct-taping and actually fix things.
+An open-source operational maturity framework for startups — and the foundation for something more ambitious.
 
-🚀 **Live Demo**: [aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo)
+🚀 **Live**: [aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo)
 
 ---
 
 ## What is this?
 
-A self-assessment tool that helps startup founders and operators:
+Most startups run on duct tape longer than they should. Founders know things are breaking but don't know what to fix first, what good looks like at their size, or how to explain the gap to a board or investor.
+
+This tool helps startup founders and operators:
 - **Identify** which operational processes matter at your current stage
-- **Assess** maturity across 5 dimensions (reliability, ownership, documentation, automation, scalability)
-- **Prioritize** what to fix now vs. later
+- **Assess** maturity across 5 dimensions: reliability, ownership, documentation, automation, scalability
+- **Prioritize** what to fix now vs. later — based on your team size, revenue stage, and funding context
 - **Track** progress as you grow
 
----
-
-## Key Features
-
-- **Stage-based filtering** — See only the processes relevant to your team size
-- **Stage-specific guidance** — Each process shows what "good" looks like at your stage
-- **Visual timeline** — Track where you are in your operational journey
-- **Critical / Recommended / Coming Later** — Smart prioritization per stage
-- **Tooltips** — Hover any score or question mark to understand what you're rating
-- **Auto-save** — Progress saves locally in your browser
-- **CSV export** — Share with your team or board
-- **Open source** — Free to use, modify, and contribute (AGPLv3)
+The framework is stage-based: the guidance for a 5-person pre-revenue team is different from a 40-person Series B company. Advice is specific to where you are, not written for a 500-person org.
 
 ---
 
-## Quick Start
+## Where this is going
 
-### Option 1: Use it online
-Visit: [aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo)
+The diagnostic tool is step one. The longer-term ambition is an **AI-powered fractional COO** — a tool that can answer the question "what should I be doing about [process] right now, given my stage and context?" with the knowledge and judgment of an experienced operator.
 
-### Option 2: Run locally
+That means:
+- A structured **wiki** of operational knowledge, organized by process and stage, that an agent can retrieve from precisely
+- A **skill layer** that lets AI assistants use the framework as a knowledge base
+- **Context-aware guidance** that adapts to your revenue model, funding stage, and team structure — not just headcount
 
-1. **Clone the repo:**
-   ```bash
-   git clone https://github.com/aksie/ducttape-to-coo.git
-   cd ducttape-to-coo
-   ```
-
-2. **Start a local server:**
-
-   Using Python:
-   ```bash
-   python3 -m http.server 8000
-   ```
-
-   Or using Node.js:
-   ```bash
-   npx http-server
-   ```
-
-3. **Open in browser:**
-   ```
-   http://localhost:8000
-   ```
-
-> **Note:** A local server is required because the app loads JSON data via fetch(). Opening `index.html` directly will not work due to CORS restrictions.
+We're building the knowledge base and data model now. The AI layer comes next.
 
 ---
 
-## Project Structure
+## Why open source?
+
+We believe operational knowledge shouldn't be locked behind expensive consultants or available only to well-funded companies.
+
+Keeping this open source means:
+- **Startups without funds** can access the same framework as well-resourced ones
+- **Non-profits and social enterprises** can use and adapt it freely
+- **The community** can contribute knowledge back — improving guidance for everyone
+- **The model stays honest** — no incentive to gate features or add paywalls
+
+If this becomes an AI-powered tool, the core will stay open source. We may explore voluntary contributions or pricing for commercial users at some point — but the framework, the knowledge base, and the tool will always be free for individuals, non-profits, and early-stage startups without the means to pay. The goal is access, not lock-in.
+
+---
+
+## What's here now
+
+- **Diagnostic** — self-assessment across 28+ processes and 5 growth stages
+- **Roadmap** — visual stage-by-stage map of what matters when
+- **Wiki** — scaffolded knowledge base (130 process × stage pages, content being added)
+- **Data model** — processes.json and stages.json with primary axis and sensitivity fields, ready for context-aware retrieval
+
+---
+
+## Quick start
+
+### Use it online
+[aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo)
+
+### Run locally
+
+```bash
+git clone https://github.com/aksie/ducttape-to-coo.git
+cd ducttape-to-coo
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+> A local server is required — the app loads JSON via `fetch()` and won't work opened directly as a file.
+
+---
+
+## Project structure
 
 ```
 ducttape-to-coo/
-├── index.html           # Main application
-├── css/
-│   └── styles.css       # Dark mode developer-style UI
-├── js/
-│   └── app.js           # Application logic
+├── index.html              # Overview / landing page
+├── diagnostic.html         # Self-assessment tool
+├── roadmap.html            # Stage-by-stage visual roadmap
+├── wiki.html               # Wiki reader (markdown rendered in browser)
+├── css/styles.css          # Shared styles
+├── js/app.js               # Diagnostic application logic
 ├── data/
-│   ├── processes.json   # All processes with stage mappings and guidance
-│   └── stages.json      # Stage definitions, employee ranges, revenue and funding options
-└── README.md
+│   ├── processes.json      # 28+ processes with stage mappings, guidance, and context axes
+│   └── stages.json         # Stage definitions, employee ranges, revenue and funding sequences
+└── wiki/
+    ├── stages/             # Stage portal pages (human entry point)
+    ├── processes/          # 130 atomic process × stage pages (agent retrieval units)
+    └── dimensions/         # Scoring dimension reference
 ```
 
 ---
 
-## How it Works
-
-### 1. Select Your Context
-Choose your team size, revenue stage, and funding status using the selectors at the top. The app determines your current stage automatically.
-
-### 2. See Your Stage
-The timeline shows where you are in your operational journey:
+## The 5 growth stages
 
 | Stage | Team size | Focus |
 |---|---|---|
-| **Foundation** | 0–2 people | Don't die, get something out the door |
-| **First Hires** | 3–10 people | Hire well, don't run out of money |
-| **Early Revenue** | 11–25 people | Repeatable processes, customer success |
-| **Growth** | 26–50 people | Scale systems, departmental structure |
-| **Scaled** | 51+ people | Professional operations, efficiency |
-
-### 3. Read the Stage Guidance
-Each process shows a **"For your stage:"** block with specific, actionable advice for where you are now — not generic best practices written for a 500-person company.
-
-### 4. Score Your Processes
-Rate each process across 5 dimensions (0–4):
-
-| Dimension | What you're rating |
-|---|---|
-| **Reliability** | Does it work consistently? |
-| **Ownership** | Is there a clear owner? |
-| **Documentation** | Is it written down somewhere useful? |
-| **Automation** | Is it tooled and automated? |
-| **Scalability** | Can it handle growth without breaking? |
-
-### 5. Export & Share
-Download a CSV to share with your team, board, or use for planning.
-
----
-
-## The 5 Process Categories
-
-1. **Strategic Operations** — Planning & goals, internal communication, process improvement, org design, data & reporting
-2. **Financial Operations** — Cash flow, financial planning & budgeting, accounts receivable, accounts payable, financial administration
-3. **People Operations** — HR administration, recruitment, onboarding, offboarding, performance management, employee satisfaction, learning & development
-4. **Legal & Other Ops** — Legal & compliance, office & facilities, IT administration, vendor & procurement
-5. **Revenue & Customer Operations** — Sales operations, lead management, customer onboarding, customer health & support, renewal & retention, service delivery, customer data & analytics
+| **Foundation** | 0–1 | Don't die, get something out the door |
+| **First Hires** | 2–10 | Hire well, don't run out of money |
+| **Early Revenue** | 11–25 | Repeatable processes, customer success |
+| **Growth** | 26–50 | Scale systems, departmental structure |
+| **Scaled** | 51+ | Professional operations, efficiency |
 
 ---
 
 ## Contributing
 
-This is an open-source project and contributions are welcome.
+Contributions are welcome — especially wiki content. Each process × stage page is a standalone markdown file. Pick one, fill it in, open a pull request.
 
-**Ways to contribute:**
-- Report bugs or suggest improvements via GitHub Issues
-- Add or refine stage-specific guidance in `data/processes.json`
-- Improve the scoring framework or stage definitions
-- Translate to other languages
+**What's most needed right now:**
+- Wiki page content — see `wiki/processes/_template.md` for the template
+- Refinements to stage-specific guidance in `data/processes.json`
+- Bug reports and UX feedback via GitHub Issues
 
 **To contribute:**
 1. Fork the repo
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes
-4. Push and open a Pull Request
+2. Create a branch
+3. Make your change
+4. Open a pull request
+
+You don't need to be a developer to contribute wiki content — if you can edit a text file, you can contribute.
 
 ---
 
 ## Roadmap
 
 ### Done
-- [x] Stage-based process filtering
-- [x] 5-dimension scoring with tooltips
+- [x] Stage-based process filtering with 5-dimension scoring
+- [x] Context selectors: team size, revenue stage, funding stage
 - [x] Stage-specific guidance per process
-- [x] Dark mode developer UI
-- [x] CSV export
-- [x] Auto-save to localStorage
-- [x] GitHub Pages deployment
+- [x] Visual roadmap page
+- [x] Wiki scaffolding — 130 process × stage pages with template
+- [x] Wiki reader with markdown rendering and hash routing
+- [x] Data model extended with `primary_axis` and `sensitivity` fields per process
 
-### In Progress
-- [ ] Stage focus guidance for all processes
-- [ ] Operational data layer (owner name, documentation links, tool names)
+### In progress
+- [ ] Wiki content — filling in the 130 scaffolded pages
+- [ ] Context-aware guidance variants for the 7 sensitivity processes
 
 ### Planned
-- [ ] Preview Next Stage modal
-- [ ] Markdown exports per stage
+- [ ] AI skill layer — OpenCode/agent skill using the wiki as a knowledge base
+- [ ] Context-aware retrieval — agent uses headcount + revenue + funding stage to retrieve the right variant
 - [ ] Progress tracking over time
 - [ ] Team collaboration features
 
@@ -171,12 +153,12 @@ This is an open-source project and contributions are welcome.
 
 [GNU Affero General Public License v3.0 (AGPLv3)](https://www.gnu.org/licenses/agpl-3.0.html)
 
-Free to use and modify. If you run a modified version as a service, you must publish the source code.
+Free to use, adapt, and run. If you run a modified version as a service, you must publish the source code. That's intentional — this stays open.
 
 ---
 
 ## Credits
 
-Created by @aksie as an open-source tool for the startup community.
+Created by [@aksie](https://github.com/aksie).
 
-Inspired by the Scaling Up / Rockefeller Habits framework and years of operational challenges in growing startups.
+Inspired by the Scaling Up / Rockefeller Habits framework and years of operational work in growing startups.
