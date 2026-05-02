@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
     <style>
         :root {
@@ -36,56 +37,18 @@
 
         a { color: inherit; text-decoration: none; }
 
-        /* ── Nav ─────────────────────────────────────── */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: rgba(13, 17, 23, 0.92);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
-        }
 
-        .nav-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 16px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--blue);
-            letter-spacing: 0.01em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            font-weight: 500;
-            transition: color 0.15s;
-        }
-        .nav-links a:hover { color: var(--text); }
 
         /* ── Hero ─────────────────────────────────────── */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 61px);
             display: flex;
             align-items: center;
-            padding: 100px 32px 80px;
+            padding: 60px 32px 80px;
         }
 
         .hero-inner {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -231,7 +194,7 @@
         /* ── Section shared ───────────────────────────── */
         section { padding: 88px 32px; }
 
-        .section-inner { max-width: 1100px; margin: 0 auto; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
 
         .section-label {
             font-size: 0.72rem;
@@ -354,7 +317,7 @@
         }
 
         .footer-inner {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -398,17 +361,19 @@
 </head>
 <body>
 
-<nav>
-    <div class="nav-inner">
-        <span class="nav-logo">Duct Tape to COO</span>
-        <div class="nav-links">
-            <a href="index.html">Overview</a>
-            <a href="diagnostic.html">Diagnostic</a>
-            <a href="roadmap.html">Roadmap</a>
-            <a href="wiki.html">Wiki</a>
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <h1>Duct Tape to COO</h1>
+            <nav class="header-nav">
+                <a href="index.html" class="active">Overview</a>
+                <a href="diagnostic.html">Diagnostic</a>
+                <a href="roadmap.html">Roadmap</a>
+                <a href="wiki.html">Wiki</a>
+            </nav>
         </div>
     </div>
-</nav>
+</header>
 
 <!-- Hero -->
 <section class="hero">
