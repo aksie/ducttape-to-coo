@@ -67,11 +67,17 @@ body {
 }
 
 /* ─── Header ──────────────────────────────────────── */
-header {
+header,
+.site-header {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     padding: 16px 20px;
     margin-bottom: 4px;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 header .container {
@@ -100,21 +106,23 @@ header .container {
     transition: color 0.15s;
 }
 
-.header-nav a:hover { color: var(--text); }
+.header-nav a:hover,
+.header-nav a.active { color: var(--text); }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--blue);
     letter-spacing: -0.02em;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 
-
+.page-subtitle,
 .subtitle {
     font-size: 0.85rem;
     color: var(--text-dim);
     font-weight: 300;
+    margin-top: 2px;
 }
 
 .header-intro {

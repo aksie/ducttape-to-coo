@@ -7,67 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: #0d1117;
-    color: #c9d1d9;
-    font-family: 'JetBrains Mono', monospace;
-    min-height: 100vh;
-    padding: 0;
-  }
   .page-content {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px 20px 60px;
   }
-
-  .site-header {
-    background: #161b22;
-    border-bottom: 1px solid #30363d;
-    padding: 16px 20px;
-    margin-bottom: 0;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-  }
-  .header-container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .site-header .header-top {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-  }
-  .site-header h1 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: #58a6ff;
-    letter-spacing: -0.02em;
-    margin-bottom: 4px;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-  }
-  .site-header .page-subtitle {
-    font-size: 0.85rem;
-    color: #8b949e;
-    font-weight: 300;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-  }
-  .site-header .header-nav {
-    display: flex;
-    gap: 20px;
-    flex-shrink: 0;
-  }
-  .site-header .header-nav a {
-    font-size: 0.8rem;
-    color: #8b949e;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
-    transition: color 0.15s;
-  }
-  .site-header .header-nav a:hover { color: #e6edf3; }
 
   .track-wrapper { overflow-x: auto; padding-bottom: 16px; }
   .stage-track { display: flex; gap: 0; align-items: flex-start; width: max-content; }
@@ -247,20 +193,20 @@
 </head>
 <body>
 
-<div class="site-header">
+<header class="site-header">
   <div class="header-container">
     <div class="header-top">
       <h1>Duct Tape to COO</h1>
       <nav class="header-nav">
         <a href="index.html">Overview</a>
         <a href="diagnostic.html">Diagnostic</a>
-        <a href="roadmap.html">Roadmap</a>
+        <a href="roadmap.html" class="active">Roadmap</a>
         <a href="wiki.html">Wiki</a>
       </nav>
     </div>
-    <p class="page-subtitle">Check where you are on the roadmap to success</p>
+    <p class="page-subtitle">Stage by stage — what good operations look like as you grow</p>
   </div>
-</div>
+</header>
 <div class="page-content">
 <div class="controls" id="controls">
   <button class="btn" id="btn-back" disabled>← back</button>
