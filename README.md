@@ -95,18 +95,6 @@ ducttape-to-coo/
 
 ---
 
-## The 5 growth stages
-
-| Stage | Team size | Focus |
-|---|---|---|
-| **Foundation** | 0–1 | Don't die, get something out the door |
-| **First Hires** | 2–10 | Hire well, don't run out of money |
-| **Early Revenue** | 11–25 | Repeatable processes, customer success |
-| **Growth** | 26–50 | Scale systems, departmental structure |
-| **Scaled** | 51+ | Professional operations, efficiency |
-
----
-
 ## Contributing
 
 Contributions are welcome — especially wiki content. Each process × stage page is a standalone markdown file. Pick one, fill it in, open a pull request.
