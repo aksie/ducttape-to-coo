@@ -867,7 +867,7 @@ function renderClaim(idx) {
         <div class="flags-title">Flags <span class="flags-hint">(optional — independent of approve/reject)</span></div>
         <div class="flags-grid">
           ${['too_generic','conditional','vendor_biased','geographically_biased','needs_practitioner_check','missing_why'].map((f, i) => `
-            <label class="flag-checkbox ${(approval.flags||[]).includes(f) ? 'checked' : ''}" data-flag="${f}" onclick="toggleFlag('${f}', this)">
+            <label class="flag-checkbox ${(approval.flags||[]).includes(f) ? 'checked' : ''}" data-flag="${f}" onclick="event.preventDefault(); toggleFlag('${f}', this)">
               <input type="checkbox" ${(approval.flags||[]).includes(f) ? 'checked' : ''}> ${flagLabel(f)}
             </label>
           `).join('')}

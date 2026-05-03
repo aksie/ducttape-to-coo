@@ -125,8 +125,19 @@ and outlines when a fractional CFO makes sense vs. a full-time hire.
 | `confidence` | enum | yes | `high`, `medium`, `low` — how strongly the source asserts this |
 | `practitioner_first_person` | bool | yes | `true` if the author is reflecting on their own direct experience |
 | `bias_flags` | list | no | Concerns about this specific atom (subset of source bias_signals, or atom-specific) |
-| `extracted_by` | string | yes | GitHub username |
+| `extracted_by` | string | yes | Who or what produced this atom — see convention below |
 | `extracted_date` | date | yes | ISO 8601 |
+| `unverified` | bool | no | `true` if no source URL exists — flags for closer review at approval |
+
+**`extracted_by` convention:**
+
+| Value | Meaning | Weight in synthesis |
+|---|---|---|
+| `human:username` | A human wrote this atom directly, from their own knowledge or reading | Elevated — preferred over LLM atoms on the same claim |
+| `llm:model-slug` | An LLM extracted this atom from a source (e.g. `llm:claude-sonnet-4-6`) | Standard |
+| `username` *(legacy)* | Treated as human — used in early test data before this convention was established | Elevated |
+
+Human-contributed atoms are weighted more heavily during synthesis because they represent direct practitioner knowledge or deliberate human curation. When a human atom and an LLM atom support the same claim, the human atom is preferred as the primary source in the trail.
 
 **Type values:**
 - `target_state` — describes what good looks like
@@ -291,6 +302,8 @@ Records the review decision for each claim. Written by the approval tool; can al
 - `needs_practitioner_check` — no practitioner source; needs validation from direct experience
 - `missing_why` — claim may be true but the draft doesn't explain why; needs reasoning added
 
+The approval tool surfaces `unverified: true` atoms with a visual indicator so reviewers know a claim has no URL backing.
+
 Flags are recorded independently of the approve/reject decision. Examples:
 - `approved` + `[vendor_biased]` — published, but flagged for stronger sourcing later
 - `approved_with_edit` + `[vendor_biased]` — vendor framing fixed in edit, published
@@ -318,8 +331,8 @@ Flags are recorded independently of the approve/reject decision. Examples:
 ## Adding a new entry: step by step
 
 1. **Find sources.** Collect 5-10 URLs covering the process + phase. Create one `src-NNN.md` per source.
-2. **Extract atoms.** Read each source and extract individual insights as `atom-NNN.md` files. Aim for one atom per distinct claim, not one per paragraph.
-3. **Synthesize a draft.** Write `draft.md` using the 5-section structure. Add `<!-- claim-id: c-NNN -->` before each distinct claim.
+2. **Extract atoms.** Read each source and extract individual insights as `atom-NNN.md` files. Aim for one atom per distinct claim, not one per paragraph. Use `extracted_by: llm:model-slug` if an LLM did the extraction, `human:username` if you wrote it yourself.
+3. **Synthesize a draft.** Write `draft.md` using the 5-section structure. Add `<!-- claim-id: c-NNN -->` before each distinct claim. When multiple atoms support the same claim, prefer `human:*` atoms as the primary source in the trail.
 4. **Write the trail.** For each claim in the draft, document which atoms support it in `trail.md`.
 5. **Create the approval file.** Copy the approval template for each claim ID into `approval.md` with `Status: pending`.
 6. **Run the approval tool.** `python3 wiki-pipeline/server.py` → open `localhost:8765`, review each claim.

@@ -46,13 +46,32 @@ Open: http://localhost:8765
 
 ---
 
-## Extracting atoms
+## Contributing an insight directly (human atoms)
 
-1. Read the source carefully
+If you have operational experience and want to contribute something you know — without going through the full source research process — this is the fastest path.
+
+**Option 1 — Open a GitHub Issue**
+Use the [Contribute an operational insight](../../issues/new?template=atom-contribution.md) issue template. Fill in what you can. A maintainer will convert it into an atom file and add it to the pipeline.
+
+**Option 2 — Submit a file directly (via PR)**
+1. Copy `atoms/_human-template.md` to `atoms/atom-NNN.md` (next available number)
+2. Fill in the frontmatter — set `extracted_by: "human:your-github-username"`
+3. Set `unverified: true` if you don't have a source URL
+4. Fill in the Claim, Source/context, and Why sections
+5. Open a pull request
+
+Human-contributed atoms are weighted more heavily than LLM-extracted atoms during synthesis. The `why` section is the most valuable part — include it if you can.
+
+---
+
+## Extracting atoms from sources (LLM or manual)
+
+1. Read the source carefully (or use an LLM extraction prompt — see below)
 2. For each distinct claim worth extracting, create `atoms/atom-NNN.md`
 3. One atom = one insight. Don't combine multiple claims into one atom
 4. Fill in `type`, `process`, `phase`, `confidence`, and `practitioner_first_person` accurately
-5. Flag `bias_flags` honestly — atoms with bias flags are not discarded, just flagged for reviewers
+5. Set `extracted_by: "llm:model-slug"` if an LLM did the extraction, `"human:username"` if you did
+6. Flag `bias_flags` honestly — atoms with bias flags are not discarded, just flagged for reviewers
 
 **Atom types:**
 - `target_state` — what good looks like
@@ -61,6 +80,66 @@ Open: http://localhost:8765
 - `evolution` — how this changes at the next phase
 - `tool_resource` — a tool, template, or resource
 - `why` — the reasoning behind another claim
+
+**LLM extraction prompt (Phase 1 — per source)**
+
+Use this prompt with any LLM that has web access, passing one source URL at a time:
+
+```
+Read the content at [URL].
+
+Extract every distinct operational claim as a separate atom.
+For each atom, output a markdown file using this frontmatter structure:
+
+  id: atom-NNN
+  source_id: [to be assigned]
+  type: [target_state | action | warning_sign | evolution | tool_resource | why]
+  process: [financial-ops | strategic-ops | people-ops | legal-ops | revenue-ops]
+  phase: [foundation | first-hires | early-scale | growth | scaled]
+  sub_variant_signals: []
+  confidence: [high | medium | low]
+  practitioner_first_person: [true if the author speaks from direct experience]
+  bias_flags: [list any commercial interest signals]
+  extracted_by: "llm:claude-sonnet-4-6"
+  extracted_date: [today]
+  unverified: false
+
+Then the body:
+  ## Claim
+  ## Source quote or paraphrase
+  ## Why (if explicit in source)
+
+Rules:
+- One atom per distinct claim. Do not combine.
+- Write claims in second person ("you should...", "at this stage, you...").
+- If the author is clearly speaking from direct experience, set practitioner_first_person: true.
+- Flag bias_signals if the source has a commercial interest in the claim being true.
+- If the source does not explain why something is true, leave the Why section blank.
+```
+
+**LLM synthesis prompt (Phase 2 — per process × phase)**
+
+Once you have atoms extracted, use this prompt to synthesise a draft entry:
+
+```
+Here are [N] atoms for [process] / [phase].
+
+Synthesise a draft wiki entry using this 5-section structure:
+1. What good looks like at this phase
+2. What you actually need to do
+3. Warning signs you're behind
+4. How this evolves next
+5. Tools & resources
+
+Rules:
+- Add <!-- claim-id: c-NNN --> before each distinct claim (start from c-001).
+- For each claim, note in a comment which atom IDs support it.
+- If the only support for a claim comes from atoms with bias_flags, note that explicitly.
+- Prefer atoms with practitioner_first_person: true as primary sources.
+- Do not include claims supported only by a single vendor-biased atom.
+- Output the draft.md and a trail.md mapping each claim to its supporting atoms.
+```
+
 
 ---
 
@@ -91,18 +170,20 @@ Open: http://localhost:8765
 **Keyboard shortcuts:**
 | Key | Action |
 |---|---|
-| `1` | Approve |
-| `2` | Approve with edit |
-| `3` | Too generic |
-| `4` | Conditional |
-| `5` | Vendor biased |
-| `6` | Geographically biased |
-| `7` | Needs practitioner check |
-| `8` | Missing why |
-| `9` | Reject (wrong) |
+| `1` | Set status: Approve |
+| `2` | Set status: Approve with edit |
+| `9` | Set status: Reject |
+| `3` | Toggle flag: Too generic |
+| `4` | Toggle flag: Conditional |
+| `5` | Toggle flag: Vendor biased |
+| `6` | Toggle flag: Geographically biased |
+| `7` | Toggle flag: Needs practitioner check |
+| `8` | Toggle flag: Missing why |
 | `J` | Next claim |
 | `K` | Previous claim |
 | `Enter` | Save & advance |
+
+Status and flags are independent — you can approve a claim and flag it as vendor-biased at the same time.
 
 ---
 
@@ -124,6 +205,7 @@ wiki-pipeline/
 │   ├── src-001.md
 │   └── ...
 ├── atoms/              ← one .md per extracted claim
+│   ├── _human-template.md  ← template for human-contributed atoms
 │   ├── atom-001.md
 │   └── ...
 └── entries/
