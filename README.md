@@ -87,30 +87,44 @@ ducttape-to-coo/
 ├── data/
 │   ├── processes.json      # 28+ processes with stage mappings, guidance, and context axes
 │   └── stages.json         # Stage definitions, employee ranges, revenue and funding sequences
-└── wiki/
-    ├── stages/             # Stage portal pages (human entry point)
-    ├── processes/          # 130 atomic process × stage pages (agent retrieval units)
-    └── dimensions/         # Scoring dimension reference
+├── wiki/
+│   ├── stages/             # Stage portal pages (human entry point)
+│   ├── processes/          # 130 atomic process × stage pages (agent retrieval units)
+│   └── dimensions/         # Scoring dimension reference
+└── wiki-pipeline/
+    ├── schema.md           # Full format specification for the content pipeline
+    ├── server.py           # Approval tool server (Python 3, stdlib only, port 8765)
+    ├── approval-tool.html  # Claim review UI (single file, no frameworks)
+    ├── sources/            # Source research files (one per article/post/interview)
+    ├── atoms/              # Extracted claims from sources (one per insight)
+    └── entries/            # Synthesised wiki entries with audit trail and approval status
 ```
 
 ---
 
 ## Contributing
 
-Contributions are welcome — especially wiki content. Each process × stage page is a standalone markdown file. Pick one, fill it in, open a pull request.
+Contributions are welcome — especially wiki content and source research.
 
 **What's most needed right now:**
 - Wiki page content — see `wiki/processes/_template.md` for the template
+- Source research and atom extraction via the pipeline (see `wiki-pipeline/README.md`)
 - Refinements to stage-specific guidance in `data/processes.json`
 - Bug reports and UX feedback via GitHub Issues
 
-**To contribute:**
-1. Fork the repo
-2. Create a branch
-3. Make your change
-4. Open a pull request
+**To contribute wiki content directly:**
+1. Fork the repo, create a branch
+2. Pick any stub file in `wiki/processes/` and fill in the sections
+3. Open a pull request
 
-You don't need to be a developer to contribute wiki content — if you can edit a text file, you can contribute.
+**To contribute via the research pipeline:**
+1. Add a source file to `wiki-pipeline/sources/`
+2. Extract atoms to `wiki-pipeline/atoms/`
+3. Propose a draft entry or update an existing one
+4. Run the approval tool: `python3 wiki-pipeline/server.py` → http://localhost:8765
+5. Open a pull request with sources, atoms, draft, trail, and approval files
+
+You don't need to be a developer to contribute — if you can edit a text file, you can contribute. See `wiki-pipeline/README.md` for the full contributor workflow.
 
 ---
 

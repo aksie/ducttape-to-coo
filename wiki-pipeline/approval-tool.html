@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wiki Pipeline — Claim Approval Tool</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:         #0d1117;
+    --surface:    #161b22;
+    --surface2:   #21262d;
+    --border:     #30363d;
+    --border2:    #484f58;
+    --text:       #e6edf3;
+    --text-dim:   #8b949e;
+    --text-muted: #484f58;
+    --green:      #3fb950;
+    --green-dim:  #1a4726;
+    --blue:       #58a6ff;
+    --blue-dim:   #1c3454;
+    --orange:     #f0883e;
+    --orange-dim: #3d2210;
+    --red:        #ff7b72;
+    --red-dim:    #3d1a18;
+    --yellow:     #e3b341;
+    --yellow-dim: #3d2e0a;
+    --purple:     #bc8cff;
+    --purple-dim: #2e1f4a;
+    --font:       -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --mono:       'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── Layout ── */
+  .app { display: flex; flex-direction: column; height: 100vh; }
+
+  .app-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .app-header h1 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+  }
+
+  .entry-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+  }
+
+  .entry-selector label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+
+  select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  select:focus { border-color: var(--blue); }
+
+  .progress-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .progress-label {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+
+  .progress-bar-outer {
+    width: 120px;
+    height: 4px;
+    background: var(--surface2);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-bar-inner {
+    height: 100%;
+    background: var(--green);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  /* ── Main area ── */
+  .app-body {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* ── Claim list sidebar ── */
+  .claim-nav {
+    width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 12px 0;
+    background: var(--surface);
+  }
+
+  .claim-nav-title {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 0 12px 8px;
+  }
+
+  .claim-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    border-left: 2px solid transparent;
+  }
+  .claim-nav-item:hover { background: var(--surface2); color: var(--text); }
+  .claim-nav-item.active {
+    background: var(--surface2);
+    color: var(--text);
+    border-left-color: var(--blue);
+  }
+
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--border2);
+  }
+  .nav-dot.approved     { background: var(--green); }
+  .nav-dot.approved_with_edit { background: var(--blue); }
+  .nav-dot.rejected     { background: var(--red); }
+  .nav-dot.pending      { background: var(--border2); }
+
+  .claim-nav-id { font-family: var(--mono); font-size: 0.7rem; color: var(--text-muted); }
+
+  /* ── Main review pane ── */
+  .review-pane {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ── Claim card ── */
+  .claim-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+  }
+
+  .claim-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .claim-id-badge {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    background: var(--surface2);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .section-badge {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    background: var(--surface2);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .status-badge {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    margin-left: auto;
+  }
+  .status-badge.pending      { background: var(--surface2); color: var(--text-muted); }
+  .status-badge.approved     { background: var(--green-dim); color: var(--green); }
+  .status-badge.approved_with_edit { background: var(--blue-dim); color: var(--blue); }
+  .status-badge.rejected     { background: var(--red-dim); color: var(--red); }
+
+  .claim-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* Edited claim diff */
+  .edited-notice {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--blue-dim);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--blue);
+  }
+  .edited-notice .edited-label { font-weight: 600; margin-bottom: 4px; }
+  .edited-claim-text { color: var(--text); line-height: 1.55; }
+
+  /* ── Atoms ── */
+  .atoms-section { display: flex; flex-direction: column; gap: 10px; }
+
+  .atoms-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .atom-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .atom-card.rejected-atom {
+    opacity: 0.45;
+    border-style: dashed;
+  }
+
+  .atom-card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 7px;
+    flex-wrap: wrap;
+  }
+
+  .atom-id { font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); }
+
+  .badge {
+    font-size: 0.62rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+  .badge-type      { background: var(--surface); color: var(--text-dim); border: 1px solid var(--border); }
+  .badge-conf-high { background: var(--green-dim); color: var(--green); }
+  .badge-conf-med  { background: var(--yellow-dim); color: var(--yellow); }
+  .badge-conf-low  { background: var(--orange-dim); color: var(--orange); }
+  .badge-bias      { background: var(--red-dim); color: var(--red); }
+  .badge-practitioner { background: var(--purple-dim); color: var(--purple); }
+  .badge-why       { background: var(--blue-dim); color: var(--blue); }
+  .badge-geo       { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }
+  .badge-rejected  { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); font-style: italic; }
+
+  .atom-claim-text { font-size: 0.82rem; color: var(--text-dim); line-height: 1.55; }
+  .atom-source {
+    margin-top: 6px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  /* ── Approval actions ── */
+  .actions-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+  }
+
+  .actions-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .action-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-family: var(--font);
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+  .action-btn:hover { border-color: var(--border2); color: var(--text); }
+  .action-btn.active-approve  { background: var(--green-dim); border-color: var(--green); color: var(--green); }
+  .action-btn.active-edit     { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+  .action-btn.active-reject   { background: var(--red-dim); border-color: var(--red); color: var(--red); }
+  .action-btn.active-flag     { background: var(--yellow-dim); border-color: var(--yellow); color: var(--yellow); }
+  .action-btn .key-hint {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 1px 4px;
+    border-radius: 2px;
+  }
+
+  /* Inline edit area */
+  .edit-area {
+    display: none;
+    margin-bottom: 14px;
+  }
+  .edit-area.visible { display: block; }
+
+  .edit-area textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--blue);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    padding: 10px 12px;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+  }
+  .edit-area textarea:focus { border-color: var(--blue); }
+  .edit-area .edit-label {
+    font-size: 0.7rem;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  /* Rejection reason picker */
+  .reason-area {
+    display: none;
+    margin-bottom: 14px;
+  }
+  .reason-area.visible { display: block; }
+  .reason-area label { font-size: 0.72rem; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  .reason-area select { width: 100%; }
+
+  /* Conditional text field */
+  .conditional-area {
+    display: none;
+    margin-bottom: 14px;
+  }
+  .conditional-area.visible { display: block; }
+  .conditional-area label { font-size: 0.72rem; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  .conditional-area input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    padding: 6px 10px;
+    outline: none;
+  }
+  .conditional-area input:focus { border-color: var(--yellow); }
+
+  /* Missing why field */
+  .why-area {
+    display: none;
+    margin-bottom: 14px;
+  }
+  .why-area.visible { display: block; }
+  .why-area label { font-size: 0.72rem; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  .why-area textarea {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    resize: vertical;
+    min-height: 60px;
+    outline: none;
+  }
+  .why-area textarea:focus { border-color: var(--yellow); }
+
+  /* Notes */
+  .notes-area { margin-bottom: 16px; }
+  .notes-area label { font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  .notes-area input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    padding: 6px 10px;
+    outline: none;
+  }
+  .notes-area input:focus { border-color: var(--border2); }
+
+  /* Reviewer */
+  .reviewer-area { margin-bottom: 16px; }
+  .reviewer-area label { font-size: 0.7rem; color: var(--text-muted); display: block; margin-bottom: 6px; }
+  .reviewer-area input {
+    width: 200px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    padding: 6px 10px;
+    outline: none;
+  }
+  .reviewer-area input:focus { border-color: var(--border2); }
+
+  /* Submit + nav */
+  .submit-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-submit {
+    padding: 8px 20px;
+    background: var(--green-dim);
+    border: 1px solid var(--green);
+    border-radius: 4px;
+    color: var(--green);
+    font-family: var(--font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-submit:hover { background: #1f5c2e; }
+  .btn-submit:disabled { opacity: 0.3; cursor: default; }
+
+  .btn-nav {
+    padding: 8px 14px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-dim);
+    font-family: var(--font);
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .btn-nav:hover:not(:disabled) { border-color: var(--border2); color: var(--text); }
+  .btn-nav:disabled { opacity: 0.25; cursor: default; }
+
+  .save-indicator {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-left: 8px;
+  }
+  .save-indicator.saved { color: var(--green); }
+  .save-indicator.error { color: var(--red); }
+
+  /* ── Keyboard hint footer ── */
+  .keyboard-hints {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 6px 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .hint kbd {
+    font-family: var(--mono);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1px 4px;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+  }
+
+  /* ── Loading / error states ── */
+  .state-message {
+    padding: 40px 32px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- Header -->
+  <div class="app-header">
+    <h1>Wiki Pipeline · Claim Review</h1>
+    <div class="entry-selector">
+      <label for="entry-select">Entry:</label>
+      <select id="entry-select">
+        <option value="">Loading...</option>
+      </select>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label" id="progress-label">— of — reviewed</div>
+      <div class="progress-bar-outer">
+        <div class="progress-bar-inner" id="progress-bar" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="app-body">
+
+    <!-- Claim nav sidebar -->
+    <div class="claim-nav" id="claim-nav">
+      <div class="state-message">Select an entry above.</div>
+    </div>
+
+    <!-- Review pane -->
+    <div class="review-pane" id="review-pane">
+      <div class="state-message">Select an entry to begin reviewing claims.</div>
+    </div>
+
+  </div>
+
+  <!-- Keyboard hints -->
+  <div class="keyboard-hints">
+    <div class="hint"><kbd>1</kbd> Approve</div>
+    <div class="hint"><kbd>2</kbd> Approve with edit</div>
+    <div class="hint"><kbd>3</kbd> Too generic</div>
+    <div class="hint"><kbd>4</kbd> Conditional</div>
+    <div class="hint"><kbd>5</kbd> Vendor biased</div>
+    <div class="hint"><kbd>6</kbd> Geo biased</div>
+    <div class="hint"><kbd>7</kbd> Needs practitioner</div>
+    <div class="hint"><kbd>8</kbd> Missing why</div>
+    <div class="hint"><kbd>9</kbd> Reject (wrong)</div>
+    <div class="hint"><kbd>J</kbd> Next claim</div>
+    <div class="hint"><kbd>K</kbd> Previous claim</div>
+    <div class="hint"><kbd>Enter</kbd> Save &amp; next</div>
+  </div>
+
+</div>
+
+<script>
+// ── State ─────────────────────────────────────────────────────────────────────
+
+const API = 'http://localhost:8765';
+
+let entries      = [];   // list from /api/entries
+let currentEntry = null; // full entry data from /api/entry/{p}/{ph}
+let currentIdx   = 0;    // index into currentEntry.claims
+let pendingDecision = {  // current unsaved decision
+  action: null,          // 'approve'|'edit'|'reject'|'flag'
+  status: null,
+  rejection_reason: null,
+  edited_text: null,
+  notes: '',
+  reviewer: localStorage.getItem('reviewer') || '',
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function el(id) { return document.getElementById(id); }
+
+function statusColor(status) {
+  if (status === 'approved') return 'approved';
+  if (status === 'approved_with_edit') return 'approved_with_edit';
+  if (status === 'rejected') return 'rejected';
+  return 'pending';
+}
+
+function sectionLabel(slug) {
+  const map = {
+    what_good_looks_like: 'What good looks like',
+    what_to_do:           'What to do',
+    warning_signs:        'Warning signs',
+    evolution:            'How this evolves',
+    tools_resources:      'Tools & resources',
+  };
+  return map[slug] || slug;
+}
+
+function confBadgeClass(conf) {
+  if (conf === 'high')   return 'badge-conf-high';
+  if (conf === 'medium') return 'badge-conf-med';
+  return 'badge-conf-low';
+}
+
+function esc(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// ── Boot ──────────────────────────────────────────────────────────────────────
+
+async function boot() {
+  try {
+    const res = await fetch(`${API}/api/entries`);
+    entries = await res.json();
+  } catch (e) {
+    el('review-pane').innerHTML =
+      `<div class="state-message">Cannot connect to server at ${API}. Run: <code>python3 wiki-pipeline/server.py</code></div>`;
+    return;
+  }
+
+  const sel = el('entry-select');
+  sel.innerHTML = entries.map(e =>
+    `<option value="${e.process}/${e.phase}">${e.process} / ${e.phase} (${e.approved + e.rejected}/${e.claim_count} reviewed)</option>`
+  ).join('');
+
+  sel.addEventListener('change', () => loadEntry(sel.value));
+
+  if (entries.length > 0) {
+    loadEntry(`${entries[0].process}/${entries[0].phase}`);
+  }
+}
+
+// ── Entry loader ──────────────────────────────────────────────────────────────
+
+async function loadEntry(key) {
+  if (!key) return;
+  const [process, phase] = key.split('/');
+  el('review-pane').innerHTML = '<div class="state-message">Loading...</div>';
+  el('claim-nav').innerHTML = '<div class="state-message">Loading...</div>';
+
+  try {
+    const res = await fetch(`${API}/api/entry/${process}/${phase}`);
+    currentEntry = await res.json();
+  } catch (e) {
+    el('review-pane').innerHTML = `<div class="state-message">Error loading entry: ${e.message}</div>`;
+    return;
+  }
+
+  currentIdx = 0;
+  // Start on first pending claim if any
+  const firstPending = currentEntry.claims.findIndex(c => c.approval.status === 'pending');
+  if (firstPending >= 0) currentIdx = firstPending;
+
+  renderNav();
+  renderClaim(currentIdx);
+  updateProgress();
+}
+
+// ── Nav ───────────────────────────────────────────────────────────────────────
+
+function renderNav() {
+  const nav = el('claim-nav');
+  nav.innerHTML = '<div class="claim-nav-title">Claims</div>' +
+    currentEntry.claims.map((c, i) => `
+      <div class="claim-nav-item ${i === currentIdx ? 'active' : ''}"
+           onclick="goTo(${i})" data-idx="${i}">
+        <div class="nav-dot ${statusColor(c.approval.status)}"></div>
+        <span class="claim-nav-id">${c.id}</span>
+      </div>
+    `).join('');
+}
+
+function updateNavActive() {
+  document.querySelectorAll('.claim-nav-item').forEach((el, i) => {
+    el.classList.toggle('active', i === currentIdx);
+  });
+}
+
+// ── Progress ──────────────────────────────────────────────────────────────────
+
+function updateProgress() {
+  if (!currentEntry) return;
+  const total    = currentEntry.claims.length;
+  const reviewed = currentEntry.claims.filter(
+    c => c.approval.status !== 'pending'
+  ).length;
+  const pct = total > 0 ? Math.round(reviewed / total * 100) : 0;
+
+  el('progress-label').textContent = `${reviewed} of ${total} reviewed`;
+  el('progress-bar').style.width = `${pct}%`;
+
+  // Update the entry selector label
+  const sel = el('entry-select');
+  const opt = [...sel.options].find(o => o.value === `${currentEntry.process}/${currentEntry.phase}`);
+  if (opt) opt.textContent = `${currentEntry.process} / ${currentEntry.phase} (${reviewed}/${total} reviewed)`;
+}
+
+// ── Claim renderer ────────────────────────────────────────────────────────────
+
+function renderClaim(idx) {
+  if (!currentEntry || !currentEntry.claims[idx]) return;
+  currentIdx = idx;
+  updateNavActive();
+
+  const claim    = currentEntry.claims[idx];
+  const approval = claim.approval;
+  const status   = statusColor(approval.status);
+
+  // Reset pending decision to current saved state
+  pendingDecision = {
+    action: approval.status !== 'pending' ? approval.status : null,
+    status: approval.status,
+    rejection_reason: approval.rejection_reason || null,
+    edited_text: approval.edited_claim_text || null,
+    notes: approval.reviewer_notes || '',
+    reviewer: localStorage.getItem('reviewer') || '',
+  };
+
+  const editedNotice = (approval.status === 'approved_with_edit' && approval.edited_claim_text)
+    ? `<div class="edited-notice">
+        <div class="edited-label">Approved with edit</div>
+        <div class="edited-claim-text">${esc(approval.edited_claim_text)}</div>
+       </div>`
+    : '';
+
+  // Atoms HTML
+  const atomsHtml = claim.atoms.length === 0
+    ? '<div style="font-size:0.78rem;color:var(--text-muted)">No atoms linked in trail.</div>'
+    : claim.atoms.map(a => renderAtomCard(a)).join('');
+
+  const pane = el('review-pane');
+  pane.innerHTML = `
+    <!-- Claim card -->
+    <div class="claim-card">
+      <div class="claim-meta">
+        <span class="claim-id-badge">${esc(claim.id)}</span>
+        <span class="section-badge">${esc(sectionLabel(claim.section))}</span>
+        <span class="status-badge ${status}">${esc(approval.status.replace('_', ' '))}</span>
+      </div>
+      <div class="claim-text">${esc(claim.text)}</div>
+      ${editedNotice}
+    </div>
+
+    <!-- Supporting atoms -->
+    <div class="atoms-section">
+      <div class="atoms-title">Supporting atoms (${claim.atoms.length})</div>
+      ${atomsHtml}
+    </div>
+
+    <!-- Approval actions -->
+    <div class="actions-section">
+      <div class="actions-title">Review decision</div>
+
+      <div class="action-grid">
+        <button class="action-btn" data-action="approve" onclick="selectAction('approve','approved',null)">
+          <span class="key-hint">1</span> ✅ Approve
+        </button>
+        <button class="action-btn" data-action="edit" onclick="selectAction('edit','approved_with_edit',null)">
+          <span class="key-hint">2</span> 🔄 Approve with edit
+        </button>
+        <button class="action-btn" data-action="flag-generic" onclick="selectAction('flag-generic','rejected','too_generic')">
+          <span class="key-hint">3</span> ⚠️ Too generic
+        </button>
+        <button class="action-btn" data-action="flag-conditional" onclick="selectAction('flag-conditional','rejected','conditional')">
+          <span class="key-hint">4</span> 🎯 Conditional
+        </button>
+        <button class="action-btn" data-action="flag-vendor" onclick="selectAction('flag-vendor','rejected','vendor_biased')">
+          <span class="key-hint">5</span> 💰 Vendor biased
+        </button>
+        <button class="action-btn" data-action="flag-geo" onclick="selectAction('flag-geo','rejected','geographically_biased')">
+          <span class="key-hint">6</span> 🌍 Geo biased
+        </button>
+        <button class="action-btn" data-action="flag-practitioner" onclick="selectAction('flag-practitioner','rejected','needs_practitioner_check')">
+          <span class="key-hint">7</span> ❓ Needs practitioner
+        </button>
+        <button class="action-btn" data-action="flag-why" onclick="selectAction('flag-why','rejected','missing_why')">
+          <span class="key-hint">8</span> 🆕 Missing why
+        </button>
+        <button class="action-btn" data-action="reject" onclick="selectAction('reject','rejected','wrong')">
+          <span class="key-hint">9</span> ❌ Reject (wrong)
+        </button>
+      </div>
+
+      <!-- Inline edit textarea -->
+      <div class="edit-area" id="edit-area">
+        <div class="edit-label">Edit claim text:</div>
+        <textarea id="edit-textarea" placeholder="Edit the claim text here..."
+          oninput="pendingDecision.edited_text = this.value">${esc(approval.edited_claim_text || claim.text)}</textarea>
+      </div>
+
+      <!-- Conditional text -->
+      <div class="conditional-area" id="conditional-area">
+        <label>Which segment does this apply to? (optional):</label>
+        <input id="conditional-input" type="text" placeholder="e.g. venture-backed only"
+          oninput="pendingDecision.notes = this.value"
+          value="${esc(approval.rejection_reason === 'conditional' ? approval.reviewer_notes : '')}">
+      </div>
+
+      <!-- Missing why text -->
+      <div class="why-area" id="why-area">
+        <label>Add a suggested "why" (optional):</label>
+        <textarea id="why-textarea" placeholder="Why is this claim true? What's the reasoning?"
+          oninput="pendingDecision.notes = this.value">${esc(approval.rejection_reason === 'missing_why' ? approval.reviewer_notes : '')}</textarea>
+      </div>
+
+      <!-- Notes -->
+      <div class="notes-area">
+        <label>Notes (optional):</label>
+        <input id="notes-input" type="text" placeholder="Any reviewer notes..."
+          oninput="pendingDecision.notes = this.value"
+          value="${esc(approval.reviewer_notes || '')}">
+      </div>
+
+      <!-- Reviewer -->
+      <div class="reviewer-area">
+        <label>Reviewed by (GitHub username):</label>
+        <input id="reviewer-input" type="text" placeholder="your-github-username"
+          oninput="setReviewer(this.value)"
+          value="${esc(pendingDecision.reviewer)}">
+      </div>
+
+      <!-- Submit row -->
+      <div class="submit-row">
+        <button class="btn-submit" id="btn-submit" onclick="saveDecision()" disabled>
+          Save decision
+        </button>
+        <button class="btn-nav" id="btn-prev" onclick="goTo(${idx - 1})" ${idx === 0 ? 'disabled' : ''}>
+          ← prev
+        </button>
+        <button class="btn-nav" id="btn-next" onclick="goTo(${idx + 1})"
+          ${idx === currentEntry.claims.length - 1 ? 'disabled' : ''}>
+          next →
+        </button>
+        <span class="save-indicator" id="save-indicator"></span>
+      </div>
+    </div>
+  `;
+
+  // Restore active button state if already decided
+  if (pendingDecision.action) {
+    restoreActiveButton(pendingDecision.action);
+    el('btn-submit').disabled = false;
+  }
+}
+
+function renderAtomCard(atom) {
+  const biasHtml = (atom.bias_flags || []).map(b =>
+    `<span class="badge badge-bias">${esc(b)}</span>`
+  ).join('');
+  const sourceBiasHtml = (atom.source_bias_signals || []).map(b =>
+    `<span class="badge badge-bias">${esc(b)}</span>`
+  ).join('');
+
+  return `
+    <div class="atom-card ${atom.is_rejected ? 'rejected-atom' : ''}">
+      <div class="atom-card-header">
+        <span class="atom-id">${esc(atom.id)}</span>
+        <span class="badge badge-type">${esc(atom.type || '')}</span>
+        <span class="badge ${confBadgeClass(atom.confidence)}">${esc(atom.confidence || '')}</span>
+        ${atom.practitioner_first_person ? '<span class="badge badge-practitioner">practitioner</span>' : ''}
+        ${atom.is_why_source ? '<span class="badge badge-why">why-source</span>' : ''}
+        ${atom.is_rejected ? '<span class="badge badge-rejected">rejected in trail</span>' : ''}
+        ${biasHtml}
+      </div>
+      <div class="atom-claim-text">${esc(atom.claim_text || '')}</div>
+      <div class="atom-source">
+        ${esc(atom.source_title || atom.source_id || '')}
+        ${atom.source_type ? `· <span class="badge badge-type">${esc(atom.source_type)}</span>` : ''}
+        ${atom.source_geographic_focus ? `<span class="badge badge-geo">${esc(atom.source_geographic_focus)}</span>` : ''}
+        ${sourceBiasHtml}
+      </div>
+    </div>
+  `;
+}
+
+// ── Action selection ──────────────────────────────────────────────────────────
+
+function selectAction(action, status, rejectionReason) {
+  pendingDecision.action          = action;
+  pendingDecision.status          = status;
+  pendingDecision.rejection_reason = rejectionReason;
+
+  // Clear sub-fields
+  pendingDecision.edited_text = null;
+  pendingDecision.notes = el('notes-input')?.value || '';
+
+  // Toggle button active state
+  document.querySelectorAll('.action-btn').forEach(b => {
+    b.classList.remove('active-approve', 'active-edit', 'active-reject', 'active-flag');
+  });
+  restoreActiveButton(action);
+
+  // Show/hide sub-fields
+  el('edit-area').classList.toggle('visible', action === 'edit');
+  el('conditional-area').classList.toggle('visible', action === 'flag-conditional');
+  el('why-area').classList.toggle('visible', action === 'flag-why');
+
+  // Notes field label
+  const notesLabel = el('notes-input')?.previousElementSibling;
+  if (notesLabel) {
+    notesLabel.textContent = action === 'flag-conditional'
+      ? 'Segment qualifier (saved to notes):'
+      : action === 'flag-why'
+      ? 'Suggested why (saved to notes):'
+      : 'Notes (optional):';
+  }
+
+  el('btn-submit').disabled = false;
+}
+
+function restoreActiveButton(action) {
+  const btn = document.querySelector(`[data-action="${action}"]`);
+  if (!btn) return;
+  if (action === 'approve')     btn.classList.add('active-approve');
+  else if (action === 'edit')   btn.classList.add('active-edit');
+  else if (action === 'reject') btn.classList.add('active-reject');
+  else                          btn.classList.add('active-flag');
+}
+
+// ── Save ──────────────────────────────────────────────────────────────────────
+
+async function saveDecision() {
+  if (!pendingDecision.status || !currentEntry) return;
+
+  const claim = currentEntry.claims[currentIdx];
+  const indicator = el('save-indicator');
+  indicator.textContent = 'Saving...';
+  indicator.className = 'save-indicator';
+
+  // Collect notes from whichever sub-field is active
+  let notes = el('notes-input')?.value || '';
+  if (pendingDecision.action === 'flag-conditional') {
+    notes = el('conditional-input')?.value || notes;
+  } else if (pendingDecision.action === 'flag-why') {
+    notes = el('why-textarea')?.value || notes;
+  }
+
+  const editedText = pendingDecision.action === 'edit'
+    ? (el('edit-textarea')?.value || null)
+    : null;
+
+  const payload = {
+    process:           currentEntry.process,
+    phase:             currentEntry.phase,
+    claim_id:          claim.id,
+    status:            pendingDecision.status,
+    rejection_reason:  pendingDecision.rejection_reason || null,
+    reviewer_notes:    notes,
+    edited_claim_text: editedText,
+    reviewed_by:       pendingDecision.reviewer,
+  };
+
+  try {
+    const res = await fetch(`${API}/api/approve`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (data.ok) {
+      // Update local state
+      claim.approval = {
+        status:            pendingDecision.status,
+        rejection_reason:  pendingDecision.rejection_reason || '',
+        reviewer_notes:    notes,
+        edited_claim_text: editedText || '',
+        reviewed_by:       pendingDecision.reviewer,
+      };
+      indicator.textContent = '✓ Saved';
+      indicator.className = 'save-indicator saved';
+
+      updateProgress();
+      renderNav();
+
+      // Auto-advance to next pending claim after brief pause
+      setTimeout(() => {
+        const nextPending = currentEntry.claims.findIndex(
+          (c, i) => i > currentIdx && c.approval.status === 'pending'
+        );
+        if (nextPending >= 0) goTo(nextPending);
+      }, 400);
+    } else {
+      indicator.textContent = `Error: ${data.error}`;
+      indicator.className = 'save-indicator error';
+    }
+  } catch (e) {
+    indicator.textContent = `Error: ${e.message}`;
+    indicator.className = 'save-indicator error';
+  }
+}
+
+function goTo(idx) {
+  if (!currentEntry) return;
+  if (idx < 0 || idx >= currentEntry.claims.length) return;
+  renderClaim(idx);
+}
+
+function setReviewer(val) {
+  pendingDecision.reviewer = val;
+  localStorage.setItem('reviewer', val);
+}
+
+// ── Keyboard shortcuts ────────────────────────────────────────────────────────
+
+document.addEventListener('keydown', e => {
+  // Don't fire shortcuts when typing in a text field
+  const tag = document.activeElement?.tagName;
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') {
+    // Allow Enter to submit even from text fields
+    if (e.key === 'Enter' && !e.shiftKey) {
+      if (pendingDecision.status) {
+        e.preventDefault();
+        saveDecision();
+      }
+    }
+    return;
+  }
+
+  const actions = {
+    '1': () => selectAction('approve', 'approved', null),
+    '2': () => selectAction('edit', 'approved_with_edit', null),
+    '3': () => selectAction('flag-generic', 'rejected', 'too_generic'),
+    '4': () => selectAction('flag-conditional', 'rejected', 'conditional'),
+    '5': () => selectAction('flag-vendor', 'rejected', 'vendor_biased'),
+    '6': () => selectAction('flag-geo', 'rejected', 'geographically_biased'),
+    '7': () => selectAction('flag-practitioner', 'rejected', 'needs_practitioner_check'),
+    '8': () => selectAction('flag-why', 'rejected', 'missing_why'),
+    '9': () => selectAction('reject', 'rejected', 'wrong'),
+    'j': () => goTo(currentIdx + 1),
+    'k': () => goTo(currentIdx - 1),
+    'Enter': () => { if (pendingDecision.status) saveDecision(); },
+  };
+
+  const handler = actions[e.key.toLowerCase()] || actions[e.key];
+  if (handler) {
+    e.preventDefault();
+    handler();
+  }
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+
+boot();
+</script>
+</body>
+</html>
