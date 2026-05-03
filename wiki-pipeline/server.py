@@ -268,7 +268,7 @@ def load_entry(process, phase):
 
     # ── Approval: load statuses ────────────────────────────────────────────────
     approval_text = read_file(os.path.join(phase_dir, "approval.md"))
-    approval_map = {}  # claim_id → { status, rejection_reason, reviewer_notes, edited_claim_text }
+    approval_map = {}  # claim_id → { status, flags, reviewer_notes, edited_claim_text }
 
     if approval_text:
         _, approval_body = parse_frontmatter(approval_text)
@@ -277,7 +277,7 @@ def load_entry(process, phase):
         for cid, cbody in zip(it, it):
             cid = cid.strip()
             status   = re.search(r'- Status:\s*(\S+)', cbody)
-            reason   = re.search(r'- Rejection reason:\s*(.*)', cbody)
+            flags_m  = re.search(r'- Flags:\s*(.*)', cbody)
             notes    = re.search(r'- Reviewer notes:\s*"(.*?)"', cbody)
             reviewed = re.search(r'- Reviewed by:\s*"?(.*?)"?$', cbody, re.MULTILINE)
             rev_date = re.search(r'- Reviewed date:\s*(.*)', cbody)
@@ -289,9 +289,19 @@ def load_entry(process, phase):
                 v = m.group(1).strip().strip('"')
                 return '' if v.lower() == 'null' else v
 
+            # Parse flags: "[]" or "[vendor_biased, too_generic]" or "vendor_biased"
+            def parse_flags(m):
+                if not m:
+                    return []
+                raw = m.group(1).strip()
+                if not raw or raw in ('[]', 'null'):
+                    return []
+                raw = raw.strip('[]')
+                return [f.strip() for f in raw.split(',') if f.strip()]
+
             approval_map[cid] = {
                 "status":            clean(status, 'pending'),
-                "rejection_reason":  clean(reason),
+                "flags":             parse_flags(flags_m),
                 "reviewer_notes":    clean(notes),
                 "reviewed_by":       clean(reviewed),
                 "reviewed_date":     clean(rev_date),
@@ -378,11 +388,12 @@ def load_entry(process, phase):
 
 # ── Approval writer ────────────────────────────────────────────────────────────
 
-def write_approval(process, phase, claim_id, status, rejection_reason,
+def write_approval(process, phase, claim_id, status, flags,
                    reviewer_notes, edited_claim_text, reviewed_by):
     """
     Update a single claim's approval status in approval.md.
     Rewrites only the block for claim_id; leaves all others untouched.
+    flags is a list of strings, e.g. ['vendor_biased', 'too_generic'].
     """
     approval_path = os.path.join(ENTRIES_DIR, process, phase, "approval.md")
     text = read_file(approval_path)
@@ -391,11 +402,12 @@ def write_approval(process, phase, claim_id, status, rejection_reason,
 
     today = date.today().isoformat()
     reviewed_by_str = reviewed_by or ""
+    flags_str = f"[{', '.join(flags)}]" if flags else "[]"
 
     # Build the replacement block
     new_block = f"""### {claim_id}
 - Status: {status}
-- Rejection reason: {rejection_reason or 'null'}
+- Flags: {flags_str}
 - Reviewer notes: "{reviewer_notes or ''}"
 - Reviewed by: "{reviewed_by_str}"
 - Reviewed date: {today}
@@ -496,14 +508,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 self.send_error_json(400, "Invalid JSON")
                 return
 
-            process          = payload.get('process', '').strip()
-            phase            = payload.get('phase', '').strip()
-            claim_id         = payload.get('claim_id', '').strip()
-            status           = payload.get('status', '').strip()
-            rejection_reason = payload.get('rejection_reason', None)
-            reviewer_notes   = payload.get('reviewer_notes', '')
-            edited_text      = payload.get('edited_claim_text', None)
-            reviewed_by      = payload.get('reviewed_by', '')
+            process        = payload.get('process', '').strip()
+            phase          = payload.get('phase', '').strip()
+            claim_id       = payload.get('claim_id', '').strip()
+            status         = payload.get('status', '').strip()
+            flags          = payload.get('flags', [])
+            reviewer_notes = payload.get('reviewer_notes', '')
+            edited_text    = payload.get('edited_claim_text', None)
+            reviewed_by    = payload.get('reviewed_by', '')
 
             if not all([process, phase, claim_id, status]):
                 self.send_error_json(400, "Missing required fields: process, phase, claim_id, status")
@@ -514,9 +526,13 @@ class Handler(http.server.BaseHTTPRequestHandler):
                 self.send_error_json(400, f"Invalid status. Must be one of: {valid_statuses}")
                 return
 
+            if not isinstance(flags, list):
+                self.send_error_json(400, "flags must be a list")
+                return
+
             ok, msg = write_approval(
                 process, phase, claim_id, status,
-                rejection_reason, reviewer_notes, edited_text, reviewed_by
+                flags, reviewer_notes, edited_text, reviewed_by
             )
             if ok:
                 self.send_json({"ok": True, "claim_id": claim_id, "status": status})

@@ -270,7 +270,7 @@ Records the review decision for each claim. Written by the approval tool; can al
 ```markdown
 ### c-001
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -281,17 +281,20 @@ Records the review decision for each claim. Written by the approval tool; can al
 - `pending` — not yet reviewed
 - `approved` — claim accepted as-is
 - `approved_with_edit` — claim accepted with modified text (see `Edited claim text`)
-- `rejected` — claim not accepted (see `Rejection reason`)
+- `rejected` — claim not accepted
 
-**Rejection reason values:**
-- `null` — not rejected
+**Flag values** (independent of status — any combination):
 - `too_generic` — claim is true but not specific enough to be useful
 - `conditional` — claim is only true for a subset of companies; needs qualification
-- `vendor_biased` — only vendor sources support this claim
+- `vendor_biased` — vendor sources are the primary or only support for this claim
 - `geographically_biased` — claim assumes a specific legal or market context not stated
-- `needs_practitioner_check` — no practitioner source; needs validation from someone with direct experience
+- `needs_practitioner_check` — no practitioner source; needs validation from direct experience
 - `missing_why` — claim may be true but the draft doesn't explain why; needs reasoning added
-- `wrong` — claim is factually incorrect or contradicted by stronger sources
+
+Flags are recorded independently of the approve/reject decision. Examples:
+- `approved` + `[vendor_biased]` — published, but flagged for stronger sourcing later
+- `approved_with_edit` + `[vendor_biased]` — vendor framing fixed in edit, published
+- `rejected` + `[vendor_biased, too_generic]` — not published; two reasons recorded
 
 ---
 

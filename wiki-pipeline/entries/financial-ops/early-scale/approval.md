@@ -7,7 +7,7 @@ last_updated: 2026-05-03
 
 ### c-001
 - Status: rejected
-- Rejection reason: missing_why
+- Flags: []
 - Reviewer notes: "So that you are not needing to build a model when you do go into fund raising mode, that is why you should have a model that is up to date every month. And you should review / use it so you know about your financial headlines (run rate, things to change when run rate becomes too short). "
 - Reviewed by: "aksie"
 - Reviewed date: 2026-05-03
@@ -15,7 +15,7 @@ last_updated: 2026-05-03
 
 ### c-002
 - Status: approved_with_edit
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: "aksie"
 - Reviewed date: 2026-05-03
@@ -23,7 +23,7 @@ last_updated: 2026-05-03
 
 ### c-003
 - Status: rejected
-- Rejection reason: missing_why
+- Flags: []
 - Reviewer notes: "Monthly cadence gives you too little lead time to act (unless run rate is no issue at all). Visible to all, so all decisions on the strategic finance level are taken by the whole leadership team with all the needed information. This makes it bearable for all - not one having all the weight on their shoulders - and makes the quality of decisions better. "
 - Reviewed by: "aksie"
 - Reviewed date: 2026-05-03
@@ -31,7 +31,7 @@ last_updated: 2026-05-03
 
 ### c-004
 - Status: rejected
-- Rejection reason: missing_why
+- Flags: []
 - Reviewer notes: "Retroactive separation is a significant analytical burden and delays your ability to see gross margin trends. You should not over engineer getting the last 1% correct, but get something in place. "
 - Reviewed by: "aksie"
 - Reviewed date: 2026-05-03
@@ -39,23 +39,23 @@ last_updated: 2026-05-03
 
 ### c-005
 - Status: approved_with_edit
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: "Seperating it in accounting as well might be too heavy"
 - Reviewed by: "aksie"
 - Reviewed date: 2026-05-03
 - Edited claim text: COGS and operating expenses are separated in your chart of accounts, giving you a clean gross margin line without analytical overhead. Not in month one of revenue - that would be too much financial setup for your stage. 
 
 ### c-006
-- Status: rejected
-- Rejection reason: vendor_biased
-- Reviewer notes: "Restructuring is disruptive, but first get to a few months of revenue before putting in this work. Until then, first signs of product market first are much more important for a founding team, this can wait, IMHO. "
-- Reviewed by: "aksie"
+- Status: approved
+- Rejection reason: null
+- Reviewer notes: ""
+- Reviewed by: "test"
 - Reviewed date: 2026-05-03
 - Edited claim text: null
 
 ### c-007
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -63,7 +63,7 @@ last_updated: 2026-05-03
 
 ### c-008
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -71,7 +71,7 @@ last_updated: 2026-05-03
 
 ### c-009
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -79,7 +79,7 @@ last_updated: 2026-05-03
 
 ### c-010
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -87,7 +87,7 @@ last_updated: 2026-05-03
 
 ### c-011
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -95,7 +95,7 @@ last_updated: 2026-05-03
 
 ### c-012
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -103,7 +103,7 @@ last_updated: 2026-05-03
 
 ### c-013
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -111,7 +111,7 @@ last_updated: 2026-05-03
 
 ### c-014
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -119,7 +119,7 @@ last_updated: 2026-05-03
 
 ### c-015
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -127,7 +127,7 @@ last_updated: 2026-05-03
 
 ### c-016
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -135,7 +135,7 @@ last_updated: 2026-05-03
 
 ### c-017
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null
@@ -143,7 +143,7 @@ last_updated: 2026-05-03
 
 ### c-018
 - Status: pending
-- Rejection reason: null
+- Flags: []
 - Reviewer notes: ""
 - Reviewed by: ""
 - Reviewed date: null

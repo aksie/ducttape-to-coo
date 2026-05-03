@@ -540,6 +540,50 @@
     color: var(--text-dim);
   }
 
+  /* ── Flags ── */
+  .flags-section { margin-bottom: 16px; }
+  .flags-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .flags-hint {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+  }
+  .flags-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .flag-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface2);
+    color: var(--text-muted);
+    font-size: 0.76rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    user-select: none;
+  }
+  .flag-checkbox input[type=checkbox] { display: none; }
+  .flag-checkbox:hover { border-color: var(--yellow); color: var(--text); }
+  .flag-checkbox.checked {
+    background: var(--yellow-dim);
+    border-color: var(--yellow);
+    color: var(--yellow);
+  }
+
   /* ── Loading / error states ── */
   .state-message {
     padding: 40px 32px;
@@ -588,15 +632,15 @@
   <div class="keyboard-hints">
     <div class="hint"><kbd>1</kbd> Approve</div>
     <div class="hint"><kbd>2</kbd> Approve with edit</div>
-    <div class="hint"><kbd>3</kbd> Too generic</div>
-    <div class="hint"><kbd>4</kbd> Conditional</div>
-    <div class="hint"><kbd>5</kbd> Vendor biased</div>
-    <div class="hint"><kbd>6</kbd> Geo biased</div>
-    <div class="hint"><kbd>7</kbd> Needs practitioner</div>
-    <div class="hint"><kbd>8</kbd> Missing why</div>
-    <div class="hint"><kbd>9</kbd> Reject (wrong)</div>
-    <div class="hint"><kbd>J</kbd> Next claim</div>
-    <div class="hint"><kbd>K</kbd> Previous claim</div>
+    <div class="hint"><kbd>9</kbd> Reject</div>
+    <div class="hint"><kbd>3</kbd> Flag: too generic</div>
+    <div class="hint"><kbd>4</kbd> Flag: conditional</div>
+    <div class="hint"><kbd>5</kbd> Flag: vendor biased</div>
+    <div class="hint"><kbd>6</kbd> Flag: geo biased</div>
+    <div class="hint"><kbd>7</kbd> Flag: needs practitioner</div>
+    <div class="hint"><kbd>8</kbd> Flag: missing why</div>
+    <div class="hint"><kbd>J</kbd> Next</div>
+    <div class="hint"><kbd>K</kbd> Prev</div>
     <div class="hint"><kbd>Enter</kbd> Save &amp; next</div>
   </div>
 
@@ -611,9 +655,8 @@ let entries      = [];   // list from /api/entries
 let currentEntry = null; // full entry data from /api/entry/{p}/{ph}
 let currentIdx   = 0;    // index into currentEntry.claims
 let pendingDecision = {  // current unsaved decision
-  action: null,          // 'approve'|'edit'|'reject'|'flag'
-  status: null,
-  rejection_reason: null,
+  status: null,          // 'approved'|'approved_with_edit'|'rejected'
+  flags: [],             // ['vendor_biased', 'too_generic', ...]  — independent of status
   edited_text: null,
   notes: '',
   reviewer: localStorage.getItem('reviewer') || '',
@@ -757,9 +800,8 @@ function renderClaim(idx) {
 
   // Reset pending decision to current saved state
   pendingDecision = {
-    action: approval.status !== 'pending' ? approval.status : null,
-    status: approval.status,
-    rejection_reason: approval.rejection_reason || null,
+    status: approval.status !== 'pending' ? approval.status : null,
+    flags: approval.flags || [],
     edited_text: approval.edited_claim_text || null,
     notes: approval.reviewer_notes || '',
     reviewer: localStorage.getItem('reviewer') || '',
@@ -800,56 +842,36 @@ function renderClaim(idx) {
     <div class="actions-section">
       <div class="actions-title">Review decision</div>
 
-      <div class="action-grid">
-        <button class="action-btn" data-action="approve" onclick="selectAction('approve','approved',null)">
+      <!-- Status: 3 mutually exclusive buttons -->
+      <div class="action-grid" style="margin-bottom:14px">
+        <button class="action-btn" data-status="approved" onclick="selectStatus('approved')">
           <span class="key-hint">1</span> ✅ Approve
         </button>
-        <button class="action-btn" data-action="edit" onclick="selectAction('edit','approved_with_edit',null)">
+        <button class="action-btn" data-status="approved_with_edit" onclick="selectStatus('approved_with_edit')">
           <span class="key-hint">2</span> 🔄 Approve with edit
         </button>
-        <button class="action-btn" data-action="flag-generic" onclick="selectAction('flag-generic','rejected','too_generic')">
-          <span class="key-hint">3</span> ⚠️ Too generic
-        </button>
-        <button class="action-btn" data-action="flag-conditional" onclick="selectAction('flag-conditional','rejected','conditional')">
-          <span class="key-hint">4</span> 🎯 Conditional
-        </button>
-        <button class="action-btn" data-action="flag-vendor" onclick="selectAction('flag-vendor','rejected','vendor_biased')">
-          <span class="key-hint">5</span> 💰 Vendor biased
-        </button>
-        <button class="action-btn" data-action="flag-geo" onclick="selectAction('flag-geo','rejected','geographically_biased')">
-          <span class="key-hint">6</span> 🌍 Geo biased
-        </button>
-        <button class="action-btn" data-action="flag-practitioner" onclick="selectAction('flag-practitioner','rejected','needs_practitioner_check')">
-          <span class="key-hint">7</span> ❓ Needs practitioner
-        </button>
-        <button class="action-btn" data-action="flag-why" onclick="selectAction('flag-why','rejected','missing_why')">
-          <span class="key-hint">8</span> 🆕 Missing why
-        </button>
-        <button class="action-btn" data-action="reject" onclick="selectAction('reject','rejected','wrong')">
-          <span class="key-hint">9</span> ❌ Reject (wrong)
+        <button class="action-btn" data-status="rejected" onclick="selectStatus('rejected')">
+          <span class="key-hint">9</span> ❌ Reject
         </button>
       </div>
 
-      <!-- Inline edit textarea -->
+      <!-- Inline edit textarea — shown when approved_with_edit -->
       <div class="edit-area" id="edit-area">
         <div class="edit-label">Edit claim text:</div>
         <textarea id="edit-textarea" placeholder="Edit the claim text here..."
           oninput="pendingDecision.edited_text = this.value">${esc(approval.edited_claim_text || claim.text)}</textarea>
       </div>
 
-      <!-- Conditional text -->
-      <div class="conditional-area" id="conditional-area">
-        <label>Which segment does this apply to? (optional):</label>
-        <input id="conditional-input" type="text" placeholder="e.g. venture-backed only"
-          oninput="pendingDecision.notes = this.value"
-          value="${esc(approval.rejection_reason === 'conditional' ? approval.reviewer_notes : '')}">
-      </div>
-
-      <!-- Missing why text -->
-      <div class="why-area" id="why-area">
-        <label>Add a suggested "why" (optional):</label>
-        <textarea id="why-textarea" placeholder="Why is this claim true? What's the reasoning?"
-          oninput="pendingDecision.notes = this.value">${esc(approval.rejection_reason === 'missing_why' ? approval.reviewer_notes : '')}</textarea>
+      <!-- Flags: independent checkboxes -->
+      <div class="flags-section">
+        <div class="flags-title">Flags <span class="flags-hint">(optional — independent of approve/reject)</span></div>
+        <div class="flags-grid">
+          ${['too_generic','conditional','vendor_biased','geographically_biased','needs_practitioner_check','missing_why'].map((f, i) => `
+            <label class="flag-checkbox ${(approval.flags||[]).includes(f) ? 'checked' : ''}" data-flag="${f}" onclick="toggleFlag('${f}', this)">
+              <input type="checkbox" ${(approval.flags||[]).includes(f) ? 'checked' : ''}> ${flagLabel(f)}
+            </label>
+          `).join('')}
+        </div>
       </div>
 
       <!-- Notes -->
@@ -885,10 +907,9 @@ function renderClaim(idx) {
     </div>
   `;
 
-  // Restore active button state if already decided
-  if (pendingDecision.action) {
-    restoreActiveButton(pendingDecision.action);
-    el('btn-submit').disabled = false;
+  // Restore status button state and edit area if already decided
+  if (pendingDecision.status && pendingDecision.status !== 'pending') {
+    selectStatus(pendingDecision.status);
   }
 }
 
@@ -922,48 +943,58 @@ function renderAtomCard(atom) {
   `;
 }
 
-// ── Action selection ──────────────────────────────────────────────────────────
+// ── Flag labels ───────────────────────────────────────────────────────────────
 
-function selectAction(action, status, rejectionReason) {
-  pendingDecision.action          = action;
-  pendingDecision.status          = status;
-  pendingDecision.rejection_reason = rejectionReason;
+function flagLabel(flag) {
+  const map = {
+    too_generic:               '⚠️ Too generic',
+    conditional:               '🎯 Conditional',
+    vendor_biased:             '💰 Vendor biased',
+    geographically_biased:     '🌍 Geo biased',
+    needs_practitioner_check:  '❓ Needs practitioner',
+    missing_why:               '🆕 Missing why',
+  };
+  return map[flag] || flag;
+}
 
-  // Clear sub-fields
-  pendingDecision.edited_text = null;
-  pendingDecision.notes = el('notes-input')?.value || '';
+// ── Status selection ──────────────────────────────────────────────────────────
 
-  // Toggle button active state
-  document.querySelectorAll('.action-btn').forEach(b => {
-    b.classList.remove('active-approve', 'active-edit', 'active-reject', 'active-flag');
+function selectStatus(status) {
+  pendingDecision.status = status;
+
+  // Toggle status button active state
+  document.querySelectorAll('[data-status]').forEach(b => {
+    b.classList.remove('active-approve', 'active-edit', 'active-reject');
   });
-  restoreActiveButton(action);
-
-  // Show/hide sub-fields
-  el('edit-area').classList.toggle('visible', action === 'edit');
-  el('conditional-area').classList.toggle('visible', action === 'flag-conditional');
-  el('why-area').classList.toggle('visible', action === 'flag-why');
-
-  // Notes field label
-  const notesLabel = el('notes-input')?.previousElementSibling;
-  if (notesLabel) {
-    notesLabel.textContent = action === 'flag-conditional'
-      ? 'Segment qualifier (saved to notes):'
-      : action === 'flag-why'
-      ? 'Suggested why (saved to notes):'
-      : 'Notes (optional):';
+  const btn = document.querySelector(`[data-status="${status}"]`);
+  if (btn) {
+    if (status === 'approved')            btn.classList.add('active-approve');
+    else if (status === 'approved_with_edit') btn.classList.add('active-edit');
+    else                                  btn.classList.add('active-reject');
   }
+
+  // Show edit textarea only when approved_with_edit
+  el('edit-area').classList.toggle('visible', status === 'approved_with_edit');
+  if (status !== 'approved_with_edit') pendingDecision.edited_text = null;
 
   el('btn-submit').disabled = false;
 }
 
-function restoreActiveButton(action) {
-  const btn = document.querySelector(`[data-action="${action}"]`);
-  if (!btn) return;
-  if (action === 'approve')     btn.classList.add('active-approve');
-  else if (action === 'edit')   btn.classList.add('active-edit');
-  else if (action === 'reject') btn.classList.add('active-reject');
-  else                          btn.classList.add('active-flag');
+// ── Flag toggle ───────────────────────────────────────────────────────────────
+
+function toggleFlag(flag, labelEl) {
+  const idx = pendingDecision.flags.indexOf(flag);
+  if (idx >= 0) {
+    pendingDecision.flags.splice(idx, 1);
+    labelEl.classList.remove('checked');
+    labelEl.querySelector('input').checked = false;
+  } else {
+    pendingDecision.flags.push(flag);
+    labelEl.classList.add('checked');
+    labelEl.querySelector('input').checked = true;
+  }
+  // Enable submit if we have a status
+  if (pendingDecision.status) el('btn-submit').disabled = false;
 }
 
 // ── Save ──────────────────────────────────────────────────────────────────────
@@ -976,15 +1007,8 @@ async function saveDecision() {
   indicator.textContent = 'Saving...';
   indicator.className = 'save-indicator';
 
-  // Collect notes from whichever sub-field is active
-  let notes = el('notes-input')?.value || '';
-  if (pendingDecision.action === 'flag-conditional') {
-    notes = el('conditional-input')?.value || notes;
-  } else if (pendingDecision.action === 'flag-why') {
-    notes = el('why-textarea')?.value || notes;
-  }
-
-  const editedText = pendingDecision.action === 'edit'
+  const notes = el('notes-input')?.value || '';
+  const editedText = pendingDecision.status === 'approved_with_edit'
     ? (el('edit-textarea')?.value || null)
     : null;
 
@@ -993,7 +1017,7 @@ async function saveDecision() {
     phase:             currentEntry.phase,
     claim_id:          claim.id,
     status:            pendingDecision.status,
-    rejection_reason:  pendingDecision.rejection_reason || null,
+    flags:             pendingDecision.flags,
     reviewer_notes:    notes,
     edited_claim_text: editedText,
     reviewed_by:       pendingDecision.reviewer,
@@ -1010,7 +1034,7 @@ async function saveDecision() {
       // Update local state
       claim.approval = {
         status:            pendingDecision.status,
-        rejection_reason:  pendingDecision.rejection_reason || '',
+        flags:             [...pendingDecision.flags],
         reviewer_notes:    notes,
         edited_claim_text: editedText || '',
         reviewed_by:       pendingDecision.reviewer,
@@ -1065,20 +1089,30 @@ document.addEventListener('keydown', e => {
     return;
   }
 
+  const flagKeys = {
+    '3': 'too_generic',
+    '4': 'conditional',
+    '5': 'vendor_biased',
+    '6': 'geographically_biased',
+    '7': 'needs_practitioner_check',
+    '8': 'missing_why',
+  };
   const actions = {
-    '1': () => selectAction('approve', 'approved', null),
-    '2': () => selectAction('edit', 'approved_with_edit', null),
-    '3': () => selectAction('flag-generic', 'rejected', 'too_generic'),
-    '4': () => selectAction('flag-conditional', 'rejected', 'conditional'),
-    '5': () => selectAction('flag-vendor', 'rejected', 'vendor_biased'),
-    '6': () => selectAction('flag-geo', 'rejected', 'geographically_biased'),
-    '7': () => selectAction('flag-practitioner', 'rejected', 'needs_practitioner_check'),
-    '8': () => selectAction('flag-why', 'rejected', 'missing_why'),
-    '9': () => selectAction('reject', 'rejected', 'wrong'),
+    '1': () => selectStatus('approved'),
+    '2': () => selectStatus('approved_with_edit'),
+    '9': () => selectStatus('rejected'),
     'j': () => goTo(currentIdx + 1),
     'k': () => goTo(currentIdx - 1),
     'Enter': () => { if (pendingDecision.status) saveDecision(); },
   };
+  // Keys 3-8 toggle flags
+  if (flagKeys[e.key]) {
+    e.preventDefault();
+    const flag = flagKeys[e.key];
+    const labelEl = document.querySelector(`[data-flag="${flag}"]`);
+    if (labelEl) toggleFlag(flag, labelEl);
+    return;
+  }
 
   const handler = actions[e.key.toLowerCase()] || actions[e.key];
   if (handler) {
