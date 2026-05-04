@@ -17,32 +17,49 @@ last_updated: ""        # YYYY-MM-DD
 
 ## What good looks like at this stage
 
-<!-- 3–5 sentences. Concrete and specific to this stage. Not generic best practice. -->
-<!-- Source: stageFocus field in processes.json for this process + stage. -->
-<!-- After each claim, add a source comment: -->
-<!-- sources: src-NNN (publication, bias_signal_if_any), src-NNN (publication) | flags: flag1, flag2 -->
-<!-- Example: <!-- sources: src-005 (hn, practitioner), src-002 (lennysnewsletter) | flags: vendor_biased -->
-<!-- For hand-written claims with no pipeline source: <!-- sources: human:username | flags: unverified -->
+<!-- Max 7 bullets. Each bullet: short bold claim + explanation on a new line (2-4 lines). -->
+<!-- After each bullet, add a source comment. -->
+
+- **[Short claim sentence.]**
+  [Why this matters / what it means in practice — 2-4 lines.]
+  <!-- sources: src-NNN (publication) -->
 
 ## What you actually need to do
 
-<!-- Numbered list of 3–6 specific, literal actions. Not aspirational. -->
+<!-- Max 7 bullets. Each bullet: short bold action + explanation on a new line (2-4 lines). -->
+<!-- Not aspirational. Specific and literal. -->
 <!-- Bad: "Establish a communication cadence" -->
-<!-- Good: "Hold a 30-min weekly team sync every Monday. Share: what I did, what I'm doing, blockers." -->
-<!-- Add a source comment after each action item (same format as above). -->
+<!-- Good: "Hold a 30-min weekly team sync every Monday." -->
 
-1.
-2.
-3.
+- **[Short action sentence.]**
+  [Why, how, or what specifically — 2-4 lines.]
+  <!-- sources: src-NNN (publication) -->
 
 ## Warning signs you're behind
 
-<!-- 2–4 red flags that tell you this process is broken or missing at this stage. -->
-<!-- These should sting a little — they should be recognizable to someone who IS behind. -->
-<!-- Add a source comment after each warning sign. -->
+<!-- Max 7 bullets total across the three categories. -->
+<!-- Each warning sign belongs to one of three categories: -->
 
-- 
-- 
+### Output quality
+<!-- The output of the process is wrong or risky (e.g., tax issues, incorrect reports). -->
+
+- **[Short warning sentence.]**
+  [Consequence or mechanism — 2-4 lines.]
+  <!-- sources: src-NNN (publication) -->
+
+### Founder / key-person time
+<!-- A bottleneck person is spending time on the wrong things. -->
+
+- **[Short warning sentence.]**
+  [What they're doing instead, and why it's costly — 2-4 lines.]
+  <!-- sources: src-NNN (publication) -->
+
+### Process entry
+<!-- People don't know how to start, submit, or participate in the process. -->
+
+- **[Short warning sentence.]**
+  [What's confusing and what breaks as a result — 2-4 lines.]
+  <!-- sources: src-NNN (publication) -->
 
 ## How this evolves next
 

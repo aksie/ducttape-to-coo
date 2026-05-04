@@ -121,6 +121,7 @@ Extract every distinct operational claim as a separate atom. For each atom, outp
 id: atom-NNN
 source_id: {to be assigned}
 type: {target_state | action | warning_sign | evolution | tool_resource | why}
+warning_category: {output_quality | founder_time | process_entry}  # only when type: warning_sign
 process: {process_slug}
 phase: {phase_slug}
 sub_variant_signals: []
@@ -157,6 +158,10 @@ unverified: false
   4. **How this evolves next** — what changes at the next growth stage
   5. **Tools & resources** — specific tools, templates, or further reading
 - **Warning signs are especially valuable and often under-extracted.** Look for phrases like "we learned the hard way," "the mistake we made," "what breaks when," "signs that X is missing," "red flags."
+- For every `warning_sign` atom, assign a `warning_category`:
+  - `output_quality` — the output of the process is wrong or risky (e.g., tax issues from missing receipts, incorrect reports)
+  - `founder_time` — a bottleneck person is spending time on the wrong things (e.g., founder manually doing data entry, chasing receipts)
+  - `process_entry` — people don't know how to start, submit, or participate in the process (e.g., employees don't know how to submit expenses)
 - If the author is clearly speaking from direct experience, set `practitioner_first_person: true`.
 - Flag `bias_flags` if the source has a commercial interest in the claim being true.
 

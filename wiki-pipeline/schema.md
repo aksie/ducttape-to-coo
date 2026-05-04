@@ -124,6 +124,7 @@ and outlines when a fractional CFO makes sense vs. a full-time hire.
 | `sub_variant_signals` | list | no | Dimensions this atom is sensitive to: `funding_stage`, `revenue_stage`, `headcount` |
 | `confidence` | enum | yes | `high`, `medium`, `low` — how strongly the source asserts this |
 | `practitioner_first_person` | bool | yes | `true` if the author is reflecting on their own direct experience |
+| `warning_category` | enum | conditional | Required when `type: warning_sign`. See warning category values below |
 | `bias_flags` | list | no | Concerns about this specific atom (subset of source bias_signals, or atom-specific) |
 | `extracted_by` | string | yes | Who or what produced this atom — see convention below |
 | `extracted_date` | date | yes | ISO 8601 |
@@ -146,6 +147,11 @@ Human-contributed atoms are weighted more heavily during synthesis because they 
 - `evolution` — describes how this changes at the next phase
 - `tool_resource` — names a tool, template, or resource
 - `why` — explains the reasoning behind a claim
+
+**Warning category values** (required when `type: warning_sign`):
+- `output_quality` — the output of the process is wrong or risky (e.g., tax issues from missing receipts, incorrect financial reports)
+- `founder_time` — a bottleneck person is spending time on the wrong things (e.g., founder manually chasing receipts, doing data entry)
+- `process_entry` — people don't know how to start, submit, or participate in the process (e.g., employees don't know how to submit expenses)
 
 **Body sections:**
 

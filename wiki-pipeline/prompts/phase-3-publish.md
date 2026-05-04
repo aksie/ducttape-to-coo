@@ -88,13 +88,36 @@ At the end of the page, add a `## Sources` section listing every source referenc
 Write "no bias signals" if `bias_signals` is empty.
 If any human-insights were present, add a `### Practitioner contributions` subsection as described above.
 
+### Bullet format
+
+Every section uses a consistent bullet format:
+
+```markdown
+- **Short claim sentence.**
+  Why this matters or what it means in practice. This explanation
+  can be 2-4 lines — enough to convey the reasoning, but no more.
+  <!-- sources: src-NNN (publication) -->
+```
+
+Max 7 bullets per section. The bold sentence is the claim. The indented text is the explanation.
+
+### Warning sign categories
+
+Warning signs must be grouped under three subheadings within `## Warning signs you're behind`:
+
+- `### Output quality` — the process output is wrong or risky
+- `### Founder / key-person time` — a bottleneck person is doing the wrong work
+- `### Process entry` — people don't know how to participate
+
+Use the `warning_category` from the trail to place each warning. Omit any subheading that has no warnings. The max 7 bullets applies across all three categories combined.
+
 ### Structure
 
 - Use the standard 5-section format with context variants if `sensitivity != none`
 - Keep the frontmatter from the existing stub, updating `last_updated` to today
 - Remove all `<!-- claim-id: -->` markers from the output
 - Write in plain, direct language. Not consultant-speak.
-- Target: 300–500 words of prose. Prioritise the most concrete claims if over length.
+- Prioritise the most concrete claims if a section exceeds 7 bullets.
 
 ### Output
 
