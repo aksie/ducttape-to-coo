@@ -25,7 +25,7 @@ import json
 import os
 import re
 import socketserver
-from datetime import date
+from datetime import datetime
 from urllib.parse import urlparse, parse_qs
 
 # ── Configuration ──────────────────────────────────────────────────────────────
@@ -274,7 +274,7 @@ def load_entry(process, phase):
     if not approval_text:
         fm_header = f"""---
 entry: {process}/{phase}
-last_updated: {date.today().isoformat()}
+last_updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 ---
 
 """
@@ -422,7 +422,7 @@ def write_approval(process, phase, claim_id, status, flags,
     if not text:
         return False, "approval.md not found"
 
-    today = date.today().isoformat()
+    today = datetime.now().strftime('%Y-%m-%d %H:%M')
     reviewed_by_str = reviewed_by or ""
     flags_str = f"[{', '.join(flags)}]" if flags else "[]"
 

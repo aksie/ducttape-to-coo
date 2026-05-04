@@ -114,7 +114,7 @@ Use the `warning_category` from the trail to place each warning. Omit any subhea
 ### Structure
 
 - Use the standard 5-section format with context variants if `sensitivity != none`
-- Keep the frontmatter from the existing stub, updating `last_updated` to today
+- Keep the frontmatter from the existing stub, updating `last_updated` to today's date and time in `YYYY-MM-DD HH:MM` format
 - Remove all `<!-- claim-id: -->` markers from the output
 - Write in plain, direct language. Not consultant-speak.
 - Prioritise the most concrete claims if a section exceeds 7 bullets.
