@@ -117,6 +117,22 @@ last_updated: 2026-05-04
 - Reviewed date: 2026-05-04
 - Edited claim text: null
 
+### c-016
+- Status: approved
+- Flags: [unverified]
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: null
+
+### c-017
+- Status: approved
+- Flags: [unverified]
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: null
+
 ### c-015
 - Status: approved
 - Flags: [missing_why]

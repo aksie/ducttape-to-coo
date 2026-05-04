@@ -103,6 +103,20 @@ last_updated: 2026-05-04
 - Why-source: atom-026 (weekly cadence as the antidote)
 - Synthesis notes: This is the failure mode that the weekly review rhythm prevents. Named explicitly as a warning.
 
+### c-016: You are asking team members to set goals that ladder up to company strategy, but they were hired as individual contributors.
+- Section: warning_signs
+- Supporting atoms: atom-040
+- Rejected atoms (and why): none
+- Why-source: atom-040 (practitioner: delegation only works when the capability exists)
+- Synthesis notes: Human atom, no external source. Strong practitioner insight with clear reasoning. Placed in warning_signs as it describes a failure mode of premature delegation.
+
+### c-017: For a team of 2-10, consider OGSM over OKR.
+- Section: tools_resources
+- Supporting atoms: atom-041
+- Rejected atoms (and why): none
+- Why-source: atom-041 (practitioner: strategy visibility matters more at this stage than goal-tracking rigour)
+- Synthesis notes: Human atom, no external source. Contrasts with atoms from src-010 and src-013 which recommend OKR. Placed in tools_resources as a framework recommendation rather than a universal claim. The contrast with OKR sources should be visible to reviewers.
+
 ### c-015: At Early Scale, informal goal-setting breaks down as multiple teams form.
 - Section: evolution
 - Supporting atoms: atom-037

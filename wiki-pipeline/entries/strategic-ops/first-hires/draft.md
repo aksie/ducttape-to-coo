@@ -2,7 +2,7 @@
 process: strategic-ops
 phase: first-hires
 last_updated: 2026-05-04
-claim_count: 15
+claim_count: 17
 ---
 
 # Company-Level Planning & Goals — First Hires (2–10 people)
@@ -57,12 +57,18 @@ Goals are set at least partly by the team, not handed down entirely by founders.
 <!-- claim-id: c-014 -->
 - Goals exist in a planning doc that was written at the start of the quarter and hasn't been looked at since.
 
+<!-- claim-id: c-016 -->
+- You are asking team members to set goals that ladder up to company strategy, but they were hired as individual contributors — the best designer or engineer — not for their ability to translate strategy into tactics. The goals you get back reflect their function, not the company's priorities.
+
 ## How this evolves next
 
 <!-- claim-id: c-015 -->
 At Early Scale (~25 people), informal goal-setting breaks down as multiple teams form with different focuses. You need a structured planning process with clear roles: who shares context, who proposes plans, who integrates and decides. The content of your goals doesn't change much — the process for setting them becomes more explicit.
 
 ## Tools & resources
+
+<!-- claim-id: c-017 -->
+- For a team of 2-10, consider OGSM (Objectives, Goals, Strategies, Measures) over OKR. OKR is process-heavy and light on strategy — OGSM forces you to connect the objective to a strategy before jumping to metrics, which is more useful at a stage where strategic clarity matters more than goal-tracking rigour.
 
 - A shared Google Doc or Notion page with this quarter's 3-5 goals and their key results is enough at this stage
 - Weekly team meeting with a standing agenda item: progress against goals, blockers, where we need help
