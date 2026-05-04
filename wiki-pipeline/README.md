@@ -227,7 +227,9 @@ FLAG HANDLING (on approved claims):
 - vendor_biased: soften prescriptive language slightly; do not remove
 - conditional: add a brief qualifier using the reviewer notes
 - too_generic: keep but place last in its section, softer framing
-- missing_why: incorporate reasoning from the atom's Why section if present
+- missing_why: find the Why section of the claim's why-source atom (see trail.md)
+  and incorporate the reasoning as a new sentence appended inline to the claim —
+  do not add a separate heading, just weave it into the prose naturally
 - needs_practitioner_check: add <!-- needs practitioner check --> after the claim
 
 HUMAN INSIGHTS IN REVIEWER NOTES:
@@ -236,19 +238,23 @@ prefix is a practitioner insight from the reviewer, not a sourced claim.
 Handle it as follows:
 1. Append it as a new sentence to the published claim text (after the edited
    claim text if approved_with_edit, after the original if just approved)
-2. Add a source comment for that sentence:
+2. Add the sourced-claim source comment first (for the original claim text),
+   then immediately after add a second source comment for the human-insight:
    <!-- sources: human:[reviewed_by] | flags: unverified -->
+   Both comments appear after the full paragraph, one per line.
 3. Add a Practitioner contributions subsection inside ## Sources:
    ### Practitioner contributions
    - **[Reviewed by name]** — direct experience. "[the human-insight text verbatim]"
 If multiple claims have human-insights, collect them all into one subsection.
 
 SOURCE COMMENTS:
-After every claim or bullet point, add an HTML comment:
+After every claim paragraph or bullet point, add an HTML comment on its own line:
   <!-- sources: src-NNN (publication, bias_signal_if_any) | flags: flag1, flag2 -->
 Use the atom → source_id mapping from the trail and atom files.
 For claims with no pipeline source: <!-- sources: human:username | flags: unverified -->
 Omit the flags portion if there are no flags.
+When a claim has both a pipeline source and a human-insight, output two comment
+lines — one for the pipeline source, one for the human contribution.
 
 SOURCES SECTION:
 At the end of the page, add a ## Sources section listing every source referenced,
