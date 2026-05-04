@@ -103,12 +103,9 @@
   }
   .sidebar-process:hover { color: #c9d1d9; background: #161b22; }
   .sidebar-process.active { color: #58a6ff; background: #161b22; }
-  .sidebar-process.stub { color: #24292e; }
-  .sidebar-process.stub:hover { color: #3a3f46; background: #161b22; }
-  .sidebar-process.stub .pid { color: #24292e; }
-  .sidebar-process.stub .dot-crit,
-  .sidebar-process.stub .dot-rec { opacity: 0.2; }
-  .sidebar-process.has-content { color: #c9d1d9; }
+  .sidebar-process.stub { color: #2a2f35; opacity: 0.4; }
+  .sidebar-process.stub:hover { color: #484f58; opacity: 0.7; background: #161b22; }
+  .sidebar-process.has-content { color: #e6edf3; }
   .sidebar-process .pid {
     font-size: 0.6rem;
     color: #484f58;
@@ -587,7 +584,7 @@ async function checkStageContent(stageId) {
         .replace(/---/g, '')
         .trim();
 
-      if (stripped.length > 50) {
+      if (stripped.length > 300) {
         link.classList.add('has-content');
       } else {
         link.classList.add('stub');
