@@ -267,7 +267,29 @@ def load_entry(process, phase):
             }
 
     # ── Approval: load statuses ────────────────────────────────────────────────
-    approval_text = read_file(os.path.join(phase_dir, "approval.md"))
+    approval_path = os.path.join(phase_dir, "approval.md")
+    approval_text = read_file(approval_path)
+
+    # Auto-create approval.md if missing (all claims set to pending)
+    if not approval_text:
+        fm_header = f"""---
+entry: {process}/{phase}
+last_updated: {date.today().isoformat()}
+---
+
+"""
+        blocks = []
+        for cid in sorted(claims.keys(), key=lambda x: int(x.split('-')[1])):
+            blocks.append(f"""### {cid}
+- Status: pending
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: ""
+- Reviewed date: null
+- Edited claim text: null""")
+        approval_text = fm_header + '\n'.join(blocks) + '\n'
+        write_file(approval_path, approval_text)
+
     approval_map = {}  # claim_id → { status, flags, reviewer_notes, edited_claim_text }
 
     if approval_text:
