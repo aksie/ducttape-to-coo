@@ -103,8 +103,12 @@
   }
   .sidebar-process:hover { color: #c9d1d9; background: #161b22; }
   .sidebar-process.active { color: #58a6ff; background: #161b22; }
-  .sidebar-process.stub { color: #30363d; cursor: default; }
-  .sidebar-process.stub:hover { color: #484f58; background: none; }
+  .sidebar-process.stub { color: #24292e; }
+  .sidebar-process.stub:hover { color: #3a3f46; background: #161b22; }
+  .sidebar-process.stub .pid { color: #24292e; }
+  .sidebar-process.stub .dot-crit,
+  .sidebar-process.stub .dot-rec { opacity: 0.2; }
+  .sidebar-process.has-content { color: #c9d1d9; }
   .sidebar-process .pid {
     font-size: 0.6rem;
     color: #484f58;
@@ -467,6 +471,7 @@ function buildSidebar(processes, stages) {
       if (!isOpen) {
         section.classList.add('open');
         btn.classList.add('open');
+        checkStageContent(stage.id);
       }
     });
     section.appendChild(btn);
@@ -540,6 +545,59 @@ function openSidebarStage(stageId) {
     const btn = s.querySelector('.sidebar-stage');
     if (btn) btn.classList.toggle('open', isMatch);
   });
+  checkStageContent(stageId);
+}
+
+// ── Content detection ─────────────────────────────────────────────────────────
+// When a stage section opens, check which process pages have real content
+// vs. stubs. Marks sidebar items with .has-content or .stub accordingly.
+
+const checkedStages = new Set();
+
+async function checkStageContent(stageId) {
+  if (checkedStages.has(stageId)) return;
+  checkedStages.add(stageId);
+
+  const links = document.querySelectorAll(`.sidebar-section[data-stage="${stageId}"] .sidebar-process`);
+  const checks = [...links].map(async (link) => {
+    const key = link.dataset.key;
+    if (!key) return;
+    const file = PROCESS_FILE_MAP[key];
+    if (!file) return;
+
+    try {
+      const res = await fetch(file);
+      if (!res.ok) { link.classList.add('stub'); return; }
+      const raw = await res.text();
+
+      // Strip frontmatter
+      let body = raw;
+      const fmMatch = raw.match(/^---\n[\s\S]*?\n---\n([\s\S]*)$/);
+      if (fmMatch) body = fmMatch[1];
+
+      // Strip HTML comments and whitespace
+      body = body.replace(/<!--[\s\S]*?-->/g, '').trim();
+
+      // Check if there's meaningful content beyond template placeholders
+      // Remove headings, empty list items, and whitespace
+      const stripped = body
+        .replace(/^#{1,3}\s+.*/gm, '')
+        .replace(/^\s*[-\d.]+\s*$/gm, '')
+        .replace(/^\s*>\s*$/gm, '')
+        .replace(/---/g, '')
+        .trim();
+
+      if (stripped.length > 50) {
+        link.classList.add('has-content');
+      } else {
+        link.classList.add('stub');
+      }
+    } catch (e) {
+      link.classList.add('stub');
+    }
+  });
+
+  await Promise.all(checks);
 }
 
 // ── Navigation ────────────────────────────────────────────────────────────────
