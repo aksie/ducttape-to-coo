@@ -81,100 +81,9 @@ Human-contributed atoms are weighted more heavily than LLM-extracted atoms durin
 - `tool_resource` — a tool, template, or resource
 - `why` — the reasoning behind another claim
 
-**LLM source discovery prompt (Phase 0 — finding sources for a new entry)**
+**Phase 0+1: Source discovery and atom extraction**
 
-Use this prompt with an LLM that has web access to find and evaluate sources before extracting atoms. Run once per process × phase combination.
-
-```
-You are finding high-quality sources for a startup operations wiki.
-
-TARGET:
-  Process: [e.g. Financial Operations]
-  Phase:   [e.g. Early Scale — 11 to 25 people]
-
-Search the following sources for content relevant to [process] at [phase]:
-
-1. Hacker News "Ask HN" threads with 100+ points — search news.ycombinator.com
-2. r/startups and r/Entrepreneur posts with 200+ upvotes — search reddit.com
-3. GitLab Handbook — handbook.gitlab.com/handbook/
-   (Note: GitLab content is written for large orgs — flag with sub_variant_signals: [headcount]
-   and only use for Growth/Scaled phase unless content explicitly addresses smaller teams)
-4. First Round Review — review.firstround.com
-5. Lenny's Newsletter — lennysnewsletter.com
-6. SaaStr (for revenue/sales processes) — saastr.com
-7. Stripe Atlas guides (for legal/financial setup) — stripe.com/atlas/guides
-8. Paul Graham essays (for early-stage processes) — paulgraham.com
-9. Sequoia / a16z blog posts — sequoiacap.com, a16z.com
-
-For each source found, evaluate:
-- Is it relevant to [process] at [phase] specifically, or is it too generic?
-- Is the author speaking from direct experience (practitioner) or giving general advice?
-- Does it contain any of: what good looks like, concrete actions, warning signs
-  that the process is broken, how it evolves at the next stage, tool recommendations?
-- What commercial interests does the source have, if any?
-
-Output a prioritised list of 5-10 URLs with:
-- URL
-- Title
-- Source type (practitioner_blog | vc_firm | advisory_firm | hn | reddit | etc.)
-- One sentence on why it's relevant
-- Any bias signals to flag
-- Recommended atom types likely extractable (target_state | action | warning_sign | evolution | tool_resource)
-
-Skip sources that are purely generic management advice, not stage-specific,
-or only relevant to companies much larger or smaller than [phase].
-```
-
-**LLM extraction prompt (Phase 1 — per source)**
-
-Use this prompt with any LLM that has web access, passing one source URL at a time:
-
-```
-Read the content at [URL].
-
-Extract every distinct operational claim as a separate atom.
-For each atom, output a markdown file using this frontmatter structure:
-
-  id: atom-NNN
-  source_id: [to be assigned]
-  type: [target_state | action | warning_sign | evolution | tool_resource | why]
-  process: [financial-ops | strategic-ops | people-ops | legal-ops | revenue-ops]
-  phase: [foundation | first-hires | early-scale | growth | scaled]
-  sub_variant_signals: []
-  confidence: [high | medium | low]
-  practitioner_first_person: [true if the author speaks from direct experience]
-  bias_flags: [list any commercial interest signals]
-  extracted_by: "llm:claude-sonnet-4-6"
-  extracted_date: [today]
-  unverified: false
-
-Then the body:
-  ## Claim
-  ## Source quote or paraphrase
-  ## Why (inferred from source if not explicit)
-
-Rules:
-- One atom per distinct claim. Do not combine.
-- Write claims in second person ("you should...", "at this stage, you...").
-- Actively look for content that maps to each of the 5 wiki sections:
-    1. What good looks like — descriptions of a well-functioning process
-    2. What you actually need to do — concrete actions, steps, cadences
-    3. Warning signs you're behind — red flags, failure modes, things that
-       break, signs that the process is missing or broken
-    4. How this evolves next — what changes at the next growth stage
-    5. Tools & resources — specific tools, templates, or further reading
-- Warning signs are especially valuable and often under-extracted. Look
-  for phrases like "we learned the hard way", "the mistake we made",
-  "what breaks when", "signs that X is missing", "red flags".
-- If the author is clearly speaking from direct experience, set practitioner_first_person: true.
-- Flag bias_signals if the source has a commercial interest in the claim being true.
-- The Why section is critical — always try hard to capture it. If the source
-  does not explicitly state "because X", infer the reasoning from the author's
-  argument, described consequences, mechanisms, or examples. Ask: what problem
-  does this solve? What happens if you don't do it? What mechanism makes it work?
-  Only leave Why blank if the source gives zero basis for reasoning, not just
-  because there's no explicit "because" statement.
-```
+The combined discovery and extraction prompt lives in [`prompts/phase-0-discovery-and-extraction.md`](prompts/phase-0-discovery-and-extraction.md). Run it with an LLM that has web access (e.g. Claude via claude.ai), once per process × phase cell. It covers source discovery, corpus bias checking, and atom extraction in a single pass.
 
 **LLM synthesis prompt (Phase 2 — per process × phase)**
 
@@ -340,6 +249,8 @@ wiki-pipeline/
 ├── schema.md           ← full format specification
 ├── server.py           ← approval tool server (Python 3, stdlib only)
 ├── approval-tool.html  ← approval tool UI (single file, no frameworks)
+├── prompts/            ← LLM prompts for each pipeline phase
+│   └── phase-0-discovery-and-extraction.md
 ├── sources/            ← one .md per source
 │   ├── src-001.md
 │   └── ...
