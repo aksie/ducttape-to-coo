@@ -877,9 +877,17 @@ function renderClaim(idx) {
       <!-- Notes -->
       <div class="notes-area">
         <label>Notes (optional):</label>
-        <input id="notes-input" type="text" placeholder="Any reviewer notes..."
-          oninput="pendingDecision.notes = this.value"
-          value="${esc(approval.reviewer_notes || '')}">
+        <div style="display:flex;gap:6px;align-items:stretch">
+          <select id="notes-prefix" onchange="applyNotesPrefix(this.value)" style="width:auto;flex-shrink:0;font-size:0.78rem">
+            <option value="">plain note</option>
+            <option value="human-insight: ">human-insight:</option>
+            <option value="human-rewrite: ">human-rewrite:</option>
+          </select>
+          <input id="notes-input" type="text" placeholder="Any reviewer notes..."
+            oninput="pendingDecision.notes = getNotesPrefix() + this.value"
+            value="${esc(stripNotesPrefix(approval.reviewer_notes || ''))}">
+        </div>
+        <div id="notes-hint" style="font-size:0.65rem;color:var(--text-muted);margin-top:4px"></div>
       </div>
 
       <!-- Reviewer -->
@@ -911,6 +919,9 @@ function renderClaim(idx) {
   if (pendingDecision.status && pendingDecision.status !== 'pending') {
     selectStatus(pendingDecision.status);
   }
+
+  // Restore notes prefix dropdown
+  restoreNotesPrefix(approval.reviewer_notes || '');
 }
 
 function renderAtomCard(atom) {
@@ -1007,7 +1018,9 @@ async function saveDecision() {
   indicator.textContent = 'Saving...';
   indicator.className = 'save-indicator';
 
-  const notes = el('notes-input')?.value || '';
+  const rawNotes = el('notes-input')?.value || '';
+  const prefix = getNotesPrefix();
+  const notes = rawNotes ? prefix + rawNotes : '';
   const editedText = pendingDecision.status === 'approved_with_edit'
     ? (el('edit-textarea')?.value || null)
     : null;
@@ -1120,6 +1133,58 @@ document.addEventListener('keydown', e => {
     handler();
   }
 });
+
+// ── Notes prefix helpers ──────────────────────────────────────────────────────
+
+const NOTES_PREFIXES = ['human-insight: ', 'human-rewrite: '];
+
+function stripNotesPrefix(text) {
+  for (const p of NOTES_PREFIXES) {
+    if (text.startsWith(p)) return text.slice(p.length);
+  }
+  return text;
+}
+
+function detectNotesPrefix(text) {
+  for (const p of NOTES_PREFIXES) {
+    if (text.startsWith(p)) return p;
+  }
+  return '';
+}
+
+function getNotesPrefix() {
+  const sel = el('notes-prefix');
+  return sel ? sel.value : '';
+}
+
+function applyNotesPrefix(prefix) {
+  const input = el('notes-input');
+  const raw = input?.value || '';
+  pendingDecision.notes = prefix + raw;
+  updateNotesHint(prefix);
+}
+
+function updateNotesHint(prefix) {
+  const hint = el('notes-hint');
+  if (!hint) return;
+  if (prefix === 'human-insight: ') {
+    hint.textContent = 'Appends your insight as a separate sentence after the claim. Write a complete, publishable sentence.';
+    hint.style.color = 'var(--purple)';
+  } else if (prefix === 'human-rewrite: ') {
+    hint.textContent = 'Describes what you changed. The published text comes from "Edit claim text" above — use Approve with edit.';
+    hint.style.color = 'var(--orange)';
+  } else {
+    hint.textContent = '';
+    hint.style.color = 'var(--text-muted)';
+  }
+}
+
+function restoreNotesPrefix(notesText) {
+  const prefix = detectNotesPrefix(notesText);
+  const sel = el('notes-prefix');
+  if (sel) sel.value = prefix;
+  updateNotesHint(prefix);
+}
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 

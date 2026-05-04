@@ -47,6 +47,23 @@ If a claim's `reviewer_notes` starts with `human-insight:`, the text after that 
 
 If multiple claims have human-insights, collect them all into one subsection.
 
+### Practitioner rewrites in reviewer notes
+
+If a claim's `reviewer_notes` starts with `human-rewrite:`, the reviewer has substantially rewritten the claim by integrating their practitioner experience with the original source insight. The `edited_claim_text` contains the full rewritten claim (status will be `approved_with_edit`). Handle it as follows:
+
+1. Use the `edited_claim_text` as the published claim (the full integrated rewrite)
+2. Add the source comment for the original atom's source (preserving provenance of the original insight)
+3. Add a second source comment: `<!-- sources: human:{reviewed_by} | flags: practitioner_rewrite -->`
+4. Add the reviewer to the Practitioner contributions subsection inside `## Sources`:
+   ```
+   ### Practitioner contributions
+   - **{Reviewed by name}** — practitioner rewrite. "{the human-rewrite text from reviewer_notes}"
+   ```
+
+The `human-rewrite:` text describes what was changed — it is not the published text itself. The published text comes from `edited_claim_text`.
+
+If multiple claims have human-insights or human-rewrites, collect them all into one `### Practitioner contributions` subsection.
+
 ### Source comments
 
 After every claim paragraph or bullet point, add an HTML comment on its own line:

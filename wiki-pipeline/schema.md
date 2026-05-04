@@ -320,6 +320,35 @@ The publish prompt will:
 
 The insight should be written as a complete, publishable sentence — the publish prompt uses it verbatim.
 
+**Rewriting a claim with practitioner experience:**
+
+Sometimes a source-backed claim is correct but incomplete — a reviewer with direct experience can make it substantially better by integrating their knowledge into the claim. This is different from `human-insight:` (which appends a separate sentence) and from a simple `approved_with_edit` (which is a wording fix). Use the `human-rewrite:` prefix when the reviewer is building on top of a good source insight with practitioner knowledge that changes the substance of the advice.
+
+Use `approved_with_edit` as the status, write the full integrated claim in `Edited claim text`, and use the `human-rewrite:` prefix in `reviewer_notes` to describe what was added:
+
+```
+- Status: approved_with_edit
+- Reviewer notes: "human-rewrite: Added practitioner guidance that for founders who won't be disciplined about card separation, a reimbursement-only model shifts the burden to the spender."
+- Edited claim text: Move all business expenses onto dedicated cards — no personal expenses mix in. In practice, many founders aren't disciplined enough to keep a shared card clean. If that's you, a better model is to pay on your own card and only get reimbursed when you have the invoice. This shifts the burden to the person creating the expense.
+```
+
+The publish prompt will:
+1. Use the full `Edited claim text` as the published claim (not the original)
+2. Add the source comment for the original atom's source (preserving provenance)
+3. Add a second source comment: `<!-- sources: human:[reviewed_by] | flags: practitioner_rewrite -->`
+4. Add the reviewer to the **Practitioner contributions** block in `## Sources`:
+   `- **[Name]** — practitioner rewrite. "[human-rewrite text from reviewer_notes]"`
+
+The `human-rewrite:` text in reviewer_notes is a *description of the change*, not the published text — the published text comes from `Edited claim text`.
+
+**When to use which:**
+
+| Situation | Mechanism |
+|---|---|
+| Wording fix, no new substance | `approved_with_edit` (no prefix in notes) |
+| Adding a separate insight alongside the claim | `human-insight:` prefix |
+| Rewriting the claim by integrating practitioner experience | `human-rewrite:` prefix + `approved_with_edit` |
+
 Flags are recorded independently of the approve/reject decision. Examples:
 - `approved` + `[vendor_biased]` — published, but flagged for stronger sourcing later
 - `approved_with_edit` + `[vendor_biased]` — vendor framing fixed in edit, published
