@@ -151,7 +151,7 @@ For each atom, output a markdown file using this frontmatter structure:
 Then the body:
   ## Claim
   ## Source quote or paraphrase
-  ## Why (if explicit in source)
+  ## Why (inferred from source if not explicit)
 
 Rules:
 - One atom per distinct claim. Do not combine.
@@ -160,7 +160,7 @@ Rules:
     1. What good looks like — descriptions of a well-functioning process
     2. What you actually need to do — concrete actions, steps, cadences
     3. Warning signs you're behind — red flags, failure modes, things that
-       break, signs the process is missing or broken
+       break, signs that the process is missing or broken
     4. How this evolves next — what changes at the next growth stage
     5. Tools & resources — specific tools, templates, or further reading
 - Warning signs are especially valuable and often under-extracted. Look
@@ -168,7 +168,12 @@ Rules:
   "what breaks when", "signs that X is missing", "red flags".
 - If the author is clearly speaking from direct experience, set practitioner_first_person: true.
 - Flag bias_signals if the source has a commercial interest in the claim being true.
-- If the source does not explain why something is true, leave the Why section blank.
+- The Why section is critical — always try hard to capture it. If the source
+  does not explicitly state "because X", infer the reasoning from the author's
+  argument, described consequences, mechanisms, or examples. Ask: what problem
+  does this solve? What happens if you don't do it? What mechanism makes it work?
+  Only leave Why blank if the source gives zero basis for reasoning, not just
+  because there's no explicit "because" statement.
 ```
 
 **LLM synthesis prompt (Phase 2 — per process × phase)**
