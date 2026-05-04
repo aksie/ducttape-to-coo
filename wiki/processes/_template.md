@@ -19,12 +19,17 @@ last_updated: ""        # YYYY-MM-DD
 
 <!-- 3–5 sentences. Concrete and specific to this stage. Not generic best practice. -->
 <!-- Source: stageFocus field in processes.json for this process + stage. -->
+<!-- After each claim, add a source comment: -->
+<!-- sources: src-NNN (publication, bias_signal_if_any), src-NNN (publication) | flags: flag1, flag2 -->
+<!-- Example: <!-- sources: src-005 (hn, practitioner), src-002 (lennysnewsletter) | flags: vendor_biased -->
+<!-- For hand-written claims with no pipeline source: <!-- sources: human:username | flags: unverified -->
 
 ## What you actually need to do
 
 <!-- Numbered list of 3–6 specific, literal actions. Not aspirational. -->
 <!-- Bad: "Establish a communication cadence" -->
 <!-- Good: "Hold a 30-min weekly team sync every Monday. Share: what I did, what I'm doing, blockers." -->
+<!-- Add a source comment after each action item (same format as above). -->
 
 1.
 2.
@@ -34,6 +39,7 @@ last_updated: ""        # YYYY-MM-DD
 
 <!-- 2–4 red flags that tell you this process is broken or missing at this stage. -->
 <!-- These should sting a little — they should be recognizable to someone who IS behind. -->
+<!-- Add a source comment after each warning sign. -->
 
 - 
 - 
@@ -42,6 +48,7 @@ last_updated: ""        # YYYY-MM-DD
 
 <!-- 1–2 sentences on what changes at the next stage. Keeps the page self-contained. -->
 <!-- Don't repeat the next stage's full guidance — just hint at the direction. -->
+<!-- sources: src-NNN (publication) -->
 
 ---
 
@@ -68,6 +75,15 @@ last_updated: ""        # YYYY-MM-DD
 
 ---
 
+## Sources
+
+<!-- List all sources referenced in the inline comments above. -->
+<!-- Format: - [Title](URL) · [pipeline record](../../../wiki-pipeline/sources/src-NNN.md) · type · bias signals -->
+<!-- For hand-written pages without pipeline sources, list any URLs you drew from. -->
+<!-- Leave this section empty if there are no external sources. -->
+
+---
+
 <!-- CONTRIBUTOR NOTES (delete before publishing) -->
 <!--
 Filename convention: [process-id]--[stage].md
@@ -77,4 +93,10 @@ The frontmatter is the agent's contract — fill it in accurately.
 The sections are prompts — write in plain language, not consultant-speak.
 Variants section: only include if sensitivity != "none". Check processes.json.
 Target length: 300–500 words total. If you're going longer, split into variants.
+
+Source comments format (after each claim):
+  <!-- sources: src-NNN (publication, bias_if_any) | flags: flag1, flag2 -->
+For human-written claims: <!-- sources: human:username | flags: unverified -->
+Flags to use: vendor_biased, too_generic, conditional, geographically_biased,
+              needs_practitioner_check, missing_why, unverified
 -->

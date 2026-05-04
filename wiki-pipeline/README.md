@@ -202,6 +202,57 @@ Rules:
 - Output the draft.md and a trail.md mapping each claim to its supporting atoms.
 ```
 
+**LLM publish prompt (Phase 3 — applying approvals to produce the wiki page)**
+
+Once approval.md has been reviewed, use this prompt to produce the final wiki page:
+
+```
+Read the following files:
+- wiki-pipeline/entries/[process]/[phase]/draft.md
+- wiki-pipeline/entries/[process]/[phase]/approval.md
+- wiki-pipeline/entries/[process]/[phase]/trail.md
+- All atom files referenced in trail.md (wiki-pipeline/atoms/atom-*.md)
+- All source files referenced by those atoms (wiki-pipeline/sources/src-*.md)
+- The existing wiki stub: wiki/processes/[category]/[process-id]--[phase].md
+
+Produce a complete wiki page by applying the approval decisions:
+
+CLAIM HANDLING:
+- approved: include as-is from draft.md
+- approved_with_edit: use the edited_claim_text from approval.md
+- rejected: omit entirely
+- pending: omit
+
+FLAG HANDLING (on approved claims):
+- vendor_biased: soften prescriptive language slightly; do not remove
+- conditional: add a brief qualifier using the reviewer notes
+- too_generic: keep but place last in its section, softer framing
+- missing_why: incorporate reasoning from the atom's Why section if present
+- needs_practitioner_check: add <!-- needs practitioner check --> after the claim
+
+SOURCE COMMENTS:
+After every claim or bullet point, add an HTML comment:
+  <!-- sources: src-NNN (publication, bias_signal_if_any) | flags: flag1, flag2 -->
+Use the atom → source_id mapping from the trail and atom files.
+For claims with no pipeline source: <!-- sources: human:username | flags: unverified -->
+Omit the flags portion if there are no flags.
+
+SOURCES SECTION:
+At the end of the page, add a ## Sources section listing every source referenced,
+one per line in this format:
+  - [Title](URL) · [pipeline record](../../../wiki-pipeline/sources/src-NNN.md) · type · bias: signal1, signal2
+  Write "no bias signals" if bias_signals is empty.
+
+STRUCTURE:
+- Use the standard 5-section format with context variants if sensitivity != none
+- Keep the frontmatter from the existing stub, updating last_updated to today
+- Remove all <!-- claim-id: --> markers from the output
+- Write in plain, direct language. Not consultant-speak.
+- Target: 300-500 words of prose. Prioritise the most concrete claims if over length.
+
+Output the complete file contents, ready to write to the wiki stub path.
+```
+
 
 ---
 
