@@ -304,6 +304,22 @@ Records the review decision for each claim. Written by the approval tool; can al
 
 The approval tool surfaces `unverified: true` atoms with a visual indicator so reviewers know a claim has no URL backing.
 
+**Adding a practitioner insight during review:**
+
+If a reviewer wants to add an insight from their own direct experience that is not in any of the supporting atoms, use the `reviewer_notes` field with the `human-insight:` prefix:
+
+```
+- Reviewer notes: "human-insight: Next to your primary growth metric, you will typically have 2-6 supporting metrics that together determine whether the business is healthy."
+```
+
+The publish prompt will:
+1. Include this insight in the published wiki page, appended to the claim it was added to
+2. Attribute it with a `<!-- sources: human:username | flags: unverified -->` comment
+3. Add it to a **Practitioner contributions** block in the `## Sources` section:
+   `- **[Name]** — [context if provided]. "[insight text]"`
+
+The insight should be written as a complete, publishable sentence — the publish prompt uses it verbatim.
+
 Flags are recorded independently of the approve/reject decision. Examples:
 - `approved` + `[vendor_biased]` — published, but flagged for stronger sourcing later
 - `approved_with_edit` + `[vendor_biased]` — vendor framing fixed in edit, published

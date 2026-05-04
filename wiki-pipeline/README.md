@@ -230,6 +230,19 @@ FLAG HANDLING (on approved claims):
 - missing_why: incorporate reasoning from the atom's Why section if present
 - needs_practitioner_check: add <!-- needs practitioner check --> after the claim
 
+HUMAN INSIGHTS IN REVIEWER NOTES:
+If a claim's reviewer_notes starts with "human-insight:", the text after that
+prefix is a practitioner insight from the reviewer, not a sourced claim.
+Handle it as follows:
+1. Append it as a new sentence to the published claim text (after the edited
+   claim text if approved_with_edit, after the original if just approved)
+2. Add a source comment for that sentence:
+   <!-- sources: human:[reviewed_by] | flags: unverified -->
+3. Add a Practitioner contributions subsection inside ## Sources:
+   ### Practitioner contributions
+   - **[Reviewed by name]** — direct experience. "[the human-insight text verbatim]"
+If multiple claims have human-insights, collect them all into one subsection.
+
 SOURCE COMMENTS:
 After every claim or bullet point, add an HTML comment:
   <!-- sources: src-NNN (publication, bias_signal_if_any) | flags: flag1, flag2 -->
@@ -242,6 +255,8 @@ At the end of the page, add a ## Sources section listing every source referenced
 one per line in this format:
   - [Title](URL) · [pipeline record](../../../wiki-pipeline/sources/src-NNN.md) · type · bias: signal1, signal2
   Write "no bias signals" if bias_signals is empty.
+If any human-insights were present, add a ### Practitioner contributions subsection
+as described above.
 
 STRUCTURE:
 - Use the standard 5-section format with context variants if sensitivity != none
