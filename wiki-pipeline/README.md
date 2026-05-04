@@ -85,108 +85,13 @@ Human-contributed atoms are weighted more heavily than LLM-extracted atoms durin
 
 The combined discovery and extraction prompt lives in [`prompts/phase-0-discovery-and-extraction.md`](prompts/phase-0-discovery-and-extraction.md). Run it with an LLM that has web access (e.g. Claude via claude.ai), once per process × phase cell. It covers source discovery, corpus bias checking, and atom extraction in a single pass.
 
-**LLM synthesis prompt (Phase 2 — per process × phase)**
+**Phase 2: Synthesis**
 
-Once you have atoms extracted, use this prompt to synthesise a draft entry:
+The synthesis prompt lives in [`prompts/phase-2-synthesis.md`](prompts/phase-2-synthesis.md). Run it with the atoms for a given process × phase cell to produce `draft.md` and `trail.md`.
 
-```
-Here are [N] atoms for [process] / [phase].
+**Phase 3: Publish**
 
-Synthesise a draft wiki entry using this 5-section structure:
-1. What good looks like at this phase
-   — target_state atoms: what a well-functioning process looks like
-2. What you actually need to do
-   — action atoms: specific, concrete steps (numbered list)
-3. Warning signs you're behind
-   — warning_sign atoms: red flags, failure modes, things that break
-     when this process is missing or broken
-4. How this evolves next
-   — evolution atoms: what changes at the next growth phase
-5. Tools & resources
-   — tool_resource atoms: tools, templates, further reading
-
-Rules:
-- Add <!-- claim-id: c-NNN --> before each distinct claim (start from c-001).
-- For each claim, note in a comment which atom IDs support it.
-- If the only support for a claim comes from atoms with bias_flags, note that explicitly.
-- Prefer atoms with practitioner_first_person: true as primary sources.
-- Do not include claims supported only by a single vendor-biased atom.
-- If you have no atoms for a section, leave the section with a placeholder
-  comment rather than inventing content.
-- Output the draft.md and a trail.md mapping each claim to its supporting atoms.
-```
-
-**LLM publish prompt (Phase 3 — applying approvals to produce the wiki page)**
-
-Once approval.md has been reviewed, use this prompt to produce the final wiki page:
-
-```
-Read the following files:
-- wiki-pipeline/entries/[process]/[phase]/draft.md
-- wiki-pipeline/entries/[process]/[phase]/approval.md
-- wiki-pipeline/entries/[process]/[phase]/trail.md
-- All atom files referenced in trail.md (wiki-pipeline/atoms/atom-*.md)
-- All source files referenced by those atoms (wiki-pipeline/sources/src-*.md)
-- The existing wiki stub: wiki/processes/[category]/[process-id]--[phase].md
-
-Produce a complete wiki page by applying the approval decisions:
-
-CLAIM HANDLING:
-- approved: include as-is from draft.md
-- approved_with_edit: use the edited_claim_text from approval.md
-- rejected: omit entirely
-- pending: omit
-
-FLAG HANDLING (on approved claims):
-- vendor_biased: soften prescriptive language slightly; do not remove
-- conditional: add a brief qualifier using the reviewer notes
-- too_generic: keep but place last in its section, softer framing
-- missing_why: find the Why section of the claim's why-source atom (see trail.md)
-  and incorporate the reasoning as a new sentence appended inline to the claim —
-  do not add a separate heading, just weave it into the prose naturally
-- needs_practitioner_check: add <!-- needs practitioner check --> after the claim
-
-HUMAN INSIGHTS IN REVIEWER NOTES:
-If a claim's reviewer_notes starts with "human-insight:", the text after that
-prefix is a practitioner insight from the reviewer, not a sourced claim.
-Handle it as follows:
-1. Append it as a new sentence to the published claim text (after the edited
-   claim text if approved_with_edit, after the original if just approved)
-2. Add the sourced-claim source comment first (for the original claim text),
-   then immediately after add a second source comment for the human-insight:
-   <!-- sources: human:[reviewed_by] | flags: unverified -->
-   Both comments appear after the full paragraph, one per line.
-3. Add a Practitioner contributions subsection inside ## Sources:
-   ### Practitioner contributions
-   - **[Reviewed by name]** — direct experience. "[the human-insight text verbatim]"
-If multiple claims have human-insights, collect them all into one subsection.
-
-SOURCE COMMENTS:
-After every claim paragraph or bullet point, add an HTML comment on its own line:
-  <!-- sources: src-NNN (publication, bias_signal_if_any) | flags: flag1, flag2 -->
-Use the atom → source_id mapping from the trail and atom files.
-For claims with no pipeline source: <!-- sources: human:username | flags: unverified -->
-Omit the flags portion if there are no flags.
-When a claim has both a pipeline source and a human-insight, output two comment
-lines — one for the pipeline source, one for the human contribution.
-
-SOURCES SECTION:
-At the end of the page, add a ## Sources section listing every source referenced,
-one per line in this format:
-  - [Title](URL) · [pipeline record](../../../wiki-pipeline/sources/src-NNN.md) · type · bias: signal1, signal2
-  Write "no bias signals" if bias_signals is empty.
-If any human-insights were present, add a ### Practitioner contributions subsection
-as described above.
-
-STRUCTURE:
-- Use the standard 5-section format with context variants if sensitivity != none
-- Keep the frontmatter from the existing stub, updating last_updated to today
-- Remove all <!-- claim-id: --> markers from the output
-- Write in plain, direct language. Not consultant-speak.
-- Target: 300-500 words of prose. Prioritise the most concrete claims if over length.
-
-Output the complete file contents, ready to write to the wiki stub path.
-```
+The publish prompt lives in [`prompts/phase-3-publish.md`](prompts/phase-3-publish.md). Run it after the approval tool has been used to review every claim. It reads the draft, approvals, trail, atoms, and sources to produce the final wiki page.
 
 
 ---
@@ -250,7 +155,9 @@ wiki-pipeline/
 ├── server.py           ← approval tool server (Python 3, stdlib only)
 ├── approval-tool.html  ← approval tool UI (single file, no frameworks)
 ├── prompts/            ← LLM prompts for each pipeline phase
-│   └── phase-0-discovery-and-extraction.md
+│   ├── phase-0-discovery-and-extraction.md
+│   ├── phase-2-synthesis.md
+│   └── phase-3-publish.md
 ├── sources/            ← one .md per source
 │   ├── src-001.md
 │   └── ...
