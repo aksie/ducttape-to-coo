@@ -86,65 +86,67 @@ last_updated: 2026-05-03
 - Edited claim text: null
 
 ### c-011
-- Status: pending
-- Flags: []
-- Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
-- Edited claim text: null
+- Status: approved_with_edit
+- Flags: [missing_why]
+- Reviewer notes: "human-rewrite: Lightened the 'and have everybody sign it' to make it culturally align with the stage. and added the 'why': Because at first 'just follow common sense and spend like it is your own money' will work, but people are different and have started at the company at different stages, so will not automatically take the decisions you think make sense."
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: Document your expense policy, at a certain size at it to a handbook that people 'sign off on', but keep the tone in line with your size. 
+
+A verbal or undocumented or implied policy doesn't survive growth past 15 people and fails diligence every time. Because at first 'just follow common sense and spend like it is your own money' will work, but people are different and have started at the company at different stages, so will not automatically take the decisions you think make sense.
 
 ### c-012
-- Status: pending
+- Status: rejected
 - Flags: []
-- Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewer notes: "Every month is too process heavy for most revenue sizes. "
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
 - Edited claim text: null
 
 ### c-013
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
 - Edited claim text: null
 
 ### c-014
-- Status: pending
+- Status: approved_with_edit
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
-- Edited claim text: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: - You haven't done a budget vs. actuals review, or the first time you tried, you couldn't make sense of the categories because they've been applied inconsistently.
 
 ### c-015
-- Status: pending
-- Flags: []
+- Status: approved_with_edit
+- Flags: [too_generic]
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
-- Edited claim text: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: - You treat the bank balance as a proxy for financial health. If you've ever been surprised that cash was fine but the other dynamics are bad - business was actually losing money (or vice versa), or margins might not be enough, this is the symptom.
 
 ### c-016
-- Status: pending
+- Status: approved_with_edit
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
-- Edited claim text: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
+- Edited claim text: - Your expense categories are inconsistent across months, and cost levels go up and down without you understanding what caused it. Looking forward it makes historical data unreliable for forecasting.
 
 ### c-017
-- Status: pending
-- Flags: []
+- Status: approved
+- Flags: [too_generic, missing_why]
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
 - Edited claim text: null
 
 ### c-018
-- Status: pending
-- Flags: []
+- Status: approved
+- Flags: [missing_why]
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-05-04
 - Edited claim text: null
