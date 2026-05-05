@@ -2,7 +2,7 @@
 
 *Last edited: 2026-05-05 12:00:00 +0200*
 
-At 1–5 people, you don't need anything complex like OKRs. You do need to be clear on your goals for the coming period, why you exist, why YOU are doing this, and what your strategy is.
+At 1–5 people, you don't need anything complex like OKRs. You do need to be clear on your goals for the coming period, why you exist, why YOU are doing this, and what your strategy is. And you need a rhythm already in evaluating and adjusting them.
 
 ## What good looks like at this phase
 
