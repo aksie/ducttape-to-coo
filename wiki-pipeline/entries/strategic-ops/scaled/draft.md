@@ -36,7 +36,7 @@ Planning at this stage is less about setting goals and more about maintaining a 
 
 <!-- claim-id: c-004 -->
 <!-- atoms: atom-083-gitlab -->
-- **The scaled-company evolution follows a pattern: calendar to hierarchy to maintenance.** First make planning rhythms visible, then show how goals ladder up, then review each layer so the system stays alive. This pattern emerged across GitLab's 2021-2024 planning evolution.
+- **The scaled-company evolution follows a pattern: calendar to hierarchy to maintenance.** First make planning rhythms visible, then show how goals ladder up, then review each layer so the system stays alive. This pattern emerged across GitLab's 2021-2024 planning evolution. At scale, the risk is not just lack of goals; it is stale goals, disconnected goals, and planning events that do not reinforce each other.
 
 ## Tools & resources
 
