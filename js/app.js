@@ -266,6 +266,29 @@ function conditionsMet(process) {
     return true;
 }
 
+// Check whether a variant's `when` clause matches current user selections
+function variantMatches(when, selections) {
+    if (!when) return true;
+    if (when.revenueStage && !when.revenueStage.includes(selections.revenue)) return false;
+    if (when.fundingStage && !when.fundingStage.includes(selections.funding)) return false;
+    if (when.headcount && !when.headcount.includes(selections.employees)) return false;
+    return true;
+}
+
+// Pick the right stageFocus text for a process given the current stage and selections.
+// Walks variants[] in order; the last matching variant that defines text for the
+// current stage wins. Falls back to the default process.stageFocus.
+function resolveStageFocus(process, stage, selections) {
+    let text = process.stageFocus?.[stage] ?? null;
+    if (!process.variants) return text;
+    for (const v of process.variants) {
+        if (variantMatches(v.when, selections) && v.stageFocus?.[stage]) {
+            text = v.stageFocus[stage];
+        }
+    }
+    return text;
+}
+
 // Render processes based on current stage
 function renderProcesses() {
     const container = document.getElementById('processes-container');
@@ -484,10 +507,11 @@ function createProcessElement(process, priority) {
     
     bodyEl.appendChild(descEl);
 
-    if (process.stageFocus && process.stageFocus[currentStage]) {
+    const focusText = resolveStageFocus(process, currentStage, userSelections);
+    if (focusText) {
         const focusEl = document.createElement('div');
         focusEl.className = 'stage-focus';
-        focusEl.innerHTML = `<span class="stage-focus-label">For your stage:</span> ${process.stageFocus[currentStage]}`;
+        focusEl.innerHTML = `<span class="stage-focus-label">For your stage:</span> ${focusText}`;
         bodyEl.appendChild(focusEl);
     }
 

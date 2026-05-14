@@ -88,6 +88,30 @@
         "growth": "Structured board cadence (monthly or quarterly). Board pack with financials, KPIs, and strategic updates. Investor relations function forming. Legal compliance on reporting obligations.",
         "scaled": "Formal investor relations function. Board governance framework. Audit committee, compensation committee. Quarterly reporting cadence. Compliance with shareholder agreement obligations."
       },
+      "variants": [
+        {
+          "when": { "fundingStage": ["venture-early"] },
+          "stageFocus": {
+            "first-hires": "Monthly investor update by email \u2014 KPIs, cash, hiring plan, key wins/losses, what you need help with. Quarterly board meeting with a proper deck (5-10 slides, pre-read 48h ahead). Keep written board minutes \u2014 your shareholder agreement requires them. Cap table managed in a real tool (Carta, Pulley, Ledgy) from day one of the round.",
+            "early-revenue": "Monthly investor email with a KPI dashboard, cash position, plan vs actuals, and asks. Quarterly board meeting with a structured deck: financials, KPIs, plan vs actuals, hiring, strategic initiatives. Annual budget formally approved by the board. Information rights tracked: most term sheets require monthly metrics + audited annual financials. CEO or CFO owns the cadence \u2014 don't let it slip."
+          }
+        },
+        {
+          "when": { "fundingStage": ["venture-growth"] },
+          "stageFocus": {
+            "early-revenue": "Board operates like a real board: chair, formal agenda, written minutes circulated, action items tracked. Quarterly board pack (10-20 slides) covers financials, KPIs, strategic initiatives, risk register. Auditor likely appointed by now. CFO owns investor relations as a defined responsibility. Monthly investor updates are standardised and consistent month-over-month.",
+            "growth": "Formal board cadence (quarterly or 6 meetings/year). Comprehensive board pack circulated 5 working days in advance. Audit committee active and meeting separately. Annual audited financials. Investor relations is a defined function (usually CFO + finance lead). Compliance with information rights, drag-along, ROFR, and other shareholder agreement obligations actively tracked by legal.",
+            "scaled": "Full board governance: audit committee, compensation committee, sometimes nomination committee. Monthly investor reporting plus a quarterly board cycle. Audited financials. If preparing for IPO or exit, data room hygiene is a year-round discipline, not a fire drill. IR function staffed (head of IR or CFO + analyst). Compliance team partners with legal and finance on shareholder agreement obligations and side letters."
+          }
+        },
+        {
+          "when": { "fundingStage": ["public"] },
+          "stageFocus": {
+            "growth": "Full quarterly reporting cadence (10-Q or local equivalent). Earnings release and call every quarter, even at this size. IR function in place (often a head of IR reporting to CFO). Audit committee with independent directors. Material non-public information protocols enforced across the company. SOX 404 readiness program (US) or local equivalent. Trading window communications to staff every quarter.",
+            "scaled": "Full IR operation: earnings calls, investor day, sell-side analyst coverage management, AGM logistics. Regulator filings on cadence: 10-K, 10-Q, 8-K, proxy statement (or local equivalents). Three standing board committees (audit, compensation, nominations) with majority independent directors. SOX 404 controls audited annually. Material non-public information and trading window protocols enforced. Crisis communications playbook for adverse disclosures (earnings miss, security incident, leadership change)."
+          }
+        }
+      ],
       "stages": {
         "foundation": "future",
         "first-hires": "critical",
