@@ -14,43 +14,40 @@ cta_secondary_text: "Read: The Gap Where Friction Lives →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 ---
 
-I called this "A Starting Point" for two reasons. Conceptually, it's a good entry point into the Duct Tape to COO framework. But more honestly: this is one of the reasons I started building the framework in the first place. It's also the conversation that most often brings people to me — usually through a friend of a friend, a former colleague, someone who heard from someone.
+I called this "A Starting Point" for two reasons. It's a good entry point into the Duct Tape to COO framework. And this type of conversation triggered me to make the framework. 
 
 ## The conversation that kicks it off
 
-A founder or CEO reaches out: *"I think we need a COO. Do you want the job? Or do you know someone?"*
+A founder or CEO reaches out: *"I think we need a COO. Can you help us? Or do you know someone?"*
 
-My answer is usually no — I don't do that full-time anymore, and you may not actually need one. So before we dive into solutions, let's figure out what your actual problem is.
+My answer is "No — I don't do that full-time anymore, and you may not actually need one. So before we dive into solutions, let's figure out what your actual problem is. I *can* help you with that. Let's go through your Ops!"
 
-I see two patterns almost every time.
+The founders that reach out are often in one these two patterns: 
 
-> **Pattern one: the all-rounder founder who hit the ceiling.** They did everything themselves for a while, and they were good at it — better than the engineers or designers or go-to-market people they'd otherwise hand it to. Around 15 people, it stops being a 10% thing on the side. It becomes a full-time job, and they're either burning out or dropping balls. Often both.
+> **Pattern one: the all-rounder founder who hit the ceiling.** They did everything themselves for a while, and they were good at it — better than the engineers or designers or go-to-market people they'd otherwise hand it to. Around 15 people, it stops being a 10% thing on the side. It becomes a full-time job, and they're either burning out or dropping operational balls. Or dropping things that are the core of their job. Often all of the above. 
 
 > **Pattern two: the visionary product founder who never liked ops.** They duct-taped it through the early phases. It wasn't great, but it wasn't catastrophic. Eventually they hired an overqualified assistant to handle some of it, or — if they were a bit smarter about it — a chief of staff. Now that person is out of capacity, lacks specialization in a few key areas, or just *feels* out of their depth (which isn't always the same as actually being out of their depth).
 
-Either way, that's when I come in.
+Either way, that's when they reach out and I come in. First I improvised my analysis. Then I figured there was a method to my work and figured out with Claude what is was. I made it into a structured questionnaire. Ruben challenged me to then make it in into a web app. Things got our of hand ;-) 
 
-## What the framework actually does
+## What the diagnostics framework can do
 
-I walk through a set of processes with the CEO and their ops person, if they have one. Which processes depend on stage:
+The framework is a set of questions per process that determine where you stand. Which processes depend on stage:
 
 - Three founders and a dog? You need almost nothing.
 - 35 people, paying customers, investors on the cap table? You need a real operational backbone.
 
-We map out which parts are genuinely broken, which parts just feel broken because the ops person lacks confidence, and which patterns are the very fixable ones I see again and again. (That last category is a topic for another post.)
+You can self diagnose, but [link to add later to the grid) it is better to have an experienced Ops person walk you through it. That Ops person will walk through a set of processes with the CEO and their ops person if they have one. 
 
-## The patterns that send people looking for a COO
+Per process we look at how broken it is now, who owns it (and if it has a clear owner), if it is documented, has proper tooling and how much extra scale it can handle. 
 
-The symptoms tend to cluster at predictable points in the process.
+## What this analysis gets you
 
-> **Things break at the start.** Someone needs to order something and has no idea how. Procurement, vendor setup, basic "how do we do this here" knowledge lives entirely in the founder's head — and the founder is no longer the right person to be answering.
+The end result is an overview of different areas, that show which needs fixing first. 
+Which parts are genuinely broken, which parts just feel broken because the ops person lacks confidence, and which patterns are the very fixable ones - often the ones I see again and again. (That last category is a topic for another post.)
 
-> **Things break at the end.** A new hire asks when he gets paid and nobody can answer, because nobody really knew he'd been hired. (Real example, from a company where I was the COO.) Payroll, contracts, offboarding, invoicing — the closing steps of a process are where this profile of founder leaks hardest.
-
-> **Things break in the middle — what I call mitosis.** Either the founder is a bottleneck (*"we're waiting on their signature, they want one more change, it's been a week"*), or they're so swamped with operational glue work that strategy, hiring, fundraising, and finding product-market fit are the things actually getting dropped.
->
-> That last one is the most expensive failure mode, because nobody notices what isn't happening — only what is.
+Once I had that, Nalden challenged me to make this / make me into a SKILL.MD for his OpenCode setup. Things got more out of hand. 
 
 ---
 
-Recognize any of this? If you're somewhere in one of these patterns — the all-rounder hitting the ceiling, the visionary drowning in ops, the bottleneck nobody wants to name — have a look at the framework. And if you want a second pair of eyes on which parts of it actually apply to you, reach out.
+Recognize any of this? Have a look at the diagnostics framework. And if you want a second pair of eyes on which parts of it actually apply to you, reach out. We'll figure out if you need a COO or just AI-augmented Duct tape. 
