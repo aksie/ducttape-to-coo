@@ -14,40 +14,40 @@ cta_secondary_text: "Read: The Gap Where Friction Lives →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 ---
 
-I called this "A Starting Point" for two reasons. It's a good entry point into the Duct Tape to COO framework. And this type of conversation triggered me to make the framework. 
-
 ## The conversation that kicks it off
 
 A founder or CEO reaches out: *"I think we need a COO. Can you help us? Or do you know someone?"*
 
-My answer is "No — I don't do that full-time anymore, and you may not actually need one. So before we dive into solutions, let's figure out what your actual problem is. I *can* help you with that. Let's go through your Ops!"
+My answer is: "No — I don't do that full-time anymore, and you may not actually need one. So before we dive into solutions, let's figure out what your actual problem is. I *can* help you with that. Let's go through your ops."
 
-The founders that reach out are often in one these two patterns: 
+I call this post "A Starting Point" for two reasons. It's a good entry point into the Duct Tape to COO framework. And it was this type of conversation that triggered me to build the framework in the first place.
 
-> **Pattern one: the all-rounder founder who hit the ceiling.** They did everything themselves for a while, and they were good at it — better than the engineers or designers or go-to-market people they'd otherwise hand it to. Around 15 people, it stops being a 10% thing on the side. It becomes a full-time job, and they're either burning out or dropping operational balls. Or dropping things that are the core of their job. Often all of the above. 
+## The moment things really break
 
-> **Pattern two: the visionary product founder who never liked ops.** They duct-taped it through the early phases. It wasn't great, but it wasn't catastrophic. Eventually they hired an overqualified assistant to handle some of it, or — if they were a bit smarter about it — a chief of staff. Now that person is out of capacity, lacks specialization in a few key areas, or just *feels* out of their depth (which isn't always the same as actually being out of their depth).
+When your startup grows — in people, revenue, or investors — what you've been doing operationally will either ask you to step up to the next level, or it will break. And then it will distract you from where your superpowers should be applied. Or it will burn you out. Or it will block your team.
 
-Either way, that's when they reach out and I come in. First I improvised my analysis. Then I figured there was a method to my work and figured out with Claude what is was. I made it into a structured questionnaire. Ruben challenged me to then make it in into a web app. Things got our of hand ;-) 
+Scaling a company is like reinventing how you work every time, and running into your own limitations along the way. It's a good thing to see when you need help, or a fresh set of eyes. The founders who reach out to me are usually in one of two situations:
 
-## What the diagnostics framework can do
+> **One: The all-rounder founder who hit the ceiling.** They did everything themselves for a while, and they were good at it — better than the engineers, designers, or go-to-market people they'd otherwise hand it to. Around 15 people, it stops being a 10% thing on the side. It becomes a full-time job, and they're either burning out, dropping operational balls, or dropping things that are the core of their job. Often all of the above.
 
-The framework is a set of questions per process that determine where you stand. Which processes depend on stage:
+> **Two: The visionary product founder who's not into ops.** They duct-taped it through the early phases. It wasn't great, but it wasn't catastrophic. Now things are seriously broken. Some patch it with more duct tape and get an admin person to handle some of it, or — if they were a bit smarter about it — a chief of staff.
+
+Sometimes that still breaks: the person is out of capacity, lacks specialisation in a few key areas, or just *feels* out of their depth (which isn't always the same as actually being out of their depth).
+
+Either way, that's when they reach out, and I come in. Last year I helped a few founders in these situations. At first I improvised my analysis. After four of these cases, I figured there was a method to my work, and worked out with Claude what it was. I turned it into a structured questionnaire. Ruben then challenged me to make it into a web app. And there was the diagnostic framework.
+
+## What the framework gets you
+
+The result is a clear picture of where you stand, the patterns in your strengths and weaknesses, and where to focus next. Some patterns are very fixable — often the ones I see again and again. (That last category is a topic for another post.)
+
+## How it works
+
+The framework is a set of questions per process that determines where you stand. Which processes apply depends on what stage you're at as a company:
 
 - Three founders and a dog? You need almost nothing.
 - 35 people, paying customers, investors on the cap table? You need a real operational backbone.
 
-You can self diagnose, but [link to add later to the grid) it is better to have an experienced Ops person walk you through it. That Ops person will walk through a set of processes with the CEO and their ops person if they have one. 
+For each process we look at how broken it is right now, who owns it (and whether it has a clear owner), whether it's documented, what tooling supports it, and how much extra scale it can handle.
 
-Per process we look at how broken it is now, who owns it (and if it has a clear owner), if it is documented, has proper tooling and how much extra scale it can handle. 
-
-## What this analysis gets you
-
-The end result is an overview of different areas, that show which needs fixing first. 
-Which parts are genuinely broken, which parts just feel broken because the ops person lacks confidence, and which patterns are the very fixable ones - often the ones I see again and again. (That last category is a topic for another post.)
-
-Once I had that, Nalden challenged me to make this / make me into a SKILL.MD for his OpenCode setup. Things got more out of hand. 
-
----
-
-Recognize any of this? Have a look at the diagnostics framework. And if you want a second pair of eyes on which parts of it actually apply to you, reach out. We'll figure out if you need a COO or just AI-augmented Duct tape. 
+## Let's do this!
+Try it, use it — it's open source. You can self-diagnose, but it works better with an experienced ops person walking you through it. They'll know what 'good' looks like for your stage, and can review your actual processes. Ask someone in your network, or reach out. We'll figure out whether you need a COO, or just AI-augmented duct tape.
