@@ -1,10 +1,10 @@
 ---
-title: "A Starting Point"
+title: "A Starting Point | The Breaking Point"
 subtitle: "Two patterns that send founders looking for a COO — and what's actually worth fixing first."
 date: "May 2026"
 tag: "Entry point"
 tag_color: "green"
-slug: "a-starting-point"
+slug: "a-starting-point-or-the-breaking-point"
 order: 1
 description: "Two patterns that send founders looking for a COO — the all-rounder who hit the ceiling, and the visionary who never liked ops. And where things break: at the start, at the end, and in the middle."
 cta_intro: "The diagnostic walks through the same process — without needing a call first. See which areas are genuinely broken vs which just feel that way."
@@ -14,7 +14,7 @@ cta_secondary_text: "Read: The Gap Where Friction Lives →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 ---
 
-## The conversation that kicks it off
+## The Starting Point: The conversation that kicks it off
 
 A founder or CEO reaches out: *"I think we need a COO. Can you help us? Or do you know someone?"*
 
@@ -22,7 +22,7 @@ My answer is: "No — I don't do that full-time anymore, and you may not actuall
 
 I call this post "A Starting Point" for two reasons. It's a good entry point into the Duct Tape to COO framework. And it was this type of conversation that triggered me to build the framework in the first place.
 
-## The moment things really break
+## The Breaking Point
 
 When your startup grows — in people, revenue, or investors — what you've been doing operationally will either ask you to step up to the next level, or it will break. And then it will distract you from where your superpowers should be applied. Or it will burn you out. Or it will block your team.
 

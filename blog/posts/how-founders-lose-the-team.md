@@ -1,5 +1,5 @@
 ---
-title: "How Founders Quietly Lose the Team Without Noticing"
+title: "Strategy as the Starting point - or should I say breaking point - when Founders Lose the Team"
 subtitle: "Three patterns in how strategy gets communicated — and why each one breaks at a certain size."
 date: "May 2026"
 tag: "Leadership"
@@ -15,15 +15,14 @@ cta_secondary_href: "the-gap-where-friction-lives.html"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
+## The second common starting / breaking point
+
 When a founder asks me to look at their pitch deck, we usually end up talking about something else entirely.
 
-The deck is rarely the problem. What surfaces, ten minutes into the conversation, is something quieter: the founder can articulate the strategy clearly — for the investors. But when I ask what the team is actually working on this quarter and why, the answer gets vague. Or it points to a plan from six months ago. Or different people on the team would give different answers.
+What surfaces, ten minutes into the conversation, is something quieter: the founder can articulate the strategy clearly — for the investors. But the next week it is slightly different again. But when I ask what the team is actually working on this quarter and why, their answer is that there is no strategy anymore. Or it points to a plan from six months ago. Or different people on the team would give different answers.
 
-The pitch is sharp. The internal compass is missing.
+As the team grew, what stopped working was the way of letting the team execute on, and feeel the strategy and the plan. It sounds easy, but it feels very counter intuitive to tell the same story twice a week, 100 times a year. It feels wrong. But that means that on a team of 30, people have still only heard the plan three times in a year. 
 
-We reconstructed what the team had actually heard, when, and from whom. It turned out the plan had been communicated three times in eighteen months: once at a January offsite, once in a Slack post in May after a customer call shifted things, and once in a board update that got forwarded around. In between, the founder had been making small strategic adjustments in his own head — based on customer signals, competitive moves, gut feel — and each new conversation reflected the latest version. But the team was acting on the January version, occasionally updated by the May post.
-
-He wasn't losing his team. His team was doing exactly what he'd told them. It's just that what he'd told them, and what he was now thinking, had drifted apart.
 
 This is one of three patterns I see over and over in how founders communicate strategy as their companies grow. They look different, but they share a root: the founder's communication style hasn't scaled with the company. What worked at 5 people quietly breaks at 25, and loudly breaks at 50.
 
