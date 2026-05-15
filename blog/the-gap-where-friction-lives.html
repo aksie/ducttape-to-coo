@@ -61,17 +61,10 @@
         }
         .header-logo:hover { text-decoration: none; color: var(--blue); }
 
-        nav {
-            display: flex;
-            gap: 24px;
-            font-size: 0.85rem;
-        }
-
-        nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-        }
+        nav { display: flex; gap: 24px; font-size: 0.85rem; }
+        nav a { color: var(--text-dim); text-decoration: none; }
         nav a:hover { color: var(--text); text-decoration: none; }
+        nav a.active { color: var(--text); }
 
         /* ── Article layout ───────────────────────────── */
         .post-wrap {
@@ -81,9 +74,7 @@
         }
 
         /* ── Meta block ───────────────────────────────── */
-        .post-meta {
-            margin-bottom: 48px;
-        }
+        .post-meta { margin-bottom: 48px; }
 
         .post-tag {
             display: inline-block;
@@ -91,14 +82,14 @@
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--blue);
-            border: 1px solid var(--blue);
             padding: 3px 9px;
             border-radius: 3px;
             margin-bottom: 20px;
         }
+        .post-tag--green { color: var(--green); border: 1px solid var(--green); }
+        .post-tag--blue  { color: var(--blue);  border: 1px solid var(--blue);  }
 
-        h1 {
+        .post-wrap h1 {
             font-size: 2.2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
@@ -114,10 +105,7 @@
             margin-bottom: 24px;
         }
 
-        .post-byline {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
+        .post-byline { font-size: 0.82rem; color: var(--text-muted); }
 
         /* ── Body copy ────────────────────────────────── */
         .post-body {
@@ -126,9 +114,7 @@
             line-height: 1.8;
         }
 
-        .post-body p {
-            margin-bottom: 1.4em;
-        }
+        .post-body p { margin-bottom: 1.4em; }
 
         .post-body h2 {
             font-size: 1.35rem;
@@ -147,31 +133,34 @@
             margin: 1.8em 0 0.5em;
         }
 
-        .post-body strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .post-body em {
-            color: var(--text);
-            font-style: italic;
-        }
+        .post-body strong { color: var(--text); font-weight: 600; }
+        .post-body em     { color: var(--text); font-style: italic; }
 
         .post-body ol,
         .post-body ul {
             padding-left: 1.5em;
             margin-bottom: 1.4em;
         }
-
-        .post-body li {
-            margin-bottom: 0.5em;
-        }
+        .post-body li { margin-bottom: 0.5em; }
 
         .post-body hr {
             border: none;
             border-top: 1px solid var(--border);
             margin: 3em 0;
         }
+
+        /* ── Blockquotes → pattern callouts ───────────── */
+        .post-body blockquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 20px;
+            margin: 1.8em 0;
+        }
+
+        .post-body blockquote p {
+            margin-bottom: 0.6em;
+            color: var(--text-dim);
+        }
+        .post-body blockquote p:last-child { margin-bottom: 0; }
 
         /* ── Tables ───────────────────────────────────── */
         .post-body table {
@@ -202,33 +191,16 @@
             color: var(--text-dim);
         }
 
-        .post-body tr:last-child td {
-            border-bottom: none;
-        }
+        .post-body tr:last-child td { border-bottom: none; }
+        .post-body td strong { color: var(--text); }
 
-        .post-body td strong {
-            color: var(--text);
-        }
-
-        /* highlight middle row */
         .post-body tr.highlight td {
             background: rgba(88, 166, 255, 0.06);
             color: var(--text);
         }
-        .post-body tr.highlight td strong {
-            color: var(--blue);
-        }
+        .post-body tr.highlight td strong { color: var(--blue); }
 
-        /* ── Footer / CTA ─────────────────────────────── */
-        .post-footer {
-            margin-top: 4em;
-            padding-top: 2em;
-            border-top: 1px solid var(--border);
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
+        /* ── CTA block ────────────────────────────────── */
         .post-cta {
             margin-top: 3em;
             padding: 28px 32px;
@@ -243,11 +215,7 @@
             font-size: 0.95rem;
         }
 
-        .cta-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+        .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
 
         .btn {
             padding: 10px 20px;
@@ -264,10 +232,7 @@
             text-decoration: none;
         }
 
-        .btn-primary {
-            background: var(--blue);
-            color: #0d1117;
-        }
+        .btn-primary { background: var(--blue); color: #0d1117; }
         .btn-primary:hover { background: #79bcff; text-decoration: none; }
 
         .btn-secondary {
@@ -277,11 +242,20 @@
         }
         .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); text-decoration: none; }
 
+        /* ── Footer ───────────────────────────────────── */
+        .post-footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
         /* ── Responsive ───────────────────────────────── */
         @media (max-width: 640px) {
-            h1 { font-size: 1.7rem; }
+            .post-wrap h1 { font-size: 1.7rem; }
             .post-wrap { padding: 40px 20px 80px; }
-            .header-inner { padding: 0; }
             nav { gap: 16px; }
         }
     </style>
@@ -296,6 +270,7 @@
             <a href="../diagnostic.html">Diagnostic</a>
             <a href="../roadmap.html">Roadmap</a>
             <a href="../wiki.html">Wiki</a>
+            <a href="index.html" class="active">Blog</a>
         </nav>
     </div>
 </header>
@@ -303,206 +278,111 @@
 <div class="post-wrap">
 
     <div class="post-meta">
-        <span class="post-tag">Essay</span>
+        <span class="post-tag post-tag--blue">Essay</span>
         <h1>The Gap Where Friction Lives</h1>
         <p class="post-subtitle">What three growth models tell us about why scaling hurts — and where the operational diagnostic actually points.</p>
         <p class="post-byline">May 2026</p>
     </div>
 
     <div class="post-body">
+<p>When something breaks in a growing company, it usually breaks for the same reason: the organisation needs something it isn't yet getting, and the founder isn't yet doing it. The friction isn't a sign that something is wrong with the company, or wrong with the founder. The friction <em>is</em> the gap between the two.</p>
+<p>Three well-known models describe this gap from different angles. Larry Greiner mapped it onto the <em>organisation</em>. Rachel Turner mapped it onto the <em>founder</em>. Les McKeown mapped it onto the <em>texture of daily work</em>. Read together — and held next to a concrete operational maturity lens — they tell a more useful story than any of them tells alone.</p>
+<p>This post lays them side by side, then matches them to the operational maturity stages I use in the Duct Tape to COO diagnostic.</p>
+<hr />
+<h2>Three lenses on the same journey</h2>
+<h3>Greiner: the organisation grows through crises</h3>
+<p>Greiner's model (1972, revised 1998) describes five phases of organisational growth, each ending in a crisis that forces the next phase into being:</p>
+<ol>
+<li><strong>Creativity</strong> — small, founder-led, informal. Ends in a <em>leadership crisis</em>: the founder can no longer hold everything.</li>
+<li><strong>Direction</strong> — first management layer, processes appear. Ends in an <em>autonomy crisis</em>: middle managers want decision rights the founder won't give up.</li>
+<li><strong>Delegation</strong> — decentralised, accountable units. Ends in a <em>control crisis</em>: the centre loses visibility.</li>
+<li><strong>Coordination</strong> — formal systems, headquarters function. Ends in a <em>red-tape crisis</em>: process strangles speed.</li>
+<li><strong>Collaboration</strong> — matrixed, team-based, culture-led.</li>
+</ol>
+<p>The most useful idea in Greiner is the crisis itself. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the <em>signal</em> that the organisation needs the next phase.</p>
+<h3>Turner: the founder shifts through leadership modes</h3>
+<p>Rachel Turner's <em>Founder's Survival Guide</em> (2022) abstracts the journey to three leadership modes the founder must learn to flex between:</p>
+<ul>
+<li><strong>Brave Warrior</strong> — bold, intuitive, fast, hands-on. Wins the early war.</li>
+<li><strong>Considered Architect</strong> — designs systems, develops people, builds structure.</li>
+<li><strong>Wise Monarch</strong> — sets vision, coaches leaders, holds the long view, lets go of operational detail.</li>
+</ul>
+<p>Turner's central insight: your strengths as a Brave Warrior become liabilities when the company needs an Architect. The same instincts that got you here will keep you stuck. Founders don't fail because they're missing skills; they fail because they over-apply the skills that already worked.</p>
+<p>This maps directly onto Greiner's crises. Greiner's <em>leadership crisis</em> is what happens when a Brave Warrior runs a company that now needs an Architect.</p>
+<h3>McKeown: the work itself changes texture</h3>
+<p>Les McKeown's <em>Predictable Success</em> (2010) gives the journey a different kind of name — one that founders recognise immediately because it describes how the work <em>feels</em>:</p>
+<ol>
+<li><strong>Early Struggle</strong> — finding product-market fit and cash.</li>
+<li><strong>Fun</strong> — you've found it; everything works; the founder's energy carries the company.</li>
+<li><strong>Whitewater</strong> — growth has outrun the way you used to work. Decisions slow down. The same mistakes repeat. People point at each other. It stops being fun.</li>
+<li><strong>Predictable Success</strong> — growth <em>plus</em> systems. Repeatable wins. The peak.</li>
+<li><strong>Treadmill → Big Rut → Death Rattle</strong> — over-process, ossification, decline.</li>
+</ol>
+<p>Whitewater is the phase most founders find me in. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: <em>I used to enjoy this</em>.</p>
+<p>McKeown adds a team typology that explains <em>why</em> Whitewater is so hard to leave: every healthy company needs four styles working together — <strong>Visionary</strong> (typically the founder), <strong>Operator</strong> (gets things done), <strong>Processor</strong> (builds repeatability), and <strong>Synergist</strong> (translates between the other three). In Fun you only need Visionary and Operator. In Whitewater, you need the Processor — and that's exactly the person the Visionary and Operator instinctively reject as <em>slowing us down</em>.</p>
+<h3>PAEI: why the founder's strengths resist the transition</h3>
+<p>Ichak Adizes' PAEI model (from his lifecycle work) sharpens the same point with different vocabulary. Every healthy organisation needs four functions: <strong>Producer</strong> (delivers results), <strong>Administrator</strong> (systematises and controls), <strong>Entrepreneur</strong> (vision and change), and <strong>Integrator</strong> (builds culture and connection). No single person can carry all four.</p>
+<p>Founders in the early phases are typically strong on E (Entrepreneur) and P (Producer) and weak on A (Administrator) and I (Integrator). The company succeeds because of E and P. So when growth demands A — process, structure, predictability — the founder experiences it as boring, slowing, bureaucratic. Not because A is wrong, but because A isn't where their identity lives. The Producer-Entrepreneur founder protects the E and P by quietly resisting the A.</p>
+<p>This is the deeper mechanism under Turner's "killer shots become liabilities." Your strengths gave you success, status, <em>and</em> identity. The transition isn't a skill problem. It's an identity problem dressed as a skills problem.</p>
+<hr />
+<h2>Reading them together</h2>
+<p>Across the three models, the same transition keeps showing up under different names:</p>
+<table>
+<thead>
+<tr><th>Stage of company</th><th>Greiner</th><th>Turner</th><th>McKeown</th><th>PAEI dominant</th></tr>
+</thead>
+<tbody>
+<tr><td>Finding it</td><td>Creativity</td><td>Brave Warrior</td><td>Early Struggle → Fun</td><td>E, P</td></tr>
+<tr class="highlight"><td><strong>The hard middle</strong></td><td><strong>Leadership / Autonomy crisis</strong></td><td><strong>Warrior → Architect</strong></td><td><strong>Whitewater</strong></td><td><strong>A must enter</strong></td></tr>
+<tr><td>Built it</td><td>Direction → Delegation</td><td>Considered Architect</td><td>Predictable Success</td><td>P, A, E, I balanced</td></tr>
+<tr><td>Leading it</td><td>Coordination → Collaboration</td><td>Wise Monarch</td><td>Predictable Success</td><td>I and E lead</td></tr>
+</tbody>
+</table>
 
-        <p>When something breaks in a growing company, it usually breaks for the same reason: the organisation needs something it isn't yet getting, and the founder isn't yet doing it. The friction isn't a sign that something is wrong with the company, or wrong with the founder. The friction <em>is</em> the gap between the two.</p>
+<p>The hard middle is the same place. Greiner names it by what's failing structurally. Turner names it by what the founder must become. McKeown names it by how the work feels. PAEI names it by which function is missing. They're describing one moment from four sides of the room.</p>
+<p>And here's where my own working hypothesis lives: <strong>when things go wrong in this middle, it's because the organisation needs something it isn't yet getting, and the founder isn't yet doing it.</strong> The friction isn't a defect. It's the gap announcing itself.</p>
+<hr />
+<h2>Matching the models to operational maturity</h2>
+<p>The three frameworks describe <em>that</em> the transition happens. They're less specific about <em>what changes operationally</em> — which is where the Duct Tape to COO diagnostic comes in.</p>
+<p>I've been refining a way to assess where each individual process sits, regardless of where the company as a whole is:</p>
+<ol>
+<li><strong>Informal</strong> — it gets done, but ad hoc.</li>
+<li><strong>Informally owned</strong> — someone reliably does it, but ownership isn't explicit.</li>
+<li><strong>Formally owned</strong> — ownership is named, recognised, and clear.</li>
+<li><strong>Documented and maintained</strong> — the process is written down, owned, and kept current.</li>
+</ol>
+<p>The interesting thing about putting this next to the growth models is what it reveals: companies don't sit cleanly in one growth phase. They sit in a <em>distribution</em> of process maturities. A Whitewater company typically has a handful of processes at stage 1, most at stage 2, almost none at stages 3 or 4. The journey through Whitewater is, operationally, the journey of moving processes up the stages.</p>
+<p>Here's how the maturity stages map onto the growth frameworks:</p>
+<table>
+<thead>
+<tr><th>Maturity stage</th><th>What it looks like</th><th>Maps to</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1. Informal</strong></td><td>The founder or one trusted person handles it. No one else really knows how.</td><td>Greiner Creativity. Turner Brave Warrior. McKeown Fun. PAEI: pure P and E.</td></tr>
+<tr><td><strong>2. Informally owned</strong></td><td>Someone reliably owns it in practice but not on paper. If they leave, it breaks.</td><td>The early signs of Whitewater. The leadership crisis beginning. Warrior peaking, Architect not yet present. A is still missing.</td></tr>
+<tr class="highlight"><td><strong>3. Formally owned</strong></td><td>Ownership is explicit and recognised by the team. The owner has authority to change how it's done.</td><td>The Whitewater-to-Predictable-Success transition. The founder is becoming Architect. A is entering.</td></tr>
+<tr><td><strong>4. Documented and maintained</strong></td><td>The process is written, the owner keeps it current, new people can pick it up.</td><td>Predictable Success. Considered Architect. PAEI in balance.</td></tr>
+</tbody>
+</table>
 
-        <p>Three well-known models describe this gap from different angles. Larry Greiner mapped it onto the <em>organisation</em>. Rachel Turner mapped it onto the <em>founder</em>. Les McKeown mapped it onto the <em>texture of daily work</em>. Read together — and held next to a concrete operational maturity lens — they tell a more useful story than any of them tells alone.</p>
-
-        <p>This post lays them side by side, then matches them to the operational maturity stages I use in the Duct Tape to COO diagnostic.</p>
-
-        <hr>
-
-        <h2>Three lenses on the same journey</h2>
-
-        <h3>Greiner: the organisation grows through crises</h3>
-
-        <p>Greiner's model (1972, revised 1998) describes five phases of organisational growth, each ending in a crisis that forces the next phase into being:</p>
-
-        <ol>
-            <li><strong>Creativity</strong> — small, founder-led, informal. Ends in a <em>leadership crisis</em>: the founder can no longer hold everything.</li>
-            <li><strong>Direction</strong> — first management layer, processes appear. Ends in an <em>autonomy crisis</em>: middle managers want decision rights the founder won't give up.</li>
-            <li><strong>Delegation</strong> — decentralised, accountable units. Ends in a <em>control crisis</em>: the centre loses visibility.</li>
-            <li><strong>Coordination</strong> — formal systems, headquarters function. Ends in a <em>red-tape crisis</em>: process strangles speed.</li>
-            <li><strong>Collaboration</strong> — matrixed, team-based, culture-led.</li>
-        </ol>
-
-        <p>The most useful idea in Greiner is the crisis itself. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the <em>signal</em> that the organisation needs the next phase.</p>
-
-        <h3>Turner: the founder shifts through leadership modes</h3>
-
-        <p>Rachel Turner's <em>Founder's Survival Guide</em> (2022) abstracts the journey to three leadership modes the founder must learn to flex between:</p>
-
-        <ul>
-            <li><strong>Brave Warrior</strong> — bold, intuitive, fast, hands-on. Wins the early war.</li>
-            <li><strong>Considered Architect</strong> — designs systems, develops people, builds structure.</li>
-            <li><strong>Wise Monarch</strong> — sets vision, coaches leaders, holds the long view, lets go of operational detail.</li>
-        </ul>
-
-        <p>Turner's central insight: your strengths as a Brave Warrior become liabilities when the company needs an Architect. The same instincts that got you here will keep you stuck. Founders don't fail because they're missing skills; they fail because they over-apply the skills that already worked.</p>
-
-        <p>This maps directly onto Greiner's crises. Greiner's <em>leadership crisis</em> is what happens when a Brave Warrior runs a company that now needs an Architect.</p>
-
-        <h3>McKeown: the work itself changes texture</h3>
-
-        <p>Les McKeown's <em>Predictable Success</em> (2010) gives the journey a different kind of name — one that founders recognise immediately because it describes how the work <em>feels</em>:</p>
-
-        <ol>
-            <li><strong>Early Struggle</strong> — finding product-market fit and cash.</li>
-            <li><strong>Fun</strong> — you've found it; everything works; the founder's energy carries the company.</li>
-            <li><strong>Whitewater</strong> — growth has outrun the way you used to work. Decisions slow down. The same mistakes repeat. People point at each other. It stops being fun.</li>
-            <li><strong>Predictable Success</strong> — growth <em>plus</em> systems. Repeatable wins. The peak.</li>
-            <li><strong>Treadmill → Big Rut → Death Rattle</strong> — over-process, ossification, decline.</li>
-        </ol>
-
-        <p>Whitewater is the phase most founders find me in. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: <em>I used to enjoy this</em>.</p>
-
-        <p>McKeown adds a team typology that explains <em>why</em> Whitewater is so hard to leave: every healthy company needs four styles working together — <strong>Visionary</strong> (typically the founder), <strong>Operator</strong> (gets things done), <strong>Processor</strong> (builds repeatability), and <strong>Synergist</strong> (translates between the other three). In Fun you only need Visionary and Operator. In Whitewater, you need the Processor — and that's exactly the person the Visionary and Operator instinctively reject as <em>slowing us down</em>.</p>
-
-        <h3>PAEI: why the founder's strengths resist the transition</h3>
-
-        <p>Ichak Adizes' PAEI model (from his lifecycle work) sharpens the same point with different vocabulary. Every healthy organisation needs four functions: <strong>Producer</strong> (delivers results), <strong>Administrator</strong> (systematises and controls), <strong>Entrepreneur</strong> (vision and change), and <strong>Integrator</strong> (builds culture and connection). No single person can carry all four.</p>
-
-        <p>Founders in the early phases are typically strong on E (Entrepreneur) and P (Producer) and weak on A (Administrator) and I (Integrator). The company succeeds because of E and P. So when growth demands A — process, structure, predictability — the founder experiences it as boring, slowing, bureaucratic. Not because A is wrong, but because A isn't where their identity lives. The Producer-Entrepreneur founder protects the E and P by quietly resisting the A.</p>
-
-        <p>This is the deeper mechanism under Turner's "killer shots become liabilities." Your strengths gave you success, status, <em>and</em> identity. The transition isn't a skill problem. It's an identity problem dressed as a skills problem.</p>
-
-        <hr>
-
-        <h2>Reading them together</h2>
-
-        <p>Across the three models, the same transition keeps showing up under different names:</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Stage of company</th>
-                    <th>Greiner</th>
-                    <th>Turner</th>
-                    <th>McKeown</th>
-                    <th>PAEI dominant</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Finding it</td>
-                    <td>Creativity</td>
-                    <td>Brave Warrior</td>
-                    <td>Early Struggle → Fun</td>
-                    <td>E, P</td>
-                </tr>
-                <tr class="highlight">
-                    <td><strong>The hard middle</strong></td>
-                    <td><strong>Leadership / Autonomy crisis</strong></td>
-                    <td><strong>Warrior → Architect</strong></td>
-                    <td><strong>Whitewater</strong></td>
-                    <td><strong>A must enter</strong></td>
-                </tr>
-                <tr>
-                    <td>Built it</td>
-                    <td>Direction → Delegation</td>
-                    <td>Considered Architect</td>
-                    <td>Predictable Success</td>
-                    <td>P, A, E, I balanced</td>
-                </tr>
-                <tr>
-                    <td>Leading it</td>
-                    <td>Coordination → Collaboration</td>
-                    <td>Wise Monarch</td>
-                    <td>Predictable Success</td>
-                    <td>I and E lead</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>The hard middle is the same place. Greiner names it by what's failing structurally. Turner names it by what the founder must become. McKeown names it by how the work feels. PAEI names it by which function is missing. They're describing one moment from four sides of the room.</p>
-
-        <p>And here's where my own working hypothesis lives: <strong>when things go wrong in this middle, it's because the organisation needs something it isn't yet getting, and the founder isn't yet doing it.</strong> The friction isn't a defect. It's the gap announcing itself.</p>
-
-        <hr>
-
-        <h2>Matching the models to operational maturity</h2>
-
-        <p>The three frameworks describe <em>that</em> the transition happens. They're less specific about <em>what changes operationally</em> — which is where the Duct Tape to COO diagnostic comes in.</p>
-
-        <p>I've been refining a way to assess where each individual process sits, regardless of where the company as a whole is:</p>
-
-        <ol>
-            <li><strong>Informal</strong> — it gets done, but ad hoc.</li>
-            <li><strong>Informally owned</strong> — someone reliably does it, but ownership isn't explicit.</li>
-            <li><strong>Formally owned</strong> — ownership is named, recognised, and clear.</li>
-            <li><strong>Documented and maintained</strong> — the process is written down, owned, and kept current.</li>
-        </ol>
-
-        <p>The interesting thing about putting this next to the growth models is what it reveals: companies don't sit cleanly in one growth phase. They sit in a <em>distribution</em> of process maturities. A Whitewater company typically has a handful of processes at stage 1, most at stage 2, almost none at stages 3 or 4. The journey through Whitewater is, operationally, the journey of moving processes up the stages.</p>
-
-        <p>Here's how the maturity stages map onto the growth frameworks:</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Maturity stage</th>
-                    <th>What it looks like</th>
-                    <th>Maps to</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>1. Informal</strong></td>
-                    <td>The founder or one trusted person handles it. No one else really knows how.</td>
-                    <td>Greiner Creativity. Turner Brave Warrior. McKeown Fun. PAEI: pure P and E.</td>
-                </tr>
-                <tr>
-                    <td><strong>2. Informally owned</strong></td>
-                    <td>Someone reliably owns it in practice but not on paper. If they leave, it breaks.</td>
-                    <td>The early signs of Whitewater. The leadership crisis beginning. Warrior peaking, Architect not yet present. A is still missing.</td>
-                </tr>
-                <tr class="highlight">
-                    <td><strong>3. Formally owned</strong></td>
-                    <td>Ownership is explicit and recognised by the team. The owner has authority to change how it's done.</td>
-                    <td>The Whitewater-to-Predictable-Success transition. The founder is becoming Architect. A is entering.</td>
-                </tr>
-                <tr>
-                    <td><strong>4. Documented and maintained</strong></td>
-                    <td>The process is written, the owner keeps it current, new people can pick it up.</td>
-                    <td>Predictable Success. Considered Architect. PAEI in balance.</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>The maturity model gives the growth models something they don't have on their own: <em>a way to see, process by process, where the friction lives</em>. You don't transition a company through Whitewater in one heroic act. You move processes up, one at a time, in the order the friction demands.</p>
-
-        <p>And the friction always points to the same thing: a process the organisation needs <em>formally owned</em> but the founder is still treating as <em>informal</em>. That's the gap. That's where the work is.</p>
-
-        <hr>
-
-        <h2>What this means in practice</h2>
-
-        <p>If you're a founder reading this and recognising Whitewater: the move that matters isn't <em>delegating more</em>, and it isn't <em>adopting frameworks</em>. It's looking at where you still hold processes informally that the organisation now needs formally owned. The pain is the map.</p>
-
-        <p>If you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." It's "which processes does the organisation need at stage 3 that the founder is still running at stage 1?" Every one of those is a transition waiting to happen. And every one of those has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.</p>
-
-        <p>The three growth models tell you the journey is real and predictable. The maturity stages tell you where to start tomorrow.</p>
-
+<p>The maturity model gives the growth models something they don't have on their own: <em>a way to see, process by process, where the friction lives</em>. You don't transition a company through Whitewater in one heroic act. You move processes up, one at a time, in the order the friction demands.</p>
+<p>And the friction always points to the same thing: a process the organisation needs <em>formally owned</em> but the founder is still treating as <em>informal</em>. That's the gap. That's where the work is.</p>
+<hr />
+<h2>What this means in practice</h2>
+<p>If you're a founder reading this and recognising Whitewater: the move that matters isn't <em>delegating more</em>, and it isn't <em>adopting frameworks</em>. It's looking at where you still hold processes informally that the organisation now needs formally owned. The pain is the map.</p>
+<p>If you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." It's "which processes does the organisation need at stage 3 that the founder is still running at stage 1?" Every one of those is a transition waiting to happen. And every one of those has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.</p>
+<p>The three growth models tell you the journey is real and predictable. The maturity stages tell you where to start tomorrow.</p>
     </div>
 
-    <div class="post-cta">
-        <p>Want to see where your own company sits across the maturity stages — process by process?</p>
-        <div class="cta-links">
-            <a class="btn btn-primary" href="../diagnostic.html">Run the diagnostic</a>
-            <a class="btn btn-secondary" href="../wiki.html">Read the wiki</a>
-        </div>
+<div class="post-cta">
+    <p>Want to see where your own company sits across the maturity stages — process by process?</p>
+    <div class="cta-links">
+        <a class="btn btn-primary"  href="../diagnostic.html">Run the diagnostic</a>
+        <a class="btn btn-secondary" href="../wiki.html">Read the wiki</a>
     </div>
+</div>
 
-    <div class="post-footer">
-        <p>Part of an ongoing series on the Duct Tape to COO operational maturity framework. Next: working forms that help founders and teams not just see where they are, but actually move.</p>
-    </div>
+<div class="post-footer"><p>Part of an ongoing series on the Duct Tape to COO operational maturity framework. Next: working forms that help founders and teams not just see where they are, but actually move.</p></div>
 
 </div>
 

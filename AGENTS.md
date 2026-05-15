@@ -18,6 +18,12 @@ cd wiki-pipeline && python3 server.py
 
 ```
 ├── index.html, diagnostic.html, roadmap.html, wiki.html   # app pages (static, no build)
+├── blog/
+│   ├── posts/*.md          # EDIT HERE — markdown source with YAML frontmatter
+│   ├── _template.html      # HTML shell (placeholders: {{post_title}} etc.)
+│   ├── build.py            # !! RUN AFTER EDITING POSTS: python3 blog/build.py
+│   ├── *.html              # generated — do not edit by hand
+│   └── index.html          # generated — lists all posts from frontmatter
 ├── css/, js/                                               # shared styles + app logic
 ├── data/
 │   ├── processes.json      # 28+ processes, stage guidance, primary_axis, sensitivity
@@ -68,9 +74,21 @@ Each claim marked with `<!-- claim-id: c-NNN -->` in draft.md.
 | 3 | `phase-3-publish.md` | published wiki page |
 | — | `practitioner-to-pipeline.md` | reverse workflow: experience → page → backfill pipeline |
 
+## Blog post workflow
+
+1. Edit or create `blog/posts/<slug>.md` (YAML frontmatter + markdown body).
+2. Run `python3 blog/build.py` from the repo root.
+3. The script regenerates `blog/<slug>.html` and `blog/index.html`.
+4. Commit both the `.md` source and the generated `.html` files.
+
+Required Python packages (one-time): `pip install markdown python-frontmatter`
+
+**Never hand-edit `blog/*.html`** — changes will be overwritten on the next build.
+
 ## Known gotchas
 
-- **No build step** — this is static HTML/JS, no npm, no compilation
+- **Blog has a build step** — `python3 blog/build.py` — but the rest of the site does not
+- **No build step** — this is static HTML/JS, no npm, no compilation (except the blog)
 - **No `.gitignore`** — repo tracks everything including `.DS_Store`
 - **`.nojekyll`** exists — GitHub Pages Jekyll is disabled intentionally
 - **`approval.md` auto-creation** in `server.py` sets `last_updated` but doesn't update it after subsequent saves
