@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content Map — Duct Tape to COO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+<style>
+  :root {
+    --bg: #0d1117; --surface: #161b22; --border: #30363d; --border-bright: #484f58;
+    --text: #e6edf3; --text-dim: #8b949e; --text-muted: #6e7681;
+    --green: #3fb950; --blue: #58a6ff; --orange: #f0883e; --purple: #d2a8ff; --gold: #e3b341;
+    --font: 'Space Grotesk', 'Segoe UI', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+  a { color: var(--text-dim); text-decoration: none; }
+  a:hover { color: var(--text); }
+
+  header { border-bottom: 1px solid var(--border); padding: 0 32px; }
+  .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .header-logo { font-size: .95rem; font-weight: 600; color: var(--text); }
+  .header-logo:hover { color: var(--blue); }
+  nav { display: flex; gap: 24px; font-size: .85rem; }
+  nav a.active { color: var(--text); }
+
+  .page { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  .page-head { margin-bottom: 36px; }
+  .eyebrow { display: inline-block; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); border: 1px solid var(--orange); padding: 3px 9px; border-radius: 3px; margin-bottom: 14px; }
+  .page-head h1 { font-size: 1.7rem; font-weight: 700; letter-spacing: -.02em; margin-bottom: 8px; }
+  .page-head p { font-size: .9rem; color: var(--text-dim); }
+
+  .map-wrap { position: relative; width: 100%; }
+  #map { width: 100%; height: auto; display: block; }
+
+  /* Tooltip */
+  #tip {
+    position: fixed; pointer-events: none; display: none;
+    background: var(--surface); border: 1px solid var(--border-bright);
+    border-radius: 6px; padding: 10px 14px; font-size: .82rem; line-height: 1.5;
+    max-width: 240px; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,.4);
+  }
+  #tip .tip-title { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  #tip .tip-stage { color: var(--text-muted); font-size: .75rem; }
+  #tip .tip-status { margin-top: 5px; font-size: .78rem; font-weight: 600; }
+  #tip .tip-hint { margin-top: 4px; color: var(--text-muted); font-size: .72rem; font-style: italic; }
+
+  .legend-row { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 28px; align-items: center; }
+  .legend-group { display: flex; gap: 20px; align-items: center; }
+  .legend-group-label { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-right: 4px; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; color: var(--text-dim); }
+  .swatch { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+  .stats-row { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-n { font-size: 1.4rem; font-weight: 700; }
+  .stat-label { font-size: .75rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="header-logo" href="index.html">Duct Tape to COO</a>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="wiki.html">Wiki</a>
+      <a href="blog/index.html">Blog</a>
+      <a href="content-map.html" class="active" style="color:var(--text)">Map</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <div class="page-head">
+    <div class="eyebrow">Content Map</div>
+    <h1>What exists, what's missing</h1>
+    <p>Sunburst = Wiki. Inner ring = Foundation (earliest stage), outer ring = Scaled. Each slice is one process. Hover for details.</p>
+  </div>
+
+  <div class="map-wrap">
+    <svg id="map" viewBox="0 0 1080 790" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+
+  <div class="legend-row">
+    <div class="legend-group">
+      <span class="legend-group-label">Wiki status</span>
+      <div class="legend-item"><div class="swatch" style="background:#3fb950"></div> Complete</div>
+      <div class="legend-item"><div class="swatch" style="background:#f0883e;opacity:.85"></div> Scaffolded (structure, no content)</div>
+      <div class="legend-item"><div class="swatch" style="background:#30363d"></div> Stub (placeholder)</div>
+      <div class="legend-item"><div class="swatch" style="background:#161b22;border:1px solid #30363d"></div> N/A at this stage</div>
+    </div>
+    <div class="legend-group">
+      <span class="legend-group-label">Rings</span>
+      <div class="legend-item">Inner → Outer = Foundation → Scaled</div>
+    </div>
+  </div>
+
+  <div class="stats-row" id="stats"></div>
+</div>
+
+<div id="tip">
+  <div class="tip-title" id="tip-title"></div>
+  <div class="tip-stage" id="tip-stage"></div>
+  <div class="tip-status" id="tip-status"></div>
+  <div class="tip-hint" id="tip-hint"></div>
+</div>
+
+<script>
+const CX = 540, CY = 420;
+
+// Ring definitions: foundation=innermost, scaled=outermost
+const RINGS = [
+  { id: 'foundation',    label: 'Foundation',    r1: 82,  r2: 130 },
+  { id: 'first-hires',   label: 'First Hires',   r1: 133, r2: 181 },
+  { id: 'early-revenue', label: 'Early Rev',      r1: 184, r2: 232 },
+  { id: 'growth',        label: 'Growth',         r1: 235, r2: 283 },
+  { id: 'scaled',        label: 'Scaled',         r1: 286, r2: 328 },
+];
+
+// 5 sectors of 72° each, with 2° gaps (so 70° used, 1° gap on each side)
+const GAP = 1.5;
+const SECTOR_DEG = 72;
+
+const CATEGORIES = [
+  { id: 'strategic', label: 'Strategic Ops',           color: '#58a6ff', startAngle: 0   },
+  { id: 'financial', label: 'Financial Ops',            color: '#3fb950', startAngle: 72  },
+  { id: 'revenue',   label: 'Revenue & Customer Ops',   color: '#f0883e', startAngle: 144 },
+  { id: 'people',    label: 'People Ops',               color: '#d2a8ff', startAngle: 216 },
+  { id: 'legal',     label: 'Legal & Other Ops',        color: '#e3b341', startAngle: 288 },
+];
+
+// Process data: status per stage (3=complete, 2=scaffolded, 1=stub, 0=N/A)
+const PROCESSES = {
+  strategic: [
+    { id:'1.1',  title:'Company-Level Planning & Goals',      s:{foundation:3,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.1b', title:'Team Goals & Cascading Goals',        s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.2',  title:'Internal Comms about Strategy',       s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.2b', title:'Shareholder & Investor Reporting',    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'1.3',  title:'Financial Planning & Forecasting',    s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.4',  title:'Who Decides What',                    s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.5',  title:'Organizational Design',               s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.6',  title:'Data & Reporting Infrastructure',     s:{foundation:0,'first-hires':0,'early-revenue':2,growth:2,scaled:2} },
+    { id:'1.7',  title:'Process Documentation',               s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
+    { id:'1.8',  title:'Cross-Team Coordination',             s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
+  ],
+  financial: [
+    { id:'2.1',  title:'Bookkeeping & Cash Management',       s:{foundation:2,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'2.2',  title:'Financial Reporting & Controls',      s:{foundation:0,'first-hires':2,'early-revenue':3,growth:2,scaled:2} },
+    { id:'2.3',  title:'Accounts Receivable',                 s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'2.4',  title:'Accounts Payable & Expenses',         s:{foundation:1,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
+    { id:'2.5',  title:'Payroll & Compensation',              s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+  ],
+  revenue: [
+    { id:'5.1',  title:'Sales Operations',                    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.2',  title:'Customer Acquisition & Leads',        s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.3',  title:'Customer Onboarding & Activation',    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.4',  title:'Customer Health & Support',           s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.5',  title:'Renewal & Retention',                 s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.6',  title:'Service Delivery',                    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'5.7',  title:'Customer Data & Analytics',           s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+  ],
+  people: [
+    { id:'3.1',  title:'HR Administration',                   s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.2',  title:'Recruitment & Hiring',                s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.3',  title:'Onboarding',                          s:{foundation:0,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.4',  title:'Offboarding',                         s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.5',  title:'Performance Management',              s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.6',  title:'Compensation & Benefits',             s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'3.7',  title:'Learning & Development',              s:{foundation:0,'first-hires':0,'early-revenue':0,growth:1,scaled:1} },
+  ],
+  legal: [
+    { id:'4.1',  title:'Legal & Contracts',                   s:{foundation:2,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
+    { id:'4.2',  title:'Office & Facilities',                 s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'4.3',  title:'IT Administration',                   s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
+    { id:'4.4',  title:'Vendor & Procurement',                s:{foundation:0,'first-hires':0,'early-revenue':0,growth:1,scaled:1} },
+  ],
+};
+
+// ── SVG helpers ──────────────────────────────────────────
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const svg = document.getElementById('map');
+
+function el(tag, attrs = {}) {
+  const e = document.createElementNS(SVG_NS, tag);
+  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
+  return e;
+}
+
+function polar(cx, cy, r, angleDeg) {
+  const rad = (angleDeg - 90) * Math.PI / 180;
+  return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+}
+
+function arcPath(r1, r2, a1, a2) {
+  const p1 = polar(CX, CY, r1, a1), p2 = polar(CX, CY, r1, a2);
+  const p3 = polar(CX, CY, r2, a1), p4 = polar(CX, CY, r2, a2);
+  const lg = a2 - a1 > 180 ? 1 : 0;
+  return `M${p1.x} ${p1.y} A${r1} ${r1} 0 ${lg} 1 ${p2.x} ${p2.y} L${p4.x} ${p4.y} A${r2} ${r2} 0 ${lg} 0 ${p3.x} ${p3.y}Z`;
+}
+
+function statusFill(status, catColor) {
+  if (status === 3) return '#3fb950';
+  if (status === 2) return catColor;
+  if (status === 1) return '#2d333b';
+  return '#161b22';
+}
+
+function statusOpacity(status) {
+  if (status === 3) return 1;
+  if (status === 2) return 0.55;
+  if (status === 1) return 0.9;
+  return 0.6;
+}
+
+function statusLabel(s) {
+  return ['N/A at this stage','Stub (placeholder)','Scaffolded — structure ready, no content yet','Complete'][s] || '?';
+}
+
+function stageLabel(id) {
+  return { foundation:'Foundation', 'first-hires':'First Hires', 'early-revenue':'Early Revenue', growth:'Growth', scaled:'Scaled' }[id] || id;
+}
+
+// ── Draw background ring separators ────────────────────
+const bgGroup = el('g');
+svg.appendChild(bgGroup);
+
+// Thin separator circles between rings
+for (const ring of RINGS) {
+  bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: ring.r1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
+}
+// Outer boundary
+bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: RINGS[4].r2 + 1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
+
+// ── Draw sunburst arcs ──────────────────────────────────
+let counts = { complete: 0, scaffolded: 0, stub: 0, na: 0 };
+
+const arcGroup = el('g', { cursor: 'pointer' });
+svg.appendChild(arcGroup);
+
+for (const cat of CATEGORIES) {
+  const procs = PROCESSES[cat.id];
+  const sliceDeg = (SECTOR_DEG - 2 * GAP) / procs.length;
+
+  for (let pi = 0; pi < procs.length; pi++) {
+    const proc = procs[pi];
+    const a1base = cat.startAngle + GAP + pi * sliceDeg;
+    const a2base = a1base + sliceDeg - 0.4; // tiny inner gap between slices
+
+    for (const ring of RINGS) {
+      const st = proc.s[ring.id] ?? 0;
+      const fill = statusFill(st, cat.color);
+      const opacity = statusOpacity(st);
+
+      if (st === 0) counts.na++;
+      else if (st === 1) counts.stub++;
+      else if (st === 2) counts.scaffolded++;
+      else if (st === 3) counts.complete++;
+
+      const path = el('path', {
+        d: arcPath(ring.r1 + 1, ring.r2 - 1, a1base, a2base),
+        fill,
+        opacity,
+        'data-proc': proc.id,
+        'data-title': proc.title,
+        'data-stage': ring.id,
+        'data-status': st,
+        'data-cat-color': cat.color,
+      });
+
+      // hover highlight
+      path.addEventListener('mouseenter', function(e) {
+        const s = +this.getAttribute('data-status');
+        this.style.opacity = Math.min(1, opacity + 0.3);
+        this.style.filter = 'brightness(1.4)';
+        showTip(e,
+          this.getAttribute('data-proc') + ' — ' + this.getAttribute('data-title'),
+          stageLabel(this.getAttribute('data-stage')),
+          s, this.getAttribute('data-cat-color')
+        );
+      });
+      path.addEventListener('mousemove', moveTip);
+      path.addEventListener('mouseleave', function() {
+        this.style.opacity = '';
+        this.style.filter = '';
+        hideTip();
+      });
+      if (st > 0) {
+        path.addEventListener('click', function() {
+          const p = this.getAttribute('data-proc');
+          const stage = this.getAttribute('data-stage');
+          window.open(`wiki.html#${p}--${stage}`, '_blank');
+        });
+      }
+
+      arcGroup.appendChild(path);
+    }
+  }
+}
+
+// ── Draw sector separator lines ─────────────────────────
+const sepGroup = el('g');
+svg.appendChild(sepGroup);
+for (const cat of CATEGORIES) {
+  const a = cat.startAngle;
+  const inner = polar(CX, CY, RINGS[0].r1, a);
+  const outer = polar(CX, CY, RINGS[4].r2, a);
+  sepGroup.appendChild(el('line', {
+    x1: inner.x, y1: inner.y, x2: outer.x, y2: outer.y,
+    stroke: '#0d1117', 'stroke-width': '2.5',
+  }));
+}
+
+// ── Center circle ───────────────────────────────────────
+const innerR = RINGS[0].r1;
+svg.appendChild(el('circle', { cx: CX, cy: CY, r: innerR - 2, fill: '#161b22', stroke: '#30363d', 'stroke-width': '1' }));
+
+function addCenterText(txt, y, size, color, weight = '400') {
+  const t = el('text', { x: CX, y: CY + y, 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill: color, 'font-size': size, 'font-family': 'Space Grotesk, sans-serif', 'font-weight': weight });
+  t.textContent = txt;
+  svg.appendChild(t);
+}
+addCenterText('Wiki', -22, '13', '#8b949e', '600');
+addCenterText('130', 2, '22', '#e6edf3', '700');
+addCenterText('cells', 22, '11', '#6e7681');
+
+// ── Ring labels (right side, inside outer ring) ─────────
+const ringLabelGroup = el('g');
+svg.appendChild(ringLabelGroup);
+for (let i = 0; i < RINGS.length; i++) {
+  const ring = RINGS[i];
+  const rMid = (ring.r1 + ring.r2) / 2;
+  // Position at angle 36° (Strategic sector midpoint) just inside outer bound
+  // Actually: position at the right edge of the chart at y levels staggered
+  // Use angle = 36° (midpoint of Strategic sector)
+  const labelAngle = 36;
+  const pt = polar(CX, CY, rMid, labelAngle);
+  const t = el('text', {
+    x: pt.x, y: pt.y, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
+    fill: '#e6edf3', 'font-size': '9', 'font-family': 'Space Grotesk, sans-serif',
+    'font-weight': '600', 'pointer-events': 'none', opacity: '0.85',
+  });
+  t.textContent = ring.label;
+  ringLabelGroup.appendChild(t);
+}
+
+// ── Category labels (outside outer ring) ───────────────
+const catLabelGroup = el('g');
+svg.appendChild(catLabelGroup);
+for (const cat of CATEGORIES) {
+  const midAngle = cat.startAngle + SECTOR_DEG / 2;
+  const labelR = RINGS[4].r2 + 22;
+  const pt = polar(CX, CY, labelR, midAngle);
+
+  // Category color dot
+  const dotR = RINGS[4].r2 + 12;
+  const dotPt = polar(CX, CY, dotR, midAngle);
+  catLabelGroup.appendChild(el('circle', { cx: dotPt.x, cy: dotPt.y, r: 4, fill: cat.color, opacity: '0.9' }));
+
+  const t = el('text', {
+    x: pt.x, y: pt.y, 'text-anchor': 'middle', 'dominant-baseline': 'middle',
+    fill: cat.color, 'font-size': '10.5', 'font-family': 'Space Grotesk, sans-serif',
+    'font-weight': '600', 'pointer-events': 'none', opacity: '0.9',
+  });
+  t.textContent = cat.label;
+  catLabelGroup.appendChild(t);
+}
+
+// ── Branch connection lines ─────────────────────────────
+// Hub: top of chart connects Blog (upper-left), Framework (center-top), Diagnostic (upper-right)
+const HUB_Y = 60;
+
+function bezierLine(x1, y1, x2, y2, color = '#30363d') {
+  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+  const path = el('path', {
+    d: `M${x1} ${y1} C${x1} ${my} ${x2} ${my} ${x2} ${y2}`,
+    fill: 'none', stroke: color, 'stroke-width': '1.5', 'stroke-dasharray': '4 3', opacity: '0.5',
+  });
+  return path;
+}
+
+// Top of inner ring
+const innerTop = polar(CX, CY, RINGS[0].r1, 0); // straight up
+
+// Blog card anchor: upper-left
+const BLOG_X = 105, BLOG_Y = 195;
+const DIAG_X = 975, DIAG_Y = 195;
+
+// Connection lines: from card anchor to sunburst upper edge
+const blogEdge = polar(CX, CY, RINGS[4].r2, 315); // upper-left
+const diagEdge = polar(CX, CY, RINGS[4].r2, 45);  // upper-right
+
+svg.appendChild(bezierLine(BLOG_X, BLOG_Y, blogEdge.x, blogEdge.y, '#484f58'));
+svg.appendChild(bezierLine(DIAG_X, DIAG_Y, diagEdge.x, diagEdge.y, '#484f58'));
+
+// ── Blog branch card ────────────────────────────────────
+function addCard(x, y, w, h) {
+  svg.appendChild(el('rect', {
+    x, y, width: w, height: h, rx: '6',
+    fill: '#161b22', stroke: '#30363d', 'stroke-width': '1',
+  }));
+}
+
+function addText(txt, x, y, size, color, anchor = 'start', weight = '400', opacity = '1') {
+  const t = el('text', {
+    x, y, 'text-anchor': anchor, 'dominant-baseline': 'middle',
+    fill: color, 'font-size': size, 'font-family': 'Space Grotesk, sans-serif',
+    'font-weight': weight, opacity,
+  });
+  t.textContent = txt;
+  svg.appendChild(t);
+}
+
+function addDot(x, y, color, r = 5) {
+  svg.appendChild(el('circle', { cx: x, cy: y, r, fill: color }));
+}
+
+// Blog card
+addCard(18, 50, 175, 260);
+addText('📝 Blog', 30, 74, '11', '#8b949e', 'start', '600');
+addText('Published', 30, 100, '9.5', '#6e7681', 'start', '400');
+addDot(36, 119, '#3fb950', 4);
+addText('A Starting Point', 47, 119, '9.5', '#e6edf3');
+addDot(36, 137, '#3fb950', 4);
+addText('The Gap Where Friction Lives', 47, 137, '9', '#e6edf3');
+addDot(36, 155, '#3fb950', 4);
+addText('How Founders Lose the Team', 47, 155, '9', '#e6edf3');
+addText('Backlog', 30, 181, '9.5', '#6e7681', 'start', '400');
+addDot(36, 200, '#2d333b', 4);
+addText('Why this exists / origin', 47, 200, '9', '#6e7681');
+addDot(36, 217, '#2d333b', 4);
+addText('The most fixable patterns', 47, 217, '9', '#6e7681');
+addDot(36, 234, '#2d333b', 4);
+addText('Entry-point per archetype', 47, 234, '9', '#6e7681');
+addDot(36, 251, '#2d333b', 4);
+addText('Founder → Architect', 47, 251, '9', '#6e7681');
+
+// Diagnostic card
+addCard(887, 50, 177, 270);
+addText('⚙ Diagnostic', 899, 75, '11', '#8b949e', 'start', '600');
+addText('Working', 899, 103, '9.5', '#6e7681', 'start', '400');
+addDot(905, 123, '#3fb950', 4);
+addText('Full tool — 33 processes', 916, 123, '9.5', '#e6edf3');
+addDot(905, 143, '#3fb950', 4);
+addText('Stage / revenue / funding filters', 916, 143, '9', '#e6edf3');
+addDot(905, 163, '#3fb950', 4);
+addText('Variants resolver (1.2b live)', 916, 163, '9', '#e6edf3');
+addText('Next', 899, 191, '9.5', '#6e7681', 'start', '400');
+addDot(905, 211, '#f0883e', 4);
+addText('Variants for 2.2, 2.3, 4.1, 5.x', 916, 211, '9', '#8b949e');
+addDot(905, 231, '#2d333b', 4);
+addText('Result page → wiki / blog', 916, 231, '9', '#6e7681');
+addDot(905, 251, '#2d333b', 4);
+addText('Quick COO-or-not mode', 916, 251, '9', '#6e7681');
+
+// ── Framework hub label ─────────────────────────────────
+addText('Duct Tape to COO', CX, HUB_Y - 8, '13', '#e6edf3', 'middle', '700');
+addText('open operational maturity framework', CX, HUB_Y + 10, '9.5', '#6e7681', 'middle');
+
+// ── Stage labels at outer ring perimeter (right side) ───
+// Put small stage labels just outside the outermost ring, at each ring's midpoint angle on the Financial sector
+const stageTickAngle = 108; // Financial sector midpoint
+const labelGroup2 = el('g');
+svg.appendChild(labelGroup2);
+for (const ring of RINGS) {
+  const rMid = (ring.r1 + ring.r2) / 2;
+  const pt = polar(CX, CY, rMid, stageTickAngle);
+  // small text inside the Financial arcs at their midpoint
+  // These overlap the arc, so just rely on ring labels inside arcs (already done above for Strategic)
+}
+
+// ── Tooltip logic ───────────────────────────────────────
+const tip = document.getElementById('tip');
+const tipTitle = document.getElementById('tip-title');
+const tipStage = document.getElementById('tip-stage');
+const tipStatus = document.getElementById('tip-status');
+const tipHint = document.getElementById('tip-hint');
+
+const statusColors = ['#484f58','#8b949e','#f0883e','#3fb950'];
+
+function showTip(e, title, stage, status, catColor) {
+  tipTitle.textContent = title;
+  tipStage.textContent = stage + ' stage';
+  tipStatus.textContent = statusLabel(status);
+  tipStatus.style.color = statusColors[status] || '#8b949e';
+  tipHint.textContent = status > 0 ? 'Click to open in Wiki →' : '';
+  tip.style.display = 'block';
+  moveTip(e);
+}
+
+function moveTip(e) {
+  const pad = 14;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + 260 > window.innerWidth) x = e.clientX - 260 - pad;
+  if (y + 120 > window.innerHeight) y = e.clientY - 120 - pad;
+  tip.style.left = x + 'px';
+  tip.style.top  = y + 'px';
+}
+
+function hideTip() { tip.style.display = 'none'; }
+
+// ── Stats row ────────────────────────────────────────────
+const total = counts.complete + counts.scaffolded + counts.stub;
+document.getElementById('stats').innerHTML = `
+  <div class="stat"><span class="stat-n" style="color:#3fb950">${counts.complete}</span><span class="stat-label">Complete wiki entries</span></div>
+  <div class="stat"><span class="stat-n" style="color:#f0883e">${counts.scaffolded}</span><span class="stat-label">Scaffolded (ready for content)</span></div>
+  <div class="stat"><span class="stat-n" style="color:#484f58">${counts.stub}</span><span class="stat-label">Stubs (placeholder only)</span></div>
+  <div class="stat"><span class="stat-n" style="color:#6e7681">${counts.na}</span><span class="stat-label">Not applicable at that stage</span></div>
+  <div class="stat"><span class="stat-n" style="color:#e6edf3">${total}</span><span class="stat-label">Total wiki cells</span></div>
+  <div class="stat"><span class="stat-n" style="color:#e6edf3">3</span><span class="stat-label">Blog posts published</span></div>
+`;
+</script>
+</body>
+</html>
