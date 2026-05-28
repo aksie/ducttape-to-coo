@@ -27,7 +27,7 @@ The diagnostic tool is step one. The longer-term ambition is an **AI-powered fra
 That means:
 - A structured **wiki** of operational knowledge, organized by process and stage, that an agent can retrieve from precisely
 - A **skill layer** that lets AI assistants use the framework as a knowledge base
-- **Context-aware guidance** that adapts to your revenue model, funding stage, and team structure — not just headcount
+- **Context-aware guidance** that adapts to your revenue stage, funding stage, and team structure — not just headcount
 
 We're building the knowledge base and data model now. The AI layer comes next.
 
@@ -52,6 +52,7 @@ If this becomes an AI-powered tool, the core will stay open source. We may explo
 - **Diagnostic** — self-assessment across 28+ processes and 5 growth stages
 - **Roadmap** — visual stage-by-stage map of what matters when
 - **Wiki** — scaffolded knowledge base (130 process × stage pages, content being added)
+- **Blog** — posts on operational topics, built statically from markdown
 - **Data model** — processes.json and stages.json with primary axis and sensitivity fields, ready for context-aware retrieval
 
 ---
@@ -87,6 +88,11 @@ ducttape-to-coo/
 ├── data/
 │   ├── processes.json      # 28+ processes with stage mappings, guidance, and context axes
 │   └── stages.json         # Stage definitions, employee ranges, revenue and funding sequences
+├── blog/
+│   ├── posts/              # Published posts (markdown → static HTML via build.py)
+│   │   └── drafts/         # WIP drafts — never built, commit freely
+│   ├── build.py            # Generates blog/*.html from posts/*.md
+│   └── index.html          # Generated post index
 ├── wiki/
 │   ├── stages/             # Stage portal pages (human entry point)
 │   ├── processes/          # 130 atomic process × stage pages (agent retrieval units)
@@ -95,6 +101,7 @@ ducttape-to-coo/
     ├── schema.md           # Full format specification for the content pipeline
     ├── server.py           # Approval tool server (Python 3, stdlib only, port 8765)
     ├── approval-tool.html  # Claim review UI (single file, no frameworks)
+    ├── prompts/            # LLM and human prompts for each pipeline phase (1–4)
     ├── sources/            # Source research files (one per article/post/interview)
     ├── atoms/              # Extracted claims from sources (one per insight)
     └── entries/            # Synthesised wiki entries with audit trail and approval status
@@ -146,8 +153,6 @@ You don't need to be a developer to contribute — if you can edit a text file, 
 ### Planned
 - [ ] AI skill layer — OpenCode/agent skill using the wiki as a knowledge base
 - [ ] Context-aware retrieval — agent uses headcount + revenue + funding stage to retrieve the right variant
-- [ ] Progress tracking over time
-- [ ] Team collaboration features
 
 ---
 
