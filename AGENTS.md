@@ -74,6 +74,42 @@ Each claim marked with `<!-- claim-id: c-NNN -->` in draft.md.
 | 3 | `phase-3-publish.md` | published wiki page |
 | — | `practitioner-to-pipeline.md` | reverse workflow: experience → page → backfill pipeline |
 
+## Wiki publish workflow
+
+After writing a completed wiki page to `wiki/processes/{category}/{N.N}--{stage}.md`:
+
+1. Add a `stage_focus:` field to the page's YAML frontmatter (1–2 sentences, actionable, diagnostic-nudge style — not a copy of the wiki intro).
+2. Commit the wiki file. The **pre-commit hook** runs `wiki/sync.py --apply --quiet` automatically and stages `data/processes.json` if it changed.
+3. If you want to preview what would change before committing: `python3 wiki/sync.py` (dry-run, no writes).
+
+### `stage_focus:` field format
+
+```yaml
+---
+process_id: "1.1"
+stage: "foundation"
+...
+stage_focus: "Pick 3–5 quarterly priorities with the whole team. Put them somewhere impossible to miss and run a 15-minute weekly check."
+---
+```
+
+Rules:
+- 1–2 sentences. Imperative, specific, actionable.
+- Written for the **diagnostic "For your stage:" nudge** — not an intro paragraph.
+- Must be a single YAML scalar (no line breaks). Use a quoted string if it contains colons.
+- **Only add it when the wiki page has real content.** Leave it out of stubs and one-sentence entries — `processes.json` keeps its existing value for those.
+
+### wiki/sync.py
+
+```bash
+python3 wiki/sync.py             # dry-run: print what would change
+python3 wiki/sync.py --apply     # write changes to processes.json
+```
+
+- Skips any wiki file that doesn't have `stage_focus:` in its frontmatter.
+- Safe to run at any time — non-destructive for cells without the field.
+- The pre-commit hook runs this automatically; you only need to run it manually if you're debugging or updating outside a commit.
+
 ## Blog post workflow
 
 1. Edit or create `blog/posts/<slug>.md` (YAML frontmatter + markdown body).
@@ -87,6 +123,7 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 
 ## Known gotchas
 
+- **Wiki sync is automatic via pre-commit hook** — adding `stage_focus:` to a wiki file's frontmatter and committing is enough; the hook patches `processes.json` and re-stages it. Run `python3 wiki/sync.py` manually to preview.
 - **Blog has a build step** — `python3 blog/build.py` — but the rest of the site does not
 - **No build step** — this is static HTML/JS, no npm, no compilation (except the blog)
 - **No `.gitignore`** — repo tracks everything including `.DS_Store`
