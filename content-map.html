@@ -92,8 +92,8 @@
     <div class="legend-group">
       <span class="legend-group-label">Wiki status</span>
       <div class="legend-item"><div class="swatch" style="background:#3fb950"></div> Complete</div>
-      <div class="legend-item"><div class="swatch" style="background:#3a4048"></div> Minimal entry — one sentence, no further content</div>
-      <div class="legend-item"><div class="swatch" style="background:#2d333b"></div> Minimal entry — placeholder only</div>
+      <div class="legend-item"><div class="swatch" style="background:#b9d29f"></div> Minimal entry — one sentence, no further content</div>
+      <div class="legend-item"><div class="swatch" style="background:#b9d29f;opacity:.4"></div> Minimal entry — placeholder only</div>
       <div class="legend-item"><div class="swatch" style="background:#161b22;border:1px solid #30363d"></div> N/A at this stage</div>
     </div>
     <div class="legend-group">
@@ -207,15 +207,15 @@ function arcPath(r1, r2, a1, a2) {
 
 function statusFill(status, catColor) {
   if (status === 3) return '#3fb950';
-  if (status === 2) return '#3a4048'; // one sentence only — same family as stub
-  if (status === 1) return '#2d333b';
+  if (status === 2) return '#b9d29f'; // one sentence — softer green
+  if (status === 1) return '#b9d29f'; // placeholder only — same hue, lower opacity
   return '#161b22';
 }
 
 function statusOpacity(status) {
   if (status === 3) return 1;
-  if (status === 2) return 0.9;
-  if (status === 1) return 0.9;
+  if (status === 2) return 0.75;
+  if (status === 1) return 0.35; // dimmer to show even less content
   return 0.6;
 }
 
@@ -487,7 +487,7 @@ const tipStage = document.getElementById('tip-stage');
 const tipStatus = document.getElementById('tip-status');
 const tipHint = document.getElementById('tip-hint');
 
-const statusColors = ['#484f58','#8b949e','#f0883e','#3fb950'];
+const statusColors = ['#484f58','#8fa87a','#b9d29f','#3fb950'];
 
 function showTip(e, title, stage, status, catColor) {
   tipTitle.textContent = title;
@@ -514,8 +514,8 @@ function hideTip() { tip.style.display = 'none'; }
 const total = counts.complete + counts.scaffolded + counts.stub;
 document.getElementById('stats').innerHTML = `
   <div class="stat"><span class="stat-n" style="color:#3fb950">${counts.complete}</span><span class="stat-label">Complete wiki entries</span></div>
-  <div class="stat"><span class="stat-n" style="color:#3a4048">${counts.scaffolded}</span><span class="stat-label">One sentence, needs content</span></div>
-  <div class="stat"><span class="stat-n" style="color:#484f58">${counts.stub}</span><span class="stat-label">Placeholder only</span></div>
+  <div class="stat"><span class="stat-n" style="color:#b9d29f">${counts.scaffolded}</span><span class="stat-label">One sentence, needs content</span></div>
+  <div class="stat"><span class="stat-n" style="color:#8fa87a">${counts.stub}</span><span class="stat-label">Placeholder only</span></div>
   <div class="stat"><span class="stat-n" style="color:#6e7681">${counts.na}</span><span class="stat-label">N/A at that stage</span></div>
   <div class="stat"><span class="stat-n" style="color:#e6edf3">${total}</span><span class="stat-label">Total wiki cells</span></div>
   <div class="stat"><span class="stat-n" style="color:#e6edf3">3</span><span class="stat-label">Blog posts published</span></div>
