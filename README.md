@@ -114,9 +114,11 @@ ducttape-to-coo/
 Contributions are welcome — especially wiki content and source research.
 
 **What's most needed right now:**
-- Wiki page content — see `wiki/processes/_template.md` for the template
-- Source research and atom extraction via the pipeline (see `wiki-pipeline/README.md`)
-- Refinements to stage-specific guidance in `data/processes.json`
+- Your learnings as an operator in processes that you are specialised in. For example: what is needed as a bare minimum for legal aspects in the phase of first hires. 
+     - Add these as Wiki page content — see `wiki/processes/_template.md` for the template
+     - Add individual lessons from external blogposts, AKA source research and atom extraction via the pipeline (see `wiki-pipeline/README.md`)
+     - Refinements to stage-specific guidance in `data/processes.json`
+     - Or just reach out to me to add you knowledge in a format that suits you. 
 - Bug reports and UX feedback via GitHub Issues
 
 **To contribute wiki content directly:**
@@ -137,14 +139,13 @@ You don't need to be a developer to contribute — if you can edit a text file, 
 
 ## Roadmap
 
-### Done
-- [x] Stage-based process filtering with 5-dimension scoring
-- [x] Context selectors: team size, revenue stage, funding stage
-- [x] Stage-specific guidance per process
-- [x] Visual roadmap page
-- [x] Wiki scaffolding — 130 process × stage pages with template
-- [x] Wiki reader with markdown rendering and hash routing
-- [x] Data model extended with `primary_axis` and `sensitivity` fields per process
+### Foundation (live)
+- [x] Diagnostic tool — self-assessment across 33 processes and 5 stages, with context selectors for team size, revenue, and funding
+- [x] Diagnostic tool refined across 5 real organisations — calibrated process selection, stage logic, and scoring based on actual use
+- [x] Wiki — 130 scaffolded pages with reader and hash routing
+- [x] Content pipeline — 4-phase workflow (extraction → synthesis → human review → publish) producing source-traceable, claim-level wiki entries
+- [x] Blog — static posts built from markdown
+- [x] Data model — `primary_axis` and `sensitivity` fields per process, ready for context-aware retrieval
 
 ### In progress
 - [ ] Wiki content — filling in the 130 scaffolded pages
