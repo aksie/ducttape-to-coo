@@ -148,10 +148,10 @@ You don't need to be a developer to contribute — if you can edit a text file, 
 - [x] Data model — `primary_axis` and `sensitivity` fields per process, ready for context-aware retrieval
 
 ### In progress
-- [ ] Wiki content — filling in the 130 scaffolded pages
-- [ ] Context-aware guidance variants for the 7 sensitivity processes
+- [ ] Extracting operational knowledge from practitioner sources into wiki entries, process by process and stage by stage — guided by structured prompts in the repo and run with LLMs that have web access
 
 ### Planned
+- [ ] Context-aware guidance variants for the 7 sensitivity processes
 - [ ] AI skill layer — OpenCode/agent skill using the wiki as a knowledge base
 - [ ] Context-aware retrieval — agent uses headcount + revenue + funding stage to retrieve the right variant
 
