@@ -164,6 +164,7 @@ unverified: false
   - `process_entry` — people don't know how to start, submit, or participate in the process (e.g., employees don't know how to submit expenses)
 - If the author is clearly speaking from direct experience, set `practitioner_first_person: true`.
 - Flag `bias_flags` if the source has a commercial interest in the claim being true.
+- The `why` atom type is for a reasoning or mechanism claim that is not itself an action or target state — it explains *why* a particular approach matters. Use it when a source provides strong causal reasoning that supports multiple other atoms but doesn't map cleanly to any single section. `why` atoms are incorporated as supporting reasoning in Phase 2, not promoted as standalone wiki claims.
 
 ### Why-quality scoring
 
@@ -189,11 +190,15 @@ When extracting from Tier 3 (vendor/advisory) sources:
 
 For the cell `{PROCESS_NAME}` x `{PHASE_NAME}`, produce:
 
-1. A prioritised source list (Step 3 output)
-2. A `corpus_health.md` file (Step 4 output)
-3. A set of atom markdown files in `/atoms/` (Step 5 output)
+1. **Source files** — one `wiki-pipeline/sources/src-NNN.md` per registered source (Step 3). Check the existing `sources/` directory and continue the numbering sequence. Use the format from any existing source file for frontmatter structure.
+2. **Corpus health file** — `wiki-pipeline/corpus_health-{process-slug}-{phase-slug}.md` (Step 4).
+3. **Atom files** — one `wiki-pipeline/atoms/atom-NNN.md` per extracted atom (Step 5). Check the existing `atoms/` directory and continue the numbering sequence from the last non-`-gitlab` file.
 
-These outputs feed into the synthesis and approval pipeline (Layer 1+2 of the build).
+Set `extracted_by` to the actual model being used (e.g., `"llm:claude-sonnet-4-6"`), not the hardcoded example in the schema above.
+
+After completing the run, add a cell-specific note to the **Cell-specific notes** section at the bottom of this prompt, summarising any bias risk, sparse-cell findings, or geographic gaps found.
+
+These outputs feed into Phase 2 (synthesis). If a human review / quality pass (Phase 1) is part of the workflow, it happens between Phase 0 and Phase 2 — check with the author before proceeding directly to synthesis.
 
 ---
 
@@ -252,3 +257,9 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Expect sparse practitioner content; consider whether this cell should be merged with a parent process
 - Vendor bias risk: extreme (corporate card vendors dominate)
 - Adversarial re-search highly likely needed
+
+### Office & Facilities @ First Hires
+- Sparse cell confirmed: at 2–10 people, the process barely exists; the main concerns are the remote/office decision and naming one responsible person
+- Vendor bias risk: high (coworking spaces and real estate advisory firms dominate search results; excluded from registered sources)
+- Geographic: NL-specific content exists and is valuable (Arbowet / RI&E compliance is mandatory from first hire); explicitly search for EU/NL content on arbo obligations
+- Employee handbook templates are a useful Tier 3 source for this cell — they document what small companies formally codify about office/remote policy

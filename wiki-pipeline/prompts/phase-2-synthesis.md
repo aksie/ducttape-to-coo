@@ -1,6 +1,11 @@
 # Phase 2: Synthesis Prompt
 
-This is the prompt for synthesising a draft wiki entry from extracted atoms. It runs after Phase 0+1 (discovery and extraction) and produces the `draft.md` and `trail.md` files that feed into the approval tool.
+This is the prompt for synthesising a draft wiki entry from extracted atoms. It runs after Phase 0 (and optional Phase 1 human review) and produces the `draft.md` and `trail.md` files that feed into the approval tool.
+
+**Before starting:**
+1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter).
+2. Determine the entry directory: look up the process `category` in `data/processes.json`, then write output to `wiki-pipeline/entries/{category}/{phase}/draft.md` and `trail.md`. Create the directory if it doesn't exist.
+3. Check whether an `approval.md` already exists in that directory — if so, check with the author before overwriting a draft that may already be partially reviewed.
 
 ---
 
@@ -21,20 +26,48 @@ Synthesise a draft wiki entry using this 5-section structure:
 5. **Tools & resources**
    — `tool_resource` atoms: tools, templates, further reading
 
-### Bullet format (applies to all sections)
+### Draft format
 
-Every section uses the same bullet format. Max **7 bullets per section**.
+The `draft.md` must begin with YAML frontmatter:
 
-```markdown
-- **Short claim sentence.**
-  Why this matters or what it means in practice. This explanation
-  can be 2-4 lines — enough to convey the reasoning, but no more.
-  <!-- sources: src-NNN (publication) -->
+```yaml
+---
+process: {process-slug}
+phase: {phase-slug}
+last_updated: {YYYY-MM-DD}
+claim_count: {total number of c-NNN claims in the draft}
+---
 ```
 
-The bold sentence is the claim. The indented text below it is the explanation (the "why"). Keep the claim sentence short and scannable. The explanation can be longer and more nuanced.
+Then a title line and intro blockquote:
 
-If you have more atoms than fit in 7 bullets, pick the strongest (practitioner-sourced, highest why-quality) and drop the rest, noting the dropped atoms in the trail.
+```markdown
+# {Process Name} — {Phase Label} ({headcount range})
+
+> One or two sentences capturing the essential truth about this process at this stage. Should be memorable and stage-specific, not generic.
+```
+
+Then the five sections. Each claim is preceded by a `<!-- claim-id: c-NNN -->` marker. Sections 1, 3, 4, and 5 use **bullet list** format. Section 2 ("What you actually need to do") uses a **numbered list**.
+
+**Sections 1, 3, 4, 5 — bullet format:**
+
+```markdown
+<!-- claim-id: c-NNN -->
+- **Short claim sentence.** Explanation of why this matters or what it means in practice — 2–4 lines, enough to convey the reasoning but no more.
+  <!-- sources: src-NNN (publication, bias flag if any) -->
+```
+
+**Section 2 — numbered list format:**
+
+```markdown
+<!-- claim-id: c-NNN -->
+1. **Do the specific thing.** Explanation — why this step, what happens if you skip it, how to do it in practice.
+   <!-- sources: src-NNN (publication) -->
+```
+
+Max **7 claims per section** (across all subcategories for warning signs). If you have more atoms than fit, pick the strongest (practitioner-sourced, highest why-quality) and note dropped atoms in the trail.
+
+**`why` atoms** do not become standalone claims. Incorporate their reasoning as the explanation text inside other claims that they support.
 
 ### Warning sign categories
 
@@ -63,7 +96,8 @@ Use the `warning_category` field from each warning_sign atom to place it. If a c
 - Prefer atoms with `practitioner_first_person: true` as primary sources.
 - Do not include claims supported only by a single vendor-biased atom.
 - If you have no atoms for a section, leave the section with a placeholder comment rather than inventing content.
-- Output the `draft.md` and a `trail.md` mapping each claim to its supporting atoms.
+- Output the `draft.md` and a `trail.md` to `wiki-pipeline/entries/{category}/{phase}/`.
+- At the end of `trail.md`, add a **Dropped atoms** section listing any atoms not used in the draft and the reason (e.g., merged into another claim, vendor-only support, weaker why-quality than the chosen atom).
 
 ### Trail format
 
