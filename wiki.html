@@ -883,6 +883,16 @@ function interceptContentLinks() {
     const href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
+    // Pipeline-record links point to internal tooling files that aren't part of
+    // the published site — strip the href so they don't trigger broken navigation.
+    if (href.includes('wiki-pipeline/')) {
+      a.removeAttribute('href');
+      a.style.cursor = 'default';
+      a.style.textDecoration = 'none';
+      a.style.color = 'inherit';
+      return;
+    }
+
     // Extract the key from a path like ../processes/financial/2.1--first-hires.md
     // or wiki/stages/foundation.md
     const mdMatch = href.match(/([^/]+)\.md$/);
