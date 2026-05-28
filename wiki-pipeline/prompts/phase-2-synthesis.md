@@ -1,6 +1,6 @@
 # Phase 2: Synthesis Prompt
 
-This is the prompt for synthesising a draft wiki entry from extracted atoms. It runs after Phase 0 (and optional Phase 1 human review) and produces the `draft.md` and `trail.md` files that feed into the approval tool.
+This prompt synthesises extracted atoms into a structured set of claims (`draft.md`) and a supporting evidence trail (`trail.md`). These are the inputs to the approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
 
 **Before starting:**
 1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter).
