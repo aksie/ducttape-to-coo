@@ -18,28 +18,59 @@ cd wiki-pipeline && python3 server.py
 
 ```
 ├── index.html, diagnostic.html, roadmap.html, wiki.html   # app pages (static, no build)
+├── content-map.html                                        # visual content coverage map
 ├── blog/
-│   ├── posts/*.md          # EDIT HERE — markdown source with YAML frontmatter
+│   ├── posts/drafts/*.md   # WIP drafts — never built; commit freely
+│   ├── posts/*.md          # PUBLISHED — triggers build on commit
 │   ├── _template.html      # HTML shell (placeholders: {{post_title}} etc.)
-│   ├── build.py            # !! RUN AFTER EDITING POSTS: python3 blog/build.py
+│   ├── build.py            # generates blog/*.html from posts/*.md
 │   ├── *.html              # generated — do not edit by hand
 │   └── index.html          # generated — lists all posts from frontmatter
 ├── css/, js/                                               # shared styles + app logic
 ├── data/
-│   ├── processes.json      # 28+ processes, stage guidance, primary_axis, sensitivity
-│   └── stages.json        # stage definitions (headcount ranges, revenue, funding)
+│   ├── processes.json      # 33 processes, stageFocus, primary_axis, conditions, variants
+│   └── stages.json         # stage definitions (headcount ranges, revenue, funding)
+├── docs/
+│   ├── proposals/          # undecided / not-yet-implemented proposals
+│   │   ├── 1.2b-variants.md
+│   │   └── deploy-hetzner-coolify.md
+│   ├── pipeline.md         # wiki pipeline architecture reference
+│   └── session-YYYY-MM-DD.md  # session summaries
 ├── wiki/
 │   ├── processes/          # 130 published pages: {category}/{N.N}--{phase}.md
-│   ├── stages/            # stage portal pages
-│   └── dimensions/        # scoring dimension reference
-└── wiki-pipeline/         # content pipeline (separate toolchain)
-    ├── server.py          # approval tool (stdlib only, port 8765)
-    ├── approval-tool.html # single-file UI, no frameworks
-    ├── schema.md          # canonical format spec for all pipeline files
+│   ├── stages/             # stage portal pages
+│   ├── dimensions/         # scoring dimension reference
+│   └── sync.py             # syncs stage_focus: frontmatter → data/processes.json
+└── wiki-pipeline/          # content production toolchain (not public-facing)
+    ├── server.py           # approval tool (stdlib only, port 8765)
+    ├── approval-tool.html  # single-file UI, no frameworks
+    ├── schema.md           # canonical format spec for all pipeline files
+    ├── prompts/            # LLM prompts for each pipeline phase
     ├── sources/src-NNN.md
     ├── atoms/atom-NNN.md
     └── entries/{process}/{phase}/{draft,trail,approval}.md
 ```
+
+## Wiki pipeline — what it is and when to use it
+
+`wiki-pipeline/` is the content production toolchain for wiki pages. It is **not** part of the public site. Its output is the markdown files in `wiki/processes/`.
+
+**The two entry points:**
+
+| Starting point | Use this prompt |
+|---|---|
+| External source (handbook, blog post, talk) | `prompts/phase-0-discovery-and-extraction.md` → `phase-2-synthesis.md` → `phase-3-publish.md` |
+| Practitioner experience (your own or someone's) | `prompts/practitioner-to-pipeline.md` (reverse workflow: write the page first, backfill the pipeline) |
+
+**The production flow (source-first):**
+1. **Phase 0+1** — `phase-0-discovery-and-extraction.md`: read a source, extract atoms (knowledge units) into `wiki-pipeline/atoms/`, record the source in `wiki-pipeline/sources/`
+2. **Phase 2** — `phase-2-synthesis.md`: synthesize atoms into a `draft.md` + `trail.md` in `wiki-pipeline/entries/{process}/{phase}/`
+3. **Approval** — run `wiki-pipeline/server.py` (port 8765), review each claim in the browser UI, write decisions to `approval.md`
+4. **Phase 3** — `phase-3-publish.md`: apply approval decisions, produce the final page, write it to `wiki/processes/{category}/{N.N}--{phase}.md`
+5. **Post-publish** — add `stage_focus:` to the page's frontmatter and commit; the pre-commit hook syncs it to `processes.json`
+
+**When to skip the pipeline:**
+For short stubs or one-sentence entries, it is fine to edit `wiki/processes/` directly. Use the pipeline when you have a real source (external or practitioner) and want claims to be traceable.
 
 ## Pipeline conventions (easy to get wrong)
 
@@ -143,7 +174,8 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 ## References
 
 - Full pipeline schema: `wiki-pipeline/schema.md`
-- Pipeline overview: `wiki-pipeline/README.md`
+- Pipeline architecture overview: `docs/pipeline.md`
 - Practitioner reverse workflow: `wiki-pipeline/prompts/practitioner-to-pipeline.md`
 - Session summaries: `docs/session-YYYY-MM-DD.md`
 - Wiki page template: `wiki/processes/_template.md`
+- Proposals (undecided): `docs/proposals/`
