@@ -112,10 +112,17 @@ python3 wiki/sync.py --apply     # write changes to processes.json
 
 ## Blog post workflow
 
-1. Edit or create `blog/posts/<slug>.md` (YAML frontmatter + markdown body).
-2. Run `python3 blog/build.py` from the repo root.
-3. The script regenerates `blog/<slug>.html` and `blog/index.html`.
-4. Commit both the `.md` source and the generated `.html` files.
+**Drafts vs published:**
+- `blog/posts/drafts/*.md` — work in progress; never built; commit freely
+- `blog/posts/*.md` (root of posts/) — published; build triggers automatically on commit
+
+**To draft a new post:** create it in `blog/posts/drafts/`. Commit as often as you like — nothing is built or published.
+
+**To publish:** move the file to `blog/posts/` and commit. The pre-commit hook runs `blog/build.py` automatically and stages the generated HTML in the same commit.
+
+**To edit a published post:** edit `blog/posts/<slug>.md` and commit. Hook rebuilds automatically.
+
+**Manual build** (if needed outside a commit): `python3 blog/build.py`
 
 Required Python packages (one-time): `pip install markdown python-frontmatter`
 
@@ -124,7 +131,8 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 ## Known gotchas
 
 - **Wiki sync is automatic via pre-commit hook** — adding `stage_focus:` to a wiki file's frontmatter and committing is enough; the hook patches `processes.json` and re-stages it. Run `python3 wiki/sync.py` manually to preview.
-- **Blog has a build step** — `python3 blog/build.py` — but the rest of the site does not
+- **Blog build is automatic via pre-commit hook** — staging any `blog/posts/*.md` (not in `drafts/`) triggers `blog/build.py` and stages the generated HTML; run manually with `python3 blog/build.py` if needed outside a commit
+- **`blog/posts/drafts/`** — files here are never built; move to `blog/posts/` to publish
 - **No build step** — this is static HTML/JS, no npm, no compilation (except the blog)
 - **No `.gitignore`** — repo tracks everything including `.DS_Store`
 - **`.nojekyll`** exists — GitHub Pages Jekyll is disabled intentionally
