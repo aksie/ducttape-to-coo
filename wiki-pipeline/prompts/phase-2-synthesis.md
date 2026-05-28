@@ -1,9 +1,9 @@
 # Phase 2: Synthesis Prompt
 
-This prompt synthesises extracted atoms into a structured set of claims (`draft.md`) and a supporting evidence trail (`trail.md`). These are the inputs to the approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
+This prompt synthesises extracted atoms into a structured set of claims (`draft.md`) and a supporting evidence trail (`trail.md`). These are the inputs to the Phase 3 approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
 
 **Before starting:**
-1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter).
+1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter). These were produced in Phase 1.
 2. Determine the entry directory: look up the process `category` in `data/processes.json`, then write output to `wiki-pipeline/entries/{category}/{phase}/draft.md` and `trail.md`. Create the directory if it doesn't exist.
 3. Check whether an `approval.md` already exists in that directory — if so, check with the author before overwriting a draft that may already be partially reviewed.
 

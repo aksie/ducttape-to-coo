@@ -5,8 +5,10 @@
 The wiki pipeline extracts practitioner knowledge from sources (handbooks, blog posts, talks) and synthesizes it into wiki entries organized by **process** (strategic-ops, financial-ops, people-ops, etc.) and **phase** (foundation, first-hires, early-scale, growth, scaled).
 
 ```
-Sources → Atoms → Candidate Claims → Draft + Trail → Approval → Published Wiki
-  (Phase 0)    (Phase 1)        (Phase 1½)          (Phase 2)    (Phase 3)    (Phase 4)
+Sources → Atoms → Draft + Trail → Approval → Published Wiki
+ (Phase 1)   (Phase 1)   (Phase 2)    (Phase 3)    (Phase 4)
+
+Optional intermediate: Candidate Claims (handbook extraction only, between Phase 1 and Phase 2)
 ```
 
 ---
@@ -63,23 +65,20 @@ wiki-pipeline/entries/
 
 ## Pipeline Phases
 
-### Phase 0: Discovery & Source Finding
+### Phase 1: Discovery & Atom Extraction
 
-**Prompt:** `prompts/phase-0-discovery-and-extraction.md`
+**Prompt:** `prompts/phase-1-discovery-and-extraction.md`
 **Input:** Process name + Phase name
-**Output:** `sources/src-NNN.md` files (5–10 sources)
+**Output:** `sources/src-NNN.md` files (5–10 sources) + `atoms/atom-NNN.md` + `corpus_health-{process}-{phase}.md`
 
 Sources are tiered:
 - **Tier 1:** Practitioner-led (founder blogs, operator handbooks, post-mortems)
 - **Tier 2:** Reference material (academic papers, industry reports)
 - **Tier 3:** Vendor content (with bias flags)
 
-Also produces a `corpus_health.md` analyzing the source mix.
+Also produces a `corpus_health.md` analyzing the source mix. Discovery, bias checking, and atom extraction run in a single prompt pass.
 
-### Phase 1: Atom Extraction
-
-**Input:** Source files from Phase 0
-**Output:** `atoms/atom-NNN.md`
+**Atoms output:** `atoms/atom-NNN.md`
 
 Each atom contains one claim with:
 - `id`: Sequential with source suffix (e.g. `atom-067-gitlab`)
@@ -92,7 +91,7 @@ Each atom contains one claim with:
 
 **Special variant:** `prompts/source-budgeted-handbook-extraction.md` for mining company handbooks (e.g. GitLab). This can produce atoms across multiple phases in one pass.
 
-### Phase 1½: Candidate Claims (Optional)
+### Optional step: Candidate Claims (handbook extraction only)
 
 **File:** `entries/{process}/{phase}/candidate-claims.md`
 
@@ -101,7 +100,7 @@ Used when extracting from handbooks — creates a structured parking lot of cand
 ### Phase 2: Synthesis
 
 **Prompt:** `prompts/phase-2-synthesis.md`
-**Input:** All atoms for one `{process}/{phase}` cell
+**Input:** All atoms for one `{process}/{phase}` cell (from Phase 1)
 **Output:** `draft.md` + `trail.md`
 
 #### Draft Structure (5 sections)
@@ -129,8 +128,9 @@ Used when extracting from handbooks — creates a structured parking lot of cand
 - Synthesis notes: {editorial decisions}
 ```
 
-### Phase 3: Approval
+### Phase 3: Approval (human)
 
+**Guide:** `prompts/phase-3-human-review.md`
 **Tool:** `localhost:8765` (Python HTTP server, `server.py` + `approval-tool.html`)
 
 **Required files:** `draft.md` + `trail.md`
@@ -145,7 +145,7 @@ Used when extracting from handbooks — creates a structured parking lot of cand
 
 ### Phase 4: Publish
 
-**Prompt:** `prompts/phase-3-publish.md`
+**Prompt:** `prompts/phase-4-publish.md`
 **Input:** `draft.md` + `approval.md` + `trail.md` + atoms + sources + wiki stub
 **Output:** `wiki/processes/{category}/{process}--{phase}.md`
 
@@ -192,8 +192,7 @@ The server is stateless — all state lives in markdown files. No database.
 
 | Stage | Files Needed | Created By |
 |-------|-------------|------------|
-| Discovery | — | Phase 0 prompt |
-| Sources exist | `sources/src-NNN.md` | Phase 0 prompt |
+| Sources exist | `sources/src-NNN.md` | Phase 1 prompt |
 | Atoms exist | `atoms/atom-NNN.md` | Phase 1 prompt |
 | Candidate claims (optional) | `entries/{p}/{ph}/candidate-claims.md` | Human or handbook extraction prompt |
 | **Draft** | `entries/{p}/{ph}/draft.md` | Phase 2 prompt (LLM synthesis) |
@@ -201,8 +200,9 @@ The server is stateless — all state lives in markdown files. No database.
 | Approval | `entries/{p}/{ph}/approval.md` | Auto-created by server on first visit |
 | Published | `wiki/processes/.../{p}--{ph}.md` | Phase 4 prompt |
 
-**Common failure mode:** Draft + Trail exist but no Approval → server auto-creates it.
 **Missing Draft** → approval tool shows 0/0 claims; run Phase 2 synthesis.
+**Missing Approval** → server auto-creates it on first visit.
+
 
 ---
 

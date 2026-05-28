@@ -81,17 +81,21 @@ Human-contributed atoms are weighted more heavily than LLM-extracted atoms durin
 - `tool_resource` — a tool, template, or resource
 - `why` — the reasoning behind another claim
 
-**Phase 0+1: Source discovery and atom extraction**
+**Phase 1: Source discovery and atom extraction**
 
-The combined discovery and extraction prompt lives in [`prompts/phase-0-discovery-and-extraction.md`](prompts/phase-0-discovery-and-extraction.md). Run it with an LLM that has web access (e.g. Claude via claude.ai), once per process × phase cell. It covers source discovery, corpus bias checking, and atom extraction in a single pass.
+The discovery and extraction prompt lives in [`prompts/phase-1-discovery-and-extraction.md`](prompts/phase-1-discovery-and-extraction.md). Run it with an LLM that has web access (e.g. Claude via claude.ai), once per process × phase cell. It covers source discovery, corpus bias checking, and atom extraction in a single pass.
 
 **Phase 2: Synthesis**
 
 The synthesis prompt lives in [`prompts/phase-2-synthesis.md`](prompts/phase-2-synthesis.md). Run it with the atoms for a given process × phase cell to produce `draft.md` and `trail.md`.
 
-**Phase 3: Publish**
+**Phase 3: Human review**
 
-The publish prompt lives in [`prompts/phase-3-publish.md`](prompts/phase-3-publish.md). Run it after the approval tool has been used to review every claim. It reads the draft, approvals, trail, atoms, and sources to produce the final wiki page.
+See [`prompts/phase-3-human-review.md`](prompts/phase-3-human-review.md) for a full guide on using the approval tool. In short: run `python3 wiki-pipeline/server.py`, open http://localhost:8765, and work through each claim.
+
+**Phase 4: Publish**
+
+The publish prompt lives in [`prompts/phase-4-publish.md`](prompts/phase-4-publish.md). Run it after the approval tool has been used to review every claim. It reads the draft, approvals, trail, atoms, and sources to produce the final wiki page.
 
 
 ---
@@ -155,9 +159,10 @@ wiki-pipeline/
 ├── server.py           ← approval tool server (Python 3, stdlib only)
 ├── approval-tool.html  ← approval tool UI (single file, no frameworks)
 ├── prompts/            ← LLM prompts for each pipeline phase
-│   ├── phase-0-discovery-and-extraction.md
+│   ├── phase-1-discovery-and-extraction.md
 │   ├── phase-2-synthesis.md
-│   └── phase-3-publish.md
+│   ├── phase-3-human-review.md
+│   └── phase-4-publish.md
 ├── sources/            ← one .md per source
 │   ├── src-001.md
 │   └── ...

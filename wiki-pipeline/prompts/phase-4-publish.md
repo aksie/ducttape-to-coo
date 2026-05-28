@@ -1,6 +1,6 @@
-# Phase 3: Publish Prompt
+# Phase 4: Publish Prompt
 
-This is where approved claims become the published wiki page. After the human has reviewed every claim in the approval tool, this prompt reads the draft, approval decisions, trail, atoms, and sources, and produces the final wiki markdown file written to the wiki stub path. Claims marked as rejected are dropped; approved claims are assembled into the entry. This is the last step in the pipeline — the output is what users read.
+This is where approved claims become the published wiki page. After the human has completed Phase 3 (reviewing every claim in the approval tool), this prompt reads the draft, approval decisions, trail, atoms, and sources, and produces the final wiki markdown file written to the wiki stub path. Claims marked as rejected are dropped; approved claims are assembled into the entry. This is the last step in the pipeline — the output is what users read.
 
 ---
 

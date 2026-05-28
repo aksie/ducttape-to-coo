@@ -1,8 +1,8 @@
-# Phase 0: Discovery and Atom Extraction Prompt
+# Phase 1: Discovery and Atom Extraction Prompt
 
-This is the prompt for the discovery and atom extraction phase of the Duct Tape to COO wiki pipeline. It runs *before* synthesis and approval (Layer 1+2). Given a target cell (Process × Phase), it finds high-quality sources and extracts structured atoms ready for the synthesis step.
+This is the prompt for the discovery and atom extraction phase of the Duct Tape to COO wiki pipeline. It is Phase 1 of 4. Given a target cell (Process × Phase), it finds high-quality sources and extracts structured atoms ready for Phase 2 (synthesis).
 
-This prompt has been updated based on lessons learned from manual pipeline runs on two cells. The "Pipeline lessons" section at the bottom of this file documents *why* the prompt is structured the way it is — read it before modifying the prompt.
+This prompt has been updated based on lessons learned from manual pipeline runs. The "Pipeline lessons" section at the bottom of this file documents *why* the prompt is structured the way it is — read it before modifying the prompt.
 
 ---
 
@@ -198,7 +198,7 @@ Set `extracted_by` to the actual model being used (e.g., `"llm:claude-sonnet-4-6
 
 After completing the run, add a cell-specific note to the **Cell-specific notes** section at the bottom of this prompt, summarising any bias risk, sparse-cell findings, or geographic gaps found.
 
-These outputs feed into Phase 2 (synthesis). If a human review / quality pass (Phase 1) is part of the workflow, it happens between Phase 0 and Phase 2 — check with the author before proceeding directly to synthesis.
+These outputs feed into Phase 2 (synthesis). Check with the author whether they want to review the atoms before synthesis — if so, pause after this step and proceed to Phase 2 only after the atoms have been reviewed.
 
 ---
 
