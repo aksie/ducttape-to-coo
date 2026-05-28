@@ -883,13 +883,18 @@ function interceptContentLinks() {
     const href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
-    // Pipeline-record links point to internal tooling files that aren't part of
-    // the published site — strip the href so they don't trigger broken navigation.
+    // Pipeline-record links are relative paths into wiki-pipeline/sources/.
+    // Convert them to full GitHub blob URLs so reviewers can read the source
+    // record in GitHub's markdown viewer — avoids broken SPA navigation.
     if (href.includes('wiki-pipeline/')) {
-      a.removeAttribute('href');
-      a.style.cursor = 'default';
-      a.style.textDecoration = 'none';
-      a.style.color = 'inherit';
+      const repoPath = href.match(/wiki-pipeline\/.+/)?.[0];
+      if (repoPath) {
+        a.setAttribute('href', `https://github.com/${GITHUB_REPO}/blob/${GITHUB_BRANCH}/${repoPath}`);
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
+      } else {
+        a.removeAttribute('href');
+      }
       return;
     }
 
