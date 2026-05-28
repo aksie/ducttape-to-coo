@@ -374,6 +374,10 @@ last_updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
         for aid in trail.get("supporting_atoms", []):
             atom = atoms.get(aid, {})
             src_id = atom.get("source_id", "")
+            # Blank source_id parses as [] — normalise to empty string so it
+            # can be used as a dict key safely.
+            if isinstance(src_id, list):
+                src_id = src_id[0] if src_id else ""
             source = sources.get(src_id, {})
             enriched_atoms.append({
                 "id":                    aid,
@@ -490,6 +494,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
 
     def do_GET(self):
+        try:
+            self._do_GET()
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            self.send_error_json(500, f"Internal server error: {e}")
+
+    def _do_GET(self):
         parsed = urlparse(self.path)
         path = parsed.path.rstrip('/')
 
@@ -517,6 +529,14 @@ class Handler(http.server.BaseHTTPRequestHandler):
         self.send_error_json(404, "Not found")
 
     def do_POST(self):
+        try:
+            self._do_POST()
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            self.send_error_json(500, f"Internal server error: {e}")
+
+    def _do_POST(self):
         parsed = urlparse(self.path)
         path = parsed.path.rstrip('/')
 
