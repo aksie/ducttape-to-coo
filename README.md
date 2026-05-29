@@ -152,7 +152,7 @@ You don't need to be a developer to contribute — if you can edit a text file, 
 
 ### Planned
 - [ ] Context-aware guidance variants for the 7 sensitivity processes
-- [ ] AI skill layer — OpenCode/agent skill using the wiki as a knowledge base
+- [ ] AI skill layer — package the wiki as agent skills (SKILL.md open standard) so Claude and compatible agents can answer stage-specific operational questions directly from the knowledge base
 - [ ] Context-aware retrieval — agent uses headcount + revenue + funding stage to retrieve the right variant
 
 ---
