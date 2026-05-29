@@ -144,17 +144,12 @@ Once you have a draft, three tests are worth running:
 
 ---
 
-## Where this fits in the operational picture
-
-Strategy is the starting point for most of the processes this framework addresses. Hiring decisions make more sense when there's a clear strategic context. Prioritisation becomes less contentious when people understand what the company is and isn't trying to do. Communication gets easier — not easy, but easier — when there's a real strategy to communicate rather than a collection of goals and good intentions.
-
-The gap this framework keeps pointing to — between what the organisation needs and what the founder is currently providing — is partly a strategic gap. Not because founders don't think hard about strategy, but because what gets written down and shared is often the goals layer rather than the choices layer. The team sees the destination but not the reasoning about how to get there. And without that reasoning, they can't make independent decisions that are consistent with the strategy. They're left either waiting for the founder to weigh in, or guessing.
-
-Strategy that lives only in the founder's head isn't strategy. It's a competitive advantage that leaves with the founder every evening and can't be built on by anyone else.
+## You can't duct tape a missing strategy
+Go back to the team of twenty in the introduction. The misalignment isn't usually caused by people being difficult or disengaged. It's caused by the founder holding a strategy that exists primarily in their own head — clear to them, invisible to everyone else. At ten people this is fine. The founder is in every conversation, course-correcting constantly, without ever needing to make the strategy explicit. The strategy travels by proximity.
+When the company grows past the point where that proximity exists, the strategy stops travelling. People fill the gap with their best guess. And their best guesses, however reasonable individually, pull in different directions.
+Strategy that lives only in the founder's head isn't strategy. It's a competitive advantage that leaves with the founder every evening. Making it explicit — specific, written, repeated — is what allows the team to move without you in the room. That's not a communication problem. That's the transition.
 
 ---
-
-A next post in this series will cover the OGSM framework — a practical way to structure strategy (the choices layer), goals (the measurement layer), and the specific initiatives that connect the two. But the structure is only useful if the strategy is real. A well-formatted bad strategy is still a bad strategy.
 
 [Run the diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) [Read: The Gap Where Friction Lives →](https://aksie.github.io/ducttape-to-coo/blog/the-gap-where-friction-lives.html)
 

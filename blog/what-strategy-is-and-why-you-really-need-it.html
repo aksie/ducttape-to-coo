@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A True Strategy Is Crucial To Scale Your Team — Duct Tape to COO</title>
+    <meta name="description" content="Most founders have a strategy - they think. Most of those strategies are not actually strategies. Here's how to tell the difference — and what to do about it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+    <style>
+        :root {
+            --bg:             #0d1117;
+            --surface:        #161b22;
+            --surface-raised: #21262d;
+            --border:         #30363d;
+            --border-bright:  #484f58;
+            --text:           #e6edf3;
+            --text-dim:       #8b949e;
+            --text-muted:     #6e7681;
+            --green:          #3fb950;
+            --blue:           #58a6ff;
+            --orange:         #f0883e;
+            --font:           'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Header ───────────────────────────────────── */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 0 32px;
+        }
+
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+
+        .header-logo {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+        .header-logo:hover { text-decoration: none; color: var(--blue); }
+
+        nav { display: flex; gap: 24px; font-size: 0.85rem; }
+        nav a { color: var(--text-dim); text-decoration: none; }
+        nav a:hover { color: var(--text); text-decoration: none; }
+        nav a.active { color: var(--text); }
+
+        /* ── Article layout ───────────────────────────── */
+        .post-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 32px 120px;
+        }
+
+        /* ── Meta block ───────────────────────────────── */
+        .post-meta { margin-bottom: 32px; }
+
+        .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+        .post-tag--green { color: var(--green); border: 1px solid var(--green); }
+        .post-tag--blue  { color: var(--blue);  border: 1px solid var(--blue);  }
+
+        .post-wrap h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .post-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .post-byline { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ── Body copy ────────────────────────────────── */
+        .post-body {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .post-body p { margin-bottom: 1.4em; }
+
+        .post-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 2.5em 0 0.75em;
+            padding-top: 0.5em;
+            border-top: 1px solid var(--border);
+        }
+
+        .post-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.8em 0 0.5em;
+        }
+
+        .post-body strong { color: var(--text); font-weight: 600; }
+        .post-body em     { color: var(--text); font-style: italic; }
+
+        .post-body ol,
+        .post-body ul {
+            padding-left: 1.5em;
+            margin-bottom: 1.4em;
+        }
+        .post-body li { margin-bottom: 0.5em; }
+
+        .post-body hr { display: none; }
+
+        /* ── Blockquotes → pattern callouts ───────────── */
+        .post-body blockquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 20px;
+            margin: 1.8em 0;
+        }
+
+        .post-body blockquote p {
+            margin-bottom: 0.6em;
+            color: var(--text-dim);
+        }
+        .post-body blockquote p:last-child { margin-bottom: 0; }
+
+        /* ── Tables ───────────────────────────────────── */
+        .post-body table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 1.6em 0 2em;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .post-body th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-bright);
+            white-space: nowrap;
+        }
+
+        .post-body td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-dim);
+        }
+
+        .post-body tr:last-child td { border-bottom: none; }
+        .post-body td strong { color: var(--text); }
+
+        .post-body tr.highlight td {
+            background: rgba(88, 166, 255, 0.06);
+            color: var(--text);
+        }
+        .post-body tr.highlight td strong { color: var(--blue); }
+
+        /* ── CTA block ────────────────────────────────── */
+        .post-cta {
+            margin-top: 3em;
+            padding: 28px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .post-cta p {
+            margin-bottom: 16px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 10px 20px;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--blue); color: #0d1117; }
+        .btn-primary:hover { background: #79bcff; text-decoration: none; }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid var(--border-bright);
+        }
+        .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); text-decoration: none; }
+
+        /* ── Footer ───────────────────────────────────── */
+        .post-footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ── Responsive ───────────────────────────────── */
+        @media (max-width: 640px) {
+            .post-wrap h1 { font-size: 1.7rem; }
+            .post-wrap { padding: 40px 20px 80px; }
+            nav { gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+        <nav>
+            <a href="../index.html">Overview</a>
+            <a href="../diagnostic.html">Diagnostic</a>
+            <a href="../roadmap.html">Roadmap</a>
+            <a href="../wiki.html">Wiki</a>
+            <a href="index.html" class="active">Blog</a>
+        </nav>
+    </div>
+</header>
+
+<div class="post-wrap">
+
+    <div class="post-meta">
+        <span class="post-tag post-tag--green">Entry point</span>
+        <h1>A True Strategy Is Crucial To Scale Your Team</h1>
+        <p class="post-subtitle">To Make The Right Decisions You Need To Have A Clear Path</p>
+        <p class="post-byline">May 2026</p>
+    </div>
+
+    <div class="post-body">
+<p>Strategy</p>
+<h1>A True Strategy Is Crucial To Scale Your Team</h1>
+<p>Most founders have a strategy. Most of those strategies are not actually strategies.</p>
+<p>May 2026</p>
+<hr />
+<p>I have seen how this goes wrong. A team of twenty smart, motivated people, all working hard, but all pulling in slightly different directions — because every one of them has a different mental model of where the company needs to go. The engineer optimises for the most fully-featured product. The salesperson closes the smallest deals because they close fastest. The founder assumes it's obvious from context. Nobody is fully wrong. But the cumulative friction of twenty slightly misaligned interpretations is enormous. When you're all in one room, founders can correct it reactively, constantly, without ever naming it. When you're no longer all in the same room, it will kill your momentum.</p>
+<p>Strategy has a bad reputation among people who value execution over slides. That reputation is mostly earned. Most "strategy" work is slideware: written once, presented earnestly, and never consulted again. A deck full of "increase revenue," "improve customer satisfaction," and "be more innovative" is not a strategy — it's a list of things nobody would argue against, which means it helps nobody make a decision. The tragedy is that this kind of deck gets called strategy, poisons the word, and gives founders a reasonable-sounding excuse to skip the real thing.</p>
+<p>That's the part that costs them. A real strategy — specific enough to be useful, communicated often enough to stick — means that people can make the right call in hard situations without asking anyone else. At ten people that's a nice property to have. At thirty, it's the difference between moving fast and grinding to a halt.</p>
+<p>If you're sceptical that strategy is worth your time, I'd ask one thing: read this first, then decide. What follows is an attempt to describe what strategy actually is — not the slideware version, but the thing that makes teams faster, not slower. You might still disagree. But at least you'll be disagreeing with the right thing.</p>
+<hr />
+<h2>The one thing strategy actually is</h2>
+<p>Strategy is a set of fundamental choices about how you're going to win — and what you're explicitly <em>not</em> going to do.</p>
+<p>That second part is the part that gets omitted. Michael Porter, who has spent more time thinking about this than most, put it plainly: "The essence of strategy is choosing what not to do." Strategy is not a description of where you want to end up. It's a decision about how you'll get there given your constraints, your context, and your competition — and which paths you're closing off in order to take this one. </p>
+<p>If your 'strategy' doesn't make hard choices, if ....</p>
+<p>This is why strategy is hard. Not conceptually hard. Emotionally hard. Because real strategic choices mean giving things up. They mean saying no to customers who would pay you, features that would be useful, markets that look attractive. If your strategy doesn't make you a little uncomfortable — if it doesn't involve closing some doors — it probably isn't a strategy.</p>
+<hr />
+<h2>A 600-year-old example that makes this concrete</h2>
+<p>In October 1415, Henry V stood with roughly 6,000 to 8,000 exhausted English soldiers at Agincourt, facing a French force of somewhere between 20,000 and 30,000. The French had more men, heavier armour, and a cavalry advantage that should have been decisive. The outcome looked obvious.</p>
+<p>The French did what armies with overwhelming advantages tended to do: they prepared for a frontal assault, concentrated their elite men-at-arms at the front for maximum glory and ransoms, and pushed their archers and crossbowmen to the rear where they couldn't slow things down. There was no strategy here. There was a posture — <em>we have more, so we'll win</em> — combined with a status game that put the wrong people in the wrong places.</p>
+<p>Henry made different choices. He chose terrain: a narrow field hemmed in by woodland, which would compress the French cavalry charge and negate their numbers. He chose to have his men-at-arms dismount and fight on foot, avoiding the risk of heavy horses floundering in rain-softened ground. He chose to wait — to let the French cross the muddy field rather than advance into them. And he positioned his longbowmen on the flanks, protected by sharpened stakes, able to fire into the sides of any cavalry charge.</p>
+<p>Each of those was a choice that excluded alternatives. Dismounting the cavalry meant not using cavalry as cavalry. Waiting meant accepting the psychological pressure of facing a larger force. Choosing that field meant fighting on terms that suited a smaller, lighter force rather than a larger one.</p>
+<p>The result: the French cavalry charge slowed in the mud, horses panicked under arrow fire, and the compressed mass of dismounted French knights — too many men in too little space — was methodically defeated by a much smaller force. Henry's casualties numbered in the low hundreds. French casualties numbered in the thousands.</p>
+<p>This is what strategic choice looks like. Not a vision of winning. An active set of decisions that shape the terms of engagement in your favour, made possible precisely because of what you chose not to do.</p>
+<hr />
+<h2>What strategy is not</h2>
+<p>Before getting to how to build one, it's worth being precise about what tends to get called strategy but isn't.</p>
+<p><strong>Goals are not strategy.</strong> "Reach €5M ARR by end of year" is a goal. It tells you where you want to be. It says nothing about how you'll get there or why your approach would work against competition. Every company wants to grow. The goal doesn't distinguish you.</p>
+<p><strong>Tactics are not strategy.</strong> "Launch a LinkedIn campaign," "hire a senior salesperson," "rebuild the onboarding flow" — these are actions. Important actions, possibly, but they're downstream of strategy. Tactics without strategy are a list of things to do with no coherent logic connecting them.</p>
+<p><strong>Values and aspirations are not strategy.</strong> "We're customer-centric." "We focus on quality." "We move fast." Nobody chooses to be customer-hostile or low-quality. These aren't choices in any meaningful sense because no real alternative was refused.</p>
+<p><strong>Doing everything is not strategy.</strong> "We serve both SMB and enterprise." "We're building a platform and a services business." "We're competing on price and on quality." When you try to be everything to everyone, you're not making choices — you're deferring them. The result is usually mediocrity across the board rather than excellence anywhere, which is exactly the competitive position you don't want.</p>
+<p>Richard Rumelt, in <em>Good Strategy Bad Strategy</em>, calls the last category "bad strategy" — and it's the most common kind. It looks like strategy because it's written down and presented seriously. But it's actually a list of goals dressed up in strategic language, with no coherent account of how those goals connect to each other or to the choices being made about where to compete and how.</p>
+<hr />
+<h2>What makes a choice strategic</h2>
+<p>Not every decision is a strategic choice. A strategic choice has a specific character.</p>
+<p><strong>It's differentiating.</strong> You're doing something different from competitors, not just doing it better. Southwest Airlines didn't try to be a better version of United. They chose a fundamentally different model: short point-to-point routes, one aircraft type, no frills, secondary airports. Every major airline could theoretically have made those choices. None of them did, because each choice involved giving something up.</p>
+<p><strong>It implies trade-offs.</strong> Southwest's choices meant no international routes, no business class, no frequent flyers who want flexibility. Those were real losses. The model only works because the losses were accepted. A choice that doesn't close off alternatives isn't a strategic choice — it's a preference.</p>
+<p><strong>It creates coherence.</strong> Strategic choices work as a system. Southwest's single aircraft type, point-to-point routing, and secondary airports reinforce each other. Faster turnarounds are possible because the aircraft and routes are simple. Lower costs are possible because of faster turnarounds. The choices compound. Pulling one out destabilises the others. This is what makes a strategy hard to copy — not any single choice, but the interdependence of all of them.</p>
+<p><strong>It's hard to reverse.</strong> Tactical decisions can be adjusted weekly. Strategic choices shape the company for years. This is part of what makes them hard. You're committing to something before you know for certain it will work.</p>
+<hr />
+<h2>Three modern examples</h2>
+<p><strong>Netflix (2007):</strong> At the time, Netflix had a profitable, well-run DVD-by-mail business. Their strategic choice was to treat that business as the thing they were going to move away from, not the thing they were going to optimise. They committed to streaming before streaming was proven, and in doing so made it impossible to half-commit to both. The choice meant accepting years of lower margins, building infrastructure with no guaranteed return, and eventually cannibalising the revenue stream that funded everything. That discomfort was the point. If the choice had been comfortable, it wouldn't have been strategic.</p>
+<p><strong>Southwest Airlines:</strong> The specific choices vary by airline and era, but the principle is consistent. A strategy built around flying one aircraft type, one route structure, and one service model creates operating advantages that compound over time — but only because the strategy is specific enough to be <em>wrong</em> for some markets and some customers. A strategy that's right for everyone isn't a strategy.</p>
+<p><strong>Apple (2007):</strong> The choice to make iOS a closed platform — to not license it to other manufacturers, to control the hardware-software integration completely — was deeply counterintuitive at the time. The received wisdom was that open platforms won. Microsoft had demonstrated it. The strategic bet was that controlling the entire experience would create a defensible position that openness couldn't match. It was a choice that foreclosed large parts of the market (manufacturers who might have wanted to license iOS, enterprise customers who wanted flexibility). That's exactly what made it strategic.</p>
+<hr />
+<h2>How to start building one</h2>
+<p>The fastest way to test whether you have a strategy is to ask: <em>what are we explicitly not doing, that a well-funded competitor could reasonably do?</em></p>
+<p>If you can't answer that, you probably don't have a strategy yet. You have a direction.</p>
+<p>Here's a practical starting point. Work through two dimensions:</p>
+<p><strong>Externally — what do you do differently in the market?</strong></p>
+<ul>
+<li>Which customers are you <em>not</em> serving, that Competitor X actively pursues?</li>
+<li>Write it down specifically: not "we're focused on SMB" but "we don't take clients without an in-house technical lead, while Competitor X will take anyone with a credit card."</li>
+<li>What does that cost you? Which deals do you lose because of this?</li>
+<li>
+<p>What does it buy you? Why is losing those deals worth it?</p>
+</li>
+<li>
+<p>Which problems are you <em>not</em> solving, that Competitor Y invests heavily in?</p>
+</li>
+<li>Again, specifically. Not "we focus on our core product" but "we don't build reporting features, while Competitor Y has half their roadmap committed to them."</li>
+<li>What do you lose? What do you gain?</li>
+</ul>
+<p><strong>Internally — how do you work differently from comparable companies?</strong></p>
+<ul>
+<li>How do you build the product in a way that's different from how others in your space do it?</li>
+<li>Specific differences: release cadence, team structure, build-vs-buy decisions, technical choices.</li>
+<li>
+<p>What are the costs? What are the advantages?</p>
+</li>
+<li>
+<p>Where do you <em>not</em> invest resources, while comparable companies treat it as standard?</p>
+</li>
+<li>Not hiring a sales team. Not building an enterprise tier. Not opening a second office. Not doing outbound.</li>
+<li>Why? What does that make possible?</li>
+</ul>
+<p>The answers to these questions are the raw material of strategy. What you're looking for is a set of choices that fit together — that reinforce each other — and that reflect a specific theory of how you're going to win. Not a theory that works for every company. A theory that works for <em>your</em> company, in <em>your</em> market, with <em>your</em> constraints and advantages.</p>
+<p>Once you have a draft, three tests are worth running:</p>
+<p><strong>The opposite test.</strong> Could a reasonable competitor make the opposite choice and still succeed? If yes, you have a real choice on your hands — strategy lives in the space where both answers are defensible. If no — if the opposite would be clearly wrong — then you don't have a strategic choice, you have a generally correct preference.</p>
+<p><strong>The cost test.</strong> What are you giving up? If the answer is nothing significant, the choice probably isn't strategic. Strategy costs something. That cost is what makes it real.</p>
+<p><strong>The coherence test.</strong> Do your choices reinforce each other? A strategy where the individual choices don't compound is a list of preferences, not a system. The question is whether the choices, taken together, create a position that's harder to replicate than any single element on its own.</p>
+<hr />
+<h2>You can't duct tape a missing strategy</h2>
+<p>Go back to the team of twenty in the introduction. The misalignment isn't usually caused by people being difficult or disengaged. It's caused by the founder holding a strategy that exists primarily in their own head — clear to them, invisible to everyone else. At ten people this is fine. The founder is in every conversation, course-correcting constantly, without ever needing to make the strategy explicit. The strategy travels by proximity.<br />
+When the company grows past the point where that proximity exists, the strategy stops travelling. People fill the gap with their best guess. And their best guesses, however reasonable individually, pull in different directions.<br />
+Strategy that lives only in the founder's head isn't strategy. It's a competitive advantage that leaves with the founder every evening. Making it explicit — specific, written, repeated — is what allows the team to move without you in the room. That's not a communication problem. That's the transition.</p>
+<hr />
+<p><a href="https://aksie.github.io/ducttape-to-coo/diagnostic.html">Run the diagnostic</a> <a href="https://aksie.github.io/ducttape-to-coo/blog/the-gap-where-friction-lives.html">Read: The Gap Where Friction Lives →</a></p>
+<p>Part of an ongoing series on the Duct Tape to COO operational maturity framework.</p>
+    </div>
+
+<div class="post-cta">
+    <p> </p>
+    <div class="cta-links">
+        <a class="btn btn-primary"  href="../diagnostic.html">Run the diagnostic</a>
+        <a class="btn btn-secondary" href="the-gap-where-friction-lives.html">Read: The Gap Where Friction Lives →</a>
+    </div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
