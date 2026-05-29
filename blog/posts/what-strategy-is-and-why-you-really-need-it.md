@@ -12,16 +12,6 @@ cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Read: The Gap Where Friction Lives →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
----
-
-
-Strategy
-
-# A True Strategy Is Crucial To Scale Your Team
-
-Most founders have a strategy. Most of those strategies are not actually strategies.
-
-May 2026
 
 ---
 
