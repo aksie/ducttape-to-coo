@@ -585,9 +585,19 @@ async function checkStageContent(stageId) {
       // Strip HTML comments and whitespace
       body = body.replace(/<!--[\s\S]*?-->/g, '').trim();
 
-      // Check if there's meaningful content beyond template placeholders
-      // Remove headings, empty list items, and whitespace
-      const stripped = body
+      // Score only the two sections that prove the page is actionable.
+      // Total character count over-rewards padding and context variants.
+      const TARGET_SECTIONS = [
+        'What you actually need to do',
+        "Warning signs you're behind",
+      ];
+      const parts = body.split(/^(?=## )/m);
+      const coreText = parts
+        .filter(p => TARGET_SECTIONS.some(h => p.startsWith('## ' + h)))
+        .join('\n');
+
+      // Strip headings, empty bullets and horizontal rules from extracted text
+      const stripped = coreText
         .replace(/^#{1,3}\s+.*/gm, '')
         .replace(/^\s*[-\d.]+\s*$/gm, '')
         .replace(/^\s*>\s*$/gm, '')
