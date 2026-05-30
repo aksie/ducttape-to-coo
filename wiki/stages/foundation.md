@@ -5,7 +5,7 @@ headcount: "0–1"
 tagline: "Build and ship"
 ---
 
-# Foundation stage — 0 to 1 people
+# Foundation stage — Founders plus maybe 1 person
 
 > Ship something to real customers. Everything else is secondary.
 
