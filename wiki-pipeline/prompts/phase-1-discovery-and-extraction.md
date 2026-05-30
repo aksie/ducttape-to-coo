@@ -124,6 +124,7 @@ type: {target_state | action | warning_sign | evolution | tool_resource | why}
 warning_category: {output_quality | founder_time | process_entry}  # only when type: warning_sign
 process: {process_slug}
 phase: {phase_slug}
+applies_to_stages: []  # optional: list later stages where this claim remains valid without re-extraction
 sub_variant_signals: []
 confidence: {high | medium | low}
 practitioner_first_person: {true if the author speaks from direct experience}
@@ -164,6 +165,7 @@ unverified: false
   - `process_entry` — people don't know how to start, submit, or participate in the process (e.g., employees don't know how to submit expenses)
 - If the author is clearly speaking from direct experience, set `practitioner_first_person: true`.
 - Flag `bias_flags` if the source has a commercial interest in the claim being true.
+- Set `applies_to_stages` when the claim is a **standing obligation that persists across multiple stages** — e.g. a legal requirement that applies from first hire through growth. List every stage where the claim is valid beyond the current `phase`. Leave empty if the claim is stage-specific. Examples of things that typically carry: legal compliance minimums (WVP, hour registration, vertrouwenspersoon threshold), one-time setup actions that remain evergreen once done, foundational good-practice targets. Examples of things that typically do not carry: "how to" steps that evolve as the company scales, warning signs that resolve once the setup exists.
 - The `why` atom type is for a reasoning or mechanism claim that is not itself an action or target state — it explains *why* a particular approach matters. Use it when a source provides strong causal reasoning that supports multiple other atoms but doesn't map cleanly to any single section. `why` atoms are incorporated as supporting reasoning in Phase 2, not promoted as standalone wiki claims.
 
 ### Why-quality scoring
