@@ -100,7 +100,8 @@ Each claim marked with `<!-- claim-id: c-NNN -->` in draft.md.
 
 | Phase | Prompt | Output |
 |-------|--------|--------|
-| 1 | `phase-1-discovery-and-extraction.md` | sources + atoms |
+| 1 | `phase-1-discovery-and-extraction.md` | sources + atoms (from web sources) |
+| 1b | `phase-1b-practitioner-extraction.md` | sources + atoms (from practitioner contributions in `contributions/`) |
 | 2 | `phase-2-synthesis.md` | draft.md + trail.md |
 | 3 | `phase-3-human-review.md` | approval decisions (human) |
 | 4 | `phase-4-publish.md` | published wiki page |

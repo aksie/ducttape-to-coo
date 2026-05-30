@@ -46,21 +46,22 @@ Open: http://localhost:8765
 
 ---
 
-## Contributing an insight directly (human atoms)
+## Contributing practitioner experience
 
-If you have operational experience and want to contribute something you know — without going through the full source research process — this is the fastest path.
+If you've built or managed a process at a startup, your direct experience is the most valuable kind of input — better than most published sources.
 
-**Option 1 — Open a GitHub Issue**
-Use the [Contribute an operational insight](../../issues/new?template=atom-contribution.md) issue template. Fill in what you can. A maintainer will convert it into an atom file and add it to the pipeline.
+**No GitHub or technical knowledge needed.** See [`contributions/HOW-TO-CONTRIBUTE.md`](contributions/HOW-TO-CONTRIBUTE.md) for plain-English options including email/DM.
 
-**Option 2 — Submit a file directly (via PR)**
-1. Copy `atoms/_human-template.md` to `atoms/atom-NNN.md` (next available number)
-2. Fill in the frontmatter — set `extracted_by: "human:your-github-username"`
-3. Set `unverified: true` if you don't have a source URL
-4. Fill in the Claim, Source/context, and Why sections
-5. Open a pull request
+**For a full experience contribution** (everything you know about a process at a given stage):
+- Open a [Practitioner experience](../../issues/new?template=practitioner-experience.md) GitHub issue, or
+- Fill in [`contributions/_template.md`](contributions/_template.md) and send the file to a maintainer
 
-Human-contributed atoms are weighted more heavily than LLM-extracted atoms during synthesis. The `why` section is the most valuable part — include it if you can.
+A maintainer runs [`prompts/phase-1b-practitioner-extraction.md`](prompts/phase-1b-practitioner-extraction.md) to convert your text into source + atom files. You don't touch the pipeline at all.
+
+**For a single insight** (one thing you know):
+Use the [Contribute an operational insight](../../issues/new?template=atom-contribution.md) issue template.
+
+Human-contributed atoms are weighted more heavily than LLM-extracted atoms during synthesis. The `why` section — the mechanism and reasoning behind a claim — is the most valuable part.
 
 ---
 
@@ -158,11 +159,15 @@ wiki-pipeline/
 ├── schema.md           ← full format specification
 ├── server.py           ← approval tool server (Python 3, stdlib only)
 ├── approval-tool.html  ← approval tool UI (single file, no frameworks)
-├── prompts/            ← LLM prompts for each pipeline phase
+├── prompts/            ← LLM and human prompts for each pipeline phase
 │   ├── phase-1-discovery-and-extraction.md
+│   ├── phase-1b-practitioner-extraction.md
 │   ├── phase-2-synthesis.md
 │   ├── phase-3-human-review.md
 │   └── phase-4-publish.md
+├── contributions/      ← raw practitioner knowledge drops (pre-pipeline)
+│   ├── HOW-TO-CONTRIBUTE.md  ← plain-English guide for non-GitHub contributors
+│   └── _template.md          ← fillable template
 ├── sources/            ← one .md per source
 │   ├── src-001.md
 │   └── ...
