@@ -1,78 +1,152 @@
+# Synthesis Trail — Office & Facilities / First Hires
+# Second synthesis pass — 2026-05-30
+# Supersedes first draft (2026-05-28, claims c-001 to c-009)
+
+## Note on prior approval decisions
+
+The first draft (claims c-001 to c-009) was partially reviewed:
+- **c-001 rejected** (too generic) — atom-104 not promoted
+- **c-002 approved_with_edit** — text carried forward, new claim c-005
+- **c-003 approved_with_edit** — text carried forward, new claim c-004
+- **c-004 approved_with_edit (conditional)** — text carried forward, new claim c-005
+- **c-005 rejected** ("too heavy process") — RI&E action atom-108 dropped; atom-113 (RI&E tool resource) also dropped out of respect for that decision
+- **c-006 to c-009** were pending — those atoms reconsidered in this synthesis
+
 ---
-entry: office-facilities/first-hires
-last_updated: 2026-05-28
----
 
-## Claim -> Atom mapping
-
-### c-001: Explicit stated decision about where people work.
+### c-001: coworking/flex as default-good
 - Section: what_good_looks_like
-- Supporting atoms: atom-104, atom-105
-- Rejected atoms (and why): atom-111 (why-atom — reasoning incorporated into c-003 explanation rather than as a standalone claim)
-- Why-source: atom-105 (HN practitioners: policy shapes hiring pool and cultural habits; changing it retroactively is expensive in trust)
-- Synthesis notes: Two atoms combined into one claim. atom-104 provides the "what good looks like" framing; atom-105 provides the mechanism for why it needs to be stated explicitly. Claim written as a description of the outcome, not the action.
+- Supporting atoms: atom-110, atom-111 (why incorporated)
+- Rejected atoms: none
+- Why-source: atom-111 (remote/office decision shapes hiring, onboarding, culture — hard to change once set)
+- Synthesis notes: atom-110 promoted as target state; atom-111's why reasoning incorporated into explanation
 
-### c-002: One named person owns the physical space.
+### c-002: short readable handbook
 - Section: what_good_looks_like
-- Supporting atoms: atom-104, atom-106
-- Rejected atoms (and why): none
-- Why-source: atom-106 (alexrodba.com: "operational glue" role is necessary regardless of whether you have a physical office; without it, facilities becomes nobody's job)
-- Synthesis notes: atom-104 frames the target state; atom-106 provides the practitioner mechanism. The claim is kept as a description of steady-state, not a step.
+- Supporting atoms: atom-127
+- Rejected atoms: none
+- Why-source: atom-127 (handbook that fits in one read is more valuable than comprehensive-but-unread)
+- Synthesis notes: new claim from second pass; placed in target_state as it describes what good looks like, not a specific action
 
-### c-003: Write down the work location policy before the first hire joins.
+### c-003: public handbook as recruiting signal
+- Section: what_good_looks_like
+- Supporting atoms: atom-128
+- Rejected atoms: none
+- Why-source: atom-128 (self-selection of better-fit candidates; free differentiation at first-hires stage)
+- Synthesis notes: new claim from second pass; kept as target_state/aspiration rather than action
+
+### c-004: write down work location policy before first hire
 - Section: what_to_do
-- Supporting atoms: atom-105, atom-111
-- Rejected atoms (and why): none
-- Why-source: atom-111 (HN practitioners: the remote/office decision shapes cultural DNA and hiring pool in ways that are very hard to change once set; first-90-days habits are disproportionately sticky)
-- Synthesis notes: atom-105 is the action; atom-111 is the why. Both practitioner-sourced (HN threads). Combined into one numbered action. The "retroactively expensive" framing preserves the strongest why-signal from atom-111.
+- Supporting atoms: atom-105, atom-111 (why)
+- Rejected atoms: none
+- Why-source: atom-111 (shapes who you hire, culture, onboarding — expensive to change retroactively)
+- Synthesis notes: carries forward reviewer-approved text from prior draft c-003 with minor framing update
 
-### c-004: Assign one named person as responsible for the office.
+### c-005: assign one named person as responsible for the office
 - Section: what_to_do
-- Supporting atoms: atom-106, atom-107
-- Rejected atoms (and why): none
-- Why-source: atom-106 + atom-107 (alexrodba.com: "operational glue" function is necessary; without assigned ownership, frictions accumulate until inserting an owner at 20+ people is disruptive)
-- Synthesis notes: The action (atom-106) and its failure mode (atom-107, warning sign) were synthesised into one numbered action. The warning sign reasoning strengthens the "why assign now" argument in the action claim. The warning sign is also preserved as c-007 in its own section.
+- Supporting atoms: atom-106
+- Rejected atoms: none
+- Why-source: atom-106 (nobody's job = frictions accumulate invisibly until 20+ people)
+- Synthesis notes: carries forward reviewer-approved text from prior draft c-004 including reviewer's addition about co-working space delegation and documentation culture
 
-### c-005: [NL] Complete a RI&E from the first employee.
+### c-006: [NL] hour registration — set up from first employee
 - Section: what_to_do
-- Supporting atoms: atom-108, atom-113
-- Rejected atoms (and why): none
-- Why-source: atom-108 (KVK: fines + reduced insurance coverage for non-compliance; simplified process available for ≤25 employees)
-- Synthesis notes: atom-108 (action) + atom-113 (tool) combined into one numbered action with the tool detail inline. NL-specific tag preserved as text marker [NL]. The government source (KVK) is authoritative and unbiased.
+- Supporting atoms: atom-115, atom-130 (why incorporated)
+- Rejected atoms: atom-114 (working hours documentation atom — merged into this claim; atom-114 adds nuance but atom-115 is more authoritative)
+- Why-source: atom-130 (Dutch compliance applies from first hire, not at scale; employer bears burden of proof in any dispute)
+- Synthesis notes: new claim from second pass; high priority as it is a legal obligation with direct financial risk; supported by government official source
 
-### c-006: Signed a multi-year lease at 2–10 people.
-- Section: warning_signs
-- Warning category: output_quality
-- Supporting atoms: atom-109
-- Rejected atoms (and why): none
-- Why-source: atom-109 (gable.to, vendor-flagged: 75% of traditional leases are 3–5 years; over-leasing is the most common expensive mistake; corroborated structurally by multiple commercial real estate sources)
-- Synthesis notes: Single atom, vendor-biased source (gable.to sells workplace management SaaS). Included because: (1) the warning is about the problem of over-leasing, not about needing the vendor's product; (2) the data (75% of leases are 3–5 years) is consistent with real estate market reality and the commercial sources' interest is not in fabricating the problem. Flagged transparently in source comment.
+### c-007: [NL] sick leave notification procedure — write it down
+- Section: what_to_do
+- Supporting atoms: atom-118, atom-117 (context incorporated)
+- Rejected atoms: none
+- Why-source: atom-118 (missing WVP milestone extends two-year pay obligation; written procedure prevents missed steps under stress)
+- Synthesis notes: new claim from second pass; atom-117 (2-year pay obligation context) incorporated as explanation rather than standalone claim
 
-### c-007: Nobody knows who to contact for office issues.
-- Section: warning_signs
-- Warning category: process_entry
-- Supporting atoms: atom-107
-- Rejected atoms (and why): none
-- Why-source: atom-107 (alexrodba.com: "nobody's job" failure mode accumulates invisibly until inserting an owner at 20+ people is disruptive)
-- Synthesis notes: Practitioner-sourced warning sign. Framed as an observable signal ("can't immediately name") rather than a structural description, which makes it more actionable as a self-diagnostic.
+### c-008: [NL] legally required handbook sections
+- Section: what_to_do
+- Supporting atoms: atom-129, atom-130 (why)
+- Rejected atoms: atom-122 (time off/leave distinction — merged into c-008 as a recommended practice within the required sections; not strong enough for standalone claim)
+- Why-source: atom-130 (Dutch courts treat absence of required policies as evidence of non-compliance; employer starts from disadvantaged position)
+- Synthesis notes: atom-129 is from advisory source (bias flagged: sells HR services); claim is corroborated by government sources in the research note; included because content is accurate
 
-### c-008: How this evolves at Early Revenue and Growth.
+### c-009: [NL] vertrouwenspersoon — designate before reaching 10 employees
+- Section: what_to_do
+- Supporting atoms: atom-120
+- Rejected atoms: none
+- Why-source: atom-120 (power dynamics make management chain unsafe for reporting; problems escalate or go unreported until serious)
+- Synthesis notes: new claim from second pass; government official source (arboportaal.nl); headcount threshold noted explicitly so founders can prepare in advance
+
+### c-010: document all three address variants
+- Section: what_to_do
+- Supporting atoms: atom-125
+- Rejected atoms: atom-126 (emergency contacts) — useful but lower priority; dropped to stay within 7-action limit; can be added as a standalone bullet in published page
+- Why-source: atom-125 (government uses registered address for official correspondence; missed letters have real consequences)
+- Synthesis notes: new claim from second pass; practical and easy to miss
+
+### c-011: [NL] hour registration — €10k fine warning
+- Section: warning_signs (output_quality)
+- Supporting atoms: atom-116
+- Rejected atoms: none
+- Why-source: atom-116 (strict liability; consequences compound with every hire and every month without records)
+- Synthesis notes: paired with c-006 (action) — the warning sign gives the consequence, the action gives the remedy
+
+### c-012: [NL] WVP loonsanctie warning
+- Section: warning_signs (output_quality)
+- Supporting atoms: atom-119
+- Rejected atoms: none
+- Why-source: atom-119 (most common avoidable penalty in Dutch employment law; happens from ignorance not intent)
+- Synthesis notes: paired with c-007 (action); the loonsanctie explanation makes the sick leave procedure more compelling
+
+### c-013: multi-year office lease at 2-10 people
+- Section: warning_signs (output_quality)
+- Supporting atoms: atom-109 (bias flagged: sells_workplace_management_software)
+- Rejected atoms: none
+- Why-source: atom-109 (variable cost → fixed commitment at exact point optionality matters most)
+- Synthesis notes: bias flagged but warning is corroborated by multiple non-vendor sources (HN discussion in src-027/028); included with disclosure note. Reviewer noted this in first draft c-006 as pending.
+
+### c-014: nobody knows the office person
+- Section: warning_signs (process_entry)
+- Supporting atoms: atom-107 (practitioner_first_person: true)
+- Rejected atoms: none
+- Why-source: atom-107
+- Synthesis notes: carries forward substance of prior draft c-007; strong practitioner source
+
+### c-015: evolution — process becomes real function at 25-50 people
 - Section: evolution
-- Supporting atoms: atom-112
-- Rejected atoms (and why): none
-- Why-source: atom-112 (alexrodba.com + Cushman & Wakefield / Facilities Manager data: facilities only becomes a real function around 25–50 people; dedicated management before then creates overhead before the work exists)
-- Synthesis notes: Evolution claim synthesised from atom-112 (primary, practitioner blog) with stage labels matched to the wiki's own stage names (Early Revenue, Growth). The claim explicitly frames this as "build it then, not now" to reinforce the sparse-cell finding.
+- Supporting atoms: atom-112 (practitioner_first_person: true)
+- Rejected atoms: none
+- Why-source: atom-112
+- Synthesis notes: updated from prior draft c-008; one evolution atom is appropriate for this sparse cell
 
-### c-009: Tools — NL RI&E and work location policy template.
+### c-016: [NL] vertrouwenspersoon service providers
 - Section: tools
-- Supporting atoms: atom-113, (atom-108 for RI&E content)
-- Rejected atoms (and why): none
-- Why-source: atom-113 (KVK: free recognised branch instruments available; basic RI&E for small offices is a few hours, not a project)
-- Synthesis notes: Two tool items written: one NL-specific (RI&E, from atoms 108+113), one general (work location policy template, from src-032). The Promise Legal template is vendor-sourced but used only as a reference for structure, not as a primary claim.
+- Supporting atoms: atom-121
+- Rejected atoms: atom-113 (RI&E tools) — dropped because the RI&E action (prior draft c-005) was rejected by reviewer as "too heavy process"; keeping the tool would be misleading
+- Why-source: atom-121
+- Synthesis notes: concrete provider names add practical value; external VP is a straightforward solution for small companies
+
+### c-017: public handbook examples
+- Section: tools
+- Supporting atoms: atom-128, atom-127
+- Rejected atoms: none
+- Why-source: atom-127 (Basecamp approach: one document, plain language)
+- Synthesis notes: consolidates two target_state/tool atoms into a single reference; Basecamp is the strongest reference for the first-hires stage
 
 ---
 
 ## Dropped atoms
 
-- **atom-110** (target_state: coworking is default-good at First Hires): Merged into c-001 context implicitly. A standalone claim felt like vendor-adjacent content (the coworking conclusion is fine but doesn't need a dedicated claim slot; the more important claim is "decide explicitly").
-- **atom-111** (why: remote/office decision shapes DNA): Used as supporting why-reasoning in c-003. Not promoted as a standalone claim because the action (c-003) carries the why inline.
+| Atom | Reason |
+|---|---|
+| atom-104 | Maps to prior draft c-001 which was rejected (too generic); "explicit decision + named owner" is covered by c-004 and c-005 more specifically |
+| atom-108 | Maps to prior draft c-005 (RI&E action) which was rejected as "too heavy process" |
+| atom-113 | Tool resource for RI&E — dropped with atom-108 |
+| atom-114 | Working hours documentation — merged into c-006 (hour registration); atom-115 is more authoritative |
+| atom-117 | Dutch sick leave 2-year pay obligation — incorporated as context in c-007 explanation rather than standalone claim |
+| atom-122 | Time off vs leave distinction — incorporated as a note within c-008; not strong enough for standalone claim at max-7 limit |
+| atom-123 | 25 days annual leave standard [NL] — useful but belongs in a people-ops/first-hires entry rather than this office-facilities entry |
+| atom-124 | Parental leave 2022 changes [NL] — belongs in people-ops/first-hires |
+| atom-126 | Emergency contacts at onboarding — useful, not dropped permanently; best as a note within the onboarding checklist rather than a standalone claim here |
+| atom-129 | Required handbook sections — incorporated into c-008 (but atom-129 IS c-008's primary source; listed here for completeness — not actually dropped) |
+| atom-130 | Why atom — reasoning incorporated into c-006 and c-008 explanations |
