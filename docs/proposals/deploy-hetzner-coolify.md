@@ -84,22 +84,78 @@ chmod +x /etc/cron.weekly/coolify-update
 
 ### Keep nginx up to date
 
-Nginx runs inside a Docker container that Coolify rebuilds on every deploy. To ensure it also gets patched between deploys (e.g. a zero-day CVE), add a nightly cron that triggers a redeploy:
+Nginx runs inside a Docker container that Coolify rebuilds on every deploy. To also catch zero-day CVEs between deploys, set up a smart hourly check: it queries the Docker Hub registry API for the current `nginx:alpine` digest, compares it to a stored value on the server, and only triggers a Coolify redeploy if the image actually changed. No unnecessary rebuilds.
+
+First, install `jq` (JSON parser used by the script):
 
 ```bash
-cat > /etc/cron.daily/coolify-redeploy <<'EOF'
-#!/bin/bash
-# Replace <token> and <resource-uuid> with values from Coolify → Settings → API
-curl -s -X POST https://<your-coolify-domain>/api/v1/deploy \
-  -H "Authorization: Bearer <token>" \
-  -H "Content-Type: application/json" \
-  -d '{"uuid": "<resource-uuid>", "force_rebuild": true}' \
-  >> /var/log/coolify-redeploy.log 2>&1
-EOF
-chmod +x /etc/cron.daily/coolify-redeploy
+apt install -y jq
 ```
 
-> You'll fill in the `<token>` and `<resource-uuid>` values in Step 4 once you've deployed your site.
+Then create the check script:
+
+```bash
+cat > /usr/local/bin/check-nginx-update.sh <<'EOF'
+#!/bin/bash
+DIGEST_FILE="/var/lib/nginx-update/last-digest"
+LOG_FILE="/var/log/nginx-update-check.log"
+COOLIFY_TOKEN="<your-api-token>"
+COOLIFY_RESOURCE_UUID="<your-resource-uuid>"
+COOLIFY_URL="https://<your-coolify-domain>"
+
+mkdir -p "$(dirname "$DIGEST_FILE")"
+
+# Fetch the current nginx:alpine digest from Docker Hub (manifest only — no image download)
+TOKEN=$(curl -sf "https://auth.docker.io/token?service=registry.docker.io&scope=repository:library/nginx:pull" | jq -r .token)
+REMOTE_DIGEST=$(curl -sf \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Accept: application/vnd.docker.distribution.manifest.list.v2+json" \
+  "https://registry-1.docker.io/v2/library/nginx/manifests/alpine" \
+  | jq -r '.manifests[] | select(.platform.os == "linux" and .platform.architecture == "amd64") | .digest')
+
+if [ -z "$REMOTE_DIGEST" ]; then
+    echo "$(date): ERROR — could not fetch remote digest" >> "$LOG_FILE"
+    exit 1
+fi
+
+# First run: store baseline digest and exit without deploying
+if [ ! -f "$DIGEST_FILE" ]; then
+    echo "$(date): Initialised digest baseline: $REMOTE_DIGEST" >> "$LOG_FILE"
+    echo "$REMOTE_DIGEST" > "$DIGEST_FILE"
+    exit 0
+fi
+
+STORED_DIGEST=$(cat "$DIGEST_FILE")
+
+if [ "$REMOTE_DIGEST" = "$STORED_DIGEST" ]; then
+    exit 0  # No change, nothing to do
+fi
+
+# New version detected — trigger Coolify redeploy
+echo "$(date): New nginx:alpine detected — triggering redeploy" >> "$LOG_FILE"
+
+curl -sf -X POST "$COOLIFY_URL/api/v1/deploy" \
+  -H "Authorization: Bearer $COOLIFY_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "{\"uuid\": \"$COOLIFY_RESOURCE_UUID\", \"force_rebuild\": true}"
+
+if [ $? -eq 0 ]; then
+    echo "$REMOTE_DIGEST" > "$DIGEST_FILE"
+    echo "$(date): Redeploy triggered successfully" >> "$LOG_FILE"
+else
+    echo "$(date): ERROR — redeploy failed; will retry next hour" >> "$LOG_FILE"
+fi
+EOF
+chmod +x /usr/local/bin/check-nginx-update.sh
+```
+
+Add the hourly cron:
+
+```bash
+echo "0 * * * * root /usr/local/bin/check-nginx-update.sh" > /etc/cron.d/nginx-update-check
+```
+
+> You'll fill in `<your-api-token>`, `<your-resource-uuid>`, and `<your-coolify-domain>` in Step 4 once you've deployed your site. The script is safe to leave with placeholders until then — it will error-log silently and retry.
 
 Open the Coolify URL in your browser.
 
@@ -161,7 +217,7 @@ Once the one-time setup in Step 2 is done, nothing needs manual attention:
 |---|---|---|
 | Ubuntu OS + Docker engine security patches | `unattended-upgrades` | Daily |
 | Auto-reboot after kernel update | `unattended-upgrades` config | 03:00 if needed |
-| Nginx container (zero-day coverage) | Coolify nightly redeploy cron | Nightly |
+| Nginx container (zero-day coverage) | Hourly digest check → redeploy only if changed | Hourly, on change |
 | Coolify itself | Weekly cron | Weekly |
 | SSL certificates | Let's Encrypt auto-renewal (Coolify) | Automatic |
 | Site deploys | `git push` triggers auto-deploy | Per push |
