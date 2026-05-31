@@ -7,8 +7,36 @@ Deploy your DNS site on a European VPS with auto-deploy from GitHub, managed ngi
 ## Prerequisites
 
 - A **GitHub** account with your repo pushed to it
-- A **domain** you control (DNS managed somewhere: TransIP, Cloudflare, etc.)
-- A payment method for Hetzner (credit card, PayPal, or iDEAL)
+- A payment method for Hetzner and TransIP (credit card, PayPal, or iDEAL)
+
+---
+
+## Step 0: Register your domain (all-EU setup)
+
+Do this before provisioning the server — domain registration is instant and you'll need the domain name when configuring Coolify later.
+
+**Recommended stack:**
+- **Registrar: [TransIP](https://www.transip.nl)** 🇳🇱 — the standard Dutch registrar, solid interface, trusted
+- **DNS: [Hetzner DNS](https://dns.hetzner.com)** 🇩🇪 — free, already in your stack, more than sufficient for a static site
+
+### Register the domain at TransIP
+
+1. Go to [transip.nl](https://www.transip.nl), search for your domain, and register it
+2. In your TransIP control panel, go to the domain → **Nameservers**
+3. Replace the default TransIP nameservers with Hetzner's:
+   ```
+   helium.ns.hetzner.de
+   oxygen.ns.hetzner.de
+   ```
+4. Save — DNS changes propagate within a few minutes to a few hours
+
+### Set up DNS at Hetzner
+
+1. Go to [dns.hetzner.com](https://dns.hetzner.com) and log in with your Hetzner account
+2. Click **"Add Zone"** and enter your domain name
+3. Leave the default records for now — you'll add the A record in Step 5 once you have the server IP
+
+> **Why split registrar and DNS?** TransIP is a good registrar but Hetzner DNS is faster, has a cleaner API, and is already in your stack. Keeping them separate also means you can swap either without touching the other.
 
 ---
 
@@ -187,17 +215,22 @@ Coolify pulls the repo and serves the files behind its built-in nginx proxy. It 
 
 ---
 
-## Step 5: Point your domain
+## Step 5: Point your domain to the server
 
-1. Go to your DNS provider's control panel (TransIP, Cloudflare, etc.)
-2. Create an **A record** pointing `yourdomain.com` (and `www.yourdomain.com`) to your Hetzner server's IPv4 address
+1. Go to [dns.hetzner.com](https://dns.hetzner.com) → select your zone
+2. Add two **A records** pointing to your server's IPv4 address:
    ```
-   yourdomain.com     A     <server-ip>
-   www.yourdomain.com A     <server-ip>
+   @      A     <server-ip>    TTL 300
+   www    A     <server-ip>    TTL 300
    ```
 3. In Coolify, edit your resource → **Domains** → add `yourdomain.com` and `www.yourdomain.com`
 4. Coolify automatically requests Let's Encrypt SSL certificates for both
-5. Wait up to 5 minutes for DNS to propagate
+5. Wait a few minutes for DNS to propagate — check with `dig yourdomain.com +short`
+
+Now go back and fill in the three placeholders in the nginx update script from Step 2:
+- `COOLIFY_TOKEN` — Coolify → Settings → API Keys → generate one
+- `COOLIFY_RESOURCE_UUID` — Coolify → your resource → Settings → UUID
+- `COOLIFY_URL` — your Coolify domain (the same domain you're serving the site from, or a separate admin domain)
 
 ---
 
@@ -229,11 +262,14 @@ You should not need to SSH into the server at all under normal operation.
 
 ## Cost breakdown
 
-| Item | Cost |
-|------|------|
-| Hetzner CX22 VPS | €4.18/mo |
-| Domain (your own) | ~€10/yr |
-| **Total** | **~€5/mo** |
+| Item | Provider | Cost |
+|------|----------|------|
+| VPS (CX22, 2 vCPU, 4 GB RAM) | Hetzner 🇩🇪 | €4.18/mo |
+| Automatic backups | Hetzner 🇩🇪 | €0.84/mo |
+| Domain (`.com`) | TransIP 🇳🇱 | ~€13/yr (~€1.10/mo) |
+| DNS | Hetzner DNS 🇩🇪 | Free |
+| SSL certificates | Let's Encrypt | Free |
+| **Total** | | **~€6/mo** |
 
 ---
 
