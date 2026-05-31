@@ -22,8 +22,9 @@ Deploy your DNS site on a European VPS with auto-deploy from GitHub, managed ngi
    - **Type**: `CX22` (2 vCPU, 4 GB RAM, €4/mo) — more than enough for a static site
    - **SSH Keys**: Add your public SSH key (generate one if needed: `ssh-keygen -t ed25519`)
    - **Firewall**: Create a new firewall opening ports `22`, `80`, `443`
-4. Click **"Create & Buy"** — the server boots in ~30 seconds
-5. Note the server's **IPv4 address**
+4. Under **"Backups"**: enable automatic backups (€0.84/mo — worth it)
+5. Click **"Create & Buy"** — the server boots in ~30 seconds
+6. Note the server's **IPv4 address**
 
 ---
 
@@ -47,7 +48,60 @@ This takes 2–3 minutes. When it finishes, it prints a URL like:
 http://<server-ip>:8000
 ```
 
-Open that URL in your browser.
+**Before leaving the terminal, do the one-time security setup:**
+
+### Enable automatic OS security updates
+
+Ubuntu ships with `unattended-upgrades` — this keeps the OS, Docker engine, OpenSSL, and all apt-installed packages patched automatically, including security fixes. Enable it now so you never have to think about it again:
+
+```bash
+apt install -y unattended-upgrades
+dpkg-reconfigure --priority=low unattended-upgrades
+```
+
+Then configure auto-reboot for kernel patches (at 03:00 when no one is using the site):
+
+```bash
+cat >> /etc/apt/apt.conf.d/50unattended-upgrades <<'EOF'
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "03:00";
+EOF
+```
+
+This runs daily. You never need to SSH in for OS or Docker security patches.
+
+### Keep Coolify itself up to date
+
+Coolify updates are separate from apt packages. Add a weekly cron to auto-update it:
+
+```bash
+cat > /etc/cron.weekly/coolify-update <<'EOF'
+#!/bin/bash
+curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash >> /var/log/coolify-update.log 2>&1
+EOF
+chmod +x /etc/cron.weekly/coolify-update
+```
+
+### Keep nginx up to date
+
+Nginx runs inside a Docker container that Coolify rebuilds on every deploy. To ensure it also gets patched between deploys (e.g. a zero-day CVE), add a nightly cron that triggers a redeploy:
+
+```bash
+cat > /etc/cron.daily/coolify-redeploy <<'EOF'
+#!/bin/bash
+# Replace <token> and <resource-uuid> with values from Coolify → Settings → API
+curl -s -X POST https://<your-coolify-domain>/api/v1/deploy \
+  -H "Authorization: Bearer <token>" \
+  -H "Content-Type: application/json" \
+  -d '{"uuid": "<resource-uuid>", "force_rebuild": true}' \
+  >> /var/log/coolify-redeploy.log 2>&1
+EOF
+chmod +x /etc/cron.daily/coolify-redeploy
+```
+
+> You'll fill in the `<token>` and `<resource-uuid>` values in Step 4 once you've deployed your site.
+
+Open the Coolify URL in your browser.
 
 ---
 
@@ -99,15 +153,21 @@ Coolify pulls the repo and serves the files behind its built-in nginx proxy. It 
 
 ---
 
-## Maintenance
+## What runs automatically after setup
 
-Coolify handles:
-- **nginx** — configured and restarted automatically
-- **SSL certificates** — auto-renewed by Let's Encrypt
-- **Auto-start on reboot** — Coolify and your site restart with the server
-- **Security updates** — Coolify dashboard shows available updates
+Once the one-time setup in Step 2 is done, nothing needs manual attention:
 
-**You only need to SSH into the server** when Coolify itself has a core update (Coolify shows this in its dashboard).
+| What | How | When |
+|---|---|---|
+| Ubuntu OS + Docker engine security patches | `unattended-upgrades` | Daily |
+| Auto-reboot after kernel update | `unattended-upgrades` config | 03:00 if needed |
+| Nginx container (zero-day coverage) | Coolify nightly redeploy cron | Nightly |
+| Coolify itself | Weekly cron | Weekly |
+| SSL certificates | Let's Encrypt auto-renewal (Coolify) | Automatic |
+| Site deploys | `git push` triggers auto-deploy | Per push |
+| Server backups | Hetzner automatic backups | Daily |
+
+You should not need to SSH into the server at all under normal operation.
 
 ---
 
