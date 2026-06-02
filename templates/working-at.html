@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working at…</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f9f9f8;
+      font-family: Arial, -apple-system, sans-serif;
+      color: #37352f;
+      font-size: 11pt;
+      line-height: 1.4;
+    }
+
+    /* ── Banner ─────────────────────────────────────────────────── */
+    #banner {
+      height: 28px;
+      width: 100%;
+    }
+
+    /* ── Page ────────────────────────────────────────────────────── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 32px 72px 72px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    #icon {
+      font-size: 28pt;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    #title {
+      font-size: 26pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    #tagline {
+      color: #787774;
+      font-size: 11pt;
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    /* ── Two-column layout ───────────────────────────────────────── */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 30px;
+      align-items: start;
+    }
+
+    /* ── Section headers ─────────────────────────────────────────── */
+    .col h2 {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #37352f;
+      padding-top: 16px;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid #e3e2e0;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .col h2:first-child {
+      padding-top: 2px;
+    }
+
+    /* ── Nav items (list) ────────────────────────────────────────── */
+    .col ul {
+      list-style: none;
+      margin-bottom: 4px;
+    }
+
+    .col ul li {
+      padding: 3px 0;
+      font-size: 11pt;
+      color: #37352f;
+      line-height: 1.4;
+    }
+
+    /* Nested lists (sub-items like TODO items) */
+    .col ul ul {
+      padding-left: 20px;
+      margin-top: 2px;
+    }
+
+    .col ul ul li::before {
+      content: "• ";
+      color: #37352f;
+    }
+
+    /* Links inside nav items */
+    .col ul li a {
+      color: #37352f;
+      text-decoration: none;
+    }
+
+    .col ul li a:hover {
+      text-decoration: underline;
+      color: #2a2a27;
+    }
+
+    /* Empty links (placeholders — no href) */
+    .col ul li a[href=""] {
+      cursor: default;
+    }
+
+    /* Italic = placeholder / coming soon */
+    .col ul li em {
+      color: #9b9a97;
+      font-style: normal;
+    }
+
+    /* ── Featured content box ────────────────────────────────────── */
+    .col blockquote {
+      background: #f7f6f3;
+      border: 1px solid #e3e2e0;
+      border-radius: 4px;
+      padding: 40px 16px;
+      margin-top: 20px;
+      text-align: center;
+      color: #9b9a97;
+      font-style: italic;
+      font-size: 10pt;
+    }
+
+    .col blockquote p {
+      color: #9b9a97;
+    }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      .page { padding: 20px 24px 48px; }
+      .columns { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="banner"></div>
+
+<div class="page">
+  <div id="icon"></div>
+  <h1 id="title"></h1>
+  <p id="tagline"></p>
+  <div class="columns">
+    <div id="col-left" class="col"></div>
+    <div id="col-right" class="col"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script>
+// ── Helpers ────────────────────────────────────────────────────────
+
+function parseFrontmatter(text) {
+  const match = text.replace(/\r\n/g, '\n').match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: text };
+  const meta = {};
+  for (const line of match[1].split('\n')) {
+    const kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+    if (kv) meta[kv[1]] = kv[2];
+  }
+  return { meta, body: match[2] };
+}
+
+// ── Marked config ──────────────────────────────────────────────────
+
+marked.setOptions({ breaks: false, gfm: true });
+
+// ── Load & render ──────────────────────────────────────────────────
+
+const mdFile = (new URLSearchParams(location.search).get('page') || 'working-at') + '.md';
+
+fetch(mdFile)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(raw => {
+    const { meta, body } = parseFrontmatter(raw);
+
+    // Apply frontmatter
+    document.title = 'Working at ' + (meta.company || '…');
+    document.getElementById('banner').style.background = meta.color || '#9cb7a4';
+    document.getElementById('icon').textContent = meta.icon || '';
+    document.getElementById('title').textContent = 'Working at ' + (meta.company || '…');
+    document.getElementById('tagline').textContent = meta.tagline || '';
+
+    // Split at <!-- column-break -->
+    const parts = body.split(/<!--\s*column-break\s*-->/);
+    const leftMd  = parts[0] || '';
+    const rightMd = parts[1] || '';
+
+    document.getElementById('col-left').innerHTML  = marked.parse(leftMd.trim());
+    document.getElementById('col-right').innerHTML = marked.parse(rightMd.trim());
+  })
+  .catch(err => {
+    document.querySelector('.page').innerHTML =
+      `<p style="color:#9b9a97;padding-top:40px">Could not load <code>${mdFile}</code>: ${err.message}</p>`;
+  });
+</script>
+</body>
+</html>
