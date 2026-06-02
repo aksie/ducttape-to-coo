@@ -6,20 +6,21 @@ color: "#9cb7a4"
 
 The home base for everything you need (or want) to know about working at [Company name]. This is a living document and is therefore subject to change.
 
-## Practical info
+## Physical workplace info
 
 - 🏘 [Berlin office — addresses & access]()
 - 🇧🇪 [Ghent office — addresses & access]()
-- 🕙 [When we work & are available]()
-- 🏗️ [How we work]()
-- ⏰ [Time tracking]()
-- 💸 [Expenses & reimbursements]()
 
-## Good to know
+## Get started
 
 - 📅 [Your first day at [Company name]]()
 - 🔍 [Who do I go to for...?]()
+
+## Virtual workplace info
+- 🏗️ [How we work]()
 - 💻 [Tools & apps]()
+- 🕙 [When we work & are available]()
+- ⏰ [Time tracking]()
 
 ## People & HR
 
@@ -27,6 +28,7 @@ The home base for everything you need (or want) to know about working at [Compan
 - 😉 [Reporting sick / recovered]()
 - 👥 [Confidential advisors]()
 - 🔄 [Feedback & development]()
+- 💸 [Expenses & reimbursements]()
 
 <!-- column-break -->
 
