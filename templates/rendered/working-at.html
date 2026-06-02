@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event — …</title>
+  <title>Working at…</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -12,7 +12,7 @@
       font-family: Arial, -apple-system, sans-serif;
       color: #37352f;
       font-size: 11pt;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     /* ── Banner ─────────────────────────────────────────────────── */
@@ -22,10 +22,8 @@
     }
 
     /* ── Page ────────────────────────────────────────────────────── */
-    .page-wrap { position: relative; }
-
     .page {
-      max-width: 600px;
+      max-width: 680px;
       margin: 0 auto;
       padding: 32px 72px 72px;
       background: #fff;
@@ -41,50 +39,92 @@
     }
 
     #title {
-      font-size: 28pt;
+      font-size: 26pt;
       font-weight: 700;
       color: #37352f;
-      margin-bottom: 20px;
-      line-height: 1.15;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    #tagline {
+      color: #787774;
+      font-size: 11pt;
+      margin-bottom: 28px;
+      max-width: 520px;
+    }
+
+    /* ── Two-column layout ───────────────────────────────────────── */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 30px;
+      align-items: start;
     }
 
     /* ── Section headers ─────────────────────────────────────────── */
-    #content h2 {
-      font-size: 13pt;
+    .col h2 {
+      font-size: 14pt;
       font-weight: 700;
       color: #37352f;
-      margin-top: 22px;
-      margin-bottom: 6px;
-      padding-bottom: 4px;
+      padding-top: 16px;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid #e3e2e0;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
 
-    /* ── Task lists ──────────────────────────────────────────────── */
-    #content ul {
+    .col h2:first-child {
+      padding-top: 2px;
+    }
+
+    /* ── Nav items ───────────────────────────────────────────────── */
+    .col ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
+      margin-bottom: 4px;
     }
 
-    #content ul li {
-      padding: 2px 0;
-      line-height: 1.5;
+    .col ul li {
+      padding: 3px 0;
+      font-size: 11pt;
       color: #37352f;
+      line-height: 1.4;
     }
 
-    /* Nested items */
-    #content ul ul {
-      padding-left: 26px;
+    /* Nested lists (sub-items) */
+    .col ul ul {
+      padding-left: 20px;
+      margin-top: 2px;
     }
 
-    /* Checkboxes */
-    #content input[type="checkbox"] {
+    /* Links inside nav items */
+    .col ul li a {
+      color: #37352f;
+      text-decoration: none;
+    }
+
+    .col ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .col ul li a[href=""] {
+      cursor: default;
+    }
+
+    /* Italic = placeholder / coming soon */
+    .col ul li em {
+      color: #9b9a97;
+      font-style: normal;
+    }
+
+    /* ── Checkboxes (Bear-style task lists) ──────────────────────── */
+    .col input[type="checkbox"] {
       appearance: none;
       -webkit-appearance: none;
       width: 14px;
       height: 14px;
       border: 1.5px solid #bfbeba;
       border-radius: 3px;
-      margin-right: 8px;
+      margin-right: 7px;
       vertical-align: -2px;
       flex-shrink: 0;
       cursor: default;
@@ -92,12 +132,12 @@
       position: relative;
     }
 
-    #content input[type="checkbox"]:checked {
+    .col input[type="checkbox"]:checked {
       background: #37352f;
       border-color: #37352f;
     }
 
-    #content input[type="checkbox"]:checked::after {
+    .col input[type="checkbox"]:checked::after {
       content: "";
       display: block;
       width: 4px;
@@ -111,88 +151,38 @@
       transform: rotate(45deg);
     }
 
-    #content li.task-list-item {
+    .col li.task-list-item {
       display: flex;
       align-items: flex-start;
-      padding: 2px 0;
+      padding: 3px 0;
     }
 
-    #content li.task-list-item input {
-      margin-top: 4px;
+    .col li.task-list-item input {
+      margin-top: 3px;
     }
 
-    /* Completed task text */
-    #content li.task-list-item:has(input:checked) > :not(input) {
+    /* Checked task item text — strike through */
+    .col li.task-list-item:has(input:checked) {
       color: #9b9a97;
       text-decoration: line-through;
     }
 
-    /* ── @mentions ───────────────────────────────────────────────── */
-    .mention {
-      color: #2383e2;
-      font-weight: 400;
-    }
-
-    /* ── Context notes (blockquote) ──────────────────────────────── */
-    #content blockquote {
-      background: #fbf3db;
-      border-left: 3px solid #f1c84e;
-      border-radius: 3px;
-      padding: 8px 12px;
-      margin: 12px 0;
-      color: #37352f;
-    }
-
-    #content blockquote p {
-      color: #37352f;
-      font-size: 11pt;
-    }
-
-    /* ── Parenthetical notes (italic para) ───────────────────────── */
-    #content p em {
-      color: #5a5a57;
-      font-style: italic;
-    }
-
-    /* Standalone italic-only paragraphs (the *(Note: ...)* pattern) */
-    #content p:has(> em:only-child) {
-      color: #5a5a57;
-      font-size: 10.5pt;
-      margin-top: 4px;
-      margin-bottom: 4px;
-    }
-
-    /* ── Divider + comment footer ────────────────────────────────── */
-    #content hr {
-      border: none;
-      border-top: 1px solid #e3e2e0;
-      margin: 24px 0 16px;
-    }
-
-    #content hr + p,
-    #content hr ~ p {
-      background: #fff;
+    /* ── Featured content box ────────────────────────────────────── */
+    .col blockquote {
+      background: #f7f6f3;
       border: 1px solid #e3e2e0;
       border-radius: 4px;
-      padding: 8px 12px;
+      padding: 40px 16px;
+      margin-top: 20px;
+      text-align: center;
+      color: #9b9a97;
+    }
+
+    .col blockquote p {
+      color: #9b9a97;
+      font-style: italic;
       font-size: 10pt;
-      color: #37352f;
-      margin-bottom: 8px;
     }
-
-    /* ── Links ───────────────────────────────────────────────────── */
-    #content a {
-      color: #0563c1;
-      text-decoration: underline;
-    }
-
-    #content a[href=""] {
-      cursor: default;
-      color: #0563c1;
-    }
-
-    /* ── Paragraph spacing ───────────────────────────────────────── */
-    #content p { margin: 6px 0; }
 
     /* ── Edit link ───────────────────────────────────────────────── */
     #edit-link {
@@ -209,11 +199,19 @@
       transition: opacity 0.15s, color 0.15s;
     }
 
-    #edit-link:hover { opacity: 1; color: #37352f; }
+    #edit-link:hover {
+      opacity: 1;
+      color: #37352f;
+    }
+
+    .page-wrap {
+      position: relative;
+    }
 
     /* ── Responsive ──────────────────────────────────────────────── */
     @media (max-width: 560px) {
       .page { padding: 20px 24px 48px; }
+      .columns { grid-template-columns: 1fr; }
       #edit-link { top: 8px; right: 10px; }
     }
   </style>
@@ -232,7 +230,11 @@
 <div class="page">
   <div id="icon"></div>
   <h1 id="title"></h1>
-  <div id="content"></div>
+  <p id="tagline"></p>
+  <div class="columns">
+    <div id="col-left" class="col"></div>
+    <div id="col-right" class="col"></div>
+  </div>
 </div>
 </div>
 
@@ -251,54 +253,68 @@ function parseFrontmatter(text) {
   return { meta, body: match[2] };
 }
 
-// Wrap @Word as a mention span (skip email-like patterns)
-function renderMentions(html) {
-  return html.replace(/@([\w\[\]]+)/g, (m, name) => {
-    return `<span class="mention">@${name}</span>`;
-  });
-}
-
 marked.setOptions({ gfm: true, breaks: false });
 
-const mdFile = (new URLSearchParams(location.search).get('page') || 'event') + '.md';
+const mdFile = (new URLSearchParams(location.search).get('page') || 'working-at') + '.md';
 
-// Auto-derive GitHub edit link
+// Derive GitHub edit URL from GitHub Pages hostname.
+// HTML lives in templates/rendered/, MD lives in templates/docs/.
 (function buildEditLink() {
   const host = location.hostname;
   if (!host.endsWith('.github.io')) return;
   const owner = host.split('.')[0];
   const pathParts = location.pathname.split('/').filter(Boolean);
   const repo = pathParts[0];
-  const pageDir = pathParts.slice(1, -1).join('/');
-  const fullMdPath = pageDir ? pageDir + '/' + mdFile : mdFile;
+  const renderedDir = pathParts.slice(1, -1).join('/');
+  const docsDir = renderedDir.replace(/\/rendered$/, '/docs');
+  const fullMdPath = docsDir ? docsDir + '/' + mdFile : mdFile;
   const link = document.getElementById('edit-link');
   link.href = `https://github.com/${owner}/${repo}/edit/main/${fullMdPath}`;
   link.style.display = 'flex';
 })();
 
-fetch(mdFile)
+fetch('../docs/' + mdFile)
   .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
   .then(raw => {
     const { meta, body } = parseFrontmatter(raw);
 
-    document.getElementById('banner').style.background = meta.color || '#3f3f3f';
+    // Banner color from frontmatter
+    document.getElementById('banner').style.background = meta.color || '#9cb7a4';
 
-    // Extract H1 (icon + title)
-    const h1Match = body.match(/^#[ \t]+(.+)$/m);
+    // Split into (header + left sections) and right sections
+    const parts = body.split(/<!--\s*column-break\s*-->/);
+    const leftPlusHeader = parts[0].trim();
+    const rightMd = (parts[1] || '').trim();
+
+    // Extract H1 line: "# 🏠 Working at [Company name]"
+    const h1Match = leftPlusHeader.match(/^#[ \t]+(.+)$/m);
     const fullTitle = h1Match ? h1Match[1].trim() : '';
+
+    // Split emoji from the rest of the title
+    // Matches one or more emoji chars at the start
     const emojiMatch = fullTitle.match(/^([\p{Emoji}\u{1F3FB}-\u{1F3FF}\u{200D}\u{FE0F}]+)\s*/u);
     const icon      = emojiMatch ? emojiMatch[1] : '';
     const titleText = fullTitle.replace(emojiMatch ? emojiMatch[0] : '', '').trim();
 
-    // Everything after the H1
-    const afterH1 = body.replace(/^#[ \t]+.+$/m, '').trim();
+    // Everything between the H1 and the first ## is the tagline paragraph
+    const afterH1 = leftPlusHeader.replace(/^#[ \t]+.+$/m, '').trim();
+    const firstH2pos = afterH1.search(/^##[ \t]/m);
+    const taglineMd  = firstH2pos > 0 ? afterH1.slice(0, firstH2pos).trim() : '';
+    const leftMd     = firstH2pos > 0 ? afterH1.slice(firstH2pos).trim() : afterH1;
 
-    document.title = titleText || 'Event';
+    // Render tagline as plain text (strip any markdown)
+    const taglineHtml = marked.parseInline(taglineMd);
+    const tmp = document.createElement('div');
+    tmp.innerHTML = taglineHtml;
+    const taglineText = tmp.textContent;
+
+    document.title = titleText || 'Working at…';
     document.getElementById('icon').textContent  = icon;
     document.getElementById('title').textContent = titleText;
+    document.getElementById('tagline').textContent = taglineText;
 
-    const rendered = renderMentions(marked.parse(afterH1));
-    document.getElementById('content').innerHTML = rendered;
+    document.getElementById('col-left').innerHTML  = marked.parse(leftMd);
+    document.getElementById('col-right').innerHTML = marked.parse(rightMd);
   })
   .catch(err => {
     document.querySelector('.page').innerHTML =
