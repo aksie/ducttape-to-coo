@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annual goals — …</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f9f9f8;
+      font-family: Arial, -apple-system, sans-serif;
+      color: #37352f;
+      font-size: 11pt;
+      line-height: 1.4;
+    }
+
+    /* ── Banner ─────────────────────────────────────────────────── */
+    #banner {
+      height: 28px;
+      width: 100%;
+    }
+
+    /* ── Page ────────────────────────────────────────────────────── */
+    .page-wrap { position: relative; }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 54px 72px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    #icon {
+      font-size: 28pt;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+
+    #title {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+
+    #subtitle {
+      color: #787774;
+      font-size: 11pt;
+      margin-bottom: 28px;
+    }
+
+    /* ── Grid table ──────────────────────────────────────────────── */
+    #grid {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.5pt;
+    }
+
+    /* Quarter group header (Q1, Q2 …) */
+    #grid th.th-quarter {
+      background: #37352f;
+      color: #fff;
+      font-size: 12pt;
+      font-weight: 700;
+      text-align: left;
+      padding: 4px 8px;
+      border: 1px solid #e3e2e0;
+    }
+
+    /* Sub-header (Goals / Status / review) */
+    #grid th.th-sub {
+      background: #c55a11;
+      color: #fff;
+      font-size: 9.5pt;
+      font-weight: 700;
+      text-align: left;
+      padding: 3px 6px;
+      border: 1px solid #e3e2e0;
+      white-space: nowrap;
+    }
+
+    /* Empty top-left corner cell */
+    #grid th.th-corner {
+      border: none;
+      background: transparent;
+    }
+
+    /* Area label column */
+    #grid td.td-area {
+      background: #f7f6f3;
+      font-weight: 700;
+      font-size: 11pt;
+      padding: 8px 8px;
+      vertical-align: top;
+      border: 1px solid #e3e2e0;
+      min-width: 140px;
+    }
+
+    /* Goals content cell */
+    #grid td.td-goals {
+      background: #fff;
+      padding: 6px 6px;
+      vertical-align: top;
+      border: 1px solid #e3e2e0;
+      min-width: 110px;
+      min-height: 80px;
+      height: 90px;
+    }
+
+    /* Status / review cell */
+    #grid td.td-status {
+      background: #fff;
+      padding: 6px 6px;
+      vertical-align: top;
+      border: 1px solid #e3e2e0;
+      min-width: 60px;
+      height: 90px;
+    }
+
+    #grid td p { margin: 0; line-height: 1.4; }
+    #grid td ul { padding-left: 16px; margin: 0; }
+    #grid td li { margin: 2px 0; }
+
+    /* ── Edit link ───────────────────────────────────────────────── */
+    #edit-link {
+      position: absolute;
+      top: 36px;
+      right: 20px;
+      font-size: 9pt;
+      color: #b7b5b0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.7;
+      transition: opacity 0.15s, color 0.15s;
+    }
+
+    #edit-link:hover { opacity: 1; color: #37352f; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .page { padding: 20px 16px 48px; overflow-x: auto; }
+      #edit-link { top: 8px; right: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+<div id="banner"></div>
+<a id="edit-link" href="#" target="_blank" rel="noopener" style="display:none">
+  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354zm.514 3.605-1.44-1.44-6.86 6.86-.367 1.281 1.281-.367z"/>
+  </svg>
+  Edit
+</a>
+
+<div class="page">
+  <div id="icon"></div>
+  <h1 id="title"></h1>
+  <p id="subtitle"></p>
+  <div id="table-wrap"></div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script>
+
+function parseFrontmatter(text) {
+  const norm = text.replace(/\r\n/g, '\n');
+  const match = norm.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: norm };
+  const meta = {};
+  for (const line of match[1].split('\n')) {
+    const kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+    if (kv) meta[kv[1]] = kv[2];
+  }
+  return { meta, body: match[2] };
+}
+
+// Parse a markdown pipe table into { headers, rows }
+function parseMarkdownTable(md) {
+  const lines = md.split('\n');
+  const start = lines.findIndex(l => /^\s*\|/.test(l));
+  if (start === -1) return null;
+  let end = start;
+  while (end < lines.length && /^\s*\|/.test(lines[end])) end++;
+  const tableLines = lines.slice(start, end).filter(l => !/^\s*\|[\s\-:|]+\|/.test(l));
+  const splitRow = l => l.split('|').slice(1, -1).map(c => c.trim());
+  const headers = splitRow(tableLines[0]);
+  const rows    = tableLines.slice(1).map(splitRow);
+  const before  = lines.slice(0, start).join('\n');
+  const after   = lines.slice(end).join('\n');
+  return { headers, rows, before, after };
+}
+
+// Render the grid table from parsed headers + rows
+function renderGrid(headers, rows, accentColor) {
+  // Detect which columns are Q-grouped: "Q1 Goals", "Q1 Status", etc.
+  // First column is always the Area label.
+  const colMeta = headers.map((h, i) => {
+    if (i === 0) return { type: 'area', label: h };
+    const m = h.match(/^(Q\d+)\s+(.+)$/i);
+    if (m) return { type: 'qcol', quarter: m[1].toUpperCase(), label: m[2], index: i };
+    return { type: 'plain', label: h, index: i };
+  });
+
+  // Group consecutive Q columns by quarter
+  const quarters = [];
+  colMeta.forEach(c => {
+    if (c.type !== 'qcol') return;
+    const last = quarters[quarters.length - 1];
+    if (last && last.name === c.quarter) {
+      last.cols.push(c);
+    } else {
+      quarters.push({ name: c.quarter, cols: [c] });
+    }
+  });
+
+  // Apply accent color to sub-headers
+  const subStyle = `background:${accentColor || '#c55a11'};`;
+
+  // ── Row 1: corner + Q1 (colspan) + Q2 … ──
+  let row1 = `<tr><th class="th-corner"></th>`;
+  quarters.forEach(q => {
+    row1 += `<th class="th-quarter" colspan="${q.cols.length}">${q.name}</th>`;
+  });
+  // Any plain cols
+  colMeta.filter(c => c.type === 'plain').forEach(c => {
+    row1 += `<th class="th-quarter">${c.label}</th>`;
+  });
+  row1 += '</tr>';
+
+  // ── Row 2: sub-headers ──
+  let row2 = `<tr><th class="th-corner"></th>`;
+  colMeta.slice(1).forEach(c => {
+    row2 += `<th class="th-sub" style="${subStyle}">${c.label}</th>`;
+  });
+  row2 += '</tr>';
+
+  // ── Data rows ──
+  let bodyRows = '';
+  rows.forEach(row => {
+    bodyRows += '<tr>';
+    row.forEach((cell, i) => {
+      const content = marked.parseInline(cell);
+      if (i === 0) {
+        bodyRows += `<td class="td-area">${content}</td>`;
+      } else {
+        const col = colMeta[i];
+        const isStatus = col && col.type === 'qcol' && /status/i.test(col.label);
+        bodyRows += `<td class="${isStatus ? 'td-status' : 'td-goals'}">${content}</td>`;
+      }
+    });
+    bodyRows += '</tr>';
+  });
+
+  return `<table id="grid"><thead>${row1}${row2}</thead><tbody>${bodyRows}</tbody></table>`;
+}
+
+marked.setOptions({ gfm: true, breaks: false });
+
+const mdFile = (new URLSearchParams(location.search).get('page') || 'quarterly-goals') + '.md';
+
+// GitHub edit link: HTML is in rendered/, MD is in docs/
+(function buildEditLink() {
+  const host = location.hostname;
+  if (!host.endsWith('.github.io')) return;
+  const owner = host.split('.')[0];
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const repo = pathParts[0];
+  const renderedDir = pathParts.slice(1, -1).join('/');
+  const docsDir = renderedDir.replace(/\/rendered$/, '/docs');
+  const fullMdPath = docsDir ? docsDir + '/' + mdFile : mdFile;
+  const link = document.getElementById('edit-link');
+  link.href = `https://github.com/${owner}/${repo}/edit/main/${fullMdPath}`;
+  link.style.display = 'flex';
+})();
+
+fetch('../docs/' + mdFile)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(raw => {
+    const { meta, body } = parseFrontmatter(raw);
+    const accentColor = meta.color || '#c55a11';
+
+    document.getElementById('banner').style.background = accentColor;
+
+    // H1 → icon + title
+    const h1Match = body.match(/^#[ \t]+(.+)$/m);
+    const fullTitle = h1Match ? h1Match[1].trim() : '';
+    const emojiMatch = fullTitle.match(/^([\p{Emoji}\u{1F3FB}-\u{1F3FF}\u{200D}\u{FE0F}]+)\s*/u);
+    const icon      = emojiMatch ? emojiMatch[1] : '';
+    const titleText = fullTitle.replace(emojiMatch ? emojiMatch[0] : '', '').trim();
+
+    // Subtitle: first paragraph after H1
+    const afterH1 = body.replace(/^#[ \t]+.+$/m, '').trim();
+    const firstParaEnd = afterH1.search(/\n\n|\n\|/);
+    const subtitleMd  = firstParaEnd > 0 ? afterH1.slice(0, firstParaEnd).trim() : '';
+    const remainder   = firstParaEnd > 0 ? afterH1.slice(firstParaEnd).trim() : afterH1;
+
+    document.title = titleText || 'Annual goals';
+    document.getElementById('icon').textContent    = icon;
+    document.getElementById('title').textContent   = titleText;
+    document.getElementById('subtitle').textContent = subtitleMd;
+
+    // Parse and render the table
+    const parsed = parseMarkdownTable(remainder);
+    if (parsed) {
+      document.getElementById('table-wrap').innerHTML = renderGrid(parsed.headers, parsed.rows, accentColor);
+    } else {
+      // No table found — render remaining markdown as-is
+      document.getElementById('table-wrap').innerHTML = marked.parse(remainder);
+    }
+  })
+  .catch(err => {
+    document.querySelector('.page').innerHTML =
+      `<p style="color:#9b9a97;padding-top:40px">Could not load <code>${mdFile}</code>: ${err.message}</p>`;
+  });
+
+</script>
+</body>
+</html>
