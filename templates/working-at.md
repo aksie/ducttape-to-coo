@@ -1,9 +1,10 @@
 ---
-company: "[Company name]"
-tagline: "The home base for everything you need (or want) to know about working at [Company name]. This is a living document and is therefore subject to change."
 color: "#9cb7a4"
-icon: "🏠"
 ---
+
+# 🏠 Working at [Company name]
+
+The home base for everything you need (or want) to know about working at [Company name]. This is a living document and is therefore subject to change.
 
 ## Practical info
 
@@ -35,8 +36,8 @@ icon: "🏠"
 - 🔍 [Our 5 year plan]()
 - 🔍 [Our 2026 (one year) plan]()
 - 🔍 [Planning per quarter]()
-  - A TODO item
-  - Another TODO
+  - [ ] Write up the Q3 plan
+  - [x] Share Q2 retrospective
 
 ## Digital security
 

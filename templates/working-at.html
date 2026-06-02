@@ -34,7 +34,7 @@
     #icon {
       font-size: 28pt;
       margin-top: 20px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       line-height: 1;
     }
 
@@ -77,7 +77,7 @@
       padding-top: 2px;
     }
 
-    /* ── Nav items (list) ────────────────────────────────────────── */
+    /* ── Nav items ───────────────────────────────────────────────── */
     .col ul {
       list-style: none;
       margin-bottom: 4px;
@@ -90,15 +90,10 @@
       line-height: 1.4;
     }
 
-    /* Nested lists (sub-items like TODO items) */
+    /* Nested lists (sub-items) */
     .col ul ul {
       padding-left: 20px;
       margin-top: 2px;
-    }
-
-    .col ul ul li::before {
-      content: "• ";
-      color: #37352f;
     }
 
     /* Links inside nav items */
@@ -109,10 +104,8 @@
 
     .col ul li a:hover {
       text-decoration: underline;
-      color: #2a2a27;
     }
 
-    /* Empty links (placeholders — no href) */
     .col ul li a[href=""] {
       cursor: default;
     }
@@ -121,6 +114,57 @@
     .col ul li em {
       color: #9b9a97;
       font-style: normal;
+    }
+
+    /* ── Checkboxes (Bear-style task lists) ──────────────────────── */
+    .col input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #bfbeba;
+      border-radius: 3px;
+      margin-right: 7px;
+      vertical-align: -2px;
+      flex-shrink: 0;
+      cursor: default;
+      background: #fff;
+      position: relative;
+    }
+
+    .col input[type="checkbox"]:checked {
+      background: #37352f;
+      border-color: #37352f;
+    }
+
+    .col input[type="checkbox"]:checked::after {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 7px;
+      border: 1.5px solid #fff;
+      border-top: none;
+      border-left: none;
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
+
+    .col li.task-list-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 3px 0;
+    }
+
+    .col li.task-list-item input {
+      margin-top: 3px;
+    }
+
+    /* Checked task item text — strike through */
+    .col li.task-list-item:has(input:checked) {
+      color: #9b9a97;
+      text-decoration: line-through;
     }
 
     /* ── Featured content box ────────────────────────────────────── */
@@ -132,12 +176,12 @@
       margin-top: 20px;
       text-align: center;
       color: #9b9a97;
-      font-style: italic;
-      font-size: 10pt;
     }
 
     .col blockquote p {
       color: #9b9a97;
+      font-style: italic;
+      font-size: 10pt;
     }
 
     /* ── Responsive ──────────────────────────────────────────────── */
@@ -163,11 +207,11 @@
 
 <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
 <script>
-// ── Helpers ────────────────────────────────────────────────────────
 
 function parseFrontmatter(text) {
-  const match = text.replace(/\r\n/g, '\n').match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { meta: {}, body: text };
+  const norm = text.replace(/\r\n/g, '\n');
+  const match = norm.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: norm };
   const meta = {};
   for (const line of match[1].split('\n')) {
     const kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
@@ -176,11 +220,7 @@ function parseFrontmatter(text) {
   return { meta, body: match[2] };
 }
 
-// ── Marked config ──────────────────────────────────────────────────
-
-marked.setOptions({ breaks: false, gfm: true });
-
-// ── Load & render ──────────────────────────────────────────────────
+marked.setOptions({ gfm: true, breaks: false });
 
 const mdFile = (new URLSearchParams(location.search).get('page') || 'working-at') + '.md';
 
@@ -189,25 +229,49 @@ fetch(mdFile)
   .then(raw => {
     const { meta, body } = parseFrontmatter(raw);
 
-    // Apply frontmatter
-    document.title = 'Working at ' + (meta.company || '…');
+    // Banner color from frontmatter
     document.getElementById('banner').style.background = meta.color || '#9cb7a4';
-    document.getElementById('icon').textContent = meta.icon || '';
-    document.getElementById('title').textContent = 'Working at ' + (meta.company || '…');
-    document.getElementById('tagline').textContent = meta.tagline || '';
 
-    // Split at <!-- column-break -->
+    // Split into (header + left sections) and right sections
     const parts = body.split(/<!--\s*column-break\s*-->/);
-    const leftMd  = parts[0] || '';
-    const rightMd = parts[1] || '';
+    const leftPlusHeader = parts[0].trim();
+    const rightMd = (parts[1] || '').trim();
 
-    document.getElementById('col-left').innerHTML  = marked.parse(leftMd.trim());
-    document.getElementById('col-right').innerHTML = marked.parse(rightMd.trim());
+    // Extract H1 line: "# 🏠 Working at [Company name]"
+    const h1Match = leftPlusHeader.match(/^#[ \t]+(.+)$/m);
+    const fullTitle = h1Match ? h1Match[1].trim() : '';
+
+    // Split emoji from the rest of the title
+    // Matches one or more emoji chars at the start
+    const emojiMatch = fullTitle.match(/^([\p{Emoji}\u{1F3FB}-\u{1F3FF}\u{200D}\u{FE0F}]+)\s*/u);
+    const icon      = emojiMatch ? emojiMatch[1] : '';
+    const titleText = fullTitle.replace(emojiMatch ? emojiMatch[0] : '', '').trim();
+
+    // Everything between the H1 and the first ## is the tagline paragraph
+    const afterH1 = leftPlusHeader.replace(/^#[ \t]+.+$/m, '').trim();
+    const firstH2pos = afterH1.search(/^##[ \t]/m);
+    const taglineMd  = firstH2pos > 0 ? afterH1.slice(0, firstH2pos).trim() : '';
+    const leftMd     = firstH2pos > 0 ? afterH1.slice(firstH2pos).trim() : afterH1;
+
+    // Render tagline as plain text (strip any markdown)
+    const taglineHtml = marked.parseInline(taglineMd);
+    const tmp = document.createElement('div');
+    tmp.innerHTML = taglineHtml;
+    const taglineText = tmp.textContent;
+
+    document.title = titleText || 'Working at…';
+    document.getElementById('icon').textContent  = icon;
+    document.getElementById('title').textContent = titleText;
+    document.getElementById('tagline').textContent = taglineText;
+
+    document.getElementById('col-left').innerHTML  = marked.parse(leftMd);
+    document.getElementById('col-right').innerHTML = marked.parse(rightMd);
   })
   .catch(err => {
     document.querySelector('.page').innerHTML =
       `<p style="color:#9b9a97;padding-top:40px">Could not load <code>${mdFile}</code>: ${err.message}</p>`;
   });
+
 </script>
 </body>
 </html>
