@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event — …</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f9f9f8;
+      font-family: Arial, -apple-system, sans-serif;
+      color: #37352f;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+
+    /* ── Banner ─────────────────────────────────────────────────── */
+    #banner {
+      height: 28px;
+      width: 100%;
+    }
+
+    /* ── Page ────────────────────────────────────────────────────── */
+    .page-wrap { position: relative; }
+
+    .page {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 32px 72px 72px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    #icon {
+      font-size: 28pt;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    #title {
+      font-size: 28pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    /* ── Section headers ─────────────────────────────────────────── */
+    #content h2 {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-top: 22px;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+    }
+
+    /* ── Task lists ──────────────────────────────────────────────── */
+    #content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #content ul li {
+      padding: 2px 0;
+      line-height: 1.5;
+      color: #37352f;
+    }
+
+    /* Nested items */
+    #content ul ul {
+      padding-left: 26px;
+    }
+
+    /* Checkboxes */
+    #content input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #bfbeba;
+      border-radius: 3px;
+      margin-right: 8px;
+      vertical-align: -2px;
+      flex-shrink: 0;
+      cursor: default;
+      background: #fff;
+      position: relative;
+    }
+
+    #content input[type="checkbox"]:checked {
+      background: #37352f;
+      border-color: #37352f;
+    }
+
+    #content input[type="checkbox"]:checked::after {
+      content: "";
+      display: block;
+      width: 4px;
+      height: 7px;
+      border: 1.5px solid #fff;
+      border-top: none;
+      border-left: none;
+      position: absolute;
+      top: 1px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
+
+    #content li.task-list-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 2px 0;
+    }
+
+    #content li.task-list-item input {
+      margin-top: 4px;
+    }
+
+    /* Completed task text */
+    #content li.task-list-item:has(input:checked) > :not(input) {
+      color: #9b9a97;
+      text-decoration: line-through;
+    }
+
+    /* ── @mentions ───────────────────────────────────────────────── */
+    .mention {
+      color: #2383e2;
+      font-weight: 400;
+    }
+
+    /* ── Context notes (blockquote) ──────────────────────────────── */
+    #content blockquote {
+      background: #fbf3db;
+      border-left: 3px solid #f1c84e;
+      border-radius: 3px;
+      padding: 8px 12px;
+      margin: 12px 0;
+      color: #37352f;
+    }
+
+    #content blockquote p {
+      color: #37352f;
+      font-size: 11pt;
+    }
+
+    /* ── Parenthetical notes (italic para) ───────────────────────── */
+    #content p em {
+      color: #5a5a57;
+      font-style: italic;
+    }
+
+    /* Standalone italic-only paragraphs (the *(Note: ...)* pattern) */
+    #content p:has(> em:only-child) {
+      color: #5a5a57;
+      font-size: 10.5pt;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    /* ── Divider + comment footer ────────────────────────────────── */
+    #content hr {
+      border: none;
+      border-top: 1px solid #e3e2e0;
+      margin: 24px 0 16px;
+    }
+
+    #content hr + p,
+    #content hr ~ p {
+      background: #fff;
+      border: 1px solid #e3e2e0;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 10pt;
+      color: #37352f;
+      margin-bottom: 8px;
+    }
+
+    /* ── Links ───────────────────────────────────────────────────── */
+    #content a {
+      color: #0563c1;
+      text-decoration: underline;
+    }
+
+    #content a[href=""] {
+      cursor: default;
+      color: #0563c1;
+    }
+
+    /* ── Paragraph spacing ───────────────────────────────────────── */
+    #content p { margin: 6px 0; }
+
+    /* ── Edit link ───────────────────────────────────────────────── */
+    #edit-link {
+      position: absolute;
+      top: 36px;
+      right: 20px;
+      font-size: 9pt;
+      color: #b7b5b0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.7;
+      transition: opacity 0.15s, color 0.15s;
+    }
+
+    #edit-link:hover { opacity: 1; color: #37352f; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      .page { padding: 20px 24px 48px; }
+      #edit-link { top: 8px; right: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+<div id="banner"></div>
+<a id="edit-link" href="#" target="_blank" rel="noopener" style="display:none">
+  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354zm.514 3.605-1.44-1.44-6.86 6.86-.367 1.281 1.281-.367z"/>
+  </svg>
+  Edit
+</a>
+
+<div class="page">
+  <div id="icon"></div>
+  <h1 id="title"></h1>
+  <div id="content"></div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script>
+
+function parseFrontmatter(text) {
+  const norm = text.replace(/\r\n/g, '\n');
+  const match = norm.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: norm };
+  const meta = {};
+  for (const line of match[1].split('\n')) {
+    const kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+    if (kv) meta[kv[1]] = kv[2];
+  }
+  return { meta, body: match[2] };
+}
+
+// Wrap @Word as a mention span (skip email-like patterns)
+function renderMentions(html) {
+  return html.replace(/@([\w\[\]]+)/g, (m, name) => {
+    return `<span class="mention">@${name}</span>`;
+  });
+}
+
+marked.setOptions({ gfm: true, breaks: false });
+
+const mdFile = (new URLSearchParams(location.search).get('page') || 'event') + '.md';
+
+// Auto-derive GitHub edit link
+(function buildEditLink() {
+  const host = location.hostname;
+  if (!host.endsWith('.github.io')) return;
+  const owner = host.split('.')[0];
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const repo = pathParts[0];
+  const pageDir = pathParts.slice(1, -1).join('/');
+  const fullMdPath = pageDir ? pageDir + '/' + mdFile : mdFile;
+  const link = document.getElementById('edit-link');
+  link.href = `https://github.com/${owner}/${repo}/edit/main/${fullMdPath}`;
+  link.style.display = 'flex';
+})();
+
+fetch(mdFile)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(raw => {
+    const { meta, body } = parseFrontmatter(raw);
+
+    document.getElementById('banner').style.background = meta.color || '#3f3f3f';
+
+    // Extract H1 (icon + title)
+    const h1Match = body.match(/^#[ \t]+(.+)$/m);
+    const fullTitle = h1Match ? h1Match[1].trim() : '';
+    const emojiMatch = fullTitle.match(/^([\p{Emoji}\u{1F3FB}-\u{1F3FF}\u{200D}\u{FE0F}]+)\s*/u);
+    const icon      = emojiMatch ? emojiMatch[1] : '';
+    const titleText = fullTitle.replace(emojiMatch ? emojiMatch[0] : '', '').trim();
+
+    // Everything after the H1
+    const afterH1 = body.replace(/^#[ \t]+.+$/m, '').trim();
+
+    document.title = titleText || 'Event';
+    document.getElementById('icon').textContent  = icon;
+    document.getElementById('title').textContent = titleText;
+
+    const rendered = renderMentions(marked.parse(afterH1));
+    document.getElementById('content').innerHTML = rendered;
+  })
+  .catch(err => {
+    document.querySelector('.page').innerHTML =
+      `<p style="color:#9b9a97;padding-top:40px">Could not load <code>${mdFile}</code>: ${err.message}</p>`;
+  });
+
+</script>
+</body>
+</html>
