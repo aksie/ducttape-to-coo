@@ -2,7 +2,7 @@
 process: legal
 phase: foundation
 last_updated: 2026-06-03
-claim_count: 5
+claim_count: 6
 ---
 
 # Legal — Foundation (Founders plus maybe 1 person)
@@ -47,7 +47,7 @@ claim_count: 5
 
 ## How this evolves next
 
-<!-- claim-id: c-006 (evolution) -->
+<!-- claim-id: c-006 -->
 - **At First Hires, compliance obligations begin — and you need a named owner for the filing before documents start defaulting to email.** Once you have employees, Dutch employment law activates (hour registration, sick leave procedures, vertrouwenspersoon). Designate one person responsible for the filing structure before the first hire, not after.
   <!-- sources: src-038 (practitioner contribution) -->
 

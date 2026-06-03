@@ -2,7 +2,7 @@
 process: legal
 phase: first-hires
 last_updated: 2026-06-03
-claim_count: 8
+claim_count: 10
 ---
 
 # Legal — First Hires (2 to 10 people)
@@ -59,7 +59,7 @@ claim_count: 8
 
 ## How this evolves next
 
-<!-- claim-id: c-009 (evolution) -->
+<!-- claim-id: c-009 -->
 - **At Early Revenue, the filing structure you've built becomes the foundation for transaction readiness.** The compliance calendar (tax deadlines, insurance renewals, trademark renewals) matters more as obligations multiply. The question shifts from "do we have a structure?" to "is it complete enough that an external party could navigate it in a week?"
   <!-- sources: src-038 (practitioner contribution) -->
 
