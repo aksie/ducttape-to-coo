@@ -10,7 +10,7 @@
       "stageFocus": {
         "foundation": "Top 3 to 5 priorities per month or quarter, that everybody knows by heart, and don't drift into different priorities without realizing and explicitly agreeing to it",
         "first-hires": "Quarterly goals that everybody knows by heart, made with the team and evaluated afterwards, don't drift into different priorities without realizing and explicitly agreeing to it, and one ambitious growth metric",
-        "early-revenue": "Quarterly company goals (OKRs or similar). Annual themes/direction. Monthly all-hands reviews progress. Everyone knows top 3-5 company priorities.",
+        "early-revenue": "Cascade company goals to team layers with named owners on key results — imperfect alignment is fine if everyone can see who owns what.",
         "growth": "Formal quarterly goal-setting process. Annual strategic planning. Company-wide goals tracked in dashboard. Regular reviews with leadership team.",
         "scaled": "Structured annual and quarterly planning cycles. Company OKRs set by leadership. Communicated company-wide. Progress tracked and visible."
       },
@@ -346,7 +346,7 @@
       "sensitivity": "none",
       "description": "Invoice receipt and validation, approval workflows, payment scheduling and execution, employee expenses, corporate card management",
       "stageFocus": {
-        "foundation": "Keep a simple log of what you owe and when it's due. Pay on time — reputation matters even at this stage. Use a business credit card and expense tracking app from day one.",
+        "foundation": "Keep expenses simple: a principle-based policy, personal cards and reimbursements, and a lightweight escalation norm when someone is unsure.",
         "first-hires": "Agree on approval thesholds, keep payment simple and disciplined on few company credit cards, get an accountant and tolling in place",
         "early-revenue": "Define an approval workflow: who approves what amount? Set up corporate cards for regular spenders. Make sure every invoice gets coded to the right cost centre before it's paid.",
         "growth": "AP should be a defined process: invoice intake, approval routing by amount/type, scheduled payment runs. Expense policy documented and signed by all employees.",
@@ -370,7 +370,7 @@
       "stageFocus": {
         "foundation": "Keep it simple and outsourced. Use a bookkeeper or accountant from day one — don't do this yourself. Agree on an API or automation workflow so it will scale later. Set up a basic chart of accounts and make sure receipts and invoices are captured consistently.",
         "first-hires": "Your external bookkeeper should handle month-end close. Your job is to feed them clean data: receipts in, invoices out, payroll records. Agree on a rhythm and stick to it.",
-        "early-revenue": "Move to a monthly close with your accountant. Review a basic P&L monthly. Make sure revenue recognition is handled correctly, especially if you have subscriptions or milestones.",
+        "early-revenue": "Run a live model and monthly close rhythm, share runway with leadership, and document expense policy before informal norms break down.",
         "growth": "Bring bookkeeping closer to in-house or use a managed accounting service. Establish a proper month-end close checklist. Start tracking by cost centre or department.",
         "scaled": "Full in-house finance team with defined close calendar. Audit trail and documentation standards enforced. Chart of accounts reviewed annually to match business complexity."
       },
