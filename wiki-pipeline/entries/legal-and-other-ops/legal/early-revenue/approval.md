@@ -37,12 +37,13 @@ last_updated: 2026-06-03 17:40
 - Edited claim text: null
 
 ### c-005
-- Status: pending
+- Status: rejected
 - Flags: []
-- Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewer notes: "Needs rewrite"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-03 18:54
 - Edited claim text: null
+
 ### c-006
 - Status: approved
 - Flags: []
