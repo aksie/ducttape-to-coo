@@ -97,11 +97,11 @@ last_updated: 2026-05-30
 - Edited claim text: null
 
 ### c-012
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-03 18:01
 - Edited claim text: null
 
 ### c-013

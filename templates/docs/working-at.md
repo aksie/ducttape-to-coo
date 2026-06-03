@@ -11,13 +11,9 @@ The home base for everything you need (or want) to know about working at [Compan
 - 🏘 [Berlin office — addresses & access]()
 - 🇧🇪 [Ghent office — addresses & access]()
 
-## Get started
-
-- 📅 [Your first day at [Company name]]()
-- 🔍 [Who do I go to for...?]()
-
 ## Virtual workplace info
 - 🏗️ [How we work]()
+- 🔍 [Who do I go to for...?]()
 - 💻 [Tools & apps]()
 - 🕙 [When we work & are available]()
 - ⏰ [Time tracking]()
@@ -29,6 +25,7 @@ The home base for everything you need (or want) to know about working at [Compan
 - 👥 [Confidential advisors]()
 - 🔄 [Feedback & development]()
 - 💸 [Expenses & reimbursements]()
+- 📅 [Your first day at [Company name]]()
 
 <!-- column-break -->
 
