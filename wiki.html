@@ -378,10 +378,8 @@
       <nav class="header-nav">
         <a href="index.html">Overview</a>
         <a href="diagnostic.html">Diagnostic</a>
-        <a href="roadmap.html">Roadmap</a>
         <a href="wiki.html" class="active">Wiki</a>
         <a href="blog/index.html">Blog</a>
-                <a href="content-map.html">Map</a>
       </nav>
     </div>
   </div>
@@ -402,6 +400,7 @@
   </main>
 </div>
 
+<script src="js/wiki-content-score.js"></script>
 <script>
 const CATEGORY_LABELS = {
   'strategic':           'Strategic Ops',
@@ -585,26 +584,7 @@ async function checkStageContent(stageId) {
       // Strip HTML comments and whitespace
       body = body.replace(/<!--[\s\S]*?-->/g, '').trim();
 
-      // Score only the two sections that prove the page is actionable.
-      // Total character count over-rewards padding and context variants.
-      const TARGET_SECTIONS = [
-        'What you actually need to do',
-        "Warning signs you're behind",
-      ];
-      const parts = body.split(/^(?=## )/m);
-      const coreText = parts
-        .filter(p => TARGET_SECTIONS.some(h => p.startsWith('## ' + h)))
-        .join('\n');
-
-      // Strip headings, empty bullets and horizontal rules from extracted text
-      const stripped = coreText
-        .replace(/^#{1,3}\s+.*/gm, '')
-        .replace(/^\s*[-\d.]+\s*$/gm, '')
-        .replace(/^\s*>\s*$/gm, '')
-        .replace(/---/g, '')
-        .trim();
-
-      if (stripped.length > 300) {
+      if (WikiContentScore.hasFullContent(raw)) {
         link.classList.add('has-content');
       } else {
         link.classList.add('stub');

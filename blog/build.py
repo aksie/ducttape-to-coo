@@ -167,7 +167,6 @@ INDEX_TEMPLATE = """\
         <nav>
             <a href="../index.html">Overview</a>
             <a href="../diagnostic.html">Diagnostic</a>
-            <a href="../roadmap.html">Roadmap</a>
             <a href="../wiki.html">Wiki</a>
             <a href="index.html" class="active">Blog</a>
         </nav>

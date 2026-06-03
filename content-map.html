@@ -69,10 +69,8 @@
     <nav>
       <a href="index.html">Overview</a>
       <a href="diagnostic.html">Diagnostic</a>
-      <a href="roadmap.html">Roadmap</a>
       <a href="wiki.html">Wiki</a>
       <a href="blog/index.html">Blog</a>
-      <a href="content-map.html" class="active" style="color:var(--text)">Map</a>
     </nav>
   </div>
 </header>
@@ -81,7 +79,7 @@
   <div class="page-head">
     <div class="eyebrow">Content Map</div>
     <h1>What exists, what's missing</h1>
-    <p>Sunburst = Wiki. Inner ring = Foundation (earliest stage), outer ring = Scaled. Each slice is one process × stage cell. Hover for details, click to open in the wiki.</p>
+    <p>Sunburst = Wiki. Inner ring = Foundation (earliest stage), outer ring = Scaled. Colours are scored automatically from each wiki file (same rules as the wiki sidebar). Grey = N/A at that stage (<code>future</code> in processes.json). Hover for details, click to open in the wiki.</p>
   </div>
 
   <div class="map-wrap">
@@ -102,7 +100,7 @@
     </div>
   </div>
 
-  <div class="stats-row" id="stats"></div>
+  <div class="stats-row" id="stats"><span style="color:#6e7681;font-size:.85rem">Loading wiki coverage…</span></div>
 </div>
 
 <div id="tip">
@@ -112,6 +110,7 @@
   <div class="tip-hint" id="tip-hint"></div>
 </div>
 
+<script src="js/wiki-content-score.js"></script>
 <script>
 const CX = 540, CY = 420;
 
@@ -136,52 +135,62 @@ const CATEGORIES = [
   { id: 'legal',     label: 'Legal & Other Ops',        color: '#e3b341', startAngle: 288 },
 ];
 
-// Process data: status per stage (3=complete, 2=scaffolded, 1=stub, 0=N/A)
-const PROCESSES = {
-  strategic: [
-    { id:'1.1',  title:'Company-Level Planning & Goals',      s:{foundation:3,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.1b', title:'Team Goals & Cascading Goals',        s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.2',  title:'Internal Comms about Strategy',       s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.2b', title:'Shareholder & Investor Reporting',    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'1.3',  title:'Operational Comms Norms & Channels',   s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.4',  title:'Who Decides What',                    s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.5',  title:'Organizational Design',               s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.6',  title:'Data & Reporting Infrastructure',     s:{foundation:0,'first-hires':0,'early-revenue':2,growth:2,scaled:2} },
-    { id:'1.7',  title:'Process Documentation',               s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
-    { id:'1.8',  title:'Cross-Team Coordination',             s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
-  ],
-  financial: [
-    { id:'2.1',  title:'Cash Flow Management',                 s:{foundation:2,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'2.2',  title:'Financial Planning & Analysis',       s:{foundation:0,'first-hires':2,'early-revenue':3,growth:2,scaled:2} },
-    { id:'2.3',  title:'Accounts Receivable',                 s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'2.4',  title:'Accounts Payable & Expenses',         s:{foundation:1,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
-    { id:'2.5',  title:'Financial Administration',             s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-  ],
-  revenue: [
-    { id:'5.1',  title:'Sales Operations',                    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.2',  title:'Customer Acquisition & Leads',        s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.3',  title:'Customer Onboarding & Activation',    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.4',  title:'Customer Health & Support',           s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.5',  title:'Renewal & Retention',                 s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.6',  title:'Service Delivery',                    s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'5.7',  title:'Customer Data & Analytics',           s:{foundation:0,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-  ],
-  people: [
-    { id:'3.1',  title:'HR Administration',                   s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.2',  title:'Recruitment & Hiring',                s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.3',  title:'Onboarding',                          s:{foundation:0,'first-hires':3,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.4',  title:'Offboarding',                         s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.5',  title:'Performance Management',              s:{foundation:0,'first-hires':0,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.6',  title:'Employee Satisfaction & Feedback',    s:{foundation:1,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'3.7',  title:'Learning & Development',              s:{foundation:0,'first-hires':0,'early-revenue':0,growth:1,scaled:1} },
-  ],
-  legal: [
-    { id:'4.1',  title:'Legal & Contracts',                   s:{foundation:2,'first-hires':2,'early-revenue':2,growth:2,scaled:2} },
-    { id:'4.2',  title:'Office & Facilities',                 s:{foundation:0,'first-hires':3,'early-revenue':3,growth:1,scaled:1} },
-    { id:'4.3',  title:'IT Administration',                   s:{foundation:0,'first-hires':1,'early-revenue':1,growth:1,scaled:1} },
-    { id:'4.4',  title:'Vendor & Procurement',                s:{foundation:0,'first-hires':0,'early-revenue':0,growth:1,scaled:1} },
-  ],
+// Map processes.json category → sunburst sector id
+const JSON_CATEGORY_TO_SECTOR = {
+  'strategic': 'strategic',
+  'financial': 'financial',
+  'revenue': 'revenue',
+  'people': 'people',
+  'legal-and-other-ops': 'legal',
 };
+const CAT_TO_FOLDER = {
+  'strategic': 'strategic',
+  'financial': 'financial',
+  'revenue': 'revenue',
+  'people': 'people',
+  'legal-and-other-ops': 'legal',
+};
+
+/** Build PROCESSES grid: N/A from stages.future, else score markdown like wiki.html */
+async function loadProcessesWithScores() {
+  const { processes } = await fetch('data/processes.json').then(r => {
+    if (!r.ok) throw new Error('processes.json ' + r.status);
+    return r.json();
+  });
+
+  const grid = Object.fromEntries(CATEGORIES.map(c => [c.id, []]));
+  const stageIds = RINGS.map(r => r.id);
+
+  processes.forEach(p => {
+    const sector = JSON_CATEGORY_TO_SECTOR[p.category];
+    if (!sector) return;
+    grid[sector].push({ id: p.id, title: p.title, stages: p.stages, category: p.category });
+  });
+
+  const fetches = [];
+  for (const sector of CATEGORIES) {
+    for (const proc of grid[sector.id]) {
+      proc.s = {};
+      const folder = CAT_TO_FOLDER[proc.category];
+      for (const stageId of stageIds) {
+        if (proc.stages[stageId] === 'future') {
+          proc.s[stageId] = 0;
+          continue;
+        }
+        const path = `wiki/processes/${folder}/${proc.id}--${stageId}.md`;
+        fetches.push(
+          fetch(path)
+            .then(res => (res.ok ? res.text() : ''))
+            .then(raw => { proc.s[stageId] = WikiContentScore.statusFromMarkdown(raw); })
+            .catch(() => { proc.s[stageId] = 1; })
+        );
+      }
+    }
+  }
+
+  await Promise.all(fetches);
+  return grid;
+}
 
 // ── SVG helpers ──────────────────────────────────────────
 const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -232,24 +241,12 @@ function stageLabel(id) {
   return { foundation:'Foundation', 'first-hires':'First Hires', 'early-revenue':'Early Revenue', growth:'Growth', scaled:'Scaled' }[id] || id;
 }
 
-// ── Draw background ring separators ────────────────────
-const bgGroup = el('g');
-svg.appendChild(bgGroup);
+function drawSunburstArcs(PROCESSES) {
+  const counts = { complete: 0, scaffolded: 0, stub: 0, na: 0 };
+  const arcGroup = el('g', { cursor: 'pointer', id: 'sunburst-arcs' });
+  svg.appendChild(arcGroup);
 
-// Thin separator circles between rings
-for (const ring of RINGS) {
-  bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: ring.r1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
-}
-// Outer boundary
-bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: RINGS[4].r2 + 1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
-
-// ── Draw sunburst arcs ──────────────────────────────────
-let counts = { complete: 0, scaffolded: 0, stub: 0, na: 0 };
-
-const arcGroup = el('g', { cursor: 'pointer' });
-svg.appendChild(arcGroup);
-
-for (const cat of CATEGORIES) {
+  for (const cat of CATEGORIES) {
   const procs = PROCESSES[cat.id];
   const sliceDeg = (SECTOR_DEG - 2 * GAP) / procs.length;
 
@@ -307,12 +304,22 @@ for (const cat of CATEGORIES) {
       arcGroup.appendChild(path);
     }
   }
+  }
+
+  return counts;
 }
 
-// ── Draw sector separator lines ─────────────────────────
-const sepGroup = el('g');
-svg.appendChild(sepGroup);
-for (const cat of CATEGORIES) {
+function drawStaticMapLayers() {
+  const bgGroup = el('g');
+  svg.appendChild(bgGroup);
+  for (const ring of RINGS) {
+    bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: ring.r1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
+  }
+  bgGroup.appendChild(el('circle', { cx: CX, cy: CY, r: RINGS[4].r2 + 1, fill: 'none', stroke: '#0d1117', 'stroke-width': '2' }));
+
+  const sepGroup = el('g');
+  svg.appendChild(sepGroup);
+  for (const cat of CATEGORIES) {
   const a = cat.startAngle;
   const inner = polar(CX, CY, RINGS[0].r1, a);
   const outer = polar(CX, CY, RINGS[4].r2, a);
@@ -326,13 +333,15 @@ for (const cat of CATEGORIES) {
 const innerR = RINGS[0].r1;
 svg.appendChild(el('circle', { cx: CX, cy: CY, r: innerR - 2, fill: '#161b22', stroke: '#30363d', 'stroke-width': '1' }));
 
-function addCenterText(txt, y, size, color, weight = '400') {
+function addCenterText(txt, y, size, color, weight = '400', id = null) {
   const t = el('text', { x: CX, y: CY + y, 'text-anchor': 'middle', 'dominant-baseline': 'middle', fill: color, 'font-size': size, 'font-family': 'Space Grotesk, sans-serif', 'font-weight': weight });
+  if (id) t.id = id;
   t.textContent = txt;
   svg.appendChild(t);
+  return t;
 }
 addCenterText('Wiki', -22, '13', '#8b949e', '600');
-addCenterText('130', 2, '22', '#e6edf3', '700');
+addCenterText('…', 2, '22', '#e6edf3', '700', 'center-cell-count');
 addCenterText('cells', 22, '11', '#6e7681');
 
 // ── Ring labels (right side, inside outer ring) ─────────
@@ -427,7 +436,7 @@ function addDot(x, y, color, r = 5) {
 }
 
 // Blog card
-addCard(18, 50, 175, 260);
+addCard(18, 50, 175, 318);
 addText('📝 Blog', 30, 74, '11', '#8b949e', 'start', '600');
 addText('Published', 30, 100, '9.5', '#6e7681', 'start', '400');
 addDot(36, 119, '#3fb950', 4);
@@ -436,18 +445,21 @@ addDot(36, 137, '#3fb950', 4);
 addText('The Gap Where Friction Lives', 47, 137, '9', '#e6edf3');
 addDot(36, 155, '#3fb950', 4);
 addText('How Founders Lose the Team', 47, 155, '9', '#e6edf3');
-addText('Backlog', 30, 181, '9.5', '#6e7681', 'start', '400');
-addDot(36, 200, '#2d333b', 4);
-addText('Why this exists / origin', 47, 200, '9', '#6e7681');
-addDot(36, 217, '#2d333b', 4);
-addText('The most fixable patterns', 47, 217, '9', '#6e7681');
-addDot(36, 234, '#2d333b', 4);
-addText('Entry-point per archetype', 47, 234, '9', '#6e7681');
-addDot(36, 251, '#2d333b', 4);
-addText('Founder → Architect', 47, 251, '9', '#6e7681');
+addDot(36, 173, '#3fb950', 4);
+addText('A True Strategy Is Crucial…', 47, 173, '9', '#e6edf3');
+addText('Templates', 30, 199, '9.5', '#6e7681', 'start', '400');
+addDot(36, 218, '#58a6ff', 4);
+addText('Working at, goals, event, DD', 47, 218, '9', '#e6edf3');
+addText('Backlog', 30, 244, '9.5', '#6e7681', 'start', '400');
+addDot(36, 263, '#2d333b', 4);
+addText('Transaction-ready (draft)', 47, 263, '9', '#6e7681');
+addDot(36, 280, '#2d333b', 4);
+addText('Why this exists / origin', 47, 280, '9', '#6e7681');
+addDot(36, 297, '#2d333b', 4);
+addText('Entry-point per archetype', 47, 297, '9', '#6e7681');
 
 // Diagnostic card
-addCard(887, 50, 177, 270);
+addCard(887, 50, 177, 292);
 addText('⚙ Diagnostic', 899, 75, '11', '#8b949e', 'start', '600');
 addText('Working', 899, 103, '9.5', '#6e7681', 'start', '400');
 addDot(905, 123, '#3fb950', 4);
@@ -457,12 +469,14 @@ addText('Stage / revenue / funding filters', 916, 143, '9', '#e6edf3');
 addDot(905, 163, '#3fb950', 4);
 addText('Variants resolver (1.2b live)', 916, 163, '9', '#e6edf3');
 addText('Next', 899, 191, '9.5', '#6e7681', 'start', '400');
-addDot(905, 211, '#f0883e', 4);
-addText('Variants for 2.2, 2.3, 4.1, 5.x', 916, 211, '9', '#8b949e');
-addDot(905, 231, '#2d333b', 4);
-addText('Result page → wiki / blog', 916, 231, '9', '#6e7681');
+addDot(905, 211, '#3fb950', 4);
+addText('DD filing wiki: 4.1, 2.5, 3.1', 916, 211, '9', '#e6edf3');
+addDot(905, 231, '#f0883e', 4);
+addText('Variants for 2.2, 2.3, 5.x', 916, 231, '9', '#8b949e');
 addDot(905, 251, '#2d333b', 4);
-addText('Quick COO-or-not mode', 916, 251, '9', '#6e7681');
+addText('Result page → wiki / blog', 916, 251, '9', '#6e7681');
+addDot(905, 271, '#2d333b', 4);
+addText('Quick COO-or-not mode', 916, 271, '9', '#6e7681');
 
 // ── Framework hub label ─────────────────────────────────
 addText('Duct Tape to COO', CX, HUB_Y - 8, '13', '#e6edf3', 'middle', '700');
@@ -478,6 +492,7 @@ for (const ring of RINGS) {
   const pt = polar(CX, CY, rMid, stageTickAngle);
   // small text inside the Financial arcs at their midpoint
   // These overlap the arc, so just rely on ring labels inside arcs (already done above for Strategic)
+}
 }
 
 // ── Tooltip logic ───────────────────────────────────────
@@ -510,16 +525,36 @@ function moveTip(e) {
 
 function hideTip() { tip.style.display = 'none'; }
 
-// ── Stats row ────────────────────────────────────────────
-const total = counts.complete + counts.scaffolded + counts.stub;
-document.getElementById('stats').innerHTML = `
-  <div class="stat"><span class="stat-n" style="color:#3fb950">${counts.complete}</span><span class="stat-label">Complete wiki entries</span></div>
-  <div class="stat"><span class="stat-n" style="color:#b9d29f">${counts.scaffolded}</span><span class="stat-label">One sentence, needs content</span></div>
-  <div class="stat"><span class="stat-n" style="color:#8fa87a">${counts.stub}</span><span class="stat-label">Placeholder only</span></div>
-  <div class="stat"><span class="stat-n" style="color:#6e7681">${counts.na}</span><span class="stat-label">N/A at that stage</span></div>
-  <div class="stat"><span class="stat-n" style="color:#e6edf3">${total}</span><span class="stat-label">Total wiki cells</span></div>
-  <div class="stat"><span class="stat-n" style="color:#e6edf3">3</span><span class="stat-label">Blog posts published</span></div>
-`;
+function renderStats(counts) {
+  const total = counts.complete + counts.scaffolded + counts.stub;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><span class="stat-n" style="color:#3fb950">${counts.complete}</span><span class="stat-label">Complete wiki entries</span></div>
+    <div class="stat"><span class="stat-n" style="color:#b9d29f">${counts.scaffolded}</span><span class="stat-label">One sentence, needs content</span></div>
+    <div class="stat"><span class="stat-n" style="color:#8fa87a">${counts.stub}</span><span class="stat-label">Placeholder only</span></div>
+    <div class="stat"><span class="stat-n" style="color:#6e7681">${counts.na}</span><span class="stat-label">N/A at that stage</span></div>
+    <div class="stat"><span class="stat-n" style="color:#e6edf3">${total}</span><span class="stat-label">Total wiki cells</span></div>
+    <div class="stat"><span class="stat-n" style="color:#e6edf3">4</span><span class="stat-label">Blog posts published</span></div>
+    <div class="stat"><span class="stat-n" style="color:#58a6ff">4</span><span class="stat-label">Doc templates (MD + HTML)</span></div>
+  `;
+}
+
+async function init() {
+  try {
+    const PROCESSES = await loadProcessesWithScores();
+    const counts = drawSunburstArcs(PROCESSES);
+    const total = counts.complete + counts.scaffolded + counts.stub;
+    const centerEl = document.getElementById('center-cell-count');
+    if (centerEl) centerEl.textContent = String(total);
+    renderStats(counts);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('stats').innerHTML =
+      `<span style="color:#f0883e;font-size:.85rem">Could not load coverage map. Run via local server (see AGENTS.md).</span>`;
+  }
+}
+
+drawStaticMapLayers();
+init();
 </script>
 </body>
 </html>
