@@ -95,6 +95,13 @@ def parse_frontmatter(text):
         # Null / empty list start
         elif val == '' or val == '[]':
             val = []
+        # Inline YAML array: [item1, item2] or [item]
+        elif val.startswith('[') and val.endswith(']'):
+            inner = val[1:-1].strip()
+            if not inner:
+                val = []
+            else:
+                val = [item.strip().strip('"\'') for item in inner.split(',') if item.strip()]
         # Int
         elif val.isdigit():
             val = int(val)
