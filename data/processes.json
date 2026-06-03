@@ -368,7 +368,7 @@
       "sensitivity": "none",
       "description": "Day-to-day bookkeeping accuracy, account reconciliation procedures, month-end close process, audit trail and documentation standards, chart of accounts management",
       "stageFocus": {
-        "foundation": "Outsource bookkeeping from day one, create a /finance/ folder, and set up a chart of accounts with a path to automate later.",
+        "foundation": "Create a /finance/ folder and set up a chart of accounts with your bookkeeper before the first hire.",
         "first-hires": "Run month-end close through your bookkeeper, file loonheffing in /finance/tax/, and keep copies in your company filing — not only in the bookkeeper's portal.",
         "early-revenue": "Maintain the management-to-statutory bridge, file annual accounts and tax/WBSO docs, and document financial systems and internal controls before due diligence.",
         "growth": "Keep the management-to-statutory bridge current and archive monthly management reports for at least 18 months.",
@@ -391,8 +391,8 @@
       "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance, insurance coordination, employee record keeping",
       "stageFocus": {
         "foundation": "Use a payroll provider before you hire, assign founder IP to the company, and create /hr/ folders before the first contract arrives.",
-        "first-hires": "File every signed contract in /hr/, use lawyer-reviewed templates, and designate a vertrouwenspersoon from the first employee.",
-        "early-revenue": "One owner for HR filing, close contract gaps starting with senior hires, and maintain light HR metrics for due diligence.",
+        "first-hires": "File every signed contract in /hr/ with salary addenda, use lawyer-reviewed templates, and keep freelance IP assignments on file.",
+        "early-revenue": "One owner for HR admin filing, light HR metrics, and contracts kept out of managers' email.",
         "growth": "Migrate to an HRIS with one source of truth, and keep HR filing complete enough to answer buyer due diligence in days, not weeks.",
         "scaled": "Dedicated HR ops function. Automated workflows for contracts, onboarding, offboarding, and compliance. Regular audits of employee records and benefits. Clear escalation paths for HR issues."
       },
