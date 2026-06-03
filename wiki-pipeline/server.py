@@ -124,55 +124,62 @@ def write_file(path, content):
 
 def list_entries():
     """
-    Walk entries/ and return a list of dicts:
+    Walk entries/ recursively and return a list of dicts:
     { process, phase, claim_count, approved, pending, rejected }
+    process is the full relative path from ENTRIES_DIR minus the final phase segment,
+    so it correctly handles both 2-level (category/phase) and 3-level
+    (category/process/phase) directory structures.
     """
     entries = []
     if not os.path.exists(ENTRIES_DIR):
         return entries
 
-    for process in sorted(os.listdir(ENTRIES_DIR)):
-        process_dir = os.path.join(ENTRIES_DIR, process)
-        if not os.path.isdir(process_dir):
+    for root, dirs, files in os.walk(ENTRIES_DIR):
+        dirs.sort()  # consistent ordering
+        if 'draft.md' not in files:
             continue
-        for phase in sorted(os.listdir(process_dir)):
-            phase_dir = os.path.join(process_dir, phase)
-            if not os.path.isdir(phase_dir):
-                continue
 
-            draft_path = os.path.join(phase_dir, "draft.md")
-            approval_path = os.path.join(phase_dir, "approval.md")
+        rel = os.path.relpath(root, ENTRIES_DIR).replace(os.sep, '/')
+        parts = rel.split('/')
+        if len(parts) < 2:
+            continue
 
-            draft_text = read_file(draft_path)
-            approval_text = read_file(approval_path)
+        phase   = parts[-1]
+        process = '/'.join(parts[:-1])
 
-            claim_count = 0
-            approved = 0
-            rejected = 0
-            pending = 0
+        draft_text    = read_file(os.path.join(root, "draft.md"))
+        approval_text = read_file(os.path.join(root, "approval.md"))
 
-            if draft_text:
-                fm, _ = parse_frontmatter(draft_text)
-                claim_count = fm.get('claim_count', 0)
+        claim_count = 0
+        approved = 0
+        rejected = 0
+        pending = 0
 
-            if approval_text:
-                statuses = re.findall(r'^- Status:\s*(\w+)', approval_text, re.MULTILINE)
-                for s in statuses:
-                    if s in ('approved', 'approved_with_edit'):
-                        approved += 1
-                    elif s == 'rejected':
-                        rejected += 1
-                    else:
-                        pending += 1
+        if draft_text:
+            fm, _ = parse_frontmatter(draft_text)
+            claim_count = int(fm.get('claim_count', 0))
 
-            entries.append({
-                "process": process,
-                "phase": phase,
-                "claim_count": claim_count,
-                "approved": approved,
-                "rejected": rejected,
-                "pending": pending,
-            })
+        if approval_text:
+            statuses = re.findall(r'^- Status:\s*(\w+)', approval_text, re.MULTILINE)
+            for s in statuses:
+                if s in ('approved', 'approved_with_edit'):
+                    approved += 1
+                elif s == 'rejected':
+                    rejected += 1
+                else:
+                    pending += 1
+        else:
+            # No approval file yet — all claims are pending
+            pending = claim_count
+
+        entries.append({
+            "process": process,
+            "phase":   phase,
+            "claim_count": claim_count,
+            "approved": approved,
+            "rejected": rejected,
+            "pending":  pending,
+        })
 
     return entries
 
@@ -515,8 +522,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.send_json(list_entries())
             return
 
-        # GET /api/entry/{process}/{phase}
-        m = re.match(r'^/api/entry/([^/]+)/([^/]+)$', path)
+        # GET /api/entry/{process...}/{phase}  (process may contain slashes)
+        m = re.match(r'^/api/entry/(.+)/([^/]+)$', path)
         if m:
             process, phase = m.group(1), m.group(2)
             data = load_entry(process, phase)

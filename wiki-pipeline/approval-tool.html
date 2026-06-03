@@ -62,30 +62,82 @@
     letter-spacing: 0.02em;
   }
 
-  .entry-selector {
+  /* ── Entry sidebar ── */
+  .entry-nav {
+    width: 240px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .entry-nav-filters {
+    display: flex;
+    gap: 4px;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .filter-btn {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-family: var(--font);
+  }
+  .filter-btn.active { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+  .filter-btn:hover:not(.active) { border-color: var(--border2); }
+
+  .entry-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 0;
+  }
+
+  .entry-group-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 12px 3px;
+  }
+
+  .entry-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-left: 8px;
-  }
-
-  .entry-selector label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-  }
-
-  select {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 0.8rem;
-    padding: 4px 8px;
-    border-radius: 4px;
+    justify-content: space-between;
+    padding: 5px 12px;
     cursor: pointer;
-    outline: none;
+    border-radius: 4px;
+    margin: 0 4px;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    gap: 6px;
   }
-  select:focus { border-color: var(--blue); }
+  .entry-item:hover { background: var(--surface2); }
+  .entry-item.active { background: var(--blue-dim); color: var(--text); }
+  .entry-item.done { color: var(--text-muted); }
+
+  .entry-item-label { flex: 1; min-width: 0; }
+  .entry-item-phase { font-weight: 500; }
+  .entry-item-proc  { font-size: 0.67rem; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .entry-badge {
+    font-size: 0.65rem;
+    padding: 1px 5px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+  .entry-badge.pending  { background: var(--orange-dim); color: var(--orange); }
+  .entry-badge.done     { background: var(--green-dim);  color: var(--green); }
 
   .progress-wrap {
     margin-left: auto;
@@ -599,12 +651,6 @@
   <!-- Header -->
   <div class="app-header">
     <h1>Wiki Pipeline · Claim Review</h1>
-    <div class="entry-selector">
-      <label for="entry-select">Entry:</label>
-      <select id="entry-select">
-        <option value="">Loading...</option>
-      </select>
-    </div>
     <div class="progress-wrap">
       <div class="progress-label" id="progress-label">— of — reviewed</div>
       <div class="progress-bar-outer">
@@ -616,9 +662,21 @@
   <!-- Body -->
   <div class="app-body">
 
+    <!-- Entry sidebar -->
+    <div class="entry-nav" id="entry-nav">
+      <div class="entry-nav-filters">
+        <button class="filter-btn active" id="filter-all"    onclick="setFilter('all')">All</button>
+        <button class="filter-btn"        id="filter-review" onclick="setFilter('review')">Needs review</button>
+        <button class="filter-btn"        id="filter-done"   onclick="setFilter('done')">Done</button>
+      </div>
+      <div class="entry-list" id="entry-list">
+        <div class="state-message" style="font-size:0.8rem;padding:16px">Loading…</div>
+      </div>
+    </div>
+
     <!-- Claim nav sidebar -->
     <div class="claim-nav" id="claim-nav">
-      <div class="state-message">Select an entry above.</div>
+      <div class="state-message">Select an entry.</div>
     </div>
 
     <!-- Review pane -->
@@ -698,6 +756,68 @@ function esc(str) {
     .replace(/"/g, '&quot;');
 }
 
+// ── Entry sidebar ─────────────────────────────────────────────────────────────
+
+let entryFilter = 'all';  // 'all' | 'review' | 'done'
+let activeEntryKey = null;
+
+function setFilter(f) {
+  entryFilter = f;
+  ['all', 'review', 'done'].forEach(k => {
+    el(`filter-${k}`).classList.toggle('active', k === f);
+  });
+  renderEntryList();
+}
+
+function entryKey(e) { return `${e.process}/${e.phase}`; }
+
+function renderEntryList() {
+  const filtered = entries.filter(e => {
+    const done = e.pending === 0 && e.claim_count > 0;
+    if (entryFilter === 'review') return !done;
+    if (entryFilter === 'done')   return done;
+    return true;
+  });
+
+  // Group by process
+  const groups = {};
+  filtered.forEach(e => {
+    if (!groups[e.process]) groups[e.process] = [];
+    groups[e.process].push(e);
+  });
+
+  const phaseOrder = ['foundation', 'first-hires', 'early-revenue', 'growth', 'scaled'];
+
+  let html = '';
+  Object.keys(groups).sort().forEach(proc => {
+    const items = groups[proc].sort((a, b) => {
+      const ai = phaseOrder.indexOf(a.phase), bi = phaseOrder.indexOf(b.phase);
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    });
+    html += `<div class="entry-group-label">${esc(proc)}</div>`;
+    items.forEach(e => {
+      const key  = entryKey(e);
+      const done = e.pending === 0 && e.claim_count > 0;
+      const badge = done
+        ? `<span class="entry-badge done">✓</span>`
+        : e.pending > 0
+          ? `<span class="entry-badge pending">${e.pending}</span>`
+          : '';
+      html += `
+        <div class="entry-item ${done ? 'done' : ''} ${key === activeEntryKey ? 'active' : ''}"
+             onclick="loadEntry('${esc(key)}')">
+          <div class="entry-item-label">
+            <div class="entry-item-phase">${esc(e.phase)}</div>
+          </div>
+          ${badge}
+        </div>`;
+    });
+  });
+
+  if (!html) html = `<div style="font-size:0.78rem;color:var(--text-muted);padding:12px">No entries match this filter.</div>`;
+  el('entry-list').innerHTML = html;
+}
+
 // ── Boot ──────────────────────────────────────────────────────────────────────
 
 async function boot() {
@@ -710,23 +830,26 @@ async function boot() {
     return;
   }
 
-  const sel = el('entry-select');
-  sel.innerHTML = entries.map(e =>
-    `<option value="${e.process}/${e.phase}">${e.process} / ${e.phase} (${e.approved + e.rejected}/${e.claim_count} reviewed)</option>`
-  ).join('');
+  renderEntryList();
 
-  sel.addEventListener('change', () => loadEntry(sel.value));
-
-  if (entries.length > 0) {
-    loadEntry(`${entries[0].process}/${entries[0].phase}`);
-  }
+  // Auto-load the first entry that needs review, or the first entry
+  const firstReview = entries.find(e => e.pending > 0);
+  const first = firstReview || entries[0];
+  if (first) loadEntry(entryKey(first));
 }
 
 // ── Entry loader ──────────────────────────────────────────────────────────────
 
 async function loadEntry(key) {
   if (!key) return;
-  const [process, phase] = key.split('/');
+  // process may contain slashes — split on last '/' only
+  const lastSlash = key.lastIndexOf('/');
+  const process = key.slice(0, lastSlash);
+  const phase   = key.slice(lastSlash + 1);
+
+  activeEntryKey = key;
+  renderEntryList();  // re-render to update active highlight
+
   el('review-pane').innerHTML = '<div class="state-message">Loading...</div>';
   el('claim-nav').innerHTML = '<div class="state-message">Loading...</div>';
 
@@ -781,10 +904,14 @@ function updateProgress() {
   el('progress-label').textContent = `${reviewed} of ${total} reviewed`;
   el('progress-bar').style.width = `${pct}%`;
 
-  // Update the entry selector label
-  const sel = el('entry-select');
-  const opt = [...sel.options].find(o => o.value === `${currentEntry.process}/${currentEntry.phase}`);
-  if (opt) opt.textContent = `${currentEntry.process} / ${currentEntry.phase} (${reviewed}/${total} reviewed)`;
+  // Update the entry sidebar to reflect new review counts
+  const eIdx = entries.findIndex(e => e.process === currentEntry.process && e.phase === currentEntry.phase);
+  if (eIdx >= 0) {
+    entries[eIdx].approved = currentEntry.claims.filter(c => ['approved','approved_with_edit'].includes(c.approval.status)).length;
+    entries[eIdx].rejected = currentEntry.claims.filter(c => c.approval.status === 'rejected').length;
+    entries[eIdx].pending  = currentEntry.claims.filter(c => c.approval.status === 'pending').length;
+    renderEntryList();
+  }
 }
 
 // ── Claim renderer ────────────────────────────────────────────────────────────
