@@ -1,43 +1,36 @@
 ---
-process_id: "2.5"
-process_name: "Financial Administration"
-stage: "growth"
-stage_label: "Growth"
-priority: "critical"
-category: "financial"
-primary_axis: "headcount"
-sensitivity: "none"
-conditions: []
-last_updated: "2026-06-03"
-stage_focus: "Keep the management-to-statutory bridge current and archive monthly management reports for at least 18 months."
+process: financial-administration
+phase: growth
+last_updated: 2026-06-03
+claim_count: 4
 ---
 
-# Financial Administration — Growth
+# Financial Administration — Growth (~30–100 people)
 
 > At growth, financial administration is a maintained system — bridge document, archived management reporting, and internal controls that survive team changes and due diligence.
 
 ## What good looks like at this stage
 
+<!-- claim-id: c-001 -->
 - **The management-to-statutory bridge is current, and monthly management reports for at least 18 months are archived and retrievable.** Buyers and investors can assess trends without rebuilding history from raw exports.
-  <!-- sources: src-039 (Practitioner contribution — Formal Financial Filing) -->
+  <!-- sources: src-039 (practitioner contribution) -->
 
 ## What you actually need to do
 
+<!-- claim-id: c-002 -->
 1. **Archive every monthly management report in a dated folder when it is finalised.** Do not rely on "it's in the BI tool" — export and file. Trend and seasonality questions come up in every serious process.
-   <!-- sources: src-039 (Practitioner contribution — Formal Financial Filing) -->
+   <!-- sources: src-039 (practitioner contribution) -->
 
 ## Warning signs you're behind
 
 ### Output quality
 
+<!-- claim-id: c-003 -->
 - **You can produce this year's P&L but not last year's monthly series in consistent categories.** Historical comparability breaks down; due diligence timelines extend while someone rebuilds the series.
-  <!-- sources: src-039 (Practitioner contribution — Formal Financial Filing) | flags: unverified -->
+  <!-- sources: src-039 (practitioner contribution) | flags: unverified -->
 
 ## How this evolves next
 
+<!-- claim-id: c-004 -->
 - **At Scaled, a controller or CFO owns formal financial administration with sign-off on internal controls.** The transition is from founder-managed or outsourced-plus-founder to a professional finance function with an enforced close calendar.
-  <!-- sources: src-039 (Practitioner contribution — Formal Financial Filing) -->
-
-## Sources
-
-- [Practitioner contribution — Formal Financial Filing](../../../wiki-pipeline/contributions/financial-2.5--formal-filing.md) · [pipeline record](../../../wiki-pipeline/sources/src-039.md) · practitioner_contribution · no bias signals
+  <!-- sources: src-039 (practitioner contribution) -->
