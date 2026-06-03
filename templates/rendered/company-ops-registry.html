@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Ops Registry — …</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f9f9f8;
+      font-family: Arial, -apple-system, sans-serif;
+      color: #37352f;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+
+    /* ── Banner ─────────────────────────────────────────────────── */
+    #banner {
+      height: 28px;
+      width: 100%;
+    }
+
+    /* ── Page ────────────────────────────────────────────────────── */
+    .page-wrap { position: relative; }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 72px 72px;
+      background: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    #icon {
+      font-size: 28pt;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+
+    #title {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+
+    #intro {
+      color: #787774;
+      font-size: 11pt;
+      margin-bottom: 24px;
+      max-width: 640px;
+    }
+
+    #intro strong {
+      color: #37352f;
+      font-weight: 600;
+    }
+
+    /* ── Section headers ─────────────────────────────────────────── */
+    #content h2 {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-top: 28px;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid #e3e2e0;
+      line-height: 1.2;
+    }
+
+    #content h2:first-child {
+      margin-top: 4px;
+    }
+
+    #content h3 {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #37352f;
+      margin-top: 18px;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    /* ── Lists ───────────────────────────────────────────────────── */
+    #content ul {
+      list-style: disc;
+      padding-left: 22px;
+      margin: 4px 0 10px;
+    }
+
+    #content ul ul {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    #content ul li {
+      padding: 2px 0;
+      line-height: 1.45;
+      color: #37352f;
+    }
+
+    #content li > p {
+      margin: 0;
+      display: inline;
+    }
+
+    #content li strong {
+      font-weight: 700;
+    }
+
+    /* ── Dividers between subsections ────────────────────────────── */
+    #content hr {
+      border: none;
+      border-top: 1px solid #e3e2e0;
+      margin: 20px 0;
+    }
+
+    /* ── Paragraph spacing ───────────────────────────────────────── */
+    #content p { margin: 6px 0 10px; }
+
+    #content p em {
+      color: #787774;
+      font-style: italic;
+    }
+
+    #content table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10pt;
+      margin: 12px 0 16px;
+    }
+
+    #content th, #content td {
+      border: 1px solid #e3e2e0;
+      padding: 6px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    #content th {
+      background: #f7f6f3;
+      font-weight: 700;
+    }
+
+    /* ── Links ───────────────────────────────────────────────────── */
+    #content a {
+      color: #0563c1;
+      text-decoration: underline;
+    }
+
+    #content a[href=""] {
+      cursor: default;
+      color: #0563c1;
+    }
+
+    /* ── Edit link ───────────────────────────────────────────────── */
+    #edit-link {
+      position: absolute;
+      top: 36px;
+      right: 20px;
+      font-size: 9pt;
+      color: #b7b5b0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.7;
+      transition: opacity 0.15s, color 0.15s;
+    }
+
+    #edit-link:hover { opacity: 1; color: #37352f; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      .page { padding: 20px 24px 48px; }
+      #edit-link { top: 8px; right: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+<div id="banner"></div>
+<a id="edit-link" href="#" target="_blank" rel="noopener" style="display:none">
+  <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor">
+    <path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354zm.514 3.605-1.44-1.44-6.86 6.86-.367 1.281 1.281-.367z"/>
+  </svg>
+  Edit
+</a>
+
+<div class="page">
+  <div id="icon"></div>
+  <h1 id="title"></h1>
+  <div id="intro"></div>
+  <div id="content"></div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+<script>
+
+function parseFrontmatter(text) {
+  const norm = text.replace(/\r\n/g, '\n');
+  const match = norm.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: norm };
+  const meta = {};
+  for (const line of match[1].split('\n')) {
+    const kv = line.match(/^(\w+):\s*"?(.*?)"?\s*$/);
+    if (kv) meta[kv[1]] = kv[2];
+  }
+  return { meta, body: match[2] };
+}
+
+marked.setOptions({ gfm: true, breaks: false });
+
+const mdFile = (new URLSearchParams(location.search).get('page') || 'company-ops-registry') + '.md';
+
+// HTML lives in templates/rendered/, MD lives in templates/docs/.
+(function buildEditLink() {
+  const host = location.hostname;
+  if (!host.endsWith('.github.io')) return;
+  const owner = host.split('.')[0];
+  const pathParts = location.pathname.split('/').filter(Boolean);
+  const repo = pathParts[0];
+  const renderedDir = pathParts.slice(1, -1).join('/');
+  const docsDir = renderedDir.replace(/\/rendered$/, '/docs');
+  const fullMdPath = docsDir ? docsDir + '/' + mdFile : mdFile;
+  const link = document.getElementById('edit-link');
+  link.href = `https://github.com/${owner}/${repo}/edit/main/${fullMdPath}`;
+  link.style.display = 'flex';
+})();
+
+fetch('../docs/' + mdFile)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+  .then(raw => {
+    const { meta, body } = parseFrontmatter(raw);
+
+    document.getElementById('banner').style.background = meta.color || '#5c6b7a';
+
+    const h1Match = body.match(/^#[ \t]+(.+)$/m);
+    const fullTitle = h1Match ? h1Match[1].trim() : '';
+    const emojiMatch = fullTitle.match(/^([\p{Emoji}\u{1F3FB}-\u{1F3FF}\u{200D}\u{FE0F}]+)\s*/u);
+    const icon      = emojiMatch ? emojiMatch[1] : '';
+    const titleText = fullTitle.replace(emojiMatch ? emojiMatch[0] : '', '').trim();
+
+    const afterH1 = body.replace(/^#[ \t]+.+$/m, '').trim();
+    const firstH2pos = afterH1.search(/^##[ \t]/m);
+    const introMd   = firstH2pos > 0 ? afterH1.slice(0, firstH2pos).trim() : '';
+    const contentMd = firstH2pos > 0 ? afterH1.slice(firstH2pos).trim() : afterH1;
+
+    document.title = titleText || 'Company Ops Registry';
+    document.getElementById('icon').textContent  = icon;
+    document.getElementById('title').textContent = titleText;
+    document.getElementById('intro').innerHTML     = marked.parse(introMd);
+    document.getElementById('content').innerHTML = marked.parse(contentMd);
+  })
+  .catch(err => {
+    document.querySelector('.page').innerHTML =
+      `<p style="color:#9b9a97;padding-top:40px">Could not load <code>${mdFile}</code>: ${err.message}</p>`;
+  });
+
+</script>
+</body>
+</html>
