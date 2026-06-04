@@ -123,6 +123,9 @@
   .sidebar-process.stub { opacity: 0.8; }
   .sidebar-process.stub:hover { opacity: 1; background: #161b22; }
   .sidebar-process.has-content { color: #e6edf3; }
+  .sidebar-process:has(.dot-rec) { color: #6e7681; }
+  .sidebar-process:has(.dot-rec).has-content { color: #8b949e; }
+  .sidebar-process:has(.dot-rec).active { color: #58a6ff; }
   .sidebar-process .pid {
     font-size: 0.6rem;
     color: #484f58;
@@ -331,7 +334,7 @@
   .wiki-content.stage-overview td:first-child {
     width: 38%;
     padding-right: 20px;
-    font-weight: 600;
+    font-weight: 400;
   }
   .wiki-content.stage-overview a {
     color: #e6edf3;
@@ -347,6 +350,63 @@
     color: #8b949e;
     font-size: 0.83rem;
     line-height: 1.6;
+  }
+
+  .wiki-content.stage-overview h3 {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #484f58;
+    margin: 22px 0 8px;
+    padding: 0;
+    border: none;
+  }
+  .wiki-content.stage-overview h2 + h3 {
+    margin-top: 12px;
+  }
+
+  /* Recommended tier — lower visual priority than Critical */
+  .wiki-content.stage-overview .stage-tier-recommended {
+    margin-top: 2.8rem;
+    color: #8b949e;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended h2 {
+    font-size: 0.95rem;
+    color: #8b949e;
+    border-bottom-color: #1c2128;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended h3 {
+    color: #30363d;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended table {
+    margin-bottom: 18px;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended td {
+    padding: 6px 0;
+    color: #6e7681;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended td:first-child {
+    color: #8b949e;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended table td:first-child a,
+  .wiki-content.stage-overview .stage-tier-recommended a {
+    color: #8b949e;
+    text-decoration: none;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended table td:first-child a:visited,
+  .wiki-content.stage-overview .stage-tier-recommended a:visited {
+    color: rgba(139, 148, 158, 0.9);
+  }
+  .wiki-content.stage-overview .stage-tier-recommended td:first-child a:hover,
+  .wiki-content.stage-overview .stage-tier-recommended a:hover {
+    color: #58a6ff;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended td:last-child {
+    color: #6e7681;
+  }
+  .wiki-content.stage-overview .stage-tier-recommended strong {
+    color: #8b949e;
   }
 
   .wiki-content hr {
@@ -495,6 +555,64 @@ function getHash() {
 }
 function setHash(key) {
   history.pushState(null, '', '#' + encodeURIComponent(key));
+}
+
+// ── Stage overview: group process tables by category ─────────────────────────
+
+function processIdFromTableRow(line) {
+  const m = line.match(/\]\([^)]*\/([\d.]+b?)--/);
+  return m ? m[1] : null;
+}
+
+function categoryForProcessId(processId) {
+  const proc = allProcesses.find(p => p.id === processId);
+  return proc?.category || null;
+}
+
+function groupStageOverviewByCategory(body) {
+  const tableBlockRe = /(## [^\n]+\n+(?:[^\n]*\n+)*?)(\|[^\n]+\|\n\|[-:\s|]+\|\n)((?:\|[^\n]+\|\n)+)/g;
+  return body.replace(tableBlockRe, (match, heading, tableHead, tableBody) => {
+    const rows = tableBody.trim().split('\n').filter(line => line.trim().startsWith('|'));
+    if (rows.length === 0) return match;
+
+    const grouped = {};
+    rows.forEach(row => {
+      const pid = processIdFromTableRow(row);
+      const cat = categoryForProcessId(pid);
+      if (!cat) return;
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push(row);
+    });
+
+    let out = heading;
+    CATEGORY_ORDER.forEach(cat => {
+      const catRows = grouped[cat];
+      if (!catRows?.length) return;
+      out += `### ${CATEGORY_LABELS[cat]}\n\n`;
+      out += tableHead;
+      catRows.forEach(row => { out += row + '\n'; });
+      out += '\n';
+    });
+    return out;
+  });
+}
+
+function wrapStageRecommendedTier(container) {
+  if (!container) return;
+  [...container.querySelectorAll('h2')].forEach(h2 => {
+    if (!/recommended/i.test(h2.textContent)) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'stage-tier-recommended';
+    wrap.dataset.tier = 'recommended';
+    h2.parentNode.insertBefore(wrap, h2);
+    let el = h2;
+    while (el) {
+      const next = el.nextElementSibling;
+      wrap.appendChild(el);
+      if (next && next.tagName === 'H2') break;
+      el = next;
+    }
+  });
 }
 
 // ── Build process file map ────────────────────────────────────────────────────
@@ -741,6 +859,10 @@ function renderPage(raw, key, filePath) {
   // Strip contributor comment blocks
   body = body.replace(/<!--[\s\S]*?-->/g, '').trim();
 
+  if (key.startsWith('stage--')) {
+    body = groupStageOverviewByCategory(body);
+  }
+
   const html = marked.parse(body);
 
   // Breadcrumb
@@ -759,6 +881,9 @@ function renderPage(raw, key, filePath) {
     ${cellNav}
     ${buildGithubFooter(filePath, frontmatter)}
   `;
+  if (key.startsWith('stage--')) {
+    wrapStageRecommendedTier(main.querySelector('.wiki-content.stage-overview'));
+  }
   interceptContentLinks();
   main.scrollTop = 0;
 }
