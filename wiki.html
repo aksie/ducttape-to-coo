@@ -419,6 +419,8 @@ const STAGE_PORTAL_FILES = {
   'scaled':        'wiki/stages/scaled.md',
 };
 
+const DEFAULT_WIKI_KEY = 'stage--foundation';
+
 const PROCESS_FILE_MAP = {};  // populated in init: "1.1--first-hires" → "wiki/processes/strategic/1.1--first-hires.md"
 
 const CAT_TO_FOLDER = {
@@ -927,19 +929,23 @@ async function init() {
     // Configure marked
     marked.setOptions({ gfm: true, breaks: false });
 
-    // Route from hash
+    // Route from hash (default: foundation stage portal — has the most published content)
     const hash = getHash();
+    const key = hash || DEFAULT_WIKI_KEY;
     if (hash) {
       navigateTo(hash);
     } else {
-      // Show placeholder
-      document.getElementById('sidebar-loading')?.remove();
+      currentKey = key;
+      history.replaceState(null, '', '#' + encodeURIComponent(key));
+      setSidebarActive(key);
+      loadContent(key);
     }
+    document.getElementById('sidebar-loading')?.remove();
 
     // Handle back/forward
     window.addEventListener('popstate', () => {
-      const h = getHash();
-      currentKey = h || null;
+      const h = getHash() || DEFAULT_WIKI_KEY;
+      currentKey = h;
       setSidebarActive(currentKey);
       loadContent(currentKey);
     });
