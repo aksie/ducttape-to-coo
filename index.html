@@ -224,6 +224,53 @@
             max-width: 580px;
         }
 
+        /* ── Origin story ─────────────────────────────── */
+        .story-section {
+            border-top: 1px solid var(--border);
+            padding: 72px 32px;
+        }
+
+        .story-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .story-tag {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            color: var(--green);
+            margin-bottom: 20px;
+        }
+
+        .story-lead {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.55;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .story-body {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.75;
+            margin-bottom: 24px;
+        }
+
+        .story-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: gap 0.15s;
+        }
+        .story-link:hover { gap: 8px; }
+
         /* ── Tools grid ───────────────────────────────── */
         .tools-section { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
@@ -231,8 +278,45 @@
 
         .tools-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+        }
+
+        .tools-alt {
+            margin-top: 36px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .tools-alt a {
+            color: var(--text-dim);
+            font-weight: 600;
+            transition: color 0.15s;
+        }
+        .tools-alt a:hover { color: var(--blue); }
+
+        .tool-featured {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .tool-post-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .tool-post-sub {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 0;
         }
 
         .tool-card {
@@ -272,6 +356,7 @@
             color: var(--text-muted);
             margin-bottom: 24px;
         }
+        .tool-best-for.spaced { margin-top: 16px; }
         .tool-best-for strong { color: var(--text-dim); }
 
         .tool-link {
@@ -353,8 +438,12 @@
         .footer-links a:hover { color: var(--text-dim); }
 
         /* ── Responsive ─────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .tools-grid { grid-template-columns: 1fr; }
+        }
+
         @media (max-width: 900px) {
-            .hero-inner, .tools-grid { grid-template-columns: 1fr; gap: 48px; }
+            .hero-inner { grid-template-columns: 1fr; gap: 48px; }
             .hero-visual { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .stats-grid { grid-template-columns: 1fr; }
@@ -438,30 +527,59 @@
     </div>
 </section>
 
-<!-- Tools -->
+<!-- Origin story -->
+<section class="story-section" id="story">
+    <div class="story-inner">
+        <div class="section-label">Why this exists</div>
+        <p class="story-lead">"I think we need a COO." That's how many conversations start.</p>
+        <p class="story-body">
+            Often the fix isn't a hire yet — it's knowing which ops are actually broken versus which only feel urgent.
+            Two patterns keep showing up: the all-rounder who hit the ceiling around fifteen people, and the product founder
+            who duct-taped ops until it's visibly breaking. We built an open diagnostic and wiki so you can see that map
+            before the next big hire.
+        </p>
+        <a href="blog/a-starting-point.html" class="story-link">Read: A Starting Point →</a>
+    </div>
+</section>
+
+<!-- What's here -->
 <section class="tools-section" id="tools">
     <div class="section-inner">
         <div class="tools-header">
-            <div class="section-label">Two tools</div>
-            <h2 class="section-title">Choose your path</h2>
-            <p class="section-desc">Run a full diagnostic or browse stage-specific roadmaps. Both are calibrated to what matters at your stage.</p>
+            <div class="section-label">What's here</div>
+            <h2 class="section-title">Diagnostic today. Knowledge base growing.</h2>
+            <p class="section-desc">
+                Run the assessment for a scored map of your ops. Use the wiki for stage-calibrated guidance on what good looks like.
+                Read the blog for how the framework was built and where it's headed.
+            </p>
         </div>
         <div class="tools-grid">
             <div class="tool-card">
                 <div class="tool-icon">⚙</div>
-                <h3>Full Diagnostic</h3>
-                <p>Interview-based assessment across 28+ operational processes. Score reliability, ownership, documentation, automation, and scalability. Get a prioritized list of what to fix.</p>
-                <p class="tool-best-for"><strong>Best for:</strong> New COO, pre-hire assessment, operational advisor working with founders.</p>
-                <a href="diagnostic.html" class="tool-link">Start Diagnostic →</a>
+                <h3>Operational diagnostic</h3>
+                <p>Assessment across 28+ processes — reliability, ownership, documentation, tooling, and headroom to scale. Calibrated to your stage, with a prioritized fix list.</p>
+                <p class="tool-best-for"><strong>Best for:</strong> New COO onboarding, pre-hire clarity, advisors working with founders.</p>
+                <a href="diagnostic.html" class="tool-link">Start diagnostic →</a>
             </div>
             <div class="tool-card">
-                <div class="tool-icon">↦</div>
-                <h3>Stage Roadmap</h3>
-                <p>Browse all processes by stage. See what's critical vs optional at each phase. Understand what "good enough" looks like for a 5-person vs 50-person team.</p>
-                <p class="tool-best-for"><strong>Best for:</strong> Understanding what's coming next, onboarding new ops hires, checking if you're on track.</p>
-                <a href="roadmap.html" class="tool-link">Browse Roadmap →</a>
+                <div class="tool-icon">◫</div>
+                <h3>Ops wiki</h3>
+                <p>Open playbook: what good looks like at each stage, what to do, warning signs, and how processes evolve as you grow. Growing page by page from real sources.</p>
+                <p class="tool-best-for"><strong>Best for:</strong> Ops hires, founders fixing one process at a time, AI-assisted ops work.</p>
+                <a href="wiki.html" class="tool-link">Explore wiki →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">✎</div>
+                <h3>Blog</h3>
+                <p>Essays on founder ops pain, how the diagnostic came about, and building operational clarity in the open.</p>
+                <p class="tool-featured">Featured</p>
+                <p class="tool-post-title">A Starting Point</p>
+                <p class="tool-post-sub">Two patterns that send founders looking for a COO — and what's worth fixing first.</p>
+                <p class="tool-best-for spaced"><strong>Best for:</strong> Context before you run the diagnostic.</p>
+                <a href="blog/a-starting-point.html" class="tool-link">Read featured post →</a>
             </div>
         </div>
+        <p class="tools-alt">Prefer a stage-by-stage browse? <a href="roadmap.html">Stage roadmap →</a></p>
     </div>
 </section>
 
