@@ -296,6 +296,42 @@
   }
   .wiki-content tr:nth-child(even) td { background: #0d1117; }
   .wiki-content tr:nth-child(odd) td { background: #111820; }
+
+  /* Stage overview portals: borderless process lists, hidden table headers */
+  .wiki-content.stage-overview table {
+    border: none;
+    margin-bottom: 24px;
+  }
+  .wiki-content.stage-overview thead {
+    display: none;
+  }
+  .wiki-content.stage-overview td {
+    border: none;
+    background: transparent !important;
+    padding: 10px 0;
+    vertical-align: top;
+  }
+  .wiki-content.stage-overview td:first-child {
+    width: 38%;
+    padding-right: 20px;
+    font-weight: 600;
+  }
+  .wiki-content.stage-overview a {
+    color: #e6edf3;
+    text-decoration: none;
+  }
+  .wiki-content.stage-overview a:visited {
+    color: rgba(230, 237, 243, 0.9);
+  }
+  .wiki-content.stage-overview a:hover {
+    color: #58a6ff;
+  }
+  .wiki-content.stage-overview td:last-child {
+    color: #8b949e;
+    font-size: 0.83rem;
+    line-height: 1.6;
+  }
+
   .wiki-content hr {
     border: none;
     border-top: 1px solid #21262d;
@@ -691,7 +727,7 @@ function renderPage(raw, key, filePath) {
   main.innerHTML = `
     ${breadcrumb}
     ${badges}
-    <div class="wiki-content">${html}</div>
+    <div class="wiki-content${key.startsWith('stage--') ? ' stage-overview' : ''}">${html}</div>
     ${cellNav}
     ${buildGithubFooter(filePath, frontmatter)}
   `;
