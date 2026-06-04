@@ -7,9 +7,7 @@ tagline: "Build and ship"
 
 # Foundation stage — Founders plus maybe 1 person
 
-> Ship something to real customers. Everything else is secondary.
-
-Keep it very simple. The processes listed here are the minimum you genuinely cannot skip.
+> Ship something to real customers. Everything else is secondary. Keep it very simple. The processes listed here are the minimum you genuinely cannot skip.
 
 ---
 

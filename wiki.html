@@ -41,9 +41,12 @@
 
   .sidebar-stage {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 16px 6px;
+    align-items: stretch;
+    width: 100%;
+  }
+  .sidebar-stage-label {
+    flex: 1;
+    padding: 8px 8px 6px 16px;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.06em;
@@ -54,13 +57,27 @@
     transition: background 0.15s;
     border: none;
     background: none;
-    width: 100%;
     text-align: left;
     font-family: 'JetBrains Mono', monospace;
   }
-  .sidebar-stage:hover { background: #161b22; }
-  .sidebar-stage .chevron { font-size: 0.6rem; color: #484f58; transition: transform 0.2s; }
-  .sidebar-stage.open .chevron { transform: rotate(90deg); }
+  .sidebar-stage-label:hover { background: #161b22; }
+  .sidebar-stage-toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 14px 6px 6px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s;
+  }
+  .sidebar-stage-toggle:hover { background: #161b22; }
+  .sidebar-stage-toggle .chevron {
+    font-size: 0.6rem;
+    color: #515a61;
+    transition: transform 0.2s;
+  }
+  .sidebar-section.open .sidebar-stage-toggle .chevron { transform: rotate(90deg); }
 
   .sidebar-stage-desc {
     padding: 0 16px 8px;
@@ -503,22 +520,35 @@ function buildSidebar(processes, stages) {
     section.className = 'sidebar-section';
     section.dataset.stage = stage.id;
 
-    // Stage toggle button
-    const btn = document.createElement('button');
-    btn.className = 'sidebar-stage';
-    btn.innerHTML = `${stage.name} <span class="chevron">▶</span>`;
-    btn.addEventListener('click', () => {
-      const isOpen = section.classList.contains('open');
-      // close all
+    // Stage header: name → portal; chevron → fold/unfold list only
+    const stageRow = document.createElement('div');
+    stageRow.className = 'sidebar-stage';
+
+    const labelBtn = document.createElement('button');
+    labelBtn.className = 'sidebar-stage-label';
+    labelBtn.type = 'button';
+    labelBtn.textContent = stage.name;
+    labelBtn.addEventListener('click', () => {
       document.querySelectorAll('.sidebar-section').forEach(s => s.classList.remove('open'));
-      document.querySelectorAll('.sidebar-stage').forEach(b => b.classList.remove('open'));
-      if (!isOpen) {
-        section.classList.add('open');
-        btn.classList.add('open');
-        checkStageContent(stage.id);
-      }
+      section.classList.add('open');
+      checkStageContent(stage.id);
+      navigateTo('stage--' + stage.id);
     });
-    section.appendChild(btn);
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'sidebar-stage-toggle';
+    toggleBtn.type = 'button';
+    toggleBtn.setAttribute('aria-label', `Toggle ${stage.name} process list`);
+    toggleBtn.innerHTML = '<span class="chevron">▶</span>';
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = section.classList.toggle('open');
+      if (isOpen) checkStageContent(stage.id);
+    });
+
+    stageRow.appendChild(labelBtn);
+    stageRow.appendChild(toggleBtn);
+    section.appendChild(stageRow);
 
     // Stage portal link
     const portalLink = document.createElement('button');
@@ -586,8 +616,6 @@ function openSidebarStage(stageId) {
   document.querySelectorAll('.sidebar-section').forEach(s => {
     const isMatch = s.dataset.stage === stageId;
     s.classList.toggle('open', isMatch);
-    const btn = s.querySelector('.sidebar-stage');
-    if (btn) btn.classList.toggle('open', isMatch);
   });
   checkStageContent(stageId);
 }
