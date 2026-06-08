@@ -219,6 +219,66 @@
       color: var(--text-dim);
     }
 
+    .external-resources {
+      margin-top: 48px;
+      padding: 20px 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .external-resources h2 {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .external-resources p {
+      font-size: .9rem;
+      color: var(--text-dim);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    .external-resources p:last-child {
+      margin-bottom: 0;
+    }
+
+    .external-resources a {
+      color: var(--blue);
+    }
+
+    .external-resources a:hover {
+      text-decoration: underline;
+    }
+
+    .external-resources ul {
+      margin: 0 0 14px;
+      padding-left: 20px;
+      font-size: .88rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .external-resources li { margin-bottom: 6px; }
+
+    .template-desc code {
+      font-size: .82em;
+      color: var(--text-muted);
+      background: var(--bg);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .external-note {
+      font-size: .8rem !important;
+      color: var(--text-muted) !important;
+      margin-top: 12px !important;
+    }
+
     @media (max-width: 640px) {
       .wrap { padding: 40px 20px 80px; }
       h1 { font-size: 1.6rem; }
@@ -259,7 +319,7 @@
           <span class="template-tag">4.1 · 2.5 · 3.1</span>
         </div>
         <div class="template-title">Company Ops Registry</div>
-        <p class="template-desc">Folder map for legal, finance, HR, and privacy &amp; compliance — one obvious home per document, kept current before any transaction.</p>
+        <p class="template-desc">Folder map for legal, finance, HR, and privacy &amp; compliance — one obvious home per document, kept current before any transaction. Pair with a Capital Waters cap table in <code>/01-corporate/shareholders/</code> (see external resources below).</p>
         <p class="template-wiki"><strong>Wiki:</strong> 4.1 Legal · 2.5 Financial Administration · 3.1 HR Administration</p>
         <div class="template-links">
           <span>Open template →</span>
@@ -275,7 +335,7 @@
           <span class="template-tag">4.1 · 2.5</span>
         </div>
         <div class="template-title">Due diligence checklist</div>
-        <p class="template-desc">Master checklist of what buyers and investors typically request — expected format and where each item lives in your data room.</p>
+        <p class="template-desc">Master checklist of what buyers and investors typically request — expected format and where each item lives in your data room. Cap table and corporate docs cross-ref your registry folders and NL investment templates below.</p>
         <p class="template-wiki"><strong>Wiki:</strong> 4.1 Legal (early revenue) · 2.5 Financial Administration</p>
         <div class="template-links">
           <span>Open template →</span>
@@ -325,6 +385,18 @@
       </div>
     </a>
 
+  </div>
+
+  <div class="external-resources">
+    <h2>External resources — Netherlands investment documents</h2>
+    <p><a href="https://capitalwaters.nl/investment-documents/">Capital Waters</a> provides open-source legal templates for early-stage deals in the Netherlands — complementary to the ops structures above (where files live vs what investment contracts say).</p>
+    <ul>
+      <li><strong>Cap table</strong> (Excel) — file in Company Ops Registry <code>/01-corporate/shareholders/</code></li>
+      <li><strong>Ordinary share</strong> subscription &amp; shareholders agreement — co-founder or friends-and-family equity</li>
+      <li><strong>Convertible loan (CLA)</strong> or <strong>EPOS</strong> (Dutch SAFE) — angel money before a priced round</li>
+      <li><strong>Preferred share</strong> subscription, shareholders agreement &amp; term sheet — seed / Series A</li>
+    </ul>
+    <p class="external-note">Licensed under <a href="https://creativecommons.org/licenses/by-nd/4.0/">Creative Commons BY-ND 4.0</a> (“comply or explain”: show deviations from the standard, keep the Capital Waters header in your contract). Netherlands only — get counsel before signing.</p>
   </div>
 </div>
 

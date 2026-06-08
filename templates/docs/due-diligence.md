@@ -66,7 +66,7 @@ Prior years revenue, costs & P&L — summarised in a presentation with supportin
 ### Corporate documents
 
 - Core corporate documents — all PDFs: deed of incorporation, shareholder register, cap table and ownership structure, entity chart (subsidiaries, joint ventures), General Meeting of Shareholders resolutions, minutes, articles of association, editorial charter, shareholder register BV, etc. → [data room path]()
-- Cap table history / timeline — Google Sheets or Excel → [link]()
+- Cap table history / timeline — Google Sheets or Excel → [link]() (starter format: [Capital Waters cap table template](https://capitalwaters.nl/investment-documents/), NL)
 
 ---
 

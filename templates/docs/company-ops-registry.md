@@ -14,7 +14,7 @@ Filing structure for legal, finance, HR, and privacy & compliance — kept curre
 ## 01 — Corporate
 
 - [01-corporate/incorporation/]() — Deed of incorporation, articles of association, KvK in the Netherlands registration documents
-- [01-corporate/shareholders/]() — Shareholder register, cap table, SHA, ownership changes
+- [01-corporate/shareholders/]() — Shareholder register, cap table, SHA, ownership changes (cap table starter: [Capital Waters Excel template](https://capitalwaters.nl/investment-documents/), NL)
 - [01-corporate/board/]() — Board charter, AGM/GM minutes, director appointments, D&O
 
 ---
