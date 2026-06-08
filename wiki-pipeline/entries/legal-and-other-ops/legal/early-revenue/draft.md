@@ -2,7 +2,8 @@
 process: legal
 phase: early-revenue
 last_updated: 2026-06-03
-claim_count: 8
+claim_count: 15
+batch_addendum: src-041
 ---
 
 # Legal — Early Revenue (~10 to 30 people)
@@ -14,6 +15,10 @@ claim_count: 8
 <!-- claim-id: c-001 -->
 - **The filing structure is complete and navigable by someone who doesn't know the company.** Annual accounts are filed and stored. Tax filings are current. The top contracts are listed with one-liners. The compliance calendar tells you what's due and when. A new CFO or external counsel could orient themselves within a day.
   <!-- sources: src-038 (practitioner contribution) -->
+
+<!-- claim-id: c-009 -->
+- **Before first outside money, you have documented founder/shareholder arrangements at template level, a clear cap table, and IP already in the entity.** The moment you give away equity, a third party with real money expects professionalisation — not "we have nothing on paper."
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## What you actually need to do
 
@@ -28,6 +33,14 @@ claim_count: 8
 <!-- claim-id: c-004 -->
 3. **Have an external legal advisor walk through your full filing once before you approach investors or buyers.** Even if you have M&A experience yourself, self-assessment of your own DD readiness is unreliable. You know the context behind every document and unconsciously overlook gaps that an external reviewer will catch. Common findings: missing addenda confirming salary changes, contracts not yet countersigned, documents filed inconsistently.
    <!-- sources: src-038 (practitioner contribution, first-person) -->
+
+<!-- claim-id: c-010 -->
+4. **At friends, family, or first angels, use a sensible template for founder/shareholder terms that documents your principles and non-negotiables.** Do not pay premium bespoke legal fees for a full package if a professional round is likely soon — the next investor will often want their own documents. Do get IP in and key principles on paper.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-011 -->
+5. **Ensure written terms exist with customers, suppliers, and key technology vendors — not only internal employment papers.** Handshakes with friends-and-family money, hires, suppliers, and customers are a common failure mode once scale and scrutiny increase.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## Warning signs you're behind
 
@@ -45,19 +58,33 @@ claim_count: 8
 - **Self-assessment of DD readiness is unreliable, even for experienced operators.** The contributor of this content had M&A experience on the buy side and still found a solid week of gaps when reviewing with an external advisor. The closer you are to the business, the more context you unconsciously fill in for missing or inconsistent documentation.
   <!-- sources: src-038 (practitioner contribution, first-person) -->
 
+<!-- claim-id: c-012 -->
+- **Your data architecture and privacy setup would not survive scrutiny from a professional investor — data scattered, no clear lawful basis, duct-tape everywhere.** Outcome is often "rebuild or we are not investing."
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
 ### Founder / key-person time
 
 <!-- no atoms — omitting subheading -->
 
 ### Process entry
 
-<!-- no atoms — omitting subheading -->
+<!-- claim-id: c-013 -->
+- **You are treating a first external investor like an internal co-founder conversation, or skipping documentation because they are friends or family.** Outside money changes the relationship; undocumented terms create misalignment and cap-table explanations that hurt follow-on fundraising.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-014 -->
+- **Key commercial relationships still run on handshakes — or leadership management agreements are still missing years into operations.** Informal deals work until they do not; retrofitting is slow and relationship-sensitive.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## How this evolves next
 
 <!-- claim-id: c-008 -->
 - **At Growth, the compliance calendar and filing structure need to be complete enough to hand off.** A new CFO or legal counsel should be able to get fully oriented within a day without asking anyone questions. The `08-transaction-prep` section of the filing structure activates — not for year-round maintenance, but as the place to quickly populate when a deal is live.
   <!-- sources: src-038 (practitioner contribution) -->
+
+<!-- claim-id: c-015 -->
+- **Approaching a professional funding round, legal ops must be transaction-ready: consistent contracts, privacy and tech that survive due diligence, filing that does not require reconstruction.** Institutional investors run systematic diligence; informal early-stage habits must be professionalised before term sheet, not during it.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## Tools & resources
 

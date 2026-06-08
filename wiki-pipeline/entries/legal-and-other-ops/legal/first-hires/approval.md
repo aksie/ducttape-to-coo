@@ -87,3 +87,78 @@ last_updated: 2026-06-03 17:39
 - Reviewed date: 2026-06-03 17:49
 - Edited claim text: - **External vertrouwenspersoon providers for small Dutch companies: Companies offer this as a low-cost service suitable for companies below 25 people.
   <!-- sources: src-035 (Arbowet guidance) -->
+
+# src-041 addendum — pending review
+
+### c-011
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null
+
+### c-012
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null
+
+### c-013
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null
+
+### c-014
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:48
+- Edited claim text: **If you collect personal data, then design privacy and GDPR compliance from minute one** — what you collect, why, how it is stored, processor agreements where needed. Do not get to a situation where you collected user data for a year and only then write a privacy policy.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-015
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:48
+- Edited claim text: null
+
+### c-016
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:48
+- Edited claim text: null
+
+### c-017
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:48
+- Edited claim text: null
+
+### c-018
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:48
+- Edited claim text: null
+
+### c-019
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:49
+- Edited claim text: null

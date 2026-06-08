@@ -67,3 +67,62 @@ last_updated: 2026-06-03 17:40
 - Reviewed by: "aksie"
 - Reviewed date: 2026-06-03 17:51
 - Edited claim text: null
+
+# src-041 addendum — pending review
+
+### c-009
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:49
+- Edited claim text: null
+
+### c-010
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:49
+- Edited claim text: null
+
+### c-011
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:49
+- Edited claim text: null
+
+### c-012
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:50
+- Edited claim text: null
+
+### c-013
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:50
+- Edited claim text: null
+
+### c-014
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:52
+- Edited claim text: - **Key commercial relationships still run on handshakes — or leadership's management agreements are still missing years into operations.** Informal deals work until they do not; retrofitting is slow and relationship-sensitive.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-015
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:52
+- Edited claim text: null

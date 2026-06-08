@@ -9,7 +9,7 @@ relates_to_published: wiki/processes/legal/4.1--first-hires.md
 
 ## Candidate claims from startup legal interview (src-041)
 
-*Supplements published first-hires page (src-038 + government sources). Does not duplicate hour registration or vertrouwenspersoon — adds interview themes on contracts, GDPR, and legal help timing.*
+*Promoted to `draft.md` as c-011–c-019 (pending review in approval tool). Audit record of the src-041 synthesis batch.*
 
 ### c-src041-fh-001: Written contract for everyone on day one
 - Section: what_good_looks_like

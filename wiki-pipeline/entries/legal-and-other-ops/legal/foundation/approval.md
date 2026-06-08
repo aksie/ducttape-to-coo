@@ -53,3 +53,107 @@ last_updated: 2026-06-03 17:38
 - Reviewed date: 2026-06-03 17:44
 - Edited claim text: - **At First Hires, compliance obligations begin — and you need a named owner for the HR admin work before documents start defaulting to email.** Once you have employees, Dutch employment law activates (hour registration, sick leave procedures, vertrouwenspersoon). Designate one person responsible for the filing structure before the first hire.
   <!-- sources: src-038 (practitioner contribution) -->
+
+# src-041 addendum — pending review
+
+### c-007
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:40
+- Edited claim text: - **Co-founders have talked through the basics on paper — roles, capital, exit triggers — without heavyweight legal docs.** You are building and testing demand, not playing company with notaries and lawyers before a business exists. Zero paper among co-builders is as foolish as an 80-page shareholder agreement before any line of code is committed.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-008
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:41
+- Edited claim text: - **A clean entity exists and all IP — code, brand, product, content — sits in the company, including work from the pre-legal-entity period.** Execute an IP assignment from founders as part of incorporation; not "mostly," not "except the first commits."
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-009
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:41
+- Edited claim text: null
+
+### c-010
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:43
+- Edited claim text: **Incorporate when you have enough effort put in, if you have put several man-months in, it is worth it to formalise things, of if you are close to real momentum — users, revenue, or serious investor or partner interest — not on day one of the idea.** Escalate legal work in step with real risk (traction, people, money, data), not founder anxiety.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-011
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:44
+- Edited claim text: **Keep your corporate structure simple — standard template (in NL: a BV) setup, no exotic holdings from networking advice.** Complexity is where expensive fixes live; advisors regularly see founders locked into arrangements they do not understand.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-012
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:45
+- Edited claim text: **Once a quarter, block an hour to review your operational status, perhaps with an experienced operator or friend. Look at employment papers, customer/supplier contracts, privacy, tech/data architecture, and tax/compliance .** A fixed rhythm replaces oscillating between "we have nothing" panic and "we don't need this" denial.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-013
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:46
+- Edited claim text: - **You commissioned extensive founder legal work or spend disproportionate time with notaries and lawyers before you are close to a beta version of the product.** Legal structure is eating energy that should go to product and potential customers — you are timmering everything shut before learning if the idea works.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+### c-014
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:46
+- Edited claim text: null
+
+### c-015
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:46
+- Edited claim text: null
+
+### c-016
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null
+
+### c-017
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null
+
+### c-018
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-08 11:47
+- Edited claim text: null

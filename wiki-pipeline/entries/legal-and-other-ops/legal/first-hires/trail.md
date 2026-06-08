@@ -98,3 +98,79 @@
 
 - atom-132 (register trademarks/domains): folded into c-009 evolution note rather than promoted as a standalone action — it's a carry from foundation, not a new action at this stage.
 - atom-133 (disorganised data room): deprioritised relative to the more immediate NL compliance warnings. Referenced implicitly in c-009.
+
+---
+
+## src-041 addendum (startup legal interview)
+
+### c-011: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-172
+- Rejected atoms: none
+- Why-source: atom-172
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-001
+
+### c-012: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-173
+- Rejected atoms: none
+- Why-source: atom-173
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-002
+
+### c-013: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-174
+- Rejected atoms: none
+- Why-source: atom-174
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-003
+
+### c-014: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-175, atom-179
+- Rejected atoms: none
+- Why-source: atom-175
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-004
+
+### c-015: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-176, atom-184
+- Rejected atoms: none
+- Why-source: atom-176
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-005
+
+### c-016: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-178
+- Rejected atoms: none
+- Why-source: atom-178
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-006
+
+### c-017: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-179
+- Rejected atoms: none
+- Why-source: atom-179
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-007
+
+### c-018: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-177
+- Rejected atoms: none
+- Why-source: atom-177
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-008
+
+### c-019: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-183
+- Rejected atoms: none
+- Why-source: atom-183
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-fh-009

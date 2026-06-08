@@ -64,3 +64,103 @@ No prior stage entry exists. Foundation is the starting point.
 - IP assignment from founders and early employees — no atom exists for foundation stage
 - Co-founder agreement structure (equity, vesting, bad leaver clauses) — no atom exists
 - Startup-savvy lawyer/notary recommendations for NL
+
+---
+
+## src-041 addendum (startup legal interview)
+
+### c-007: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-152, atom-153
+- Rejected atoms: none
+- Why-source: atom-152
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-001
+
+### c-008: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-160, atom-161
+- Rejected atoms: none
+- Why-source: atom-161
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-004
+
+### c-009: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-154
+- Rejected atoms: none
+- Why-source: atom-154
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-002
+
+### c-010: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-159, atom-191
+- Rejected atoms: none
+- Why-source: atom-191
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-003; review vs c-004 IP timing
+
+### c-011: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-163, atom-167
+- Rejected atoms: none
+- Why-source: atom-163
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-005
+
+### c-012: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-181, atom-182
+- Rejected atoms: none
+- Why-source: atom-182
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-006
+
+### c-013: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-155, atom-156, atom-186
+- Rejected atoms: none
+- Why-source: atom-186
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-007
+
+### c-014: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-188
+- Rejected atoms: none
+- Why-source: atom-188
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-011
+
+### c-015: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-158
+- Rejected atoms: none
+- Why-source: atom-158
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-008
+
+### c-016: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-165
+- Rejected atoms: none
+- Why-source: atom-165
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-009
+
+### c-017: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-167
+- Rejected atoms: none
+- Why-source: atom-167
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-010
+
+### c-018: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-164
+- Rejected atoms: none
+- Why-source: atom-164
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-012

@@ -86,3 +86,63 @@
 ## Dropped atoms
 
 - atom-132 (trademarks/domains): folded into c-002 (compliance calendar); not promoted as standalone action at this stage.
+
+---
+
+## src-041 addendum (startup legal interview)
+
+### c-009: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-169, atom-168
+- Rejected atoms: none
+- Why-source: atom-169
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-001
+
+### c-010: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-162, atom-166
+- Rejected atoms: none
+- Why-source: atom-162
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-002
+
+### c-011: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-190, atom-187
+- Rejected atoms: none
+- Why-source: atom-190
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-003
+
+### c-012: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-180
+- Rejected atoms: none
+- Why-source: atom-180
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-005
+
+### c-013: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-170, atom-171
+- Rejected atoms: none
+- Why-source: atom-170
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-004
+
+### c-014: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-187, atom-185
+- Rejected atoms: none
+- Why-source: atom-187
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-006
+
+### c-015: src-041 claim
+- Section: (see draft.md)
+- Supporting atoms: atom-189
+- Rejected atoms: none
+- Why-source: atom-189
+- Carried from: none
+- Synthesis notes: Promoted from src-041 candidate c-src041-er-007

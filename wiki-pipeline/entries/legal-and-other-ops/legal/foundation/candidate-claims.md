@@ -9,7 +9,7 @@ relates_to_published: wiki/processes/legal/4.1--foundation.md
 
 ## Candidate claims from startup legal interview (src-041)
 
-*These supplement the published foundation page (src-038 filing-structure batch). Review here first; promote approved claims into `draft.md` for Phase 3 approval-tool pass and Phase 4 publish.*
+*Promoted to `draft.md` as c-007–c-018 (pending review in approval tool). This file is the audit record of the src-041 synthesis batch.*
 
 ### c-src041-f-001: Light co-founder paper before traction
 - Section: what_good_looks_like

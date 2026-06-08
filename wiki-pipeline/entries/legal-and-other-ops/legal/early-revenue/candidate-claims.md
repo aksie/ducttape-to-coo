@@ -9,7 +9,7 @@ relates_to_published: wiki/processes/legal/4.1--early-revenue.md
 
 ## Candidate claims from startup legal interview (src-041)
 
-*Supplements published early-revenue page (src-038 filing/DD readiness). Adds interview themes on first external money, commercial contracts, and investment-blocking privacy/tech debt.*
+*Promoted to `draft.md` as c-009–c-015 (pending review in approval tool). Audit record of the src-041 synthesis batch.*
 
 ### c-src041-er-001: Documented founder package before external money
 - Section: what_good_looks_like

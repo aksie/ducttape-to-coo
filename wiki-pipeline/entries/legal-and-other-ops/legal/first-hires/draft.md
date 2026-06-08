@@ -2,7 +2,8 @@
 process: legal
 phase: first-hires
 last_updated: 2026-06-03
-claim_count: 10
+claim_count: 19
+batch_addendum: src-041
 ---
 
 # Legal — First Hires (2 to 10 people)
@@ -18,6 +19,10 @@ claim_count: 10
 <!-- claim-id: c-002 -->
 - **NL compliance obligations are active from day one of employment.** Hour registration runs. A vertrouwenspersoon is designated. There are no retroactive gaps to fix.
   <!-- sources: src-034 (Netherlands Arbeidstijdenwet), src-035 (Arbowet) -->
+
+<!-- claim-id: c-011 -->
+- **Everyone who joins — employee or contractor — receives something in writing immediately.** Not "we are all friends, it will never go wrong." For digital companies, contracts include IP, confidentiality, and NL employment basics from day one.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## What you actually need to do
 
@@ -37,6 +42,22 @@ claim_count: 10
 4. **File every employment contract as a signed PDF the day the employee starts.** Include non-compete, non-solicitation, confidentiality, and IP assignment as standard clauses — not optional add-ons negotiated per hire. Keep a standard offer letter template reviewed by a lawyer once, and use it consistently. The same applies to freelance and contractor agreements.
    <!-- sources: src-038 (practitioner contribution) -->
 
+<!-- claim-id: c-012 -->
+5. **Have a standard employment contract template ready before your first hire** — from a startup-savvy lawyer or reputable template — and reuse one consistent document stack for every hire.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-013 -->
+6. **Every freelancer who touches product needs a written agreement with explicit IP assignment — platform terms alone are not enough.** Missing contractor IP assignment is among the most common legal due-diligence gaps.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-014 -->
+7. **If you collect personal data, design privacy and GDPR compliance from minute one** — what you collect, why, how it is stored, processor agreements where needed. Do not collect user data for a year and only then write a privacy policy.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-015 -->
+8. **Prefer one startup-savvy advisor or small firm covering employment, commercial, and privacy over many one-off specialists.** Tighten the relationship at concrete triggers: first hire imminent, first term sheet, first large customer contract, or move into regulated or data-sensitive territory.
+   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
 ## Warning signs you're behind
 
 ### Output quality
@@ -55,7 +76,13 @@ claim_count: 10
 
 ### Process entry
 
-<!-- no atoms — omitting subheading -->
+<!-- claim-id: c-016 -->
+- **You hired someone with no employment or contractor contract because you trust the relationship.** When relationships sour or diligence arrives, missing contracts create liability and IP uncertainty that are expensive to fix retroactively.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-017 -->
+- **You have been collecting user data for months without a coherent privacy policy, lawful basis, or technical controls.** Late privacy fixes often require product and architecture changes under time pressure.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## How this evolves next
 
@@ -68,3 +95,11 @@ claim_count: 10
 <!-- claim-id: c-010 -->
 - **External vertrouwenspersoon providers for small Dutch companies:** Perspectief (perspectief-vp.nl) and GIMD (gimd.nl) both offer this as a low-cost service suitable for companies below 25 people.
   <!-- sources: src-035 (Arbowet guidance) -->
+
+<!-- claim-id: c-018 -->
+- **Review comparable Dutch or EU competitors' public privacy policies and adapt honestly to what your product actually does** — a reasonable starting point while you refine with counsel.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+
+<!-- claim-id: c-019 -->
+- **For episodic early-stage legal needs, use platforms that match companies with vetted freelance legal specialists** — suitable for one-hour template fixes as well as longer engagements. Retainer not required on day one.
+  <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
