@@ -93,14 +93,41 @@
     }
 
     #content ul ul {
-      margin-top: 4px;
-      margin-bottom: 4px;
+      margin-top: 2px;
+      margin-bottom: 8px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #content ul > li > ul {
+      padding-left: 18px;
+      border-left: 2px solid #e3e2e0;
+      margin-left: 2px;
+    }
+
+    #content ul > li > ul > li {
+      font-size: 10pt;
+      color: #787774;
+      padding: 1px 0 1px 8px;
     }
 
     #content ul li {
       padding: 2px 0;
       line-height: 1.45;
       color: #37352f;
+    }
+
+    #content ul.contains-task-list {
+      list-style: disc;
+    }
+
+    #content li.task-list-item {
+      list-style: none;
+    }
+
+    #content li.task-list-item input[type="checkbox"] {
+      margin-right: 6px;
+      accent-color: #2e5e8a;
     }
 
     #content li > p {
