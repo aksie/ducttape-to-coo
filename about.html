@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Duct Tape to COO</title>
+    <meta name="description" content="Open-source operational maturity framework for founding teams — what exists today, what we're building, and who's behind it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .about-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 32px 100px;
+        }
+
+        .page-eyebrow {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--green);
+            border: 1px solid var(--green);
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .about-lead {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            color: var(--text);
+            margin-bottom: 48px;
+        }
+
+        .about-lead a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .about-lead a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section {
+            margin-bottom: 44px;
+        }
+
+        .about-section h2 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin-bottom: 16px;
+        }
+
+        .about-section p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-section strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .about-section a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .about-section a:hover {
+            text-decoration: underline;
+        }
+
+        .about-section ul {
+            list-style: none;
+            margin: 0 0 14px;
+            padding: 0;
+        }
+
+        .about-section li {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.75;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .about-section li::before {
+            content: "·";
+            position: absolute;
+            left: 4px;
+            color: var(--text-muted);
+        }
+
+        footer {
+            padding: 40px 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--blue);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-dim);
+        }
+
+        @media (max-width: 640px) {
+            .about-wrap { padding: 32px 20px 80px; }
+            .footer-inner { flex-direction: column; gap: 20px; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <a class="header-logo" href="index.html">Duct Tape to COO</a>
+            <nav class="header-nav">
+                <a href="diagnostic.html">Diagnostic</a>
+                <a href="wiki.html">Wiki</a>
+                <a href="blog/index.html">Blog</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="about-wrap">
+    <span class="page-eyebrow">About</span>
+
+    <p class="about-lead">
+        <strong>Open-source framework</strong> initiated by
+        <a href="https://github.com/aksie" target="_blank" rel="noopener">@aksie</a>
+        (<a href="https://www.linkedin.com/in/stefanverkerk/" target="_blank" rel="noopener">Stefan Verkerk</a>)
+        to help founding teams keep business operations running without needing a COO yet.
+    </p>
+
+    <section class="about-section">
+        <h2>What this is — and what we're building</h2>
+        <p><strong>Live today:</strong> a stage-based operational maturity framework — diagnostic, wiki, blog, and templates — so founding teams can see where ops are strong, where they're duct-taped, and what to fix first for <em>their</em> size and context.</p>
+        <p><strong>Building next:</strong> a structured knowledge base precise enough for an AI layer to use — toward an open-source, context-aware <strong>fractional COO</strong>: "what should we do about [this process] right now?" answered with operator judgment, not generic advice.</p>
+        <p>Most startups run on duct tape longer than they should. This project exists so you can:</p>
+        <ul>
+            <li><strong>Identify</strong> which processes matter at your stage (from a handful at founding to 30+ as you scale — not all at once)</li>
+            <li><strong>Assess</strong> maturity across reliability, ownership, documentation, automation, and scalability</li>
+            <li><strong>Prioritize</strong> what to fix now vs. later, using team size, revenue, and funding context</li>
+            <li><strong>Track</strong> progress as the company grows</li>
+        </ul>
+        <p>Stage-based means guidance for five founders pre-revenue differs from a 40-person Series B company — written for where you are, not a 500-person playbook.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>Why open source?</h2>
+        <p>Operational knowledge shouldn't sit behind expensive consultants or well-funded companies only.</p>
+        <p>Keeping this open source means startups without budget use the same framework as resourced ones; non-profits and social enterprises can adapt it freely; the community can contribute back; and the model stays honest — no incentive to gate features or add paywalls.</p>
+        <p>If this becomes an AI-powered tool, the <strong>core stays open source</strong>. We may explore voluntary contributions or pricing for commercial users later — but the framework, knowledge base, and tool remain free for individuals, non-profits, and early-stage startups without means to pay. Access over lock-in.</p>
+        <p>Licensed under <a href="https://github.com/aksie/ducttape-to-coo/blob/main/LICENSE.MD" target="_blank" rel="noopener">AGPL-3.0</a>.</p>
+    </section>
+
+    <section class="about-section">
+        <h2>What's here now</h2>
+        <ul>
+            <li><strong><a href="diagnostic.html">Diagnostic</a></strong> — self-assessment calibrated to your stage; scope grows with you (roughly six critical areas at founding, 30+ applicable at scale)</li>
+            <li><strong><a href="wiki.html">Wiki</a></strong> — operational knowledge by process and stage; growing via a source-traceable pipeline</li>
+            <li><strong><a href="blog/index.html">Blog</a></strong> — deep dives with more opinion and "why" than the wiki</li>
+            <li><strong><a href="templates/index.html">Templates</a></strong> — copy-ready ops structures (filing, diligence, planning)</li>
+            <li><strong><a href="roadmap.html">Stage roadmap</a></strong> — what matters when, visually</li>
+        </ul>
+    </section>
+
+    <section class="about-section">
+        <h2>Team</h2>
+        <p><strong>Main curator:</strong> <a href="https://github.com/aksie" target="_blank" rel="noopener">@aksie</a> — <a href="https://www.linkedin.com/in/stefanverkerk/" target="_blank" rel="noopener">Stefan Verkerk</a></p>
+        <p>Wiki and blog content draws on practitioner interviews and contributions from operators in Stefan's network. The framework is inspired by Scaling Up / Rockefeller Habits and years of hands-on ops work in growing startups.</p>
+        <p>Want to contribute operator knowledge? See <a href="https://github.com/aksie/ducttape-to-coo#contributing" target="_blank" rel="noopener">Contributing on GitHub</a> — no developer skills required for many contributions.</p>
+    </section>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">Duct Tape to COO</div>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/aksie/ducttape-to-coo" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/aksie/ducttape-to-coo/blob/main/LICENSE.MD" target="_blank" rel="noopener">License (AGPL-3.0)</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
