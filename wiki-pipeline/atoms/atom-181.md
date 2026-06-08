@@ -17,11 +17,11 @@ unverified: false
 
 ## Claim
 
-Once a quarter, block an hour to review employment papers, customer/supplier contracts, privacy setup, tech/data architecture, and tax/compliance against how the business actually operates today.
+From day one — not when you hit revenue or your first hire — block an hour each quarter to walk a simple ops and legal checklist against how the business actually works. Start light at pre-company; add employment papers, contracts, privacy, tech, and tax items as they become relevant.
 
 ## Source quote or paraphrase
 
-Once a quarter, walk a simple list with a trusted legal/ops brain: employment, contracts, privacy, tech, tax — is it time to professionalise or stay light?
+Start the quarterly check-in from the start, not stage four. Once a quarter, walk a simple list with a trusted ops/legal brain — the checklist grows with the business, but the rhythm starts while you are still two founders building.
 
 ## Why
 

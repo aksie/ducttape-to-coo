@@ -37,6 +37,22 @@ You are building first. You are checking whether anyone wants what you are makin
 - Sit down for an evening and agree a few scenarios: roles, money in, exit triggers if things go wrong.
 - Agree explicitly: **once we see this is real, we will formalise** — entity, IP, founder terms.
 - Keep it simple. No exotic holding structures because someone at a party suggested one.
+- **Start a quarterly operations check-in from day one** — not when you have revenue, hires, or investors. Block an hour each quarter with a trusted ops/legal brain and walk a simple list against how the business actually works today. At pre-company the list is short (co-founder paper, what you're building, any early data or commitments). The same rhythm continues as you incorporate, hire, and sign deals — the checklist grows with the business, but the habit starts now.
+
+### The quarterly operations check-in (from the start)
+
+Once a quarter, block an hour and walk a simple list:
+
+- Do we still have **light written clarity** on roles, money in, and exit triggers among co-builders?
+- Are we still building toward something real — or **playing company** with lawyers and notaries too early?
+- As the business grows: are **employment and contractor** papers fit for how we actually work?
+- Do we have **written terms** with customers, suppliers, and key tech vendors — or only handshakes?
+- Is our **privacy and data** setup still true for what the product does today?
+- Is our **tech and data architecture** something we would be comfortable showing a professional investor — or "duct tape everywhere"?
+- Are we creating a **tax or compliance** mess we will hate later?
+- Is it time to **professionalise** any of the above, or are we still right to stay light?
+
+This prevents the oscillation many product founders feel: panic ("we have nothing!") ↔ denial ("we do not need any of this"). You do not need to know everything you do not know — you need a **rhythm** from the start to surface it before due diligence or a big contract forces the issue.
 
 ### What not to do
 
@@ -125,20 +141,7 @@ For digital/product companies: contracts include the basics you will need later 
 
 ## Phase 4: First serious commercial relationships
 
-There is no universal calendar ("every startup must have X by year two"). Instead:
-
-### The quarterly operational & legal check-in (recommended)
-
-Once a quarter, block an hour and walk a simple list with a trusted legal/ops brain:
-
-- Are our **employment and contractor** papers still fit for how we actually work?
-- Do we have **written terms** with customers, suppliers, and key tech vendors — or only handshakes?
-- Is our **privacy and data** setup still true for what the product does today?
-- Is our **tech and data architecture** something we would be comfortable showing a professional investor — or "duct tape everywhere"?
-- Are we creating a **tax or compliance** mess we will hate later?
-- Is it time to **professionalise** any of the above, or are we still right to stay light?
-
-This prevents the oscillation many product founders feel: panic ("we have nothing!") ↔ denial ("we do not need any of this"). You do not need to know everything you do not know — you need a **rhythm** to surface it before a due diligence or a big contract forces the issue.
+There is no universal calendar ("every startup must have X by year two"). The quarterly ops check-in you started in Phase 0 is when customer, supplier, and vendor contracts become critical lines on the list — not when you first start the rhythm.
 
 ---
 
@@ -182,10 +185,10 @@ Platforms that match companies with freelance legal specialists can work well fo
 
 | Stage | Legal focus |
 |--------|-------------|
-| **Foundation (pre-traction)** | Co-founder understanding on paper (light); do not over-build. |
-| **Foundation (traction → BV)** | Incorporate; IP into entity; simple structure; template-grade founder docs if raising soon. |
+| **Foundation (pre-traction)** | Co-founder understanding on paper (light); do not over-build; **quarterly ops check-in starts here**. |
+| **Foundation (traction → BV)** | Incorporate; IP into entity; simple structure; template-grade founder docs if raising soon; same quarterly rhythm, growing checklist. |
 | **First hires** | Employment/contractor templates; IP clauses; NL day-one obligations; privacy baseline for digital products. |
-| **Early revenue / first angels** | Documented investor terms; contracts with key parties; quarterly legal/ops sync. |
+| **Early revenue / first angels** | Documented investor terms; contracts with key parties; quarterly check-in now includes commercial handshakes. |
 | **Growth / professional round** | Transaction-ready filing, consistent contracts, privacy and tech that survive DD. |
 
 ---

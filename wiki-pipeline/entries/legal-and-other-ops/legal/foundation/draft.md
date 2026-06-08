@@ -51,7 +51,7 @@ batch_addendum: src-041
    <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 <!-- claim-id: c-012 -->
-7. **Once a quarter, block an hour to walk employment papers, customer/supplier contracts, privacy, tech/data architecture, and tax/compliance against how the business actually operates.** A fixed rhythm replaces oscillating between "we have nothing" panic and "we don't need this" denial.
+7. **From day one — not when you hit revenue or hire #10 — block an hour each quarter to walk a simple ops and legal checklist against how the business actually works.** Start light at pre-company (co-founder paper, what you're building, early commitments). Add employment papers, customer/supplier contracts, privacy, tech/data architecture, and tax/compliance as they become relevant. A fixed rhythm from the start replaces oscillating between "we have nothing" panic and "we don't need this" denial.
    <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ## Warning signs you're behind

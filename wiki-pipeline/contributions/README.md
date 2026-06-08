@@ -30,6 +30,16 @@ You don't need all of these — even a partial contribution is useful. Write wha
 
 ---
 
+## Files in this directory
+
+| File | What it is |
+|------|------------|
+| `legal-4.1--startup-milestones-interview.md` | Legal expert interview — earliest-stage legal ops (src-041) |
+| `legal-4.1--filing-structure.md` | Practitioner DD / filing structure experience |
+| `people-3.1--hr-filing.md` | HR filing from first hire |
+| `financial-2.5--formal-filing.md` | Financial formal filing |
+| `_template.md` | Copy this to start a new contribution |
+
 ## File naming
 
 Name your file `{process}-{stage}-{your-name-or-initials}.md`, e.g.:

@@ -110,12 +110,12 @@ No prior stage entry exists. Foundation is the starting point.
 - Synthesis notes: Promoted from src-041 candidate c-src041-f-005
 
 ### c-012: src-041 claim
-- Section: (see draft.md)
+- Section: what_to_do
 - Supporting atoms: atom-181, atom-182
 - Rejected atoms: none
-- Why-source: atom-182
+- Why-source: atom-182 (rhythm from start, not stage four)
 - Carried from: none
-- Synthesis notes: Promoted from src-041 candidate c-src041-f-006
+- Synthesis notes: Promoted from src-041 candidate c-src041-f-006; updated 2026-06-03 — quarterly ops check-in from day one
 
 ### c-013: src-041 claim
 - Section: (see draft.md)

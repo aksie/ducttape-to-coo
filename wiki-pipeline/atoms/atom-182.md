@@ -17,11 +17,11 @@ unverified: false
 
 ## Claim
 
-You have a recurring rhythm — not a one-off panic — for checking whether legal and operational reality still matches the business.
+You have a recurring quarterly rhythm from the earliest stage — not a one-off panic when diligence looms — for checking whether legal and operational reality still matches the business.
 
 ## Source quote or paraphrase
 
-You need a rhythm to surface what you do not know before due diligence or a big contract forces the issue.
+You need a rhythm from the start to surface what you do not know before due diligence or a big contract forces the issue — not a habit you postpone until commercial relationships appear.
 
 ## Why
 

@@ -41,11 +41,11 @@ relates_to_published: wiki/processes/legal/4.1--foundation.md
 - Candidate claim: **Keep your corporate structure simple — standard BV setup, no exotic holdings from networking advice.** Complexity is where expensive fixes live; advisors regularly see founders locked into arrangements they do not understand.
 - Synthesis notes: Pairs with c-src041-f-006 (exotic structures warning).
 
-### c-src041-f-006: Quarterly legal/ops check-in
+### c-src041-f-006: Quarterly ops check-in from day one
 - Section: what_to_do
 - Supporting atoms: atom-181, atom-182
-- Candidate claim: **Once a quarter, block an hour to walk employment papers, customer/supplier contracts, privacy, tech/data architecture, and tax/compliance against how the business actually operates.** A fixed rhythm replaces oscillating between "we have nothing" panic and "we don't need this" denial.
-- Synthesis notes: Cross-stage habit; starts at foundation. Carries forward to early-revenue.
+- Candidate claim: **From day one — not at first revenue or first hire — block an hour each quarter for a simple ops and legal checklist.** Start light at pre-company; grow the list as you incorporate, hire, and sign deals. A fixed rhythm from the start replaces panic ↔ denial.
+- Synthesis notes: Interview placed this too late (Phase 4); corrected to foundation / Phase 0. Carries forward as checklist grows.
 
 ### c-src041-f-007: Over-legalising before PMF
 - Section: warning_signs
