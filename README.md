@@ -1,35 +1,24 @@
 # Duct Tape to COO
 
-An open-source operational maturity framework for startups — and the foundation for something more ambitious.
+Open-source operational maturity framework for founding teams — initiated by [@aksie](https://github.com/aksie) ([Stefan Verkerk](https://www.linkedin.com/in/stefanverkerk/)).
 
-🚀 **Live**: [aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo)
-
----
-
-## What is this?
-
-Most startups run on duct tape longer than they should. Founders know things are breaking but don't know what to fix first, what good looks like at their size, or how to explain the gap to a board or investor.
-
-This tool helps startup founders and operators:
-- **Identify** which operational processes matter at your current stage
-- **Assess** maturity across 5 dimensions: reliability, ownership, documentation, automation, scalability
-- **Prioritize** what to fix now vs. later — based on your team size, revenue stage, and funding context
-- **Track** progress as you grow
-
-The framework is stage-based: the guidance for a 5-person pre-revenue team is different from a 40-person Series B company. Advice is specific to where you are, not written for a 500-person org.
+🚀 **Live**: [aksie.github.io/ducttape-to-coo](https://aksie.github.io/ducttape-to-coo) · [About the initiative](https://aksie.github.io/ducttape-to-coo/about.html)
 
 ---
 
-## Where this is going
+## What is this — and what we're building
 
-The diagnostic tool is step one. The longer-term ambition is an **AI-powered fractional COO** — a tool that can answer the question "what should I be doing about [process] right now, given my stage and context?" with the knowledge and judgment of an experienced operator.
+**Live today:** a stage-based framework — diagnostic, wiki, blog, and templates — so founding teams can see where ops are strong, where they're duct-taped, and what to fix first for *their* size and context.
 
-That means:
-- A structured **wiki** of operational knowledge, organized by process and stage, that an agent can retrieve from precisely
-- A **skill layer** that lets AI assistants use the framework as a knowledge base
-- **Context-aware guidance** that adapts to your revenue stage, funding stage, and team structure — not just headcount
+**Building next:** a structured knowledge base precise enough for an AI layer to use — toward an open-source, context-aware **fractional COO** that answers "what should we do about [this process] right now?" with operator judgment, not generic advice.
 
-We're building the knowledge base and data model now. The AI layer comes next.
+Most startups run on duct tape longer than they should. This project helps founders and operators:
+- **Identify** which processes matter at your stage (from a handful at founding to 30+ as you scale — not all at once)
+- **Assess** maturity across reliability, ownership, documentation, automation, and scalability
+- **Prioritize** what to fix now vs. later, using team size, revenue, and funding context
+- **Track** progress as the company grows
+
+Stage-based means guidance for five founders pre-revenue differs from a 40-person Series B company — written for where you are, not a 500-person playbook.
 
 ---
 
@@ -49,11 +38,12 @@ If this becomes an AI-powered tool, the core will stay open source. We may explo
 
 ## What's here now
 
-- **Diagnostic** — self-assessment across 28+ processes and 5 growth stages
+- **Diagnostic** — self-assessment calibrated to your stage; scope grows with you (roughly six critical areas at founding, 30+ applicable at scale)
+- **Wiki** — operational knowledge by process and stage (130 pages, content growing via a source-traceable pipeline)
+- **Blog** — deep dives with more opinion and "why" than the wiki
+- **Templates** — copy-ready ops structures (filing, diligence, planning)
 - **Roadmap** — visual stage-by-stage map of what matters when
-- **Wiki** — scaffolded knowledge base (130 process × stage pages, content being added)
-- **Blog** — posts on operational topics, built statically from markdown
-- **Data model** — processes.json and stages.json with primary axis and sensitivity fields, ready for context-aware retrieval
+- **Data model** — `processes.json` and `stages.json` with primary axis and sensitivity fields, ready for context-aware retrieval
 
 ---
 
@@ -80,14 +70,18 @@ python3 -m http.server 8000
 ```
 ducttape-to-coo/
 ├── index.html              # Overview / landing page
+├── about.html              # Initiative background, team, open-source rationale
 ├── diagnostic.html         # Self-assessment tool
 ├── roadmap.html            # Stage-by-stage visual roadmap
 ├── wiki.html               # Wiki reader (markdown rendered in browser)
 ├── css/styles.css          # Shared styles
 ├── js/app.js               # Diagnostic application logic
 ├── data/
-│   ├── processes.json      # 28+ processes with stage mappings, guidance, and context axes
+│   ├── processes.json      # Stage-scoped process catalog with mappings, guidance, and context axes
 │   └── stages.json         # Stage definitions, employee ranges, revenue and funding sequences
+├── templates/
+│   ├── index.html          # Template library (grouped by wiki process)
+│   └── docs/               # Markdown sources for copy-ready ops structures
 ├── blog/
 │   ├── posts/              # Published posts (markdown → static HTML via build.py)
 │   │   └── drafts/         # WIP drafts — never built, commit freely
@@ -165,8 +159,8 @@ Free to use, adapt, and run. If you run a modified version as a service, you mus
 
 ---
 
-## Credits
+## Team
 
-Created by [@aksie](https://github.com/aksie).
+**Main curator:** [@aksie](https://github.com/aksie) — [Stefan Verkerk](https://www.linkedin.com/in/stefanverkerk/)
 
-Inspired by the Scaling Up / Rockefeller Habits framework and years of operational work in growing startups.
+Wiki and blog content draws on practitioner interviews and contributions from operators in Stefan's network. The framework is inspired by Scaling Up / Rockefeller Habits and years of hands-on ops work in growing startups.
