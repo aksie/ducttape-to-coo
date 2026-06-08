@@ -331,16 +331,28 @@
 
         .tool-card:hover { border-color: var(--border-bright); }
 
+        .tool-title-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 10px;
+        }
+
+        .tool-title-link:hover h3 {
+            color: var(--blue);
+        }
+
         .tool-icon {
             font-size: 1.5rem;
             margin-bottom: 16px;
         }
 
-        .tool-card h3 {
+        .tool-title-link h3 {
             font-size: 1.15rem;
             font-weight: 700;
             color: var(--text);
-            margin-bottom: 10px;
+            margin-bottom: 0;
+            transition: color 0.15s;
         }
 
         .tool-card p {
@@ -530,7 +542,7 @@
 <section class="story-section" id="story">
     <div class="story-inner">
         <div class="section-label">Why this exists</div>
-        <p class="story-lead">"I think we need a COO." That's how many conversations start.</p>
+        <p class="story-lead">"Ops are a mess! I think we need a COO." That's how many conversations start.</p>
         <p class="story-body">
             Often the fix isn't a hire yet — it's knowing which ops are actually broken versus which only feel urgent.
             Two patterns keep showing up: the all-rounder who hit the ceiling around fifteen people, and the product founder
@@ -554,27 +566,33 @@
         </div>
         <div class="tools-grid">
             <div class="tool-card">
-                <div class="tool-icon">⚙</div>
-                <h3>Operational diagnostic</h3>
-                <p>Assessment across 28+ processes — reliability, ownership, documentation, tooling, and headroom to scale. Calibrated to your stage, with a prioritized fix list.</p>
+                <a href="diagnostic.html" class="tool-title-link">
+                    <div class="tool-icon">⚙</div>
+                    <h3>Operational diagnostic</h3>
+                </a>
+                <p>Assessment from a handful of processes at founding to 30+ at scale — reliability, ownership, documentation, tooling, and headroom to grow. Calibrated to your stage, with a prioritized fix list.</p>
                 <p class="tool-best-for"><strong>Best for:</strong> New COO onboarding, pre-hire clarity, advisors working with founders.</p>
                 <a href="diagnostic.html" class="tool-link">Start diagnostic →</a>
             </div>
             <div class="tool-card">
-                <div class="tool-icon">◫</div>
-                <h3>Ops wiki</h3>
+                <a href="wiki.html" class="tool-title-link">
+                    <div class="tool-icon">◫</div>
+                    <h3>Ops wiki</h3>
+                </a>
                 <p>Open playbook: what good looks like at each stage, what to do, warning signs, and how processes evolve as you grow. Growing page by page from real sources.</p>
                 <p class="tool-best-for"><strong>Best for:</strong> Ops hires, founders fixing one process at a time, AI-assisted ops work.</p>
                 <a href="wiki.html" class="tool-link">Explore wiki →</a>
             </div>
             <div class="tool-card">
-                <div class="tool-icon">✎</div>
-                <h3>Blog</h3>
-                <p>Essays on founder ops pain, how the diagnostic came about, and building operational clarity in the open.</p>
+                <a href="blog/index.html" class="tool-title-link">
+                    <div class="tool-icon">✎</div>
+                    <h3>Blog</h3>
+                </a>
+                <p>Deep dives, essays &amp; observations. More opinion, and more explanation of why something matters than the Wiki.</p>
                 <p class="tool-featured">Featured</p>
                 <p class="tool-post-title">A Starting Point</p>
                 <p class="tool-post-sub">Two patterns that send founders looking for a COO — and what's worth fixing first.</p>
-                <p class="tool-best-for spaced"><strong>Best for:</strong> Context before you run the diagnostic.</p>
+                <p class="tool-best-for spaced"><strong>Best for:</strong> Learning from lessons of others.</p>
                 <a href="blog/a-starting-point.html" class="tool-link">Read featured post →</a>
             </div>
         </div>
@@ -592,6 +610,7 @@
 
         </div>
         <div class="footer-links">
+            <a href="about.html">About</a>
             <a href="https://github.com/aksie/ducttape-to-coo" target="_blank">GitHub</a>
             <a href="https://github.com/aksie/ducttape-to-coo/blob/main/LICENSE.MD" target="_blank">License (AGPL-3.0)</a>
         </div>
