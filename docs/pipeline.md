@@ -97,9 +97,9 @@ Each atom contains one claim with:
 
 Used when extracting from handbooks — creates a structured parking lot of candidate claims with supporting atoms before full synthesis. Frontmatter includes `status: candidate`.
 
-### Phase 2: Synthesis
+### Phase 2: Synthesis to Reviewable Proposals
 
-**Prompt:** `prompts/phase-2-synthesis.md`
+**Prompt:** `prompts/phase-2-synthesis-to-reviewable-proposals.md`
 **Input:** All atoms for one `{process}/{phase}` cell (from Phase 1)
 **Output:** `draft.md` + `trail.md`
 
@@ -195,12 +195,12 @@ The server is stateless — all state lives in markdown files. No database.
 | Sources exist | `sources/src-NNN.md` | Phase 1 prompt |
 | Atoms exist | `atoms/atom-NNN.md` | Phase 1 prompt |
 | Candidate claims (optional) | `entries/{p}/{ph}/candidate-claims.md` | Human or handbook extraction prompt |
-| **Draft** | `entries/{p}/{ph}/draft.md` | Phase 2 prompt (LLM synthesis) |
+| **Draft** | `entries/{p}/{ph}/draft.md` | Phase 2 prompt (reviewable proposals) |
 | **Trail** | `entries/{p}/{ph}/trail.md` | Phase 2 prompt (produced with draft) |
 | Approval | `entries/{p}/{ph}/approval.md` | Auto-created by server on first visit |
 | Published | `wiki/processes/.../{p}--{ph}.md` | Phase 4 prompt |
 
-**Missing Draft** → approval tool shows 0/0 claims; run Phase 2 synthesis.
+**Missing Draft** → approval tool shows 0/0 claims; run Phase 2 (synthesis to reviewable proposals).
 **Missing Approval** → server auto-creates it on first visit.
 
 

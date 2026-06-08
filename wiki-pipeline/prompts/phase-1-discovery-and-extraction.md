@@ -1,6 +1,6 @@
 # Phase 1: Discovery and Atom Extraction Prompt
 
-This is the prompt for the discovery and atom extraction phase of the Duct Tape to COO wiki pipeline. It is Phase 1 of 4. Given a target cell (Process × Phase), it finds high-quality sources and extracts structured atoms ready for Phase 2 (synthesis).
+This is the prompt for the discovery and atom extraction phase of the Duct Tape to COO wiki pipeline. It is Phase 1 of 4. Given a target cell (Process × Phase), it finds high-quality sources and extracts structured atoms ready for Phase 2 (synthesis to reviewable proposals).
 
 This prompt has been updated based on lessons learned from manual pipeline runs. The "Pipeline lessons" section at the bottom of this file documents *why* the prompt is structured the way it is — read it before modifying the prompt.
 
@@ -166,7 +166,7 @@ unverified: false
 - If the author is clearly speaking from direct experience, set `practitioner_first_person: true`.
 - Flag `bias_flags` if the source has a commercial interest in the claim being true.
 - Set `applies_to_stages` when the claim is a **standing obligation that persists across multiple stages** — e.g. a legal requirement that applies from first hire through growth. List every stage where the claim is valid beyond the current `phase`. Leave empty if the claim is stage-specific. Examples of things that typically carry: legal compliance minimums (WVP, hour registration, vertrouwenspersoon threshold), one-time setup actions that remain evergreen once done, foundational good-practice targets. Examples of things that typically do not carry: "how to" steps that evolve as the company scales, warning signs that resolve once the setup exists.
-- The `why` atom type is for a reasoning or mechanism claim that is not itself an action or target state — it explains *why* a particular approach matters. Use it when a source provides strong causal reasoning that supports multiple other atoms but doesn't map cleanly to any single section. `why` atoms are incorporated as supporting reasoning in Phase 2, not promoted as standalone wiki claims.
+- The `why` atom type is for a reasoning or mechanism claim that is not itself an action or target state — it explains *why* a particular approach matters. Use it when a source provides strong causal reasoning that supports multiple other atoms but doesn't map cleanly to any single section. `why` atoms are incorporated as supporting reasoning in Phase 2 (synthesis to reviewable proposals), not promoted as standalone wiki claims.
 
 ### Why-quality scoring
 
@@ -200,7 +200,7 @@ Set `extracted_by` to the actual model being used (e.g., `"llm:claude-sonnet-4-6
 
 After completing the run, add a cell-specific note to the **Cell-specific notes** section at the bottom of this prompt, summarising any bias risk, sparse-cell findings, or geographic gaps found.
 
-These outputs feed into Phase 2 (synthesis). Check with the author whether they want to review the atoms before synthesis — if so, pause after this step and proceed to Phase 2 only after the atoms have been reviewed.
+These outputs feed into Phase 2 (synthesis to reviewable proposals). Check with the author whether they want to review the atoms before synthesis — if so, pause after this step and proceed to Phase 2 only after the atoms have been reviewed.
 
 ---
 

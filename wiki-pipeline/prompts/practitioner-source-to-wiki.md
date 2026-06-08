@@ -11,7 +11,7 @@ pipeline flow: write a source → extract atoms → synthesize wiki page.
         ↓
 [2] Extract atoms (atom-NNN+) from the source
         ↓
-[3] Synthesize draft.md + trail.md (Phase 2)
+[3] Synthesize reviewable proposals: draft.md + trail.md (Phase 2)
         ↓
 [4] Review & approve claims (Phase 2½)
         ↓
@@ -96,7 +96,7 @@ date: {YYYY-MM-DD}
 
 **One atom per claim.** The `weight: 1.2` gives human insights elevated priority during synthesis.
 
-## Step 3: Synthesize draft.md + trail.md (Phase 2)
+## Step 3: Synthesize reviewable proposals — draft.md + trail.md (Phase 2)
 
 Create `wiki-pipeline/entries/{process}/{phase}/` (use process slugs: 
 `strategic-ops`, `financial-ops`, `people-ops`, `legal-ops`, `revenue-ops`).
@@ -204,6 +204,6 @@ Or use the Phase 3 publish prompt: `wiki-pipeline/prompts/phase-3-publish.md`
 ## Reference
 
 - Full schema: `wiki-pipeline/schema.md`
-- Phase 2 synthesis: `wiki-pipeline/prompts/phase-2-synthesis.md`
+- Phase 2 (synthesis to reviewable proposals): `wiki-pipeline/prompts/phase-2-synthesis-to-reviewable-proposals.md`
 - Phase 3 publish: `wiki-pipeline/prompts/phase-3-publish.md`
 - Process/phase slugs: see `AGENTS.md` → Pipeline conventions

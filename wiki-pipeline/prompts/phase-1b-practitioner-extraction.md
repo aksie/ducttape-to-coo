@@ -106,7 +106,7 @@ This feeds into the corpus_health.md if this cell's entry is later assembled fro
 1. `wiki-pipeline/sources/src-NNN.md` — one source file
 2. `wiki-pipeline/atoms/atom-NNN.md` to `atom-MMM.md` — one file per extracted claim
 
-These feed directly into Phase 2 (synthesis), alongside any atoms extracted via Phase 1 from web sources.
+These feed directly into Phase 2 (synthesis to reviewable proposals), alongside any atoms extracted via Phase 1 from web sources.
 
 ---
 

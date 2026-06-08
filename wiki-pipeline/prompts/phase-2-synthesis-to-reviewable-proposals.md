@@ -1,6 +1,6 @@
-# Phase 2: Synthesis Prompt
+# Phase 2: Synthesis to Reviewable Proposals
 
-This prompt synthesises extracted atoms into a structured set of claims (`draft.md`) and a supporting evidence trail (`trail.md`). These are the inputs to the Phase 3 approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
+This prompt synthesises extracted atoms into **reviewable proposals** — a structured set of claims (`draft.md` or `candidate-claims.md`) and a supporting evidence trail (`trail.md` or `candidate-trail.md`). These are the inputs to the Phase 3 approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
 
 **Before starting:**
 1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter). Also include any atoms where `applies_to_stages` lists the current phase — these are standing obligations extracted at an earlier stage that remain valid here.

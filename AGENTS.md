@@ -59,12 +59,12 @@ cd wiki-pipeline && python3 server.py
 
 | Starting point | Use this prompt |
 |---|---|
-| External source (handbook, blog post, talk) | `prompts/phase-1-discovery-and-extraction.md` → `phase-2-synthesis.md` → `phase-3-human-review.md` → `phase-4-publish.md` |
+| External source (handbook, blog post, talk) | `prompts/phase-1-discovery-and-extraction.md` → `phase-2-synthesis-to-reviewable-proposals.md` → `phase-3-human-review.md` → `phase-4-publish.md` |
 | Practitioner experience (your own or someone's) | `prompts/practitioner-to-pipeline.md` (reverse workflow: write the page first, backfill the pipeline) |
 
 **The production flow (source-first):**
 1. **Phase 1** — `phase-1-discovery-and-extraction.md`: find sources, extract atoms (knowledge units) into `wiki-pipeline/atoms/`, record sources in `wiki-pipeline/sources/`
-2. **Phase 2** — `phase-2-synthesis.md`: synthesize atoms into a `draft.md` + `trail.md` in `wiki-pipeline/entries/{process}/{phase}/`
+2. **Phase 2** — `phase-2-synthesis-to-reviewable-proposals.md`: synthesize atoms into reviewable proposals (`draft.md` + `trail.md`, or `candidate-claims.md` + `candidate-trail.md`) in `wiki-pipeline/entries/{process}/{phase}/`
 3. **Phase 3** — `phase-3-human-review.md`: run `wiki-pipeline/server.py` (port 8765), review each claim in the browser UI, write decisions to `approval.md`
 4. **Phase 4** — `phase-4-publish.md`: apply approval decisions, produce the final page, write it to `wiki/processes/{category}/{N.N}--{phase}.md`
 5. **Post-publish** — add `stage_focus:` to the page's frontmatter and commit; the pre-commit hook syncs it to `processes.json`
@@ -102,7 +102,7 @@ Each claim marked with `<!-- claim-id: c-NNN -->` in draft.md.
 |-------|--------|--------|
 | 1 | `phase-1-discovery-and-extraction.md` | sources + atoms (from web sources) |
 | 1b | `phase-1b-practitioner-extraction.md` | sources + atoms (from practitioner contributions in `contributions/`) |
-| 2 | `phase-2-synthesis.md` | draft.md + trail.md |
+| 2 | `phase-2-synthesis-to-reviewable-proposals.md` | draft.md + trail.md (or candidate-claims.md + candidate-trail.md) |
 | 3 | `phase-3-human-review.md` | approval decisions (human) |
 | 4 | `phase-4-publish.md` | published wiki page |
 | — | `practitioner-to-pipeline.md` | reverse workflow: experience → page → backfill pipeline |

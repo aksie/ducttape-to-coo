@@ -2,7 +2,7 @@
 
 This is Phase 3 of 4. It is the only phase without an LLM prompt — it is a human process. The reviewer reads each proposed claim, checks the supporting evidence, and decides whether it earns a place in the published wiki entry.
 
-**Input:** `draft.md` + `trail.md` produced in Phase 2
+**Input:** `draft.md` + `trail.md` (reviewable proposals produced in Phase 2)
 **Tool:** the approval tool at `http://localhost:8765` (run `python3 wiki-pipeline/server.py`)
 **Output:** `approval.md` — one decision per claim, written by the tool as you review
 

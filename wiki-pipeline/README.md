@@ -86,9 +86,9 @@ Human-contributed atoms are weighted more heavily than LLM-extracted atoms durin
 
 The discovery and extraction prompt lives in [`prompts/phase-1-discovery-and-extraction.md`](prompts/phase-1-discovery-and-extraction.md). Run it with an LLM that has web access (e.g. Claude via claude.ai), once per process × phase cell. It covers source discovery, corpus bias checking, and atom extraction in a single pass.
 
-**Phase 2: Synthesis**
+**Phase 2: Synthesis to Reviewable Proposals**
 
-The synthesis prompt lives in [`prompts/phase-2-synthesis.md`](prompts/phase-2-synthesis.md). Run it with the atoms for a given process × phase cell to produce `draft.md` and `trail.md`.
+The Phase 2 prompt lives in [`prompts/phase-2-synthesis-to-reviewable-proposals.md`](prompts/phase-2-synthesis-to-reviewable-proposals.md). Run it with the atoms for a given process × phase cell to produce reviewable proposals: `draft.md` + `trail.md`, or `candidate-claims.md` + `candidate-trail.md` when supplementing an already-published entry.
 
 **Phase 3: Human review**
 
@@ -162,7 +162,7 @@ wiki-pipeline/
 ├── prompts/            ← LLM and human prompts for each pipeline phase
 │   ├── phase-1-discovery-and-extraction.md
 │   ├── phase-1b-practitioner-extraction.md
-│   ├── phase-2-synthesis.md
+│   ├── phase-2-synthesis-to-reviewable-proposals.md
 │   ├── phase-3-human-review.md
 │   └── phase-4-publish.md
 ├── contributions/      ← raw practitioner knowledge drops (pre-pipeline)

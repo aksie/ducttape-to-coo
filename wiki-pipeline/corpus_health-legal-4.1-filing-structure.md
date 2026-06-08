@@ -23,11 +23,11 @@ last_updated: 2026-06-03
 
 ## Corpus notes
 
-- Single contributor: all three sources are from stefanverkerk. This is a strength (internal consistency, genuine first-person experience) and a limitation (single perspective). Phase 2 synthesis should flag where additional practitioner perspectives would strengthen claims.
+- Single contributor: all three sources are from stefanverkerk. This is a strength (internal consistency, genuine first-person experience) and a limitation (single perspective). Phase 2 (synthesis to reviewable proposals) should flag where additional practitioner perspectives would strengthen claims.
 - NL-specific content is intentional and valuable (WBSO, Arbowet vertrouwenspersoon, KvK deadlines). Phase 2 should distinguish NL-specific claims from broadly applicable claims.
 - No adversarial re-search needed — no commercial bias in corpus.
 
 ## Disclosure status
 
 - Should this entry render an "About this entry's sources" disclaimer? No
-- Reason: 100% practitioner-led, no commercial interest. Single contributor — Phase 2 synthesis note should flag for future enrichment with additional practitioner perspectives.
+- Reason: 100% practitioner-led, no commercial interest. Single contributor — Phase 2 reviewable-proposals note should flag for future enrichment with additional practitioner perspectives.
