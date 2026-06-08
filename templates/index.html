@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Templates — Duct Tape to COO</title>
+  <meta name="description" content="Copy-ready templates aligned to wiki processes — filing structures, due diligence, quarterly goals, and employee handbooks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --border-bright: #484f58;
+      --text: #e6edf3;
+      --text-dim: #8b949e;
+      --text-muted: #6e7681;
+      --green: #3fb950;
+      --blue: #58a6ff;
+      --font: 'Space Grotesk', 'Segoe UI', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .header-logo {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .header-logo:hover { color: var(--blue); }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      font-size: .85rem;
+    }
+
+    nav a { color: var(--text-dim); }
+    nav a:hover { color: var(--text); }
+    nav a.active { color: var(--text); }
+
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 32px 120px;
+    }
+
+    .page-eyebrow {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 3px 9px;
+      border-radius: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 12px;
+    }
+
+    .page-sub {
+      font-size: 1rem;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .how-to {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      max-width: 600px;
+      line-height: 1.65;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+    }
+
+    .section-label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 36px 0 14px;
+    }
+
+    .section-label:first-of-type { margin-top: 0; }
+
+    .template-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .template-card {
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface);
+      transition: border-color .15s;
+    }
+
+    .template-card:hover {
+      border-color: var(--border-bright);
+    }
+
+    .template-card:hover .template-title {
+      color: var(--blue);
+    }
+
+    .template-accent { width: 4px; }
+
+    .template-body {
+      padding: 20px 22px;
+    }
+
+    .template-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .template-icon { font-size: 1.1rem; line-height: 1; }
+
+    .template-tag {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .template-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      transition: color .15s;
+    }
+
+    .template-desc {
+      font-size: .9rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .template-wiki {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .template-wiki strong {
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .template-links {
+      display: flex;
+      gap: 16px;
+      font-size: .82rem;
+    }
+
+    .template-links a {
+      color: var(--blue);
+    }
+
+    .template-links a:hover {
+      text-decoration: underline;
+    }
+
+    .template-links .secondary {
+      color: var(--text-muted);
+    }
+
+    .template-links .secondary:hover {
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 40px 20px 80px; }
+      h1 { font-size: 1.6rem; }
+      nav { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+    <nav>
+      <a href="../index.html">Overview</a>
+      <a href="../diagnostic.html">Diagnostic</a>
+      <a href="../wiki.html">Wiki</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="index.html" class="active">Templates</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <span class="page-eyebrow">Templates</span>
+  <h1>Operational templates</h1>
+  <p class="page-sub">Copy-ready document structures grouped by the same processes as the diagnostic and wiki. Open a template, then duplicate the structure into Notion, Google Docs, or your Drive.</p>
+
+  <p class="how-to">Each template is a markdown file rendered as a clean doc page. Use <strong>Open template</strong> to preview; use <strong>Edit source</strong> on GitHub to fork or copy the markdown into your own repo.</p>
+
+  <div class="section-label">Legal · Finance admin · HR admin</div>
+  <div class="template-list">
+
+    <a class="template-card" href="rendered/company-ops-registry.html">
+      <div class="template-accent" style="background:#5c6b7a"></div>
+      <div class="template-body">
+        <div class="template-meta">
+          <span class="template-icon">📁</span>
+          <span class="template-tag">4.1 · 2.5 · 3.1</span>
+        </div>
+        <div class="template-title">Company Ops Registry</div>
+        <p class="template-desc">Folder map for legal, finance, HR, and privacy &amp; compliance — one obvious home per document, kept current before any transaction.</p>
+        <p class="template-wiki"><strong>Wiki:</strong> 4.1 Legal · 2.5 Financial Administration · 3.1 HR Administration</p>
+        <div class="template-links">
+          <span>Open template →</span>
+        </div>
+      </div>
+    </a>
+
+    <a class="template-card" href="rendered/due-diligence.html">
+      <div class="template-accent" style="background:#2e5e8a"></div>
+      <div class="template-body">
+        <div class="template-meta">
+          <span class="template-icon">📋</span>
+          <span class="template-tag">4.1 · 2.5</span>
+        </div>
+        <div class="template-title">Due diligence checklist</div>
+        <p class="template-desc">Master checklist of what buyers and investors typically request — expected format and where each item lives in your data room.</p>
+        <p class="template-wiki"><strong>Wiki:</strong> 4.1 Legal (early revenue) · 2.5 Financial Administration</p>
+        <div class="template-links">
+          <span>Open template →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-label">Company-Level Planning &amp; Goals</div>
+  <div class="template-list">
+
+    <a class="template-card" href="rendered/quarterly-goals.html">
+      <div class="template-accent" style="background:#c55a11"></div>
+      <div class="template-body">
+        <div class="template-meta">
+          <span class="template-icon">🎯</span>
+          <span class="template-tag">1.1</span>
+        </div>
+        <div class="template-title">Annual &amp; quarterly goals</div>
+        <p class="template-desc">Goals and status per ops area across four quarters — product, commercial, finance, and people. A living doc you update as the year progresses.</p>
+        <p class="template-wiki"><strong>Wiki:</strong> 1.1 Company-Level Planning &amp; Goals</p>
+        <div class="template-links">
+          <span>Open template →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="section-label">HR · Onboarding · Facilities</div>
+  <div class="template-list">
+
+    <a class="template-card" href="rendered/working-at.html">
+      <div class="template-accent" style="background:#9cb7a4"></div>
+      <div class="template-body">
+        <div class="template-meta">
+          <span class="template-icon">🏠</span>
+          <span class="template-tag">3.1 · 3.2 · 4.2</span>
+        </div>
+        <div class="template-title">Working at [Company]</div>
+        <p class="template-desc">Home base for what employees need to know — offices, policies, benefits, tools, and how to get help. Start here instead of a blank Notion page.</p>
+        <p class="template-wiki"><strong>Wiki:</strong> 3.1 HR Administration · 3.2 Recruitment &amp; Hiring · 4.2 Office &amp; Facilities</p>
+        <div class="template-links">
+          <span>Open template →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+</body>
+</html>
