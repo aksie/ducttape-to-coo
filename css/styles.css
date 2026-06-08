@@ -92,6 +92,20 @@ header .container {
     gap: 16px;
 }
 
+.header-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.header-logo:hover {
+    color: var(--text);
+}
+
 .header-nav {
     display: flex;
     gap: 28px;
