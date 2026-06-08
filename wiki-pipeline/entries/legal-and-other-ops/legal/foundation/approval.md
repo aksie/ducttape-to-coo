@@ -105,9 +105,8 @@ last_updated: 2026-06-03 17:38
 - Flags: []
 - Reviewer notes: ""
 - Reviewed by: "aksie"
-- Reviewed date: 2026-06-08 11:45
+- Reviewed date: 2026-06-08 12:13
 - Edited claim text: **Once a quarter, block an hour to review your operational status, perhaps with an experienced operator or friend. Look at employment papers, customer/supplier contracts, privacy, tech/data architecture, and tax/compliance .** A fixed rhythm replaces oscillating between "we have nothing" panic and "we don't need this" denial.
-   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
 ### c-013
 - Status: approved_with_edit
