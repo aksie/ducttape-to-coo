@@ -1,12 +1,40 @@
 # Phase 2: Synthesis to Reviewable Proposals
 
-This prompt synthesises extracted atoms into **reviewable proposals** — a structured set of claims (`draft.md` or `candidate-claims.md`) and a supporting evidence trail (`trail.md` or `candidate-trail.md`). These are the inputs to the Phase 3 approval tool, where a human reviews and accepts or rejects each claim. Only approved claims become part of the published wiki entry. Phase 2 is an intermediate step — it produces a *proposal*, not the entry itself.
+This prompt synthesises extracted atoms into **reviewable proposals** — claims in `draft.md` with atom mappings in `trail.md`. These are what the Phase 3 approval tool loads. Only approved claims become part of the published wiki entry. Phase 2 produces a *proposal*, not the published wiki page.
+
+### Phase 3 handoff (read this first)
+
+The approval tool at `http://localhost:8765` **only reads `draft.md` and `trail.md`**. It does not load `candidate-claims.md`.
+
+| Output file | Purpose | Reviewable in approval tool? |
+|---|---|---|
+| **`draft.md`** + **`trail.md`** | Default Phase 2 output — claims with `<!-- claim-id: c-NNN -->` markers | **Yes** |
+| `candidate-claims.md` + `candidate-trail.md` | Optional scratch pad for large handbook extractions or markdown-only triage before synthesis | **No** |
+
+**Default rule:** Phase 2 ends when `draft.md` contains the new claims and the reviewer can open the approval tool and see **pending** claims. Writing only `candidate-claims.md` does not complete Phase 2 unless the author explicitly asked for a pre-draft parking lot and will promote to `draft.md` separately.
 
 **Before starting:**
 1. Read all atom files for this cell from `wiki-pipeline/atoms/` (filter by `process:` and `phase:` in the frontmatter). Also include any atoms where `applies_to_stages` lists the current phase — these are standing obligations extracted at an earlier stage that remain valid here.
-2. Determine the entry directory: look up the process `category` in `data/processes.json`, then write output to `wiki-pipeline/entries/{category}/{phase}/draft.md` and `trail.md`. Create the directory if it doesn't exist.
-3. Check whether an `approval.md` already exists in that directory — if so, check with the author before overwriting a draft that may already be partially reviewed.
+2. Determine the entry directory: look up the process `category` in `data/processes.json`, then write output to `wiki-pipeline/entries/{category}/{phase}/`. Create the directory if it doesn't exist.
+3. **Choose synthesis mode** (see next section) based on whether `draft.md` / `approval.md` already exist in that directory.
 4. **Check for a prior stage.** The stage order is: `foundation → first-hires → early-revenue → growth → scaled`. If a prior stage entry exists at `wiki-pipeline/entries/{category}/{prior_stage}/` and contains both `approval.md` and `draft.md`, run the carry-forward review (see below) before synthesising new atoms. If no prior stage entry exists, skip this step.
+
+### Synthesis mode: new draft vs addendum
+
+**Mode A — New draft** (no `draft.md` yet, or author asked to replace the draft):
+- Write a full `draft.md` + `trail.md`.
+- Claim IDs start at `c-001`.
+- If `approval.md` is missing, the approval tool auto-creates it with all claims `pending` on first visit.
+
+**Mode B — Addendum** (`draft.md` and `approval.md` already exist — typical when supplementing a published or partially reviewed entry):
+- **Do not overwrite** existing claims or their approval decisions.
+- **Append** new claims to `draft.md` in the correct sections. New claim IDs continue from the highest existing number (e.g. if `c-006` is the last claim, new ones are `c-007`, `c-008`, …).
+- Update frontmatter: `claim_count`, `last_updated`, and optionally `batch_addendum: src-NNN` (source id for this batch).
+- **Append** a `## {source} addendum` section to `trail.md` with atom mappings for each new claim.
+- **Append** `pending` blocks to `approval.md` for each new claim (the tool treats missing blocks as pending, but appending keeps the entry list counts accurate).
+- Optionally write `candidate-claims.md` as an audit record — but **also** promote into `draft.md`; candidate files alone are not sufficient for Phase 3.
+
+If unsure which mode applies, use Mode B when any claim in `approval.md` is already `approved` or `approved_with_edit`.
 
 ---
 
@@ -112,7 +140,7 @@ Carried and evolved claims are treated exactly like new claims in the draft — 
 
 ### Rules
 
-- Add `<!-- claim-id: c-NNN -->` before each distinct claim (start from c-001).
+- Add `<!-- claim-id: c-NNN -->` before each distinct claim. New drafts: start from `c-001`. Addenda: continue from the highest existing claim ID in `draft.md`.
 - For each claim, note in a comment which atom IDs support it.
 - If the only support for a claim comes from atoms with `bias_flags`, note that explicitly.
 - Prefer atoms with `practitioner_first_person: true` as primary sources.

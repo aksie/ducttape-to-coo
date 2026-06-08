@@ -88,7 +88,7 @@ The discovery and extraction prompt lives in [`prompts/phase-1-discovery-and-ext
 
 **Phase 2: Synthesis to Reviewable Proposals**
 
-The Phase 2 prompt lives in [`prompts/phase-2-synthesis-to-reviewable-proposals.md`](prompts/phase-2-synthesis-to-reviewable-proposals.md). Run it with the atoms for a given process × phase cell to produce reviewable proposals: `draft.md` + `trail.md`, or `candidate-claims.md` + `candidate-trail.md` when supplementing an already-published entry.
+The Phase 2 prompt lives in [`prompts/phase-2-synthesis-to-reviewable-proposals.md`](prompts/phase-2-synthesis-to-reviewable-proposals.md). Run it with the atoms for a given process × phase cell to produce **`draft.md` + `trail.md`** — the only outputs the approval tool reads. When supplementing an already-approved entry, append new claims (addendum mode); `candidate-claims.md` is an optional audit record, not a substitute for `draft.md`.
 
 **Phase 3: Human review**
 

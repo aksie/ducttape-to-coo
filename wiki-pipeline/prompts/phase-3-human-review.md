@@ -6,6 +6,8 @@ This is Phase 3 of 4. It is the only phase without an LLM prompt — it is a hum
 **Tool:** the approval tool at `http://localhost:8765` (run `python3 wiki-pipeline/server.py`)
 **Output:** `approval.md` — one decision per claim, written by the tool as you review
 
+**Not loaded by this tool:** `candidate-claims.md` / `candidate-trail.md`. If Phase 2 only produced candidate files, claims must be promoted into `draft.md` first (see Phase 2 prompt — *Addendum* mode when a draft is already approved).
+
 Phase 4 (publish) reads the approval decisions and drops anything rejected or still pending. Your job here is to act as the editorial filter between raw synthesis and what readers see.
 
 ---

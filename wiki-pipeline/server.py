@@ -127,6 +127,75 @@ def write_file(path, content):
         f.write(content)
 
 
+# ── Approval format helpers ────────────────────────────────────────────────────
+
+# Canonical: ### c-001  |  Legacy: ## c-001 — title (em/en dash on same line only)
+# Do not use hyphen `-` in the optional suffix — it would swallow the next line `- Status:`.
+APPROVAL_CLAIM_SPLIT = re.compile(
+    r'^#{2,3}\s+(c-\d+)(?:\s+[—–][^\n]*)?\s*$',
+    re.MULTILINE
+)
+
+
+def approval_block_pattern(claim_id):
+    """Match a single claim block in approval.md (canonical or legacy header)."""
+    return re.compile(
+        r'(#{2,3} ' + re.escape(claim_id) + r'(?:\s+[—–][^\n]*)?\s*\n)(.*?)(?=\n#{2,3} c-|\Z)',
+        re.DOTALL
+    )
+
+
+def parse_approval_claim_body(cbody):
+    """Parse one approval claim body; tolerates legacy lowercase field names."""
+    def field(name):
+        return re.search(
+            rf'^-\s*{name}:\s*(.*)$',
+            cbody,
+            re.MULTILINE | re.IGNORECASE
+        )
+
+    def clean(m, default=''):
+        if not m:
+            return default
+        v = m.group(1).strip().strip('"')
+        return '' if v.lower() == 'null' else v
+
+    def parse_flags(m):
+        if not m:
+            return []
+        raw = m.group(1).strip()
+        if not raw or raw in ('[]', 'null'):
+            return []
+        raw = raw.strip('[]')
+        return [f.strip() for f in raw.split(',') if f.strip()]
+
+    status = field(r'Status')
+    flags_m = field(r'Flags')
+    notes = field(r'Reviewer[_ ]notes')
+    reviewed = field(r'Reviewed by')
+    rev_date = field(r'Reviewed date')
+    edited = field(r'Edited claim text')
+
+    return {
+        "status":            clean(status, 'pending'),
+        "flags":             parse_flags(flags_m),
+        "reviewer_notes":    clean(notes),
+        "reviewed_by":       clean(reviewed),
+        "reviewed_date":     clean(rev_date),
+        "edited_claim_text": clean(edited),
+    }
+
+
+def iter_approval_claim_blocks(approval_body):
+    """Yield (claim_id, body) pairs from approval markdown body."""
+    parts = APPROVAL_CLAIM_SPLIT.split(approval_body)
+    # split with capturing group: [preamble, id, body, id, body, ...]
+    if len(parts) < 3:
+        return
+    for i in range(1, len(parts), 2):
+        yield parts[i].strip(), parts[i + 1]
+
+
 # ── Entry discovery ────────────────────────────────────────────────────────────
 
 def list_entries():
@@ -167,7 +236,7 @@ def list_entries():
             claim_count = int(fm.get('claim_count', 0))
 
         if approval_text:
-            statuses = re.findall(r'^- Status:\s*(\w+)', approval_text, re.MULTILINE)
+            statuses = re.findall(r'^-\s*Status:\s*(\w+)', approval_text, re.MULTILINE | re.IGNORECASE)
             for s in statuses:
                 if s in ('approved', 'approved_with_edit'):
                     approved += 1
@@ -308,41 +377,8 @@ last_updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 
     if approval_text:
         _, approval_body = parse_frontmatter(approval_text)
-        claim_blocks = re.split(r'###\s+(c-\d+)', approval_body)
-        it = iter(claim_blocks[1:])
-        for cid, cbody in zip(it, it):
-            cid = cid.strip()
-            status   = re.search(r'- Status:\s*(\S+)', cbody)
-            flags_m  = re.search(r'- Flags:\s*(.*)', cbody)
-            notes    = re.search(r'- Reviewer notes:\s*"(.*?)"', cbody)
-            reviewed = re.search(r'- Reviewed by:\s*"?(.*?)"?$', cbody, re.MULTILINE)
-            rev_date = re.search(r'- Reviewed date:\s*(.*)', cbody)
-            edited   = re.search(r'- Edited claim text:\s*(.*)', cbody)
-
-            def clean(m, default=''):
-                if not m:
-                    return default
-                v = m.group(1).strip().strip('"')
-                return '' if v.lower() == 'null' else v
-
-            # Parse flags: "[]" or "[vendor_biased, too_generic]" or "vendor_biased"
-            def parse_flags(m):
-                if not m:
-                    return []
-                raw = m.group(1).strip()
-                if not raw or raw in ('[]', 'null'):
-                    return []
-                raw = raw.strip('[]')
-                return [f.strip() for f in raw.split(',') if f.strip()]
-
-            approval_map[cid] = {
-                "status":            clean(status, 'pending'),
-                "flags":             parse_flags(flags_m),
-                "reviewer_notes":    clean(notes),
-                "reviewed_by":       clean(reviewed),
-                "reviewed_date":     clean(rev_date),
-                "edited_claim_text": clean(edited),
-            }
+        for cid, cbody in iter_approval_claim_blocks(approval_body):
+            approval_map[cid] = parse_approval_claim_body(cbody)
 
     # ── Atoms: load referenced atoms ──────────────────────────────────────────
     # Collect all atom IDs referenced in the trail
@@ -453,11 +489,8 @@ def write_approval(process, phase, claim_id, status, flags,
 - Reviewed date: {today}
 - Edited claim text: {edited_claim_text if edited_claim_text else 'null'}"""
 
-    # Replace the existing block for this claim_id
-    pattern = re.compile(
-        r'(### ' + re.escape(claim_id) + r'\n)(.*?)(?=\n### c-|\Z)',
-        re.DOTALL
-    )
+    # Replace the existing block for this claim_id (canonical or legacy header)
+    pattern = approval_block_pattern(claim_id)
 
     if not pattern.search(text):
         return False, f"claim {claim_id} not found in approval.md"
