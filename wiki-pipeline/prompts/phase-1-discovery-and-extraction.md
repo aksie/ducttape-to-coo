@@ -273,3 +273,11 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Stage fit: first-hires is right entry (recommended in processes.json); foundation is too early for a playbook
 - Geographic: US-heavy examples; EU teams same channel principles; formal HR/legal comms may need stricter written record
 - Run date: 2026-06-03 — src-042–046, atoms atom-192–217
+
+### Offboarding @ First Hires (3.4)
+- Rich practitioner corpus on **access revocation and credential hygiene** (HN security + password threads, NCS cautionary tale)
+- Vendor bias risk: moderate in raw search (HR checklist vendors dominate); registered corpus is 75% HN practitioner
+- Key synthesis tension: **immediate lockout for involuntary/high-privilege** vs **notice-period knowledge transfer for voluntary good-faith** departures — present both, risk-based
+- Stage fit: first-hires = one-page checklist + Google SSO + password manager + start KT on notice; not full HRIS automation
+- Geographic gap: no NL/EU labor-law sources registered; final pay/notice-period law is jurisdiction-specific — flag in Phase 2
+- Run date: 2026-06-03 — src-050–057, atoms atom-225–249

@@ -457,7 +457,7 @@
       "description": "Resignation and termination procedures, exit interviews, knowledge transfer protocols, equipment and access revocation, final pay and benefits processing",
       "stageFocus": {
         "foundation": "Not applicable yet.",
-        "first-hires": "When someone leaves, make a checklist: revoke access, return equipment, exit interview, knowledge transfer. Don't let it be improvised on the day. Even at 5 people, a bad offboarding leaves gaps.",
+        "first-hires": "When someone leaves, make a checklist: revoke access, return equipment, exit interview, knowledge transfer. Don't improvise on the day — even at 5 people, a bad offboarding leaves gaps.",
         "early-revenue": "Offboarding checklist covers IT access, HR paperwork, handover documentation, and an exit conversation. Run it every time. Exit interview insights should feed back into how you hire and manage.",
         "growth": "Offboarding is a security and knowledge risk. Build a structured process: IT deprovisioning triggered on day 1 of notice, handover plan agreed with manager, exit interview with HR, reference policy clear.",
         "scaled": "Automated offboarding workflows triggered by HR system. Clear deprovisioning SLAs for IT. Legal review for sensitive roles. Knowledge transfer templates. Exit data tracked and reported to leadership."

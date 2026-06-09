@@ -21,7 +21,7 @@
 - Supporting atoms: atom-196, atom-218
 - Primary source: src-047
 
-### c-004: Decide five things explicitly
+### c-004: Agree five communication defaults as a team
 - Section: what_to_do
 - Supporting atoms: atom-218
 - Primary source: src-047
