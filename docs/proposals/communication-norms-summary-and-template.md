@@ -1,80 +1,20 @@
-# Communication norms (1.3) — decisions, schools, scope
+# Communication norms (1.3) — decisions by stage
 
-**Process:** Operational Internal Communication Norms · **Sources:** `src-042`–`src-047` · **Pipeline:** granular atoms `atom-192`–`217` kept as substrate; **wiki feedstock:** `src-047` + super-atom `atom-218` only.
-
-**Conclusion:** Don’t compete with Basecamp/GitLab/Vohra on depth. Wiki = **what to decide at your stage** + **which school you’re in** + thin middle-ground defaults. Template in §4 for teams that want more.
-
----
-
-## Pipeline: redo atoms?
-
-**No.** Keep `atom-192`–`217` for traceability.
-
-**Yes — add synthesis layer:**
-
-| Artifact | Role |
-|----------|------|
-| `src-047` | Research note — decisions by stage, schools, embedded source map |
-| `atom-218` | Super-atom — Phase 2 input for thin wiki (≤7 bullets) |
-| This doc | Human-readable proposal + optional team template |
-
-Phase 2 should **not** synthesize 26 granular claims into the wiki.
-
----
-
-## Path to the wiki (pipeline visible)
-
-```
-src-042–046  →  atom-192–217 (substrate, optional audit)
-                    ↓
-              src-047 + atom-218 (synthesis)
-                    ↓
-     entries/strategic-ops/communication-norms/first-hires/
-       draft.md   ← 12 claims (c-001–c-012)
-       trail.md   ← claim → atom/source map; notes substrate atoms
-       approval.md ← Phase 3 decisions (pending until reviewed)
-                    ↓
-     wiki/processes/strategic/1.3--first-hires.md  (Phase 4 publish)
-```
-
-**What readers see on the published page**
-
-- `<!-- sources: src-NNN … -->` on every bullet (like legal 4.1 pages)
-- **`## Sources`** with links to `wiki-pipeline/sources/src-*.md` pipeline records
-- **Pipeline entry link** in Sources — `draft.md` / `trail.md` / `approval.md` for full audit
-- **Proposal doc** linked from Tools (depth template, not duplicated in wiki)
-
-**Your step now:** run Phase 3 if you want formal sign-off on each claim:
-
-```bash
-cd wiki-pipeline && python3 server.py
-# → http://localhost:8765 — open strategic-ops/communication-norms/first-hires
-```
-
-Approve claims → re-sync wiki from `draft.md` + `approval.md` (Phase 4) or edit published page to match decisions. After `stage_focus` is set, commit wiki file — pre-commit hook syncs `processes.json`.
-
----
-
-## Headcount: is there agreement?
-
-**No magic number.** Sources use fuzzy bands and **triggers**:
-
-| Signal | Implication |
-|--------|-------------|
-| Co-located founding circle, everyone in the loop | **One-liners** enough |
-| Remote and/or hire #2+ outside founding context | **Channel list + owners** |
-| CS → eng / cross-team handoffs | **Written guidelines + escalation** |
-| ~8–10 per working channel (one HN comment) | Split project channels — not a universal rule |
-
-Aligns with `stages.json`: foundation 0–1, first hires 2–10, early revenue 11–25, growth 26–50.
+Stage decision tables and an optional team template. The published wiki ([First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.3--first-hires), [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.3--early-revenue)) condenses this into short actionable pages — use this doc when you want the full decision map or a fill-in template.
 
 ---
 
 ## What to decide at each stage (and the schools)
 
-For each decision: **School A** · **School B** · **Middle ground** (wiki default).
+Practitioners disagree on channel mix, how much to write down, and how interrupt-driven chat should be — **schools** are those recurring camps; each table shows two common positions and a **middle ground** default that works for many teams at that stage (not a single right answer).
 
-### Foundation (0–1) — wiki usually skipped (`future`)
+The wiki pages on this site stay short on purpose: there is no one agreed best way, and a long channel-by-channel manual would not add much beyond what Basecamp, GitLab, and operator essays already cover well. This doc only summarizes the schools so you can see the tradeoffs in one place.
+
+What matters is not which school you pick — it is that you **make an explicit choice** and **communicate it** to the team (spoken rules, one-pager, or escalation table — pick what fits your stage).
+
+For each decision: **School A** · **School B** · **Middle ground**.
+
+### Foundation (0–1) — one-liners are enough
 
 | Decide | School A | School B | Middle |
 |--------|----------|----------|--------|
@@ -82,7 +22,9 @@ For each decision: **School A** · **School B** · **Middle ground** (wiki defau
 
 ---
 
-### First hires (2–10) — thin wiki
+### First hires (2–10) — agree a few decisions; one-pager when remote or cross-role
+
+*Not a channel manual — pick defaults (below), coach three rules, and write one page only when spoken norms stop scaling.*
 
 | Decide | School A | School B | Middle |
 |--------|----------|----------|--------|
@@ -100,7 +42,7 @@ For each decision: **School A** · **School B** · **Middle ground** (wiki defau
 
 ---
 
-### Early revenue (11–25) — norms become critical
+### Early revenue (11–25) — written guidelines and escalation paths
 
 | Decide | School A | School B | Middle |
 |--------|----------|----------|--------|
@@ -126,34 +68,7 @@ For each decision: **School A** · **School B** · **Middle ground** (wiki defau
 
 ### Scaled (51+)
 
-Decide full comms architecture — **point to external references**; don’t duplicate in this wiki.
-
----
-
-## Cross-cutting schools (reference)
-
-**What to communicate**
-
-- **Agree:** chat ≠ memory; email for external; meetings are exceptions.
-- **Split:** Slack-forward vs evergreen-first; public-default vs psych-safety-first; async vs some sync.
-- **Middle:** tiered channels with jobs; codify within ~48h.
-
-**How much to write**
-
-- **Agree:** some norms > none; not everything; coach > police.
-- **Split:** handbook camp vs organic camp; when to start writing.
-- **Middle:** minimum written set — channel list, what leaves Slack, response times, sensitive vs public.
-
----
-
-## Recommended wiki scope
-
-| Stage | Max bullets | Content |
-|-------|-------------|---------|
-| Foundation | 0 | Rely on `stage_focus` nudge only |
-| First hires | 5–7 | Decisions table condensed + middle-ground defaults + link to this proposal for template |
-| Early revenue | 7 | Add escalation + incident lane + light artifact rule |
-| Growth+ | 7 | Playbook pointer; don’t expand past `stageFocus` |
+Decide full comms architecture — **point to external references** (e.g. GitLab handbook); don’t duplicate that depth here.
 
 ---
 
@@ -191,15 +106,3 @@ Decide full comms architecture — **point to external references**; don’t dup
 ### Response starting point
 
 - @-tagged Slack: ~3 working hours · Email (formal): ~1 working day · Emergency: call — sparingly
-
----
-
-## Source trail
-
-| id | Use |
-|----|-----|
-| src-047 | Synthesis — primary for Phase 2 |
-| atom-218 | Super-atom — wiki feedstock |
-| atom-192–217 | Substrate — do not bulk-synthesize |
-| src-042–046 | Original practitioner sources |
-| `processes.json` 1.3 | `stage_focus` nudges |
