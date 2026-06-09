@@ -167,12 +167,12 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 - **Blog build is automatic via pre-commit hook** — staging any `blog/posts/*.md` (not in `drafts/`) triggers `blog/build.py` and stages the generated HTML; run manually with `python3 blog/build.py` if needed outside a commit
 - **`blog/posts/drafts/`** — files here are never built; move to `blog/posts/` to publish
 - **No build step** — this is static HTML/JS, no npm, no compilation (except the blog)
-- **No `.gitignore`** — repo tracks everything including `.DS_Store`
+- **`.gitignore`** — ignores `.DS_Store`, `docs/ops-todo.md` (personal backlog), Python cache, IDE folders. `.DS_Store` may still appear in history if committed before ignore rules.
 - **`.nojekyll`** exists — GitHub Pages Jekyll is disabled intentionally
 - **`approval.md` auto-creation** in `server.py` sets `last_updated` but doesn't update it after subsequent saves
 - **Stub detection** in `wiki.html`: pages with only template content are dimmed (opacity 0.8), pages with content are highlighted
 - **`wiki-pipeline/entries/` may appear empty** — entry dirs use process slugs like `strategic-ops/`, not `strategic/`
-- **`docs/ops-todo.md` is personal backlog** — framework/wiki write queue for the maintainer; **do not commit** unless the user explicitly asks. It may exist only locally.
+- **`docs/ops-todo.md` is personal backlog** — framework/wiki write queue for the maintainer; **gitignored**; do not commit unless the user explicitly asks.
 
 ## References
 

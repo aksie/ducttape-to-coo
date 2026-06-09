@@ -1,6 +1,11 @@
 # macOS
 .DS_Store
 **/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Personal maintainer backlog (see AGENTS.md)
+docs/ops-todo.md
 
 # Python
 __pycache__/
