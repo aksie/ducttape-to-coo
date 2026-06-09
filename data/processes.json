@@ -142,7 +142,7 @@
       "stageFocus": {
         "foundation": "One main channel (Slack/Discord). Urgent = DM or call. Non-urgent = channel message. Respond same day if you can.",
         "first-hires": "Pick channel jobs and three rules: chat for movement, memory in wiki/tickets, codify Slack decisions. One-page norms if remote or ≥3 non-founders.",
-        "early-revenue": "Channel guidelines documented (what goes where, when to DM vs channel). SLAs by type defined. Cross-team communication protocols (e.g., how CS escalates to Engineering). Escalation paths clear.",
+        "early-revenue": "Document channel guidelines and CS→engineering escalation. Add an incident fast lane and light artifact map — spoken norms break when handoffs multiply.",
         "growth": "Communication playbook: channel structure, response SLAs by urgency level, escalation matrix, on-call rotations for critical issues. Regular review of what's working.",
         "scaled": "Full communication architecture: channels organized by purpose and team, SLAs tracked and reported, incident communication protocols, on-call systems, integration with ticketing tools."
       },

@@ -122,10 +122,8 @@
   .sidebar-process.active { color: #58a6ff; background: #161b22; }
   .sidebar-process.stub { opacity: 0.8; }
   .sidebar-process.stub:hover { opacity: 1; background: #161b22; }
-  .sidebar-process.has-content { color: #e6edf3; }
-  .sidebar-process:has(.dot-rec) { color: #6e7681; }
-  .sidebar-process:has(.dot-rec).has-content { color: #8b949e; }
-  .sidebar-process:has(.dot-rec).active { color: #58a6ff; }
+  .sidebar-process.has-content { color: #e6edf3; font-weight: 600; }
+  .sidebar-process:has(.dot-rec):not(.has-content) { color: #6e7681; }
   .sidebar-process .pid {
     font-size: 0.6rem;
     color: #484f58;
