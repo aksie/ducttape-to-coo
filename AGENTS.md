@@ -172,6 +172,7 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 - **`approval.md` auto-creation** in `server.py` sets `last_updated` but doesn't update it after subsequent saves
 - **Stub detection** in `wiki.html`: pages with only template content are dimmed (opacity 0.8), pages with content are highlighted
 - **`wiki-pipeline/entries/` may appear empty** — entry dirs use process slugs like `strategic-ops/`, not `strategic/`
+- **`docs/ops-todo.md` is personal backlog** — framework/wiki write queue for the maintainer; **do not commit** unless the user explicitly asks. It may exist only locally.
 
 ## References
 

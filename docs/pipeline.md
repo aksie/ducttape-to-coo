@@ -4,12 +4,31 @@
 
 The wiki pipeline extracts practitioner knowledge from sources (handbooks, blog posts, talks) and synthesizes it into wiki entries organized by **process** (strategic-ops, financial-ops, people-ops, etc.) and **phase** (foundation, first-hires, early-scale, growth, scaled).
 
-```
-Sources → Atoms → Draft + Trail → Approval → Published Wiki
- (Phase 1)   (Phase 1)   (Phase 2)    (Phase 3)    (Phase 4)
+**Wiki pipeline — file flow**
 
-Optional intermediate: Candidate Claims (handbook extraction only, between Phase 1 and Phase 2)
 ```
+Step 1 — SOURCES (raw inputs)
+  wiki-pipeline/sources/src-NNN.md
+  One file per article, thread, or practitioner note (URL, bias flags, summary).
+
+Step 2 — ATOMS (extracted insights)
+  wiki-pipeline/atoms/atom-NNN.md
+  One claim per file, linked back to a source (action, warning sign, etc.).
+
+Step 3 — ENTRY (one process × stage cell)
+  wiki-pipeline/entries/{process}/{phase}/
+    draft.md     — wiki-shaped prose + <!-- claim-id: c-NNN --> markers
+    trail.md     — audit trail: each claim → which atoms
+    approval.md  — human approve / reject / edit per claim (Phase 3 tool)
+
+Step 4 — PUBLISHED (public wiki)
+  wiki/processes/{category}/{id}--{stage}.md
+  Final page after approval; what the site actually serves.
+```
+
+**Phases:** Step 1 = Phase 1 (discovery + extraction) · Steps 2–3 = Phases 2–3 (synthesis + human review) · Step 4 = Phase 4 (publish).
+
+**Optional between Steps 1 and 2:** `candidate-claims.md` (handbook extraction only — parking lot before full synthesis).
 
 ---
 
