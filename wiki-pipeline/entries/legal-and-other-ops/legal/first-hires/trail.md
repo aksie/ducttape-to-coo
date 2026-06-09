@@ -174,3 +174,37 @@
 - Why-source: atom-183
 - Carried from: none
 - Synthesis notes: Promoted from src-041 candidate c-src041-fh-009
+
+# src-048 addendum — practitioner experience
+
+### c-020: Documented signing authority and boundaries
+- Section: what_good_looks_like
+- Supporting atoms: atom-219
+- Rejected atoms: none
+- Why-source: atom-219 (delegation without authority or boundaries fails at first delegated signature)
+- Carried from: none
+- Synthesis notes: New practitioner claim from stefanverkerk on contract signing delegation at first hires.
+
+### c-021: Set up signing authority before Ops/HR lead signs
+- Section: what_to_do
+- Supporting atoms: atom-220
+- Rejected atoms: none
+- Why-source: atom-220 (legal instrument + contract-type matrix = lightweight valid delegation)
+- Carried from: none
+- Synthesis notes: Merged old c-012/c-013 template claims in published page to keep action list at 7 items.
+
+### c-022: Signing without documented authority
+- Section: warning_signs / process_entry
+- Supporting atoms: atom-221
+- Rejected atoms: none
+- Why-source: atom-221 (invalid signatures surface in diligence)
+- Carried from: none
+- Synthesis notes: Complements c-016 (missing contracts) — this is improperly authorised contracts.
+
+### c-023: Commercial signing authority at early revenue
+- Section: how_this_evolves
+- Supporting atoms: atom-222
+- Rejected atoms: none
+- Why-source: atom-222 (same discipline scales to MSAs and vendor deals)
+- Carried from: none
+- Synthesis notes: Bridges first-hires employment delegation to early-revenue commercial contracts.

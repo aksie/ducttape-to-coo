@@ -265,3 +265,11 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Vendor bias risk: high (coworking spaces and real estate advisory firms dominate search results; excluded from registered sources)
 - Geographic: NL-specific content exists and is valuable (Arbowet / RI&E compliance is mandatory from first hire); explicitly search for EU/NL content on arbo obligations
 - Employee handbook templates are a useful Tier 3 source for this cell — they document what small companies formally codify about office/remote policy
+
+### Operational Internal Communication Norms @ First Hires (1.3)
+- Rich practitioner corpus: HN threads + operator essays (Gaurav Vohra, 37signals guide, Antoine Buteau channel strategy)
+- Vendor bias risk: low for registered sources; Slack-as-product not pushed — practitioners warn against Slack as system of record
+- Key synthesis: **chat for movement, docs for memory**; one-page written norms beat tool mandates; public channels + codify decisions to wiki
+- Stage fit: first-hires is right entry (recommended in processes.json); foundation is too early for a playbook
+- Geographic: US-heavy examples; EU teams same channel principles; formal HR/legal comms may need stricter written record
+- Run date: 2026-06-03 — src-042–046, atoms atom-192–217

@@ -1063,18 +1063,16 @@ function interceptContentLinks() {
     const href = a.getAttribute('href');
     if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
-    // Pipeline-record links are relative paths into wiki-pipeline/sources/.
-    // Convert them to full GitHub blob URLs so reviewers can read the source
-    // record in GitHub's markdown viewer — avoids broken SPA navigation.
-    if (href.includes('wiki-pipeline/')) {
-      const repoPath = href.match(/wiki-pipeline\/.+/)?.[0];
-      if (repoPath) {
-        a.setAttribute('href', `https://github.com/${GITHUB_REPO}/blob/${GITHUB_BRANCH}/${repoPath}`);
-        a.setAttribute('target', '_blank');
-        a.setAttribute('rel', 'noopener');
-      } else {
-        a.removeAttribute('href');
-      }
+    // Repo markdown outside the wiki SPA (pipeline records, proposals).
+    // Convert to GitHub blob URLs — avoids broken hash navigation.
+    const repoMdMatch = href.match(/(?:wiki-pipeline|docs\/proposals)\/[^?\s#]+/);
+    if (repoMdMatch) {
+      let url = `https://github.com/${GITHUB_REPO}/blob/${GITHUB_BRANCH}/${repoMdMatch[0]}`;
+      const hashIdx = href.indexOf('#');
+      if (hashIdx !== -1) url += href.slice(hashIdx);
+      a.setAttribute('href', url);
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
       return;
     }
 

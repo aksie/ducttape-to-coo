@@ -1,9 +1,9 @@
 ---
 process: legal
 phase: first-hires
-last_updated: 2026-06-03
-claim_count: 19
-batch_addendum: src-041
+last_updated: 2026-06-09
+claim_count: 23
+batch_addendum: src-048
 ---
 
 # Legal — First Hires (2 to 10 people)
@@ -24,6 +24,10 @@ batch_addendum: src-041
 - **Everyone who joins — employee or contractor — receives something in writing immediately.** Not "we are all friends, it will never go wrong." For digital companies, contracts include IP, confidentiality, and NL employment basics from day one.
   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
+<!-- claim-id: c-020 -->
+- **Anyone who signs employment or commercial contracts on the company's behalf has documented authority and clear boundaries.** Signing is not assumed from job title alone. The delegation covers which contract types each lead may sign, and the legal instrument (power of attorney or equivalent) is on file before the first delegated signature.
+  <!-- sources: src-048 (contract signing authority, human:stefanverkerk) -->
+
 ## What you actually need to do
 
 <!-- claim-id: c-003 -->
@@ -43,12 +47,12 @@ batch_addendum: src-041
    <!-- sources: src-038 (practitioner contribution) -->
 
 <!-- claim-id: c-012 -->
-5. **Have a standard employment contract template ready before your first hire** — from a startup-savvy lawyer or reputable template — and reuse one consistent document stack for every hire.
+5. **Have standard employment and contractor contract templates ready before your first hire** — from a startup-savvy lawyer or reputable template — with explicit IP assignment for anyone touching product. Reuse one consistent document stack for every hire and freelancer; missing contractor IP assignment is among the most common legal due-diligence gaps.
    <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
-<!-- claim-id: c-013 -->
-6. **Every freelancer who touches product needs a written agreement with explicit IP assignment — platform terms alone are not enough.** Missing contractor IP assignment is among the most common legal due-diligence gaps.
-   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
+<!-- claim-id: c-021 -->
+6. **Before delegating contract signing from the CEO to an Ops or HR lead, agree in writing which contract types they may sign and set up formal signing authority.** As contract work moves off the founder's desk, the lead needs legal power to bind the company (typically a power of attorney from the formal director) and clear boundaries — not blanket authority to sign whatever they want. Keep it lightweight: a one-page matrix of authorised contract types plus the delegation document, filed in `/corporate/` or `/contracts/`.
+   <!-- sources: src-048 (contract signing authority, human:stefanverkerk) -->
 
 <!-- claim-id: c-014 -->
 7. **If you collect personal data, design privacy and GDPR compliance from minute one** — what you collect, why, how it is stored, processor agreements where needed. Do not collect user data for a year and only then write a privacy policy.
@@ -84,11 +88,19 @@ batch_addendum: src-041
 - **You have been collecting user data for months without a coherent privacy policy, lawful basis, or technical controls.** Late privacy fixes often require product and architecture changes under time pressure.
   <!-- sources: src-041 (startup legal interview, human:stefanverkerk) -->
 
+<!-- claim-id: c-022 -->
+- **Team leads are signing employment or vendor contracts without documented signing authority.** Contracts signed by someone without legal power to bind the company may be invalid or unenforceable — and diligence will flag improperly authorised agreements alongside missing contracts.
+  <!-- sources: src-048 (contract signing authority, human:stefanverkerk) -->
+
 ## How this evolves next
 
 <!-- claim-id: c-009 -->
 - **At Early Revenue, the filing structure you've built becomes the foundation for transaction readiness.** The compliance calendar (tax deadlines, insurance renewals, trademark renewals) matters more as obligations multiply. The question shifts from "do we have a structure?" to "is it complete enough that an external party could navigate it in a week?"
   <!-- sources: src-038 (practitioner contribution) -->
+
+<!-- claim-id: c-023 -->
+- **At Early Revenue, commercial contract signing authority extends beyond HR.** Customer MSAs, vendor agreements, and partnership deals need the same delegation discipline — extend the contract-type matrix before commercial volume grows, not after someone signs outside their authority.
+  <!-- sources: src-048 (contract signing authority, human:stefanverkerk) -->
 
 ## Tools & resources
 

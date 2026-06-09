@@ -162,3 +162,37 @@ last_updated: 2026-06-03 17:39
 - Reviewed by: "aksie"
 - Reviewed date: 2026-06-08 11:49
 - Edited claim text: null
+
+# src-048 addendum — practitioner experience (pre-approved)
+
+### c-020
+- Status: approved
+- Flags: []
+- Reviewer notes: "Practitioner experience — pre-approved"
+- Reviewed by: "stefanverkerk"
+- Reviewed date: 2026-06-09 10:00
+- Edited claim text: null
+
+### c-021
+- Status: approved
+- Flags: []
+- Reviewer notes: "Practitioner experience — pre-approved"
+- Reviewed by: "stefanverkerk"
+- Reviewed date: 2026-06-09 10:00
+- Edited claim text: null
+
+### c-022
+- Status: approved
+- Flags: []
+- Reviewer notes: "Practitioner experience — pre-approved"
+- Reviewed by: "stefanverkerk"
+- Reviewed date: 2026-06-09 10:00
+- Edited claim text: null
+
+### c-023
+- Status: approved
+- Flags: []
+- Reviewer notes: "Practitioner experience — pre-approved"
+- Reviewed by: "stefanverkerk"
+- Reviewed date: 2026-06-09 10:00
+- Edited claim text: null
