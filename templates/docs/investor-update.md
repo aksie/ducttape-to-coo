@@ -4,21 +4,11 @@ color: "#5b4d8a"
 
 # 📨 Investor / shareholder update — [Company] · [Period]
 
-Copy-ready structure for angel, friends & family, and early VC investors. Synthesized from anonymized portfolio examples — short **monthly** email or fuller **quarterly** update. Keeps you sharp on goals and investors informed before you need to ask for help.
+Copy into email or Notion. Monthly short form or quarterly full — see [when to use which](#quick-reference--short-vs-full) at the bottom.
 
-**Cadence:** monthly (short form) or quarterly (full form) · **Owner:** [CEO name] · **Distribution:** [investor list / BCC]
+**Why bother?** [Shareholder & investor reporting (wiki)](../../wiki/processes/strategic/1.2b--first-hires.md) — start monthly before you have investors; this template is the artifact.
 
-Copy into email or Notion, [open the rendered template](../rendered/investor-update.html), or [edit source on GitHub](https://github.com/aksie/ducttape-to-coo/edit/main/templates/docs/investor-update.md).
-
-**LLM shortcut:** Paste your last update + [quarterly goals](quarterly-goals.md) + a 3-minute voice note or bullet dump — ask the model to fill this template. Review numbers and tone before sending.
-
-### Start before you have investors
-
-Write a **monthly report anyway** — even pre-funding, even if the only recipients are you and the leadership team. The format forces honesty you cannot get from investor coffees where you say "feature goes live in six weeks" and repeat the same line twelve weeks running. Score last month's goals in writing; explain what went differently than expected and what you learned. That habit is the point — external investors are an audience layer on top, not the reason to start.
-
-*Practitioner note: [stefanverkerk](../../../wiki-pipeline/contributions/strategic-1.2b--monthly-report-before-investors.md)*
-
----
+Pair with [quarterly goals](quarterly-goals.md) · [Edit on GitHub](https://github.com/aksie/ducttape-to-coo/edit/main/templates/docs/investor-update.md)
 
 ## Subject line
 
@@ -188,4 +178,4 @@ Thank you for your support and [feedback / patience / introductions] this period
 | Quarterly depth (metrics, runway, scenarios) | skip | ✓ |
 | Explicit asks + intro blurb | if needed | ✓ |
 
-**Wiki:** [1.2b Shareholder & Investor Reporting](../../wiki/processes/strategic/1.2b--first-hires.md) (angel / F&F) · grows with board cadence at venture-early stage.
+*LLM shortcut:* paste last update + quarterly goals + bullet dump; review numbers before sending.
