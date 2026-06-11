@@ -22,7 +22,9 @@ You have people now. That means process debt starts compounding. The critical pr
 | [2.1 Cash Flow Management](../processes/financial/2.1--first-hires.md) | 3–6 month rolling forecast. Alert at 6 months runway. |
 | [2.4 Accounts Payable](../processes/financial/2.4--first-hires.md) | Expense tool from day one, approval thresholds agreed |
 | [2.5 Financial Administration](../processes/financial/2.5--first-hires.md) | Bookkeeper on rhythm, you feed them clean data |
-| [3.1 HR Administration](../processes/people/3.1--first-hires.md) | Contracts, time-off, labour law compliance |
+| [3.1 HR Administration](../processes/people/3.1--first-hires.md) | Contracts, vertrouwenspersoon, hour registration, labour compliance |
+| [4.1 Governance & Corporate](../processes/legal/4.1--first-hires.md) | Corporate filing, contract signing authority |
+| [4.5 Internal & Labour](../processes/legal/4.5--first-hires.md) | Employment and freelance templates, IP in contracts |
 | [3.2 Recruitment & Hiring](../processes/people/3.2--first-hires.md) | Basic interview process, scorecards, reference checks |
 | [3.3 Onboarding](../processes/people/3.3--first-hires.md) | Checklist before day one. Bad first week is hard to recover. |
 | [5.1 Sales Operations](../processes/revenue/5.1--first-hires.md) | Deal log in a CRM. No deals living in someone's head. |
@@ -43,6 +45,7 @@ You have people now. That means process debt starts compounding. The critical pr
 | [2.2 Financial Planning](../processes/financial/2.2--first-hires.md) | Simple headcount + cost budget, review monthly |
 | [2.3 Accounts Receivable](../processes/financial/2.3--first-hires.md) | Only if you have paying customers |
 | [3.4 Offboarding](../processes/people/3.4--first-hires.md) | Checklist for when someone leaves — even at 5 people |
+| [4.6 Privacy & IP](../processes/legal/4.6--first-hires.md) | Privacy design from day one if you collect personal data |
 | [4.2 Office & Facilities](../processes/legal/4.2--first-hires.md) | If you have office space, agree who owns it |
 | [4.3 IT Administration](../processes/legal/4.3--first-hires.md) | Basics: password manager, 2FA, access list |
 

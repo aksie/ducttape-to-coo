@@ -20,7 +20,8 @@ tagline: "Build and ship"
 | [2.4 Accounts Payable](../processes/financial/2.4--foundation.md) | Pay on time, track what you owe |
 | [2.5 Financial Administration](../processes/financial/2.5--foundation.md) | Outsource bookkeeping from day one, ready for automation later |
 | [3.1 HR Administration](../processes/people/3.1--foundation.md) | Founder contracts, IP assignment, payroll sorted |
-| [4.1 Legal & Compliance](../processes/legal/4.1--foundation.md) | Co-founder agreement, IP to company, basic structure right |
+| [4.1 Governance & Corporate](../processes/legal/4.1--foundation.md) | Co-founder agreement, cap table, basic structure right |
+| [4.6 Privacy & IP](../processes/legal/4.6--foundation.md) | Founder IP assigned to the company |
 
 ## Recommended (useful, not blocking)
 

@@ -33,7 +33,9 @@ All processes are either critical or recommended. The table below highlights whe
 | [2.3 Accounts Receivable](../processes/financial/2.3--scaled.md) | DSO not tracked, AR function not integrated with financial systems |
 | [3.2 Recruitment & Hiring](../processes/people/3.2--scaled.md) | Employer brand weak, pipeline not built ahead of need |
 | [3.5 Performance Management](../processes/people/3.5--scaled.md) | Calibration inconsistent across departments, career frameworks vague |
-| [4.1 Legal & Compliance](../processes/legal/4.1--scaled.md) | Compliance becoming a standalone function — SOC 2, GDPR, exit prep |
+| [4.1 Governance & Corporate](../processes/legal/4.1--scaled.md) | In-house counsel, CLM, insurance, exit audit trail |
+| [4.5 Internal & Labour](../processes/legal/4.5--scaled.md) | Employment at scale, disputes register |
+| [4.6 Privacy & IP](../processes/legal/4.6--scaled.md) | GDPR, SOC 2, IP portfolio maintained |
 | [5.1 Sales Operations](../processes/revenue/5.1--scaled.md) | RevOps alignment breaking down between sales, marketing, CS |
 | [5.4 Customer Health & Support](../processes/revenue/5.4--scaled.md) | CS team not segmented by tier, health scores not driving action |
 | [5.5 Renewal & Retention](../processes/revenue/5.5--scaled.md) | Churn not reported to board, win-back campaigns missing |

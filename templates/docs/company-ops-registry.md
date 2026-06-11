@@ -56,7 +56,7 @@ Filing structure for legal, finance, HR, and privacy & compliance — kept curre
 
 - [06-hr/employment-contracts/[name]/]() — Signed employment contracts and salary/role addenda per person
 - [06-hr/freelance-contracts/[name]/]() — Contractor agreements with **IP assignment** (code, content, creative)
-- [06-hr/templates/]() — Lawyer-reviewed offer letter and freelance templates (version + review date)
+- [06-hr/templates/]() — Lawyer-reviewed offer letter and freelance templates (version + review date; NL starters: [Penrose employment templates](https://penrose.law/downloads/))
 - [06-hr/disputes-and-settlements/]() — List of disputes/settlements with links to signed PDFs
 - [06-hr/org-and-metrics/]() — Current org chart, headcount, light attrition/sick-leave notes
 
@@ -64,10 +64,10 @@ Filing structure for legal, finance, HR, and privacy & compliance — kept curre
 
 ## 07 — Privacy & Compliance
 
-- [07-compliance/gdpr/]() — Privacy policy (versioned), processing register, DPAs with processors
+- [07-compliance/gdpr/]() — Privacy policy (versioned), processing register, DPAs with processors ([Penrose verwerkersovereenkomst](https://penrose.law/downloads/) as NL starter)
 - [07-compliance/permits-and-licenses/]() — Sector permits, editorial charter, regulatory filings
 - [07-compliance/grants-and-subsidies/rd-tax-credits/]() — R&D tax credit applications and decisions (e.g. WBSO in the Netherlands)
-- [07-compliance/labour-relations/]() — Works council documentation (if applicable); confidential counsellor setup
+- [07-compliance/labour-relations/]() — Works council documentation (from 50 FTE); vertrouwenspersoon documented under **3.1 HR Administration** (file confirmation here when set up)
 
 ---
 

@@ -388,10 +388,10 @@
       "title": "HR Administration",
       "primary_axis": "headcount",
       "sensitivity": "none",
-      "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance, insurance coordination, employee record keeping",
+      "description": "Payroll processing, benefits administration, time-off tracking and approval, sick leave management, contract lifecycle management, labor law compliance (NL: hour registration, vertrouwenspersoon from first hire, works council from 50 FTE), insurance coordination, employee record keeping",
       "stageFocus": {
         "foundation": "Use a payroll provider before you hire, assign founder IP to the company, and create /hr/ folders before the first contract arrives.",
-        "first-hires": "File every signed contract in /hr/ with salary addenda, use lawyer-reviewed templates, and keep freelance IP assignments on file.",
+        "first-hires": "File every signed contract in /hr/ with salary addenda, use lawyer-reviewed templates, keep freelance IP assignments on file, and document your vertrouwenspersoon (confidential counsellor) from the first hire.",
         "early-revenue": "One owner for HR admin filing, light HR metrics, and contracts kept out of managers' email.",
         "growth": "Migrate to an HRIS with one source of truth, and keep HR filing complete enough to answer buyer due diligence in days, not weeks.",
         "scaled": "Dedicated HR ops function. Automated workflows for contracts, onboarding, offboarding, and compliance. Regular audits of employee records and benefits. Clear escalation paths for HR issues."
@@ -540,20 +540,64 @@
     {
       "id": "4.1",
       "category": "legal-and-other-ops",
-      "title": "Legal (above certain size also Compliance)",
+      "title": "Governance & Corporate",
       "primary_axis": "revenue_stage",
       "sensitivity": "funding_stage",
-      "description": "Employment contract templates and execution, freelancer/contractor agreement management, IP assignment clauses in all contracts, legal request intake and external counsel coordination, standard commercial contract templates (SaaS, services, NDA), privacy/GDPR compliance (privacy policy, data processing agreements, consent mechanisms), shareholder agreements and cap table maintenance, basic insurance coverage (liability, professional indemnity, D&O for funded companies)",
+      "description": "Corporate structure and shareholder arrangements, cap table and board governance, standard commercial contract templates (SaaS, services, NDA), legal request intake and external counsel coordination, founder and investment agreements, basic insurance coverage (liability, professional indemnity, D&O for funded companies)",
       "stageFocus": {
-        "foundation": "Get the company structure right from day one. Sign a co-founder agreement that covers equity splits, vesting, and what happens if someone leaves. Have every founder assign their IP to the company — this will come up in every future due diligence. Keep it simple: use standard templates and a startup-savvy lawyer, not a corporate firm.",
-        "first-hires": "Designate an HR filing owner, use lawyer-reviewed templates, and give Ops or HR leads formal signing authority before they sign employment contracts on the company's behalf.",
-        "early-revenue": "You need standard commercial contracts: a SaaS agreement, NDA, and contractor template. Get these reviewed once and then use them consistently — don't let every deal become a one-off. Set up a lightweight legal intake (a Slack channel or form) so legal requests don't land in random inboxes. If you're venture-backed or processing customer data, get D&O insurance and a DPA template sorted.",
-        "growth": "Legal volume is growing faster than you expect. Put a legal ops rhythm in place: contract register, external counsel briefed and on retainer, clear authority matrix for who can sign what. GDPR/privacy compliance should be properly documented now, not just theoretical. Compliance requirements (SOC 2, ISO, sector-specific) need an owner.",
-        "scaled": "Time for in-house legal counsel or a dedicated law firm relationship. Build out contract lifecycle management — tracking renewals, obligations, and counterparty risk. Compliance becomes a standalone function: GDPR, SOC 2, and if you're heading toward an exit or IPO, start building the audit trail now. Insurance coverage reviewed annually."
+        "foundation": "Get company structure right from day one: co-founder agreement covering equity, vesting, and leaver terms. Use standard templates and a startup-savvy lawyer — not a corporate firm.",
+        "first-hires": "Keep corporate and commercial filing current. Give Ops or HR leads formal signing authority before they sign contracts on the company's behalf.",
+        "early-revenue": "Standard commercial contracts — SaaS agreement, NDA — reviewed once and used consistently. Lightweight legal intake so requests don't land in random inboxes. D&O insurance if venture-backed.",
+        "growth": "Legal ops rhythm: contract register, external counsel on retainer, authority matrix for who signs what. Sector compliance (SOC 2, ISO) needs an owner.",
+        "scaled": "In-house or dedicated firm relationship. Contract lifecycle management. Insurance reviewed annually. Build audit trail if exit or IPO is plausible."
       },
       "stages": {
         "foundation": "critical",
         "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.5",
+      "category": "legal-and-other-ops",
+      "title": "Internal & Labour",
+      "primary_axis": "headcount",
+      "sensitivity": "none",
+      "description": "Employment contract templates and execution, freelancer and contractor agreements with IP assignment, signing authority for HR and Ops, settlement agreements (VSO), labour compliance filing. Works council and vertrouwenspersoon (confidential counsellor): see 3.1 HR Administration.",
+      "stageFocus": {
+        "foundation": "Not applicable yet — no employees.",
+        "first-hires": "Lawyer-reviewed employment and freelance templates; every contract signed and filed day one. NL labour basics (hours, vertrouwenspersoon) — see 3.1 HR Administration.",
+        "early-revenue": "Contractor template with explicit IP assignment — use consistently, not one-offs. Employment contracts and amendments findable for diligence.",
+        "growth": "Employment contract consistency across hires; settlement discipline documented. Works council obligations if headcount triggers apply.",
+        "scaled": "Employment agreements at scale; disputes and settlements in structured register. HRIS migration without losing contract history."
+      },
+      "stages": {
+        "foundation": "future",
+        "first-hires": "critical",
+        "early-revenue": "critical",
+        "growth": "critical",
+        "scaled": "critical"
+      }
+    },
+    {
+      "id": "4.6",
+      "category": "legal-and-other-ops",
+      "title": "Privacy & IP",
+      "primary_axis": "revenue_stage",
+      "sensitivity": "funding_stage",
+      "description": "Founder and employee IP assignment to the company, privacy and GDPR compliance (privacy policy, processing register, data processing agreements), trademark and domain protection, content and software licensing",
+      "stageFocus": {
+        "foundation": "Every founder assigns IP to the company — this surfaces in every future due diligence. Keep it simple with standard assignment language.",
+        "first-hires": "If you collect personal data, design privacy from day one — lawful basis, storage, processor agreements where needed.",
+        "early-revenue": "DPA template sorted if you process customer data. Privacy policy versioned. Trademarks and domains on renewal calendar.",
+        "growth": "GDPR properly documented — not theoretical. Processing register current. Sector privacy requirements have an owner.",
+        "scaled": "Compliance as standalone function: GDPR, SOC 2, audit trail for exit. IP portfolio and licenses maintained."
+      },
+      "stages": {
+        "foundation": "critical",
+        "first-hires": "recommended",
         "early-revenue": "critical",
         "growth": "critical",
         "scaled": "critical"

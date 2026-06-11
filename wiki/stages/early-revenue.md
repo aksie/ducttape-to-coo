@@ -32,7 +32,9 @@ You're past survival mode. The challenge now is repeatability — things that wo
 | [3.3 Onboarding](../processes/people/3.3--early-revenue.md) | Written checklist, 30-day check-in, role-specific ramp plans |
 | [3.4 Offboarding](../processes/people/3.4--early-revenue.md) | Checklist runs every time, exit insights feed hiring |
 | [3.5 Performance Management](../processes/people/3.5--early-revenue.md) | Simple review cycle, goals connected to OKRs |
-| [4.1 Legal & Compliance](../processes/legal/4.1--early-revenue.md) | Standard commercial contracts, legal intake, DPA if applicable |
+| [4.1 Governance & Corporate](../processes/legal/4.1--early-revenue.md) | Standard commercial contracts, legal intake, D&O if funded |
+| [4.5 Internal & Labour](../processes/legal/4.5--early-revenue.md) | Employment consistency, contractor IP on file |
+| [4.6 Privacy & IP](../processes/legal/4.6--early-revenue.md) | DPA, privacy policy versioned, trademark renewals |
 | [4.3 IT Administration](../processes/legal/4.3--early-revenue.md) | Core stack defined, new employee setup documented |
 | [5.1 Sales Operations](../processes/revenue/5.1--early-revenue.md) | CRM is source of truth, sales stages defined, pipeline forecast |
 | [5.2 Customer Acquisition](../processes/revenue/5.2--early-revenue.md) | Qualification criteria, routing, lead-to-close conversion tracked |
