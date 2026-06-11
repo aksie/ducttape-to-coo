@@ -4,9 +4,6 @@
 .AppleDouble
 .LSOverride
 
-# Personal maintainer backlog (see AGENTS.md)
-docs/ops-todo.md
-
 # Python
 __pycache__/
 *.pyc
