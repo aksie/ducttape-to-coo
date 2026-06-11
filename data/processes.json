@@ -413,8 +413,8 @@
       "description": "How you find and hire people, from posting on your network to structured interview processes. Quality of early hires makes or breaks a startup.",
       "stageFocus": {
         "foundation": "Agree on job description in founding team, Network-based hiring. 2-3 informal conversations. Check references (actually call them). Make sure values align and they can do the job.",
-        "first-hires": "Basic job post (AngelList, LinkedIn). 2-3 interview rounds with different people. Simple scorecard to compare candidates. Always check references.",
-        "early-revenue": "Defined interview process with scorecards. Headcount planning (know who you need when). Multiple channels for sourcing. Structured reference checks.",
+        "first-hires": "Agree budget and rough salary band before you post; founder or CFO OK on each offer; no manager-sent contracts — use your template via HR or finance.",
+        "early-revenue": "No job post without budget and management OK on role plus salary band; CFO or COO approves each offer; HR or finance issues the contract from your template.",
         "growth": "Full hiring process: role definitions, interview panels, scoring rubrics, hiring manager training. Recruiting pipeline tracked. Diversity sourcing strategies.",
         "scaled": "Professional recruiting: ATS system, talent pipelines, employer branding, data-driven hiring decisions, structured onboarding integration."
       },
@@ -565,7 +565,7 @@
       "title": "Internal & Labour",
       "primary_axis": "headcount",
       "sensitivity": "none",
-      "description": "Employment contract templates and execution, freelancer and contractor agreements with IP assignment, signing authority for HR and Ops, settlement agreements (VSO), labour compliance filing. Works council and vertrouwenspersoon (confidential counsellor): see 3.1 HR Administration.",
+      "description": "Employment contract templates and execution, freelancer and contractor agreements with IP assignment, signing authority for HR and Ops, settlement agreements (VSO), labour compliance filing. Hiring approval chain (offer and contract issuance): see 3.2 Recruitment & Hiring. Works council and vertrouwenspersoon: see 3.1 HR Administration.",
       "stageFocus": {
         "foundation": "Not applicable yet — no employees.",
         "first-hires": "Lawyer-reviewed employment and freelance templates; every contract signed and filed day one. NL labour basics (hours, vertrouwenspersoon) — see 3.1 HR Administration.",
