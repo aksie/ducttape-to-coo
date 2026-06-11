@@ -21,7 +21,7 @@ Format from [Event template](../templates/docs/event.md).
 - [x] **Data room / DD readiness framing** — [4.1 — Foundation](../wiki/processes/legal/4.1--foundation.md) · [4.1 — Early Revenue](../wiki/processes/legal/4.1--early-revenue.md) (“navigate in a week”) · [transaction-ready draft](../blog/posts/drafts/transaction-ready-from-day-one.md)
 - [x] **CS ↔ eng communication friction** — [1.3](../wiki/processes/strategic/1.3--first-hires.md) · [src-049](../wiki-pipeline/sources/src-049.md)
 - [x] **Hiring approval chain (3.2)** — [first-hires](../wiki/processes/people/3.2--first-hires.md) · [early-revenue](../wiki/processes/people/3.2--early-revenue.md) · src-060 · atoms 259–265 (2026-06)
-- [x] **Who Decides What — direction + blog draft** — [proposal](proposals/who-decides-what-summary-and-direction.md) · [blog draft](../blog/posts/drafts/who-decides-when-founders-disagree.md) · [session roundup](proposals/session-2026-06-03-who-decides-what-roundup.md) (2026-06-03)
+- [x] **Who Decides What — direction + blog draft** — [proposal](proposals/who-decides-what-summary-and-direction.md) · [blog draft](../blog/posts/drafts/who-decides-when-founders-disagree.md) · [session roundup](proposals/session-2026-06-11-who-decides-what-roundup.md) (2026-06-11)
 
 ---
 

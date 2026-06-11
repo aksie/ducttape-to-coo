@@ -1,6 +1,6 @@
-# Session roundup — 2026-06-03 (Who Decides What + wrap)
+# Session roundup — 2026-06-11 (Who Decides What + wrap)
 
-Tired-friendly summary of what landed today, what's only local, and the smallest sensible next steps.
+Tired-friendly summary of what landed today (2026-06-11), what's still local, and the smallest sensible next steps.
 
 ---
 
@@ -20,13 +20,19 @@ Tired-friendly summary of what landed today, what's only local, and the smallest
 | Legal split Route A (4.1 / 4.5 / 4.6 diagnostic) | `c98b8b4` |
 | **3.2 Hiring approval chain** — pipeline + wiki first-hires + early-revenue | `e0e7a05`, `8157a5f`, `de01413` |
 
-### Local only — not committed
+### Also committed tonight (`e53a169`, `87b426d`)
 
 | Path | Status |
 |------|--------|
 | `wiki-pipeline/entries/strategic-ops/who-decides-what/first-hires/source-discovery.md` | Phase 1 Step 1 complete; URLs Tracks A / B / B-fin / C |
-| `.cursor/skills/virtual-coo/` | Virtual COO skill (prompts, setup HTML, checkins) — **separate track**, not in repo yet |
-| `docs/company-state.md` | COO skill input — local |
+| `.cursor/skills/virtual-coo/` | Virtual COO skill — **WIP, do not use yet** |
+| `docs/ops-todo.md` | Backlog now tracked in repo |
+
+### Still local only
+
+| Path | Status |
+|------|--------|
+| `docs/company-state.md` | COO skill input — not committed |
 
 ### Wiki still stub
 
@@ -51,7 +57,7 @@ Tired-friendly summary of what landed today, what's only local, and the smallest
 
 ## Skills (virtual COO)
 
-Not part of today's git commit. Lives under `.cursor/skills/virtual-coo/`:
+Committed in `87b426d` but **WIP — do not use this week**. Lives under `.cursor/skills/virtual-coo/`:
 
 - `SKILL.md` — agent instructions  
 - `reference.md`, `coo-setup.html` — setup / reference  
@@ -59,11 +65,11 @@ Not part of today's git commit. Lives under `.cursor/skills/virtual-coo/`:
 - `automation-draft.md` — future scheduled run notes  
 - `coo-checkins.ics` — calendar feed  
 
-**When ready:** decide if `.cursor/` goes in repo or stays personal; if repo, add only skill files (not secrets); `docs/company-state.md` is the practitioner input file per `automation-draft.md`.
+**When ready:** finish refining the skill; `docs/company-state.md` is the practitioner input file per `automation-draft.md` (still local).
 
 ---
 
-## Outreach todos (added 2026-06-03)
+## Outreach todos (added 2026-06-11)
 
 - **LinkedIn — “Nalden” post** — AI drafts in Nalden’s voice; meta joke that Stefan let AI write it as Nalden (see `ops-todo.md`)
 - **Guest voices** — Trailhead + others: write about the framework and their contribution (wiki contribution or guest post)
@@ -80,7 +86,7 @@ No urgency. Smallest wins first.
 | 2 | **Read** proposal review prompts § end — tick defaults (ABC centerpiece, first hire = C, fold foundation into first-hires) | 10 min |
 | 3 | **Pipeline resume** — ask agent: “Create `src-061` from proposal + corpus health, then Phase 2 draft for 1.4 first-hires” | 1 session |
 | 4 | **Blog** — publish when happy: move `who-decides-when-founders-disagree.md` → `blog/posts/` (hook builds HTML on commit) | 5 min |
-| 5 | **Virtual COO** — commit skill + `company-state.md` if you want it tracked, or leave local | optional |
+| 5 | ~~**Virtual COO** — commit skill~~ — done in `87b426d` (WIP; `company-state.md` still local) | ✓ |
 
 **Do not do tonight:** full atom extraction of all 25 URLs, approval tool review, or `stage_focus` until draft exists.
 
@@ -118,5 +124,5 @@ Cross-refs in wiki (don't duplicate): **3.2** hiring, **1.3** codify decisions, 
 
 - Proposal: [who-decides-what-summary-and-direction.md](who-decides-what-summary-and-direction.md)  
 - Blog draft: [who-decides-when-founders-disagree.md](../../blog/posts/drafts/who-decides-when-founders-disagree.md)  
-- Discovery (local): [source-discovery.md](../../wiki-pipeline/entries/strategic-ops/who-decides-what/first-hires/source-discovery.md)  
+- Discovery: [source-discovery.md](../../wiki-pipeline/entries/strategic-ops/who-decides-what/first-hires/source-discovery.md)  
 - Backlog: [ops-todo.md](../ops-todo.md)
