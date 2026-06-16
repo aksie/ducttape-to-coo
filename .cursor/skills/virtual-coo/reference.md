@@ -12,27 +12,47 @@ Detailed procedures for the `virtual-coo` skill. Read the section you need.
 
 ## Weekly check-in
 
-A 5-minute, stage-aware pulse. Goal: catch slippage early on the few things that
-make or break an early-stage company.
+A 10–15 minute pulse. Goal: move the operational backlog, catch drift early, and
+leave with at most 3 clear actions. **Tone:** read [tone-of-voice.md](tone-of-voice.md)
+first — collaborative, not audit-like.
 
-### Procedure
+### Conversation arc
 
-1. **Read `company-state.md`** (in the workspace). Note current stage, headcount,
-   revenue stage, funding stage, last check-in date, recent events, open actions.
-2. **Detect change since last check-in.** Ask (or infer from the conversation):
-   - **Headcount** — anyone joined, left, or signed? (crosses a stage boundary?)
-   - **Customers** — new paying customers? churn? first revenue?
-   - **Funding** — runway change, raise started, term sheet, board ask?
-   - **Open actions** — what moved, what's stuck?
-3. **Check the stage-critical processes.** From `wiki/stages/{stage}.md`, take the
-   "Critical at this stage" list. Ask which of those feel shaky right now. Pull
-   the relevant `wiki/processes/.../{N.N}--{stage}.md` for any that do.
-4. **Propose at most 3 next actions**, each with an owner and a next step, each
-   traceable to a wiki page. Don't dump the whole stage list on them.
-5. **Update `company-state.md`** — new facts, new/closed actions, today's
-   date as the last weekly check-in.
+1. **Open** — what happened last week (reality, not the plan).
+2. **Backlog** — walk open actions from `company-state.md`. Refer to what was
+   agreed ("you were going to…"), not whether they passed a test. If something
+   slipped: ask what's blocking them and whether to keep it on the list.
+3. **Pulse** — one or two light questions from the warning-sign lenses (rotate;
+   don't run all three every week). Map answers to wiki pages internally.
+4. **Milestones** — at the **end**, only if something may have changed: hire,
+   customer, cash / fundraising. Skip if nothing new.
+5. **Close** — shared list of up to 3 actions (what · owner · next step). Cite
+   wiki sources in the written summary, not in the spoken tone. Update
+   `company-state.md`.
 
-### The three things to always probe (stage-aware)
+### Procedure (agent)
+
+1. **Read `company-state.md`** — stage, headcount, revenue/funding stage, last
+   check-in date, recent events, open actions.
+2. **Run the arc above** in conversation. Fetch wiki pages when a gap needs a
+   concrete fix; don't dump the whole stage list.
+3. **Propose at most 3 next actions** — each with owner, next step, wiki source.
+4. **Update `company-state.md`** — new facts, closed/new actions, today's date.
+
+### Link to the process review (quarterly health check)
+
+Weekly does not replace the full process pass. Connect them lightly:
+
+- **Most weeks (end of weekly):** "Anything big since we last ran through the
+  processes?"
+- **Week before a process review:** "Next week we'll do a quick run through the
+  operational processes for your stage — good enough, or we pick an action. Nothing
+  to prepare."
+- **Week after a process review:** open the backlog with what the review flagged.
+
+→ Full process review: [Quarterly health check](#quarterly-health-check)
+
+### Milestone signals (stage-aware, end of call only)
 
 | Signal | Why it matters early | Where to ground the advice |
 |---|---|---|
@@ -40,11 +60,74 @@ make or break an early-stage company.
 | **Paying customers** | First revenue triggers AR, onboarding, support | `revenue/5.3`, `revenue/5.4`, `financial/2.3` |
 | **Funding / prep** | Reporting + governance obligations start | `strategic/1.2b`, `legal/4.1`, `financial/2.1` |
 
-### Check-in opening (example)
+### Weekly check-in example
 
-> Weekly check-in. Last time you were at [headcount] / [stage]. Three quick ones:
-> (1) any hires or departures? (2) any movement on paying customers? (3) anything
-> on cash or fundraising? Then I'll flag what's worth your attention this week.
+Stage: `first-hires`, ~8 people. New engineer starts Monday.
+
+**COO:** What happened last week — the real version, not the plan?
+
+**CEO:** Demo went well. I lost Thursday because Sam kept asking what to work on.
+New engineer starts Monday; no laptop ordered yet.
+
+**COO:** Before we get into that — last week you were going to pin Q2 priorities in
+Slack and see if Sam could name them without looking. How did that go?
+
+**CEO:** Pinned them. Didn't get to the Sam test.
+
+**COO:** Anything blocking you on that I can help with? Shall we keep it on the list
+for this week?
+
+**CEO:** Just ran out of time. Yeah, keep it.
+
+**COO:** And the onboarding checklist — you were going to use one before Monday.
+Want me to draft that today so you're not scrambling over the weekend?
+
+**CEO:** Yes, please.
+
+**COO:** On Sam — has that been going on for a while, or is it new?
+
+**CEO:** A while. Priorities are written down; people still Slack me.
+
+**COO:** So the list is there, but it sounds like people still come to you to choose
+work — is that fair?
+
+**CEO:** Yeah, that's right.
+
+**COO:** If you asked Sam the top priority right now, do you think they'd answer
+straight away?
+
+**CEO:** Probably not without looking.
+
+**COO:** The Sam test might show us whether it's visibility or something else.
+Shall we keep that on the list too?
+
+**CEO:** Yes.
+
+**COO:** For Monday — if onboarding only lives in your head, the next hire might
+feel last-minute again. I'll send the checklist today; you can run through it
+before they start. Does that work?
+
+**CEO:** That would help.
+
+**COO:** One more — did anything go out wrong last week, or almost wrong? Pricing,
+contracts, customer comms?
+
+**CEO:** Almost sent a proposal with old pricing. Caught it in time.
+
+**COO:** Would it help to pin current pricing where proposals get written?
+
+**CEO:** Good idea.
+
+**COO:** So for this week: (1) Sam test — you; (2) onboarding checklist — me
+today, you run it; (3) pricing in one place — you. Anything big since we last
+talked — new hire signed, customer churned, cash issue?
+
+**CEO:** No, just the Monday start.
+
+**COO:** Got it. Same time next week.
+
+*(Agent: update `company-state.md`; cite `wiki/processes/strategic/1.1--first-hires.md`,
+`wiki/processes/people/3.3--first-hires.md`, etc. in the written action list.)*
 
 ---
 

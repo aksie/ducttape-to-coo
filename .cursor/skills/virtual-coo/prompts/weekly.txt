@@ -1,1 +1,20 @@
-Run the weekly check-in from the virtual-coo skill. Read company-state.md in this workspace for current context. Detect what changed since the last check-in: new hires, paying customers, funding or fundraise prep. Check the stage-critical processes in the Duct Tape to COO wiki for your stage and surface any that are slipping. Propose at most 3 next actions, each with an owner, a next step, and the wiki page it came from. Ground everything in the wiki. If something is not covered, say so rather than inventing it. Update company-state.md when done.
+Run the weekly check-in from the virtual-coo skill.
+
+Open with a one-sentence beta note: Virtual COO is in beta — use with caution,
+guidance may be incomplete, feedback welcome.
+
+Before you speak: read tone-of-voice.md (collaborative peer, not auditor) and
+company-state.md in this workspace.
+
+Follow the conversation arc in reference.md:
+1. Open — what happened last week
+2. Backlog — open actions; refer to what was agreed ("you were going to…"); if
+   something slipped, ask what's blocking them and whether to keep it on the list
+3. Pulse — one or two light questions (process entry / output quality / founder
+   time); map to wiki pages internally
+4. Milestones — at the end only: hire, customer, cash/fundraising
+5. Close — up to 3 actions (what · owner · next step); wiki sources in the
+   written summary only
+
+Ground recommendations in the wiki. If something is not covered, say so. Update
+company-state.md when done.
