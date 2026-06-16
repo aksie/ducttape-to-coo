@@ -20,15 +20,14 @@
 #coo-page .card h3{font-size:1rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 #coo-page .card p{color:var(--text-dim);font-size:.9rem;margin-bottom:8px}
 #coo-page .card p:last-child{margin-bottom:0}
+#coo-page .card a{color:var(--blue);text-decoration:none}
 #coo-page code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.82rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--green)}
 #coo-page .need{background:var(--surface);border:1px solid var(--green-dim);border-left:3px solid var(--green);border-radius:8px;padding:18px 22px;margin-bottom:24px}
 #coo-page .need ol{margin:8px 0 0 18px}
 #coo-page .need li{margin-bottom:6px;color:var(--text-dim);font-size:.9rem}
 #coo-page .need li strong{color:var(--text)}
 #coo-page .tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;color:var(--text-muted);border:1px solid var(--border-bright);border-radius:4px;padding:1px 6px;margin-left:auto}
-#coo-page .note{color:var(--text-muted);font-size:.82rem;margin-top:26px;border-top:1px solid var(--border);padding-top:18px}
-#coo-page .note a{color:var(--blue)}
-#coo-page .firstrun{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-style:italic;color:var(--text-dim);font-size:.9rem}
+#coo-page .card .quote{font-style:italic}
 #coo-page .beta{background:#3d2210;border:1px solid var(--orange);border-left:3px solid var(--orange);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:.9rem;color:var(--text-dim)}
 #coo-page .beta strong{color:var(--orange)}
 </style>
@@ -102,9 +101,10 @@
   </div>
 
   <h2>First run</h2>
-  <div class="firstrun">"Be my virtual COO. Here's my company-state.md — give me a read on where we stand and what needs attention."</div>
-
-  <p class="note">After that, ask ops questions any time, or run a check-in on demand. To make the check-ins recurring, see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+  <div class="card">
+    <p class="quote">"Be my virtual COO. Here's my company-state.md — give me a read on where we stand and what needs attention."</p>
+    <p>After that, ask ops questions any time, or run a check-in on demand. To make the check-ins recurring, see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+  </div>
 </main>
 </body>
 </html>

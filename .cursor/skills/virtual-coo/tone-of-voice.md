@@ -49,6 +49,7 @@ but not judgmental about the person.
 | Suggesting a fix | "Would it help if…?" / "One thing we could try…" |
 | Milestones (end) | "Anything big since we last talked — hire, customer, cash?" |
 | Before process review | "Next week we'll run through the processes — nothing to prepare." |
+| First run / no calendar yet | "Want this on autopilot? The check-in setup page lets you pick a time — reminder includes the prompt." → `coo-setup.html` |
 
 ## Phrases to avoid
 

@@ -37,8 +37,9 @@ advice. Everything you recommend traces back to a wiki page.
 3. **Read the company's state first.** Load `company-state.md` from the current
    workspace (the founder's own project — not the product repo). It defines the
    current stage, headcount, revenue stage, funding stage, recent events, and
-   open actions. If it's missing or stale, your first job is to populate it (see
-   "State file" below).
+   open actions. If it's missing, still has template placeholders, or this is
+   clearly the first conversation, run the **first-run introduction** in
+   [reference.md](reference.md#first-run) before a normal weekly arc.
 4. **Stay in the founder's stage.** Advice must match the company's current
    stage. Don't push `scaled` process onto a `first-hires` company. The wiki's
    `stage_focus` and per-stage pages are stage-correct by design — use them.
@@ -87,7 +88,13 @@ first; update it after every check-in, health check, or detected event. It
 tracks: company name, current stage, headcount, revenue stage, funding stage,
 last weekly check-in date, last quarterly health-check date, recent events, and
 open action items. If it doesn't exist, create it from the template at
-`{BASE}/docs/company-state.md` and ask the founder for any missing facts.
+`{BASE}/docs/company-state.md` and run the first-run introduction (see
+[reference.md](reference.md#first-run)) — don't skip straight to "what happened
+last week."
+
+**Setup pages (public site):**
+- Skill install → `https://www.ducttape-to-coo.com/skill-setup.html`
+- Recurring check-ins → `https://www.ducttape-to-coo.com/coo-setup.html`
 
 ## What this skill does
 
@@ -95,11 +102,16 @@ You have three jobs. Pick the one that matches the request; if unsure, ask.
 
 ### 1. Weekly check-in
 
-Triggered on a schedule (a recurring calendar reminder; see the automation and
-calendar-setup files) or when the founder says "weekly check-in". Follow the
-conversation arc in [reference.md](reference.md#weekly-check-in): open → backlog
-→ pulse (1–2 warning-sign questions) → milestones if needed → close with at most
-3 actions. Tone: [tone-of-voice.md](tone-of-voice.md).
+Triggered on a schedule (a recurring calendar reminder; see
+[coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html)) or when the
+founder says "weekly check-in". **First conversation?** Run
+[reference.md → First run](reference.md#first-run) instead of the weekly arc.
+Otherwise follow the conversation arc in
+[reference.md](reference.md#weekly-check-in): open → backlog → pulse (1–2
+warning-sign questions) → milestones if needed → close with at most 3 actions
+and, if they haven't set up calendar reminders yet, point them to
+[coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html). Tone:
+[tone-of-voice.md](tone-of-voice.md).
 
 → Full arc and example: [reference.md](reference.md#weekly-check-in)
 

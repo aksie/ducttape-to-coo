@@ -6,7 +6,12 @@ guidance may be incomplete, feedback welcome.
 Before you speak: read tone-of-voice.md (collaborative peer, not auditor) and
 company-state.md in this workspace.
 
-Follow the conversation arc in reference.md:
+If company-state.md is missing, still has template placeholders, or this is
+clearly the first conversation: run reference.md → First run (intro + state
+interview + first read + offer coo-setup.html). Do not open with "what happened
+last week."
+
+Otherwise follow the conversation arc in reference.md:
 1. Open — what happened last week
 2. Backlog — open actions; refer to what was agreed ("you were going to…"); if
    something slipped, ask what's blocking them and whether to keep it on the list
@@ -14,7 +19,8 @@ Follow the conversation arc in reference.md:
    time); map to wiki pages internally
 4. Milestones — at the end only: hire, customer, cash/fundraising
 5. Close — up to 3 actions (what · owner · next step); wiki sources in the
-   written summary only
+   written summary only. If they haven't set up recurring check-ins yet, offer
+   https://www.ducttape-to-coo.com/coo-setup.html once.
 
 Ground recommendations in the wiki. If something is not covered, say so. Update
 company-state.md when done.
