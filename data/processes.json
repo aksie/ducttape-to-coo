@@ -500,7 +500,7 @@
       "sensitivity": "none",
       "description": "Employee engagement survey cadence and methodology, pulse check mechanisms, feedback collection channels (1-on-1s, retrospectives, anonymous)",
       "stageFocus": {
-        "foundation": "Not a formal process yet, but stay close to each other. Informal check-ins are fine at this stage.",
+        "foundation": "Stay close — informal check-ins, not a survey. Co-founder teams: block a weekly founder-only sync for relationship feedback and alignment; decision-rights work lives in 1.4.",
         "first-hires": "Add a simple start/stop/change question to your weekly team sync: what should we start doing, stop doing, or change? Three questions, five minutes, done. Builds the habit of giving feedback before things fester.",
         "early-revenue": "Start regular 1-on-1s with everyone. Use them to surface what's working and what isn't before it becomes a problem. A quick monthly pulse question (e.g. how are you feeling about work this week, 1-5?) adds signal without overhead.",
         "growth": "Introduce a lightweight engagement survey once or twice a year. Track trends, not just scores. Make sure feedback actually leads to visible action — otherwise people stop responding.",
