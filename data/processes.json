@@ -163,7 +163,7 @@
       "description": "Clarity on decision rights and authority - who can decide what without asking, and when to escalate. The critical shift from founder-decides-everything to empowered teams.",
       "stageFocus": {
         "foundation": "Founders decide everything together. No framework needed - you're small and aligned.",
-        "first-hires": "Write down what needs founder approval (hiring, major spending, pivots). Everything else, team decides. Practice letting go. Common issue: Founders become bottlenecks on decision-making.",
+        "first-hires": "Align founders first (domain owners, founder sync). One visible approval list: hiring, spend above €X, pivots. Everything else — owner consults, decides, and closes.",
         "early-revenue": "Clear decision owners per area. Simple escalation rules (budget thresholds, customer impact). Founder gives input, not decisions. Common issue: Decisions get re-litigated when founders weren't in the meeting.",
         "growth": "RACI or DRI framework documented. Authority levels by role. Leadership decides in their domains, founder only on strategic. Common issue: Teams making conflicting decisions or disagree on who decides what.",
         "scaled": "Comprehensive decision framework. Authority matrices. Regular audits of decision levels. Common issue: Lack of clarity causes turf wars or excessive escalations."
