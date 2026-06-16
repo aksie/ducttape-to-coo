@@ -4,6 +4,9 @@
 .AppleDouble
 .LSOverride
 
+# Personal backlog (not for the repo)
+docs/ops-todo.md
+
 # Python
 __pycache__/
 *.pyc
