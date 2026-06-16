@@ -547,8 +547,8 @@
       "stageFocus": {
         "foundation": "Get company structure right from day one: co-founder agreement covering equity, vesting, and leaver terms. Use standard templates and a startup-savvy lawyer — not a corporate firm.",
         "first-hires": "Keep corporate and commercial filing current. Give Ops or HR leads formal signing authority before they sign contracts on the company's behalf.",
-        "early-revenue": "Standard commercial contracts — SaaS agreement, NDA — reviewed once and used consistently. Lightweight legal intake so requests don't land in random inboxes. D&O insurance if venture-backed.",
-        "growth": "Legal ops rhythm: contract register, external counsel on retainer, authority matrix for who signs what. Sector compliance (SOC 2, ISO) needs an owner.",
+        "early-revenue": "Standard commercial contracts (SaaS, NDA) reviewed once and used consistently. Annual accounts properly adopted and filed on time — late filing risks director liability. Lightweight legal intake; D&O insurance if venture-backed.",
+        "growth": "Governance rhythm: board minutes and reserved matters documented, plus an authority/signing matrix approved by resolution and a contract register. External counsel on retainer; sector compliance (SOC 2, ISO) needs an owner.",
         "scaled": "In-house or dedicated firm relationship. Contract lifecycle management. Insurance reviewed annually. Build audit trail if exit or IPO is plausible."
       },
       "stages": {
@@ -568,9 +568,9 @@
       "description": "Employment contract templates and execution, freelancer and contractor agreements with IP assignment, signing authority for HR and Ops, settlement agreements (VSO), labour compliance filing. Hiring approval chain (offer and contract issuance): see 3.2 Recruitment & Hiring. Works council and vertrouwenspersoon: see 3.1 HR Administration.",
       "stageFocus": {
         "foundation": "Not applicable yet — no employees.",
-        "first-hires": "Lawyer-reviewed employment and freelance templates; every contract signed and filed day one. NL labour basics (hours, vertrouwenspersoon) — see 3.1 HR Administration.",
+        "first-hires": "Lawyer-reviewed employment and freelance templates — employee IP assignment safeguarded, freelance IP plus an indemnity made explicit (wet DBA). Every contract signed and filed day one; NL labour basics — see 3.1 HR Administration.",
         "early-revenue": "Contractor template with explicit IP assignment — use consistently, not one-offs. Employment contracts and amendments findable for diligence.",
-        "growth": "Employment contract consistency across hires; settlement discipline documented. Works council obligations if headcount triggers apply.",
+        "growth": "Keep employment terms consistent across hires and matching what's actually paid — file addenda and move to an HRIS. Settlement discipline documented; works council obligations if headcount triggers apply.",
         "scaled": "Employment agreements at scale; disputes and settlements in structured register. HRIS migration without losing contract history."
       },
       "stages": {
@@ -589,10 +589,10 @@
       "sensitivity": "funding_stage",
       "description": "Founder and employee IP assignment to the company, privacy and GDPR compliance (privacy policy, processing register, data processing agreements), trademark and domain protection, content and software licensing",
       "stageFocus": {
-        "foundation": "Every founder assigns IP to the company — this surfaces in every future due diligence. Keep it simple with standard assignment language.",
-        "first-hires": "If you collect personal data, design privacy from day one — lawful basis, storage, processor agreements where needed.",
-        "early-revenue": "DPA template sorted if you process customer data. Privacy policy versioned. Trademarks and domains on renewal calendar.",
-        "growth": "GDPR properly documented — not theoretical. Processing register current. Sector privacy requirements have an owner.",
+        "foundation": "Every founder assigns IP to the company at incorporation — it surfaces in every future due diligence. Register trademarks and domains early and record their renewal dates.",
+        "first-hires": "Know whether your edge rests on proprietary IP. If you collect personal data, design privacy from day one — lawful basis, storage, and a DPA with every processor.",
+        "early-revenue": "Get a DPA in place for every processor of customer data, version your privacy policy, and keep trademarks and domains on a renewal calendar — your privacy setup should survive investor scrutiny.",
+        "growth": "GDPR documented, not theoretical — processing register current, internal access controls plus security-awareness training. Register trademarks; set explicit AI-use rules (high-risk AI under the AI Act needs expert advice).",
         "scaled": "Compliance as standalone function: GDPR, SOC 2, audit trail for exit. IP portfolio and licenses maintained."
       },
       "stages": {
