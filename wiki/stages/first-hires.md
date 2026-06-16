@@ -24,7 +24,7 @@ You have people now. That means process debt starts compounding. The critical pr
 | [2.5 Financial Administration](../processes/financial/2.5--first-hires.md) | Bookkeeper on rhythm, you feed them clean data |
 | [3.1 HR Administration](../processes/people/3.1--first-hires.md) | Contracts, vertrouwenspersoon, hour registration, labour compliance |
 | [4.1 Governance & Corporate](../processes/legal/4.1--first-hires.md) | Corporate filing, contract signing authority |
-| [4.5 Internal & Labour](../processes/legal/4.5--first-hires.md) | Employment and freelance templates, IP in contracts |
+| [4.5 Internal & Labour](../processes/legal/4.5--first-hires.md) | Lawyer-reviewed templates; employee IP safeguarded; freelance IP + wet DBA indemnity |
 | [3.2 Recruitment & Hiring](../processes/people/3.2--first-hires.md) | Basic interview process, scorecards, reference checks |
 | [3.3 Onboarding](../processes/people/3.3--first-hires.md) | Checklist before day one. Bad first week is hard to recover. |
 | [5.1 Sales Operations](../processes/revenue/5.1--first-hires.md) | Deal log in a CRM. No deals living in someone's head. |
@@ -41,11 +41,12 @@ You have people now. That means process debt starts compounding. The critical pr
 |---|---|
 | [1.2b Shareholder Reporting](../processes/strategic/1.2b--first-hires.md) | Only if you have angels/FFF investors |
 | [1.3 Operational Comms Norms](../processes/strategic/1.3--first-hires.md) | Basic channel structure and response expectations |
-| [1.4 Who Decides What](../processes/strategic/1.4--first-hires.md) | Write down what needs founder approval |
+| [1.4 Who Decides What](../processes/strategic/1.4--first-hires.md) | Align founders first; one approval list (hiring, spend, pivots) — owner consults and closes |
 | [2.2 Financial Planning](../processes/financial/2.2--first-hires.md) | Simple headcount + cost budget, review monthly |
 | [2.3 Accounts Receivable](../processes/financial/2.3--first-hires.md) | Only if you have paying customers |
 | [3.4 Offboarding](../processes/people/3.4--first-hires.md) | Checklist for when someone leaves — even at 5 people |
-| [4.6 Privacy & IP](../processes/legal/4.6--first-hires.md) | Privacy design from day one if you collect personal data |
+| [3.6 Employee Satisfaction](../processes/people/3.6--first-hires.md) | Start/stop/change in weekly team sync — three questions, five minutes |
+| [4.6 Privacy & IP](../processes/legal/4.6--first-hires.md) | Know your IP exposure; privacy + DPA from day one if you collect data |
 | [4.2 Office & Facilities](../processes/legal/4.2--first-hires.md) | If you have office space, agree who owns it |
 | [4.3 IT Administration](../processes/legal/4.3--first-hires.md) | Basics: password manager, 2FA, access list |
 

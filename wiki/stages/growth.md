@@ -37,9 +37,9 @@ This is the stage where everything that was informal either gets formalized or c
 | [3.4 Offboarding](../processes/people/3.4--growth.md) | Security and knowledge risk. IT deprovisioning on day 1 of notice. |
 | [3.5 Performance Management](../processes/people/3.5--growth.md) | Formal review cycle, managers trained, comp reviews tied to performance |
 | [3.6 Employee Satisfaction](../processes/people/3.6--growth.md) | Lightweight engagement survey, feedback leads to visible action |
-| [4.1 Governance & Corporate](../processes/legal/4.1--growth.md) | Legal ops rhythm, contract register, signing authority |
-| [4.5 Internal & Labour](../processes/legal/4.5--growth.md) | Employment consistency, works council if applicable |
-| [4.6 Privacy & IP](../processes/legal/4.6--growth.md) | GDPR documented, processing register current |
+| [4.1 Governance & Corporate](../processes/legal/4.1--growth.md) | Board minutes, reserved matters, authority matrix, contract register |
+| [4.5 Internal & Labour](../processes/legal/4.5--growth.md) | Terms match actual pay; addenda filed; HRIS at scale |
+| [4.6 Privacy & IP](../processes/legal/4.6--growth.md) | Access controls + awareness training; trademarks registered; explicit AI-use rules |
 | [4.2 Office & Facilities](../processes/legal/4.2--growth.md) | Facilities function, lease management, capacity planning |
 | [4.3 IT Administration](../processes/legal/4.3--growth.md) | IT owner, SaaS audit, helpdesk process, MDM policy |
 | [5.1 Sales Operations](../processes/revenue/5.1--growth.md) | Sales ops role, CRM hygiene, forecast accuracy, deal approval workflows |

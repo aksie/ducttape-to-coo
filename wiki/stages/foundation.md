@@ -21,14 +21,14 @@ tagline: "Build and ship"
 | [2.5 Financial Administration](../processes/financial/2.5--foundation.md) | Outsource bookkeeping from day one, ready for automation later |
 | [3.1 HR Administration](../processes/people/3.1--foundation.md) | Founder contracts, IP assignment, payroll sorted |
 | [4.1 Governance & Corporate](../processes/legal/4.1--foundation.md) | Co-founder agreement, cap table, basic structure right |
-| [4.6 Privacy & IP](../processes/legal/4.6--foundation.md) | Founder IP assigned to the company |
+| [4.6 Privacy & IP](../processes/legal/4.6--foundation.md) | Founder IP assigned at incorporation; register trademarks and domains early |
 
 ## Recommended (useful, not blocking)
 
 | Process | Why it's worth considering |
 |---|---|
 | [1.2 Internal Comms — Strategy](../processes/strategic/1.2--foundation.md) | Even a weekly 15-min sync keeps two founders aligned |
-| [3.6 Employee Satisfaction](../processes/people/3.6--foundation.md) | Stay close, informal check-ins are enough |
+| [3.6 Employee Satisfaction](../processes/people/3.6--foundation.md) | Stay close — not a survey. Co-founder teams: weekly founder-only sync; decision alignment in [1.4](../processes/strategic/1.4--first-hires.md) |
 
 ## Not yet needed
 
