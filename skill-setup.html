@@ -30,6 +30,16 @@
 #coo-page .card .quote{font-style:italic}
 #coo-page .beta{background:#3d2210;border:1px solid var(--orange);border-left:3px solid var(--orange);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:.9rem;color:var(--text-dim)}
 #coo-page .beta strong{color:var(--orange)}
+#coo-page pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:10px 0 0;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;line-height:1.5;color:var(--text-dim)}
+#coo-page pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
+#coo-page .steps{counter-reset:step;margin:0;padding:0;list-style:none}
+#coo-page .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:12px;color:var(--text-dim);font-size:.9rem}
+#coo-page .steps>li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);color:var(--green);font-size:.75rem;font-weight:700;margin-right:10px}
+#coo-page .steps li strong{color:var(--text)}
+#coo-page .steps li p{margin-top:8px;margin-bottom:0}
+#coo-page .filelist{margin:8px 0 0;padding:0;list-style:none}
+#coo-page .filelist li{margin-bottom:4px;font-size:.85rem}
+#coo-page .filelist a{color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem}
 </style>
 </head>
 <body>
@@ -56,18 +66,52 @@
   <div class="need">
     <strong>What every setup needs</strong>
     <ol>
-      <li><strong>The skill files</strong> — the <code>virtual-coo/</code> folder (<code>SKILL.md</code>, <code>reference.md</code>, <code>tone-of-voice.md</code>, <code>prompts/</code>).</li>
-      <li><strong>A <code>company-state.md</code> in your own workspace</strong> — copy the template, fill it in, keep it in your project. This is the COO's memory.</li>
+      <li><strong>The skill files</strong> — the <code>virtual-coo/</code> folder (<a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">on GitHub</a>): <code>SKILL.md</code>, <code>reference.md</code>, <code>tone-of-voice.md</code>, <code>prompts/</code>.</li>
+      <li><strong>A <code>company-state.md</code> in your own workspace</strong> — copy the <a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">template</a>, fill it in, keep it in <em>your</em> company project (not this repo). This is the COO's memory.</li>
       <li><strong>Web access</strong> — so it can fetch the knowledge base. No web access? Clone the repo and it falls back to local files.</li>
     </ol>
+  </div>
+
+  <h2>Quick start</h2>
+  <ol class="steps">
+    <li><strong>Get the skill files.</strong> Clone once, copy the folder into your skills directory:
+      <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git
+cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
+      <p>Project-scoped instead (skill travels with one repo)? Use <code>.cursor/skills/virtual-coo/</code> inside that project. Full folder on GitHub: <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">.cursor/skills/virtual-coo</a>.</p>
+    </li>
+    <li><strong>Add <code>company-state.md</code> to your company workspace</strong> — the project where you actually run the company (not the ducttape-to-coo repo):
+      <pre><code>cp ducttape-to-coo/docs/company-state.md ~/path/to/your-company/company-state.md</code></pre>
+      <p>Or <a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">open the template on GitHub</a> and save it as <code>company-state.md</code> in your project root.</p>
+    </li>
+    <li><strong>Open your company project in your AI tool</strong> (Cursor, Claude Code, …) with the skill installed. Say:
+      <p class="quote" style="margin-top:10px;font-style:italic">"Be my virtual COO."</p>
+      <p>First time? The skill runs a short intro and asks about your stage, headcount, revenue, and funding — then writes <code>company-state.md</code> for you. You don't need a filled-in file before you start.</p>
+    </li>
+    <li><strong>Optional — recurring check-ins.</strong> Pick a weekly time on the <a href="coo-setup.html">check-in setup page</a>; calendar reminders include the prompt to paste.</li>
+  </ol>
+
+  <h2>Skill files (reference)</h2>
+  <div class="card">
+    <p>Everything lives under <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">.cursor/skills/virtual-coo/</a> in the repo:</p>
+    <ul class="filelist">
+      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SKILL.md">SKILL.md</a> — main instructions (required)</li>
+      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/reference.md">reference.md</a> — weekly arc, health check, event playbooks</li>
+      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/tone-of-voice.md">tone-of-voice.md</a> — how to sound (peer, not auditor)</li>
+      <li><a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo/prompts">prompts/</a> — copy-paste prompts for calendar reminders</li>
+      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SETUP.md">SETUP.md</a> — this guide as markdown (for GitHub / offline)</li>
+      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">docs/company-state.md</a> — template for your workspace (copy out)</li>
+    </ul>
   </div>
 
   <h2>Install per tool</h2>
 
   <div class="card">
     <h3>Cursor <span class="tag">SKILL.md</span></h3>
-    <p>Copy <code>virtual-coo/</code> to <code>.cursor/skills/virtual-coo/</code> (project) or <code>~/.cursor/skills/virtual-coo/</code> (personal).</p>
-    <p>Auto-discovered. Invoke by asking <em>"be my virtual COO"</em> or any ops question.</p>
+    <p>After cloning (see Quick start), copy the folder:</p>
+    <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/   # all projects
+# or, inside your company repo:
+mkdir -p .cursor/skills &amp;&amp; cp -r ../ducttape-to-coo/.cursor/skills/virtual-coo .cursor/skills/</code></pre>
+    <p>Auto-discovered. Open your <strong>company</strong> workspace (where <code>company-state.md</code> lives), then ask <em>"be my virtual COO"</em> or any ops question. Browse the skill on GitHub: <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">virtual-coo/</a>.</p>
   </div>
 
   <div class="card">
@@ -96,14 +140,15 @@
 
   <h2>Configure the knowledge source</h2>
   <div class="card">
-    <p>Default <code>KNOWLEDGE_BASE_URL</code>: <code>https://raw.githubusercontent.com/aksie/ducttape-to-coo/main</code></p>
-    <p>To read from the public site instead, set it to <code>https://&lt;your-domain&gt;</code> — it serves the same paths. See <code>SKILL.md</code> → "Knowledge source".</p>
+    <p>Default <code>KNOWLEDGE_BASE_URL</code> (in <a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SKILL.md">SKILL.md</a>): <code>https://raw.githubusercontent.com/aksie/ducttape-to-coo/main</code></p>
+    <p>Usually you change nothing — the skill fetches the wiki over HTTP. Offline? Keep a local clone and the skill falls back to disk.</p>
   </div>
 
   <h2>First run</h2>
   <div class="card">
-    <p class="quote">"Be my virtual COO. Here's my company-state.md — give me a read on where we stand and what needs attention."</p>
-    <p>After that, ask ops questions any time, or run a check-in on demand. To make the check-ins recurring, see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+    <p class="quote">"Be my virtual COO."</p>
+    <p>First conversation: the COO introduces itself (beta note), asks about your company — name, headcount, stage, revenue, funding, recent events — and writes <code>company-state.md</code>. Then a light read on what matters at your stage. It may point you to the <a href="coo-setup.html">check-in setup page</a> for recurring reminders.</p>
+    <p>After that, ask ops questions any time, say <em>"weekly check-in"</em>, or paste the prompt from your calendar.</p>
   </div>
 </main>
 </body>

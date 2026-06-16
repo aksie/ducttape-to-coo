@@ -1,65 +1,81 @@
 # Virtual COO — Setup
 
-How to add the **virtual-coo** skill to your AI tool of choice. This covers the
-skill/agent install only. Setting up the recurring weekly/quarterly check-ins is
-separate — see the "Set up your check-ins" page (`coo-setup.html`) on the site.
+How to add the **virtual-coo** skill to your AI tool of choice. Web version:
+[ducttape-to-coo.com/skill-setup.html](https://www.ducttape-to-coo.com/skill-setup.html).
+Recurring check-ins: [coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html).
 
-## What it is
+> **Beta** — please test, use with caution. Feedback welcome.
 
-A virtual COO grounded in the Duct Tape to COO operations wiki. It reads the
-knowledge base **over HTTP**, so you don't need a local copy of the product repo.
+## Quick start
 
-## What every setup needs
+1. **Get the skill files**
 
-1. **The skill files** — the `virtual-coo/` folder (`SKILL.md`, `reference.md`,
-   `tone-of-voice.md`, `prompts/`).
-2. **A `company-state.md` in your own workspace** — copy the template from
-   `docs/company-state.md`, fill it in, and keep it in *your* project (not in the
-   product repo). This is the COO's memory.
-3. **Web access** — so the skill can fetch the knowledge base
-   (`KNOWLEDGE_BASE_URL`). No web access? Clone the repo and it falls back to
-   reading the same files from disk.
+   ```bash
+   git clone https://github.com/aksie/ducttape-to-coo.git
+   cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/
+   ```
+
+   Project-scoped: copy to `.cursor/skills/virtual-coo/` inside your company repo.
+   Browse on GitHub: [.cursor/skills/virtual-coo](https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo)
+
+2. **Add `company-state.md` to your company workspace** (not this repo)
+
+   ```bash
+   cp ducttape-to-coo/docs/company-state.md ~/path/to/your-company/company-state.md
+   ```
+
+   Template: [docs/company-state.md](https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md)
+
+3. **Open your company project** in Cursor (or your tool). Say: *"Be my virtual COO."*
+
+   First time? The skill runs an intro and asks about stage, headcount, revenue,
+   and funding — then writes `company-state.md` for you.
+
+4. **Optional** — recurring check-ins via [coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html)
+
+## Skill files
+
+| File | Link |
+|---|---|
+| `SKILL.md` | [view](https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SKILL.md) |
+| `reference.md` | [view](https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/reference.md) |
+| `tone-of-voice.md` | [view](https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/tone-of-voice.md) |
+| `prompts/` | [folder](https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo/prompts) |
+| `company-state` template | [view](https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md) |
 
 ## Install per tool
 
 ### Cursor
-- Copy `virtual-coo/` to `.cursor/skills/virtual-coo/` (project, shared via your
-  repo) or `~/.cursor/skills/virtual-coo/` (personal, all projects).
-- Auto-discovered. Invoke by asking: "be my virtual COO", or any ops question.
+- Copy `virtual-coo/` to `.cursor/skills/virtual-coo/` (project) or
+  `~/.cursor/skills/virtual-coo/` (personal).
+- Open your **company** workspace (where `company-state.md` lives). Ask:
+  *"be my virtual COO"* or any ops question.
 
 ### Claude Code
 - Copy to `.claude/skills/virtual-coo/` (project) or `~/.claude/skills/virtual-coo/`
-  (personal). The folder name must match the `name:` in `SKILL.md` — it does.
+  (personal). Folder name must match `name:` in `SKILL.md`.
 - Invoke with `/virtual-coo`, or let it trigger from the description.
 
 ### OpenCode
-- OpenCode reads `.claude/skills` natively, so a `.claude/skills/virtual-coo/`
-  folder works out of the box.
-- Alternatively wire it as a command (`.opencode/command/virtual-coo.md`), an
-  agent (`.opencode/agent/virtual-coo.md`), or add the skill text to `AGENTS.md`.
+- `.claude/skills/virtual-coo/` works natively.
+- Or wire as command, agent, or paste into `AGENTS.md`.
 
 ### Hermes Agent / OpenClaw
-- Both use the same `SKILL.md` format. Drop the `virtual-coo/` folder into their
-  skills directory (Hermes: `~/.hermes/skills/virtual-coo/`; OpenClaw: its skills
-  folder, or publish/install via ClawHub).
-- Invoke from chat — CLI or a messaging channel (Telegram, Slack, …).
+- Drop `virtual-coo/` into their skills directory.
 
-### Generic (Cline, Continue, Aider, raw API / SDK)
-- Paste the contents of `SKILL.md` (and `reference.md` when needed) into the
-  tool's rules / system-prompt mechanism.
-- Give it file access to your `company-state.md` and web access to the knowledge
-  base.
+### Generic (Cline, Continue, Aider, API)
+- Paste `SKILL.md` (+ `reference.md` when needed) into rules / system prompt.
+- Give file access to `company-state.md` and web access to the knowledge base.
 
-## Configure the knowledge source
+## Knowledge source
 
-- Default `KNOWLEDGE_BASE_URL`:
-  `https://raw.githubusercontent.com/aksie/ducttape-to-coo/main`
-- To read from the public site instead, set it to `https://<your-domain>` (it
-  serves the same paths). See `SKILL.md` → "Knowledge source".
+Default: `https://raw.githubusercontent.com/aksie/ducttape-to-coo/main`
+
+Offline: keep a local clone — the skill falls back to disk.
 
 ## First run
 
-> "Be my virtual COO. Here's my `company-state.md` — give me a read on where we
-> stand and what needs attention."
-
-After that, ask ops questions any time, or run a check-in on demand.
+Say *"Be my virtual COO."* The COO introduces itself, interviews you on company
+state, writes `company-state.md`, and gives a light read for your stage. After
+that: ops questions, *"weekly check-in"*, or calendar prompts from
+[coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html).
