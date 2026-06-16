@@ -3,7 +3,7 @@ id: atom-281
 source_id: src-061
 type: action
 process: legal-ops
-phase: early-revenue
+phase: first-hires
 sub_variant_signals: []
 confidence: high
 practitioner_first_person: true
