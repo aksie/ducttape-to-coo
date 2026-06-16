@@ -10,36 +10,41 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
 <style>
-#coo-page{max-width:780px;margin:0 auto;padding:32px 20px 60px}
-#coo-page h1{font-size:1.6rem;font-weight:700;margin-bottom:8px}
-#coo-page .lead{color:var(--text-dim);margin-bottom:8px}
-#coo-page .sep{color:var(--text-muted);font-size:.85rem;margin-bottom:26px}
-#coo-page .sep a{color:var(--blue);text-decoration:none}
-#coo-page h2{font-size:1.15rem;margin:28px 0 12px}
-#coo-page .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:14px}
-#coo-page .card h3{font-size:1rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-#coo-page .card p{color:var(--text-dim);font-size:.9rem;margin-bottom:8px}
+#coo-page{max-width:720px;margin:0 auto;padding:32px 20px 60px}
+#coo-page h1{font-size:1.6rem;font-weight:700;margin-bottom:12px}
+#coo-page .lead{color:var(--text-dim);font-size:.95rem;line-height:1.55;margin-bottom:24px}
+#coo-page .lead a{color:var(--blue);text-decoration:none}
+#coo-page h2{font-size:1.05rem;font-weight:600;margin:32px 0 12px;color:var(--text)}
+#coo-page .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:16px}
+#coo-page .card p,#coo-page .card li{color:var(--text-dim);font-size:.9rem;line-height:1.55}
+#coo-page .card p{margin-bottom:10px}
 #coo-page .card p:last-child{margin-bottom:0}
 #coo-page .card a{color:var(--blue);text-decoration:none}
-#coo-page code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.82rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--green)}
-#coo-page .need{background:var(--surface);border:1px solid var(--green-dim);border-left:3px solid var(--green);border-radius:8px;padding:18px 22px;margin-bottom:24px}
-#coo-page .need ol{margin:8px 0 0 18px}
-#coo-page .need li{margin-bottom:6px;color:var(--text-dim);font-size:.9rem}
-#coo-page .need li strong{color:var(--text)}
-#coo-page .tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;color:var(--text-muted);border:1px solid var(--border-bright);border-radius:4px;padding:1px 6px;margin-left:auto}
-#coo-page .card .quote{font-style:italic}
-#coo-page .beta{background:#3d2210;border:1px solid var(--orange);border-left:3px solid var(--orange);border-radius:8px;padding:14px 18px;margin-bottom:20px;font-size:.9rem;color:var(--text-dim)}
+#coo-page code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--green)}
+#coo-page .beta{background:#3d2210;border:1px solid var(--orange);border-left:3px solid var(--orange);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:.85rem;color:var(--text-dim);line-height:1.5}
 #coo-page .beta strong{color:var(--orange)}
-#coo-page pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin:10px 0 0;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;line-height:1.5;color:var(--text-dim)}
+#coo-page pre{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 14px;margin:10px 0;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;line-height:1.55;color:var(--text-dim)}
 #coo-page pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
-#coo-page .steps{counter-reset:step;margin:0;padding:0;list-style:none}
-#coo-page .steps>li{counter-increment:step;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px 22px;margin-bottom:12px;color:var(--text-dim);font-size:.9rem}
-#coo-page .steps>li::before{content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);color:var(--green);font-size:.75rem;font-weight:700;margin-right:10px}
-#coo-page .steps li strong{color:var(--text)}
-#coo-page .steps li p{margin-top:8px;margin-bottom:0}
-#coo-page .filelist{margin:8px 0 0;padding:0;list-style:none}
-#coo-page .filelist li{margin-bottom:4px;font-size:.85rem}
-#coo-page .filelist a{color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8rem}
+#coo-page ol.steps{margin:0;padding:0;list-style:none;counter-reset:step}
+#coo-page ol.steps>li{counter-increment:step;padding:16px 0;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:.9rem;line-height:1.55}
+#coo-page ol.steps>li:first-child{padding-top:0}
+#coo-page ol.steps>li:last-child{border-bottom:none;padding-bottom:0}
+#coo-page ol.steps>li::before{content:counter(step);float:left;width:24px;height:24px;line-height:22px;text-align:center;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);color:var(--green);font-size:.72rem;font-weight:700;margin-right:12px;margin-top:1px}
+#coo-page ol.steps li strong{color:var(--text);display:block;margin-bottom:4px}
+#coo-page ol.steps li .sub{font-size:.85rem;color:var(--text-muted);margin-top:6px}
+#coo-page .quote{font-style:italic;color:var(--text);margin:8px 0}
+#coo-page details{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface)}
+#coo-page details summary{cursor:pointer;padding:12px 16px;font-size:.9rem;font-weight:600;color:var(--text);list-style:none;display:flex;align-items:center;gap:8px}
+#coo-page details summary::-webkit-details-marker{display:none}
+#coo-page details summary::after{content:'+';margin-left:auto;color:var(--text-muted);font-weight:400}
+#coo-page details[open] summary::after{content:'−'}
+#coo-page details .inner{padding:0 16px 14px;color:var(--text-dim);font-size:.88rem;line-height:1.55}
+#coo-page details .inner p{margin:0 0 8px}
+#coo-page details .inner p:last-child{margin-bottom:0}
+#coo-page .foot{color:var(--text-muted);font-size:.82rem;line-height:1.55;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
+#coo-page .foot a{color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem}
+#coo-page .foot ul{margin:8px 0 0;padding:0;list-style:none}
+#coo-page .foot li{margin-bottom:3px}
 </style>
 </head>
 <body>
@@ -59,96 +64,71 @@
 
 <main id="coo-page">
   <h1>Add the Virtual COO to your setup</h1>
-  <div class="beta"><strong>Beta — please test, use with caution.</strong> The Virtual COO is in active testing. You're welcome to try it; guidance may be incomplete or wrong. All feedback is very welcome.</div>
-  <p class="lead">The Virtual COO is grounded in the Duct Tape to COO operations wiki, which it reads over HTTP — no local copy of the product repo required. Drop it into whatever AI tool you already use.</p>
-  <p class="sep">This page covers installing the skill. Setting up the recurring weekly &amp; quarterly check-ins is separate — see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+  <div class="beta"><strong>Beta — please test, use with caution.</strong> Guidance may be incomplete; feedback is very welcome.</div>
+  <p class="lead">Wiki-grounded ops partner for your AI tool. You install only the skill folder — at runtime it fetches the Duct Tape to COO knowledge base (wiki pages, process data) over HTTP, so you don't need a local copy of this repo. Your AI tool needs web access; offline, a local clone works as a fallback.</p>
 
-  <div class="need">
-    <strong>What every setup needs</strong>
-    <ol>
-      <li><strong>The skill files</strong> — the <code>virtual-coo/</code> folder (<a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">on GitHub</a>): <code>SKILL.md</code>, <code>reference.md</code>, <code>tone-of-voice.md</code>, <code>prompts/</code>.</li>
-      <li><strong>A <code>company-state.md</code> in your own workspace</strong> — copy the <a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">template</a>, fill it in, keep it in <em>your</em> company project (not this repo). This is the COO's memory.</li>
-      <li><strong>Web access</strong> — so it can fetch the knowledge base. No web access? Clone the repo and it falls back to local files.</li>
+  <h2>Quick start</h2>
+  <div class="card">
+    <ol class="steps">
+      <li>
+        <strong>Clone and copy the skill</strong>
+        <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git
+cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
+        <p class="sub">Project-scoped? Use <code>.cursor/skills/virtual-coo/</code> inside your company repo instead. <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">Browse on GitHub →</a></p>
+      </li>
+      <li>
+        <strong>Open a project</strong>
+        <p class="quote">"Be my virtual COO."</p>
+        <p class="sub">Any folder or repo you work in day to day. First time: intro + questions about your company — then the COO creates <code>company-state.md</code> for you. When you're ready for a weekly rhythm, the COO can point you to <a href="coo-setup.html">calendar reminders</a> — first conversation or later.</p>
+      </li>
     </ol>
   </div>
 
-  <h2>Quick start</h2>
-  <ol class="steps">
-    <li><strong>Get the skill files.</strong> Clone once, copy the folder into your skills directory:
-      <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git
-cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
-      <p>Project-scoped instead (skill travels with one repo)? Use <code>.cursor/skills/virtual-coo/</code> inside that project. Full folder on GitHub: <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">.cursor/skills/virtual-coo</a>.</p>
-    </li>
-    <li><strong>Add <code>company-state.md</code> to your company workspace</strong> — the project where you actually run the company (not the ducttape-to-coo repo):
-      <pre><code>cp ducttape-to-coo/docs/company-state.md ~/path/to/your-company/company-state.md</code></pre>
-      <p>Or <a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">open the template on GitHub</a> and save it as <code>company-state.md</code> in your project root.</p>
-    </li>
-    <li><strong>Open your company project in your AI tool</strong> (Cursor, Claude Code, …) with the skill installed. Say:
-      <p class="quote" style="margin-top:10px;font-style:italic">"Be my virtual COO."</p>
-      <p>First time? The skill runs a short intro and asks about your stage, headcount, revenue, and funding — then writes <code>company-state.md</code> for you. You don't need a filled-in file before you start.</p>
-    </li>
-    <li><strong>Optional — recurring check-ins.</strong> Pick a weekly time on the <a href="coo-setup.html">check-in setup page</a>; calendar reminders include the prompt to paste.</li>
-  </ol>
-
-  <h2>Skill files (reference)</h2>
-  <div class="card">
-    <p>Everything lives under <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">.cursor/skills/virtual-coo/</a> in the repo:</p>
-    <ul class="filelist">
-      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SKILL.md">SKILL.md</a> — main instructions (required)</li>
-      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/reference.md">reference.md</a> — weekly arc, health check, event playbooks</li>
-      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/tone-of-voice.md">tone-of-voice.md</a> — how to sound (peer, not auditor)</li>
-      <li><a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo/prompts">prompts/</a> — copy-paste prompts for calendar reminders</li>
-      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SETUP.md">SETUP.md</a> — this guide as markdown (for GitHub / offline)</li>
-      <li><a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md">docs/company-state.md</a> — template for your workspace (copy out)</li>
-    </ul>
-  </div>
-
   <h2>Install per tool</h2>
+  <p class="lead" style="margin-top:-4px;margin-bottom:12px;font-size:.85rem">Same skill folder everywhere — only the destination path changes.</p>
 
-  <div class="card">
-    <h3>Cursor <span class="tag">SKILL.md</span></h3>
-    <p>After cloning (see Quick start), copy the folder:</p>
-    <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/   # all projects
-# or, inside your company repo:
-mkdir -p .cursor/skills &amp;&amp; cp -r ../ducttape-to-coo/.cursor/skills/virtual-coo .cursor/skills/</code></pre>
-    <p>Auto-discovered. Open your <strong>company</strong> workspace (where <code>company-state.md</code> lives), then ask <em>"be my virtual COO"</em> or any ops question. Browse the skill on GitHub: <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">virtual-coo/</a>.</p>
-  </div>
+  <details open>
+    <summary>Cursor</summary>
+    <div class="inner">
+      <p>Copy the <code>virtual-coo/</code> folder to <code>~/.cursor/skills/virtual-coo/</code> to use it in every project, or to <code>.cursor/skills/virtual-coo/</code> inside one repo. Cursor discovers it automatically — open a project and ask <em>"be my virtual COO"</em>.</p>
+    </div>
+  </details>
 
-  <div class="card">
-    <h3>Claude Code <span class="tag">SKILL.md</span></h3>
-    <p>Copy to <code>.claude/skills/virtual-coo/</code> (project) or <code>~/.claude/skills/virtual-coo/</code> (personal). The folder name must match the <code>name:</code> in <code>SKILL.md</code> — it does.</p>
-    <p>Invoke with <code>/virtual-coo</code>, or let it trigger from the description.</p>
-  </div>
+  <details>
+    <summary>Claude Code</summary>
+    <div class="inner">
+      <p>Copy the folder to <code>.claude/skills/virtual-coo/</code> in your project, or to <code>~/.claude/skills/virtual-coo/</code> for all projects — the folder name must match the <code>name:</code> field in <code>SKILL.md</code>. Invoke with <code>/virtual-coo</code>, or let Claude pick it up from the skill description.</p>
+    </div>
+  </details>
 
-  <div class="card">
-    <h3>OpenCode <span class="tag">SKILL.md / AGENTS.md</span></h3>
-    <p>OpenCode reads <code>.claude/skills</code> natively, so a <code>.claude/skills/virtual-coo/</code> folder works out of the box.</p>
-    <p>Or wire it as a command (<code>.opencode/command/virtual-coo.md</code>), an agent (<code>.opencode/agent/virtual-coo.md</code>), or add the skill text to <code>AGENTS.md</code>.</p>
-  </div>
+  <details>
+    <summary>OpenCode</summary>
+    <div class="inner">
+      <p>Copy the folder to <code>.claude/skills/virtual-coo/</code> — OpenCode reads that path natively. Or wire the skill as a command, an agent, or paste it into <code>AGENTS.md</code>.</p>
+    </div>
+  </details>
 
-  <div class="card">
-    <h3>Hermes Agent / OpenClaw <span class="tag">SKILL.md</span></h3>
-    <p>Both use the same <code>SKILL.md</code> format. Drop <code>virtual-coo/</code> into their skills directory (Hermes: <code>~/.hermes/skills/virtual-coo/</code>; OpenClaw: its skills folder or via ClawHub).</p>
-    <p>Invoke from chat — CLI or a messaging channel (Telegram, Slack, …).</p>
-  </div>
+  <details>
+    <summary>Hermes Agent / OpenClaw</summary>
+    <div class="inner">
+      <p>Drop the <code>virtual-coo/</code> folder into their skills directory (e.g. <code>~/.hermes/skills/virtual-coo/</code>). Both tools use the same <code>SKILL.md</code> format — invoke from chat on CLI or a channel like Telegram or Slack.</p>
+    </div>
+  </details>
 
-  <div class="card">
-    <h3>Generic <span class="tag">rules / system prompt</span></h3>
-    <p>For Cline, Continue, Aider, or a raw API/SDK: paste <code>SKILL.md</code> (and <code>reference.md</code> when needed) into the tool's rules or system prompt.</p>
-    <p>Give it file access to your <code>company-state.md</code> and web access to the knowledge base.</p>
-  </div>
+  <details>
+    <summary>Other (Cline, Continue, Aider, API)</summary>
+    <div class="inner">
+      <p>Paste <code>SKILL.md</code> (+ <code>reference.md</code> when needed) into rules or system prompt. Give file access to <code>company-state.md</code> and web access to the wiki.</p>
+    </div>
+  </details>
 
-  <h2>Configure the knowledge source</h2>
-  <div class="card">
-    <p>Default <code>KNOWLEDGE_BASE_URL</code> (in <a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SKILL.md">SKILL.md</a>): <code>https://raw.githubusercontent.com/aksie/ducttape-to-coo/main</code></p>
-    <p>Usually you change nothing — the skill fetches the wiki over HTTP. Offline? Keep a local clone and the skill falls back to disk.</p>
-  </div>
-
-  <h2>First run</h2>
-  <div class="card">
-    <p class="quote">"Be my virtual COO."</p>
-    <p>First conversation: the COO introduces itself (beta note), asks about your company — name, headcount, stage, revenue, funding, recent events — and writes <code>company-state.md</code>. Then a light read on what matters at your stage. It may point you to the <a href="coo-setup.html">check-in setup page</a> for recurring reminders.</p>
-    <p>After that, ask ops questions any time, say <em>"weekly check-in"</em>, or paste the prompt from your calendar.</p>
+  <div class="foot">
+    <strong>Reference</strong> — skill folder on GitHub:
+    <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">virtual-coo/</a>
+    · <a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/SETUP.md">SETUP.md</a>
+    <br>At runtime the skill fetches the knowledge base over HTTP (default:
+    <code>https://raw.githubusercontent.com/aksie/ducttape-to-coo/main</code>).
+    No web access? Keep a local clone — the skill falls back to disk.
   </div>
 </main>
 </body>
