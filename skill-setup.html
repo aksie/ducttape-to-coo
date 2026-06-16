@@ -25,26 +25,23 @@
 #coo-page .beta strong{color:var(--orange)}
 #coo-page pre{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px 14px;margin:10px 0;overflow-x:auto;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.76rem;line-height:1.55;color:var(--text-dim)}
 #coo-page pre code{background:none;border:none;padding:0;color:inherit;font-size:inherit}
-#coo-page ol.steps{margin:0;padding:0;list-style:none;counter-reset:step}
-#coo-page ol.steps>li{counter-increment:step;padding:16px 0;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:.9rem;line-height:1.55}
+#coo-page ol.steps{margin:0;padding-left:1.35em;list-style:decimal}
+#coo-page ol.steps>li{padding:16px 0 16px .35em;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:.9rem;line-height:1.55}
+#coo-page ol.steps>li::marker{color:var(--text-muted);font-weight:600;font-variant-numeric:tabular-nums}
 #coo-page ol.steps>li:first-child{padding-top:0}
 #coo-page ol.steps>li:last-child{border-bottom:none;padding-bottom:0}
-#coo-page ol.steps>li::before{content:counter(step);float:left;width:24px;height:24px;line-height:22px;text-align:center;border-radius:50%;background:var(--green-dim);border:1px solid var(--green);color:var(--green);font-size:.72rem;font-weight:700;margin-right:12px;margin-top:1px}
-#coo-page ol.steps li strong{color:var(--text);display:block;margin-bottom:4px}
+#coo-page ol.steps li strong{color:var(--text)}
 #coo-page ol.steps li .sub{font-size:.85rem;color:var(--text-muted);margin-top:6px}
 #coo-page .quote{font-style:italic;color:var(--text);margin:8px 0}
-#coo-page details{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface)}
-#coo-page details summary{cursor:pointer;padding:12px 16px;font-size:.9rem;font-weight:600;color:var(--text);list-style:none;display:flex;align-items:center;gap:8px}
-#coo-page details summary::-webkit-details-marker{display:none}
-#coo-page details summary::after{content:'+';margin-left:auto;color:var(--text-muted);font-weight:400}
-#coo-page details[open] summary::after{content:'−'}
-#coo-page details .inner{padding:0 16px 14px;color:var(--text-dim);font-size:.88rem;line-height:1.55}
-#coo-page details .inner p{margin:0 0 8px}
-#coo-page details .inner p:last-child{margin-bottom:0}
+#coo-page .tool-label{font-size:.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px}
+#coo-page .tool-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+#coo-page .tool-tab{font-family:inherit;font-size:.82rem;font-weight:600;padding:7px 12px;border-radius:6px;border:1px solid var(--border-bright);background:var(--bg);color:var(--text-dim);cursor:pointer;transition:all .15s}
+#coo-page .tool-tab:hover{border-color:var(--green);color:var(--text)}
+#coo-page .tool-tab.active{background:var(--green-dim);border-color:var(--green);color:var(--green)}
+#coo-page .tool-panel{display:none}
+#coo-page .tool-panel.active{display:block}
 #coo-page .foot{color:var(--text-muted);font-size:.82rem;line-height:1.55;margin-top:28px;padding-top:18px;border-top:1px solid var(--border)}
 #coo-page .foot a{color:var(--blue);text-decoration:none;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem}
-#coo-page .foot ul{margin:8px 0 0;padding:0;list-style:none}
-#coo-page .foot li{margin-bottom:3px}
 </style>
 </head>
 <body>
@@ -68,59 +65,97 @@
   <p class="lead">Wiki-grounded ops partner for your AI tool. You install only the skill folder — at runtime it fetches the Duct Tape to COO knowledge base (wiki pages, process data) over HTTP, so you don't need a local copy of this repo. Your AI tool needs web access; offline, a local clone works as a fallback.</p>
 
   <h2>Quick start</h2>
+  <p class="tool-label">Your AI tool</p>
+  <div class="tool-tabs" role="tablist">
+    <button type="button" class="tool-tab active" role="tab" aria-selected="true" data-tool="cursor">Cursor</button>
+    <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tool="claude">Claude Code</button>
+    <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tool="opencode">OpenCode</button>
+    <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tool="hermes">Hermes / OpenClaw</button>
+    <button type="button" class="tool-tab" role="tab" aria-selected="false" data-tool="other">Other</button>
+  </div>
+
   <div class="card">
     <ol class="steps">
       <li>
-        <strong>Clone and copy the skill</strong>
-        <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git
-cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
-        <p class="sub">Project-scoped? Use <code>.cursor/skills/virtual-coo/</code> inside your company repo instead. <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">Browse on GitHub →</a></p>
-      </li>
-      <li>
-        <strong>Open a project</strong>
-        <p class="quote">"Be my virtual COO."</p>
-        <p class="sub">Any folder or repo you work in day to day. First time: intro + questions about your company — then the COO creates <code>company-state.md</code> for you. When you're ready for a weekly rhythm, the COO can point you to <a href="coo-setup.html">calendar reminders</a> — first conversation or later.</p>
+        <strong>Clone the repo</strong>
+        <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git</code></pre>
+        <p class="sub"><a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">Browse skill files on GitHub →</a></p>
       </li>
     </ol>
+
+    <div class="tool-panel active" id="panel-cursor" role="tabpanel">
+      <ol class="steps" start="2">
+        <li>
+          <strong>Copy the skill</strong>
+          <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
+          <p class="sub">All projects? <code>~/.cursor/skills/virtual-coo/</code>. One repo only? <code>.cursor/skills/virtual-coo/</code> inside it. Cursor discovers it automatically.</p>
+        </li>
+        <li>
+          <strong>Open a project</strong>
+          <p class="quote">"Be my virtual COO."</p>
+          <p class="sub">Any folder or repo you work in day to day. First time: intro + questions about your company — then the COO creates <code>company-state.md</code> for you. When you're ready for a weekly rhythm, the COO can point you to <a href="coo-setup.html">calendar reminders</a> — first conversation or later.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="tool-panel" id="panel-claude" role="tabpanel" hidden>
+      <ol class="steps" start="2">
+        <li>
+          <strong>Copy the skill</strong>
+          <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.claude/skills/virtual-coo</code></pre>
+          <p class="sub">All projects? <code>~/.claude/skills/virtual-coo/</code>. One repo? <code>.claude/skills/virtual-coo/</code> — folder name must match <code>name:</code> in <code>SKILL.md</code>.</p>
+        </li>
+        <li>
+          <strong>Open a project</strong>
+          <p class="quote">/virtual-coo</p>
+          <p class="sub">Or ask <em>"be my virtual COO"</em> — Claude can pick it up from the skill description. First time: intro + company questions, then <code>company-state.md</code> is created for you.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="tool-panel" id="panel-opencode" role="tabpanel" hidden>
+      <ol class="steps" start="2">
+        <li>
+          <strong>Copy the skill</strong>
+          <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo .claude/skills/virtual-coo</code></pre>
+          <p class="sub">OpenCode reads <code>.claude/skills</code> natively. Or wire as a command, an agent, or paste into <code>AGENTS.md</code>.</p>
+        </li>
+        <li>
+          <strong>Open a project</strong>
+          <p class="quote">"Be my virtual COO."</p>
+          <p class="sub">First time: intro + company questions, then <code>company-state.md</code> is created for you.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="tool-panel" id="panel-hermes" role="tabpanel" hidden>
+      <ol class="steps" start="2">
+        <li>
+          <strong>Copy the skill</strong>
+          <pre><code>cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.hermes/skills/virtual-coo</code></pre>
+          <p class="sub">OpenClaw: drop into its skills folder or install via ClawHub. Same <code>SKILL.md</code> format for both.</p>
+        </li>
+        <li>
+          <strong>Invoke from chat</strong>
+          <p class="sub">CLI or a channel (Telegram, Slack, …). First time: intro + company questions, then <code>company-state.md</code> is created for you.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="tool-panel" id="panel-other" role="tabpanel" hidden>
+      <ol class="steps" start="2">
+        <li>
+          <strong>Add the skill to your tool</strong>
+          <p class="sub">For Cline, Continue, Aider, or a raw API: paste <code>SKILL.md</code> (+ <code>reference.md</code> when needed) into rules or system prompt. Give file access to your workspace and web access to the wiki.</p>
+        </li>
+        <li>
+          <strong>Open a project</strong>
+          <p class="quote">"Be my virtual COO."</p>
+          <p class="sub">First time: intro + company questions, then <code>company-state.md</code> is created for you.</p>
+        </li>
+      </ol>
+    </div>
   </div>
-
-  <h2>Install per tool</h2>
-  <p class="lead" style="margin-top:-4px;margin-bottom:12px;font-size:.85rem">Same skill folder everywhere — only the destination path changes.</p>
-
-  <details open>
-    <summary>Cursor</summary>
-    <div class="inner">
-      <p>Copy the <code>virtual-coo/</code> folder to <code>~/.cursor/skills/virtual-coo/</code> to use it in every project, or to <code>.cursor/skills/virtual-coo/</code> inside one repo. Cursor discovers it automatically — open a project and ask <em>"be my virtual COO"</em>.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Claude Code</summary>
-    <div class="inner">
-      <p>Copy the folder to <code>.claude/skills/virtual-coo/</code> in your project, or to <code>~/.claude/skills/virtual-coo/</code> for all projects — the folder name must match the <code>name:</code> field in <code>SKILL.md</code>. Invoke with <code>/virtual-coo</code>, or let Claude pick it up from the skill description.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>OpenCode</summary>
-    <div class="inner">
-      <p>Copy the folder to <code>.claude/skills/virtual-coo/</code> — OpenCode reads that path natively. Or wire the skill as a command, an agent, or paste it into <code>AGENTS.md</code>.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Hermes Agent / OpenClaw</summary>
-    <div class="inner">
-      <p>Drop the <code>virtual-coo/</code> folder into their skills directory (e.g. <code>~/.hermes/skills/virtual-coo/</code>). Both tools use the same <code>SKILL.md</code> format — invoke from chat on CLI or a channel like Telegram or Slack.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Other (Cline, Continue, Aider, API)</summary>
-    <div class="inner">
-      <p>Paste <code>SKILL.md</code> (+ <code>reference.md</code> when needed) into rules or system prompt. Give file access to <code>company-state.md</code> and web access to the wiki.</p>
-    </div>
-  </details>
 
   <div class="foot">
     <strong>Reference</strong> — skill folder on GitHub:
@@ -131,5 +166,35 @@ cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
     No web access? Keep a local clone — the skill falls back to disk.
   </div>
 </main>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tool-tab');
+  var panels = document.querySelectorAll('.tool-panel');
+  var key = 'virtual-coo-setup-tool';
+
+  function select(tool) {
+    tabs.forEach(function (t) {
+      var on = t.dataset.tool === tool;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function (p) {
+      var on = p.id === 'panel-' + tool;
+      p.classList.toggle('active', on);
+      p.hidden = !on;
+    });
+    try { localStorage.setItem(key, tool); } catch (e) {}
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { select(t.dataset.tool); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem(key); } catch (e) {}
+  if (saved && document.getElementById('panel-' + saved)) select(saved);
+})();
+</script>
 </body>
 </html>
