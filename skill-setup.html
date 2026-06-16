@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add the Virtual COO to your setup — Duct Tape to COO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+<style>
+#coo-page{max-width:780px;margin:0 auto;padding:32px 20px 60px}
+#coo-page h1{font-size:1.6rem;font-weight:700;margin-bottom:8px}
+#coo-page .lead{color:var(--text-dim);margin-bottom:8px}
+#coo-page .sep{color:var(--text-muted);font-size:.85rem;margin-bottom:26px}
+#coo-page .sep a{color:var(--blue);text-decoration:none}
+#coo-page h2{font-size:1.15rem;margin:28px 0 12px}
+#coo-page .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin-bottom:14px}
+#coo-page .card h3{font-size:1rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+#coo-page .card p{color:var(--text-dim);font-size:.9rem;margin-bottom:8px}
+#coo-page .card p:last-child{margin-bottom:0}
+#coo-page code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.82rem;background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 6px;color:var(--green)}
+#coo-page .need{background:var(--surface);border:1px solid var(--green-dim);border-left:3px solid var(--green);border-radius:8px;padding:18px 22px;margin-bottom:24px}
+#coo-page .need ol{margin:8px 0 0 18px}
+#coo-page .need li{margin-bottom:6px;color:var(--text-dim);font-size:.9rem}
+#coo-page .need li strong{color:var(--text)}
+#coo-page .tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.7rem;color:var(--text-muted);border:1px solid var(--border-bright);border-radius:4px;padding:1px 6px;margin-left:auto}
+#coo-page .note{color:var(--text-muted);font-size:.82rem;margin-top:26px;border-top:1px solid var(--border);padding-top:18px}
+#coo-page .note a{color:var(--blue)}
+#coo-page .firstrun{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;font-style:italic;color:var(--text-dim);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-top">
+      <a class="header-logo" href="index.html">Duct Tape to COO</a>
+      <nav class="header-nav">
+        <a href="diagnostic.html">Diagnostic</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="skill-setup.html" class="active">Virtual COO</a>
+        <a href="blog/index.html">Blog</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="coo-page">
+  <h1>Add the Virtual COO to your setup</h1>
+  <p class="lead">The Virtual COO is grounded in the Duct Tape to COO operations wiki, which it reads over HTTP — no local copy of the product repo required. Drop it into whatever AI tool you already use.</p>
+  <p class="sep">This page covers installing the skill. Setting up the recurring weekly &amp; quarterly check-ins is separate — see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+
+  <div class="need">
+    <strong>What every setup needs</strong>
+    <ol>
+      <li><strong>The skill files</strong> — the <code>virtual-coo/</code> folder (<code>SKILL.md</code>, <code>reference.md</code>, <code>tone-of-voice.md</code>, <code>prompts/</code>).</li>
+      <li><strong>A <code>company-state.md</code> in your own workspace</strong> — copy the template, fill it in, keep it in your project. This is the COO's memory.</li>
+      <li><strong>Web access</strong> — so it can fetch the knowledge base. No web access? Clone the repo and it falls back to local files.</li>
+    </ol>
+  </div>
+
+  <h2>Install per tool</h2>
+
+  <div class="card">
+    <h3>Cursor <span class="tag">SKILL.md</span></h3>
+    <p>Copy <code>virtual-coo/</code> to <code>.cursor/skills/virtual-coo/</code> (project) or <code>~/.cursor/skills/virtual-coo/</code> (personal).</p>
+    <p>Auto-discovered. Invoke by asking <em>"be my virtual COO"</em> or any ops question.</p>
+  </div>
+
+  <div class="card">
+    <h3>Claude Code <span class="tag">SKILL.md</span></h3>
+    <p>Copy to <code>.claude/skills/virtual-coo/</code> (project) or <code>~/.claude/skills/virtual-coo/</code> (personal). The folder name must match the <code>name:</code> in <code>SKILL.md</code> — it does.</p>
+    <p>Invoke with <code>/virtual-coo</code>, or let it trigger from the description.</p>
+  </div>
+
+  <div class="card">
+    <h3>OpenCode <span class="tag">SKILL.md / AGENTS.md</span></h3>
+    <p>OpenCode reads <code>.claude/skills</code> natively, so a <code>.claude/skills/virtual-coo/</code> folder works out of the box.</p>
+    <p>Or wire it as a command (<code>.opencode/command/virtual-coo.md</code>), an agent (<code>.opencode/agent/virtual-coo.md</code>), or add the skill text to <code>AGENTS.md</code>.</p>
+  </div>
+
+  <div class="card">
+    <h3>Hermes Agent / OpenClaw <span class="tag">SKILL.md</span></h3>
+    <p>Both use the same <code>SKILL.md</code> format. Drop <code>virtual-coo/</code> into their skills directory (Hermes: <code>~/.hermes/skills/virtual-coo/</code>; OpenClaw: its skills folder or via ClawHub).</p>
+    <p>Invoke from chat — CLI or a messaging channel (Telegram, Slack, …).</p>
+  </div>
+
+  <div class="card">
+    <h3>Generic <span class="tag">rules / system prompt</span></h3>
+    <p>For Cline, Continue, Aider, or a raw API/SDK: paste <code>SKILL.md</code> (and <code>reference.md</code> when needed) into the tool's rules or system prompt.</p>
+    <p>Give it file access to your <code>company-state.md</code> and web access to the knowledge base.</p>
+  </div>
+
+  <h2>Configure the knowledge source</h2>
+  <div class="card">
+    <p>Default <code>KNOWLEDGE_BASE_URL</code>: <code>https://raw.githubusercontent.com/aksie/ducttape-to-coo/main</code></p>
+    <p>To read from the public site instead, set it to <code>https://&lt;your-domain&gt;</code> — it serves the same paths. See <code>SKILL.md</code> → "Knowledge source".</p>
+  </div>
+
+  <h2>First run</h2>
+  <div class="firstrun">"Be my virtual COO. Here's my company-state.md — give me a read on where we stand and what needs attention."</div>
+
+  <p class="note">After that, ask ops questions any time, or run a check-in on demand. To make the check-ins recurring, see <a href="coo-setup.html">Set up your check-ins</a>.</p>
+</main>
+</body>
+</html>

@@ -3,64 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set up your COO check-ins</title>
+<title>Set up your COO check-ins — Duct Tape to COO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
 <style>
-:root{
-  --bg:#0d1117; --surface:#161b22; --surface-raised:#21262d;
-  --border:#30363d; --border-bright:#484f58; --text:#e6edf3;
-  --text-dim:#8b949e; --text-muted:#6e7681; --green:#3fb950;
-  --green-dim:#1a4726; --blue:#58a6ff; --orange:#f0883e;
-  --font:'Space Grotesk','Segoe UI',sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:var(--font);background:var(--bg);color:var(--text);
-  line-height:1.6;font-size:0.95rem;padding:40px 20px;
-}
-.wrap{max-width:720px;margin:0 auto}
-h1{font-size:1.6rem;font-weight:700;margin-bottom:8px}
-.lead{color:var(--text-dim);margin-bottom:32px}
-.card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:10px;padding:24px;margin-bottom:20px;
-}
-.card h2{font-size:1.1rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-.card .sub{color:var(--text-muted);font-size:0.85rem;margin-bottom:18px}
-.controls{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:0.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.04em}
-select,input[type=time]{
-  background:var(--surface-raised);border:1px solid var(--border-bright);
-  color:var(--text);font-family:inherit;font-size:0.95rem;
-  padding:8px 12px;border-radius:6px;
-}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-a.btn,button.btn{
-  display:inline-flex;align-items:center;gap:8px;text-decoration:none;
-  font-family:inherit;font-size:0.9rem;font-weight:600;cursor:pointer;
-  padding:10px 16px;border-radius:6px;border:1px solid var(--border-bright);
-  color:var(--text);background:var(--surface-raised);transition:all .15s;
-}
-a.btn:hover,button.btn:hover{border-color:var(--green);color:var(--green)}
-a.btn.primary{background:var(--green-dim);border-color:var(--green)}
-.prompt-box{
-  background:var(--bg);border:1px solid var(--border);border-radius:6px;
-  padding:14px;font-size:0.82rem;color:var(--text-dim);
-  white-space:pre-wrap;margin-top:14px;position:relative;
-}
-.copy{
-  position:absolute;top:8px;right:8px;font-size:0.7rem;padding:4px 8px;
-  border:1px solid var(--border-bright);border-radius:4px;color:var(--text-muted);
-}
-.copy:hover{color:var(--green);border-color:var(--green)}
-.ics-row{margin-top:8px}
-.note{color:var(--text-muted);font-size:0.8rem;margin-top:28px;border-top:1px solid var(--border);padding-top:18px}
-.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
-.dot.g{background:var(--green)} .dot.o{background:var(--orange)}
+#coo-page{max-width:760px;margin:0 auto;padding:32px 20px 60px}
+#coo-page h1{font-size:1.6rem;font-weight:700;margin-bottom:8px}
+#coo-page .lead{color:var(--text-dim);margin-bottom:28px}
+#coo-page .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:20px}
+#coo-page .card h2{font-size:1.1rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+#coo-page .card .sub{color:var(--text-muted);font-size:.85rem;margin-bottom:18px}
+#coo-page .controls{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+#coo-page .field{display:flex;flex-direction:column;gap:6px}
+#coo-page .field label{font-size:.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.04em}
+#coo-page select,#coo-page input[type=time]{background:var(--surface-raised);border:1px solid var(--border-bright);color:var(--text);font-family:inherit;font-size:.95rem;padding:8px 12px;border-radius:6px}
+#coo-page .btns{display:flex;gap:12px;flex-wrap:wrap}
+#coo-page a.btn,#coo-page button.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:inherit;font-size:.9rem;font-weight:600;cursor:pointer;padding:10px 16px;border-radius:6px;border:1px solid var(--border-bright);color:var(--text);background:var(--surface-raised);transition:all .15s}
+#coo-page a.btn:hover,#coo-page button.btn:hover{border-color:var(--green);color:var(--green)}
+#coo-page a.btn.primary{background:var(--green-dim);border-color:var(--green)}
+#coo-page .prompt-box{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:14px;font-size:.82rem;color:var(--text-dim);white-space:pre-wrap;margin-top:14px;position:relative}
+#coo-page .copy{position:absolute;top:8px;right:8px;font-size:.7rem;padding:4px 8px;border:1px solid var(--border-bright);border-radius:4px;color:var(--text-muted);background:transparent;cursor:pointer}
+#coo-page .copy:hover{color:var(--green);border-color:var(--green)}
+#coo-page .ics-row{margin-top:8px}
+#coo-page .note{color:var(--text-muted);font-size:.8rem;margin-top:28px;border-top:1px solid var(--border);padding-top:18px}
+#coo-page .note a{color:var(--blue)}
+#coo-page .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+#coo-page .dot.g{background:var(--green)}#coo-page .dot.o{background:var(--orange)}
 </style>
 </head>
 <body>
-<div class="wrap">
+<header>
+  <div class="container">
+    <div class="header-top">
+      <a class="header-logo" href="index.html">Duct Tape to COO</a>
+      <nav class="header-nav">
+        <a href="diagnostic.html">Diagnostic</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="skill-setup.html" class="active">Virtual COO</a>
+        <a href="blog/index.html">Blog</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="coo-page">
   <h1>Set up your COO check-ins</h1>
   <p class="lead">Two recurring moments keep your operations on track: a short weekly pulse and a quarterly health check. Pick a time, add them to your calendar, and you're done — no setup, no infrastructure.</p>
 
@@ -106,8 +95,8 @@ a.btn.primary{background:var(--green-dim);border-color:var(--green)}
     </div>
   </div>
 
-  <p class="note">Each calendar reminder contains the exact prompt to paste into your AI tool (Cursor, Claude Code, OpenCode, …). When it pops up: open your tool in the repo, paste the prompt, run it. Times are in Europe/Amsterdam.</p>
-</div>
+  <p class="note">Each calendar reminder contains the exact prompt to paste into your AI tool (Cursor, Claude Code, OpenCode, …). When it pops up: open your tool, paste the prompt, run it. Times are in Europe/Amsterdam. New here? See <a href="skill-setup.html">how to add the Virtual COO to your setup</a>.</p>
+</main>
 
 <script>
 const PROMPTS = {
@@ -159,7 +148,7 @@ function buildEvent(uid, start, durMin, rrule, summary, details){
     `DTEND;TZID=${TZ}:${fmtLocal(end)}`,
     `RRULE:${rrule}`,
     `SUMMARY:${escICS(summary)}`,
-    `DESCRIPTION:${escICS("Open your AI tool in the repo and paste:\n\n"+details)}`,
+    `DESCRIPTION:${escICS("Open your AI tool and paste:\n\n"+details)}`,
     "BEGIN:VALARM","TRIGGER:-PT10M","ACTION:DISPLAY",`DESCRIPTION:${escICS(summary)}`,"END:VALARM",
     "END:VEVENT"
   ].join("\r\n");
@@ -176,12 +165,9 @@ function buildICS(weekly, quarterly){
     "CALSCALE:GREGORIAN","METHOD:PUBLISH", vtz, weekly, quarterly, "END:VCALENDAR"].join("\r\n");
 }
 
-let current = { day:1, h:14, m:0 };
-
 function refresh(){
   const [h, m] = document.getElementById("time").value.split(":").map(Number);
   const day = Number(document.getElementById("day").value);
-  current = { day, h, m };
 
   const wStart = nextWeekday(day, h, m);
   const qStart = firstMondayNextQuarter(h, m);
