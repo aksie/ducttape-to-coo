@@ -22,6 +22,7 @@ Format from [Event template](../templates/docs/event.md).
 - [x] **CS ↔ eng communication friction** — [1.3](../wiki/processes/strategic/1.3--first-hires.md) · [src-049](../wiki-pipeline/sources/src-049.md)
 - [x] **Hiring approval chain (3.2)** — [first-hires](../wiki/processes/people/3.2--first-hires.md) · [early-revenue](../wiki/processes/people/3.2--early-revenue.md) · src-060 · atoms 259–265 (2026-06)
 - [x] **Who Decides What — direction + blog draft** — [proposal](proposals/who-decides-what-summary-and-direction.md) · [blog draft](../blog/posts/drafts/who-decides-when-founders-disagree.md) · [session roundup](proposals/session-2026-06-11-who-decides-what-roundup.md) (2026-06-11)
+- [x] **Shareholder & Investor Reporting — First Hires (`1.2b`)** — [1.2b — First Hires](../wiki/processes/strategic/1.2b--first-hires.md) · [Investor update template](../templates/docs/investor-update.md) · [pipeline entry](../wiki-pipeline/entries/strategic-ops/shareholder-investor-reporting/first-hires/) · src-058 (practitioner, human:stefanverkerk) / src-059 (2026-06-09)
 
 ---
 
@@ -29,14 +30,16 @@ Format from [Event template](../templates/docs/event.md).
 
 ### Wiki pages & pipeline
 
-- [ ] **Shareholder & Investor Reporting — First Hires** (`1.2b`)
-  - [ ] Draft wiki cell; use **CUTR** and **Lumen** investor/board reporting as redacted worked examples (monthly update format, board cadence, cap-table tool)
-  - [ ] Pipeline: contribution or practitioner sources → atoms → draft → approval
-
 - [ ] **Who Decides What — wiki publish (1.4 @ first hires)**
   - [x] Proposal + blog draft + source discovery (local)
-  - [ ] `src-061` research note → selective atoms → `draft.md` / `approval.md` → [1.4--first-hires](../wiki/processes/strategic/1.4--first-hires.md)
+  - [ ] `src-063`+ research note → selective atoms → `draft.md` / `approval.md` → [1.4--first-hires](../wiki/processes/strategic/1.4--first-hires.md) *(was `src-061`; renumbered — Trailhead legal took `src-061`/`src-062` on 2026-06-16. Proposal docs still say `src-061`+; use next-available when resuming)*
   - [x] Commit `wiki-pipeline/entries/strategic-ops/who-decides-what/first-hires/source-discovery.md`
+
+- [ ] **Employee Satisfaction & Feedback — Foundation light wiki (3.6)** — [3.6 — Foundation](../wiki/processes/people/3.6--foundation.md) *(2026-06-16)*
+  - [x] Thin page: founder sync + informal check-ins (Track B / Buechler); cross-ref **1.4**; evolve to start/stop/change at first hires
+  - [ ] **3.6 — First Hires** stub still to write (start/stop/change)
+
+- [ ] **Publish [Who Decides When Founders Disagree](../blog/posts/drafts/who-decides-when-founders-disagree.md)** — move draft → `blog/posts/` when ready; keep aligned with [1.4 proposal](proposals/who-decides-what-summary-and-direction.md) and wiki publish
 
 - [ ] **Team alignment at ~8–20 people** — leadership hears the same thing at the same time (tacit alignment breaks)
   - [ ] Wiki home TBD (strategic comms adjacent to [1.3 — Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.3--early-revenue)? stage portal? separate process?)
@@ -64,10 +67,16 @@ Format from [Event template](../templates/docs/event.md).
 
 ### Inputs & decisions *(gated)*
 
-- [ ] **Trailhead meeting → pipeline, diagnostic, legal scope** — when Trailhead participants are OK:
-  - [ ] Feed meeting summary into wiki pipeline (contribution or `src-NNN` → atoms → relevant `entries/`)
-  - [ ] Update diagnostic / `processes.json` if stage focus, coverage, or process list should change
-  - [ ] Decide how much to expand the **legal** part (4.x depth, new cells, NL-specific vs general)
+- [ ] **Trailhead meeting → pipeline, diagnostic, legal scope** — approved summary received (2026-06-16):
+  - [x] Feed meeting summary into wiki pipeline — split into 2 contributions ([legal scan](../wiki-pipeline/contributions/legal--legal-scan-walkthrough.md) · [first legal hire](../wiki-pipeline/contributions/legal--first-legal-hire.md)) → Phase 1b done: `src-061`/`src-062`, atoms `266–305`
+  - [x] Phase 2–4 publish — 4.1/4.5/4.6 wiki pages + `first-legal-hire.md` + Trailhead attribution footer · [provenance doc](trailhead-legal-provenance.md)
+  - [x] Re-split older 4.1 pages; new 4.6 foundation/early-revenue; enriched legal `stage_focus` in diagnostic
+  - [ ] Update diagnostic / `processes.json` from the "Tool / wording note" items (granular scan questionnaire — parked; needs product decision)
+  - [x] Decide how much to expand the **legal** part — settled: Route A (4.1 Governance / 4.5 Internal & Labour / 4.6 Privacy & IP) per [proposal](proposals/nl-legal-templates-and-category-split.md)
+
+- [ ] **Practitioner interview — alignment & strategy** (Tue) — capture experience on alignment and strategy; feed into pipeline (contribution → atoms → relevant `entries/`)
+
+- [ ] **Practitioner interview — planning & communicating strategy** (Fri) — capture experience on planning and communicating strategy; feed into pipeline (contribution → atoms → relevant `entries/`)
 
 ---
 
@@ -81,9 +90,10 @@ Format from [Event template](../templates/docs/event.md).
 | Data room quality = ops signal | ✅ 4.1 · blog draft |
 | Hire approval chain (designer case) | ✅ Wiki 3.2 · src-060 |
 | Who decides what / ABC / consult-decide-commit | ✅ Proposal · ⬜ wiki 1.4 pipeline |
-| Investor reporting at first hires | ⬜ Todo above · CUTR & Lumen as examples |
+| Founder sync / feedback at foundation (3.6 light) | ✅ Wiki 3.6 foundation · who-decides Track B |
+| Investor reporting at first hires | ✅ Wiki 1.2b · template · src-058/059 |
 | Leadership cadence when headcount ~8–20 | ⬜ Todo above |
-| Trailhead meeting summary | ⬜ Gated — pipeline + legal scope decision |
+| Trailhead meeting summary | ✅ Pipeline + wiki publish · [provenance](trailhead-legal-provenance.md) · ⬜ granular scan questionnaire (parked) |
 | LinkedIn post as “Nalden” (AI meta joke) | ⬜ Todo above |
 | Guest posts — Trailhead & others on framework | ⬜ Todo above |
 
