@@ -1,12 +1,12 @@
 ---
-title: "The Gap Where Friction Lives"
-subtitle: "What three growth models tell us about why scaling hurts — and where the operational diagnostic actually points."
+title: "Growing Pains Are Usually a Founder Gap"
+subtitle: "When something breaks in a growing company, it usually breaks for the same reason: the organisation needs something it isn't getting yet, and the founder isn't doing it yet. Theory from three growth models point in the same direction."
 date: "May 2026"
 tag: "Essay"
 tag_color: "blue"
 slug: "the-gap-where-friction-lives"
 order: 2
-description: "Three well-known growth models describe the same founder transition from different angles. Read together, they point to something useful: the friction is the gap announcing itself."
+description: "When growth outruns how you used to work, the friction is usually a founder gap — not a broken company. Greiner, Turner, and McKeown describe the same transition from three angles."
 cta_intro: "Want to see where your own company sits across the maturity stages — process by process?"
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"

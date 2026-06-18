@@ -1,6 +1,6 @@
 ---
 title: "A Starting Point"
-subtitle: "Two patterns that send founders looking for a COO — and what's actually worth fixing first."
+subtitle: "Why I started this. And two patterns that send founders looking for a COO."
 date: "May 2026"
 tag: "Entry point"
 tag_color: "green"
