@@ -1,6 +1,6 @@
 ---
-title: "Strategy as the Starting point - or should I say breaking point - when Founders Lose the Team"
-subtitle: "Three patterns in how strategy gets communicated — and why each one breaks at a certain size."
+title: "When the Founder's Strategy Story Stops Scaling"
+subtitle: "Three patterns in how founders communicate strategy as the team grows — and why each one stops working at a certain size."
 date: "May 2026"
 tag: "Leadership"
 tag_color: "blue"
@@ -15,7 +15,7 @@ cta_secondary_href: "the-gap-where-friction-lives.html"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
-## The second common starting / breaking point
+## When the founder's strategy story stops scaling
 
 When a founder asks me to look at their pitch deck, we usually end up talking about something else entirely.
 

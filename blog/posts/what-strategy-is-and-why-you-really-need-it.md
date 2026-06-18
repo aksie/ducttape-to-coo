@@ -1,6 +1,6 @@
 ---
-title: "A True Strategy Is Crucial To Scale Your Team"
-subtitle: "To Make The Right Decisions You Need To Have A Clear Path"
+title: "Nobody Really Knows What Strategy Is — But Everyone Has the Slide"
+subtitle: "Goals nobody would argue against aren't a strategy. A strategy is a set of choices — especially what you're not going to do."
 date: "May 2026"
 tag: "Entry point"
 tag_color: "green"
