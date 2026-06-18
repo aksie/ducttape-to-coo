@@ -123,6 +123,11 @@ header .container {
 .header-nav a:hover,
 .header-nav a.active { color: var(--text); }
 
+@media (max-width: 640px) {
+    .header-nav { gap: 16px; flex-wrap: wrap; justify-content: flex-end; }
+    .header-logo { font-size: 1.25rem; }
+}
+
 h1 {
     font-size: 1.6rem;
     font-weight: 700;

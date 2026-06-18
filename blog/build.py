@@ -128,28 +128,12 @@ INDEX_TEMPLATE = """\
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
     <style>
-        :root {
-            --bg:#0d1117;--surface:#161b22;--border:#30363d;--border-bright:#484f58;
-            --text:#e6edf3;--text-dim:#8b949e;--text-muted:#6e7681;
-            --green:#3fb950;--blue:#58a6ff;
-            --font:'Space Grotesk','Segoe UI',sans-serif;
-        }
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
-        a{color:inherit;text-decoration:none}
-        header{border-bottom:1px solid var(--border);padding:0 32px}
-        .header-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
-        .header-logo{font-size:.95rem;font-weight:600;color:var(--text)}
-        .header-logo:hover{color:var(--blue)}
-        nav{display:flex;gap:24px;font-size:.85rem}
-        nav a{color:var(--text-dim)}
-        nav a:hover{color:var(--text)}
-        nav a.active{color:var(--text)}
-        .wrap{max-width:800px;margin:0 auto;padding:64px 32px 120px}
+        .wrap{max-width:800px;margin:0 auto;padding:48px 32px 100px}
         .page-eyebrow{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border:1px solid var(--blue);padding:3px 9px;border-radius:3px;margin-bottom:20px}
-        h1{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+        .wrap h1{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:var(--text)}
         .page-sub{font-size:1rem;color:var(--text-dim);margin-bottom:56px;max-width:540px;line-height:1.7}
         .post-item{display:block;padding:28px 0;border-bottom:1px solid var(--border)}
         .post-item:first-child{border-top:1px solid var(--border)}
@@ -157,18 +141,21 @@ INDEX_TEMPLATE = """\
         .post-item-tag{font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px}
         .post-item-title{font-size:1.15rem;font-weight:600;color:var(--text);margin-bottom:8px;transition:color .15s}
         .post-item-sub{font-size:.9rem;color:var(--text-dim);line-height:1.6}
-        @media(max-width:640px){.wrap{padding:40px 20px 80px}h1{font-size:1.6rem}nav{gap:16px}}
+        @media(max-width:640px){.wrap{padding:40px 20px 80px}.wrap h1{font-size:1.6rem}}
     </style>
 </head>
 <body>
-<header>
-    <div class="header-inner">
-        <a class="header-logo" href="../index.html">Duct Tape to COO</a>
-        <nav>
-            <a href="../diagnostic.html">Diagnostic</a>
-            <a href="../wiki.html">Wiki</a>
-            <a href="index.html" class="active">Blog</a>
-        </nav>
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+            <nav class="header-nav">
+                <a href="../diagnostic.html">Diagnostic</a>
+                <a href="../wiki.html">Wiki</a>
+                <a href="../skill-setup.html">Virtual COO</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </div>
     </div>
 </header>
 <div class="wrap">
