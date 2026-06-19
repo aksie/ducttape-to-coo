@@ -118,6 +118,15 @@
 
         .post-body hr { display: none; }
 
+        /* ── Embedded HTML blocks (blog/html-blocks/) ── */
+        .post-html-block {
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .post-body .post-html-block > :first-child { margin-top: 0; }
+        .post-body .post-html-block > :last-child  { margin-bottom: 0; }
+
         /* ── Blockquotes → pattern callouts ───────────── */
         .post-body blockquote {
             border-left: 3px solid var(--orange);
