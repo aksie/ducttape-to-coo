@@ -19,9 +19,9 @@ Once you start working together as founders — for real, not just on a side pro
 
 You will hit moments where one of you thinks: *I'm really not convinced this is the best route.* Pricing. Hiring. Which customer segment to chase. Whether to take the money. Whether to ship the thing this week or rewrite it again.
 
-That's normal. What's expensive is what happens next: you keep talking about it without **taking the fork**. Another meeting. Another Slack thread. Another "let's sleep on it." Sometimes that's wisdom. Often it's stall — and stall is worse than a wrong turn you can reverse.
+That's normal. What's 'expensive'- time consuming for you, time consumers in how fast you go, energy consuming on the relation - is what happens next: you keep talking about it without **taking the fork**. Another meeting. Another Slack thread. Another "let's sleep on it, I am not convinced." Sometimes that's wisdom. Often it's stall — and stall is worse than a wrong turn you can reverse.
 
-It also wears on the relationship in small ways. Irritation builds. You start to wonder whether your co-founder will ever actually let something go, or whether you're being overruled without a real decision. Trust doesn't blow up in one fight — it erodes in repeated loops where nothing closes. So the cost isn't just time. Left unhandled, it compounds into friction you'll later blame on "personality" when it was really process ambiguity.
+It also wears on the relationship in small ways. Irritation builds. You start to wonder whether your co-founder will ever actually let something go that you feel is on your plate, or whether you're being overruled without a real decision. Trust doesn't blow up in one fight — it erodes in repeated loops where nothing closes. So the cost isn't just time. Left unhandled, it compounds into friction you'll later blame on "personality" when it was really process ambiguity.
 
 In the founding teams I see, getting past that moment takes work. And as with many things in ops: **maintenance beats repair**. Agree the rules while you still like each other. Not when you're three weeks into the same argument.
 
@@ -29,7 +29,7 @@ In the founding teams I see, getting past that moment takes work. And as with ma
 
 ## What you don't need (yet)
 
-At 2–10 people you don't need a RACI matrix. You don't need SPADE memos. You don't need the GitLab DRI handbook.
+At 2–10 people you don't need a RACI matrix. You don't need SPADE memos. You don't need the GitLab DRI handbook. So that's not what we'll talk about here. 
 
 You need:
 
@@ -72,7 +72,7 @@ That's the commit step — and it only works if the owner did the consult step. 
 
 Frances Frei adds a useful middle beat: **disagree → understand → commit**. The bar isn't agreement. It's "reasonable people could disagree, and we've both been heard."
 
-Bezos's [2016 letter](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders) version — *"will you gamble with me on it?"* — assumes the debate already happened. It's a closing ask, not a substitute for one.
+Bezos's [2016 letter](https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders) version — *"will you gamble with me on it?"* — assumes the debate already happened. It's a closing ask, not a substitute for one. 
 
 One counter-school: [Wistia's founders](https://wistia.com/learn/culture/founder-partnerships-that-last) don't want to commit to things they don't believe in; they keep talking until there's real buy-in. Fair for some two-person creative partnerships. In most early startups I see, the failure mode is the opposite — endless re-debate because nobody was ever named as decider *and* nobody chased input properly.
 
@@ -80,7 +80,7 @@ One counter-school: [Wistia's founders](https://wistia.com/learn/culture/founder
 
 ## ABC buckets — the bit that actually sticks
 
-The most useful artefact I found digging through founder-agreement stuff isn't a legal contract. It's a **one-page decision map** with three buckets. [Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/) names them cleanly; [Ramp's founders-agreement writeup](https://ramp.com/blog/what-is-in-a-startup-founder-agreement) and [Mercury's cofounder prenup questions](https://mercury.com/blog/cofounder-prenup-money-questions) say the same thing with different words.
+The most useful thing I found digging through founder-agreement stuff isn't a legal contract. It's a **one-page decision map** with three buckets. [Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/) names them cleanly; [Ramp's founders-agreement writeup](https://ramp.com/blog/what-is-in-a-startup-founder-agreement) and [Mercury's cofounder prenup questions](https://mercury.com/blog/cofounder-prenup-money-questions) say the same thing with different words.
 
 | Bucket | Rule | Examples |
 |--------|------|----------|
@@ -191,6 +191,7 @@ The pattern I see in teams that stall:
 - Roles assumed from titles, never discussed.
 - "We'll figure out the process when it happens."
 - The same fork argued for three weeks while a hire, a customer, or a runway clock waits.
+- The awkward 'I don't think we need consensus on this' is not said, but it is felt. 
 
 The pattern in teams that move:
 
