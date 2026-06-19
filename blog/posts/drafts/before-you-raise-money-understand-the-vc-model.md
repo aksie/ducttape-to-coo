@@ -111,7 +111,7 @@ Let's assume a fund aimed for 20% IRR (you can compare this to getting 20% inter
 
 To get 20% per year return, in ten years a fund needs to get roughly 4× the money back that went in (simplified: 1.2^8 ≈ 4.3).
 
-And if in 6 out of 10 investments the money is all lost, the other 4 need to go **10×** to get to 4× on the total fund.
+{{html-block:vc-portfolio-returns}}
 
 Therefore a fund wants you to aim for at least **10× their money back** in around ten years — or "die trying" (as a company). So 5× is not good enough.
 

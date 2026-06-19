@@ -7,6 +7,9 @@
 # Personal backlog (not for the repo)
 docs/ops-todo.md
 
+# Local draft previews (blog/build.py --preview-draft) — remove when post is published
+blog/before-you-raise-money-understand-the-vc-model.html
+
 # Python
 __pycache__/
 *.pyc

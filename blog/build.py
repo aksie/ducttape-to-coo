@@ -8,15 +8,24 @@ Usage:
     python blog/build.py
 
 Reads:  blog/posts/*.md  (YAML frontmatter + markdown body)
+        blog/html-blocks/*.html  (optional embeds via {{html-block:slug}})
 Writes: blog/<slug>.html  (static HTML from _template.html)
         blog/index.html   (listing page, newest first by date string)
 
 Run this before committing whenever you add or edit a post.
+
+Preview a draft (writes blog/<slug>.html without publishing the .md):
+
+    python3 blog/build.py --preview-draft before-you-raise-money-understand-the-vc-model
+
+Then from repo root: python3 -m http.server 8000
+Open: http://localhost:8000/blog/<slug>.html
 """
 
 import os
 import sys
 import glob
+import re
 import textwrap
 
 try:
@@ -29,14 +38,39 @@ except ImportError:
 # ── Paths ──────────────────────────────────────────────────────────────────
 SCRIPT_DIR   = os.path.dirname(os.path.abspath(__file__))
 POSTS_DIR    = os.path.join(SCRIPT_DIR, "posts")
+DRAFTS_DIR   = os.path.join(POSTS_DIR, "drafts")
+HTML_BLOCKS  = os.path.join(SCRIPT_DIR, "html-blocks")
 TEMPLATE     = os.path.join(SCRIPT_DIR, "_template.html")
 INDEX_OUT    = os.path.join(SCRIPT_DIR, "index.html")
+
+HTML_BLOCK_RE = re.compile(r"^\{\{html-block:([a-z0-9-]+)\}\}\s*$", re.MULTILINE)
 
 # ── Markdown renderer ───────────────────────────────────────────────────────
 md = md_lib.Markdown(extensions=["tables", "fenced_code", "nl2br"])
 
 
-def render_body(text: str) -> str:
+def expand_html_blocks(text: str, source: str) -> str:
+    """Replace {{html-block:slug}} lines with blog/html-blocks/<slug>.html fragments."""
+    def repl(match: re.Match) -> str:
+        slug = match.group(1)
+        path = os.path.join(HTML_BLOCKS, f"{slug}.html")
+        if not os.path.isfile(path):
+            print(f"  ERROR: html-block '{slug}' not found ({path})")
+            print(f"         referenced from {source}")
+            sys.exit(1)
+        with open(path, encoding="utf-8") as f:
+            fragment = f.read().strip()
+        return (
+            f'<div class="post-html-block" data-block="{slug}">\n'
+            f"{fragment}\n"
+            f"</div>"
+        )
+
+    return HTML_BLOCK_RE.sub(repl, text)
+
+
+def render_body(text: str, source: str = "post") -> str:
+    text = expand_html_blocks(text, source)
     md.reset()
     return md.convert(text)
 
@@ -86,7 +120,7 @@ def build_post(md_path: str, template: str) -> dict:
     tag_class  = f"post-tag--{tag_color}"
     page_title = f"{meta.get('title', '')} — Duct Tape to COO"
 
-    body_html = render_body(post.content)
+    body_html = render_body(post.content, md_path)
 
     html = (
         template
@@ -188,6 +222,29 @@ def build_index(posts: list[dict]) -> None:
     print(f"  wrote {os.path.relpath(INDEX_OUT)}")
 
 
+def find_draft(slug: str) -> str | None:
+    """Return path to draft markdown matching slug (filename or frontmatter)."""
+    by_name = os.path.join(DRAFTS_DIR, f"{slug}.md")
+    if os.path.isfile(by_name):
+        return by_name
+    for path in glob.glob(os.path.join(DRAFTS_DIR, "*.md")):
+        meta = frontmatter.load(path).metadata
+        if meta.get("slug") == slug:
+            return path
+    return None
+
+
+def preview_draft(slug: str, template: str) -> None:
+    md_path = find_draft(slug)
+    if not md_path:
+        print(f"No draft found for slug '{slug}' in blog/posts/drafts/")
+        sys.exit(1)
+    print(f"Previewing draft: {os.path.relpath(md_path)}")
+    build_post(md_path, template)
+    print(f"\nStart a local server from repo root, then open:")
+    print(f"  http://localhost:8000/blog/{slug}.html")
+
+
 # ── Main ────────────────────────────────────────────────────────────────────
 def main() -> None:
     # Change to repo root so relative paths in the template work correctly
@@ -195,6 +252,10 @@ def main() -> None:
 
     with open(TEMPLATE, encoding="utf-8") as f:
         template = f.read()
+
+    if len(sys.argv) >= 3 and sys.argv[1] == "--preview-draft":
+        preview_draft(sys.argv[2], template)
+        return
 
     md_files = sorted(glob.glob(os.path.join(POSTS_DIR, "*.md")))
     if not md_files:

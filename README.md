@@ -8,9 +8,9 @@ Open-source operational maturity framework for founding teams — initiated by [
 
 ## What is this — and what we're building
 
-**Live today:** a stage-based framework — diagnostic, wiki, blog, and templates — so founding teams can see where ops are strong, where they're duct-taped, and what to fix first for *their* size and context.
+**Live today:** a stage-based framework — diagnostic, wiki, blog, templates, and a Virtual COO agent skill (beta) — so founding teams can see where ops are strong, where they're duct-taped, and what to fix first for *their* size and context.
 
-**Building next:** a structured knowledge base precise enough for an AI layer to use — toward an open-source, context-aware **fractional COO** that answers "what should we do about [this process] right now?" with operator judgment, not generic advice.
+**Building next:** deeper wiki coverage, sharper agent check-ins, and automations — toward an open-source, context-aware **fractional COO** that answers "what should we do about [this process] right now?" with operator judgment, not generic advice.
 
 Most startups run on duct tape longer than they should. This project helps founders and operators:
 - **Identify** which processes matter at your stage (from a handful at founding to 30+ as you scale — not all at once)
@@ -143,11 +143,11 @@ You don't need to be a developer to contribute — if you can edit a text file, 
 
 ### In progress
 - [ ] Extracting operational knowledge from practitioner sources into wiki entries, process by process and stage by stage — guided by structured prompts in the repo and run with LLMs that have web access
+- [x] Virtual COO agent skill (beta) — weekly check-ins, quarterly diagnostic, ops Q&A grounded in the wiki over HTTP; still refining coverage and tone
 
 ### Planned
 - [ ] Context-aware guidance variants for the 7 sensitivity processes
-- [ ] AI skill layer — package the wiki as agent skills (SKILL.md open standard) so Claude and compatible agents can answer stage-specific operational questions directly from the knowledge base
-- [ ] Context-aware retrieval — agent uses headcount + revenue + funding stage to retrieve the right variant
+- [ ] Virtual COO out of beta — harden check-ins, event-driven automations, and context-aware retrieval (headcount + revenue + funding stage)
 
 ---
 

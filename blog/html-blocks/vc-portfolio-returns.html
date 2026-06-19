@@ -1,0 +1,238 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.31.0/iconfont/tabler-icons.min.css">
+<style>
+  .vc-returns-widget {
+    font-family: inherit;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 28px 24px;
+    line-height: 1.7;
+  }
+  .vc-returns-widget p { margin: 0; }
+  .vc-returns-widget .lede {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+  .vc-returns-widget .lede b {
+    font-weight: 600;
+    color: var(--text);
+  }
+  .vc-returns-widget .fixed-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .vc-returns-widget .stat {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .vc-returns-widget .stat .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .vc-returns-widget .stat .value {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .vc-returns-widget .control {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.25rem;
+    padding: 14px 16px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  .vc-returns-widget .control label {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .vc-returns-widget .control output {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 18px;
+    text-align: right;
+  }
+  .vc-returns-widget input[type=range] {
+    flex: 1;
+    accent-color: var(--blue);
+    height: 4px;
+    cursor: pointer;
+  }
+  .vc-returns-widget .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 1.25rem;
+  }
+  .vc-returns-widget .tile {
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    padding: 10px 4px;
+    text-align: center;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .vc-returns-widget .tile i {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .vc-returns-widget .tile span {
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .vc-returns-widget .tile.dead {
+    background: rgba(248, 81, 73, 0.1);
+    border-color: rgba(248, 81, 73, 0.35);
+    color: #ff7b72;
+  }
+  .vc-returns-widget .tile.win {
+    background: rgba(63, 185, 80, 0.1);
+    border-color: rgba(63, 185, 80, 0.35);
+    color: var(--green);
+  }
+  .vc-returns-widget .readout {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-bright);
+    border-radius: 6px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .vc-returns-widget .readout .small {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .vc-returns-widget .readout .mult-line {
+    margin: 0;
+    line-height: 1.1;
+  }
+  .vc-returns-widget .readout .mult {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.03em;
+  }
+  .vc-returns-widget .readout .unit {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+  .vc-returns-widget .readout .caption {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    margin-top: 10px;
+    min-height: 1.2em;
+    font-style: italic;
+  }
+  .vc-returns-widget .foot {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+    line-height: 1.6;
+  }
+  .vc-returns-widget .foot i { font-style: italic; color: var(--text-dim); }
+  .vc-returns-widget .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  @media (max-width: 640px) {
+    .vc-returns-widget { padding: 20px 16px; }
+    .vc-returns-widget .fixed-row { grid-template-columns: 1fr; }
+    .vc-returns-widget .grid { grid-template-columns: repeat(2, 1fr); }
+    .vc-returns-widget .control { flex-wrap: wrap; }
+    .vc-returns-widget .readout .mult { font-size: 2rem; }
+  }
+</style>
+
+<div class="vc-returns-widget">
+  <p class="sr-only">Interactive explainer: when most startups in a fund return zero, the surviving few must each return a much higher multiple for the fund to hit its 4× target.</p>
+
+  <p class="lede">A fund promising ~20% a year is basically a savings account paying 20% to its own investors. Compounded over ~10 years that means handing back roughly <b>4× everything that went in</b>. But most bets return nothing — so the survivors have to cover the corpses too.</p>
+
+  <div class="fixed-row">
+    <div class="stat"><p class="label">Target return / year</p><p class="value">20%</p></div>
+    <div class="stat"><p class="label">Over roughly</p><p class="value">10 years</p></div>
+    <div class="stat"><p class="label">Whole fund must return</p><p class="value">≈ 4×</p></div>
+  </div>
+
+  <div class="control">
+    <label for="vc-dead">How many of 10 flop?</label>
+    <input type="range" id="vc-dead" min="0" max="9" value="6" step="1">
+    <output id="vc-dead-out">6</output>
+  </div>
+
+  <div class="grid" id="vc-grid"></div>
+
+  <div class="readout">
+    <p class="small">Each surviving company must return</p>
+    <p class="mult-line"><span class="mult" id="vc-mult">10×</span> <span class="unit">their money</span></p>
+    <p class="caption" id="vc-caption"></p>
+  </div>
+
+  <p class="foot">Heavily simplified: real funds weight bets unequally, deploy capital over time, and IRR isn&rsquo;t the same as a multiple once you account for <i>when</i> the money comes back. But the intuition holds — this is why a VC hears &ldquo;5×&rdquo; and quietly thinks &ldquo;no.&rdquo;</p>
+</div>
+
+<script>
+(function(){
+  var TOTAL = 10, TARGET = 4;
+  var slider = document.getElementById('vc-dead');
+  var deadOut = document.getElementById('vc-dead-out');
+  var grid = document.getElementById('vc-grid');
+  var multEl = document.getElementById('vc-mult');
+  var capEl = document.getElementById('vc-caption');
+  if (!slider || !grid) return;
+
+  function tile(isDead, mult){
+    var cls = isDead ? 'dead' : 'win';
+    var icon = isDead ? 'ti-skull' : 'ti-rocket';
+    var label = isDead ? '0×' : mult + '×';
+    return '<div class="tile ' + cls + '"><i class="ti ' + icon + '" aria-hidden="true"></i><span>' + label + '</span></div>';
+  }
+
+  function render(){
+    var dead = parseInt(slider.value, 10);
+    var survivors = TOTAL - dead;
+    deadOut.textContent = dead;
+    var mult = (TARGET * TOTAL) / survivors;
+    var multTxt = (Math.round(mult * 10) % 10 === 0) ? Math.round(mult).toString() : mult.toFixed(1);
+
+    multEl.textContent = multTxt + '×';
+    var html = '';
+    for (var i = 0; i < TOTAL; i++){ html += tile(i < dead, multTxt); }
+    grid.innerHTML = html;
+
+    if (dead === 6){
+      capEl.textContent = '4 winners doing 10× each = the whole fund back 4×. This is the "10× or die trying" ask.';
+    } else if (dead === 9){
+      capEl.textContent = 'One lonely survivor carrying nine corpses needs a 40× moonshot. Good luck.';
+    } else if (dead === 0){
+      capEl.textContent = 'A fantasy where nobody fails — everyone just needs a tidy 4×.';
+    } else {
+      capEl.textContent = survivors + ' survivors split the work — fewer survivors, taller order each.';
+    }
+  }
+
+  slider.addEventListener('input', render);
+  render();
+})();
+</script>
