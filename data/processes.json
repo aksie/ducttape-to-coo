@@ -295,7 +295,7 @@
       "description": "Annual and quarterly budgeting process and timeline, revenue and expense forecasting cadence and accuracy, variance analysis and explanations, department budgets, scenario planning, board/investor reporting package preparation and coordination",
       "stageFocus": {
         "foundation": "Focus on cash flow (see 2.1). Know your monthly burn and when you run out of money. A single spreadsheet is enough linked to the business plan in your pitch deck.",
-        "first-hires": "Build a simple headcount and cost budget. Track actual spend monthly against what you expected. Know your runway to the nearest month. Review with co-founders monthly.",
+        "first-hires": "Run one active budget plus a trigger → action list — hire when your metric crosses the line, not because it's April. Review triggers monthly with co-founders.",
         "early-revenue": "A financial model you use in management (not just for a deck), synced with accounting software, monthly close, and most important: cash flow forecast visible to full leadership team",
         "growth": "Introduce an annual budget with quarterly reforecasting. Assign budget ownership to team leads. Build a basic board reporting pack: actuals, forecast, key metrics, and narrative.",
         "scaled": "Full FP&A cycle: annual plan, quarterly reforecast, monthly variance review. Scenario planning for key business risks. Investor reporting package with consistent metrics and commentary."

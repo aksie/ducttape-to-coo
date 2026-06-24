@@ -38,6 +38,7 @@ You don't need all of these — even a partial contribution is useful. Write wha
 | `legal-4.1--filing-structure.md` | Practitioner DD / filing structure experience |
 | `people-3.1--hr-filing.md` | HR filing from first hire |
 | `financial-2.5--formal-filing.md` | Financial formal filing |
+| `financial-2.1-2.2--scenario-planning-first-hires.md` | Scenario-style planning — blog-style source for wiki 2.1 / 2.2 @ first hires |
 | `_template.md` | Copy this to start a new contribution |
 
 ## File naming
@@ -48,3 +49,15 @@ Name your file `{process}-{stage}-{your-name-or-initials}.md`, e.g.:
 - `hiring-foundation-anon.md`
 
 If you're not sure about the process or stage name, leave it as `unknown` — a maintainer will sort it.
+
+## Same text as a blog post
+
+Write the piece here first (essay flow is fine — Phase 1b and the wiki synthesis read this file). When you want a blog preview or publish:
+
+1. Copy everything **below** the contribution YAML block (from the first `##` heading through `<!-- pipeline-only -->`, excluding maintainer notes after that marker).
+2. Paste into `blog/posts/drafts/{slug}.md`.
+3. Add **blog** frontmatter at the top (see any file in `blog/posts/drafts/` for title, subtitle, CTA, slug, etc.).
+4. Preview: `python3 blog/build.py --preview-draft {slug}`
+5. To publish: move the draft to `blog/posts/` and commit.
+
+No sync machinery — copy when the blog version should change.
