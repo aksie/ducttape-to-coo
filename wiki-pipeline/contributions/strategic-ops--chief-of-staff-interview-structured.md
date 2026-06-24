@@ -332,9 +332,25 @@ Not extracted to wiki unless practitioner adds on review:
 
 **Generalisability limits:** Primary experience ~50–300 headcount with C-level and departments; bootstrapped or sub-50 companies may need `conditional` flags at Phase 3. Posters-per-department and 80/20 routing ratios are practitioner preference, not measured benchmarks — consider `needs_practitioner_check` or soften at synthesis.
 
+### Phase 2 priority batch (2026-06-16)
+
+Synthesised `draft.md` + `trail.md` + `approval.md` with **pending** claims:
+
+| Process | Entry path | Claims |
+|---------|------------|--------|
+| 1.2 | `strategy-communication/growth` | c-001–c-005 (new) |
+| 1.2 | `strategy-communication/first-hires` | c-001–c-003 (new) |
+| 1.3 | `communication-norms/growth` | c-001–c-006 (new) |
+| 1.4 | `who-decides-what/growth` | c-001–c-004 (new) |
+| 1.4 | `who-decides-what/scaled` | c-001–c-004 (new) |
+| 1.1 | `growth` (addendum) | c-004–c-012 (+ c-001–c-003 approved) |
+| 1.1b | `team-goals/growth` | c-001–c-004 (new) |
+
+**Still to synthesise:** 1.6, 1.8, 3.2, scaled strategy comms, ownership cross-cutting, CoS entry.
+
 ### Next steps
 
-1. **Practitioner review** — blog draft in flight; update atoms if claims change.
-2. **Phase 2** — addendums per cell, priority: **1.2**, **1.3**, **1.4**, **1.1**, **1.1b**, then **1.6**, **1.8**, **3.2**.
-3. **Phase 3** — approval tool at `:8765`.
+1. **Phase 3** — `cd wiki-pipeline && python3 server.py` → review at `:8765`.
+2. **Phase 2 batch 2** — 1.6, 1.8, 3.2, remaining scaled cells.
+3. **Practitioner review** — reconcile flagged claims before approve.
 4. **Phase 4** — publish approved claims to `wiki/processes/`.
