@@ -54,7 +54,7 @@ batch_addendum: src-064
 ### Founder / key-person time
 
 <!-- claim-id: c-011 -->
-- **By ~eighty people, functions run at different planning maturity and C-level revisits operational choices that belong to domain owners** — a signal that planning ownership was never pushed down.
+- **Around eighty people, every department plans differently — and executives keep re-deciding things the CPO, CRO, or other domain head should own.** That usually means planning was never clearly owned below the executive team.
   <!-- sources: src-064 (anonymous-practitioner), atom-345 -->
 
 ### Process entry

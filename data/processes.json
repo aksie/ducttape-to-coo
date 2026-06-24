@@ -11,7 +11,7 @@
         "foundation": "Top 3 to 5 priorities per month or quarter, that everybody knows by heart, and don't drift into different priorities without realizing and explicitly agreeing to it",
         "first-hires": "Quarterly goals that everybody knows by heart, made with the team and evaluated afterwards, don't drift into different priorities without realizing and explicitly agreeing to it, and one ambitious growth metric",
         "early-revenue": "Cascade company goals to team layers with named owners on key results — imperfect alignment is fine if everyone can see who owns what.",
-        "growth": "Formal quarterly goal-setting process. Annual strategic planning. Company-wide goals tracked in dashboard. Regular reviews with leadership team.",
+        "growth": "Run planning as a cadence across horizons — top-line metrics from leadership, change goals owned in departments, ~70% local capacity booked. Name who owns the rhythm before you change it.",
         "scaled": "Structured annual and quarterly planning cycles. Company OKRs set by leadership. Communicated company-wide. Progress tracked and visible."
       },
       "stages": {
@@ -33,7 +33,7 @@
         "foundation": "Not needed - you are the team.",
         "first-hires": "Not needed yet - still one team with shared goals.",
         "early-revenue": "Each function (product and tech, commercial, business ops) has quarterly goals that clearly support company goals. Document how they connect.",
-        "growth": "Each department sets quarterly goals aligned to company OKRs. Team leads accountable for their goals. Cross-functional dependencies identified and managed.",
+        "growth": "Department goals mirror company planning: top-line metrics from leadership, local change goals below, and slack in plans for cross-team dependencies.",
         "scaled": "Full goal cascade: company → department → team → individual. Clear accountability at each level. Regular alignment checks. Dependencies managed systematically."
       },
       "stages": {
@@ -53,9 +53,9 @@
       "description": "How the team stays aligned on goals, hears about progress, and gives input on direction. Starts with simple weekly syncs, evolves into structured all-hands and feedback loops.",
       "stageFocus": {
         "foundation": "Weekly standup (15 min). Everyone shares: what I did, what I'm doing, blockers. Quick verbal check on priorities.",
-        "first-hires": "Weekly team meeting for progress against goals. Monthly deeper discussion on direction. Simple way for team to flag issues/ideas (Slack channel or shared doc).",
+        "first-hires": "Tell the strategy story often enough that each person in a small team shares one mental model — osmosis still works here.",
         "early-revenue": "Monthly all-hands with progress updates and Q&A. Quarterly planning sessions with team input. Regular retros or feedback sessions on what's working.",
-        "growth": "Structured all-hands (monthly/quarterly) with pre-shared agenda and Q&A. Department updates shared async before meetings. Clear feedback and input mechanisms.",
+        "growth": "After planning cycles, pass strategy and priorities back down — on the same schedule you report up. Assume most people have heard the story once, not once a week.",
         "scaled": "Formal all-hands cadence with pre-submitted questions. Town halls by department. Annual surveys plus ongoing feedback channels. Strategic updates communicated clearly."
       },
       "stages": {
@@ -143,7 +143,7 @@
         "foundation": "One main channel (Slack/Discord). Urgent = DM or call. Non-urgent = channel message. Respond same day if you can.",
         "first-hires": "Pick channel jobs and three rules: chat for movement, memory in wiki/tickets, codify Slack decisions. One-page norms if remote or ≥3 non-founders.",
         "early-revenue": "Document channel guidelines and CS→engineering escalation. Add an incident fast lane and light artifact map — spoken norms break when handoffs multiply.",
-        "growth": "Communication playbook: channel structure, response SLAs by urgency level, escalation matrix, on-call rotations for critical issues. Regular review of what's working.",
+        "growth": "Aim for mostly formal information routes with bounded informal access — and put a named owner on legal/commercial asks that would otherwise land on the CEO.",
         "scaled": "Full communication architecture: channels organized by purpose and team, SLAs tracked and reported, incident communication protocols, on-call systems, integration with ticketing tools."
       },
       "stages": {
@@ -165,8 +165,8 @@
         "foundation": "Founders decide everything together. No framework needed - you're small and aligned.",
         "first-hires": "Align founders first (domain owners, founder sync). One visible approval list: hiring, spend above €X, pivots. Everything else — owner consults, decides, and closes.",
         "early-revenue": "Clear decision owners per area. Simple escalation rules (budget thresholds, customer impact). Founder gives input, not decisions. Common issue: Decisions get re-litigated when founders weren't in the meeting.",
-        "growth": "RACI or DRI framework documented. Authority levels by role. Leadership decides in their domains, founder only on strategic. Common issue: Teams making conflicting decisions or disagree on who decides what.",
-        "scaled": "Comprehensive decision framework. Authority matrices. Regular audits of decision levels. Common issue: Lack of clarity causes turf wars or excessive escalations."
+        "growth": "C-level leaders play for the company, not their function — return out-of-domain debates to the domain owner instead of re-litigating them in the executive team.",
+        "scaled": "Channel founder intuition through process steps — a shower insight becomes a staged test, not a company-wide pivot by Monday."
       },
       "stages": {
         "foundation": "future",
@@ -415,7 +415,7 @@
         "foundation": "Agree on job description in founding team, Network-based hiring. 2-3 informal conversations. Check references (actually call them). Make sure values align and they can do the job.",
         "first-hires": "Agree budget and rough salary band before you post; founder or CFO OK on each offer; no manager-sent contracts — use your template via HR or finance.",
         "early-revenue": "No job post without budget and management OK on role plus salary band; CFO or COO approves each offer; HR or finance issues the contract from your template.",
-        "growth": "Full hiring process: role definitions, interview panels, scoring rubrics, hiring manager training. Recruiting pipeline tracked. Diversity sourcing strategies.",
+        "growth": "For senior hires: three interview rounds with different jobs — hiring manager, potential-only reviewer, culture carrier — and no solo veto outside the hiring manager.",
         "scaled": "Professional recruiting: ATS system, talent pipelines, employer branding, data-driven hiring decisions, structured onboarding integration."
       },
       "stages": {

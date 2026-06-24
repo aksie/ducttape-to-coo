@@ -345,12 +345,19 @@ Synthesised `draft.md` + `trail.md` + `approval.md` with **pending** claims:
 | 1.4 | `who-decides-what/scaled` | c-001–c-004 (new) |
 | 1.1 | `growth` (addendum) | c-004–c-012 (+ c-001–c-003 approved) |
 | 1.1b | `team-goals/growth` | c-001–c-004 (new) |
+| 3.2 | `people-ops/recruitment-hiring/growth` | c-001–c-006 (new) |
 
-**Still to synthesise:** 1.6, 1.8, 3.2, scaled strategy comms, ownership cross-cutting, CoS entry.
+### Phase 4 published (2026-06-24)
 
-### Next steps
+Approved src-064 claims published to wiki (see `wiki/processes/`). `stage_focus` synced via `wiki/sync.py`.
 
-1. **Phase 3** — `cd wiki-pipeline && python3 server.py` → review at `:8765`.
-2. **Phase 2 batch 2** — 1.6, 1.8, 3.2, remaining scaled cells.
-3. **Practitioner review** — reconcile flagged claims before approve.
-4. **Phase 4** — publish approved claims to `wiki/processes/`.
+| Process | Wiki page |
+|---------|-----------|
+| 1.1 | `strategic/1.1--growth.md` |
+| 1.2 | `1.2--growth.md`, `1.2--first-hires.md` |
+| 1.3 | `1.3--growth.md` |
+| 1.4 | `1.4--growth.md`, `1.4--scaled.md` |
+| 1.1b | `1.1b--growth.md` |
+| 3.2 | `people/3.2--growth.md` |
+
+**Not published:** 1.1 growth c-004 (pending), c-005 (rejected). **Pipeline only:** 1.6, 1.8, ownership cross-cutting, CoS entry.

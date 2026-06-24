@@ -5,41 +5,41 @@ note: "src-064 practitioner addendum — review before publish. Practitioner rev
 ---
 
 ### c-001
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: 
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-24 17:09
 - Edited claim text: null
 
 ### c-002
-- Status: pending
+- Status: approved
 - Flags: [conditional]
 - Reviewer notes: "Headcount example (~50) is practitioner-specific — soften or qualify if needed."
-- Reviewed by: ""
-- Reviewed date: 
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-24 17:11
 - Edited claim text: null
 
 ### c-003
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: 
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-24 17:12
 - Edited claim text: null
 
 ### c-004
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: 
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-24 17:12
 - Edited claim text: null
 
 ### c-005
-- Status: pending
+- Status: approved
 - Flags: [needs_practitioner_check]
 - Reviewer notes: "Opinion framing — internal comms as derivative of strategy."
-- Reviewed by: ""
-- Reviewed date: 
+- Reviewed by: "aksie"
+- Reviewed date: 2026-06-24 17:12
 - Edited claim text: null

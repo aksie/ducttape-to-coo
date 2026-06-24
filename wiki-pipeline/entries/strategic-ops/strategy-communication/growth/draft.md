@@ -16,7 +16,7 @@ primary_source: src-064
 ## What good looks like at this phase
 
 <!-- claim-id: c-001 -->
-- **Strategy, priorities, and context cascade down on the same rhythm as planning** — after they flow up through reporting. Upward articulation in the management team is necessary but not sufficient; teams need a downward transmission on the planning calendar.
+- **Reports flow up; the story must flow back down on the same schedule as planning.** Leadership can align in the management team every week — that does not mean teams heard what changed. After each planning cycle, pass strategy, priorities, and context down to the people doing the work.
   <!-- sources: src-064 (anonymous-practitioner) -->
 
 <!-- claim-id: c-002 -->
@@ -32,7 +32,7 @@ primary_source: src-064
 ### Output quality
 
 <!-- claim-id: c-003 -->
-- **Leadership articulates strategy precisely upward, but teams below execute on a stale or partial picture.** Management-team clarity does not substitute for team-level transmission — if the org works from a plan six months old while the investor deck is current, cascade down is broken.
+- **The management team knows the plan; the rest of the company often doesn't.** If your investor deck is current but teams are still executing against a plan from six months ago, the problem isn't alignment at the top — it's that nobody is telling people below what changed.
   <!-- sources: src-064 (anonymous-practitioner) -->
 
 <!-- claim-id: c-004 -->
