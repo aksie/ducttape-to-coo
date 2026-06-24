@@ -14,8 +14,13 @@ primary_source: src-065
 
 ## What good looks like at this phase
 
+<!-- claim-id: c-001a — post-publish: P&L-shaped base plan (aksie) -->
+- **A budget spreadsheet shaped like your P&L — simplified, but real.** Ledger lines as rows, months as columns; rolled through **EBITDA → EBT → cash → cumulative cash**. Structured so your accountant's actuals drop into the same rows each month — plan vs actual in one place, not a separate forecast deck.
+  <!-- sources: src-065 (practitioner contribution) -->
+  <!-- sources: human:aksie | flags: unverified -->
+
 <!-- claim-id: c-001 -->
-- **Two layers, not one spreadsheet pretending the future is fixed.** A base plan (headcount, burn, runway) plus pre-agreed scenario rules: when a metric crosses a line, you switch to the budget you already agreed for what happens next — not a second parallel plan debated from scratch. You run one active budget today and a list of if/then rules across MRR, customer count, geography, and runway — not base/bull/bear scenarios maintained all year.
+- **Two layers on top of that base plan — not parallel scenarios all year.** The P&L-shaped sheet is layer one; layer two is pre-agreed scenario rules: when a metric crosses a line, you switch to the budget you already agreed for what happens next. You run one active budget today and a list of if/then rules across MRR, customer count, geography, and runway — not base/bull/bear scenarios maintained all year.
   <!-- sources: src-065 (practitioner contribution, stefanverkerk + Nalden IFTTT framing) -->
 
 <!-- claim-id: c-002 -->

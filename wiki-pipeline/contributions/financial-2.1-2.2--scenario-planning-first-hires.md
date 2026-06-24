@@ -34,9 +34,10 @@ That was **one specific trigger → next budget** we had written down in advance
 
 ## What does good look like?
 
-When financial planning is working like this at the stage of first hires, you have **two layers** — not one spreadsheet pretending the future is fixed:
+When financial planning is working like this at the stage of first hires, you have a **P&L-shaped budget sheet** plus **two layers** on top — not one spreadsheet pretending the future is fixed:
 
-1. **A base plan** — headcount, burn, cash runway, what you expect to spend and when. One Google Sheet is fine. Founders plus accountant sanity-check.
+0. **A simplified P&L in a spreadsheet** — ledger lines as rows, months as columns, rolled through EBITDA → EBT → cash → cumulative cash. Actuals from your accountant drop into the same rows each month; plan vs actual in one place.
+1. **That sheet is the base plan** — headcount feeds payroll on the main tab; burn and runway read off cumulative cash. Founders plus accountant sanity-check.
 2. **Scenario rules** — pre-agreed **if this, then that**: when a metric crosses a line, you **switch to the budget you already agreed for what happens next** — not a second parallel plan you debate from scratch.
 
 Good looks like:
