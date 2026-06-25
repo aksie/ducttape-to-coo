@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before you raise money — understand the VC model — Duct Tape to COO</title>
+    <meta name="description" content="If you're considering venture capital, understand how the other side makes money — management fees, carried interest, LP returns, and why that shapes what they need from you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        :root {
+            --bg:             #0d1117;
+            --surface:        #161b22;
+            --surface-raised: #21262d;
+            --border:         #30363d;
+            --border-bright:  #484f58;
+            --text:           #e6edf3;
+            --text-dim:       #8b949e;
+            --text-muted:     #6e7681;
+            --green:          #3fb950;
+            --blue:           #58a6ff;
+            --orange:         #f0883e;
+            --font:           'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Article layout ───────────────────────────── */
+        .post-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 32px 120px;
+        }
+
+        /* ── Meta block ───────────────────────────────── */
+        .post-meta { margin-bottom: 32px; }
+
+        .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+        .post-tag--green { color: var(--green); border: 1px solid var(--green); }
+        .post-tag--blue  { color: var(--blue);  border: 1px solid var(--blue);  }
+
+        .post-wrap h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .post-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .post-byline { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ── Body copy ────────────────────────────────── */
+        .post-body {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .post-body p { margin-bottom: 1.4em; }
+
+        .post-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 2.5em 0 0.75em;
+            padding-top: 0.5em;
+            border-top: 1px solid var(--border);
+        }
+
+        .post-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.8em 0 0.5em;
+        }
+
+        .post-body strong { color: var(--text); font-weight: 600; }
+        .post-body em     { color: var(--text); font-style: italic; }
+
+        .post-body ol,
+        .post-body ul {
+            padding-left: 1.5em;
+            margin-bottom: 1.4em;
+        }
+        .post-body li { margin-bottom: 0.5em; }
+
+        .post-body hr { display: none; }
+
+        /* ── Embedded HTML blocks (blog/html-blocks/) ── */
+        .post-html-block {
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .post-body .post-html-block > :first-child { margin-top: 0; }
+        .post-body .post-html-block > :last-child  { margin-bottom: 0; }
+
+        /* ── Blockquotes → pattern callouts ───────────── */
+        .post-body blockquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 20px;
+            margin: 1.8em 0;
+        }
+
+        .post-body blockquote p {
+            margin-bottom: 0.6em;
+            color: var(--text-dim);
+        }
+        .post-body blockquote p:last-child { margin-bottom: 0; }
+
+        /* ── Tables ───────────────────────────────────── */
+        .post-body table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 1.6em 0 2em;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .post-body th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-bright);
+            white-space: nowrap;
+        }
+
+        .post-body td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-dim);
+        }
+
+        .post-body tr:last-child td { border-bottom: none; }
+        .post-body td strong { color: var(--text); }
+
+        .post-body tr.highlight td {
+            background: rgba(88, 166, 255, 0.06);
+            color: var(--text);
+        }
+        .post-body tr.highlight td strong { color: var(--blue); }
+
+        /* ── CTA block ────────────────────────────────── */
+        .post-cta {
+            margin-top: 3em;
+            padding: 28px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .post-cta p {
+            margin-bottom: 16px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 10px 20px;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--blue); color: #0d1117; }
+        .btn-primary:hover { background: #79bcff; text-decoration: none; }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid var(--border-bright);
+        }
+        .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); text-decoration: none; }
+
+        /* ── Footer ───────────────────────────────────── */
+        .post-footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ── Responsive ───────────────────────────────── */
+        @media (max-width: 640px) {
+            .post-wrap h1 { font-size: 1.7rem; }
+            .post-wrap { padding: 40px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+            <nav class="header-nav">
+                <a href="../diagnostic.html">Diagnostic</a>
+                <a href="../wiki.html">Wiki</a>
+                <a href="../skill-setup.html">Virtual COO</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="post-wrap">
+
+    <div class="post-meta">
+        <span class="post-tag post-tag--blue">Fundraising</span>
+        <h1>Before you raise money — understand the VC model</h1>
+        <p class="post-subtitle">How venture capital funds make money — and what that means for founders on the other side of the table.</p>
+        <p class="post-byline">June 2026</p>
+    </div>
+
+    <div class="post-body">
+<p>I often have founders ask me about raising capital or structuring their shares. I love to help founding teams — over coffee or in a two-hour session — and in those sessions I've heard myself explain how venture capital works again and again. So I thought I'd write it down: one place I can point founders to when they reach out.</p>
+<p>If you are a startup founder considering raising money from outside sources like venture capital, it is smart to understand how the other side of the table makes money.</p>
+<p>Because once you have a fund on board, you will be playing in their game. The most important things to realise:</p>
+<ul>
+<li>You will need to grow very fast (10× in ten years).</li>
+<li>You will sell the company within ~10 years, or get listed on the stock exchange ("go public," or "IPO").</li>
+<li>The fund is on board for the life of the company: consider it a marriage, for better and for worse.</li>
+</ul>
+<p>That can mean they will want you to grow faster than you think is right, and it can mean they will want to sell — and make you sell — when you don't want to. That comes with the territory. I won't go into the good and bad here; this post is to explain and inform.</p>
+<h2>How do VCs make money?</h2>
+<p>What you will have thought of is that a VC makes money when companies do well and the shares are worth more. But how does it pay its people until that time? And where does a VC's money come from? Let's dive in.</p>
+<p>VC funds make money in two ways:</p>
+<ul>
+<li><strong>Management fee</strong> — money for managing the fund. As a ballpark, this is often around 2% of the total fund per year.</li>
+<li><strong>Carried interest</strong> — money when companies are sold at a much higher price than the value when the fund invested. Then the fund creates a good return for <strong>their</strong> investors (more about that below). After the investors have at least got their money back, the people running the fund (partners) get a percentage of the extra value created. This is often around 20%.</li>
+</ul>
+<h2>Where does a VC fund's money come from?</h2>
+<p>Before we go deeper into examples of making money (or not), let's look at where a VC's money comes from. Yes — if you didn't know, VC funds have investors themselves. These are called <strong>LPs</strong> (limited partners). They are usually institutions or individuals that invest some of their money in low-risk things (bonds, real estate) and some in higher-risk things (a VC fund). So VCs need to fundraise too.</p>
+<p>This is not unlike a startup raising money in some aspects: a fund needs to pitch to a lot of potential investors, they will hear "no" more often than "yes," and it can take months or even years to close the investment. <a href="https://youtu.be/tFJlr9BtifA?t=1231">This interview explains it well</a>.</p>
+<h2>VC making money — an example</h2>
+<p>Back to how VCs make money: they get part of the success when companies become much more valuable, and they get money to run the process.</p>
+<p>When we talk about "a VC," we really mean two things:</p>
+<ul>
+<li><strong>The financial fund</strong> — almost all money from investors into that fund (LPs).</li>
+<li><strong>The people running the fund</strong> — general partners (GPs).</li>
+</ul>
+<p><em>(This is a bit simplified.)</em></p>
+<p>The people running the fund make money when companies become more valuable through <strong>carried interest</strong>: they get a percentage of the value increase of the total fund — funded by <em>their</em> investors, not by the GPs themselves.</p>
+<p>To understand carried interest, let's look at an example (adapted from <a href="https://learn.angellist.com/articles/carried-interest">AngelList on carried interest</a>):</p>
+<p>Say an LP invests $5k in a fund that charges 20% carried interest. The fund has a successful exit, and that LP's part of it (their "distribution") is worth $100k — 20× what went in.</p>
+<p>The GP receives 20% of what the investor earned <strong>after</strong> they get their money back ("after their principal is paid back"). The GP gets 20% of ($100k − $5k) = $95k.</p>
+<p>So in this case:</p>
+<ul>
+<li>The GP earns <strong>$19k</strong> (20% × $95k).</li>
+<li>The LP gets <strong>$81k</strong>: their $5k back plus $76k in profit.</li>
+</ul>
+<p>So it is not about one sucessfull investment, but the entire portfolio. </p>
+<!-- TODO: Extend this example — what does it look like when the other 9 investments were not successful? -->
+
+<!-- TODO: Add management fee in a worked example? -->
+
+<h2>Do VCs make 100× their money?</h2>
+<p>You might read about the most successful VC investments where a fund makes 100 or 1,000 times what it put in.</p>
+<p>But reality is more complex — as usual. You don't read about the cases where they lost all the money. Choosing the right investments 5–10 years before they became that success is the hard part. (Actually one of a few hard parts.)</p>
+<p>If 6 out of 10 investments create no return, the remaining 4 need to become 5× as valuable in the period of the fund (often 10 years) to double the amount of money that went into the fund.</p>
+<p><em>(Again a simplification: LP money doesn't all go into the fund until deals are closed, so it isn't in the VC's bank account for 10 years. That plays a huge role in a VC's and LP's math, but for explaining returns to founders I'm keeping it out here.)</em></p>
+<p>Doubling the fund in 10 years would not be very good. If you'd gotten 7% interest on a bank account for ten years, your money would also have doubled (1.07^10 ≈ 2.0).</p>
+<p>Because VC investments are higher risk, they need to try to create a higher return as well. As you might know, lower-risk investments mean lower returns — less risk of losing money, higher certainty of a given return or "interest."</p>
+<p>To get higher returns, you accept a higher risk profile too.</p>
+<p><em>(Let me know if you'd like more explanation on risk and return.)</em></p>
+<p>Simply put, the "interest" you would compare this with — the return on the money you put in, per year — is called <strong>IRR</strong>. <a href="https://www.titan.com/articles/venture-capital-irr">Titan has a more in-depth explanation of venture capital IRR</a>. In the above example, an IRR of 7% would double your money in 10 years.</p>
+<p>As a potential LP with a lot of money, you can invest in very safe things with guaranteed returns around 2%, or in higher-risk investments that <em>might</em> return 20% per year but also risk returning nothing.</p>
+<h2>What is a good return?</h2>
+<p>As AngelList writes <a href="https://learn.angellist.com/articles/internal-rate-of-return">here</a>: "According to research by <a href="https://www.industryventures.com/the-venture-capital-risk-and-return-matrix/">Industry Ventures</a> on historical venture returns, GPs should target an IRR of at least 30% when investing at the seed stage. Industry Ventures suggests targeting an IRR of 20% for later stages, given that those investments are generally less risky."</p>
+<h2>What VC returns are really created?</h2>
+<p>There is not that much public information around, but between 6% and 35% would be a somewhat informed estimate — still a very broad range. Informal sources say returns between 15% and 30% are realised by funds.</p>
+<p>VCs are not obliged to report financials like a publicly traded company (as demanded by the SEC and similar bodies for stock exchange listing). On the Titan blog, however, they point to reports done by VC funds (or their investors), showing 6% to 35% IRR.</p>
+<p>If we look at the lifetime of a fund: in 8 years, 15% IRR means earning back more than 3×; 20% IRR means more than 4×; 30% means more than 8×.</p>
+<h2>What return is expected from you as a portfolio company?</h2>
+<p>Let's assume a fund aimed for 20% IRR (you can compare this to getting 20% interest if this were a bank account).</p>
+<p>To get 20% per year return, in ten years a fund needs to get roughly 4× the money back that went in (simplified: 1.2^8 ≈ 4.3).</p>
+<div class="post-html-block" data-block="vc-portfolio-returns">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.31.0/iconfont/tabler-icons.min.css">
+<style>
+  .vc-returns-widget {
+    font-family: inherit;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px 28px 24px;
+    line-height: 1.7;
+  }
+  .vc-returns-widget p { margin: 0; }
+  .vc-returns-widget .lede {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+  }
+  .vc-returns-widget .lede b {
+    font-weight: 600;
+    color: var(--text);
+  }
+  .vc-returns-widget .fixed-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .vc-returns-widget .stat {
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .vc-returns-widget .stat .label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .vc-returns-widget .stat .value {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .vc-returns-widget .control {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 1.25rem;
+    padding: 14px 16px;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+  }
+  .vc-returns-widget .control label {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .vc-returns-widget .control output {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    min-width: 18px;
+    text-align: right;
+  }
+  .vc-returns-widget input[type=range] {
+    flex: 1;
+    accent-color: var(--blue);
+    height: 4px;
+    cursor: pointer;
+  }
+  .vc-returns-widget .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 1.25rem;
+  }
+  .vc-returns-widget .tile {
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    padding: 10px 4px;
+    text-align: center;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .vc-returns-widget .tile i {
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .vc-returns-widget .tile span {
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  .vc-returns-widget .tile.dead {
+    background: rgba(248, 81, 73, 0.1);
+    border-color: rgba(248, 81, 73, 0.35);
+    color: #ff7b72;
+  }
+  .vc-returns-widget .tile.win {
+    background: rgba(63, 185, 80, 0.1);
+    border-color: rgba(63, 185, 80, 0.35);
+    color: var(--green);
+  }
+  .vc-returns-widget .readout {
+    background: var(--surface-raised);
+    border: 1px solid var(--border-bright);
+    border-radius: 6px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .vc-returns-widget .readout .small {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .vc-returns-widget .readout .mult-line {
+    margin: 0;
+    line-height: 1.1;
+  }
+  .vc-returns-widget .readout .mult {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--blue);
+    letter-spacing: -0.03em;
+  }
+  .vc-returns-widget .readout .unit {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+  .vc-returns-widget .readout .caption {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    margin-top: 10px;
+    min-height: 1.2em;
+    font-style: italic;
+  }
+  .vc-returns-widget .foot {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 1.25rem;
+    line-height: 1.6;
+  }
+  .vc-returns-widget .foot i { font-style: italic; color: var(--text-dim); }
+  .vc-returns-widget .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  @media (max-width: 640px) {
+    .vc-returns-widget { padding: 20px 16px; }
+    .vc-returns-widget .fixed-row { grid-template-columns: 1fr; }
+    .vc-returns-widget .grid { grid-template-columns: repeat(2, 1fr); }
+    .vc-returns-widget .control { flex-wrap: wrap; }
+    .vc-returns-widget .readout .mult { font-size: 2rem; }
+  }
+</style>
+
+<div class="vc-returns-widget">
+  <p class="sr-only">Interactive explainer: when most startups in a fund return zero, the surviving few must each return a much higher multiple for the fund to hit its 4× target.</p>
+
+  <p class="lede">A fund promising ~20% a year is basically a savings account paying 20% to its own investors. Compounded over ~10 years that means handing back roughly <b>4× everything that went in</b>. But most bets return nothing — so the survivors have to cover the corpses too.</p>
+
+  <div class="fixed-row">
+    <div class="stat"><p class="label">Target return / year</p><p class="value">20%</p></div>
+    <div class="stat"><p class="label">Over roughly</p><p class="value">10 years</p></div>
+    <div class="stat"><p class="label">Whole fund must return</p><p class="value">≈ 4×</p></div>
+  </div>
+
+  <div class="control">
+    <label for="vc-dead">How many of 10 flop?</label>
+    <input type="range" id="vc-dead" min="0" max="9" value="6" step="1">
+    <output id="vc-dead-out">6</output>
+  </div>
+
+  <div class="grid" id="vc-grid"></div>
+
+  <div class="readout">
+    <p class="small">Each surviving company must return</p>
+    <p class="mult-line"><span class="mult" id="vc-mult">10×</span> <span class="unit">their money</span></p>
+    <p class="caption" id="vc-caption"></p>
+  </div>
+
+  <p class="foot">Heavily simplified: real funds weight bets unequally, deploy capital over time, and IRR isn&rsquo;t the same as a multiple once you account for <i>when</i> the money comes back. But the intuition holds — this is why a VC hears &ldquo;5×&rdquo; and quietly thinks &ldquo;no.&rdquo;</p>
+</div>
+
+<script>
+(function(){
+  var TOTAL = 10, TARGET = 4;
+  var slider = document.getElementById('vc-dead');
+  var deadOut = document.getElementById('vc-dead-out');
+  var grid = document.getElementById('vc-grid');
+  var multEl = document.getElementById('vc-mult');
+  var capEl = document.getElementById('vc-caption');
+  if (!slider || !grid) return;
+
+  function tile(isDead, mult){
+    var cls = isDead ? 'dead' : 'win';
+    var icon = isDead ? 'ti-skull' : 'ti-rocket';
+    var label = isDead ? '0×' : mult + '×';
+    return '<div class="tile ' + cls + '"><i class="ti ' + icon + '" aria-hidden="true"></i><span>' + label + '</span></div>';
+  }
+
+  function render(){
+    var dead = parseInt(slider.value, 10);
+    var survivors = TOTAL - dead;
+    deadOut.textContent = dead;
+    var mult = (TARGET * TOTAL) / survivors;
+    var multTxt = (Math.round(mult * 10) % 10 === 0) ? Math.round(mult).toString() : mult.toFixed(1);
+
+    multEl.textContent = multTxt + '×';
+    var html = '';
+    for (var i = 0; i < TOTAL; i++){ html += tile(i < dead, multTxt); }
+    grid.innerHTML = html;
+
+    if (dead === 6){
+      capEl.textContent = '4 winners doing 10× each = the whole fund back 4×. This is the "10× or die trying" ask.';
+    } else if (dead === 9){
+      capEl.textContent = 'One lonely survivor carrying nine corpses needs a 40× moonshot. Good luck.';
+    } else if (dead === 0){
+      capEl.textContent = 'A fantasy where nobody fails — everyone just needs a tidy 4×.';
+    } else {
+      capEl.textContent = survivors + ' survivors split the work — fewer survivors, taller order each.';
+    }
+  }
+
+  slider.addEventListener('input', render);
+  render();
+})();
+</script>
+</div>
+<p>Therefore a fund wants you to aim for at least <strong>10× their money back</strong> in around ten years — or "die trying" (as a company). So 5× is not good enough.</p>
+<p>Much of the above is quite simplified (warning ;-)) but I want you to understand these basics.</p>
+<!-- TODO @VCs: would you choose these returns as well? -->
+
+<h2>If we do quite fine, a VC won't want to sell us, right?</h2>
+<p>Because a VC's entire structure and business model is about returning money to their investors in ~10 years, they need to sell their shares in your company to get that money back with a return.</p>
+<p>Until then — and often longer — the investors <em>in</em> the fund (the LPs) cannot withdraw their money like from a savings account. They only get their money back, hopefully with a return, when the fund closes after ~10 years.</p>
+<p><em>(Very simplified — let me know if you want more nuance on how this actually works.)</em></p>
+<p>So getting dividends from a company at a nice size might work for your financial wishes; it is not what creates returns that work for a VC.</p>
+<p>For a VC, the company needs to be sold or go public and sell shares on the stock exchange. It is possible for the VC to sell their shares to another investor, or have the company loan money to buy their shares — but that leads to another investor at the table in "your" company.</p>
+<p>I write "your" company with quotes around <em>your</em>, because when you have new shareholders outside of the founders, it goes from just you — from <em>my</em> to <em>ours</em>.</p>
+<h2>If we grow and are worth enough for me to be rich enough to never work again, can I sell my shares?</h2>
+<p>One of the key things to understand is that a VC has more than one chance this decade to "hit a homerun" and have a company be &gt;20× worth what it is today.</p>
+<p>If you are worth 5× more than when a fund invested, that can mean success for you: if you'd sell now, you would be independently wealthy and could start something new.</p>
+<p>But, as we went through, because of the high risk — and therefore a number of portfolio companies failing — they need to make that money back with the successful ones. So 5× won't be enough. Your investor will push for more growth, and for you this can sometimes feel like a game of "double or nothing" every year.</p>
+<p>This is a bit of an exaggeration to make the following point: this "double or nothing" risks the "nothing" for your only company, while the fund risks it for one of their twenty companies.</p>
+<p>This is not because they are bad people, but because they need to make the money back on the companies that don't make it. Otherwise they would have lost the money trusted to them by their investors — and you wouldn't put money in a savings account you couldn't withdraw for ten years that then paid 0% interest, right?</p>
+<h2>But if I explain I really want this sell, they'll let me do that, right?</h2>
+<p>When you accept investment from a VC fund, you need to understand their mechanics. Explaining how you want a scenario that works for you but not for them won't work. That would be naive and actually unfair to them. You would not want to accept an outcome that works for them but not for you, right? And you knew what you were getting into?</p>
+<p>The fund needs to get their potential 10× value. You need to accept that your incentives are not fully aligned there.</p>
+<p>This is why you need to understand what game you agree to play once you take the route of VC funding. This is my main motivation for writing this: so founders know what they get into — or don't get into.</p>
+<h2>If I do want to sell, can we make that work somehow?</h2>
+<p>A way to decrease this difference in incentive is to sell some of your shares as a founder in a later investment round. This is called <strong>a secondary</strong>.</p>
+<p>Most later-stage funds will be open to you selling some of your shares in an investment round when they invest. I have heard investors were open to letting founders sell enough to buy a house and not worry about kids' university tuition — but not enough to live on a yacht and not work for the rest of your life.</p>
+<!-- TODO @herman: agree on later-stage funds and secondaries? -->
+
+<h2>Understanding your partner makes the relationship work</h2>
+<p>Now that we've explained some of the basics of how VC funds work, and why they need to steer towards you potentially getting them &gt;10× their money back, you can go into a fundraising situation knowing better what to expect from the future.</p>
+<p>I hope this helped you as a founder understand VC funds a bit better. Let me know if this helped.</p>
+    </div>
+
+<div class="post-cta">
+    <p>Raising capital is one moment in a much longer ops story — know where your company stands operationally before you optimise for someone else's game.</p>
+    <div class="cta-links">
+        <a class="btn btn-primary"  href="../diagnostic.html">Run the diagnostic</a>
+        <a class="btn btn-secondary" href="../a-starting-point.html">Read: A Starting Point →</a>
+    </div>
+</div>
+
+
+
+</div>
+
+</body>
+</html>

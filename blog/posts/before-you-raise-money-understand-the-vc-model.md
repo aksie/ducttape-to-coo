@@ -1,11 +1,11 @@
 ---
 title: "Before you raise money — understand the VC model"
 subtitle: "How venture capital funds make money — and what that means for founders on the other side of the table."
-date: "draft"
+date: "June 2026"
 tag: "Fundraising"
 tag_color: "blue"
 slug: "before-you-raise-money-understand-the-vc-model"
-status: draft
+listed: false
 description: "If you're considering venture capital, understand how the other side makes money — management fees, carried interest, LP returns, and why that shapes what they need from you."
 cta_intro: "Raising capital is one moment in a much longer ops story — know where your company stands operationally before you optimise for someone else's game."
 cta_primary_text: "Run the diagnostic"
@@ -65,6 +65,8 @@ So in this case:
 - The GP earns **$19k** (20% × $95k).
 - The LP gets **$81k**: their $5k back plus $76k in profit.
 
+So it is not about one sucessfull investment, but the entire portfolio. 
+
 <!-- TODO: Extend this example — what does it look like when the other 9 investments were not successful? -->
 
 <!-- TODO: Add management fee in a worked example? -->
@@ -76,8 +78,6 @@ You might read about the most successful VC investments where a fund makes 100 o
 But reality is more complex — as usual. You don't read about the cases where they lost all the money. Choosing the right investments 5–10 years before they became that success is the hard part. (Actually one of a few hard parts.)
 
 If 6 out of 10 investments create no return, the remaining 4 need to become 5× as valuable in the period of the fund (often 10 years) to double the amount of money that went into the fund.
-
-<!-- TODO @herman: good representative examples? 6 returning nothing? Remainder aiming for 10×? -->
 
 *(Again a simplification: LP money doesn't all go into the fund until deals are closed, so it isn't in the VC's bank account for 10 years. That plays a huge role in a VC's and LP's math, but for explaining returns to founders I'm keeping it out here.)*
 
@@ -117,7 +117,7 @@ Therefore a fund wants you to aim for at least **10× their money back** in arou
 
 Much of the above is quite simplified (warning ;-)) but I want you to understand these basics.
 
-<!-- TODO @herman: would you choose these returns as well? -->
+<!-- TODO @VCs: would you choose these returns as well? -->
 
 ## If we do quite fine, a VC won't want to sell us, right?
 

@@ -10,7 +10,10 @@ Usage:
 Reads:  blog/posts/*.md  (YAML frontmatter + markdown body)
         blog/html-blocks/*.html  (optional embeds via {{html-block:slug}})
 Writes: blog/<slug>.html  (static HTML from _template.html)
-        blog/index.html   (listing page, newest first by date string)
+        blog/index.html   (listing page; skips posts with listed: false)
+
+Publish without listing on the index: set `listed: false` in frontmatter and move
+the .md to blog/posts/ — the post HTML is built and reachable at /blog/<slug>.html.
 
 Run this before committing whenever you add or edit a post.
 
@@ -147,6 +150,7 @@ def build_post(md_path: str, template: str) -> dict:
         "subtitle": meta.get("subtitle", ""),
         "tag":      meta.get("tag", ""),
         "date":     meta.get("date", ""),
+        "listed":   meta.get("listed", True),
     }
 
 
@@ -276,7 +280,11 @@ def main() -> None:
     )
 
     print("Building index...")
-    build_index(posts_ordered)
+    index_posts = [p for p in posts_ordered if p.get("listed", True)]
+    build_index(index_posts)
+    skipped = len(posts_ordered) - len(index_posts)
+    if skipped:
+        print(f"  ({skipped} post(s) omitted from index — listed: false)")
     print("Done.")
 
 
