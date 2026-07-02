@@ -168,6 +168,111 @@
   .wiki-placeholder p { line-height: 1.8; margin-bottom: 8px; }
   .wiki-placeholder .matrix-hint { color: #30363d; font-size: 0.72rem; margin-top: 24px; }
 
+  /* ── Wiki home (content map) ── */
+  .wiki-main.is-home {
+    padding: 28px 32px 60px;
+  }
+  .wiki-home-intro {
+    margin-bottom: 24px;
+    max-width: 52em;
+  }
+  .wiki-home-intro h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #e6edf3;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+  .wiki-home-lead {
+    font-size: 0.88rem;
+    color: #8b949e;
+    line-height: 1.65;
+    margin: 0 0 4px;
+  }
+  .wiki-home-map {
+    width: 100%;
+    margin: 8px 0 4px;
+  }
+  .wiki-home-map svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .wiki-home-legend {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+  }
+  .wiki-home-legend-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .wiki-home-legend-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6e7681;
+    margin-right: 2px;
+  }
+  .wiki-home-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #8b949e;
+  }
+  .wiki-home-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .wiki-home-stats {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #21262d;
+  }
+  .wiki-home-stats .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .wiki-home-stats .stat-n {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .wiki-home-stats .stat-label {
+    font-size: 0.7rem;
+    color: #6e7681;
+  }
+  .map-tip {
+    position: fixed;
+    pointer-events: none;
+    display: none;
+    background: #161b22;
+    border: 1px solid #484f58;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    max-width: 240px;
+    z-index: 200;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  .map-tip .tip-title { font-weight: 600; color: #e6edf3; margin-bottom: 2px; }
+  .map-tip .tip-stage { color: #6e7681; font-size: 0.75rem; }
+  .map-tip .tip-status { margin-top: 5px; font-size: 0.78rem; font-weight: 600; }
+  .map-tip .tip-hint { margin-top: 4px; color: #6e7681; font-size: 0.72rem; font-style: italic; }
+
   .stub-notice {
     background: #161b22;
     border: 1px solid #30363d;
@@ -501,17 +606,20 @@
     <div id="sidebar-loading" style="padding:20px 16px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#484f58;">Loading...</div>
   </nav>
 
-  <main class="wiki-main" id="wiki-main">
-    <div class="wiki-placeholder" id="placeholder">
-      <h2>Operational guidance, one process at a time.</h2>
-      <p>Select a stage and process from the sidebar to read the wiki page for that combination.</p>
-      <p>Each page covers what good looks like, what to actually do, warning signs, and how it evolves.</p>
-      <p class="matrix-hint">// 130 process × stage cells · 5 stage portals · content added incrementally</p>
-    </div>
+  <main class="wiki-main is-home" id="wiki-main">
+    <div class="wiki-placeholder" style="padding:20px 0;color:#484f58;font-family:'JetBrains Mono',monospace;font-size:0.75rem;">Loading wiki…</div>
   </main>
 </div>
 
+<div class="map-tip" id="map-tip">
+  <div class="tip-title" id="map-tip-title"></div>
+  <div class="tip-stage" id="map-tip-stage"></div>
+  <div class="tip-status" id="map-tip-status"></div>
+  <div class="tip-hint" id="map-tip-hint"></div>
+</div>
+
 <script src="js/wiki-content-score.js"></script>
+<script src="js/wiki-content-map.js"></script>
 <script>
 const CATEGORY_LABELS = {
   'strategic':           'Strategic Ops',
@@ -529,8 +637,6 @@ const STAGE_PORTAL_FILES = {
   'growth':        'wiki/stages/growth.md',
   'scaled':        'wiki/stages/scaled.md',
 };
-
-const DEFAULT_WIKI_KEY = 'stage--foundation';
 
 const PROCESS_FILE_MAP = {};  // populated in init: "1.1--first-hires" → "wiki/processes/strategic/1.1--first-hires.md"
 
@@ -552,7 +658,11 @@ function getHash() {
   return decodeURIComponent(window.location.hash.slice(1));
 }
 function setHash(key) {
-  history.pushState(null, '', '#' + encodeURIComponent(key));
+  if (!key) {
+    history.pushState(null, '', window.location.pathname + window.location.search);
+  } else {
+    history.pushState(null, '', '#' + encodeURIComponent(key));
+  }
 }
 
 // ── Stage overview: group process tables by category ─────────────────────────
@@ -716,10 +826,14 @@ function buildSidebar(processes, stages) {
 
 function setSidebarActive(key) {
   document.querySelectorAll('.sidebar-process').forEach(el => {
-    el.classList.toggle('active', el.dataset.key === key);
+    el.classList.toggle('active', !!key && el.dataset.key === key);
   });
+  if (!key) {
+    document.querySelectorAll('.sidebar-section').forEach(s => s.classList.remove('open'));
+    return;
+  }
   // Open the relevant stage section
-  if (key && key.startsWith('stage--')) {
+  if (key.startsWith('stage--')) {
     const stageId = key.replace('stage--', '');
     openSidebarStage(stageId);
   } else if (key) {
@@ -779,10 +893,79 @@ async function checkStageContent(stageId) {
   await Promise.all(checks);
 }
 
+// ── Wiki home (content map) ───────────────────────────────────────────────────
+
+function wikiHomeLegendHtml() {
+  return `
+    <div class="wiki-home-legend">
+      <div class="wiki-home-legend-group">
+        <span class="wiki-home-legend-label">Status</span>
+        <div class="wiki-home-legend-item"><div class="wiki-home-swatch" style="background:#3fb950"></div> Complete</div>
+        <div class="wiki-home-legend-item"><div class="wiki-home-swatch" style="background:#b9d29f"></div> One sentence</div>
+        <div class="wiki-home-legend-item"><div class="wiki-home-swatch" style="background:#b9d29f;opacity:.4"></div> Placeholder</div>
+        <div class="wiki-home-legend-item"><div class="wiki-home-swatch" style="background:#161b22;border:1px solid #30363d"></div> N/A</div>
+      </div>
+      <div class="wiki-home-legend-group">
+        <span class="wiki-home-legend-label">Rings</span>
+        <div class="wiki-home-legend-item">Inner → outer = Foundation → Scaled</div>
+      </div>
+    </div>`;
+}
+
+async function showWikiHome() {
+  const main = document.getElementById('wiki-main');
+  main.classList.add('is-home');
+
+  main.innerHTML = `
+    <div class="wiki-home" id="wiki-home">
+      <div class="wiki-home-intro">
+        <h1>Operational guidance, one process at a time.</h1>
+        <p class="wiki-home-lead">33 processes across five company stages — what good looks like, what to do, warning signs, and how it evolves.</p>
+        <p class="wiki-home-lead">Inner ring = earliest stage, outer = scaled. Green = published · dim = placeholder · grey = not applicable. Click a cell or pick a stage in the sidebar.</p>
+      </div>
+      <div class="wiki-home-map">
+        <svg id="wiki-home-map-svg"></svg>
+      </div>
+      ${wikiHomeLegendHtml()}
+      <div class="wiki-home-stats" id="wiki-home-stats">
+        <span style="color:#6e7681;font-size:.85rem">Loading coverage…</span>
+      </div>
+    </div>`;
+
+  try {
+    await WikiContentMap.render({
+      svg: document.getElementById('wiki-home-map-svg'),
+      statsEl: document.getElementById('wiki-home-stats'),
+      tip: {
+        el: document.getElementById('map-tip'),
+        title: document.getElementById('map-tip-title'),
+        stage: document.getElementById('map-tip-stage'),
+        status: document.getElementById('map-tip-status'),
+        hint: document.getElementById('map-tip-hint'),
+      },
+      onCellClick(procId, stageId) {
+        navigateTo(`${procId}--${stageId}`);
+      },
+      clickHint: 'Click to open →',
+    });
+  } catch (err) {
+    document.getElementById('wiki-home-stats').innerHTML =
+      '<span style="color:#f0883e;font-size:.85rem">Could not load map. Run via local server.</span>';
+  }
+
+  main.scrollTop = 0;
+}
+
 // ── Navigation ────────────────────────────────────────────────────────────────
 
 function navigateTo(key) {
-  currentKey = key;
+  currentKey = key || null;
+  if (!key) {
+    setHash('');
+    setSidebarActive(null);
+    showWikiHome();
+    return;
+  }
   setHash(key);
   setSidebarActive(key);
   loadContent(key);
@@ -790,9 +973,10 @@ function navigateTo(key) {
 
 async function loadContent(key) {
   const main = document.getElementById('wiki-main');
+  main.classList.remove('is-home');
 
   if (!key) {
-    main.innerHTML = document.getElementById('placeholder')?.outerHTML || '';
+    showWikiHome();
     return;
   }
 
@@ -1114,25 +1298,28 @@ async function init() {
     // Configure marked
     marked.setOptions({ gfm: true, breaks: false });
 
-    // Route from hash (default: foundation stage portal — has the most published content)
+    // Route from hash (no hash → wiki home with content map, sidebar collapsed)
     const hash = getHash();
-    const key = hash || DEFAULT_WIKI_KEY;
     if (hash) {
       navigateTo(hash);
     } else {
-      currentKey = key;
-      history.replaceState(null, '', '#' + encodeURIComponent(key));
-      setSidebarActive(key);
-      loadContent(key);
+      currentKey = null;
+      setSidebarActive(null);
+      showWikiHome();
     }
     document.getElementById('sidebar-loading')?.remove();
 
     // Handle back/forward
     window.addEventListener('popstate', () => {
-      const h = getHash() || DEFAULT_WIKI_KEY;
-      currentKey = h;
-      setSidebarActive(currentKey);
-      loadContent(currentKey);
+      const h = getHash();
+      currentKey = h || null;
+      if (h) {
+        setSidebarActive(h);
+        loadContent(h);
+      } else {
+        setSidebarActive(null);
+        showWikiHome();
+      }
     });
 
   } catch (err) {
