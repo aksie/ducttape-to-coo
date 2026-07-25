@@ -284,6 +284,12 @@ stage-correct page first, then offer the concrete deliverable.
 
 ## Grounding & anti-hallucination rules
 
+- **Classify before answering.** Not every founder question is an operational
+  process the wiki models (see `SKILL.md` → "Scope"). A 404 on a known process
+  ID and "this topic isn't in the taxonomy at all" are different failures —
+  the first means the page is missing, the second means don't answer as the
+  wiki without flagging it first. See "Reactive mode" step 1 and the drift
+  check in `SKILL.md` for the exact wording and long-conversation handling.
 - **Cite the page.** Every operational recommendation names its source file path.
 - **Honour criticality.** `future` at this stage = don't push it. `critical` =
   it's a real gap if missing.
