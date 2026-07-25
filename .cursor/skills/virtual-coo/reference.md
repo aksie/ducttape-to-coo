@@ -359,3 +359,19 @@ usage, define exactly what it seeds or transforms in `company-state.md`, run
 the corresponding real flow (don't special-case the response — the point is
 to exercise the actual logic), and write back for real so scenarios can chain
 (e.g. new-user → one-week-after → one-quarter-after for the health check).
+
+### Wrapping up a test session
+
+This part is manual and outside the skill's own instructions — it's something
+the maintainer runs from a terminal, not something a marker triggers. Archive
+the state file instead of deleting it, so past sessions stay readable for
+later comparison:
+
+```bash
+mv company-state.md company-state_$(date +%Y%m%d)_<companyname>.md
+```
+
+Swap in the actual company name from that session by hand — nothing in the
+file name derives it automatically. Archived files match `/company-state_*.md`
+in `.gitignore`, so, like the live file, they're never at risk of being
+committed.
