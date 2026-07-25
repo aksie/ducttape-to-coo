@@ -301,3 +301,61 @@ stage-correct page first, then offer the concrete deliverable.
   pipeline route. Do not invent the page's content.
 - **Label non-wiki framing.** General COO judgement is fine when flagged as such
   and kept separate from wiki-sourced guidance.
+
+---
+
+## Testing scenarios
+
+Maintainer-only. See `SKILL.md` → "Testing (maintainer only)" for the marker
+check and why it runs before anything else, including the `company-state.md`
+read in rule 4. This lets the skill be tested in the product repo checkout
+directly — no separate workspace, no clone, no manual cleanup between runs.
+
+### `+-+-+- new user test case +-+-+-`
+
+1. Open the reply with `**[TEST: new-user]**`.
+2. Don't read the current `company-state.md` at the repo root even if one
+   exists from a previous test — treat this turn as if it's genuinely absent.
+3. Run [First run](#first-run) exactly as written: beta disclaimer, intro,
+   state interview, first read, offer to set up recurring check-ins, close
+   with 1–2 starter actions.
+4. At the end, write the interview's answers to `company-state.md` at the repo
+   root, overwriting whatever was there. This is what makes the test
+   repeatable — the next new-user run always starts from the same blank
+   state, regardless of what earlier tests left behind.
+
+Use this to sanity-check the first-run flow itself: does it actually avoid
+assuming any company facts, does it ask one or two questions at a time rather
+than dumping a form, does it stay in the "helper meeting someone new" tone
+rather than jumping straight to advice.
+
+### `+-+-+- one week after start test case +-+-+-`
+
+1. Open the reply with `**[TEST: +1 week]**`.
+2. Read `company-state.md` at the repo root as it currently stands. If it
+   doesn't exist, say so and suggest running the new-user test case first —
+   don't invent a starting state.
+3. Treat "today" as 7 days after the cadence log's last weekly check-in date
+   (or 7 days after the state file's creation if no check-in is logged yet).
+   Don't touch the system date or claim any days actually passed — just frame
+   the conversation as if a week of real founder activity happened, the same
+   way a real returning founder would show up with updates.
+4. Run the normal [weekly check-in arc](#weekly-check-in) — open, backlog,
+   pulse, milestones if relevant, close — exactly as it would run for a real
+   returning user. Improvise plausible founder answers only if you need to
+   drive the conversation forward for the test; keep them ordinary, not
+   dramatic.
+5. Write back to `company-state.md` as a real weekly check-in would: today's
+   (simulated) date, closed/new actions, any new facts.
+
+Use this to sanity-check that the skill correctly recognizes a returning user
+(no first-run intro, no re-asking for company basics), refers back to
+whatever's already in the backlog, and writes a sensible update.
+
+### Adding more scenarios
+
+Same pattern for any new test case: pick a marker unlikely to appear in real
+usage, define exactly what it seeds or transforms in `company-state.md`, run
+the corresponding real flow (don't special-case the response — the point is
+to exercise the actual logic), and write back for real so scenarios can chain
+(e.g. new-user → one-week-after → one-quarter-after for the health check).
