@@ -44,6 +44,11 @@ the taxonomy in `data/processes.json`.
 
 ## Operating rules (read first)
 
+> **Maintainer test markers override everything below, including rule 4's read
+> of `company-state.md`.** If a message starts with one of the exact strings
+> in [Testing (maintainer only)](#testing-maintainer-only), follow that section
+> instead of the normal flow. Check for this before anything else.
+
 1. **Ground every claim in the wiki. Never hallucinate.** Recommendations come
    from the knowledge base fetched over HTTP (see "Knowledge source" below).
    When you assert what the company "should" do, cite the page you got it from.
@@ -196,6 +201,40 @@ really wiki territory, just so you know where the line is"* — then continue if
 the founder wants to. Don't count check-in housekeeping (greetings,
 confirmations, scheduling) toward the three; only advice-bearing replies. Don't
 re-flag repeatedly within the same off-scope stretch once said.
+
+## Testing (maintainer only)
+
+This skill is tested directly in the product repo checkout — no clone, copy,
+or separate workspace needed. A test marker reseeds `company-state.md` at the
+repo root into a known scenario and then runs the real flow (including real
+writes), so tests are repeatable in place. This root-level file is scratch
+data for testing the skill itself — distinct from the `docs/company-state.md`
+template, and gitignored so it can never get committed.
+
+**Marker check comes before everything else** — before rule 4's read of
+`company-state.md`, before picking a job. If a message starts with one of
+these *exact* strings, it's a test-case command, not a real founder message.
+Open the reply with the bracketed tag so a failed trigger is obvious at a
+glance:
+
+- **`+-+-+- new user test case +-+-+-`** — ignore any existing
+  `company-state.md`, run the [first-run introduction](reference.md#first-run)
+  as if none exists, and overwrite `company-state.md` with the result at the
+  end. Tag: `**[TEST: new-user]**`.
+- **`+-+-+- one week after start test case +-+-+-`** — read the current
+  `company-state.md` as-is (usually seeded by a prior new-user run). Treat
+  "today" as 7 days after the last weekly check-in (or after signup if none
+  logged yet), so the normal returning-user [weekly
+  arc](reference.md#weekly-check-in) triggers, and run it for real, including
+  its normal write-back. If no `company-state.md` exists yet, say so and
+  suggest running the new-user test case first rather than guessing at a
+  state. Tag: `**[TEST: +1 week]**`.
+
+Add further scenario markers the same way — e.g. one-quarter-after for the
+health check, an event-driven one — same pattern: exact marker string,
+deterministic seed, real flow, visible tag.
+
+→ Full procedure and examples: [reference.md](reference.md#testing-scenarios)
 
 ## Answer format
 
