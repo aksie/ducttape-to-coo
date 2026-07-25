@@ -234,6 +234,16 @@ Add further scenario markers the same way — e.g. one-quarter-after for the
 health check, an event-driven one — same pattern: exact marker string,
 deterministic seed, real flow, visible tag.
 
+**Wrapping up a test session** is a manual step outside the skill's own
+instructions — archive rather than delete, so past sessions stay readable:
+
+```bash
+mv company-state.md company-state_$(date +%Y%m%d)_<companyname>.md
+```
+
+Archived files match `/company-state_*.md` in `.gitignore`, so they're never
+at risk of being committed either.
+
 → Full procedure and examples: [reference.md](reference.md#testing-scenarios)
 
 ## Answer format
