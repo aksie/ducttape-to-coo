@@ -618,16 +618,45 @@ the goals file's Lookahead write-back actually happens, and the marker
 advances so a second run in the same session doesn't re-summarize the same
 entries.
 
+### `+-+-+- one quarter after start test case +-+-+-`
+
+1. Open the reply with `**[TEST: +1 quarter]**`.
+2. **Requires a prior `ops registry setup` run.** Check `company-state.md`'s
+   Notes for an OS folder path under `./ops-registry-test-scratch/`. If none
+   is on record, say so and suggest running that test case first — this test
+   exists specifically to exercise the OS-folder write-back, which can't
+   happen without one.
+3. Read `company-state.md` as it currently stands. Treat "today" as roughly
+   3 months after the cadence log's last quarterly health check date (or 3
+   months after the state file's creation if none is logged yet) — same
+   "simulate elapsed time" move as the `one week after start` test case,
+   never touching the system date or claiming real time passed.
+4. Run the normal [Quarterly health check](#quarterly-health-check)
+   procedure for real: build the scoped process list, score the 5
+   dimensions (improvise plausible, ordinary scores if needed to drive the
+   test forward — not dramatic), rank gaps, give wiki-backed fixes, and
+   update `company-state.md`. Then confirm its OS-folder step actually
+   fires: `ops-evaluations/YYYY-QN-health-check.md` gets written with the
+   output verbatim, and `README.md`'s link to it refreshes.
+5. If a prior `investor update` test run exists for the same period, this is
+   also a chance to sanity-check the "secondary to the investor update"
+   framing — the health check shouldn't duplicate detail already in that
+   report — but this isn't a hard requirement to run the test case.
+
+Use this to sanity-check: the OS-folder write-back step is skipped when no
+folder is on record (test the `ops registry setup` prerequisite check itself
+by running this marker without it first), and fires correctly when one is —
+correct file path, correct content, `README.md` actually updated.
+
 ### Adding more scenarios
 
 Same pattern for any new test case: pick a marker unlikely to appear in real
 usage, define exactly what it seeds or transforms in `company-state.md`, run
 the corresponding real flow (don't special-case the response — the point is
 to exercise the actual logic), and write back for real so scenarios can chain
-(e.g. new-user → one-week-after → one-quarter-after for the health check).
-Not yet built, flagged as a natural next addition:
-`+-+-+- one quarter after start test case +-+-+-` to exercise the Quarterly
-health check's `ops-evaluations/` write-back.
+(e.g. new-user → one-week-after → ops-registry-setup → investor-update →
+one-quarter-after). All scenarios flagged so far are now built; add new ones
+here the same way as gaps surface.
 
 ### Wrapping up a test session
 
