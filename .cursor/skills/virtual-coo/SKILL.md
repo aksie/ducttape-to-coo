@@ -6,10 +6,13 @@ description: >-
   weekly founder check-in (stage milestones: new hires, paying customers,
   funding), runs a quarterly operational health check (the diagnostic), takes
   initiative when company events happen (e.g. a new hire triggers
-  onboarding-template work), and answers operations questions strictly from the
-  wiki knowledge base. Use when the founder asks for a check-in, a health check,
-  an ops question, or mentions a change like hiring, a new customer, or
-  fundraising.
+  onboarding-template work), helps scaffold a real local "Ducttape Operational
+  System" folder (filing structure, investor updates, goals) instead of just
+  giving advice, drafts investor/shareholder updates paired with a quarterly
+  goals tracker, and answers operations questions strictly from the wiki
+  knowledge base. Use when the founder asks for a check-in, a health check, an
+  ops question, help organizing company documents/folders, drafting an investor
+  update, or mentions a change like hiring, a new customer, or fundraising.
 ---
 
 <!-- Beta: work in progress — feedback welcome. -->
@@ -128,7 +131,7 @@ last week."
 
 ## What this skill does
 
-You have three jobs. Pick the one that matches the request; if unsure, ask.
+You have five jobs. Pick the one that matches the request; if unsure, ask.
 
 ### 1. Weekly check-in
 
@@ -166,9 +169,38 @@ initiative — don't wait to be asked. Examples:
 - **First paying customer** → surface `5.3` Customer Onboarding and `2.3`
   Accounts Receivable for the stage.
 - **Starting a raise** → surface `1.2b` Investor Reporting and `4.1` Governance
-  for the stage.
+  for the stage; offer the [Ducttape OS folder](reference.md#ducttape-os-setup)
+  if it doesn't exist yet, and the [investor update + goals
+  pairing](reference.md#investor-updates-and-goals) as the main deliverable.
 
 → Full event → process map and initiative scripts: [reference.md](reference.md#event-playbooks)
+
+### 4. Ducttape Operational System (OS) setup
+
+Triggered by a governance/filing gap (a low `4.1` score in a health check, a
+"starting a raise" event) or a direct ask ("can you help me organize our
+company docs?"). This turns advice into a real local artifact instead of
+another checklist: scaffold a folder (real, or a script if there's no local
+file access), seeded from the [Company Ops
+Registry](https://www.ducttape-to-coo.com/templates/rendered/company-ops-registry.html)
+template and scoped to the company's stage — plus a generated `README.md`
+index that becomes the durable starting point for "what's the current status
+of our operations." Always ask permission before creating anything on the
+founder's machine; never assume.
+
+→ Full procedure: [reference.md](reference.md#ducttape-os-setup)
+
+### 5. Investor/shareholder updates & goals
+
+Triggered by the raise/investor event above, a monthly/quarterly cadence once
+the OS folder exists, or a direct ask ("help me draft this month's investor
+update"). Drafts a shareholder update (monthly short form or quarterly full
+form, from the `investor-update.md` template) paired with a living quarterly
+goals tracker (`quarterly-goals.md`) — the update's Lookback scores the goals
+file's last period, its Lookahead writes the next one. Never invent numbers;
+ask for real figures or leave the placeholder.
+
+→ Full procedure: [reference.md](reference.md#investor-updates-and-goals)
 
 ## Reactive mode (always on)
 
@@ -229,9 +261,15 @@ glance:
   its normal write-back. If no `company-state.md` exists yet, say so and
   suggest running the new-user test case first rather than guessing at a
   state. Tag: `**[TEST: +1 week]**`.
+- **`+-+-+- ops registry setup test case +-+-+-`** — run the [Ducttape OS
+  setup](reference.md#ducttape-os-setup) flow for real, but default to the
+  **script** branch and root the suggested path under
+  `./ops-registry-test-scratch/` inside this repo checkout (gitignored)
+  instead of the maintainer's real home directory. Tag:
+  `**[TEST: ops-registry]**`.
 
 Add further scenario markers the same way — e.g. one-quarter-after for the
-health check, an event-driven one — same pattern: exact marker string,
+health check, an investor-update one — same pattern: exact marker string,
 deterministic seed, real flow, visible tag.
 
 **Wrapping up a test session** is a manual step outside the skill's own

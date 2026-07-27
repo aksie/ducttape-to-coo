@@ -10,6 +10,7 @@ docs/ops-todo.md
 # virtual-coo skill test scratch state (see .cursor/skills/virtual-coo/SKILL.md → Testing)
 /company-state.md
 /company-state_*.md
+/ops-registry-test-scratch/
 
 # Python
 __pycache__/
