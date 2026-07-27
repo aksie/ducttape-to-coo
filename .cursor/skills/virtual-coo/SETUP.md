@@ -41,6 +41,7 @@ of this repo; your AI tool needs web access (or a local clone as fallback).
 | `tone-of-voice.md` | [view](https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/tone-of-voice.md) |
 | `prompts/` | [folder](https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo/prompts) |
 | `company-state` template | [view](https://github.com/aksie/ducttape-to-coo/blob/main/docs/company-state.md) |
+| `CHANGELOG.md` | [view](https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/CHANGELOG.md) |
 
 ## Install per tool
 
