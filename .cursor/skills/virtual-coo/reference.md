@@ -100,6 +100,13 @@ time and drops the prompt into your calendar.
    concrete fix; don't dump the whole stage list.
 3. **Propose at most 3 next actions** — each with owner, next step, wiki source.
 4. **Update `company-state.md`** — new facts, closed/new actions, today's date.
+5. **If a [Ducttape OS folder](#ducttape-os-setup) is on record** (check
+   `company-state.md`'s Notes for a confirmed path), append a dated entry —
+   2-4 bullets: what happened, any miss, any decision worth remembering — to
+   `investor-updates/weekly-log.md`. This is raw material for a future
+   [investor update](#investor-updates-and-goals), not a restatement of the
+   whole conversation; keep it as terse as the bullets above. If no OS folder
+   is on record, skip this step — unchanged from today.
 
 ### Link to the process review (quarterly health check)
 
@@ -307,7 +314,8 @@ confirm or let the founder rename it, never assume:
 ```
 Ducttape Operational System (OS)/
   README.md              — generated index/dashboard, see "The index file"
-  investor-updates/       — from Investor updates & goals, see that section
+  investor-updates/       — drafted updates + weekly-log.md, see Investor
+                            updates & goals
   goals/                  — from Investor updates & goals
   company-ops-registry/   — scoped registry subfolders, see "Scope the registry"
   ops-evaluations/        — secondary; populated by the Quarterly health
@@ -426,25 +434,50 @@ write each other:
 **Bootstrap case:** if the goals file doesn't exist yet, offer to seed one
 first — an update can't score a lookback that was never written down.
 
+### Fed by the weekly log, not a snapshot
+
+Writing this from `company-state.md`'s "Recent events" alone would mean
+writing it from a handful of terse bullets, not from what actually happened
+across the weeks since the last report. The real source is
+`investor-updates/weekly-log.md` — the running log the [Weekly
+check-in](#weekly-check-in) appends to (step 5 of its procedure) whenever the
+OS folder exists. A marker line at the top of that file,
+`<!-- last consumed through: YYYY-MM-DD -->`, tracks what's already been
+folded into a report, so drafting one never re-summarizes the same weeks
+twice.
+
+**Fallback**, same posture as the goals-file bootstrap: if the log doesn't
+exist yet, is sparse, or this is the very first report, fall back to
+`company-state.md`'s Recent events and Notes — and lean more on the Q&A pass
+below to reconstruct what the log doesn't cover.
+
 ### Procedure
 
 1. **Ask monthly short-form or quarterly full-form** — per the template's
    own "Quick reference — short vs full" table. Wiki grounding: `1.2b`.
 2. **Read the goals file's most recent period** (goals + status) for the
    Lookback section. If none exists, bootstrap it first (see above).
-3. **Draft Highlights and Misses/help** from `company-state.md`'s recent
-   events and open backlog — ask clarifying questions rather than inventing
-   specifics.
-4. **Draft Lookahead goals for the next period, by area**, collaboratively —
+3. **Read every `weekly-log.md` entry after the "last consumed through"
+   marker** (or the fallback above) and synthesize a first-draft Highlights
+   and Misses/help from that real material — not from `company-state.md`
+   alone.
+4. **Q&A pass — ask about what's genuinely thin, ambiguous, or a number that
+   needs confirming**, one or two questions at a time, in the skill's usual
+   conversational style (`tone-of-voice.md`: ask, don't instruct). This is
+   not a form dump; skip sections the log already answered clearly. Never
+   invent a number or an outcome to fill a gap — ask, or leave the
+   placeholder.
+5. **Draft Lookahead goals for the next period, by area**, collaboratively —
    write these into the goals file's next-period column in the same pass, so
    the two files never drift out of sync.
-5. **Quarterly only:** fill the "Quarterly depth" section (commercial/GTM
+6. **Quarterly only:** fill the "Quarterly depth" section (commercial/GTM
    metrics, runway/burn, scenario thinking) — ask for real figures, or leave
    the placeholder rather than guess.
-6. **Save and link.** Write the drafted update into `investor-updates/`,
+7. **Save and link.** Write the drafted update into `investor-updates/`,
    update the goals file, refresh `README.md`'s "most recent update" link,
-   log the cadence in `company-state.md`.
-7. **Ops evaluation stays secondary.** If a quarterly investor update and a
+   log the cadence in `company-state.md`, and advance `weekly-log.md`'s
+   "last consumed through" marker to today.
+8. **Ops evaluation stays secondary.** If a quarterly investor update and a
    quarterly health check land the same period, the update may reference
    `ops-evaluations/<date>.md` for operational detail rather than
    duplicating it — the investor update is the primary artifact.

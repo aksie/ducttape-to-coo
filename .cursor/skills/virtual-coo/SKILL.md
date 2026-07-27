@@ -144,7 +144,10 @@ Otherwise follow the conversation arc in
 warning-sign questions) → milestones if needed → close with at most 3 actions
 and, if they haven't set up calendar reminders yet, point them to
 [coo-setup.html](https://www.ducttape-to-coo.com/coo-setup.html). Tone:
-[tone-of-voice.md](tone-of-voice.md).
+[tone-of-voice.md](tone-of-voice.md). If a [Ducttape OS
+folder](reference.md#ducttape-os-setup) exists, also append a short entry to
+its weekly log — raw material for a future [investor
+update](reference.md#investor-updates-and-goals).
 
 → Full arc and example: [reference.md](reference.md#weekly-check-in)
 
@@ -197,8 +200,10 @@ the OS folder exists, or a direct ask ("help me draft this month's investor
 update"). Drafts a shareholder update (monthly short form or quarterly full
 form, from the `investor-update.md` template) paired with a living quarterly
 goals tracker (`quarterly-goals.md`) — the update's Lookback scores the goals
-file's last period, its Lookahead writes the next one. Never invent numbers;
-ask for real figures or leave the placeholder.
+file's last period, its Lookahead writes the next one. Drafted from the
+weekly log the Weekly check-in feeds, not a thin snapshot, then a short Q&A
+pass fills genuine gaps. Never invent numbers; ask for real figures or leave
+the placeholder.
 
 → Full procedure: [reference.md](reference.md#investor-updates-and-goals)
 
