@@ -267,21 +267,31 @@ glance:
   suggest running the new-user test case first rather than guessing at a
   state. Tag: `**[TEST: +1 week]**`.
 - **`+-+-+- ops registry setup test case +-+-+-`** — run the [Ducttape OS
-  setup](reference.md#ducttape-os-setup) flow for real, but default to the
-  **script** branch and root the suggested path under
-  `./ops-registry-test-scratch/` inside this repo checkout (gitignored)
-  instead of the maintainer's real home directory. Tag:
-  `**[TEST: ops-registry]**`.
+  setup](reference.md#ducttape-os-setup) flow for real, root the suggested
+  path under `./ops-registry-test-scratch/` inside this repo checkout
+  (gitignored) instead of the maintainer's real home directory, and always
+  resolve to **direct creation** regardless of the simulated create-vs-script
+  answer — the scratch path is fully sandboxed, and the `investor update`
+  and `one quarter after start` test cases need real files to chain onto.
+  Tag: `**[TEST: ops-registry]**`.
 - **`+-+-+- investor update test case +-+-+-`** — requires a prior
   `ops registry setup` run (say so and stop if no OS folder is on record).
   Seeds `investor-updates/weekly-log.md` with a few synthetic dated entries,
   then runs [Investor updates & goals](reference.md#investor-updates-and-goals)
   for real — log-driven draft, real Q&A pass, goals write-back, marker
   advance. Tag: `**[TEST: investor-update]**`.
+- **`+-+-+- one quarter after start test case +-+-+-`** — requires a prior
+  `ops registry setup` run (say so and stop if no OS folder is on record — this
+  test exists specifically to exercise the OS-folder write-back). Read
+  `company-state.md` as-is; treat "today" as ~3 months after the last
+  quarterly health check (or after signup if none logged yet), so the
+  [quarterly health check](reference.md#quarterly-health-check) is due. Run
+  it for real, including its OS-folder step: verify
+  `ops-evaluations/YYYY-QN-health-check.md` gets written and `README.md`'s
+  link refreshes. Tag: `**[TEST: +1 quarter]**`.
 
-Add further scenario markers the same way — e.g. one-quarter-after for the
-health check, an investor-update one — same pattern: exact marker string,
-deterministic seed, real flow, visible tag.
+Add further scenario markers the same way — same pattern: exact marker
+string, deterministic seed, real flow, visible tag.
 
 **Wrapping up a test session** is a manual step outside the skill's own
 instructions — archive rather than delete, so past sessions stay readable:
