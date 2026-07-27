@@ -588,6 +588,36 @@ in the documented priority order (investor updates → goals → registry → op
 evaluation), and mailbox-term suggestions come one section at a time rather
 than as a full dump.
 
+### `+-+-+- investor update test case +-+-+-`
+
+1. Open the reply with `**[TEST: investor-update]**`.
+2. **Requires a prior `ops registry setup` run.** Check `company-state.md`'s
+   Notes for an OS folder path under `./ops-registry-test-scratch/`. If none
+   is on record, say so and suggest running that test case first — don't
+   invent a folder that isn't there.
+3. **Seed the weekly log**, deterministically, so the test doesn't depend on
+   having actually run several real weekly check-ins first: (re)write
+   `investor-updates/weekly-log.md` with 2-3 synthetic dated entries spanning
+   the last few weeks, ordinary and plausible (not dramatic) — the same
+   "simulate elapsed time" move the `one week after start` test case makes.
+   Only seed entries dated after the log's current "last consumed through"
+   marker, if one's already there from an earlier test run, so re-running
+   this test case doesn't trivially re-serve stale material.
+4. Run [Investor updates & goals](#investor-updates-and-goals) for real: ask
+   monthly/quarterly, bootstrap the goals file if it doesn't exist yet, read
+   the seeded log entries as the primary draft source, draft
+   Highlights/Misses from them, run the actual Q&A pass (ask genuine
+   follow-up questions rather than skipping it), draft Lookahead into the
+   goals file, save the update, and advance the log's "last consumed
+   through" marker.
+
+Use this to sanity-check: the log — not `company-state.md` alone — is
+actually driving the draft, the Q&A pass only asks about what the seeded log
+left genuinely unclear rather than dumping the whole template as questions,
+the goals file's Lookahead write-back actually happens, and the marker
+advances so a second run in the same session doesn't re-summarize the same
+entries.
+
 ### Adding more scenarios
 
 Same pattern for any new test case: pick a marker unlikely to appear in real
@@ -595,10 +625,9 @@ usage, define exactly what it seeds or transforms in `company-state.md`, run
 the corresponding real flow (don't special-case the response — the point is
 to exercise the actual logic), and write back for real so scenarios can chain
 (e.g. new-user → one-week-after → one-quarter-after for the health check).
-Not yet built, flagged as natural next additions: an
-`+-+-+- investor update test case +-+-+-` to exercise the goals/update
-pairing end to end, and `+-+-+- one quarter after start test case +-+-+-` to
-exercise the Quarterly health check's `ops-evaluations/` write-back.
+Not yet built, flagged as a natural next addition:
+`+-+-+- one quarter after start test case +-+-+-` to exercise the Quarterly
+health check's `ops-evaluations/` write-back.
 
 ### Wrapping up a test session
 
