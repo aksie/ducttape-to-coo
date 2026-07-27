@@ -267,11 +267,13 @@ glance:
   suggest running the new-user test case first rather than guessing at a
   state. Tag: `**[TEST: +1 week]**`.
 - **`+-+-+- ops registry setup test case +-+-+-`** — run the [Ducttape OS
-  setup](reference.md#ducttape-os-setup) flow for real, but default to the
-  **script** branch and root the suggested path under
-  `./ops-registry-test-scratch/` inside this repo checkout (gitignored)
-  instead of the maintainer's real home directory. Tag:
-  `**[TEST: ops-registry]**`.
+  setup](reference.md#ducttape-os-setup) flow for real, root the suggested
+  path under `./ops-registry-test-scratch/` inside this repo checkout
+  (gitignored) instead of the maintainer's real home directory, and always
+  resolve to **direct creation** regardless of the simulated create-vs-script
+  answer — the scratch path is fully sandboxed, and the `investor update`
+  and `one quarter after start` test cases need real files to chain onto.
+  Tag: `**[TEST: ops-registry]**`.
 - **`+-+-+- investor update test case +-+-+-`** — requires a prior
   `ops registry setup` run (say so and stop if no OS folder is on record).
   Seeds `investor-updates/weekly-log.md` with a few synthetic dated entries,

@@ -67,6 +67,9 @@ Telegram or Slack.
 ### Generic (Cline, Continue, Aider, API)
 - Paste `SKILL.md` (+ `reference.md` when needed) into rules / system prompt.
 - Give file access to `company-state.md` and web access to the knowledge base.
+- Optional: broader local file/shell access lets the Ducttape OS setup
+  capability create folders directly instead of handing over a script —
+  not required, the skill asks first and falls back gracefully either way.
 
 ## Knowledge source
 

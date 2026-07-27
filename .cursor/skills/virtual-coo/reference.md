@@ -22,7 +22,7 @@ Use this when `company-state.md` is missing, still has template placeholders
 (`_[your company]_`, `_[N]_`, …), or the cadence log has never been filled in.
 **Do not open with "what happened last week"** — there is no history yet.
 
-1. **Beta disclaimer** — one sentence (see `SKILL.md` rule 7).
+1. **Beta disclaimer** — one sentence (see `SKILL.md` rule 8).
 2. **Intro** — in plain language: you're a wiki-grounded ops partner; you'll do
    a short weekly pulse and a deeper quarterly health check; everything traces to
    the Duct Tape to COO playbook.
@@ -100,13 +100,16 @@ time and drops the prompt into your calendar.
    concrete fix; don't dump the whole stage list.
 3. **Propose at most 3 next actions** — each with owner, next step, wiki source.
 4. **Update `company-state.md`** — new facts, closed/new actions, today's date.
-5. **If a [Ducttape OS folder](#ducttape-os-setup) is on record** (check
-   `company-state.md`'s Notes for a confirmed path), append a dated entry —
-   2-4 bullets: what happened, any miss, any decision worth remembering — to
+5. **If a [Ducttape OS folder](#ducttape-os-setup) is on record and still
+   exists** (check `company-state.md`'s Notes for a confirmed path, then
+   confirm the folder is actually there — see "Track progress in
+   `company-state.md`" under Ducttape OS setup), append a dated entry — 2-4
+   bullets: what happened, any miss, any decision worth remembering — to
    `investor-updates/weekly-log.md`. This is raw material for a future
    [investor update](#investor-updates-and-goals), not a restatement of the
    whole conversation; keep it as terse as the bullets above. If no OS folder
-   is on record, skip this step — unchanged from today.
+   is on record, or the recorded path no longer resolves to a real folder,
+   skip this step — unchanged from today.
 
 ### Link to the process review (quarterly health check)
 
@@ -240,14 +243,17 @@ consistent with the web diagnostic.)
    into concrete next steps with owners.
 6. **Update `company-state.md`** — record the date as the last quarterly
    health check, and log the prioritised gaps as open actions.
-7. **If a [Ducttape OS folder](#ducttape-os-setup) is on record** (check
-   `company-state.md`'s Notes for a confirmed path), also write this output
+7. **If a [Ducttape OS folder](#ducttape-os-setup) is on record and still
+   exists** (check `company-state.md`'s Notes for a confirmed path, then
+   confirm the folder is actually there — see "Track progress in
+   `company-state.md`" under Ducttape OS setup), also write this output
    verbatim to `<OS folder>/ops-evaluations/YYYY-QN-health-check.md` and
    refresh the folder's `README.md` link to it. This is secondary to the
    [investor update](#investor-updates-and-goals) if both land the same
    quarter — reference it there rather than duplicating detail. If no OS
-   folder is on record, skip this step entirely; behaviour is otherwise
-   unchanged from a purely conversational health check.
+   folder is on record, or the recorded path no longer resolves to a real
+   folder, skip this step entirely; behaviour is otherwise unchanged from a
+   purely conversational health check.
 
 ### Output format
 
@@ -406,6 +412,16 @@ No template/schema change — reuse existing fields:
   check's additive step and the Investor updates & goals flow find it later
   without re-asking.
 
+**A recorded path isn't a guarantee the folder still exists.** A founder who
+chose the script-handoff branch may not have run it yet; someone might also
+move or delete the folder later. Every capability that checks Notes for a
+confirmed path — the [Weekly check-in](#weekly-check-in)'s log entry, the
+[Quarterly health check](#quarterly-health-check)'s report write, [Investor
+updates & goals](#investor-updates-and-goals) — should verify the folder is
+actually there before writing into it. If it isn't, skip that step gracefully
+(same as if no path were on record at all); don't error, and don't silently
+recreate the structure without asking again.
+
 ---
 
 ## Investor updates and goals
@@ -415,7 +431,11 @@ the primary deliverable once a raise is on the horizon or the founder wants
 a regular written discipline, per `1.2b`: *"start monthly before you have
 investors; widen distribution when angels arrive."* Triggered by the
 raise/investor event, a monthly/quarterly cadence once the [Ducttape OS
-folder](#ducttape-os-setup) exists, or a direct ask.
+folder](#ducttape-os-setup) exists, or a direct ask. If `company-state.md`
+has a recorded OS folder path but it no longer resolves to a real folder
+(see "Track progress in `company-state.md`" under Ducttape OS setup), treat
+it as if none exists — offer to set one up rather than writing into a path
+that isn't there.
 
 ### The pairing is the point
 
@@ -571,22 +591,29 @@ whatever's already in the backlog, and writes a sensible update.
    inventing a state).
 3. Run [Ducttape OS setup](#ducttape-os-setup) for real — scope the
    registry to the seeded stage/conditions, ask the storage-provider
-   question, ask permission — but with two fixed answers for this test
-   regardless of what a real founder might say: always take the **script**
-   branch (never create directly), and always root the suggested path under
-   `./ops-registry-test-scratch/` inside this repo checkout, not the
-   maintainer's real home directory. This keeps the test safe to run
-   repeatedly without touching real local storage.
-4. Generate the script and the `README.md` content as the real flow
-   specifies, and run the fill-in dialogue for at least one scoped section
+   question, and ask the create-vs-script question too (so that part of the
+   real dialogue gets exercised) — but with two fixed answers for this test
+   regardless of what gets asked or answered: always root the suggested path
+   under `./ops-registry-test-scratch/` inside this repo checkout, not the
+   maintainer's real home directory, and always resolve to **direct
+   creation** as the actual filesystem action, even if the simulated
+   create-vs-script answer would otherwise pick the script. This isn't a
+   safety compromise — `./ops-registry-test-scratch/` is fully sandboxed and
+   gitignored, so there's no reason to only simulate it — and the
+   `investor update` and `one quarter after start` test cases need a real
+   folder tree to write into.
+4. Actually create the scoped folder tree and `README.md` under that path —
+   real directory creation, real file writes, not just a script shown in
+   chat — and run the fill-in dialogue for at least one scoped section
    (mailbox search-term suggestions) so that part gets exercised too.
 
 Use this to sanity-check: correct registry scoping for the seeded stage, the
-storage question comes before any path is proposed, permission is asked
-before anything is created, the script branch is used, `README.md` links are
-in the documented priority order (investor updates → goals → registry → ops
-evaluation), and mailbox-term suggestions come one section at a time rather
-than as a full dump.
+storage question comes before any path is proposed, the create-vs-script
+question gets asked, `README.md` links are in the documented priority order
+(investor updates → goals → registry → ops evaluation), mailbox-term
+suggestions come one section at a time rather than as a full dump, and —
+critically for the two test cases that chain after this one — the folder
+tree and `README.md` actually exist on disk afterward.
 
 ### `+-+-+- investor update test case +-+-+-`
 
