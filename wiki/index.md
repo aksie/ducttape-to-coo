@@ -76,17 +76,6 @@ All processes are scored on five dimensions. See [dimensions/README.md](dimensio
 
 ---
 
-## Reference
-
-Standalone data/citation pages that back specific claims elsewhere (a blog
-post, a process page) but aren't a process × stage cell themselves.
-
-| Page | Backs |
-|---|---|
-| [VC fund return benchmarks](reference/vc-fund-return-benchmarks.md) | [Before You Raise Money](../blog/before-you-raise-money-understand-the-vc-model.html) |
-
----
-
 ## Contributing
 
 Each cell in the matrix is one Markdown file. See [processes/_template.md](processes/_template.md) for the template and contributor instructions. Pick any `stub` cell and fill it in — you don't need to write the whole matrix to make a useful contribution.
