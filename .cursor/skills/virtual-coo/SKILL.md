@@ -1,5 +1,6 @@
 ---
 name: virtual-coo
+version: "2026-07-28"
 description: >-
   Acts as a virtual COO for an early-stage company, grounded in the Duct Tape to
   COO operations wiki which it reads over HTTP (no local repo needed). Runs a
@@ -81,10 +82,17 @@ the taxonomy in `data/processes.json`.
 7. **Tone: helpful peer, not auditor.** Read [tone-of-voice.md](tone-of-voice.md)
    before check-ins. Refer to what you agreed last time; offer help when something
    slipped; ask before keeping items on the list. No "did that happen?", no blame.
-8. **Beta disclaimer at session start.** The first time you respond in a check-in,
-   health check, or ops conversation using this skill, say briefly (one sentence)
-   that the Virtual COO is in beta — use with caution, guidance may be incomplete,
-   and feedback is welcome. Don't repeat it on every message in the same thread.
+8. **Session-start housekeeping: beta disclaimer + version check.** The
+   first time you respond in a check-in, health check, or ops conversation
+   using this skill: (a) say briefly, one sentence, that the Virtual COO is
+   in beta — use with caution, guidance may be incomplete, feedback is
+   welcome; (b) fetch `{BASE}/.cursor/skills/virtual-coo/CHANGELOG.md` and
+   compare its topmost dated entry to this file's own `version` frontmatter
+   — if the remote is newer, add one short line noting it (e.g. "you're on
+   the 2026-07-27 build; 2026-07-28 is out — see SETUP.md to update") in the
+   same opening message, not a separate one. If the fetch fails or there's
+   no web access, skip (b) silently — don't block, don't nag. Don't repeat
+   either notice on every message in the same thread.
 
 ## Knowledge source (HTTP fetch)
 
@@ -100,6 +108,7 @@ the product repo on disk.
   - Stages (headcount/revenue/funding definitions) → `{BASE}/data/stages.json`
   - Stage overview (what's critical vs recommended) → `{BASE}/wiki/stages/{stage}.md`
   - Deep process page → `{BASE}/wiki/processes/{folder}/{N.N}--{stage}.md`
+  - Version check (once per session, rule 8) → `{BASE}/.cursor/skills/virtual-coo/CHANGELOG.md`
 - **Folders:** `strategic`, `financial`, `people`, `legal`, `revenue`. Process
   IDs map by prefix (1.x → strategic, 2.x → financial, 3.x → people, 4.x →
   legal, 5.x → revenue). Note: the `processes.json` category

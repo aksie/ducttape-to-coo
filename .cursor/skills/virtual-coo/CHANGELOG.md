@@ -6,7 +6,20 @@ scroll down for history, not just the top entry.
 
 Add an entry here as part of any PR that changes founder-facing behavior
 (new capability, changed procedure, new test marker). Small internal
-copyedits with no behavior change don't need one.
+copyedits with no behavior change don't need one. **Whenever you add an
+entry, also bump the `version` field in `SKILL.md`'s frontmatter to match
+this file's date** — that's what the version check (rule 8) compares
+against.
+
+## 2026-07-28
+
+- **Add a super-simple version check.** `SKILL.md` now carries a `version`
+  frontmatter field. Once per session, the skill fetches this file over
+  HTTP and compares its topmost date to its own `version` — if a newer
+  build exists, it says so once, in the same message as the beta
+  disclaimer, and points to `SETUP.md` to update. Silent (no error, no
+  nagging) if the fetch fails or there's no web access.
+  ([#9](https://github.com/aksie/ducttape-to-coo/pull/9))
 
 ## 2026-07-27
 
