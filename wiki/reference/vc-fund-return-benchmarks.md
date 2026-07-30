@@ -30,8 +30,12 @@ series, so figures will move. Re-check before citing a specific number.**
   anything yet.
 - **EIF is not the direct source of the European IRR figures usually
   attributed to it.** The figures that circulate as "EIF benchmarks" mostly
-  originate from Invest Europe / Cambridge Associates. See [§4](#4-eifs-own-published-benchmarks-a-different-thing) below —
+  originate from Invest Europe / Cambridge Associates. See [§4](#4-eifs-own-published-benchmarks-a-different-thing-entirely) below —
   this is a common mix-up worth avoiding when citing sources.
+- **EIF's own working paper doesn't report IRR at all.** Its return metric
+  is exit multiple on cost (MoC) at the individual-investment level, not
+  fund-level net IRR — a different question entirely, and not directly
+  comparable to any other row on this page. See [§4](#4-eifs-own-published-benchmarks-a-different-thing-entirely).
 
 ---
 
@@ -41,12 +45,16 @@ series, so figures will move. Re-check before citing a specific number.**
 |---|---|---|---|---|
 | Invest Europe / Cambridge Associates methodology (cited in *State of European Tech*, via Sifted) | US | Net IRR | 10-year horizon | 13.1% – 18.18% (range across report editions) |
 | Invest Europe / Cambridge Associates methodology (cited in *State of European Tech*, via Sifted) | Europe | Net IRR | 10-year horizon | 17.2% – 20.77% (range across report editions) |
-| Cambridge Associates — US PE/VC Benchmark Commentary | US | Pooled net-of-fee index return | 1H 2025 (half-year, not annualized) | 6.4% |
-| Cambridge Associates — US PE/VC Benchmark Commentary | US | Vintage-year return, 2015–2022 vintages | 1H 2025 snapshot | -2.5% to +8.6% across vintages |
+| Cambridge Associates — US PE/VC Benchmark Commentary | US | Pooled net-of-fee IRR, US VC Index | 10-year horizon (period ended 30 Jun 2025) | **13.1%** — the exact figure behind the low end of the Invest Europe US range above; same underlying dataset |
+| Cambridge Associates — US PE/VC Benchmark Commentary | US | Pooled net-of-fee IRR, US VC Index, full horizon table | 6mo / 1yr / 3yr / 5yr / 10yr / 15yr / 20yr / 25yr | 6.4 / 11.4 / 0.1 / 15.0 / 13.1 / 15.3 / 12.2 / 6.9 |
+| Cambridge Associates — US PE/VC Benchmark Commentary | US | Vintage-year return, 2015–2022 vintages | 1H 2025 snapshot | -2.5% to +8.6% across vintages (full breakdown in [§2](#2-cambridge-associates-us-pevc-benchmark-commentary-1h-2025-published-jan-2026)) |
 | Carta — VC Fund Performance, Q1 2026 | US | Net IRR, 90th percentile of funds | Vintages 2017–2024 | Above 20% for most vintages |
 | Carta — VC Fund Performance, Q1 2026 | US | Net IRR, 75th percentile of funds | Vintages 2017–2024 | Does not exceed ~15.5% in any vintage |
 | Industry Ventures (GP target, cited in the blog post above) | — | Target net IRR by stage | — | Seed ~30% · Later-stage ~20% |
-| EIF (own working papers, not *State of European Tech*) | Europe, EIF-backed funds | Net IRR | 1996–2015 sample | **TODO** — pull exact figure from [WP 2017/41](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf) |
+
+**EIF is deliberately not in this table** — its own working paper reports a
+different metric entirely (exit multiple on cost, not IRR). See
+[§4](#4-eifs-own-published-benchmarks-a-different-thing-entirely).
 
 **Reading the table:** these rows are not directly comparable to each other
 — a 10-year pooled net IRR, a single half-year index return, and a
@@ -72,12 +80,36 @@ Source: [Carta — VC Fund Performance: Q1 2026](https://carta.com/data/vc-fund-
 ### 2. Cambridge Associates — US PE/VC Benchmark Commentary, 1H 2025 (published Jan 2026)
 
 Pooled net-of-fee returns from a database of 2,699 US VC funds (1981–2025
-vintages, $591B NAV). The US VC Index returned 6.4% in 1H 2025, continuing a
-recovery after seven consecutive down quarters (Jan 2022–Sep 2023).
-Vintage-year returns for 2015–2022 ranged from -2.5% to +8.6% in 1H 2025.
-The full report also carries horizon IRRs (6mo/1yr/3yr/5yr/10yr/15yr/20yr/25yr)
-benchmarked against public-market equivalents — the specific 10-year figure
-wasn't pulled into this page; see the PDF.
+vintages, $591B NAV as of 30 Jun 2025 — up from 1,593 funds / $188B ten
+years earlier). The CA US Venture Capital Index® earned 6.4% in 1H 2025,
+continuing a recovery after seven consecutive down quarters (Jan 2022–Sep
+2023). "Pooled horizon IRR" is fund-level, net of fees/expenses/carry, and
+annualized except for the sub-1-year column, which is cumulative.
+
+**Full horizon IRR table** (periods ended 30 Jun 2025):
+
+| Horizon | 6 mo | 1 yr | 3 yr | 5 yr | 10 yr | 15 yr | 20 yr | 25 yr |
+|---|---|---|---|---|---|---|---|---|
+| CA US Venture Capital net IRR | 6.4% | 11.4% | 0.1% | 15.0% | 13.1% | 15.3% | 12.2% | 6.9% |
+
+For comparison, the same report's US private equity (buyout + growth
+equity) index: 3.9 / 8.7 / 7.4 / 16.4 / 14.7 / 15.9 / 13.7 / 11.8 across the
+same horizons — PE has been ahead of VC at every horizon of 3 years or
+longer; VC only leads at the very short horizons (6 mo, 1 yr), reflecting
+its recent recovery rally rather than a longer-term trend.
+
+**Vintage-year returns (1H 2025), by vintage year (index weight):**
+
+| Vintage | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 |
+|---|---|---|---|---|---|---|---|---|
+| 1H 2025 return | -2.5% | 3.7% | 7.5% | 5.5% | 3.3% | 4.5% | 5.5% | 8.6% |
+| Weight in index | 5.7% | 5.4% | 7.3% | 11.2% | 7.8% | 11.0% | 13.6% | 10.5% |
+
+These eight vintages were "meaningfully sized" (≥5% of index NAV each) as of
+June 2025 and together made up 72% of the index. The best performer (2022)
+is also the least mature; the worst (2015) is the oldest of the eight — a
+reminder that vintage-year comparisons conflate age with quality (see
+[How to read these numbers](#how-to-read-these-numbers)).
 
 Sources:
 [Cambridge Associates — US PE/VC Benchmark Commentary: First Half 2025](https://www.cambridgeassociates.com/insight/us-pe-vc-benchmark-commentary-first-half-2025/) ·
@@ -97,7 +129,7 @@ Sources:
 [Sifted — European VCs outperform US VCs over 10 and 15 year horizons](https://sifted.eu/articles/european-vc-irr-2024) ·
 [State of European Tech 2025](https://www.stateofeuropeantech.com/)
 
-### 4. EIF's own published benchmarks — a different thing
+### 4. EIF's own published benchmarks — a different thing entirely
 
 Worth flagging clearly: the fund-return figures that show up in *State of
 European Tech* are sourced from Cambridge Associates and Invest Europe, **not
@@ -105,14 +137,38 @@ published directly by EIF**, even though EIF is closely associated with that
 report. EIF's own return data comes from separate, non-recurring Research &
 Market Analysis working papers (not a quarterly/annual series) — e.g. WP
 2017/41 and WP 2011/09/2019/59 — using EIF's internal LP dataset on
-EIF-backed funds (one sample covers ~3,600 investments, 1996–2015). These
-are the actual EIF-authored numbers, and they haven't been pulled into this
-page yet — the specific IRR figures need extracting from the working paper
-PDF.
+EIF-backed funds.
 
-Source: [EIF Working Paper 2017/41 — The European venture capital landscape: an EIF perspective](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf)
-*(TODO: extract EIF's own headline IRR figure(s) from this paper and add
-above.)*
+**WP 2017/41** ("Liquidity events and returns of EIF-backed VC investments,"
+Vol. III of *The European venture capital landscape: an EIF perspective*,
+Dario Prencipe, April 2017) covers ~3,600 EIF-backed seed/start-up VC
+investments made 1996–2015, of which 2,065 were realised (58%) as of the
+paper's data cut.
+
+**It reports exit Multiple on Cost (MoC), not IRR** — a genuinely different
+metric, at the individual-investment level rather than fund-level LP
+returns, so don't treat any figure below as comparable to the IRR figures
+elsewhere on this page:
+
+- **Weighted average exit MoC across the full sample: 1.16x. Weighted
+  median: 0.12x.** The gap between mean and median is the point — VC returns
+  are extremely right-skewed.
+- **Distribution of exits by return class** (unweighted, 2,065 realised
+  investments): 57% returned less than 0.25x cost, 13% returned 0.25x–cost,
+  8% returned roughly at cost, 17% returned cost-to-5x, and only **4%
+  returned more than 5x** — but that top 4% generated **almost half of all
+  aggregated proceeds**.
+- **Average share of the fund returned, by exit class** — i.e., what one
+  exit in each bucket contributes on average: <0.25x → 0.1% (mean) / 0.0%
+  (median); 0.25x–cost → 1.7% / 1.0%; at cost → 3.7% / 2.5%; cost–5x → 10.0%
+  / 7.3%; >5x → **43.9% / 25.3%**. A single >5x exit does most of a fund's
+  work.
+- **Vintage effect:** the share of profitable exits was 16% for investments
+  made 1996–2001, rising to over 30% for those made 2007–2015 — read
+  cautiously, since this reflects both market conditions and how much of
+  each vintage has been realised so far.
+
+Source: [EIF Working Paper 2017/41 — Liquidity events and returns of EIF-backed VC investments](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf)
 
 ---
 
@@ -137,6 +193,13 @@ above.)*
   portfolio value; DPI is cash actually distributed. Carta's finding that
   DPI remains thin for 2019–2020 vintages is a caution against reading a
   rising TVPI as money already banked.
+- **IRR vs. multiple-on-cost (MoC) measure different things.** IRR is
+  time-weighted (annualized, sensitive to how long capital was tied up); MoC
+  is just cash-out over cash-in, with no time dimension. EIF's working paper
+  (§4) reports MoC at the individual-investment level, not fund-level net
+  IRR — the two aren't interchangeable, and neither is directly comparable
+  to the IRR figures from Carta, Cambridge Associates, or Invest Europe on
+  this page.
 
 ---
 
@@ -147,13 +210,12 @@ above.)*
 - [Cambridge Associates 1H2025 PDF](https://www.cambridgeassociates.com/wp-content/uploads/2025/12/2026-01-US-PE-VC-Benchmark-Commentary-1H2025-Data-PUBLIC.pdf)
 - [Invest Europe — Performance of European Private Equity Benchmark Report 2023](https://www.investeurope.eu/news/newsroom/european-buy-outs-growth-venture-capital-infrastructure-performance-maintains-lead-over-public-market-returns/)
 - [Sifted — European VCs outperform US VCs over 10 and 15 year horizons](https://sifted.eu/articles/european-vc-irr-2024)
-- [EIF Working Paper 2017/41 — The European venture capital landscape: an EIF perspective](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf)
+- [EIF Working Paper 2017/41 — Liquidity events and returns of EIF-backed VC investments](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf)
 - [State of European Tech 2025](https://www.stateofeuropeantech.com/)
 
 ---
 
-*Compiled from a research pass across Carta, Cambridge Associates, and
-Invest Europe / State of European Tech publications. Two figures are
-flagged `TODO` above (Cambridge Associates' exact 10-year horizon IRR; EIF's
-own headline IRR from its working paper) — pull these from the linked PDFs
-before treating this page as complete. Not investment advice.*
+*Compiled from a research pass across Carta, Cambridge Associates, Invest
+Europe / State of European Tech, and EIF Working Paper 2017/41 (the last two
+read directly from their source PDFs). No open TODOs remain. Not investment
+advice.*
