@@ -454,6 +454,16 @@ function createProcessSection(title, processes, priority, collapsed = false) {
             catHeader.className = 'process-category-header';
             catHeader.textContent = cat;
             content.appendChild(catHeader);
+
+            if (process.category === 'legal-and-other-ops') {
+                const attribution = document.createElement('p');
+                attribution.className = 'process-category-attribution';
+                attribution.innerHTML = 'The Legal part of this diagnostic is based on ' +
+                    '<a href="https://www.trailheadlegal.nl/" target="_blank" rel="noopener">Trailhead\'s Legal Scan</a> ' +
+                    'and made with input from Marije van Akkerveeken.';
+                content.appendChild(attribution);
+            }
+
             lastCategory = cat;
         }
         content.appendChild(createProcessElement(process, priority));
