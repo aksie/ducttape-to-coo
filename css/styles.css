@@ -687,6 +687,22 @@ h1 {
     padding-top: 0;
 }
 
+.process-category-attribution {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: -2px 0 14px;
+}
+
+.process-category-attribution a {
+    color: var(--text-muted);
+    text-decoration: underline;
+}
+
+.process-category-attribution a:hover {
+    color: var(--text-dim);
+}
+
 /* ─── Individual Process Card ─────────────────────── */
 .process {
     background: var(--bg);
