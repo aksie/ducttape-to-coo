@@ -100,7 +100,7 @@ Therefore a fund wants you to aim for at least **10× their money back** in arou
 
 Much of the above is quite simplified (warning ;-)) but I want you to understand these basics.
 
-And these aren't hypothetical numbers. Looking at data spanning two decades, hundreds of European VC funds, and thousands of EIF-backed investments: 57% of exits returned less than a quarter of what was invested, and 70% returned less than the original investment — a loss. Just 4% of exits returned more than 5×, and that same 4% generated almost half of all the money the entire sample returned. That's not a scare number — it's the actual shape of the portfolio math above.
+And these aren't hypothetical numbers. Looking at data spanning two decades (1996–2015) across 355 EIF-backed funds and 3,592 investments, [EIF Working Paper 2017/41](https://www.fi-compass.eu/sites/default/files/publications/eif_wp_41.pdf) found: 57% of exits returned less than a quarter of what was invested, and 70% returned less than the original investment — a loss. Just 4% of exits returned more than 5×, and that same 4% generated almost half of all the money the entire sample returned. That's not a scare number — it's the actual shape of the portfolio math above.
 
 ## If we do quite fine, a VC won't want to sell us, right?
 
