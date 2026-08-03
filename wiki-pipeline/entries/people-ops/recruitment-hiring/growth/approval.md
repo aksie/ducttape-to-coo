@@ -1,7 +1,7 @@
 ---
 entry: people-ops/recruitment-hiring/growth
-last_updated: 2026-06-16
-note: "src-064 senior-hire practitioner addendum — review before publish."
+last_updated: 2026-08-03
+note: "src-064 batch approved 2026-06-24; src-070 addendum pending review."
 ---
 
 ### c-001
@@ -53,4 +53,103 @@ note: "src-064 senior-hire practitioner addendum — review before publish."
 - Reviewer notes: "9-box referenced by practitioner; optional tool not requirement."
 - Reviewed by: "aksie"
 - Reviewed date: 2026-06-24 17:39
+- Edited claim text: null
+
+### c-007
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 13:58
+- Edited claim text: null
+
+### c-008
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:00
+- Edited claim text: - **Culture non-negotiables are few and owned by the hiring manager** — not a blanket "no culture fit" anyone can invoke. The culture checker scores against explicit values dimensions (e.g. entrepreneurship 3/5, alignment 4/5) and are coached not to imply (non-) approval with extreme scores; the hiring manager interprets what matters for this role.
+  <!-- sources: src-070 (serial-ceo) -->
+
+### c-009
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:00
+- Edited claim text: - **A new leader gets the role immediately** — They get the room to make real decisions in their style from day one, with advice in the first weeks. Not months of partial projects while you retain the final call.
+  <!-- sources: src-070 (serial-ceo) -->
+
+### c-010
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:01
+- Edited claim text: null
+
+### c-011
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:01
+- Edited claim text: null
+
+### c-012
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:01
+- Edited claim text: **Accept founder disillusion as the company scales** — people hired at 50+ are a different breed than founder types; specialists (legal, compliance, finance) won't feel like clones and shouldn't.
+   <!-- sources: src-070 (serial-ceo) -->
+
+### c-013
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:01
+- Edited claim text: null
+
+### c-014
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:02
+- Edited claim text: null
+
+### c-015
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:02
+- Edited claim text: null
+
+### c-016
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:02
+- Edited claim text: null
+
+### c-017
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:02
+- Edited claim text: null
+
+### c-018
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-03 14:03
 - Edited claim text: null
