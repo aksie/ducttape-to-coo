@@ -1,6 +1,6 @@
 # Who decides what (1.4) — decisions by stage
 
-**Status:** **Published wiki** — [First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) · [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue) (synthesized 2026-08-03) · [Growth](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth) (src-064 + src-070 Erik addendum, reviewed 2026-08-03). Scaled remains stub. This doc = design rationale, schools, sources, and template — keep aligned when wiki changes.
+**Status:** **Published wiki** — [First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) · [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue) (synthesized 2026-08-03) · [Growth](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth) (src-064 + src-070 serial CEO addendum, reviewed 2026-08-03). Scaled remains stub. This doc = design rationale, schools, sources, and template — keep aligned when wiki changes.
 
 **Blog:** [Who Decides When Founders Disagree](../blog/posts/who-decides-when-founders-disagree.md) — published **`listed: false`** (direct URL only until polish done); first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
 
@@ -122,7 +122,7 @@ For each decision: **School A** · **School B** · **Middle ground**.
 
 **Schools preserved:** GitLab DRI / First Round RACI as evolution references at scaled — not first-hires prescription.
 
-**Deferred from Erik src-070:** 1.1 planning cadence, 3.2 three-lens hiring → separate cells.
+**Deferred from src-070 (serial CEO):** 1.1 planning cadence, 3.2 three-lens hiring → separate cells.
 
 ---
 
@@ -570,7 +570,7 @@ You don't need conviction on every route. You need a rule for the fork, consult 
 **Remaining (optional):**
 
 1. **1.4 @ scaled** — publish from src-064 stub + pipeline entry when ready
-2. **Erik src-070** — 1.1 @ growth, 3.2 @ growth pipeline addenda
+2. **src-070 (serial CEO)** — 1.1 @ growth, 3.2 @ growth pipeline addenda
 3. **Carry-forward audit** — other growth wiki cells (see ops-todo)
 4. **Foundation `1.4--foundation.md`** — only if solo/multi-founder pre-hire page warranted
 

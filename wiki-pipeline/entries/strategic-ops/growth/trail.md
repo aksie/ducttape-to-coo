@@ -1,7 +1,7 @@
 ---
 entry: strategic-ops/growth
-last_updated: 2026-06-16
-batch: gitlab-planning-longitudinal
+last_updated: 2026-08-03
+batch: gitlab-planning-longitudinal, src-064, src-070
 ---
 
 ## src-064 addendum (anonymous chief-of-staff practitioner)
@@ -94,3 +94,76 @@ batch: gitlab-planning-longitudinal
 - Rejected atoms (and why): none
 - Why-source: atom-081-gitlab (OKRs coordinate goals but not every recurring management process)
 - Synthesis notes: This is the key longitudinal lesson from 2017 OKRs to 2019 cadence. The evolution atom could also serve as "what good looks like" — placed in evolution because it describes the maturity step.
+
+---
+
+## src-070 addendum (serial CEO — planning cycle @ growth)
+
+**Dropped atoms:**
+
+| Atom | Reason |
+|------|--------|
+| atom-471 | early-revenue cell — strategy vs planning chain |
+| atom-494 | overlaps c-009 / c-002 — quarterly-only drift |
+| atom-498 | mirror of c-016 (product = company roadmap) — warning redundant |
+| atom-499 | merged into c-026 evolution with GitLab c-003 |
+
+### c-013: Quarterly rhythm
+- Section: what_good_looks_like
+- Supporting atoms: atom-485
+- Why-source: atom-485 (3–5 resourced projects, mid-quarter check, issue-based weekly MT)
+
+### c-014: COO owns process / CEO owns story
+- Section: what_good_looks_like
+- Supporting atoms: atom-488
+- Synthesis notes: Extends approved c-012 ownership theme with role split.
+
+### c-015: Multi-quarter phases
+- Section: what_good_looks_like
+- Supporting atoms: atom-487
+
+### c-016: Company + product roadmap coupled
+- Section: what_good_looks_like
+- Supporting atoms: atom-486
+
+### c-017: Quarterly pick + staff
+- Section: actions
+- Supporting atoms: atom-489, atom-495 (why)
+
+### c-018: Weekly walk — stuck only
+- Section: actions
+- Supporting atoms: atom-490, atom-500 (related)
+
+### c-019: Product roadmap aligned
+- Section: actions
+- Supporting atoms: atom-491
+
+### c-020: Calibrate detail to maturity
+- Section: actions
+- Supporting atoms: atom-492
+
+### c-021: Big bet disrupt — role-owner escalates, CEO weighs
+- Section: actions
+- Supporting atoms: atom-493
+- Synthesis note: Pairs with c-014 (COO owns rhythm / CEO owns story). Transcript ~58:38–59:18 — CEO cannot be constant instigator of "wacht, we gaan toch iets anders doen"; role-owner escalates "zo groot, ik heb heel veel pijp nodig"; CEO weighs. Phase 3: pre-edited for clarity 2026-08-03.
+
+### c-022: No resource planning
+- Section: warning_signs / output_quality
+- Supporting atoms: atom-495
+
+### c-023: Twenty priorities
+- Section: warning_signs / output_quality
+- Supporting atoms: atom-496
+
+### c-024: Discard vs advance phase
+- Section: warning_signs / output_quality
+- Supporting atoms: atom-497
+
+### c-026: Evolve to scaled
+- Section: evolution
+- Supporting atoms: atom-499, atom-470 (partial — COO capacity no)
+- Synthesis note: Merges serial CEO (same rhythm, longer horizons, COO non-optional) with GitLab c-003 cadence ladder. Expanded for clarity 2026-08-03.
+
+### c-027: Issue-based MT review
+- Section: tools
+- Supporting atoms: atom-500
