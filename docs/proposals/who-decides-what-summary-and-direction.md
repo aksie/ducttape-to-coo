@@ -2,7 +2,7 @@
 
 **Status:** **Published wiki** — [First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) · [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue) (synthesized 2026-08-03) · [Growth](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth) (src-064 + src-070 Erik addendum, reviewed 2026-08-03). Scaled remains stub. This doc = design rationale, schools, sources, and template — keep aligned when wiki changes.
 
-**Blog:** [Who Decides When Founders Disagree](../blog/posts/who-decides-when-founders-disagree.md) — published 2026-08-03; first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
+**Blog:** [Who Decides When Founders Disagree](../blog/posts/who-decides-when-founders-disagree.md) — published **`listed: false`** (direct URL only until polish done); first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
 
 **Pipeline:** First hires — [src-063](../wiki-pipeline/sources/src-063.md), full Phase 1–4. Growth — [src-070](../wiki-pipeline/sources/src-070.md), atoms 424–525, [growth entry](../wiki-pipeline/entries/strategic-ops/who-decides-what/growth/). Early revenue wiki synthesized from proposal + src-070 early-revenue atoms (no separate pipeline entry yet).
 
