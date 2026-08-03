@@ -78,6 +78,23 @@ Default: `https://raw.githubusercontent.com/aksie/ducttape-to-coo/main`
 
 Offline: keep a local clone — the skill falls back to disk.
 
+## Updating
+
+Wiki pages stay current automatically (fetched over HTTP each session). The
+skill *instructions* are a local copy — when they change, re-copy the folder:
+
+```bash
+git clone https://github.com/aksie/ducttape-to-coo.git
+cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/
+```
+
+(Use your tool's skills path if not Cursor — see Install per tool.)
+
+From the `2026-07-28` skill build onward, the COO checks
+[CHANGELOG.md](CHANGELOG.md) on GitHub at the start of each conversation and
+nudges you if a newer build is available. Installs from before that check
+won't self-nudge until you re-copy once.
+
 ## First run
 
 Say *"Be my virtual COO."* The COO introduces itself, interviews you on company

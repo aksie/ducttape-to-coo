@@ -156,6 +156,14 @@
     </div>
   </div>
 
+  <h2>Updating</h2>
+  <div class="card">
+    <p>Wiki advice stays current automatically (fetched over HTTP). When the skill <em>instructions</em> change, re-copy the folder — same command as install, e.g. Cursor:</p>
+    <pre><code>git clone https://github.com/aksie/ducttape-to-coo.git
+cp -r ducttape-to-coo/.cursor/skills/virtual-coo ~/.cursor/skills/</code></pre>
+    <p>From the <code>2026-07-28</code> skill build onward, the COO checks the <a href="https://github.com/aksie/ducttape-to-coo/blob/main/.cursor/skills/virtual-coo/CHANGELOG.md">changelog</a> at the start of each conversation and nudges you once if you're behind. Older installs won't self-nudge until you re-copy once.</p>
+  </div>
+
   <div class="foot">
     <strong>Reference</strong> — skill folder on GitHub:
     <a href="https://github.com/aksie/ducttape-to-coo/tree/main/.cursor/skills/virtual-coo">virtual-coo/</a>
