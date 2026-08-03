@@ -1,10 +1,10 @@
 # Who decides what (1.4) — decisions by stage
 
-Stage decision tables, a two-layer model (founder circle → team-wide approval list), and open design questions. The published wiki ([First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires)) will condense this into a short actionable page — use this doc to refine overall direction, fill gaps, and agree what *not* to put in 1.4 before the pipeline registers sources and extracts atoms.
+**Status:** **Published wiki** — [First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) · [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue) (synthesized 2026-08-03) · [Growth](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth) (src-064 + src-070 Erik addendum, reviewed 2026-08-03). Scaled remains stub. This doc = design rationale, schools, sources, and template — keep aligned when wiki changes.
 
-**Status:** proposal / pre-pipeline (discovery complete in `wiki-pipeline/entries/strategic-ops/who-decides-what/first-hires/source-discovery.md`).
+**Blog:** [Who Decides When Founders Disagree](../blog/posts/who-decides-when-founders-disagree.md) — published 2026-08-03; first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
 
-**Blog draft (same substance, practitioner voice):** `blog/posts/drafts/who-decides-when-founders-disagree.md` — keep proposal and blog aligned when editing either.
+**Pipeline:** First hires — [src-063](../wiki-pipeline/sources/src-063.md), full Phase 1–4. Growth — [src-070](../wiki-pipeline/sources/src-070.md), atoms 424–525, [growth entry](../wiki-pipeline/entries/strategic-ops/who-decides-what/growth/). Early revenue wiki synthesized from proposal + src-070 early-revenue atoms (no separate pipeline entry yet).
 
 ---
 
@@ -95,6 +95,8 @@ For each decision: **School A** · **School B** · **Middle ground**.
 
 ### Early revenue (11–25) — decision owners per area
 
+**Published:** [1.4 — Early Revenue](../wiki/processes/strategic/1.4--early-revenue.md) (synthesized from this table + src-070 early-revenue atoms, 2026-08-03).
+
 | Decide | School A | School B | Middle |
 |--------|----------|----------|--------|
 | **Structure** | Still founder approval list only | Full RACI | **Named owner per area + escalation thresholds** |
@@ -104,11 +106,27 @@ For each decision: **School A** · **School B** · **Middle ground**.
 
 ---
 
-### Growth / scaled
+### Growth (~50–150) — C-level allegiance + Type 1/2
 
-Point to external references (GitLab DRI, First Round RACI stories). Wiki stays at principles + evolution bullets, not handbook depth.
+**Published:** [1.4 — Growth](../wiki/processes/strategic/1.4--growth.md). Carry-forward section links back to first-hires foundations.
+
+| Theme | In wiki (src-064 + src-070) |
+|-------|----------------------------|
+| **C-level allegiance** | Play for highest team; return out-of-domain debates to domain owner |
+| **Type 1 / Type 2** | Reversible → role-owner; irreversible → integrative objection with reasoned block only |
+| **Close** | Prefer "I've been heard" over harsh disagree-and-commit |
+| **Platform (conditional)** | Multi-sided platforms: consider neutral coordinator ("traffic control") — not universal |
+| **Opposed roles** | CEO/CFO, P vs Q — don't collapse structurally opposed mandates |
+| **Executive hire** | Hand over role day one; "careful onboarding" as warning sign |
+| **Frameworks** | Extract Holacracy principles; full rulebook rollouts often too heavy |
+
+**Schools preserved:** GitLab DRI / First Round RACI as evolution references at scaled — not first-hires prescription.
+
+**Deferred from Erik src-070:** 1.1 planning cadence, 3.2 three-lens hiring → separate cells.
 
 ---
+
+### Scaled (150+)
 
 ## Founder circle — three axes (detail for Phase 2)
 
@@ -529,9 +547,39 @@ You don't need conviction on every route. You need a rule for the fork, consult 
 
 ---
 
-## Review prompts (before pipeline continues)
+## Review prompts — resolved (2026-06 / 2026-08)
 
-Answer inline or in chat; then we register sources and extract atoms.
+| # | Prompt | Resolution |
+|---|--------|------------|
+| 1 | Foundation wiki? | Folded into first-hires + [3.6 foundation](../wiki/processes/people/3.6--foundation.md) for founder sync |
+| 2 | Personal runway in 1.4? | Bullet + cross-ref in first-hires wiki |
+| 3 | €X prescribe? | Leave to teams; template has blank |
+| 4 | Solo founder? | Founder-circle axes skip; team list only — confirm when solo-founder page needed |
+| 5 | Practitioner contribution? | src-063 synthesis + src-070 serial CEO @ growth |
+| 6 | stage_focus first-hires? | ✅ in processes.json |
+| 7 | consult → decide → commit? | ✅ wiki default; Wistia counter-school in schools table |
+| 8 | ABC centerpiece? | ✅ template in this doc + first-hires wiki |
+| 9 | First hire Bucket C? | ✅ unanimous / approval list |
+
+---
+
+## What happens next (1.4 arc — 2026-08)
+
+**Done:** first-hires, early-revenue (synthesized), growth (pipeline + review), blog publish, carry-forward @ growth.
+
+**Remaining (optional):**
+
+1. **1.4 @ scaled** — publish from src-064 stub + pipeline entry when ready
+2. **Erik src-070** — 1.1 @ growth, 3.2 @ growth pipeline addenda
+3. **Carry-forward audit** — other growth wiki cells (see ops-todo)
+4. **Foundation `1.4--foundation.md`** — only if solo/multi-founder pre-hire page warranted
+
+---
+
+## Archive — original review prompts
+
+<details>
+<summary>Original prompts (pre-publish)</summary>
 
 1. **Foundation wiki:** Add a light `1.4--foundation.md` for founder-circle content, or fold into first-hires with a “pre-hire founders” subsection?
 2. **Personal runway in 1.4:** Full subsection at first-hires, or one bullet + cross-ref to 4.1 / 2.1?
@@ -543,9 +591,12 @@ Answer inline or in chat; then we register sources and extract atoms.
 8. **ABC map:** Centerpiece artefact for wiki (one-page template), or fold into prose without A/B/C labels?
 9. **First hire:** Bucket C unanimous, or Bucket B with CEO tie-break?
 
----
+</details>
 
-## What happens next (after direction is approved)
+## Archive — original next steps
+
+<details>
+<summary>Original pipeline plan (pre-publish)</summary>
 
 1. Register sources `src-061`–`src-085` (approx. — Tracks A, B, B-fin, C)
 2. Corpus health check
@@ -554,4 +605,4 @@ Answer inline or in chat; then we register sources and extract atoms.
 5. Phase 3: human review in approval tool
 6. Phase 4: publish `wiki/processes/strategic/1.4--first-hires.md` + `stage_focus:`
 
-**Not yet:** atom registration, approval tool, or wiki publish.
+</details>

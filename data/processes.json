@@ -164,7 +164,7 @@
       "stageFocus": {
         "foundation": "Founders decide everything together. No framework needed - you're small and aligned.",
         "first-hires": "Align founders first (domain owners, founder sync). One visible approval list: hiring, spend above €X, pivots. Everything else — owner consults, decides, and closes.",
-        "early-revenue": "Clear decision owners per area. Simple escalation rules (budget thresholds, customer impact). Founder gives input, not decisions. Common issue: Decisions get re-litigated when founders weren't in the meeting.",
+        "early-revenue": "Name a decision owner per area and write simple escalation rules — founder gives input in meetings, area owner decides, and decisions don't re-open because a founder wasn't there.",
         "growth": "C-level leaders play for the company, not their function — return out-of-domain debates to the domain owner instead of re-litigating them in the executive team.",
         "scaled": "Channel founder intuition through process steps — a shower insight becomes a staged test, not a company-wide pivot by Monday."
       },

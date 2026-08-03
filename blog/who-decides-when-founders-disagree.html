@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Decides When Founders Disagree — Duct Tape to COO</title>
+    <meta name="description" content="Founding teams stall when nobody owns the fork. A lightweight ABC map, consult-then-decide, and a one-page template — drawn from YC, Grove, Ascent, and the teams I actually see.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        :root {
+            --bg:             #0d1117;
+            --surface:        #161b22;
+            --surface-raised: #21262d;
+            --border:         #30363d;
+            --border-bright:  #484f58;
+            --text:           #e6edf3;
+            --text-dim:       #8b949e;
+            --text-muted:     #6e7681;
+            --green:          #3fb950;
+            --blue:           #58a6ff;
+            --orange:         #f0883e;
+            --font:           'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Article layout ───────────────────────────── */
+        .post-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 32px 120px;
+        }
+
+        /* ── Meta block ───────────────────────────────── */
+        .post-meta { margin-bottom: 32px; }
+
+        .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+        .post-tag--green { color: var(--green); border: 1px solid var(--green); }
+        .post-tag--blue  { color: var(--blue);  border: 1px solid var(--blue);  }
+
+        .post-wrap h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .post-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .post-byline { font-size: 0.82rem; color: var(--text-muted); }
+
+        /* ── Body copy ────────────────────────────────── */
+        .post-body {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+
+        .post-body p { margin-bottom: 1.4em; }
+
+        .post-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 2.5em 0 0.75em;
+            padding-top: 0.5em;
+            border-top: 1px solid var(--border);
+        }
+
+        .post-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.8em 0 0.5em;
+        }
+
+        .post-body strong { color: var(--text); font-weight: 600; }
+        .post-body em     { color: var(--text); font-style: italic; }
+
+        .post-body ol,
+        .post-body ul {
+            padding-left: 1.5em;
+            margin-bottom: 1.4em;
+        }
+        .post-body li { margin-bottom: 0.5em; }
+
+        .post-body hr { display: none; }
+
+        /* ── Embedded HTML blocks (blog/html-blocks/) ── */
+        .post-html-block {
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .post-body .post-html-block > :first-child { margin-top: 0; }
+        .post-body .post-html-block > :last-child  { margin-bottom: 0; }
+
+        /* ── Blockquotes → pattern callouts ───────────── */
+        .post-body blockquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 20px;
+            margin: 1.8em 0;
+        }
+
+        .post-body blockquote p {
+            margin-bottom: 0.6em;
+            color: var(--text-dim);
+        }
+        .post-body blockquote p:last-child { margin-bottom: 0; }
+
+        /* ── Tables ───────────────────────────────────── */
+        .post-body table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 1.6em 0 2em;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .post-body th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-bright);
+            white-space: nowrap;
+        }
+
+        .post-body td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-dim);
+        }
+
+        .post-body tr:last-child td { border-bottom: none; }
+        .post-body td strong { color: var(--text); }
+
+        .post-body tr.highlight td {
+            background: rgba(88, 166, 255, 0.06);
+            color: var(--text);
+        }
+        .post-body tr.highlight td strong { color: var(--blue); }
+
+        /* ── CTA block ────────────────────────────────── */
+        .post-cta {
+            margin-top: 3em;
+            padding: 28px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .post-cta p {
+            margin-bottom: 16px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 10px 20px;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--blue); color: #0d1117; }
+        .btn-primary:hover { background: #79bcff; text-decoration: none; }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid var(--border-bright);
+        }
+        .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); text-decoration: none; }
+
+        /* ── Footer ───────────────────────────────────── */
+        .post-footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ── Responsive ───────────────────────────────── */
+        @media (max-width: 640px) {
+            .post-wrap h1 { font-size: 1.7rem; }
+            .post-wrap { padding: 40px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+            <nav class="header-nav">
+                <a href="../diagnostic.html">Diagnostic</a>
+                <a href="../wiki.html">Wiki</a>
+                <a href="../skill-setup.html">Virtual COO</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="post-wrap">
+
+    <div class="post-meta">
+        <span class="post-tag post-tag--orange">Founding team</span>
+        <h1>Who Decides When Founders Disagree</h1>
+        <p class="post-subtitle">You don't need a RACI matrix. You need a rule for the fork in the road — before you're standing on it.</p>
+        <p class="post-byline">June 2026</p>
+    </div>
+
+    <div class="post-body">
+<p>Once you start working together as founders — for real, not just on a side project — you need a way to agree on things. Not on every opinion. On <strong>who gets to call the fork</strong>.</p>
+<p>You will hit moments where one of you thinks: <em>I'm really not convinced this is the best route.</em> Pricing. Hiring. Which customer segment to chase. Whether to take the money. Whether to ship the thing this week or rewrite it again.</p>
+<p>That's normal. What's 'expensive'- time consuming for you, time consumers in how fast you go, energy consuming on the relation - is what happens next: you keep talking about it without <strong>taking the fork</strong>. Another meeting. Another Slack thread. Another "let's sleep on it, I am not convinced." Sometimes that's wisdom. Often it's stall — and stall is worse than a wrong turn you can reverse.</p>
+<p>It also wears on the relationship in small ways. Irritation builds. You start to wonder whether your co-founder will ever actually let something go that you feel is on your plate, or whether you're being overruled without a real decision. Trust doesn't blow up in one fight — it erodes in repeated loops where nothing closes. So the cost isn't just time. Left unhandled, it compounds into friction you'll later blame on "personality" when it was really process ambiguity.</p>
+<p>In the founding teams I see, getting past that moment takes work. And as with many things in ops: <strong>maintenance beats repair</strong>. Agree the rules while you still like each other. Not when you're three weeks into the same argument.</p>
+<hr />
+<h2>What you don't need (yet)</h2>
+<p>At 2–10 people you don't need a RACI matrix. You don't need SPADE memos. You don't need the GitLab DRI handbook. So that's not what we'll talk about here. </p>
+<p>You need:</p>
+<ol>
+<li><strong>Founders aligned with each other</strong> — who owns which domain, what your personal runway allows, a weekly slot to talk about it.</li>
+<li><strong>One visible list</strong> for what still needs all-founder OK — hiring, big spend, pivot.</li>
+<li><strong>A rule for disagreement</strong> — so "I'm not convinced" doesn't mean "we don't move."</li>
+</ol>
+<p>That order matters. Team-facing rules before founder alignment is backwards.</p>
+<hr />
+<h2>The fork: right to decide, duty to consult, then close</h2>
+<p>What I use myself — and I suspect I picked it up from Grove, Apple DRIs, and the Laloux crowd without tracking which — is simpler than the slogan everyone quotes:</p>
+<ol>
+<li><strong>Someone has the right to take the decision</strong> (named upfront, usually the domain owner).</li>
+<li><strong>That same person has the responsibility to get the right input</strong> — actively, not passively. Talk to people affected. Talk to people with expertise. Don't decide in a vacuum and call it leadership.</li>
+</ol>
+<p>Only after that comes the bit people shorten to <strong>disagree and commit</strong>. And honestly, "disagree and commit" is a harsh label for something that shouldn't feel harsh if step 2 was done properly. It's not "shut up and execute." It's: <em>we talked, I was heard, you own the call, I won't block the fork.</em></p>
+<h3>Where this shows up in the literature</h3>
+<p><strong>Advice process</strong> (<a href="https://reinventingorganizationswiki.com/en/theory/decision-making/">Reinventing Organizations wiki</a>, <a href="https://www.dynamisk-netvaerk.dk/wp-content/uploads/2020/08/Reinventing-Organizations-complete-summary-v6-copy.pdf">Laloux summary</a>) is almost exactly the model: anyone can decide, but first they <strong>must</strong> seek advice from everyone meaningfully affected and everyone with relevant expertise. Advice is taken seriously — not a veto. Voice, not vote. The decision-maker still chooses. Laloux calls it a third way between hierarchy and consensus.</p>
+<p><strong>Apple's DRI</strong> (Directly Responsible Individual — <a href="https://medium.com/the-coinbase-blog/coinbase-is-a-product-led-company-d8f03549f498">Coinbase's writeup</a> states it clearly): having a DRI "does not mean that one person decides in a vacuum." One person is <strong>responsible for collecting input</strong> from all relevant sources and making the final call. They're accountable for doing that job, not just for the outcome.</p>
+<p><strong>Andy Grove</strong> (<em>High Output Management</em>, <a href="https://tyastunggal.com/p/high-output-management-by-andy-grove">summarised here</a>) splits the process in the right order: <strong>free discussion → clear decision → full support</strong>. Before you even get there, answer six questions — including <em>who will need to be consulted prior to making the decision?</em> and <em>who will ratify or veto?</em> Grove is often quoted for "disagree and commit," but the book is really about <strong>consult first, decide clearly, then support</strong>. Skipping consultation and jumping to commit is what makes it feel authoritarian.</p>
+<p><strong>Bain RAPID</strong> (<a href="https://www.bain.com/insights/rapid-decision-making/">HBR / Bain</a>, <a href="https://www.bridgespan.org/getmedia/34fd3f75-3067-4162-ba86-5707a365aee0/RAPIDDecisionMaking.pdf">Bridgespan PDF</a>) separates <strong>Input</strong> (expertise, no veto) from <strong>Decide</strong> (single point of accountability). The "I" must be consulted; the "D" makes the call. Same shape.</p>
+<p><strong>SPADE</strong> (<a href="https://review.firstround.com/square-defangs-difficult-decisions-with-this-system-heres-how/">Rajaram / First Round</a>) is heavier than you need at founder scale, but the sequence is right: consult → decide → <strong>commitment meeting</strong> (pledge support out loud). Rajaram's line I keep coming back to: <em>"What is important isn't that everyone agrees, it's that everyone is listened to. And then the right person makes a decision."</em></p>
+<h3>What I say at the end (after input, not instead of it)</h3>
+<p>At founder scale the close is often just:</p>
+<p><em>"Your call. I've said my piece. I'm not convinced, but I don't need to be. We go with your view until [date]. I won't relitigate in Slack."</em></p>
+<p>That's the commit step — and it only works if the owner did the consult step. If they didn't, you're not disagreeing and committing. You're being overruled.</p>
+<p>Frances Frei adds a useful middle beat: <strong>disagree → understand → commit</strong>. The bar isn't agreement. It's "reasonable people could disagree, and we've both been heard."</p>
+<p>Bezos's <a href="https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders">2016 letter</a> version — <em>"will you gamble with me on it?"</em> — assumes the debate already happened. It's a closing ask, not a substitute for one. </p>
+<p>One counter-school: <a href="https://wistia.com/learn/culture/founder-partnerships-that-last">Wistia's founders</a> don't want to commit to things they don't believe in; they keep talking until there's real buy-in. Fair for some two-person creative partnerships. In most early startups I see, the failure mode is the opposite — endless re-debate because nobody was ever named as decider <em>and</em> nobody chased input properly.</p>
+<hr />
+<h2>ABC buckets — the bit that actually sticks</h2>
+<p>The most useful thing I found digging through founder-agreement stuff isn't a legal contract. It's a <strong>one-page decision map</strong> with three buckets. <a href="https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/">Ascent Incubator</a> names them cleanly; <a href="https://ramp.com/blog/what-is-in-a-startup-founder-agreement">Ramp's founders-agreement writeup</a> and <a href="https://mercury.com/blog/cofounder-prenup-money-questions">Mercury's cofounder prenup questions</a> say the same thing with different words.</p>
+<table>
+<thead>
+<tr>
+<th>Bucket</th>
+<th>Rule</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A — Domain owner decides</strong></td>
+<td>One founder has final call in their area; partner commits</td>
+<td>Feature order this cycle; vendor under €Y; how you ship</td>
+</tr>
+<tr>
+<td><strong>B — Discuss, then break ties</strong></td>
+<td>Both care; deadlock is unacceptable. At 50/50 you need a <strong>named tie-break</strong> (usually CEO)</td>
+<td>Pricing test; spend between €Y and €X; cross-domain prioritisation</td>
+</tr>
+<tr>
+<td><strong>C — Unanimous</strong></td>
+<td>No override</td>
+<td>Equity, fundraising, add/remove founder, sell company, <strong>hire approval</strong>, spend above €X, pivot</td>
+</tr>
+</tbody>
+</table>
+<p>When you're in an argument, you don't renegotiate the process. You look up the bucket.</p>
+<p><strong>Bucket A</strong> is the advice-process zone: owner decides, owner consults, partner commits once heard. Not "decide alone," not "consensus forever."</p>
+<p><strong>Bucket C</strong> is where disagree-and-commit does <em>not</em> apply. If you truly deadlock on fundraising or a pivot, you need a different conversation — mediator, advisor, or "maybe we shouldn't be doing this together." <a href="https://www.ycombinator.com/blog/10-questions-to-discuss-with-a-potential-co-founder/">YC's co-founder questionnaire</a> puts that in question 10: decide what happens when you're stuck, <em>before</em> you're stuck.</p>
+<p><strong>Bucket B</strong> is the messy middle. Ascent puts "pricing tests, feature prioritisation, small spend limits" here. With two founders, "majority vote" is a joke. Pick a tie-break. <a href="https://blog.eladgil.com/p/unequal-cofounders">Elad Gil</a> is blunt: "equal but we each own our area" breaks the moment product and GTM overlap. Someone has to be able to decide across domains.</p>
+<hr />
+<h2>What the sources agree on (and where they differ)</h2>
+<p>I went through a pile of this while building the <a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires">Who Decides What</a> wiki entry. Short version:</p>
+<p><strong>They agree:</strong></p>
+<ul>
+<li>One person owns the decision; that person must <strong>actively gather input</strong> — not decide alone. (<a href="https://reinventingorganizationswiki.com/en/theory/decision-making/">Advice process</a>, <a href="https://medium.com/the-coinbase-blog/coinbase-is-a-product-led-company-d8f03549f498">Coinbase on DRIs</a>, <a href="https://tyastunggal.com/p/high-output-management-by-andy-grove">Grove's six questions</a>.)</li>
+<li>Consensus for everything is slow and vague. Someone has to own the outcome. (<a href="https://review.firstround.com/square-defangs-difficult-decisions-with-this-system-heres-how/">Rajaram</a>: "consensus means no ownership.")</li>
+<li>Decide <strong>process</strong> before the fight. CEO tie-break, domain owner, or advisor — pick one. (<a href="https://www.mattmunson.me/10-questions-every-co-founder-team-should-discuss/">Matt Munson's co-founder questions</a>, <a href="https://ramp.com/blog/what-is-in-a-startup-founder-agreement">Ramp</a>.)</li>
+<li>Domain owners for day-to-day; unanimity for existential. (Ascent, Ramp, Mercury, <a href="https://equitymatrix.io/blog/co-founder-agreement-template">Equity Matrix template</a>.)</li>
+<li>Personal runway affects which forks you can afford. Shortest runway sets company constraint — not weakness, just math. (<a href="https://www.ycombinator.com/blog/10-questions-to-discuss-with-a-potential-co-founder/">YC Q7</a>, <a href="https://hbr.org/2008/02/the-founders-dilemma">Wasserman</a>.)</li>
+<li>Revisit the map quarterly. Companies change. (<a href="https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/">Ascent</a> / HBS founders-agreements framing.)</li>
+</ul>
+<p><strong>They differ:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Camp</th>
+<th>Says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Consult → decide → commit</strong> (Advice process, DRI, Grove, RAPID, SPADE)</td>
+<td>Input duty first; commit is the close, not the whole model</td>
+</tr>
+<tr>
+<td><strong>Disagree and commit</strong> (Bezos soundbite)</td>
+<td>Closing step after debate — harsh label if consultation was skipped</td>
+</tr>
+<tr>
+<td><strong>Passion partnership</strong> (Wistia)</td>
+<td>Don't commit to what you don't believe. Find alignment.</td>
+</tr>
+<tr>
+<td><strong>Unequal clarity</strong> (Elad Gil)</td>
+<td>CEO must be able to override; "we decide everything together" is a time bomb.</td>
+</tr>
+<tr>
+<td><strong>Lightweight buckets</strong> (Ascent, Ramp)</td>
+<td>Write A/B/C once; don't over-lawyer at MVP stage.</td>
+</tr>
+</tbody>
+</table>
+<p>My default for the teams I advise: <strong>buckets + consult/decide/commit in A and B</strong>, real unanimity in C, quarterly refresh. Not because it's theoretically perfect — because repair is miserable.</p>
+<hr />
+<h2>Before the buckets: three founder conversations</h2>
+<p>Buckets sit on top of three things founders often skip:</p>
+<ol>
+<li><strong>Skill + passion map</strong> — <a href="https://review.firstround.com/the-founder-dating-playbook-heres-the-process-i-used-to-find-my-co-founder/">Ada Lin's Areas of Responsibility exercise</a>: rate skill and passion per domain; cluster ownership. Passion breaks ties.</li>
+<li><strong>Personal runway</strong> — months without salary, partner income, minimum you need to stay full-time. Shortest runway wins as a constraint on strategy.</li>
+<li><strong>Founder sync</strong> — <a href="https://scaleyourself.com/the-user-manual/the-founder-sync">Amy Buechler's template</a>: weekly 60–90 min, founders only. Roles and money on the agenda, not in the hallway.</li>
+</ol>
+<p>If you skip these, your ABC map is guesswork.</p>
+<hr />
+<h2>Template — copy and fill in</h2>
+<p>One page. Google Doc is fine. Review every quarter.</p>
+<h3>Domain owners (feeds Bucket A)</h3>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Owner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Product / roadmap</td>
+<td></td>
+</tr>
+<tr>
+<td>Engineering</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales / GTM</td>
+<td></td>
+</tr>
+<tr>
+<td>Ops / finance</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Bucket B — discuss, then tie-break</h3>
+<p>*Tie-break @ 2 founders (usually CEO): <strong><em>_</em></strong><strong><em>_</em></strong>_</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spend from €<strong><em>_ to €</em></strong>_</td>
+<td>Between pocket money and Bucket C</td>
+</tr>
+<tr>
+<td>Pricing / packaging tests</td>
+<td></td>
+</tr>
+<tr>
+<td>Cross-domain prioritisation</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>Bucket C — unanimous (show this bit to the team)</h3>
+<ul>
+<li>[ ] Hiring approved (offer band agreed; contract from template)</li>
+<li>[ ] Spend above €____</li>
+<li>[ ] Fundraising / external capital</li>
+<li>[ ] Equity changes / new founder</li>
+<li>[ ] Pivot or sell / material strategy change</li>
+</ul>
+<h3>When we disagree in Bucket A</h3>
+<p><strong>Owner:</strong> named decider + duty to consult affected founder(s) and relevant expertise before calling it.</p>
+<p><strong>Non-owner:</strong> after being heard, says out loud: <em>I've said my piece. Your call. I back it until [date / milestone].</em></p>
+<p><strong>Grove checklist (before the fork):</strong> What decision? By when? Who decides? Who must be consulted? Who can veto? Who needs to know?</p>
+<h3>Rituals</h3>
+<ul>
+<li>Founder sync: weekly, ___ min</li>
+<li>ABC map review: quarterly, 30 min</li>
+<li>Decisions that matter → written down within 48h (see <a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.3--first-hires">communication norms</a>)</li>
+</ul>
+<hr />
+<h2>Maintenance, not repair</h2>
+<p>The pattern I see in teams that stall:</p>
+<ul>
+<li>Roles assumed from titles, never discussed.</li>
+<li>"We'll figure out the process when it happens."</li>
+<li>The same fork argued for three weeks while a hire, a customer, or a runway clock waits.</li>
+<li>The awkward 'I don't think we need consensus on this' is not said, but it is felt. </li>
+</ul>
+<p>The pattern in teams that move:</p>
+<ul>
+<li>One awkward evening filling in the template.</li>
+<li>A weekly founder slot where disagreement is allowed.</li>
+<li>A sentence at the end: <em>who owns this, and when do we revisit.</em></li>
+</ul>
+<p>You don't need conviction on every route. You need a rule for the fork — and the discipline to take it.</p>
+<hr />
+<p><em>Full decision map by stage (schools, sources, edge cases) lives in the <a href="https://github.com/aksie/ducttape-to-coo/blob/main/docs/proposals/who-decides-what-summary-and-direction.md">proposal doc</a> behind the wiki. Published wiki: <a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires">First Hires</a> · <a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue">Early Revenue</a> · <a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth">Growth</a>. If you fill in the template and want to sanity-check it against your stage, the diagnostic's <a href="https://aksie.github.io/ducttape-to-coo/diagnostic.html">Who Decides What</a> section is the place to start.</em></p>
+    </div>
+
+<div class="post-cta">
+    <p>The diagnostic has a whole process area for decision rights — where it sits at your stage, and what to fix first.</p>
+    <div class="cta-links">
+        <a class="btn btn-primary"  href="../diagnostic.html">Run the diagnostic</a>
+        <a class="btn btn-secondary" href="../wiki.html#1.4--first-hires">Wiki: Who Decides What →</a>
+    </div>
+</div>
+
+<div class="post-footer"><p>Part of an ongoing series on the Duct Tape to COO operational maturity framework.</p></div>
+
+</div>
+
+</body>
+</html>
