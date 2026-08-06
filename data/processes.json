@@ -52,8 +52,8 @@
       "sensitivity": "none",
       "description": "How the team stays aligned on goals, hears about progress, and gives input on direction. Starts with simple weekly syncs, evolves into structured all-hands and feedback loops.",
       "stageFocus": {
-        "foundation": "Weekly standup (15 min). Everyone shares: what I did, what I'm doing, blockers. Quick verbal check on priorities.",
-        "first-hires": "Tell the strategy story often enough that each person in a small team shares one mental model — osmosis still works here.",
+        "foundation": "Put the quarter's 3–5 priorities where nobody can miss them, and run a 15-minute weekly check that work still serves them — with an explicit call when priorities change.",
+        "first-hires": "Tell the strategy story often enough that the team shares one mental model — and keep quarterly goals and current priorities in that same conversation, not only in a planning doc.",
         "early-revenue": "Monthly all-hands with progress updates and Q&A. Quarterly planning sessions with team input. Regular retros or feedback sessions on what's working.",
         "growth": "After planning cycles, pass strategy and priorities back down — on the same schedule you report up. Assume most people have heard the story once, not once a week.",
         "scaled": "Formal all-hands cadence with pre-submitted questions. Town halls by department. Annual surveys plus ongoing feedback channels. Strategic updates communicated clearly."
@@ -325,7 +325,7 @@
       },
       "stageFocus": {
         "foundation": "Not applicable yet — no customers.",
-        "first-hires": "Invoice your first customers as soon as the deal is signed. Track payment status in a spreadsheet. Follow up personally if they're late — it's normal to chase at this stage. Build relations with finance ops people at customers so cash doesn't get stuck for admin reasons.",
+        "first-hires": "Invoice as soon as the deal is signed, track status in a spreadsheet, chase late payers personally, and know the finance ops person at each customer.",
         "early-revenue": "Standardise your invoicing: consistent templates, clear payment terms (30 days net is common), automated reminders. Know your average days to collect and watch it weekly.",
         "growth": "AR should be a structured process: invoice generation on milestone/trigger, automated reminders, escalation for overdue accounts. Revenue recognition should match your contract structure.",
         "scaled": "Full AR function: automated invoice-to-cash workflow, collections process, revenue recognition policy, integration with your financial systems. DSO (days sales outstanding) tracked and managed."
