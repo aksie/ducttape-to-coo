@@ -3,10 +3,11 @@ process: legal-and-other-ops
 subprocess: privacy-ip
 process_id: "4.6"
 phase: first-hires
-last_updated: 2026-06-16
-claim_count: 2
-synthesis_mode: practitioner_to_pipeline
+last_updated: 2026-08-07
+claim_count: 9
+synthesis_mode: wiki_first_backfill
 primary_source: src-061
+note: "Actions and warning signs added 2026-08-07 so wiki passes content-score; decomposed from atom-289 / atom-292."
 ---
 
 # Privacy & IP — First Hires (2–10 people)
@@ -20,20 +21,50 @@ primary_source: src-061
   <!-- sources: src-061 (practitioner, Trailhead legal) -->
 
 <!-- claim-id: c-002 -->
-- **You know what personal data you process, your policies are reviewed, and processors are under agreement.** You can say whether you handle sensitive data (health, financial, biometric); your privacy and cookie policies are up to date, public and legally reviewed; and you have a data processing agreement with every third party that processes personal data on your behalf.
+- **You know what personal data you process and every processor is under agreement.** Not a vague "we take privacy seriously" — you can name the data, the lawful basis, and the vendors that touch it.
   <!-- sources: src-061 (practitioner, Trailhead legal) -->
 
 ## What you actually need to do
 
-<!-- No standalone action atoms at this phase in this batch. -->
+<!-- claim-id: c-003 -->
+1. **Write down what IP actually protects your edge** — code, brand, trade secret, invention — in one paragraph the founders agree on. That decides how much trademark, assignment, and protection work is worth doing now vs later.
+   <!-- sources: src-061 (practitioner, Trailhead legal) -->
+
+<!-- claim-id: c-004 -->
+2. **List every type of personal data you collect** — names, emails, usage logs, health/financial/biometric if any — plus where it is stored and your lawful basis (consent, contract, legitimate interest, etc.).
+   <!-- sources: src-061 (practitioner, Trailhead legal) -->
+
+<!-- claim-id: c-005 -->
+3. **Publish privacy and cookie policies that a lawyer has reviewed** — linked from your site or app, updated when you add a new data use or vendor.
+   <!-- sources: src-061 (practitioner, Trailhead legal) -->
+
+<!-- claim-id: c-006 -->
+4. **Sign a data processing agreement (DPA) with every vendor that processes personal data for you** — hosting, email, analytics, payroll, support tools. If they cannot offer one, treat that as a blocker before you scale usage.
+   <!-- sources: src-061 (practitioner, Trailhead legal) -->
 
 ## Warning signs you're behind
 
-<!-- Privacy warning signs (copied terms, no access controls) land at growth — see privacy-ip/growth. -->
+### Output quality
+
+<!-- claim-id: c-007 -->
+- **You run on Stripe, Mailchimp, or a cloud host but have no DPA on file** — a common due-diligence finding once you have customers or investors.
+  <!-- sources: src-061 (practitioner, Trailhead legal) -->
+
+### Process entry
+
+<!-- claim-id: c-008 -->
+- **Nobody can answer whether you process sensitive data** (health, financial, biometric) — you need that answer before you collect more or pitch enterprise buyers.
+  <!-- sources: src-061 (practitioner, Trailhead legal) -->
+
+### Founder time
+
+<!-- claim-id: c-009 -->
+- **Your privacy policy is a copied template nobody has read since launch** — it will not survive a professional investor's first pass.
+  <!-- sources: src-061 (practitioner, Trailhead legal) -->
 
 ## How this evolves next
 
-<!-- At growth: register trademarks, decide software IP structure, add access controls + awareness training, and AI-use rules — see privacy-ip/growth. -->
+At growth: register trademarks, decide software IP structure, add access controls + awareness training, and AI-use rules — see privacy-ip/growth.
 
 ## Tools & resources
 
