@@ -638,6 +638,14 @@ const STAGE_PORTAL_FILES = {
   'scaled':        'wiki/stages/scaled.md',
 };
 
+// Cross-cutting pages that are not {id}--{stage} process cells. Published wiki
+// pages link to them by filename, so they need a route of their own.
+const STANDALONE_FILE_MAP = {
+  'director-and-shareholder-decisions': 'wiki/processes/legal/director-and-shareholder-decisions.md',
+  'first-legal-hire':                   'wiki/processes/legal/first-legal-hire.md',
+  'vc-fund-return-benchmarks':          'wiki/reference/vc-fund-return-benchmarks.md',
+};
+
 const PROCESS_FILE_MAP = {};  // populated in init: "1.1--first-hires" → "wiki/processes/strategic/1.1--first-hires.md"
 
 const CAT_TO_FOLDER = {
@@ -988,8 +996,8 @@ async function loadContent(key) {
     return;
   }
 
-  // Process cell
-  const file = PROCESS_FILE_MAP[key];
+  // Process cell, or a cross-cutting companion page
+  const file = PROCESS_FILE_MAP[key] || STANDALONE_FILE_MAP[key];
   if (!file) {
     main.innerHTML = `<div class="wiki-placeholder"><p>Page not found: ${key}</p></div>`;
     return;
@@ -1141,6 +1149,10 @@ function buildBreadcrumb(key, fm) {
     if (process) {
       parts.push(`<span class="sep">/</span>`);
       parts.push(`<span>${process.title}</span>`);
+    } else if (fm.title) {
+      // Cross-cutting companion page — no process/stage to anchor the trail to
+      parts.push(`<span class="sep">/</span>`);
+      parts.push(`<span>${fm.title}</span>`);
     }
   }
   return `<div class="breadcrumb">${parts.join(' ')}</div>`;
