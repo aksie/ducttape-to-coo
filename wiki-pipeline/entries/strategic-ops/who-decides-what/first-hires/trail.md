@@ -3,7 +3,7 @@ entry: strategic-ops/who-decides-what/first-hires
 process_id: "1.4"
 phase: first-hires
 primary_source: src-063
-last_updated: 2026-06-16
+last_updated: 2026-08-10
 ---
 
 # Trail — Who Decides What / First hires (1.4)
@@ -110,6 +110,59 @@ last_updated: 2026-06-16
 - Section: tools
 - Supporting atoms: atom-306
 - Primary source: src-063, Track A/B
+
+---
+
+## src-070 addendum (serial CEO practitioner interview)
+
+**Batch note:** Mode B addendum — 6 new claims (c-019–c-024). Atoms 421–423 are src-065 financial-ops tool resources, not in scope. atom-425 and atom-426 used as why-source only or skipped (growth-stage).
+
+### c-019: One-room decision culture; invisible coordination
+- Section: what_good_looks_like
+- Supporting atoms: atom-427, atom-429
+- Why-source: atom-429 (coordination invisible until teams split)
+- Synthesis notes: Multi-sided platform one-table framing from practitioner; complements c-001 domain ownership (founder alignment) without duplicating c-003 consult/decider mechanics
+
+### c-020: Accountability requires authority
+- Section: what_good_looks_like
+- Supporting atoms: atom-424
+- Why-source: atom-424 (root failure when responsibility and decision rights split)
+- Synthesis notes: Standing principle from src-070 spine; not explicit in src-063 draft — c-002 implies owner-decides but does not state the pairing principle
+
+### c-021: Ambiguity-tolerant hires keep one-room speed
+- Section: what_good_looks_like
+- Supporting atoms: atom-428, atom-431
+- Why-source: atom-428 (premature structure kills one-room speed)
+- Synthesis notes: Target-state framing; hiring action detail in c-022
+
+### c-022: Don't over-formalise; hire for ambiguity
+- Section: what_to_do
+- Supporting atoms: atom-430, atom-431
+- Why-source: atom-430 (premature process is the failure mode)
+- Synthesis notes: Merged two action atoms to stay within 7-item section cap (section was at 6)
+
+### c-023: Premature RACI / holacracy / methodology theatre
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-432
+- Why-source: atom-425 (principles useful, full systems become theatre)
+- Synthesis notes: Extends c-013 process-entry warnings with practitioner anti-theatre angle; distinct from c-016 evolution (which names when to add formal RACI)
+
+### c-024: Outgrow one room → 1.4 @ growth
+- Section: evolution
+- Supporting atoms: atom-433
+- Why-source: atom-433 (invisible traffic control vanishes when teams split)
+- Synthesis notes: Practitioner inflection hook; complements c-016 (early-revenue area owners) — c-016 is next-stage mechanics, c-024 is the trigger signal pointing to growth-stage traffic control
+
+## Dropped atoms (src-070 batch)
+
+| Atom | Reason |
+|---|---|
+| atom-421 | Wrong source (src-065 financial-ops tool); not 1.4 first-hires |
+| atom-422 | Wrong source (src-065 financial-ops tool); not 1.4 first-hires |
+| atom-423 | Wrong source (src-065 financial-ops tool); not 1.4 first-hires |
+| atom-425 | Why-only; incorporated as explanation in c-023, not standalone claim |
+| atom-426 | Growth-stage atom (missions not titles); belongs in 1.4 @ growth addendum |
 
 ## Dropped from this draft (by design)
 

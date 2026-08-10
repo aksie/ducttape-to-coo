@@ -3,10 +3,11 @@ process: strategic-ops
 subprocess: who-decides-what
 process_id: "1.4"
 phase: first-hires
-last_updated: 2026-06-16
-claim_count: 16
+last_updated: 2026-08-10
+claim_count: 24
 synthesis_mode: thin_wiki
 primary_source: src-063
+batch_addendum: src-070
 ---
 
 # Who Decides What — First Hires (2–10 people)
@@ -30,6 +31,18 @@ primary_source: src-063
 <!-- claim-id: c-004 -->
 - **Disagreements use consult → decide → commit, not endless re-debate.** For day-to-day calls (Bucket A in your ABC map), the domain owner consults, states the decision clearly, and the non-owner commits aloud with a reopen trigger — *"I've said my piece. Your call. I back it until [date]."*
   <!-- sources: src-063 (synthesis), blog draft who-decides-when-founders-disagree -->
+
+<!-- claim-id: c-019 -->
+- **The team decides in one room — cross-functional trade-offs happen in real time, not through a matrix.** Founders or a small handful sit at one table; on a multi-sided business, content, monetisation, and marketing micro-trade-offs happen constantly because the same people hold all sides. Coordination stays invisible — nobody notices a distinct traffic-control role yet.
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
+
+<!-- claim-id: c-020 -->
+- **Accountability and authority stay paired — whoever owns an outcome can decide on it.** If someone is responsible but cannot decide, teams wait for approval and founders re-enter decisions. The failure looks like "the system doesn't work" when the real issue is decision rights, not org charts.
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
+
+<!-- claim-id: c-021 -->
+- **The culture works because hires tolerate ambiguity.** Self-starters who consult, decide, and move without a written RACI row keep one-room speed; process-dependent hires stall it. Speed comes from talking, not documenting — at this size that is a feature, not a gap.
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
 
 ## What you actually need to do
 
@@ -57,6 +70,10 @@ primary_source: src-063
 6. **Codify decisions that matter within ~48 hours** per [1.3 Communication Norms](../strategic/1.3--first-hires.md) — chat announces, wiki/doc/ticket is authoritative. Decision rights and communication norms fail together when everything stays oral.
    <!-- sources: src-063 (synthesis), 1.3 first-hires -->
 
+<!-- claim-id: c-022 -->
+7. **Don't over-formalise yet — and hire people who operate when things are vague.** At this size there is nothing structural to fix; premature RACI, holacracy, or heavy project methodology adds friction without payoff. Screen for self-starters who can act inside loose boundaries — not people who stall until process is written down.
+   <!-- sources: src-070 (serial CEO practitioner interview) -->
+
 ## Warning signs you're behind
 
 ### Founder / key-person time
@@ -79,6 +96,10 @@ primary_source: src-063
 - **Roles were assumed from titles and never discussed** — or personal runway was never spoken aloud, so one founder stops or freelances after a few months and the other reads it as lack of commitment.
   <!-- sources: src-063 (synthesis), Track B warning signs -->
 
+<!-- claim-id: c-023 -->
+- **Premature RACI, holacracy, or project methodology appears before the one-room model breaks.** Founders confuse process activity with alignment; rule-keeping replaces talking. Principles from those frameworks can help later — full systems become theatre for most of the team.
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
+
 ### Output quality
 
 <!-- claim-id: c-015 -->
@@ -90,6 +111,10 @@ primary_source: src-063
 <!-- claim-id: c-016 -->
 - **At Early Revenue, name a decision owner per area and add escalation thresholds.** Founder gives input in meetings; the area owner decides — decisions should not re-open because a founder wasn't in the room. SPADE memos and formal RACI wait until growth/scaled or repeated cross-team conflict at ~15–25 people.
   <!-- sources: src-063 (synthesis), HSG seed article, reStruggle -->
+
+<!-- claim-id: c-024 -->
+- **The inflection is when it no longer fits in one room.** The coordinating function that was invisible vanishes as teams split — you only notice once cross-functional trade-offs need someone above the functions. That is when to evolve toward [1.4 — Growth](../strategic/1.4--growth.md) (named deciders, traffic-control role).
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
 
 ## Tools & resources
 

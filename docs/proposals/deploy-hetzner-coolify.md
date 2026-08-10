@@ -292,3 +292,53 @@ Then tell Coolify to use **Build Pack: Dockerfile**. This puts an nginx in front
 
 ### Want to use a Dockerfile approach instead
 Coolify also supports **GitHub Actions** or **push-to-deploy via webhook** if you prefer more control. See [Coolify docs](https://coolify.io/docs).
+
+---
+
+## Two live URLs (production vs mirror)
+
+| URL | Role | How it updates |
+|-----|------|----------------|
+| **`https://www.ducttape-to-coo.com`** | **Production** — canonical site | Coolify auto-deploy on `git push` to `main` |
+| **`https://aksie.github.io/ducttape-to-coo/`** | GitHub Pages mirror | GitHub-managed `pages-build-deployment` workflow |
+
+Use **`.com`** for anything user-facing. The github.io URL still appears in older blog links and GitHub's default project page — keep Pages working, but don't treat it as primary.
+
+---
+
+## GitHub Pages troubleshooting
+
+GitHub Pages uses a **managed workflow** (`pages-build-deployment`) — you don't control its YAML. Failures are usually a **deploy queue hang**, not a repo build error.
+
+### Symptoms
+
+- Actions shows **Build** succeeded (~7s) but **Deploy** sits in `deployment_queued` until timeout (~10 min)
+- Repo **Settings → Pages** shows status **Errored** (API: `"status": "errored"`)
+- An old workflow run stays **`queued` for hours or days**, blocking newer deploys
+- `punycode` deprecation warnings in logs — **harmless**, ignore them
+
+### Fix (in order)
+
+1. **Cancel stuck runs** — [Actions → pages-build-deployment](https://github.com/aksie/ducttape-to-coo/actions/workflows/pages-build-deployment). Cancel anything in **`queued`** longer than ~15 minutes (especially reruns of failed deploys).
+
+2. **Trigger a fresh deploy** — push to `main` (even an empty commit), or re-run the latest **successful** workflow from the Actions tab.
+
+3. **Verify Pages settings** — **Settings → Pages**: source = **`main`**, folder = **`/` (root)**, status = **Built**.
+
+4. **Confirm live content** — fetch a recently changed file, e.g.:
+   ```bash
+   curl -sL https://aksie.github.io/ducttape-to-coo/wiki/processes/legal/4.5--early-revenue.md | head
+   ```
+
+5. **If it keeps failing** — toggle Pages off/on in Settings, or open a GitHub Support ticket (platform-side queue issue). Your **Coolify `.com` deploy is unaffected**.
+
+### Check status from CLI
+
+```bash
+gh api repos/aksie/ducttape-to-coo/pages --jq '{status,build_type,html_url}'
+gh run list --repo aksie/ducttape-to-coo --workflow=pages-build-deployment --limit 5
+```
+
+### When you can ignore it
+
+If **`www.ducttape-to-coo.com`** has the latest content (Coolify deploy succeeded), a stale github.io mirror only affects old links — fix Pages when you have time, not as a production incident.

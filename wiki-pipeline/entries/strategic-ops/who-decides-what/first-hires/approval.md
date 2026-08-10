@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/first-hires
-last_updated: 2026-06-24 17:14
+last_updated: 2026-08-10 12:00
 ---
 
 ### c-001
@@ -149,4 +149,53 @@ A SPADE memo is a structured decision-making document. It uses the SPADE framewo
 - Reviewer notes: ""
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-03 10:27
+- Edited claim text: null
+
+### c-019
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:06
+- Edited claim text: null
+
+### c-020
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:06
+- Edited claim text: null
+
+### c-021
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:06
+- Edited claim text: null
+
+### c-022
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:07
+- Edited claim text: null
+
+### c-023
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:07
+- Edited claim text: - **Premature RACI, or project methodology appears before the one-room model breaks.** Founders confuse process activity with alignment; rule-keeping replaces talking. Principles from those frameworks can help later.
+  <!-- sources: src-070 (serial CEO practitioner interview) -->
+
+### c-024
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-08-10 12:08
 - Edited claim text: null
