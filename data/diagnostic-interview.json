@@ -1,0 +1,14 @@
+{
+  "categoryPrefaces": {
+    "strategic": [
+      "We'll go through company-wide first — communication and communicating of plans follow after that."
+    ],
+    "people": [
+      "We'll go through {count} people processes — HR admin, hiring, onboarding, etc.",
+      "We will first start with pure HR admin basics — contracts, payroll, filing — not yet onboarding, hiring; those questions follow after."
+    ],
+    "revenue": [
+      "We'll go through {count} revenue and customer processes — sales ops, customer success, and GTM. Score headline reliability first."
+    ]
+  }
+}

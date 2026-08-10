@@ -703,6 +703,17 @@ h1 {
     color: var(--text-dim);
 }
 
+.process-category-preface {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0 0 6px;
+}
+
+.process-category-preface:last-of-type {
+    margin-bottom: 14px;
+}
+
 /* ─── Individual Process Card ─────────────────────── */
 .process {
     background: var(--bg);

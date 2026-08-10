@@ -1,6 +1,7 @@
 // Main application logic
 let processesData = null;
 let stagesData = null;
+let interviewGuide = null;
 let currentStage = 'first-hires'; // Default
 let userSelections = {
     employees: '3-5',
@@ -13,13 +14,17 @@ let responses = {};
 async function init() {
     try {
         // Load data
-        const [processesResponse, stagesResponse] = await Promise.all([
+        const [processesResponse, stagesResponse, interviewResponse] = await Promise.all([
             fetch('data/processes.json'),
-            fetch('data/stages.json')
+            fetch('data/stages.json'),
+            fetch('data/diagnostic-interview.json')
         ]);
         
         processesData = await processesResponse.json();
         stagesData = await stagesResponse.json();
+        interviewGuide = interviewResponse.ok
+            ? await interviewResponse.json()
+            : { categoryPrefaces: {} };
         
         // Load saved data
         loadFromLocalStorage();
@@ -447,6 +452,11 @@ function createProcessSection(title, processes, priority, collapsed = false) {
     };
 
     let lastCategory = null;
+    const categoryCounts = {};
+    processes.forEach(p => {
+        categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+    });
+
     processes.forEach(process => {
         const cat = categoryLabels[process.category] || process.category;
         if (cat !== lastCategory) {
@@ -454,6 +464,8 @@ function createProcessSection(title, processes, priority, collapsed = false) {
             catHeader.className = 'process-category-header';
             catHeader.textContent = cat;
             content.appendChild(catHeader);
+
+            appendCategoryPrefaces(content, process.category, categoryCounts[process.category] || 0);
 
             if (process.category === 'legal-and-other-ops') {
                 const attribution = document.createElement('p');
@@ -472,6 +484,18 @@ function createProcessSection(title, processes, priority, collapsed = false) {
     section.appendChild(content);
     
     return section;
+}
+
+function appendCategoryPrefaces(container, categoryKey, count) {
+    const lines = interviewGuide?.categoryPrefaces?.[categoryKey];
+    if (!lines || !lines.length) return;
+
+    lines.forEach(line => {
+        const preface = document.createElement('p');
+        preface.className = 'process-category-preface';
+        preface.textContent = line.replace(/\{count\}/g, String(count));
+        container.appendChild(preface);
+    });
 }
 
 // Create individual process element
