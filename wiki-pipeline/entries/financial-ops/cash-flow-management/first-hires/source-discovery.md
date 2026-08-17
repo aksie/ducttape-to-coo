@@ -4,9 +4,9 @@ process_id: "2.1"
 process_name: Cash Flow Management
 phase: first-hires
 phase_description: First Hires — 2 to 10 people
-last_updated: 2026-06-24
+last_updated: 2026-08-10
 step: 1
-status: discovery_complete
+status: extraction_complete
 ---
 
 # Source discovery — 2.1 Cash Flow Management @ First Hires
@@ -94,14 +94,22 @@ status: discovery_complete
 
 ---
 
-## Sources to register next (Step 3 file creation)
+## Phase 1 extraction (2026-08-10)
 
-| New ID | URL | Notes |
-|--------|-----|-------|
-| `src-065` | Medium dynamic hiring plan | Milestone-linked hires |
-| `src-066` | under30ceo 4 numbers before hiring | Runway-after-hire table |
-| `src-067` | First Round Hayes cash management | Zero-revenue plan, debt exclusion |
-| `src-068` | HN item?id=33334062 | Bad hire runway cost |
-| `src-069` | HN item?id=32616270 | Share runway with team |
-| `src-070` | glencoyne trigger-based scenario planning | Runway tier → pre-approved actions |
-| Reuse | `src-005`, `src-002`, `src-007` | Extend atom set, new source file not needed |
+| Source | Atoms | Notes |
+|--------|-------|-------|
+| `src-065` | `atom-537`–`543`, `559` | 2.1 cash split from practitioner contribution (2.2 atoms remain `393`–`423`) |
+| `src-067` | `atom-544`–`548` | under30ceo hire math / true burn |
+| `src-068` | `atom-549`–`552` | Hayes cash plan — triangulates `atom-411` debt exclusion |
+| `src-072` | `atom-553`, `554` | HN bad-hire runway cost (`item?id=33334062`) |
+| `src-073` | `atom-555`, `556` | HN share runway with team (`item?id=32616270`) |
+| `src-005` | `atom-557`, `558` | Extended for first-hires weekly cadence + burn accuracy |
+| Reuse (no re-extract) | `atom-411`, `414`, `422` | Debt in runway, hire cash Q, accountant/payroll |
+
+**Corpus health:** `wiki-pipeline/corpus_health-financial-ops-first-hires-cash-flow-management.md`
+
+**Deferred to 2.2:** `src-066` (milestone-linked hiring — financial planning triggers)
+
+**Not extracted (optional later):** glencoyne trigger planning, Forecastr/Kruze vendor mechanics, `src-002`/`src-007` extend
+
+**Next:** Phase 3 review → `approval.md` via `wiki-pipeline/server.py` (financial-ops / cash-flow-management / first-hires)

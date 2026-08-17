@@ -274,6 +274,14 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Geographic: US-heavy examples; EU teams same channel principles; formal HR/legal comms may need stricter written record
 - Run date: 2026-06-03 — src-042–046, atoms atom-192–217
 
+### Cash Flow Management @ First Hires (2.1)
+- Rich practitioner corpus from `src-065` contribution + HN (`src-005`, `src-072`, `src-073`); Hayes (`src-068`) for VC-backed cash discipline
+- Vendor bias risk: moderate in raw search; **not swept** for v1 — practitioner + Hayes sufficient for cash-tab page
+- Key synthesis split: **2.1 = cash tab, runway math, cadence, payroll timing, transparency** vs **2.2 = P&L plan, triggers, IFTTT**
+- Reuse `atom-411`, `414`, `422` from src-065 without re-extract; `src-066` deferred to 2.2
+- Geographic gap: payroll timing NL detail → cross-ref 3.1/4.5
+- Run date: 2026-08-10 — src-072–073 new; atoms atom-537–559 (+ reuse 411/414/422)
+
 ### Offboarding @ First Hires (3.4)
 - Rich practitioner corpus on **access revocation and credential hygiene** (HN security + password threads, NCS cautionary tale)
 - Vendor bias risk: moderate in raw search (HR checklist vendors dominate); registered corpus is 75% HN practitioner
