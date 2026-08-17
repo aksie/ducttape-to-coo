@@ -111,12 +111,21 @@ updates & goals](#investor-updates-and-goals):
 3. **Interview second** — walk open items **one or two at a time**; update the
    draft in place after each answer. This is not a form dump upfront — the
    skeleton makes the questions concrete ("your SARs trigger line — what
-   actually happened vs plan?").
-4. **Language and audience** — match the founder's language if stated (e.g.
+   actually happened vs plan?"). Continue until open items are cleared or the
+   founder says they're done for now.
+4. **Read-back before you finalize** — when the interview pass is done, show the
+   **complete final text** in one piece (full message or the whole file path +
+   contents). Ask explicitly: *anything wrong, missing, or too rosy before we
+   lock this in?* Apply edits from their pass; if they want changes, patch and
+   **offer one more read-back** on the changed sections or the full doc if small.
+   **Do not save to disk, send, or treat as "done"** until they approve this
+   read-back — unless they clearly say *"save as-is"* or a test marker requires
+   immediate write.
+5. **Language and audience** — match the founder's language if stated (e.g.
    Dutch internal update); audience can be founders-only per `1.2b`.
-5. **Permission** — still ask before **creating files on disk** or scaffolding
+6. **Permission** — still ask before **creating files on disk** or scaffolding
    folders; once yes (or test marker says create), **draft without waiting
-   for every fact**.
+   for every fact** — but **read-back still happens before the final save**.
 
 **Do not** ask a long chain of questions before showing anything useful. **Do
 not** offer only a verbal plan when file access allows a draft. **Do** say
@@ -125,8 +134,9 @@ interview on the open list.
 
 **Monthly report (1.2b) specifically:** recommend it when reporting is
 `not started`; draft from goals + notes with lookback scored where evidence
-exists; interview for metrics, misses, and lookahead — then save to
-`investor-updates/` when the OS folder exists (or show in chat if not yet).
+exists; interview for metrics, misses, and lookahead; **read-back the full
+update**; then save to `investor-updates/` when the OS folder exists (or leave
+in chat until approved if not yet).
 
 ### First run example
 
@@ -186,6 +196,15 @@ and what actually happened?
 **CEO:** We said trigger by 1 October; we're tracking to mid-November…
 
 **COO:** *(updates draft)* Got it. Downloads?
+
+*(after open items cleared)*
+
+**COO:** Here's the **full draft** — read it through. Anything wrong, missing,
+or softer than you'd say internally before we save it?
+
+**CEO:** Looks right — maybe tone down the revenue line.
+
+**COO:** *(patches, shows changed paragraph)* Good to lock in?
 
 When you're ready to make this weekly, the
 [check-in setup page](https://www.ducttape-to-coo.com/coo-setup.html) picks a
@@ -591,7 +610,7 @@ exist yet, is sparse, or this is the very first report, fall back to
 
 ### Procedure
 
-**Order is fixed: draft → open-items list → interview → save.**
+**Order is fixed: draft → open-items list → interview → read-back → save.**
 
 0. **Fetch** `templates/docs/investor-update.md` (structure) and
    `strategic/1.2b--{stage}.md` (wiki grounding).
@@ -609,17 +628,21 @@ exist yet, is sparse, or this is the very first report, fall back to
 4. **Interview pass** — walk **Open items** one or two at a time; patch the
    draft after each answer. Skip questions the draft already answers clearly.
    Never invent a number — ask, or keep the placeholder.
-5. **Draft Lookahead goals for the next period, by area**, collaboratively —
+5. **Read-back pass** — present the **complete final draft** (no remaining
+   `[TODO]` unless the founder chose to defer them). Ask: wrong, missing, or
+   too rosy? Apply edits; re-show changed parts or the full text if short.
+   Get explicit OK before save.
+6. **Draft Lookahead goals for the next period, by area**, collaboratively —
    write these into the goals file's next-period column in the same pass, so
-   the two files never drift out of sync.
-6. **Quarterly only:** fill the "Quarterly depth" section (commercial/GTM
+   the two files never drift out of sync. *(Lookahead can be part of read-back.)*
+7. **Quarterly only:** fill the "Quarterly depth" section (commercial/GTM
    metrics, runway/burn, scenario thinking) — ask for real figures, or leave
    the placeholder rather than guess.
-7. **Save and link.** Write the drafted update into `investor-updates/`,
+8. **Save and link.** Write the drafted update into `investor-updates/`,
    update the goals file, refresh `README.md`'s "most recent update" link,
    log the cadence in `company-state.md`, and advance `weekly-log.md`'s
    "last consumed through" marker to today.
-8. **Ops evaluation stays secondary.** If a quarterly investor update and a
+9. **Ops evaluation stays secondary.** If a quarterly investor update and a
    quarterly health check land the same period, the update may reference
    `ops-evaluations/<date>.md` for operational detail rather than
    duplicating it — the investor update is the primary artifact.
@@ -758,14 +781,14 @@ tree and `README.md` actually exist on disk afterward.
    monthly/quarterly, bootstrap the goals file if it doesn't exist yet, read
    the seeded log entries as the primary draft source, **write a first draft
    with `[TODO]` where the log is thin**, list open items, **then** run the
-   interview pass (one or two questions at a time), draft Lookahead into the
-   goals file, save the update, and advance the log's "last consumed
+   interview pass (one or two questions at a time), **read-back the full final
+   text for approval**, draft Lookahead into the goals file, save the update, and advance the log's "last consumed
    through" marker.
 
 Use this to sanity-check: the log drives the draft, **a skeleton appears
 before the interview**, the Q&A pass only asks about open items rather than
-dumping the whole template as questions upfront,
-the goals file's Lookahead write-back actually happens, and the marker
+dumping the whole template as questions upfront, **read-back happens before
+save**, the goals file's Lookahead write-back actually happens, and the marker
 advances so a second run in the same session doesn't re-summarize the same
 entries.
 

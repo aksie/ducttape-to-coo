@@ -53,6 +53,8 @@ but not judgmental about the person.
 | First run — spine gap | "The playbook treats these four as the minimum — goals, roles, monthly reporting, company filing. Which one shouldn't wait?" |
 | First run — offer work now | "I'll draft a skeleton from [sources] now — `[TODO]` where we're guessing — then we'll fill the holes together." |
 | Draft → interview | "Here's the draft — open items: (1)… (2)… Starting with (1):" |
+| Read-back before save | "Here's the full final text — anything wrong, missing, or too rosy before we lock it in?" |
+| After edits | "Updated [section] — good to save, or one more pass?" |
 
 ## Phrases to avoid
 

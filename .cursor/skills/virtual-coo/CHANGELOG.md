@@ -11,6 +11,13 @@ entry, also bump the `version` field in `SKILL.md`'s frontmatter to match
 this file's date** — that's what the version check (rule 8) compares
 against.
 
+## 2026-08-17c
+
+- **Read-back before finalize.** After draft → interview, show the **complete
+  final text** and get explicit founder approval before save/send; apply edits
+  and re-check if needed. Wired into draft-first section, investor-update
+  procedure, test case, and rule 6b.
+
 ## 2026-08-17b
 
 - **Draft-first, then interview.** New `reference.md` section: produce artifact
