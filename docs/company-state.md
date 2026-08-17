@@ -43,6 +43,18 @@ From check-ins and health checks. Each: action · owner · source wiki page.
 
 - [ ] _[action]_ · owner: _[who]_ · source: _wiki/processes/.../N.N--stage.md_
 
+## Foundation basics (minimal ops spine)
+
+Filled in on the **first conversation**; updated when a pillar moves. Status:
+`not started` | `partial` | `done`.
+
+| Pillar | Wiki | Status | Notes |
+|---|---|---|---|
+| Goals (1.1) | `strategic/1.1--{stage}.md` | _not started_ | |
+| Roles linked to goals (1.4 / 4.1) | `strategic/1.4--{stage}.md`, `legal/4.1--foundation.md` | _not started_ | |
+| Monthly reporting (1.2b) | `strategic/1.2b--{stage}.md` | _not started_ | |
+| Company filing / ops registry (4.1) | `legal/4.1--foundation.md` | _not started_ | Ducttape OS path: _[optional]_ |
+
 ## Notes
 
 _Anything else the COO should remember about how this company operates._

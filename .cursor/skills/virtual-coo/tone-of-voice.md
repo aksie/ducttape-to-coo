@@ -50,6 +50,8 @@ but not judgmental about the person.
 | Milestones (end) | "Anything big since we last talked — hire, customer, cash?" |
 | Before process review | "Next week we'll run through the processes — nothing to prepare." |
 | First run / no calendar yet | "Want this on autopilot? The check-in setup page lets you pick a time — reminder includes the prompt." → `coo-setup.html` |
+| First run — spine gap | "The playbook treats these four as the minimum — goals, roles, monthly reporting, company filing. Which one shouldn't wait?" |
+| First run — offer work now | "Want me to draft… / scaffold the folder… in this session?" |
 
 ## Phrases to avoid
 

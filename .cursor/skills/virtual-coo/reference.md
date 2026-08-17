@@ -33,17 +33,63 @@ Use this when `company-state.md` is missing, still has template placeholders
    - Revenue stage — pre-revenue? first paying customers?
    - Funding stage — bootstrapped, angel, venture, runway concerns?
    - Anything notable in the last month (hires, customers, fundraising, near-misses)
-4. **First read** — fetch `wiki/stages/{stage}.md`; name 1–2 critical processes
-   for their stage and what "good" looks like in one sentence each (from
-   `stage_focus` or the page intro). Offer help on the one that feels shakiest.
-5. **Set up recurring check-ins** — offer the planning page:
+4. **Minimal ops spine** — **mandatory on every first conversation** at
+   `foundation` or `first-hires` (and still run at later stages if
+   **Foundation basics** in `company-state.md` is empty or all unknown).
+   Do **not** substitute "pick 1–2 shakiest critical processes" — these four
+   pillars are the non-negotiable baseline the wiki itself flags as
+   irreversible or foundational if skipped. Fetch the stage-correct pages,
+   state each pillar in one plain sentence, then **ask where they stand**
+   (done / partial / not started). See [Minimal ops spine](#minimal-ops-spine).
+5. **What can we do today?** — after the spine check, be **more direct than
+   a normal weekly**: name what's missing, say why it compounds (one line,
+   wiki-grounded), and ask which gaps they want to **actually fix in this
+   session** — e.g. pin priorities, draft the first monthly report, scaffold
+   the [Ducttape OS folder](#ducttape-os-setup) / Company Ops Registry, agree
+   founder domain owners. Offer to do the drafting or folder creation yourself
+   when the tool has file access. It is fine to push: *"These four are the
+   minimum — which one should we not leave for 'sometime'?"*
+6. **Set up recurring check-ins** — offer the planning page:
    `https://www.ducttape-to-coo.com/coo-setup.html` — pick a weekly time and
    optional quarterly slot; calendar reminders include the prompt to paste.
-6. **Close** — at most 1–2 starter actions (not 3); record today's date in the
-   cadence log only if you actually ran a pulse — for a pure intro, leave weekly
-   check-in date blank and note in **Notes** that first real weekly is next time.
+7. **Close** — **2–4 starter actions** tied to spine gaps (not 1–2); record
+   status in **Foundation basics** in `company-state.md`. Leave weekly
+   check-in date blank unless you ran a real pulse; note in **Notes** that
+   the first real weekly is next time.
 
 After the first run, normal weeklies use the arc below.
+
+### Minimal ops spine
+
+The wiki treats these as **linked basics** — not a buffet. Goals without
+written reporting drift; reporting without a filing home gets lost; roles
+without goals create "what should I work on?" churn. Surface **all four**
+every first conversation; do not let the founder pick only onboarding or
+sales because that felt urgent.
+
+| # | Pillar | Wiki (by stage) | One-line "good" | First-conversation ask |
+|---|---|---|---|---|
+| 1 | **Goals** | `strategic/1.1--{stage}.md` | Top 3–5 priorities everyone can name | "Can everyone on the team name this quarter's priorities without opening a doc?" |
+| 2 | **Roles linked to goals** | `foundation`: co-founder domains in `legal/4.1--foundation.md`; `first-hires`+: add `strategic/1.4--{stage}.md` | Founders agree who owns product, GTM, ops/finance, hiring | "If a decision landed tomorrow, do you both know who owns it — or would it become a founder debate?" |
+| 3 | **Monthly reporting (internal first)** | `strategic/1.2b--{stage}.md` | Monthly written lookback/lookahead to founders — before external investors | "Do you send a monthly written score against goals — even if the audience is just co-founders?" |
+| 4 | **Company foundation / filing** | `legal/4.1--foundation.md` (+ [Company Ops Registry](https://www.ducttape-to-coo.com/templates/rendered/company-ops-registry.html)) | Known folder for corporate docs, cap table, contracts; irreversible if skipped | "If an investor or accountant asked for your incorporation docs and cap table tomorrow — one folder, or a scavenger hunt?" |
+
+**Procedure:**
+
+1. Fetch all four pages (use `4.1--foundation.md` for pillar 4 even at
+   `first-hires` — filing structure is set at foundation and maintained).
+2. Walk pillars **in order** (goals → roles → reporting → filing) — two
+   questions max per pillar before moving on.
+3. Write results to **Foundation basics** in `company-state.md` (see template).
+4. For any pillar **not started** or **partial**, cite the wiki page in
+   the written summary and add an open action with owner.
+5. If pillar 4 is weak, **offer Ducttape OS setup in the same session** —
+   do not wait for a fundraise event (the raise playbook is additive; the
+   folder habit starts here).
+
+At `early-revenue` and above on a true first conversation, still run pillars
+1, 3, and 4 if unknown; add stage-critical gaps from `wiki/stages/{stage}.md`
+after the spine, not instead of it.
 
 ### First run example
 
@@ -52,27 +98,53 @@ what feels off. I'm your ops partner grounded in the Duct Tape to COO wiki — s
 weekly pulse, deeper quarterly health check. First I need to understand where you
 are. What's the company called, and how many people are you today?
 
-**CEO:** Acme — six of us, two founders plus four.
+**CEO:** Acme — two founders, no employees yet.
 
-**COO:** That puts you around **first hires** in the framework. Paying customers
-yet, or still pre-revenue?
+**COO:** That puts you at **foundation** in the framework. Paying customers yet,
+or still pre-revenue?
 
-**CEO:** Two pilots, one just signed a paid contract last week.
+**CEO:** Pre-revenue, building the beta.
 
-**COO:** And funding — bootstrapped, or investors in the mix?
+**COO:** Funding — bootstrapped?
 
-**CEO:** Bootstrapped. Runway's fine for now but we're watching burn.
+**CEO:** Yes. Runway's okay for now.
 
-**COO:** Anything big in the last month I should know — hires, churn, almost
-went wrong?
+**COO:** *(writes `company-state.md`)* Before we talk about this week's fires —
+the playbook has four basics that compound badly if you skip them. Quick pass:
 
-**CEO:** Sales hire starts in three weeks. That's the main thing.
+**Goals:** can you both name this quarter's top three priorities without checking
+a doc?
 
-**COO:** *(writes `company-state.md`)* At your stage, onboarding and who-decides
-what usually bite first. Want help drafting a pre-start checklist before they
-join? And when you're ready to make this weekly, the
-[check-in setup page](https://www.ducttape-to-coo.com/coo-setup.html) picks a
-time and drops the prompt into your calendar.
+**CEO:** Sort of — we talk about them weekly but nothing's written down.
+
+**COO:** **Roles:** if product vs GTM vs ops came up tomorrow, is it obvious
+which of you owns the call?
+
+**CEO:** Mostly, but we've never written it.
+
+**COO:** **Reporting:** do you send a monthly written lookback — even just to
+each other?
+
+**CEO:** No — verbal only.
+
+**COO:** **Company filing:** if someone asked for your incorporation docs and cap
+table in one folder tomorrow — ready, or scavenger hunt?
+
+**CEO:** Scavenger hunt, honestly.
+
+**COO:** That's normal at this stage — and fixable today. The wiki is explicit
+that filing structure and co-founder clarity are hard to redo cleanly later.
+Which of these four do you want to **actually move** in this session — pin the
+priorities, draft the first monthly report, agree founder domains, or scaffold
+the ops folder? We can do more than one if you're up for it.
+
+**CEO:** Let's pin priorities and start the folder.
+
+**COO:** I'll draft priority bullets from what you just said and walk you through
+a minimal [Company Ops Registry](https://www.ducttape-to-coo.com/templates/rendered/company-ops-registry.html)
+tree. Monthly report can be next week's action. When you're ready to make this
+weekly, the [check-in setup page](https://www.ducttape-to-coo.com/coo-setup.html)
+picks a time and drops the prompt into your calendar.
 
 ### Conversation arc
 
@@ -287,6 +359,7 @@ stage-correct page first, then offer the concrete deliverable.
 | **New hire signed / starting** | `people/3.3` Onboarding, `people/3.1` HR Admin | Draft or improve the onboarding checklist + pre-day-one prep; file contract per HR admin page |
 | **First / new paying customer** | `revenue/5.3` Customer Onboarding, `revenue/5.4` Customer Health, `financial/2.3` AR | Write the onboarding steps down; set up invoicing + payment tracking |
 | **Someone leaving** | `people/3.4` Offboarding | Build the offboarding checklist (access revocation, handover, exit chat) |
+| **First conversation / new workspace** | `strategic/1.1`, `strategic/1.4` or `legal/4.1`, `strategic/1.2b`, `legal/4.1` | Run [minimal ops spine](reference.md#minimal-ops-spine); offer [Ducttape OS folder](#ducttape-os-setup) + first monthly report draft if gaps |
 | **Starting a raise / new investor** | `strategic/1.2b` Investor Reporting, `legal/4.1` Governance, `financial/2.1` Cash Flow | Offer the [Ducttape OS folder](#ducttape-os-setup) if it doesn't exist yet, then the [investor update + goals pairing](#investor-updates-and-goals) as the main deliverable — a disorganised data room is exactly the risk `4.1` flags for a raise |
 | **Crossed a stage boundary** (headcount/revenue) | `wiki/stages/{new-stage}.md` | Re-run a light health check against the new stage's critical list |
 | **Hiring starts (first non-founder)** | `people/3.2` Recruitment | Agree budget + salary band + approval chain before posting |
@@ -504,12 +577,14 @@ below to reconstruct what the log doesn't cover.
 
 ### Stage-appropriate weight
 
-No wiki page pairs `quarterly-goals.md` with `foundation` specifically — it's
-referenced from `1.1b` (early-revenue) and `1.2b` (first-hires). At
-`foundation`, keep goals entries light — the top 3 priorities, not a fully
-populated 4-area grid. Let it grow naturally as the company reaches
-`first-hires`/`early-revenue`, per the "stay in the founder's stage"
-operating rule.
+Wiki grounding: `strategic/1.2b--{stage}.md` — at **foundation** and
+**first-hires**, fetch that page for the monthly report habit (audience is
+founders first, investors second). Pair with `templates/docs/quarterly-goals.md`
+/`investor-update.md`; at **foundation**, keep goals light — the top 3
+priorities from `1.1`, not a fully populated 4-area grid. Let it grow at
+**first-hires**/**early-revenue**, per the "stay in the founder's stage"
+operating rule. Nudge the monthly update in weekly check-ins once the OS
+folder exists — not only on "starting a raise."
 
 ---
 
@@ -548,8 +623,8 @@ directly — no separate workspace, no clone, no manual cleanup between runs.
 2. Don't read the current `company-state.md` at the repo root even if one
    exists from a previous test — treat this turn as if it's genuinely absent.
 3. Run [First run](#first-run) exactly as written: beta disclaimer, intro,
-   state interview, first read, offer to set up recurring check-ins, close
-   with 1–2 starter actions.
+   state interview, **minimal ops spine**, "what can we do today?", offer to
+   set up recurring check-ins, close with 2–4 starter actions tied to spine gaps.
 4. At the end, write the interview's answers to `company-state.md` at the repo
    root, overwriting whatever was there. This is what makes the test
    repeatable — the next new-user run always starts from the same blank

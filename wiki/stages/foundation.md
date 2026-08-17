@@ -27,6 +27,7 @@ tagline: "Build and ship"
 
 | Process | Why it's worth considering |
 |---|---|
+| [1.2b Shareholder & Investor Reporting](../processes/strategic/1.2b--foundation.md) | Monthly written lookback to founders — start before any investors; scores [1.1](1.1--foundation.md) priorities honestly |
 | [1.2 Internal Comms — Strategy](../processes/strategic/1.2--foundation.md) | Even a weekly 15-min sync keeps two founders aligned |
 | [3.6 Employee Satisfaction](../processes/people/3.6--foundation.md) | Stay close — not a survey. Co-founder teams: weekly founder-only sync; decision alignment in [1.4](../processes/strategic/1.4--first-hires.md) |
 

@@ -11,6 +11,15 @@ entry, also bump the `version` field in `SKILL.md`'s frontmatter to match
 this file's date** — that's what the version check (rule 8) compares
 against.
 
+## 2026-08-17
+
+- **First conversation: minimal ops spine.** `reference.md` first-run no longer
+  picks "1–2 shakiest" critical processes — it **mandates** a four-pillar check
+  (goals → roles → monthly reporting → company filing / ops registry) with wiki
+  pages `1.1`, `1.4`/`4.1`, `1.2b`, `4.1`. Asks what's missing and **what to fix
+  today**; offers Ducttape OS scaffold without waiting for a raise. `docs/company-state.md`
+  template gains a **Foundation basics** table; first-run example rewritten.
+
 ## 2026-07-28
 
 - **Add a super-simple version check.** `SKILL.md` now carries a `version`

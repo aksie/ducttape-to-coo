@@ -72,17 +72,9 @@
       "title": "Shareholder & Investor Reporting",
       "primary_axis": "funding_stage",
       "sensitivity": "funding_stage",
-      "description": "How you keep investors and shareholders informed. Covers regular updates, board reporting, and investor relations. Only relevant once you have external investors or shareholders.",
-      "conditions": {
-        "fundingStage": [
-          "angel-fff",
-          "venture-early",
-          "venture-growth",
-          "public"
-        ]
-      },
+      "description": "Written reporting cadence — internal first (founders and leadership), widened to shareholders and investors when they exist. Covers monthly lookback/lookahead, board reporting, and investor relations.",
       "stageFocus": {
-        "foundation": "Not relevant yet - no external investors.",
+        "foundation": "Send a monthly written lookback and lookahead to yourself or co-founders — same structure you will use for investors later.",
         "first-hires": "Start a monthly written update before you have investors — score goals honestly and explain what went differently than expected. Widen the same template when angels arrive.",
         "early-revenue": "Regular investor updates (monthly). Board meeting prep (deck, pre-read). Basic cap table management. Coordinate with legal on any shareholder matters.",
         "growth": "Structured board cadence (monthly or quarterly). Board pack with financials, KPIs, and strategic updates. Investor relations function forming. Legal compliance on reporting obligations.",
@@ -125,7 +117,7 @@
         }
       ],
       "stages": {
-        "foundation": "future",
+        "foundation": "recommended",
         "first-hires": "critical",
         "early-revenue": "critical",
         "growth": "critical",

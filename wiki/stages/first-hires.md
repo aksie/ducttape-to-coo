@@ -34,12 +34,12 @@ You have people now. That means process debt starts compounding. The critical pr
 | [5.5 Renewal & Retention](../processes/revenue/5.5--first-hires.md) | Know when every contract expires. One churn = huge % of ARR. |
 | [5.6 Service Delivery](../processes/revenue/5.6--first-hires.md) | *(if applicable)* Document what good delivery looks like |
 | [5.7 Customer Data & Analytics](../processes/revenue/5.7--first-hires.md) | Clean CRM from day one |
+| [1.2b Shareholder & Investor Reporting](../processes/strategic/1.2b--first-hires.md) | Monthly written update before investors — widen the same template when angels arrive |
 
 ## Recommended (useful, not blocking)
 
 | Process | Notes |
 |---|---|
-| [1.2b Shareholder Reporting](../processes/strategic/1.2b--first-hires.md) | Only if you have angels/FFF investors |
 | [1.3 Operational Comms Norms](../processes/strategic/1.3--first-hires.md) | Basic channel structure and response expectations |
 | [1.4 Who Decides What](../processes/strategic/1.4--first-hires.md) | Align founders first; one approval list (hiring, spend, pivots) — owner consults and closes |
 | [2.2 Financial Planning](../processes/financial/2.2--first-hires.md) | Simple headcount + cost budget, review monthly |

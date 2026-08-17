@@ -46,7 +46,7 @@ You're past survival mode. The challenge now is repeatability — things that wo
 
 | Process | Notes |
 |---|---|
-| [1.2b Shareholder Reporting](../processes/strategic/1.2b--early-revenue.md) | Monthly updates, board meeting prep if venture-backed |
+| [1.2b Shareholder & Investor Reporting](../processes/strategic/1.2b--early-revenue.md) | Monthly updates continue from first hires; add board prep and cap table hygiene when funded |
 | [1.5 Org Design](../processes/strategic/1.5--early-revenue.md) | Document team structure as functions form |
 | [1.6 Data & Reporting Infra](../processes/strategic/1.6--early-revenue.md) | Define core KPIs, introduce data stack |
 | [1.7 Process Documentation](../processes/strategic/1.7--early-revenue.md) | Documentation as a habit, wiki people actually use |
