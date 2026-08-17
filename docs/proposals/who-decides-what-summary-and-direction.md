@@ -2,9 +2,9 @@
 
 **Status:** **Published wiki** — [First Hires](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) · [Early Revenue](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--early-revenue) (synthesized 2026-08-03) · [Growth](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--growth) (src-064 + src-070 serial CEO addendum, reviewed 2026-08-03). Scaled remains stub. This doc = design rationale, schools, sources, and template — keep aligned when wiki changes.
 
-**Blog:** [Who Decides When Founders Disagree](../blog/posts/who-decides-when-founders-disagree.md) — published **`listed: false`** (direct URL only until polish done); first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
+**Blog:** [Who Decides When Founders Disagree](../../blog/posts/who-decides-when-founders-disagree.md) — published **`listed: false`** (direct URL only until polish done); first-hires / founder-circle focus. Growth-stage mechanics live on the wiki.
 
-**Pipeline:** First hires — [src-063](../wiki-pipeline/sources/src-063.md), full Phase 1–4. Growth — [src-070](../wiki-pipeline/sources/src-070.md), atoms 424–525, [growth entry](../wiki-pipeline/entries/strategic-ops/who-decides-what/growth/). Early revenue wiki synthesized from proposal + src-070 early-revenue atoms (no separate pipeline entry yet).
+**Pipeline:** First hires — [src-063](../../wiki-pipeline/sources/src-063.md), full Phase 1–4. Growth — [src-070](../../wiki-pipeline/sources/src-070.md), atoms 424–525, [growth entry](../../wiki-pipeline/entries/strategic-ops/who-decides-what/growth/). Early revenue wiki synthesized from proposal + src-070 early-revenue atoms (no separate pipeline entry yet).
 
 ---
 
@@ -95,25 +95,25 @@ For each decision: **School A** · **School B** · **Middle ground**.
 
 ### Early revenue (11–25) — decision owners per area
 
-**Published:** [1.4 — Early Revenue](../wiki/processes/strategic/1.4--early-revenue.md) (synthesized from this table + src-070 early-revenue atoms, 2026-08-03).
+**Published:** [1.4 — Early Revenue](../../wiki/processes/strategic/1.4--early-revenue.md) (synthesized from this table + src-070 early-revenue atoms, 2026-08-03; readability pass 2026-08-10).
 
 | Decide | School A | School B | Middle |
 |--------|----------|----------|--------|
 | **Structure** | Still founder approval list only | Full RACI | **Named owner per area + escalation thresholds** |
 | **Founder role in meetings** | Founder decides | Founder input only | **Founder gives input; area owner decides** — decisions not re-litigated because founder wasn’t there |
-| **Irreversibility** | Gut feel | SPADE / memo for everything | **Classify by reversibility** — light process for one-way doors ([HSG seed article](https://www.hsgcap.com/article/how-startups-build-decision-systems/)) |
+| **Irreversibility** | Gut feel | SPADE / memo for everything | **Mark what is cheap to reverse and what is hard to undo** — light process for the first, more people and an explicit close for the second ([HSG seed article](https://www.hsgcap.com/article/how-startups-build-decision-systems/)) |
 | **Formalisation trigger** | At 10 people | At 25+ only | **When decisions get re-opened or two teams conflict** ([reStruggle ~15–25](https://restruggle.com/blog/building-strong-teams-with-decision-frameworks)) |
 
 ---
 
-### Growth (~50–150) — C-level allegiance + Type 1/2
+### Growth (~50–150) — C-level allegiance + two decision paths
 
-**Published:** [1.4 — Growth](../wiki/processes/strategic/1.4--growth.md). Carry-forward section links back to first-hires foundations.
+**Published:** [1.4 — Growth](../../wiki/processes/strategic/1.4--growth.md). Rewritten in the readability pass of 2026-08-10: the carry-forward section became a five-item principles preamble plus one carry-forward paragraph, both above the first `##`, still pointing back to the first-hires foundations. The "Type 1 / Type 2" and "integrative objection" labels were cut from the wiki — see [1.4 readability pass](1.4-readability-pass.md) for the vocabulary ledger.
 
 | Theme | In wiki (src-064 + src-070) |
 |-------|----------------------------|
 | **C-level allegiance** | Play for highest team; return out-of-domain debates to domain owner |
-| **Type 1 / Type 2** | Reversible → role-owner; irreversible → integrative objection with reasoned block only |
+| **Two decision paths** | Decisions the team can walk back → role owner inside their mandate; decisions that are expensive to walk back, or that bind other functions → short shared process, and a role owner can only block by naming a concrete way it breaks something they are accountable for |
 | **Close** | Prefer "I've been heard" over harsh disagree-and-commit |
 | **Platform (conditional)** | Multi-sided platforms: consider neutral coordinator ("traffic control") — not universal |
 | **Opposed roles** | CEO/CFO, P vs Q — don't collapse structurally opposed mandates |
@@ -551,7 +551,7 @@ You don't need conviction on every route. You need a rule for the fork, consult 
 
 | # | Prompt | Resolution |
 |---|--------|------------|
-| 1 | Foundation wiki? | Folded into first-hires + [3.6 foundation](../wiki/processes/people/3.6--foundation.md) for founder sync |
+| 1 | Foundation wiki? | Folded into first-hires + [3.6 foundation](../../wiki/processes/people/3.6--foundation.md) for founder sync |
 | 2 | Personal runway in 1.4? | Bullet + cross-ref in first-hires wiki |
 | 3 | €X prescribe? | Leave to teams; template has blank |
 | 4 | Solo founder? | Founder-circle axes skip; team list only — confirm when solo-founder page needed |

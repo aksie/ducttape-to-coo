@@ -170,3 +170,56 @@ last_updated: 2026-08-10
 - GitLab DRI handbook depth — growth/scaled evolution
 - NL-specific decision-rights content — none found; not a compliance cell
 - Duplicate hiring-chain steps — live in 3.2
+
+---
+
+## Editorial pass — readability (2026-08-10)
+
+The published page `wiki/processes/strategic/1.4--first-hires.md` was reworked for pacing and plain
+language, following section D of `docs/proposals/1.4-readability-pass.md`. No atom was added,
+dropped, or reassigned; no claim changed in substance. Recorded here because claim wording on the
+published page no longer matches the wording in `draft.md`, because one pair of claims is now
+published as a single bullet, and because two claims now publish outside the five sections or in
+two places. Per-claim edited text lives in `approval.md`. Written as a section rather than as
+`### c-NNN:` blocks so the existing claim records stay the single source of truth for each claim.
+
+**Structural changes to the page**
+
+| Change | Detail |
+|---|---|
+| Opener | The negation opener ("this is not RACI or SPADE") was replaced with a blockquote that states what decision rights are at this stage. Both acronyms leave the intro. |
+| Principles preamble | Four one-line principles above the first `##`, numbered 1–4 on the page. They map to durable principles 1, 2, 4 and 5 of the pass; durable principle 3 (reversibility) is deliberately omitted here — it is thin at 2–10 people and is already carried by c-008's "practise letting go on reversible calls". |
+| No carry-forward paragraph | This is the origin stage; there is nothing to carry. |
+| Bullet counts | what_good_looks_like 7 → 5, what_to_do 7 → 7 (shorter), warning_signs 5 → 5, evolution 2 → 2, tools_resources 4 → 5. |
+
+**Principles preamble — claim lineage**
+
+| Page principle | Generalises | Supporting atoms | Source comment |
+|---|---|---|---|
+| 1 — Accountability and authority travel together | c-020 | atom-424 | src-070 (serial-ceo) |
+| 2 — Decide who decides before you need it | c-007, c-009 (the "agree the map before the fork" spine of src-063) | atom-306 | src-063 (synthesis) |
+| 3 — Consult, then decide | c-003, c-004 (duty-to-consult half) | atom-306 | src-063 (synthesis) |
+| 4 — Formalise only when the informal version breaks | c-022 (first clause), c-023 | atom-430, atom-432 | src-070 (serial-ceo) |
+
+**Merged and split claims — lineage for the surviving bullets**
+
+| Published bullet | Claims | Supporting atoms | Note |
+|---|---|---|---|
+| Good-looks-like — "Meetings name a decider and a deadline, and disagreement closes out loud." | c-003 (surviving) + c-004 (absorbed) | atom-306 for both | Both are src-063 and both describe one mechanic: a named decider who consults and a close the non-owner says out loud. Both source comment strings are carried on the merged bullet, so "Advice process, Coinbase DRI, Grove" and "blog draft who-decides-when-founders-disagree" both survive. |
+| Preamble principle 1 + process-entry warning "The team waits for founder OK…" | c-020 (generalised) + c-013 (surviving warning) | atom-424 (c-020); atom-306 (c-013) | c-020's target-state half became principle 1; its failure-mode sentence moved into the c-013 warning. Its src-070 comment is carried in both places. |
+| Evolution bullet 1 + Tools & resources SPADE entry | c-016 (split across two bullets) | atom-306 | The four-line SPADE definition left the evolution bullet and became a tool entry. Both bullets carry c-016's source comment unchanged; no new source was introduced for the tool entry. |
+
+**Vocabulary decisions applied to the page**
+
+| Term | Decision | Where it now sits |
+|---|---|---|
+| RACI | Kept, glossed at first use | c-021: "a written RACI row — the grid naming who is responsible, accountable, consulted and informed for each task". Still used unglossed later in c-023, which now follows the gloss. |
+| SPADE | Kept once, in Tools & resources | The tool entry from c-016. Gone from the intro and from the evolution bullet. |
+| AOR | Spelled out, acronym never used alone in prose | "Areas-of-Responsibility" in c-001 and c-005. The acronym survives only inside c-001's source comment string, which was left untouched. |
+| DRI | Cut as an abbreviation | "One directly responsible person, not a matrix" (c-003). The acronym survives only inside c-003's source comment string. |
+| traffic control | Removed from this page | c-019's closing sentence and c-024's "(named deciders, traffic-control role)" both replaced. The phrase now appears once in the wiki, on the growth page, after a plain-language definition. |
+| SHA | Spelled out at first use | c-007: "the articles and shareholders' agreement (SHA)". |
+
+**Not changed:** c-023 keeps its standalone process-entry warning. The proposal offered a choice
+between folding the premature-formalisation warning at first-hires or at early-revenue; the
+maintainer chose to fold it at early-revenue, so first-hires and growth keep theirs.
