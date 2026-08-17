@@ -11,6 +11,14 @@ entry, also bump the `version` field in `SKILL.md`'s frontmatter to match
 this file's date** — that's what the version check (rule 8) compares
 against.
 
+## 2026-08-17b
+
+- **Draft-first, then interview.** New `reference.md` section: produce artifact
+  skeletons immediately from goals/notes/logs with `[TODO]` open ends, list open
+  items, then walk gaps one or two at a time — no long Q&A before a useful draft.
+  Wired into first-run "what we fix today", investor-update procedure, `SKILL.md`
+  rule 6b, and first-run example (monthly report).
+
 ## 2026-08-17
 
 - **First conversation: minimal ops spine.** `reference.md` first-run no longer

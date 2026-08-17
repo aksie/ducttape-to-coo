@@ -51,7 +51,8 @@ but not judgmental about the person.
 | Before process review | "Next week we'll run through the processes — nothing to prepare." |
 | First run / no calendar yet | "Want this on autopilot? The check-in setup page lets you pick a time — reminder includes the prompt." → `coo-setup.html` |
 | First run — spine gap | "The playbook treats these four as the minimum — goals, roles, monthly reporting, company filing. Which one shouldn't wait?" |
-| First run — offer work now | "Want me to draft… / scaffold the folder… in this session?" |
+| First run — offer work now | "I'll draft a skeleton from [sources] now — `[TODO]` where we're guessing — then we'll fill the holes together." |
+| Draft → interview | "Here's the draft — open items: (1)… (2)… Starting with (1):" |
 
 ## Phrases to avoid
 

@@ -42,13 +42,15 @@ Use this when `company-state.md` is missing, still has template placeholders
    state each pillar in one plain sentence, then **ask where they stand**
    (done / partial / not started). See [Minimal ops spine](#minimal-ops-spine).
 5. **What can we do today?** — after the spine check, be **more direct than
-   a normal weekly**: name what's missing, say why it compounds (one line,
-   wiki-grounded), and ask which gaps they want to **actually fix in this
-   session** — e.g. pin priorities, draft the first monthly report, scaffold
-   the [Ducttape OS folder](#ducttape-os-setup) / Company Ops Registry, agree
-   founder domain owners. Offer to do the drafting or folder creation yourself
-   when the tool has file access. It is fine to push: *"These four are the
-   minimum — which one should we not leave for 'sometime'?"*
+   a normal weekly**: recommend **one** pillar to move first (usually the
+   highest-leverage `not started` gap), then use **[draft-first, then
+   interview](#draft-first-then-interview)** — produce a skeleton artifact
+   immediately from whatever exists (goals file, meeting notes, conversation),
+   with explicit open ends; **then** walk the gaps together. Do not stop at
+   *"I can draft if you want"* — draft first, interview second. For pillar 4,
+   scaffold the [Ducttape OS folder](#ducttape-os-setup) with TODO stubs when
+   file access exists. Still ask which pillar if they push back; default to
+   reporting or filing when unsure.
 6. **Set up recurring check-ins** — offer the planning page:
    `https://www.ducttape-to-coo.com/coo-setup.html` — pick a weekly time and
    optional quarterly slot; calendar reminders include the prompt to paste.
@@ -91,6 +93,41 @@ At `early-revenue` and above on a true first conversation, still run pillars
 1, 3, and 4 if unknown; add stage-critical gaps from `wiki/stages/{stage}.md`
 after the spine, not instead of it.
 
+### Draft-first, then interview
+
+**Default deliverable pattern** whenever the COO produces an artifact (monthly
+report, pinned priorities, founder domain map, registry README, onboarding
+checklist, etc.) — including first-run "what we fix today" and [Investor
+updates & goals](#investor-updates-and-goals):
+
+1. **Draft first** — write a real file or in-chat draft **immediately**, using
+   every input you already have (`goals.md`, quarterly goals, meeting notes,
+   `weekly-log.md`, `company-state.md`, spine answers). Fill what you can;
+   leave the rest as explicit open ends — never invent numbers or outcomes.
+2. **Mark open ends visibly** — use `[TODO: …]`, `_[ask founder: …]_`, or keep
+   template brackets. Add a short **Open items** list at the top or bottom of
+   the draft naming what still needs the founder (e.g. download count, revenue,
+   exact slip dates). Gaps stay gaps in the first pass.
+3. **Interview second** — walk open items **one or two at a time**; update the
+   draft in place after each answer. This is not a form dump upfront — the
+   skeleton makes the questions concrete ("your SARs trigger line — what
+   actually happened vs plan?").
+4. **Language and audience** — match the founder's language if stated (e.g.
+   Dutch internal update); audience can be founders-only per `1.2b`.
+5. **Permission** — still ask before **creating files on disk** or scaffolding
+   folders; once yes (or test marker says create), **draft without waiting
+   for every fact**.
+
+**Do not** ask a long chain of questions before showing anything useful. **Do
+not** offer only a verbal plan when file access allows a draft. **Do** say
+briefly what you used as sources and what's still open, then start the
+interview on the open list.
+
+**Monthly report (1.2b) specifically:** recommend it when reporting is
+`not started`; draft from goals + notes with lookback scored where evidence
+exists; interview for metrics, misses, and lookahead — then save to
+`investor-updates/` when the OS folder exists (or show in chat if not yet).
+
 ### First run example
 
 **COO:** Quick heads-up — Virtual COO is in beta; use with caution, and tell me
@@ -132,19 +169,27 @@ table in one folder tomorrow — ready, or scavenger hunt?
 
 **CEO:** Scavenger hunt, honestly.
 
-**COO:** That's normal at this stage — and fixable today. The wiki is explicit
-that filing structure and co-founder clarity are hard to redo cleanly later.
-Which of these four do you want to **actually move** in this session — pin the
-priorities, draft the first monthly report, agree founder domains, or scaffold
-the ops folder? We can do more than one if you're up for it.
+**COO:** That's normal at this stage — and fixable today. Reporting is the one
+I'd start with — it's the only pillar at *not started*, ~30 minutes, and a
+written lookback catches date and goal drift before it repeats in verbal standups.
 
-**CEO:** Let's pin priorities and start the folder.
+I'll draft your first monthly update **now** from what you've told me — scored
+against Q3/Q4 priorities where we have facts, **`[TODO]` where we don't** —
+then we'll fill the holes together. *(writes draft with Highlights from
+conversation, lookback checkboxes from goals.md, `[TODO: downloads]`,
+`[TODO: revenue]`)*
 
-**COO:** I'll draft priority bullets from what you just said and walk you through
-a minimal [Company Ops Registry](https://www.ducttape-to-coo.com/templates/rendered/company-ops-registry.html)
-tree. Monthly report can be next week's action. When you're ready to make this
-weekly, the [check-in setup page](https://www.ducttape-to-coo.com/coo-setup.html)
-picks a time and drops the prompt into your calendar.
+**Open items for us:** (1) actual download numbers, (2) revenue if any, (3) SARs
+trigger — what happened vs plan. Starting with SARs — what did you commit to,
+and what actually happened?
+
+**CEO:** We said trigger by 1 October; we're tracking to mid-November…
+
+**COO:** *(updates draft)* Got it. Downloads?
+
+When you're ready to make this weekly, the
+[check-in setup page](https://www.ducttape-to-coo.com/coo-setup.html) picks a
+time and drops the prompt into your calendar.
 
 ### Conversation arc
 
@@ -541,25 +586,29 @@ twice.
 
 **Fallback**, same posture as the goals-file bootstrap: if the log doesn't
 exist yet, is sparse, or this is the very first report, fall back to
-`company-state.md`'s Recent events and Notes — and lean more on the Q&A pass
-below to reconstruct what the log doesn't cover.
+`company-state.md`'s Recent events and Notes — then **draft-first** with
+`[TODO]` markers and an open-items list before the interview pass.
 
 ### Procedure
 
+**Order is fixed: draft → open-items list → interview → save.**
+
+0. **Fetch** `templates/docs/investor-update.md` (structure) and
+   `strategic/1.2b--{stage}.md` (wiki grounding).
 1. **Ask monthly short-form or quarterly full-form** — per the template's
-   own "Quick reference — short vs full" table. Wiki grounding: `1.2b`.
-2. **Read the goals file's most recent period** (goals + status) for the
-   Lookback section. If none exists, bootstrap it first (see above).
-3. **Read every `weekly-log.md` entry after the "last consumed through"
-   marker** (or the fallback above) and synthesize a first-draft Highlights
-   and Misses/help from that real material — not from `company-state.md`
-   alone.
-4. **Q&A pass — ask about what's genuinely thin, ambiguous, or a number that
-   needs confirming**, one or two questions at a time, in the skill's usual
-   conversational style (`tone-of-voice.md`: ask, don't instruct). This is
-   not a form dump; skip sections the log already answered clearly. Never
-   invent a number or an outcome to fill a gap — ask, or leave the
-   placeholder.
+   own "Quick reference — short vs full" table — only if not already obvious
+   from context; default monthly short at foundation/first-hires.
+2. **Read inputs** — goals file's most recent period (bootstrap from
+   `company-state.md` or conversation if missing); `weekly-log.md` after the
+   marker; any meeting notes or files the founder pointed at.
+3. **Write the first draft immediately** — Highlights, Misses/help, Lookback,
+   Lookahead from real material only. Leave `[TODO: …]` / `_[ask founder]_`
+   for numbers, outcomes, and ambiguous slips. Append an **Open items**
+   checklist of what the interview must cover. *Do not wait for Q&A before
+   this draft exists.*
+4. **Interview pass** — walk **Open items** one or two at a time; patch the
+   draft after each answer. Skip questions the draft already answers clearly.
+   Never invent a number — ask, or keep the placeholder.
 5. **Draft Lookahead goals for the next period, by area**, collaboratively —
    write these into the goals file's next-period column in the same pass, so
    the two files never drift out of sync.
@@ -707,15 +756,15 @@ tree and `README.md` actually exist on disk afterward.
    this test case doesn't trivially re-serve stale material.
 4. Run [Investor updates & goals](#investor-updates-and-goals) for real: ask
    monthly/quarterly, bootstrap the goals file if it doesn't exist yet, read
-   the seeded log entries as the primary draft source, draft
-   Highlights/Misses from them, run the actual Q&A pass (ask genuine
-   follow-up questions rather than skipping it), draft Lookahead into the
+   the seeded log entries as the primary draft source, **write a first draft
+   with `[TODO]` where the log is thin**, list open items, **then** run the
+   interview pass (one or two questions at a time), draft Lookahead into the
    goals file, save the update, and advance the log's "last consumed
    through" marker.
 
-Use this to sanity-check: the log — not `company-state.md` alone — is
-actually driving the draft, the Q&A pass only asks about what the seeded log
-left genuinely unclear rather than dumping the whole template as questions,
+Use this to sanity-check: the log drives the draft, **a skeleton appears
+before the interview**, the Q&A pass only asks about open items rather than
+dumping the whole template as questions upfront,
 the goals file's Lookahead write-back actually happens, and the marker
 advances so a second run in the same session doesn't re-summarize the same
 entries.
