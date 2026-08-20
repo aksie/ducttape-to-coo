@@ -57,7 +57,7 @@ The matrix below is the source of truth for what exists and what still needs wri
 | **Legal & Other** |
 | 4.1 Legal & Compliance | stub | stub | stub | stub | stub |
 | 4.2 Office & Facilities | — | stub | stub | stub | stub |
-| 4.3 IT Administration | — | stub | stub | stub | stub |
+| 4.3 IT Administration | — | ✓ | stub | stub | stub |
 | 4.4 Vendor & Procurement | — | — | — | stub | stub |
 | **Revenue** |
 | 5.1 Sales Operations | — | stub | stub | stub | stub |

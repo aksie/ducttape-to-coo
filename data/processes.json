@@ -626,7 +626,7 @@
       "description": "Note: Technical infrastructure and architecture decisions remain with CTO. COO domain focuses on user-facing IT operations. Covers: Device procurement policies and standards (which laptop/screen models to purchase), software and SaaS license management and optimization, user provisioning and deprovisioning workflows, IT support ticket management and helpdesk, baseline security protocols for users (password managers, 2FA), equipment lifecycle management (ordering, setup, return)",
       "stageFocus": {
         "foundation": "Not applicable yet — just use whatever tools you need. No process required.",
-        "first-hires": "Set up basics: Google Workspace or Microsoft 365, password manager (1Password or similar), 2FA on everything important. Keep a simple list of who has access to what. Provision and deprovision manually for now.",
+        "first-hires": "Set up Google Workspace or M365, a password manager, and MFA before hire #2. Run the one-off device checklist on every work laptop. Keep a master access list and tie it to onboarding and offboarding.",
         "early-revenue": "Define your core tech stack and stick to it — every new tool adds admin overhead. Document how to set up a new employee (accounts, devices, access). Deprovisioning is a security risk: make sure it's part of offboarding.",
         "growth": "IT admin needs a proper owner. SaaS license audit (you're probably paying for things you don't use). Helpdesk process defined. Device management policy (MDM) if you have a growing fleet.",
         "scaled": "IT as an operations function: MDM, ITSM tooling, SaaS management platform, automated provisioning/deprovisioning tied to HR system. Security baseline enforced (SOC 2 or ISO 27001 if applicable)."
