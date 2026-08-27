@@ -196,6 +196,72 @@ def iter_approval_claim_blocks(approval_body):
         yield parts[i].strip(), parts[i + 1]
 
 
+def parse_draft_claim_ids(draft_body):
+    """Return sorted claim IDs from draft.md markers."""
+    ids = set(re.findall(r'<!--\s*claim-id:\s*(c-\d+)\s*-->', draft_body))
+    return sorted(ids, key=lambda x: int(x.split('-')[1]))
+
+
+def pending_approval_block(claim_id):
+    return f"""### {claim_id}
+- Status: pending
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: ""
+- Reviewed date: null
+- Edited claim text: null"""
+
+
+def sync_missing_approval_claims(approval_path, process, phase, claim_ids):
+    """
+    Append pending blocks for draft claims missing from approval.md.
+    Returns updated approval file text (and writes to disk if changed).
+    """
+    text = read_file(approval_path)
+    if not text:
+        return text
+
+    _, body = parse_frontmatter(text)
+    existing = {cid for cid, _ in iter_approval_claim_blocks(body)}
+    missing = [cid for cid in claim_ids if cid not in existing]
+    if not missing:
+        return text
+
+    append = '\n\n'.join(pending_approval_block(cid) for cid in missing) + '\n'
+    new_text = text.rstrip() + '\n\n' + append
+    write_file(approval_path, new_text)
+    return new_text
+
+
+def count_approval_stats(draft_body, approval_text):
+    """
+    Count approved / rejected / pending from draft claim IDs + approval.md.
+    Pending = missing block or explicit pending status.
+    """
+    claim_ids = parse_draft_claim_ids(draft_body)
+    approved = rejected = pending = 0
+
+    if not approval_text:
+        return len(claim_ids), 0, 0, len(claim_ids)
+
+    _, approval_body = parse_frontmatter(approval_text)
+    approval_map = {
+        cid: parse_approval_claim_body(cbody)
+        for cid, cbody in iter_approval_claim_blocks(approval_body)
+    }
+
+    for cid in claim_ids:
+        status = approval_map.get(cid, {}).get('status', 'pending')
+        if status in ('approved', 'approved_with_edit'):
+            approved += 1
+        elif status == 'rejected':
+            rejected += 1
+        else:
+            pending += 1
+
+    return len(claim_ids), approved, rejected, pending
+
+
 # ── Entry discovery ────────────────────────────────────────────────────────────
 
 def list_entries():
@@ -232,21 +298,10 @@ def list_entries():
         pending = 0
 
         if draft_text:
-            fm, _ = parse_frontmatter(draft_text)
-            claim_count = int(fm.get('claim_count', 0))
-
-        if approval_text:
-            statuses = re.findall(r'^-\s*Status:\s*(\w+)', approval_text, re.MULTILINE | re.IGNORECASE)
-            for s in statuses:
-                if s in ('approved', 'approved_with_edit'):
-                    approved += 1
-                elif s == 'rejected':
-                    rejected += 1
-                else:
-                    pending += 1
-        else:
-            # No approval file yet — all claims are pending
-            pending = claim_count
+            _, draft_body = parse_frontmatter(draft_text)
+            claim_count, approved, rejected, pending = count_approval_stats(
+                draft_body, approval_text
+            )
 
         entries.append({
             "process": process,
@@ -372,6 +427,11 @@ last_updated: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 - Edited claim text: null""")
         approval_text = fm_header + '\n'.join(blocks) + '\n'
         write_file(approval_path, approval_text)
+    else:
+        claim_ids = sorted(claims.keys(), key=lambda x: int(x.split('-')[1]))
+        approval_text = sync_missing_approval_claims(
+            approval_path, process, phase, claim_ids
+        )
 
     approval_map = {}  # claim_id → { status, flags, reviewer_notes, edited_claim_text }
 
