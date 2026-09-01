@@ -1,7 +1,7 @@
 ---
 title: "Before you raise money — understand the VC model"
 subtitle: "How venture capital funds make money — and what that means for founders on the other side of the table."
-date: "June 2026"
+date: "September 2026"
 tag: "Fundraising"
 tag_color: "blue"
 slug: "before-you-raise-money-understand-the-vc-model"
