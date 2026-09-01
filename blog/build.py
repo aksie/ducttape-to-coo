@@ -169,8 +169,7 @@ INDEX_TEMPLATE = """\
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
     <style>
-        .wrap{max-width:1200px;margin:0 auto;padding:48px 20px 100px}
-        .wrap .page-eyebrow,.wrap h1,.wrap .page-sub,.wrap .post-list{max-width:800px}
+        .wrap{max-width:800px;margin:0 auto;padding:48px 32px 100px}
         .page-eyebrow{display:inline-block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border:1px solid var(--blue);padding:3px 9px;border-radius:3px;margin-bottom:20px}
         .wrap h1{font-size:2rem;font-weight:700;letter-spacing:-.02em;margin-bottom:12px;color:var(--text)}
         .page-sub{font-size:1rem;color:var(--text-dim);margin-bottom:56px;max-width:540px;line-height:1.7}

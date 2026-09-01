@@ -160,7 +160,9 @@ h1 {
 }
 
 .site-announcement {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 10px 20px;
     background: var(--surface-raised);
