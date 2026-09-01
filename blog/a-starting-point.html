@@ -41,9 +41,16 @@
 
         /* ── Article layout ───────────────────────────── */
         .post-wrap {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 64px 32px 120px;
+            padding: 64px 20px 120px;
+        }
+
+        .post-meta,
+        .post-body,
+        .post-cta,
+        .post-footer {
+            max-width: 800px;
         }
 
         /* ── Meta block ───────────────────────────────── */
@@ -73,17 +80,17 @@
 
         .post-subtitle {
             font-size: 1.05rem;
-            color: var(--text-dim);
+            color: #c9d1d9;
             line-height: 1.6;
             margin-bottom: 10px;
         }
 
-        .post-byline { font-size: 0.82rem; color: var(--text-muted); }
+        .post-byline { font-size: 0.82rem; color: var(--text-dim); }
 
         /* ── Body copy ────────────────────────────────── */
         .post-body {
             font-size: 1rem;
-            color: var(--text-dim);
+            color: var(--text);
             line-height: 1.8;
         }
 
@@ -136,7 +143,7 @@
 
         .post-body blockquote p {
             margin-bottom: 0.6em;
-            color: var(--text-dim);
+            color: var(--text);
         }
         .post-body blockquote p:last-child { margin-bottom: 0; }
 
@@ -166,7 +173,7 @@
             padding: 10px 12px;
             border-bottom: 1px solid var(--border);
             vertical-align: top;
-            color: var(--text-dim);
+            color: var(--text);
         }
 
         .post-body tr:last-child td { border-bottom: none; }
@@ -189,7 +196,7 @@
 
         .post-cta p {
             margin-bottom: 16px;
-            color: var(--text-dim);
+            color: var(--text);
             font-size: 0.95rem;
         }
 
