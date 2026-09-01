@@ -159,6 +159,31 @@ h1 {
     margin-bottom: 20px;
 }
 
+.site-announcement {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background: var(--surface-raised);
+    color: var(--text);
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+}
+
+.site-announcement:hover {
+    background: #1c2128;
+    color: var(--text);
+}
+
+.site-announcement-label {
+    font-weight: 600;
+    margin-right: 0.35em;
+}
+
+@media (max-width: 640px) {
+    .site-announcement { font-size: 0.82rem; padding: 10px 16px; }
+}
+
 /* ─── Progress Bar ────────────────────────────────── */
 .progress-bar {
     position: sticky;
