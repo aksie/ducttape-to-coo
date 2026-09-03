@@ -1,12 +1,12 @@
 ---
 title: "Who Decides When Founders Disagree"
 subtitle: "You don't need a RACI matrix. You need a rule for the fork in the road — before you're standing on it."
-date: "June 2026"
+date: "September 2026"
 tag: "Founding team"
 tag_color: "orange"
 slug: "who-decides-when-founders-disagree"
 order: 4
-listed: false
+listed: true
 description: "Founding teams stall when nobody owns the fork. A lightweight ABC map, consult-then-decide, and a one-page template — drawn from YC, Grove, Ascent, and the teams I actually see."
 cta_intro: "The diagnostic has a whole process area for decision rights — where it sits at your stage, and what to fix first."
 cta_primary_text: "Run the diagnostic"
