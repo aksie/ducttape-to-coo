@@ -5,6 +5,7 @@ date: "September 2026"
 tag: "Fundraising"
 tag_color: "blue"
 slug: "before-you-raise-money-understand-the-vc-model"
+order: 2
 listed: true
 description: "If you're considering venture capital, understand how the other side makes money — management fees, carried interest, LP returns, and why that shapes what they need from you."
 cta_intro: "Raising capital is one moment in a much longer ops story — know where your company stands operationally before you optimise for someone else's game."

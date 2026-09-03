@@ -5,7 +5,8 @@ date: "May 2026"
 tag: "Entry point"
 tag_color: "green"
 slug: "a-starting-point"
-order: 1
+order: 3
+listed: true
 description: "Two patterns that send founders looking for a COO — the all-rounder who hit the ceiling, and the visionary who never liked ops. And where things break: at the start, at the end, and in the middle."
 cta_intro: "The diagnostic walks through the same process — without needing a call first. See which areas are genuinely broken vs which just feel that way."
 cta_primary_text: "Run the diagnostic"

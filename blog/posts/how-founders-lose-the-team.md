@@ -6,6 +6,7 @@ tag: "Leadership"
 tag_color: "blue"
 slug: "how-founders-lose-the-team"
 order: 3
+listed: false
 description: "Three patterns in how founders communicate strategy as their companies grow — and the shared root cause. What worked at 5 people quietly breaks at 25, and loudly breaks at 50."
 cta_intro: "Want to see where the communication and planning processes sit in your company right now?"
 cta_primary_text: "Run the diagnostic"

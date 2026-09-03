@@ -6,6 +6,7 @@ tag: "Entry point"
 tag_color: "green"
 slug: "what-strategy-is-and-why-you-really-need-it"
 order: 5
+listed: false
 description: "Most founders have a strategy - they think. Most of those strategies are not actually strategies. Here's how to tell the difference — and what to do about it."
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
