@@ -16,7 +16,7 @@ cta_secondary_href: "../wiki.html#4.1--first-hires"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
-A founder in Germany let someone go, and for the second time in two years, forgot to correctly lock down the severance-bonus terms in the employment contract. The first time, it cost him a hundred and fifty thousand euros. Not because he couldn't have known — he'd already paid for that lesson once.
+A founder let someone go, and for the second time in two years, forgot to correctly lock down the severance or vesting terms in the employment contract. The first time, it cost him a hundred and fifty thousand euros. Not because he couldn't have known — he'd already paid for that lesson once.
 
 That's not just a legal slip. It's the kind of thing any developer recognizes instantly, even outside of code: nobody ever went back to fix the foundation, so you keep hitting the same bug.
 
@@ -30,7 +30,7 @@ That's the whole point. Not "did you handle it," but: do you see for yourself wh
 
 Every founder who's ever shipped software knows the feeling: at some point you have to stop and refactor. Clean up the components scattered across the system before you can keep building on top. Skip that, and eventually the whole thing collapses on the exact foundation you never had time for.
 
-Business operations work the same way. A couple of bad hires aren't just expensive on their own — they're legacy code. At some point you're not building anything new anymore; you're just patching what's already there. Or, as the investor we spoke with put it: hiring is an investment, or a loan — and a bad hire carries such a punishing interest rate that just a few of them can break you, even if the rest of the company is healthy.
+Business operations work the same way. A couple of bad hires aren't just expensive on their own — they're legacy code. At some point you're not building anything new anymore; you're just patching what's already there. Or, as it was put during the conversation: hiring is an investment, or a loan — and a bad hire carries such a punishing interest rate that just a few of them can break you, even if the rest of the company is healthy.
 
 The same goes for your contracts, your shareholder agreement, your IP registration. It's fine if none of that looks perfectly clean in the early days — that's normal for the stage you're in. The problem shows up the moment you actually need it. Just like you don't want to discover, mid-incident, that the code you need to debug is undocumented and nobody remembers how it works — you don't want to discover, at the exact moment it matters, that the contract you need is partly missing, partly badly drafted, and partly never written down at all. At a critical moment, that can genuinely be what sinks you.
 
