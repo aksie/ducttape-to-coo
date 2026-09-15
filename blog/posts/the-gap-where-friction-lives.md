@@ -1,6 +1,6 @@
 ---
 title: "Growing Pains Are Usually a Founder Gap"
-subtitle: "When something breaks in a growing company, it usually breaks for the same reason: the organisation needs something it isn't getting yet, and the founder isn't doing it yet. Theory from three growth models point in the same direction."
+subtitle: "When something breaks in a growing company, it usually is because the organisation needs something now it isn't getting yet, and the founder isn't doing it yet. Theory from three growth models point in the same direction."
 date: "May 2026"
 tag: "Essay"
 tag_color: "blue"
@@ -16,11 +16,19 @@ cta_secondary_href: "../wiki.html"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework. Next: working forms that help founders and teams not just see where they are, but actually move."
 ---
 
-When something breaks in a growing company, it usually breaks for the same reason: the organisation needs something it isn't yet getting, and the founder isn't yet doing it. The friction isn't a sign that something is wrong with the company, or wrong with the founder. The friction *is* the gap between the two.
+"Arrrrrggh!" a founder says. "I have more and more work I don't like and the organisation is not as fun and fast as it used to be and everybody is asking me about another operational thing!"  
 
-Three well-known models describe this gap from different angles. Larry Greiner mapped it onto the *organisation*. Rachel Turner mapped it onto the *founder*. Les McKeown mapped it onto the *texture of daily work*. Read together — and held next to a concrete operational maturity lens — they tell a more useful story than any of them tells alone.
+When something breaks in a growing company, it usually breaks for the same reason: the organisation now needs something it isn't yet getting, and the founder isn't yet doing it. The friction isn't a sign that something is wrong with the company, or wrong with the founder. The friction *is* the gap between the two.
 
-This post lays them side by side, then matches them to the operational maturity stages I use in the Duct Tape to COO diagnostic.
+I have seen this a bunch of times when helping founders navigate the rough seas of scaling a company. For the Ducttape to COO framework and the virtual COO I figured that I may have opinions and experience, but there *must* be research about this right? 
+
+So I dove in. And it turns out three well-known models describe this gap from different angles. I will walk you all three and then return to how to apply this. 
+
+The three angles: 
+- Larry Greiner mapped it onto the *organisation*.
+- Rachel Turner mapped it onto the *founder*.
+- Les McKeown mapped it onto the *texture of daily work*. 
+Read together — and held next to a concrete operational maturity lens — they tell a more useful story than any of them tells alone.
 
 ---
 
@@ -28,7 +36,7 @@ This post lays them side by side, then matches them to the operational maturity 
 
 ### Greiner: the organisation grows through crises
 
-Greiner's model (1972, revised 1998) describes five phases of organisational growth, each ending in a crisis that forces the next phase into being:
+Let's start with Greiner. Very well known, established, and the oldest perspective. Greiner's model (1972, revised 1998) describes five phases of organisational growth, each ending in a crisis that forces the next phase into being:
 
 1. **Creativity** — small, founder-led, informal. Ends in a *leadership crisis*: the founder can no longer hold everything.
 2. **Direction** — first management layer, processes appear. Ends in an *autonomy crisis*: middle managers want decision rights the founder won't give up.
@@ -36,11 +44,13 @@ Greiner's model (1972, revised 1998) describes five phases of organisational gro
 4. **Coordination** — formal systems, headquarters function. Ends in a *red-tape crisis*: process strangles speed.
 5. **Collaboration** — matrixed, team-based, culture-led.
 
-The most useful idea in Greiner is the crisis itself. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the *signal* that the organisation needs the next phase.
+What I find the most useful idea in Greiner is not the phases, but the crisis. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the *signal* that the organisation needs the next phase. It is not easy. 
+
+I remember me, Damian and Nalden sharing notes from the book "The Hard Things about Hard Things" while going through ons of these phases. There are no shortcuts. But maybe even more important, like pain, that crisis is a useful message that something is wrong. Or misaligned. 
 
 ### Turner: the founder shifts through leadership modes
 
-Rachel Turner's *Founder's Survival Guide* (2022) abstracts the journey to three leadership modes the founder must learn to flex between:
+Rachel Turner's *Founder's Survival Guide* (2022) looks from another side. She abstracts the journey to three leadership modes the *founder* must learn to flex between:
 
 - **Brave Warrior** — bold, intuitive, fast, hands-on. Wins the early war.
 - **Considered Architect** — designs systems, develops people, builds structure.
@@ -66,9 +76,9 @@ McKeown adds a team typology that explains *why* Whitewater is so hard to leave:
 
 ### PAEI: why the founder's strengths resist the transition
 
-Ichak Adizes' PAEI model (from his lifecycle work) sharpens the same point with different vocabulary. Every healthy organisation needs four functions: **Producer** (delivers results), **Administrator** (systematises and controls), **Entrepreneur** (vision and change), and **Integrator** (builds culture and connection). No single person can carry all four.
+Ichak Adizes' PAEI model (from his lifecycle work) sharpens the same point with different vocabulary. Every healthy organisation needs four functions they say: **Producer** (delivers results), **Administrator** (systematises and controls), **Entrepreneur** (vision and change), and **Integrator** (builds culture and connection). No single person can carry all four.
 
-Founders in the early phases are typically strong on E (Entrepreneur) and P (Producer) and weak on A (Administrator) and I (Integrator). The company succeeds because of E and P. So when growth demands A — process, structure, predictability — the founder experiences it as boring, slowing, bureaucratic. Not because A is wrong, but because A isn't where their identity lives. The Producer-Entrepreneur founder protects the E and P by quietly resisting the A.
+Founders in the early phases are typically strong on E (Entrepreneur) and P (Producer) and weak on A (Administrator) and I (Integrator). The company succeeds at the start because of E and P. So when growth demands more A (Administrator) — process, structure, predictability — the founder experiences it as boring, slowing, bureaucratic. Not because A is wrong, but because A isn't where their identity lives. The Producer-Entrepreneur founder protects the E and P by quietly resisting the A.
 
 This is the deeper mechanism under Turner's "killer shots become liabilities." Your strengths gave you success, status, *and* identity. The transition isn't a skill problem. It's an identity problem dressed as a skills problem.
 
@@ -107,7 +117,7 @@ I've been refining a way to assess where each individual process sits, regardles
 3. **Formally owned** — ownership is named, recognised, and clear.
 4. **Documented and maintained** — the process is written down, owned, and kept current.
 
-The interesting thing about putting this next to the growth models is what it reveals: companies don't sit cleanly in one growth phase. They sit in a *distribution* of process maturities. A Whitewater company typically has a handful of processes at stage 1, most at stage 2, almost none at stages 3 or 4. The journey through Whitewater is, operationally, the journey of moving processes up the stages.
+The interesting thing about putting this next to the growth models is what it reveals: companies don't sit cleanly in one growth phase. They sit in a *distribution* of process maturities. A Whitewater phase company typically has a handful of processes at stage 1, most at stage 2, almost none at stages 3 or 4. The journey through Whitewater is, operationally, the journey of moving processes up the stages.
 
 Here's how the maturity stages map onto the growth frameworks:
 
@@ -131,8 +141,17 @@ And the friction always points to the same thing: a process the organisation nee
 
 ## What this means in practice
 
-If you're a founder reading this and recognising Whitewater: the move that matters isn't *delegating more*, and it isn't *adopting frameworks*. It's looking at where you still hold processes informally that the organisation now needs formally owned. The pain is the map.
+If you're a founder reading this and recognising the underlying Turner issues how your strengths gave you success, status, *and* identity, you know you have work to do. Let's start with when you recognise the Whitewater phase: the move that matters isn't *delegating more*, and it isn't *adopting frameworks*. It's looking at where you still hold processes informally that the organisation now needs formally owned. The pain is the map.
 
-If you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." It's "which processes does the organisation need at stage 3 that the founder is still running at stage 1?" Every one of those is a transition waiting to happen. And every one of those has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.
+The three growth models tell you the journey is real and predictable. 
+The maturity stages tell you where to start tomorrow.
+If you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." 
+The dagnostic *IS ABOUT*: "which processes does the organisation need at stage 3, but that the founder is still running at stage 1?" 
 
-The three growth models tell you the journey is real and predictable. The maturity stages tell you where to start tomorrow.
+Every one of those is a small transition and everyone of them has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.
+
+Reach out if you you'd like to compare notes on your experience scaling or would like a second pair of eyes on your Ops. 
+
+
+
+
