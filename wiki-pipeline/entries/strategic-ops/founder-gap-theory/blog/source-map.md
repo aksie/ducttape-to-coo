@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/founder-gap-theory/blog
-blog_slug: the-gap-where-friction-lives
+blog_slug: what-got-you-here-is-whats-hurting-you-now
 last_updated: 2026-09-15
 sources: [src-083, src-084, src-085, src-086]
 atoms: [atom-626, atom-627, atom-628, atom-629, atom-630, atom-631, atom-632, atom-633, atom-634, atom-635, atom-636, atom-637, atom-638, atom-639]

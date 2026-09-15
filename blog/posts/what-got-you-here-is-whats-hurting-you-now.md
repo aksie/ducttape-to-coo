@@ -1,11 +1,11 @@
 ---
 title: "What Got You Here Is What’s Hurting You Now"
 subtitle: "What the organisation needs next — and what you have to let go"
-date: "May 2026"
+date: "September 2026"
 tag: "Essay"
 tag_color: "blue"
-slug: "the-gap-where-friction-lives"
-order: 2
+slug: "what-got-you-here-is-whats-hurting-you-now"
+order: 0
 listed: true
 description: "When growth outruns how you used to work, the friction is usually a founder gap — not a broken company. Greiner, Turner, and McKeown describe the same transition from three angles."
 cta_intro: "Want to see where your own company sits across the maturity stages — process by process?"

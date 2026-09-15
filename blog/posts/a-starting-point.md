@@ -12,7 +12,7 @@ cta_intro: "The diagnostic walks through the same process — without needing a 
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
-cta_secondary_href: "the-gap-where-friction-lives.html"
+cta_secondary_href: "what-got-you-here-is-whats-hurting-you-now.html"
 ---
 
 A founder or CEO reaches out: *"I think we need a COO. Can you help us? Or do you know someone?"*
