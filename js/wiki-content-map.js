@@ -558,7 +558,7 @@ const WikiContentMap = (function () {
     addDot(36, 119, '#3fb950', 4);
     addText('A Starting Point', 47, 119, '9.5', '#e6edf3');
     addDot(36, 137, '#3fb950', 4);
-    addText('The Gap Where Friction Lives', 47, 137, '9', '#e6edf3');
+    addText('What Got You Here Is What’s Hurting You Now', 47, 137, '9', '#e6edf3');
     addDot(36, 155, '#3fb950', 4);
     addText('How Founders Lose the Team', 47, 155, '9', '#e6edf3');
     addDot(36, 173, '#3fb950', 4);

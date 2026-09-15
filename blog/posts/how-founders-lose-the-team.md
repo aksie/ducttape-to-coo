@@ -11,7 +11,7 @@ description: "Three patterns in how founders communicate strategy as their compa
 cta_intro: "Want to see where the communication and planning processes sit in your company right now?"
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
-cta_secondary_text: "Read: The Gap Where Friction Lives →"
+cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---

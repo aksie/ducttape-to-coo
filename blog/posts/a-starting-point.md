@@ -11,7 +11,7 @@ description: "Two patterns that send founders looking for a COO — the all-roun
 cta_intro: "The diagnostic walks through the same process — without needing a call first. See which areas are genuinely broken vs which just feel that way."
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
-cta_secondary_text: "Read: The Gap Where Friction Lives →"
+cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 ---
 

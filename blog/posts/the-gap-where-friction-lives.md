@@ -1,12 +1,12 @@
 ---
-title: "Growing Pains Are Usually a Founder Gap"
-subtitle: "When something breaks in a growing company, it usually is because the organisation needs something now it isn't getting yet, and the founder isn't doing it yet. Theory from three growth models point in the same direction."
+title: "What Got You Here Is What’s Hurting You Now"
+subtitle: "What the organisation needs next — and what you have to let go"
 date: "May 2026"
 tag: "Essay"
 tag_color: "blue"
 slug: "the-gap-where-friction-lives"
 order: 2
-listed: false
+listed: true
 description: "When growth outruns how you used to work, the friction is usually a founder gap — not a broken company. Greiner, Turner, and McKeown describe the same transition from three angles."
 cta_intro: "Want to see where your own company sits across the maturity stages — process by process?"
 cta_primary_text: "Run the diagnostic"

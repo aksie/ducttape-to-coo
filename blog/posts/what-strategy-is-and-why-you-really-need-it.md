@@ -11,7 +11,7 @@ description: "Most founders have a strategy - they think. Most of those strategi
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
-cta_secondary_text: "Read: The Gap Where Friction Lives →"
+cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "the-gap-where-friction-lives.html"
 
 ---
@@ -142,6 +142,6 @@ Strategy that lives only in the founder's head isn't strategy. It's a competitiv
 
 ---
 
-[Run the diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) [Read: The Gap Where Friction Lives →](https://aksie.github.io/ducttape-to-coo/blog/the-gap-where-friction-lives.html)
+[Run the diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) [Read: What Got You Here Is What’s Hurting You Now →](https://aksie.github.io/ducttape-to-coo/blog/the-gap-where-friction-lives.html)
 
 Part of an ongoing series on the Duct Tape to COO operational maturity framework.
