@@ -141,7 +141,7 @@ And the friction always points to the same thing: a process the organisation nee
 
 ## What this means in practice
 
-If you're a founder reading this and recognising the underlying Turner issues how your strengths gave you success, status, *and* identity, you know you have work to do. Let's start with when you recognise the Whitewater phase: the move that matters isn't *delegating more*, and it isn't *adopting frameworks*. It's looking at where you still hold processes informally that the organisation now needs formally owned. The pain is the map.
+If you're a founder reading this and recognising the underlying Turner issues how your strengths gave you success, status, *and* identity, you know you have work to do. Let's start with when you recognise the Whitewater phase: the move that matters isn't *delegating more*, and it isn't *adopting frameworks*. It's looking at where you still hold processes informally that the organisation now needs formally owned. You need to map that to get ahead. 
 
 The three growth models tell you the journey is real and predictable. 
 The maturity stages tell you where to start tomorrow.
