@@ -113,14 +113,14 @@ And here's where my own working hypothesis lives: **when things go wrong in this
 
 The three frameworks describe *that* the transition happens. They're less specific about *what changes operationally* — which is where the Duct Tape to COO diagnostic comes in.
 
-I've been refining a way to assess where each individual process sits, regardless of where the company as a whole is:
+I've been refining a way to assess where each individual process sits, regardless of where the company as a whole is, and this is where I have landed on so far:
 
 1. **Informal** — it gets done, but ad hoc.
 2. **Informally owned** — someone reliably does it, but ownership isn't explicit.
 3. **Formally owned** — ownership is named, recognised, and clear.
 4. **Documented and maintained** — the process is written down, owned, and kept current.
 
-The interesting thing about putting this next to the growth models is what it reveals: companies don't sit cleanly in one growth phase. They sit in a *distribution* of process maturities. A Whitewater phase company typically has a handful of processes at stage 1, most at stage 2, almost none at stages 3 or 4. The journey through Whitewater is, operationally, the journey of moving processes up the stages.
+The interesting thing about putting this next to the growth models is what it reveals: **companies don't sit cleanly in one growth phase**. They sit in a *distribution* of process maturities. A Whitewater phase company typically has a handful of processes at informally done, most informally owned, almost none documented and formally owned. The journey through Whitewater is, operationally, the journey of moving processes up the stages. 
 
 Here's how the maturity stages map onto the growth frameworks:
 
@@ -136,9 +136,9 @@ Here's how the maturity stages map onto the growth frameworks:
 </tbody>
 </table>
 
-The maturity model gives the growth models something they don't have on their own: *a way to see, process by process, where the friction lives*. You don't transition a company through Whitewater in one heroic act. You move processes up, one at a time, in the order the friction demands.
+The maturity model I made gives the growth models something they don't have on their own: *a way to see, process by process, where the friction lives*. You don't transition a company through Whitewater in one heroic act. You move processes up, one at a time, in the order the friction demands.
 
-And the friction always points to the same thing: a process the organisation needs *formally owned* but the founder is still treating as *informal*. That's the gap. That's where the work is.
+And the friction always points to the same thing: a process the organisation needs *formally owned* but the founder is still treating as *informal*. That's the gap where the work is.
 
 ---
 
@@ -146,15 +146,10 @@ And the friction always points to the same thing: a process the organisation nee
 
 If you're a founder reading this and recognising the underlying Turner issues how your strengths gave you success, status, *and* identity, you know you have work to do. Let's start with when you recognise the Whitewater phase: the move that matters isn't *delegating more*, and it isn't *adopting frameworks*. It's looking at where you still hold processes informally that the organisation now needs formally owned. You need to map that to get ahead. 
 
-The three growth models tell you the journey is real and predictable. 
-The maturity stages tell you where to start tomorrow.
-If you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." 
-The dagnostic *IS ABOUT*: "which processes does the organisation need at stage 3, but that the founder is still running at stage 1?" 
+And this is about each individual process, not the entire company. So if you're an advisor or operations lead reading this: the diagnostic isn't "what phase is the company in." The dagnostic *IS ABOUT*: "which processes does the organisation need at stage 3, but that the founder is still running at stage 1?" 
 
 Every one of those is a small transition and everyone of them has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.
 
-Reach out if you you'd like to compare notes on your experience scaling or would like a second pair of eyes on your Ops. 
-
-
+Reach out if you you'd like to compare notes on your experience scaling or would like a second pair of eyes on your Ops. I am doing this to give back to founders and society, so this is not about me doing billable work for you. 
 
 
