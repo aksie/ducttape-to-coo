@@ -16,7 +16,7 @@ cta_secondary_href: "../wiki.html"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework. Next: working forms that help founders and teams not just see where they are, but actually move."
 ---
 
-"Arrrrrggh!" a founder says. "I have more and more work I don't like and the organisation is not as fun and fast as it used to be and everybody is asking me about another operational thing!"  
+"Arrrrrggh!" a founder says. "I have more and more work I don't like. And the organisation is not as fun and fast as it used to be. And everybody is asking me about another operational thing!"  
 
 When something breaks in a growing company, it usually breaks for the same reason: the organisation now needs something it isn't yet getting, and the founder isn't yet doing it. The friction isn't a sign that something is wrong with the company, or wrong with the founder. The friction *is* the gap between the two.
 
