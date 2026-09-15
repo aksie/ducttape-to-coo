@@ -28,6 +28,7 @@ The three angles:
 - Larry Greiner mapped it onto the *organisation*.
 - Rachel Turner mapped it onto the *founder*.
 - Les McKeown mapped it onto the *texture of daily work*. 
+A fourth source — Ichak Adizes — explains *why* founders resist that transition.
 Read together — and held next to a concrete operational maturity lens — they tell a more useful story than any of them tells alone.
 
 ---
@@ -44,7 +45,7 @@ Let's start with Greiner. Very well known, established, and the oldest perspecti
 4. **Coordination** — formal systems, headquarters function. Ends in a *red-tape crisis*: process strangles speed.
 5. **Collaboration** — matrixed, team-based, culture-led.
 
-What I find the most useful idea in Greiner is not the phases, but the crisis. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the *signal* that the organisation needs the next phase. It is not easy. 
+What I find the most useful idea in Greiner is not the phases, but the crisis. Growth doesn't happen smoothly; it happens because something stops working. The leadership crisis isn't a failure of the founder — it's the *signal* that the organisation needs the next phase. It is not easy. Greiner's lasting irony: the practices that solve one phase become the problem that forces the next. Today's fix is tomorrow's crisis.
 
 I remember me, Damian and Nalden sharing notes from the book "The Hard Things about Hard Things" while going through ons of these phases. There are no shortcuts. But maybe even more important, like pain, that crisis is a useful message that something is wrong. Or misaligned. 
 
@@ -56,9 +57,9 @@ Rachel Turner's *Founder's Survival Guide* (2022) looks from another side. She a
 - **Considered Architect** — designs systems, develops people, builds structure.
 - **Wise Monarch** — sets vision, coaches leaders, holds the long view, lets go of operational detail.
 
-Turner's central insight: your strengths as a Brave Warrior become liabilities when the company needs an Architect. The same instincts that got you here will keep you stuck. Founders don't fail because they're missing skills; they fail because they over-apply the skills that already worked.
+Turner's central insight: the mode that won the early war becomes kryptonite when the company needs something else. Founders don't fail because they're missing skills; they fail because they keep leading from their default mode after the business has moved on.
 
-This maps directly onto Greiner's crises. Greiner's *leadership crisis* is what happens when a Brave Warrior runs a company that now needs an Architect.
+This maps directly onto Greiner's crises. Greiner's *leadership crisis* is what happens when a Brave Warrior is still running a company that now needs an Architect.
 
 ### McKeown: the work itself changes texture
 
@@ -70,7 +71,7 @@ Les McKeown's *Predictable Success* (2010) gives the journey a different kind of
 4. **Predictable Success** — growth *plus* systems. Repeatable wins. The peak.
 5. **Treadmill → Big Rut → Death Rattle** — over-process, ossification, decline.
 
-Whitewater is the phase most founders find me in. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: *I used to enjoy this*.
+Whitewater is the phase where most founders find me. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: *I used to enjoy this*.
 
 McKeown adds a team typology that explains *why* Whitewater is so hard to leave: every healthy company needs four styles working together — **Visionary** (typically the founder), **Operator** (gets things done), **Processor** (builds repeatability), and **Synergist** (translates between the other three). In Fun you only need Visionary and Operator. In Whitewater, you need the Processor — and that's exactly the person the Visionary and Operator instinctively reject as *slowing us down*.
 
@@ -80,7 +81,7 @@ Ichak Adizes' PAEI model (from his lifecycle work) sharpens the same point with 
 
 Founders in the early phases are typically strong on E (Entrepreneur) and P (Producer) and weak on A (Administrator) and I (Integrator). The company succeeds at the start because of E and P. So when growth demands more A (Administrator) — process, structure, predictability — the founder experiences it as boring, slowing, bureaucratic. Not because A is wrong, but because A isn't where their identity lives. The Producer-Entrepreneur founder protects the E and P by quietly resisting the A.
 
-This is the deeper mechanism under Turner's "killer shots become liabilities." Your strengths gave you success, status, *and* identity. The transition isn't a skill problem. It's an identity problem dressed as a skills problem.
+This is the deeper mechanism under Turner's kryptonite point. Your strengths gave you success, status, *and* identity. The transition isn't a skill problem. It's an identity problem dressed as a skills problem.
 
 ---
 
@@ -99,6 +100,8 @@ Across the three models, the same transition keeps showing up under different na
 <tr><td>Leading it</td><td>Coordination → Collaboration</td><td>Wise Monarch</td><td>Predictable Success</td><td>I and E lead</td></tr>
 </tbody>
 </table>
+
+\*Greiner compression: “Finding it” is Creativity; the hard middle spans the *leadership* crisis (Creativity → Direction) and the *autonomy* crisis (Direction → Delegation). “Built it” starts once Direction sticks and Delegation begins — not a single Greiner phase.
 
 The hard middle is the same place. Greiner names it by what's failing structurally. Turner names it by what the founder must become. McKeown names it by how the work feels. PAEI names it by which function is missing. They're describing one moment from four sides of the room.
 
