@@ -150,6 +150,8 @@ And this is about each individual process, not the entire company. So if you're 
 
 Every one of those is a small transition and everyone of them has both an operational shape (write it down, name the owner) and an identity shape (the founder has to let it become someone else's). Both have to move together.
 
-Reach out if you you'd like to compare notes on your experience scaling or would like a second pair of eyes on your Ops. I am doing this to give back to founders and society, so this is not about me doing billable work for you. 
+Reach out if you you'd like to compare notes on your experience scaling or would like a second pair of eyes on your Ops. I am doing this to give back to founders and society, so this is not about me doing billable work for you.
 
+---
 
+*P.S. Research notes for this essay: [source map](https://github.com/aksie/ducttape-to-coo/blob/main/wiki-pipeline/entries/strategic-ops/founder-gap-theory/blog/source-map.md) (atoms from Greiner, Turner, McKeown, Adizes) and the March [research annex](https://github.com/aksie/ducttape-to-coo/blob/main/wiki-pipeline/entries/strategic-ops/founder-gap-theory/blog/research-annex.md) (selection rationale, candidates set aside, empirics). Those atoms feed the public [wiki](../wiki.html) via sources → claims → human review → publish — see [docs/pipeline.md](https://github.com/aksie/ducttape-to-coo/blob/main/docs/pipeline.md).*

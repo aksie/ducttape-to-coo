@@ -8,7 +8,7 @@ status: sources_and_atoms_ready
 methodology: research-annex.md
 ---
 
-# Source map — *The Gap Where Friction Lives*
+# Source map — *What Got You Here Is What’s Hurting You Now*
 
 Crosswalk from blog claims → registered sources / atoms. Blog body not yet annotated with `<!-- sources: … -->` (await editorial pass).
 
