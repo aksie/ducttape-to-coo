@@ -20,12 +20,6 @@ A founder let someone go, and for the second time in two years, forgot to correc
 
 That's not just a legal slip. It's the kind of thing any developer recognizes instantly, even outside of code: nobody ever went back to fix the foundation, so you keep hitting the same bug.
 
-## Are you fixing it because you have to, or because you get it?
-
-There's a real difference between a shareholder agreement that's in order because your investor asked for it, and one that's in order because you actually understand why it matters. Founders in the first camp check the box and move on. Founders in the second camp have something much more valuable: a foundation they can actually fall back on once things get tense.
-
-That's the whole point. Not "did you handle it," but: do you see for yourself why it matters? Because if you're only doing it because the VC asked, you'll do just enough to get it off your plate — and that's exactly the kind of half-measure that costs you later, at the worst possible time.
-
 ## It's technical debt — just in your org chart instead of your codebase
 
 Every founder who's ever shipped software knows the feeling: at some point you have to stop and refactor. Clean up the components scattered across the system before you can keep building on top. Skip that, and eventually the whole thing collapses on the exact foundation you never had time for.
@@ -33,6 +27,12 @@ Every founder who's ever shipped software knows the feeling: at some point you h
 Business operations work the same way. A couple of bad hires aren't just expensive on their own — they're legacy code. At some point you're not building anything new anymore; you're just patching what's already there. Or, as it was put during the conversation: hiring is an investment, or a loan — and a bad hire carries such a punishing interest rate that just a few of them can break you, even if the rest of the company is healthy.
 
 The same goes for your contracts, your shareholder agreement, your IP registration. It's fine if none of that looks perfectly clean in the early days — that's normal for the stage you're in. The problem shows up the moment you actually need it. Just like you don't want to discover, mid-incident, that the code you need to debug is undocumented and nobody remembers how it works — you don't want to discover, at the exact moment it matters, that the contract you need is missing, you only have a version not signed by both parties, or a previous version of an important clause leaked in. At a critical moment, that can genuinely be what sinks you.
+
+## Are you fixing it because you have to, or because you get it?
+
+There's a real difference between a shareholder agreement that's in order because your investor asked for it, and one that's in order because you actually understand why it matters. Founders in the first camp check the box and move on. Founders in the second camp have something much more valuable: a foundation they can actually fall back on once things get tense.
+
+That's the whole point. Not "did you handle it," but: do you see for yourself why it matters? Because if you're only doing it because the VC asked, you'll do just enough to get it off your plate — and that's exactly the kind of half-measure that costs you later, at the worst possible time.
 
 ## Who did you hire in the last twelve months?
 
