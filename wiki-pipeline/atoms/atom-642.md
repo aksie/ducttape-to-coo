@@ -1,13 +1,14 @@
 ---
 id: atom-642
 source_id: src-088
-type: why
+type: warning_sign
+warning_category: process_entry
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
 confidence: medium
 practitioner_first_person: true
-bias_flags: [vc_investor_self_interest]
+bias_flags: [vc_industry_veteran]
 why_quality: medium
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
@@ -17,12 +18,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-The skill formal board meetings require — synthesizing a complex business into a focused narrative and running a real discussion instead of a status readout — is exactly what informal quarterly checkpoints let you practice cheaply.
+You're likely being told the decision to stop being CEO will be your own call — in practice, once you have an institutional board, it's the board's decision far more often than you're led to expect.
 
 ## Source quote or paraphrase
 
-Rishi Taparia frames the informal "not-a-board-meeting" as low-stakes practice for the same underlying skill a formal board relationship will later require at higher stakes.
+Neumann: standard "board advice" for founders is more upbeat than the lived reality of how CEO transitions actually go once outside directors hold real power.
 
 ## Why (inferred from source if not explicit)
 
-Learning to run a focused, decision-oriented conversation under investor scrutiny is a communication skill that improves with repetition; doing the reps informally, when a bad rehearsal costs little, is cheaper than learning it for the first time in front of a fiduciary board.
+The genre of founder-facing board advice is itself produced largely by people (VCs, advisors) with an interest in founders trusting the board relationship, which skews the advice toward reassurance over accuracy.

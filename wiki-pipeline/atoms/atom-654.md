@@ -1,14 +1,14 @@
 ---
 id: atom-654
 source_id: src-092
-type: target_state
+type: action
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
-confidence: high
+confidence: medium
 practitioner_first_person: true
-bias_flags: [vc_portfolio_interest]
-why_quality: high
+bias_flags: [vc_investor_self_interest]
+why_quality: medium
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
 unverified: false
@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-Your board's real value is in forward-looking decision support, problem-solving, and strategy — not in reviewing what already happened.
+Even before you have a formal board, run a quarterly structured "not-a-board-meeting" checkpoint with your investors and advisors anyway.
 
 ## Source quote or paraphrase
 
-Kjartan Rist (Forbes): the value of a board lies not in looking backward through reporting, but in planning for the future and adding value around strategy.
+Rishi Taparia: the best founders run quarterly NBM sessions at pre-seed/seed, well before a formal board with outside directors exists.
 
 ## Why (inferred from source if not explicit)
 
-Reviewing past results is something you can do on paper without a room full of experienced people; the reason to assemble a board at all is to use their judgment on decisions that haven't been made yet.
+A quarterly structured checkpoint forces a level of synthesis and accountability that routine weekly or biweekly update calls don't produce, and that skill has to be practiced somewhere before it's required under real stakes.

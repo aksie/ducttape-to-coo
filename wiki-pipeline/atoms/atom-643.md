@@ -1,13 +1,13 @@
 ---
 id: atom-643
-source_id: src-089
-type: action
+source_id: src-088
+type: why
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
-confidence: high
+confidence: medium
 practitioner_first_person: true
-bias_flags: []
+bias_flags: [vc_industry_veteran]
 why_quality: high
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-Send your board materials out at least three days before the meeting, and preferably seven.
+If you rely on informal trust and good intent as the thing actually protecting your role, you're relying on something the formal power structure doesn't guarantee.
 
 ## Source quote or paraphrase
 
-Zack Urlocker: later delivery turns the board meeting itself into first-read time instead of discussion time.
+Neumann: the gap between how board advice is commonly written and how boards behave under real pressure is large enough that founders are routinely blindsided by it.
 
 ## Why (inferred from source if not explicit)
 
-If directors are reading the numbers for the first time in the room, the meeting gets consumed by comprehension instead of decision-making — the whole point of a pre-read is to move that work outside the meeting.
+Trust is a social mechanism that can be overridden by a board vote; once a board has lost confidence, the legal mechanism for removing a CEO does not require the founder's continued trust or agreement to operate.

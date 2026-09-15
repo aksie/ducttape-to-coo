@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-The point of your board materials is to get your board to a shared, accurate picture of the business fast — not to demonstrate how much work went into producing them.
+The risk your board poses to your role is highest exactly when it's least visible day to day.
 
 ## Source quote or paraphrase
 
-Zack Urlocker, writing from the board-member side: understanding the business should never be sacrificed to more analysis or more polish in the deck.
+HN thread: during calm periods, trust and formal power look identical, so founders conflate the two and don't notice the risk building.
 
 ## Why (inferred from source if not explicit)
 
-A board's usefulness depends entirely on whether it has an accurate, current picture of the company; time spent on deck polish that doesn't improve that picture is time subtracted from the actual goal.
+Formal power only becomes visible when it's exercised — by the time you can see it being used against you, the underlying conditions (missed targets, lost confidence) that triggered it have often already been building for a while.

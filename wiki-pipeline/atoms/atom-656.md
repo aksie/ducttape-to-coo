@@ -1,13 +1,13 @@
 ---
 id: atom-656
 source_id: src-092
-type: action
+type: why
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
 confidence: medium
 practitioner_first_person: true
-bias_flags: [vc_portfolio_interest]
+bias_flags: [vc_investor_self_interest]
 why_quality: medium
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-Keep your board close to five members — an odd number, for decisive votes — rather than letting it grow because every investor in a round expects a seat.
+The skill formal board meetings require — synthesizing a complex business into a focused narrative and running a real discussion instead of a status readout — is exactly what informal quarterly checkpoints let you practice cheaply.
 
 ## Source quote or paraphrase
 
-Kjartan Rist: boards commonly become oversized when founders offer a seat to every investor; around five members is closer to the functional target.
+Rishi Taparia frames the informal "not-a-board-meeting" as low-stakes practice for the same underlying skill a formal board relationship will later require at higher stakes.
 
 ## Why (inferred from source if not explicit)
 
-A larger board is harder to schedule, harder to get a real discussion out of, and more likely to include members without genuine relevant expertise — size trades off directly against the board's ability to function as a decision-making group.
+Learning to run a focused, decision-oriented conversation under investor scrutiny is a communication skill that improves with repetition; doing the reps informally, when a bad rehearsal costs little, is cheaper than learning it for the first time in front of a fiduciary board.

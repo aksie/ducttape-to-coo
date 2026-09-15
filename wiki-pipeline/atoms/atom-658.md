@@ -5,10 +5,10 @@ type: action
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
-confidence: medium
+confidence: high
 practitioner_first_person: true
 bias_flags: []
-why_quality: medium
+why_quality: high
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
 unverified: false
@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-Stage your first board meeting prep on a timeline: rough outline three weeks out, draft content two weeks out, finalized materials one week out, pre-read circulated the Friday before.
+Target roughly 90% accuracy on the financial statements in your board pack rather than holding the pack back for false-precision 100% accuracy.
 
 ## Source quote or paraphrase
 
-The Juice HQ founder account of preparing for their first board meeting, sharing the actual staged timeline they used.
+Zack Urlocker: perfectionism on numbers delays the pack without changing the decisions the board actually needs to make.
 
 ## Why (inferred from source if not explicit)
 
-Spreading the work over weeks instead of compressing it into the final days leaves room to get feedback on drafts and catch problems in the narrative before the board ever sees it.
+The marginal value of the last 10% of numerical precision is almost never worth the delay it causes in getting the board a usable, directionally-accurate picture of the business in time to prepare.

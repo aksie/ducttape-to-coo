@@ -1,14 +1,14 @@
 ---
 id: atom-644
-source_id: src-089
-type: action
+source_id: src-088
+type: target_state
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
-confidence: high
+confidence: medium
 practitioner_first_person: true
-bias_flags: []
-why_quality: high
+bias_flags: [vc_industry_veteran]
+why_quality: medium
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
 unverified: false
@@ -17,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-Target roughly 90% accuracy on the financial statements in your board pack rather than holding the pack back for false-precision 100% accuracy.
+You and your board share an explicit, accurate understanding that outside directors hold real decision authority — not just an advisory role — once they're seated.
 
 ## Source quote or paraphrase
 
-Zack Urlocker: perfectionism on numbers delays the pack without changing the decisions the board actually needs to make.
+Neumann's argument implies the healthy state is founders and boards operating from the same accurate picture of where authority sits, rather than a founder-comforting fiction.
 
 ## Why (inferred from source if not explicit)
 
-The marginal value of the last 10% of numerical precision is almost never worth the delay it causes in getting the board a usable, directionally-accurate picture of the business in time to prepare.
+Shared accurate expectations prevent the founder from being blindsided later, and let both sides address disagreements about direction while there's still room to negotiate, instead of only at the moment of crisis.

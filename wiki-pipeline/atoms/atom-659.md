@@ -2,7 +2,7 @@
 id: atom-659
 source_id: src-093
 type: warning_sign
-warning_category: process_entry
+warning_category: founder_time
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
@@ -18,12 +18,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-If you find yourself intimidated or star-struck by your board members' reputations in the meeting, that's a sign you've forgotten it's still your meeting to run.
+If your board deck keeps growing toward 80-100 slides, treat it as a warning sign, not a sign of rigor — it usually means the deck is substituting for genuine understanding of the business.
 
 ## Source quote or paraphrase
 
-The Juice HQ, quoting Lindsay Tjepkema (CEO, Casted): first-time founders are prone to feeling this way, and the corrective is remembering whose meeting it actually is.
+Zack Urlocker: a very long, exhaustive board deck signals effort but often stands in for actually knowing what's driving the business.
 
 ## Why (inferred from source if not explicit)
 
-A founder who defers to the board's seniority instead of running the agenda ends up reactive rather than directive, which reinforces the exact "working for the board" dynamic that undermines a healthy founder-board relationship.
+Building an exhaustive deck lets a team feel like it has "covered everything" without forcing the harder work of identifying the two or three things that actually matter this quarter — comprehensiveness becomes a way to avoid prioritizing.

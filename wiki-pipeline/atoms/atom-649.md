@@ -1,8 +1,7 @@
 ---
 id: atom-649
 source_id: src-090
-type: warning_sign
-warning_category: output_quality
+type: why
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
@@ -18,12 +17,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-If experienced board members are resigning rather than sitting through another low-value meeting, that's a direct signal the board process itself is broken — not just an inconvenience.
+Your real bargaining power over board composition comes from company performance and traction, not from contract terms negotiated defensively in advance.
 
 ## Source quote or paraphrase
 
-The TechCrunch author describes resigning from two independent board seats specifically because they couldn't bear sitting through repeated dysfunctional board meetings.
+Ask HN thread: leverage to negotiate board composition is earned through results, not engineered purely through legal structure.
 
 ## Why (inferred from source if not explicit)
 
-Board members who could add real value have limited time and choose where to spend it; when the meeting format wastes that time reliably, the people most able to help are the ones most likely to opt out first.
+Legal protections can be renegotiated whenever a company needs new capital and is in a weak bargaining position; strong performance is the one thing that keeps a founder's negotiating position strong across every future round.

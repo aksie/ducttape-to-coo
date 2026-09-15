@@ -1,14 +1,15 @@
 ---
 id: atom-648
 source_id: src-090
-type: target_state
+type: warning_sign
+warning_category: process_entry
 process: shareholder-reporting
 phase: early-revenue
 sub_variant_signals: [funding_stage]
-confidence: high
+confidence: medium
 practitioner_first_person: true
 bias_flags: []
-why_quality: high
+why_quality: medium
 extracted_by: "llm:claude-sonnet-5"
 extracted_date: 2026-09-15
 unverified: false
@@ -17,12 +18,12 @@ entry_target: "1.2b-shareholder-reporting"
 
 ## Claim
 
-A well-run early-stage board meeting is mostly conversation and decision-making — not a read-through of numbers the board could have absorbed from a pre-read.
+If your sense of board control rests on dual-class or super-voting stock, treat that as fragile protection, not a settled outcome.
 
 ## Source quote or paraphrase
 
-TechCrunch guest piece, from a practitioner who has sat as both CEO and independent director: the deck-heavy, presentation-style board meeting is a default, not a requirement, and founders can set their own format.
+Ask HN thread: dual-class structures are frequently stripped out at the first or second institutional round even when founders started a company with them in place.
 
 ## Why (inferred from source if not explicit)
 
-Board members are most valuable when they're reacting, challenging, and helping decide — none of which requires live narration of numbers they could read in five minutes beforehand.
+Institutional investors in later rounds have their own leverage to demand governance changes as a condition of investing, and defensive structures set up early don't survive that negotiation by default.
