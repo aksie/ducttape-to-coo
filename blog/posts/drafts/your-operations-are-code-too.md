@@ -1,13 +1,13 @@
 ---
 title: "Your Operations Are Code Too"
-subtitle: "Technical debt doesn't stop at your codebase — and neither does the cost of ignoring it."
+subtitle: "Why it comes up in diligence, and why the mess itself is the signal."
 date: "September 2026"
 tag: "Operations"
 tag_color: "blue"
 slug: "your-operations-are-code-too"
 order: 1
 listed: false
-description: "A founder's legal paperwork, contracts, and hiring record work exactly like a codebase — skip the refactor and you end up firefighting instead of building. Drawn from a conversation with an impact-VC partner."
+description: "Investors don't care about your paperwork for its own sake — they care what it tells them about whether you're coachable. Drawn from a conversation with an impact-VC partner about why operations matter, not just what good ones look like."
 cta_intro: "The diagnostic covers the same ground as this post — legal and hiring — calibrated to your stage."
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
@@ -16,41 +16,31 @@ cta_secondary_href: "../wiki.html#4.1--first-hires"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
-A founder let someone go, and for the second time in two years, forgot to correctly lock down the severance or vesting terms in the employment contract. The first time, it cost him a hundred and fifty thousand euros. Not because he couldn't have known — he'd already paid for that lesson once.
+## This will come up in diligence — here's why investors care
 
-That's not just a legal slip. It's the kind of thing any developer recognizes instantly, even outside of code: nobody ever went back to fix the foundation, so you keep hitting the same bug.
+I spend a fair amount of time talking to investors about how startups actually run operations day to day. Conversations like that are where a lot of the best-practice content in the wiki, and in the Virtual COO skill, comes from. Usually those talks end up being about practices: what good onboarding looks like, what a healthy board cadence is. One recent conversation, with an investor at an impact-VC fund, went somewhere more interesting — not best practices, but *why* operational hygiene matters enough for an investor to care about it before a term sheet is even close.
 
-## It's technical debt — just in your org chart instead of your codebase
+Here's the short version: a messy shareholder agreement, an unsigned contract, an employment agreement that doesn't hold up — none of that is really about the document. An investor doing diligence isn't grading your paperwork. They're using it as a proxy for something they can't directly observe yet: whether you're coachable. Whether, once someone points at a gap, you actually close it, or explain it away.
 
-Every founder who's ever shipped software knows the feeling: at some point you have to stop and refactor. Clean up the components scattered across the system before you can keep building on top. Skip that, and eventually the whole thing collapses on the exact foundation you never had time for.
+And how broken it is tells its own story. A founder who lets the same mistake happen twice — say, letting someone go without correctly locking down severance or vesting terms, the second time *after* already paying for that lesson once — isn't unlucky. They're showing they never understood *why* it mattered the first time. That's the real thing being read for. It's also why "I fixed it because the VC asked" and "I fixed it because I get it" produce two very different founders, even when the paperwork looks identical on the page.
 
-Business operations work the same way. A couple of bad hires aren't just expensive on their own — they're legacy code. At some point you're not building anything new anymore; you're just patching what's already there. Or, as it was put during the conversation: hiring is an investment, or a loan — and a bad hire carries such a punishing interest rate that just a few of them can break you, even if the rest of the company is healthy.
+## It's code
 
-The same goes for your contracts, your shareholder agreement, your IP registration. It's fine if none of that looks perfectly clean in the early days — that's normal for the stage you're in. The problem shows up the moment you actually need it. Just like you don't want to discover, mid-incident, that the code you need to debug is undocumented and nobody remembers how it works — you don't want to discover, at the exact moment it matters, that the contract you need is missing, you only have a version not signed by both parties, or a previous version of an important clause leaked in. At a critical moment, that can genuinely be what sinks you.
+Every founder who's shipped software knows the feeling: at some point you stop and refactor. You clean up the components scattered across the system before you can keep building on top of them. Skip that, and eventually the whole thing collapses on exactly the foundation you never had time for.
 
-## Are you fixing it because you have to, or because you get it?
+Your operations are the same kind of system — just running on people and paper instead of servers. Your contracts, your shareholder agreement, your IP registration don't need to be pristine on day one. That's normal for the stage you're in. The problem shows up the moment you actually need it. You don't want to discover, mid-incident, that the code you need to debug is undocumented and nobody remembers how it works. In exactly the same way, you don't want to discover — at the one moment it actually matters — that the contract you need is missing, that you only have a version nobody signed, or that an old draft of an important clause quietly made it into the final one. At a genuinely critical moment, that is the kind of thing that sinks you.
 
-There's a real difference between a shareholder agreement that's in order because your investor asked for it, and one that's in order because you actually understand why it matters. Founders in the first camp check the box and move on. Founders in the second camp have something much more valuable: a foundation they can actually fall back on once things get tense.
+## It's debt — with a brutal interest rate
 
-That's the whole point. Not "did you handle it," but: do you see for yourself why it matters? Because if you're only doing it because the VC asked, you'll do just enough to get it off your plate — and that's exactly the kind of half-measure that costs you later, at the worst possible time.
+If the code metaphor doesn't land, this might. In the conversation, we landed on hiring as the clearest example. A bad hire isn't a one-off cost — it's a loan, and the interest rate is brutal. Two bad hires, not five, not ten, just two, will keep you occupied almost full-time: managing around them, covering for them, eventually replacing them. Add up the hours, and the interest has quietly eaten your entire EBITDA — and you didn't build anything else that quarter.
 
-## Who did you hire in the last twelve months?
+It's the same mechanism as the paperwork. A gap you don't close doesn't sit still. It compounds, right up until the one day you need it not to.
 
-There's a question that reveals more than "what does your team look like now": who have you hired in the last twelve months? Bring in people stronger than you in their domain — giants — and the organization grows to match your ambition. Keep hiring people who are easier to manage than they are to be challenged by — dwarves — and the team quietly gets smaller, even as headcount goes up on paper. See [Recruitment & Hiring](https://aksie.github.io/ducttape-to-coo/wiki.html#3.2--first-hires) in the wiki for where this typically goes wrong.
+## Where to start
 
-## The role you think you should play isn't always the one that's needed
+None of this asks for perfection. What it asks is whether you can tell the difference between fixing something because someone told you to, and fixing it because you understand why it's there. Check your shareholder agreement, your employment contracts, your IP registration — not for an investor, for yourself ([Legal & Compliance](https://aksie.github.io/ducttape-to-coo/wiki.html#4.1--first-hires)). Look honestly at your last two hires: investment, or loan?
 
-Investors and founders often look at the exact same picture — the CEO role — and see something completely different as the most important part of it. The investor sees: organize your company, create clarity, build accountability, set a clear strategy. The founder sees: I need to carry the story to the world, champion the brand, own the stage. Both are right — a good CEO needs to do both — and that's exactly what makes the role so hard. This is what [Org Design](https://aksie.github.io/ducttape-to-coo/wiki.html#1.5--early-revenue) is really about as your team grows: not just who fills which box on the org chart, but whether everyone — including you — is playing the role the company needs right now.
-
-## What to do with this
-
-None of this asks for perfection. Coachability mattered more in this conversation than flawlessness did. The question isn't whether you make mistakes — it's whether you see them, admit them, and do something about it before someone else has to point it out.
-
-To start:
-- Check whether your shareholder agreement, employment contracts, and IP registration are in order — not because an investor is asking, but because you want to know for yourself that the foundation is there ([Legal & Compliance](https://aksie.github.io/ducttape-to-coo/wiki.html#4.1--first-hires)).
-- Look back at your last five hires: giants, or dwarves?
-
-Want to see where your own operational maturity stands on these and other processes? The [diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) gives you a concrete picture, calibrated to your stage.
+Want to see where your own operational maturity stands, stage by stage? The [diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) gives you a concrete picture.
 
 ---
 
