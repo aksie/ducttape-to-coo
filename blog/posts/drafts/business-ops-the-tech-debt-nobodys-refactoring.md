@@ -4,7 +4,7 @@ subtitle: "Why operations matter to investors in due diligence, and why you shou
 date: "September 2026"
 tag: "Operations"
 tag_color: "blue"
-slug: "your-operations-are-code-too"
+slug: "business-ops-the-tech-debt-nobodys-refactoring"
 order: 1
 listed: false
 description: "Investors don't care about your paperwork for its own sake — they care what it tells them about whether you're coachable. Drawn from a conversation with an impact-VC partner about why operations matter, not just what good ones look like."
