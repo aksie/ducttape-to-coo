@@ -8,7 +8,7 @@ slug: "your-operations-are-code-too"
 order: 1
 listed: false
 description: "A founder's legal paperwork, contracts, and hiring record work exactly like a codebase — skip the refactor and you end up firefighting instead of building. Drawn from a conversation with an impact-VC partner."
-cta_intro: "The diagnostic covers the same ground as this post — legal, hiring, and governance — calibrated to your stage."
+cta_intro: "The diagnostic covers the same ground as this post — legal and hiring — calibrated to your stage."
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Wiki: Legal & Compliance →"
@@ -38,20 +38,6 @@ That's the whole point. Not "did you handle it," but: do you see for yourself wh
 
 There's a question that reveals more than "what does your team look like now": who have you hired in the last twelve months? Bring in people stronger than you in their domain — giants — and the organization grows to match your ambition. Keep hiring people who are easier to manage than they are to be challenged by — dwarves — and the team quietly gets smaller, even as headcount goes up on paper. See [Recruitment & Hiring](https://aksie.github.io/ducttape-to-coo/wiki.html#3.2--first-hires) in the wiki for where this typically goes wrong.
 
-## Your board is not a report-card committee
-
-Boards have gotten more professional in the last few years, and more formal along with it. That's good news in itself — the problem is that founders and investors often don't share a picture of what the board is actually there to do. The result: founders who feel like they're working *for* the board, instead of the other way around.
-
-A simple test: is the question in the room "what do you want from us," or "what do I want, and what do I need from you to get there"? The second one is what a good board should be asking — and it's on you as the founder to claim it if it doesn't happen on its own. See [Who Decides What](https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires) and [Org Design](https://aksie.github.io/ducttape-to-coo/wiki.html#1.5--early-revenue).
-
-Disappointing numbers make boards nervous, and the reflex is more control, more scrutiny. For a founder who's already under pressure, that feels like a chokehold. The strongest founders are the ones who can say: "I'm not going to do that — if I do, this happens, and that's not what you want either, is it?"
-
-## Bad news on the table, before it has to be
-
-Calling your investor with bad news is one of the hardest things there is — precisely because you depend on them. The temptation is to stack up only the good news. But as it was put in the interview: put it on the table, and it's our problem. Otherwise it's yours alone.
-
-That's exactly why [Shareholder Reporting](https://aksie.github.io/ducttape-to-coo/wiki.html#1.2b--first-hires) isn't just about compliance — a good reporting cadence, one where setbacks land early and unfiltered, is what lets a board actually help before a problem becomes a crisis.
-
 ## The role you think you should play isn't always the one that's needed
 
 Investors and founders often look at the exact same picture — the CEO role — and see something completely different as the most important part of it. The investor sees: organize your company, create clarity, build accountability, set a clear strategy. The founder sees: I need to carry the story to the world, champion the brand, own the stage. Both are right — a good CEO needs to do both — and that's exactly what makes the role so hard. This is what [Org Design](https://aksie.github.io/ducttape-to-coo/wiki.html#1.5--early-revenue) is really about as your team grows: not just who fills which box on the org chart, but whether everyone — including you — is playing the role the company needs right now.
@@ -63,8 +49,6 @@ None of this asks for perfection. Coachability mattered more in this conversatio
 To start:
 - Check whether your shareholder agreement, employment contracts, and IP registration are in order — not because an investor is asking, but because you want to know for yourself that the foundation is there ([Legal & Compliance](https://aksie.github.io/ducttape-to-coo/wiki.html#4.1--first-hires)).
 - Look back at your last five hires: giants, or dwarves?
-- Ask your board directly: do we all agree on what we're here to do — and is that "what do I want" or "what do you want"?
-- Practice the conversation where you share bad news before you have to, not after.
 
 Want to see where your own operational maturity stands on these and other processes? The [diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) gives you a concrete picture, calibrated to your stage.
 
