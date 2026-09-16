@@ -284,6 +284,27 @@ this stage specifically.
 
 ---
 
+## src-098 / src-100 addendum (founder-change port → 1.4)
+
+Claims that belong on decision rights, not org-design role exit. Ported from `founder-gap-theory/convincing-founders-to-change` after Phase 3 (2026-09-16). Bulk of that cell published to **1.5 Organizational Design**.
+
+### c-024: Teach decision criteria when you keep a call
+- Section: what_to_do
+- Supporting atoms: atom-677
+- Primary source: src-098
+- Original claim: convincing-founders c-006
+- Synthesis notes: Action 6 on the published page; cross-links 1.5 so criteria-teaching does not become a keep-everything loophole
+
+### c-025: COO/CoS hire without mandate
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-681
+- Primary source: src-100
+- Original claim: convincing-founders c-013
+- Synthesis notes: New Process entry warning subsection on the published page
+
+---
+
 ## ABC decision map — origin
 
 Established, with a named author and a live URL. The maintainer's placeholder credit — "as described

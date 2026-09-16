@@ -178,7 +178,7 @@
       "stageFocus": {
         "foundation": "No org chart needed. Everyone reports to founders. Just clarify what each founder owns to avoid gaps.",
         "first-hires": "Simple structure: who reports to whom. Make it explicit even if informal. Update as you add people and roles emerge.",
-        "early-revenue": "Document team structure as functions form (eng, sales, ops). Define manager roles and spans of control. Revisit quarterly as you grow.",
+        "early-revenue": "Give away the jobs you still own every couple of months, stand up functional owners better than you in each domain, and protect CEO time for hiring/coaching leaders, Mission–Strategy–Metrics, and culture.",
         "growth": "Maintain living org chart. Clear reporting lines and team boundaries. Design structure intentionally (functional vs product teams). Plan for middle management layer.",
         "scaled": "Org design as strategic tool. Regular reviews: does structure enable strategy? Optimize spans of control, layers, and team composition. Common issue: Structure doesn't match how work actually flows."
       },
@@ -200,7 +200,7 @@
       "stageFocus": {
         "foundation": "Not needed yet - just talk to each other.",
         "first-hires": "Start a simple wiki or shared doc. Document the 3-5 most important processes (how to deploy, how to handle customer issues, etc.).",
-        "early-revenue": "Process documentation becomes a habit. New processes get documented. Wiki or Notion space is organized and people actually use it. Review quarterly what needs updating.",
+        "early-revenue": "Name a Processor owner, capture new processes in a findable wiki with owners and last-reviewed dates, and run a 30-minute quarterly doc review — stale pages, oral-only steps, repeat breakages, and workflows still on the founder.",
         "growth": "Process documentation standards: templates, owners, review cycles. Documentation findable and accessible. New hires can self-serve most questions. Continuous improvement culture.",
         "scaled": "Comprehensive process library. Documentation maintained actively. Automated reminders for reviews. Process improvement methodology (e.g., Lean, Six Sigma) if relevant. Regular process audits."
       },

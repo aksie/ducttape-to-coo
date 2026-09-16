@@ -219,3 +219,19 @@ that could not be traced (c-012, c-021), is in `trail.md`.
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-24 11:51
 - Edited claim text: null
+
+### c-024
+- Status: approved
+- Flags: []
+- Reviewer notes: "Addendum 2026-09-16: ported from founder-gap-theory/convincing-founders-to-change c-006 (approved aksie 2026-09-16)."
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 16:21
+- Edited claim text: null
+
+### c-025
+- Status: approved
+- Flags: []
+- Reviewer notes: "Addendum 2026-09-16: ported from founder-gap-theory/convincing-founders-to-change c-013 (approved aksie 2026-09-16)."
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 16:29
+- Edited claim text: null

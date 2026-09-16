@@ -308,4 +308,5 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - YC “Second Job of a Startup CEO” registered: src-111 (https://www.ycombinator.com/blog/the-second-job-of-a-startup-ceo), atoms atom-693–698
 - Academic identity layer registered: src-102–109, atoms atom-683–691 (March, Crocker/Wolfe, ITC, Markus, Ibarra, Kaiser/Kaplan, coaching metas)
 - IDs renumbered 2026-09-16 after main merged 1.2b board research into former src-087–097 / atom-640–675 range → this cell is now **src-098–111**, **atom-676–698**
-- Run date: 2026-09-15–16 — Phase 2 draft ready (`draft.md` + `trail.md`, 18 claims)
+- **Published 2026-09-16:** bulk → `1.5--early-revenue.md` (Organizational Design); thin addendum → `1.4--early-revenue.md` (c-024 teach criteria, c-025 COO without mandate). Research cell superseded — do not publish a third wiki page.
+- Run date: 2026-09-15–16 — Phase 2–4 complete
