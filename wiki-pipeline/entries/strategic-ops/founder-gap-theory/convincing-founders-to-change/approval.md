@@ -151,49 +151,50 @@ last_updated: 2026-09-16 15:32
 - Edited claim text: null
 
 ### c-019
-- Status: pending
+- Status: approved_with_edit
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
-- Edited claim text: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:52
+- Edited claim text: **Optionally: run a quarterly "not-a-board-meeting" checkpoint with investors and advisors, even before you have a formal board.** It's the cheapest way to practice the exact skill a real board will demand of you: synthesizing a complex business into a focused narrative and running a discussion, not a status readout.
+   <!-- sources: src-092 (Rishi Taparia / Garuda Ventures, vc_investor_self_interest) -->
 
 ### c-020
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:52
 - Edited claim text: null
 
 ### c-021
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:52
 - Edited claim text: null
 
 ### c-022
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:53
 - Edited claim text: null
 
 ### c-023
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:53
 - Edited claim text: null
 
 ### c-024
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: null
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-16 18:53
 - Edited claim text: null

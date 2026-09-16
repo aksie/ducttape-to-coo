@@ -3,12 +3,14 @@ process: strategic-ops
 subprocess: shareholder-investor-reporting
 process_id: "1.2b"
 phase: early-revenue
-last_updated: 2026-09-17
-claim_count: 16
+last_updated: 2026-09-16
+claim_count: 22
 synthesis_mode: new_draft
 primary_sources: src-087, src-088, src-093, src-094, src-096
+batch_addendum: src-091, src-092, src-095, src-097
 extends_published: wiki/processes/strategic/1.2b--early-revenue.md
-related_crosscut: strategic-ops/founder-gap-theory/convincing-founders-to-change (c-019, c-020, c-021, c-022, c-024)
+published: wiki/processes/strategic/1.2b--early-revenue.md
+note: "Phase 4 published 2026-09-16. c-004/c-009/c-016 rejected. c-017–c-022 ported from convincing-founders c-019–c-024."
 ---
 
 # Shareholder & Investor Reporting — Early Revenue: board power & meeting purpose
@@ -99,4 +101,32 @@ related_crosscut: strategic-ops/founder-gap-theory/convincing-founders-to-change
 
 ## Note on scope and related work
 
-Six atoms from this same research batch (avoiding hard board conversations, practicing board discipline before a formal board exists, and using board time to justify yourself instead of asking for help) went to the **crosscut entry** [`strategic-ops/founder-gap-theory/convincing-founders-to-change`](../../founder-gap-theory/convincing-founders-to-change/draft.md) instead — they're about founder identity/behavior change, not board mechanics, per that entry's own boundary table. See its `c-019`, `c-020`, `c-021`, `c-022`, `c-024`.
+Six atoms from this research batch were first drafted on the crosscut [`convincing-founders-to-change`](../../founder-gap-theory/convincing-founders-to-change/draft.md) (c-019–c-024). After approval they were **ported back here as c-017–c-022** and published on `1.2b--early-revenue.md` (2026-09-16). The crosscut cell remains the research trail only.
+
+---
+
+## Founder-board practice addendum (from convincing-founders c-019–c-024)
+
+<!-- claim-id: c-017 -->
+7. **Optionally: run a quarterly "not-a-board-meeting" checkpoint with investors and advisors, even before you have a formal board.** It's the cheapest way to practice the exact skill a real board will demand of you: synthesizing a complex business into a focused narrative and running a discussion, not a status readout.
+   <!-- sources: src-092 (Rishi Taparia / Garuda Ventures, vc_investor_self_interest) -->
+
+<!-- claim-id: c-018 -->
+8. **Don't wait for Series A or B to take this discipline seriously.** The communication and relationship-building skill compounds — starting early is worth more than starting formally.
+   <!-- sources: src-095 (NFX, vc_portfolio_interest) -->
+
+<!-- claim-id: c-019 -->
+- **If you already ran informal quarterly checkpoints before your board existed, you'll be dramatically better prepared once a real board is seated at your next round.** The habit — not the formality — is what compounds.
+  <!-- sources: src-092 (Rishi Taparia / Garuda Ventures, vc_investor_self_interest) -->
+
+<!-- claim-id: c-020 -->
+- **You use board-meeting time to justify your own performance and decisions instead of asking for help.** It's the same Doer-in-Chief defensiveness as holding primary processes, relocated to the boardroom.
+  <!-- sources: src-095 (NFX, vc_portfolio_interest) -->
+
+<!-- claim-id: c-021 -->
+- **You're intimidated or star-struck by your board members' reputations in the room.** That's a sign you've forgotten it's still your meeting to run.
+  <!-- sources: src-097 (The Juice HQ) -->
+
+<!-- claim-id: c-022 -->
+- **You avoid sharing bad news with your board out of fear of looking incompetent.** By the time they hear about a real problem, it's too late for anyone to actually help.
+  <!-- sources: src-091 (David Paul, vc_investor_self_interest) -->

@@ -6,17 +6,18 @@ phase: early-revenue
 phase_description: Early Revenue / Whitewater — the hard middle where ops duct tape breaks and founder identity resists the next mode
 last_updated: 2026-09-16
 step: 4
-status: superseded_published_to_1.5_and_1.4
+status: superseded_published_to_1.5_1.4_1.2b
 publish_destinations:
   - wiki/processes/strategic/1.5--early-revenue.md
   - wiki/processes/strategic/1.4--early-revenue.md (c-006→c-024, c-013→c-025)
+  - wiki/processes/strategic/1.2b--early-revenue.md (c-019–c-024 board practice)
 related_blog: what-got-you-here-is-whats-hurting-you-now
 related_annex: ../blog/research-annex.md
 ---
 
 # Source discovery — Convincing founders to change
 
-> **Superseded 2026-09-16.** Approved claims were published into **1.5 Organizational Design** (bulk) and **1.4 Who Decides What** (thin addendum). Keep this cell as the research trail; do not publish a third wiki page from it. See `organizational-design/early-revenue/` and the src-098/src-100 addendum on `who-decides-what/early-revenue/`.
+> **Superseded 2026-09-16.** Role-exit claims → **1.5**; decision-rights thin addendum → **1.4**; board-practice claims (c-019–c-024) → **1.2b** (published with shareholder-reporting batch). Keep this cell as the research trail; do not publish a third wiki page from it.
 
 **Research question (user, Sep 2026):** How can you convince founders to change — to start delegating the primary process, start being a leader, and fix Ops duct tape?
 

@@ -170,6 +170,56 @@ synthesis_mode: new_draft
 
 These 7 are about founder identity/behavior change (avoidance, practicing leadership before it's forced, defensiveness in the room) rather than board mechanics — see that entry's boundary table. Nothing from this Phase 1 run was fully discarded.
 
+**Update 2026-09-16:** After Phase 3 on the crosscut, those claims were **ported back and published on 1.2b** as addendum c-017–c-022 (see below). The crosscut remains research-only.
+
+---
+
+## src-091 / 092 / 095 / 097 addendum — founder-board practice (from convincing-founders)
+
+Published on `wiki/processes/strategic/1.2b--early-revenue.md` 2026-09-16. Max-7 prioritisation: c-017+c-018 → one action; c-020+c-022 → one founder-time warning; c-021 folded into process-entry with board-as-reporting-forum; c-014/c-015 approved but not on page (deck creep / resignation — concrete but lower priority vs. habit + identity warnings).
+
+### c-017: Not-a-board quarterly checkpoint (optional)
+- Section: what_to_do
+- Supporting atoms: atom-654, atom-656 (why)
+- Primary source: src-092
+- Original claim: convincing-founders c-019 (approved_with_edit)
+
+### c-018: Don't wait for Series A/B
+- Section: what_to_do
+- Supporting atoms: atom-667
+- Primary source: src-095
+- Original claim: convincing-founders c-020
+- Synthesis notes: Folded into published action 7 with c-017
+
+### c-019: Informal checkpoints pay off once a real board exists
+- Section: evolution
+- Supporting atoms: atom-655
+- Primary source: src-092
+- Original claim: convincing-founders c-021
+
+### c-020: Justifying yourself in board meetings
+- Section: warning_signs
+- Warning category: founder_time
+- Supporting atoms: atom-666
+- Primary source: src-095
+- Original claim: convincing-founders c-022
+
+### c-021: Star-struck, forgetting it's your meeting
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-673
+- Primary source: src-097
+- Original claim: convincing-founders c-023
+
+### c-022: Avoiding bad news to the board
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-651
+- Primary source: src-091
+- Original claim: convincing-founders c-024
+
+---
+
 ## Bias / disclosure notes for Phase 3
 
 - Corpus health (`wiki-pipeline/corpus_health-shareholder-reporting-early-revenue.md`) already flags investor-perspective concentration: 5 of 9 "practitioner" sources are working VCs writing first-person, and zero EU/NL sources exist. That flag applies to this draft too — c-001, c-005, c-006, c-013 lean most heavily on VC-authored sources with no independent founder-side corroboration.
