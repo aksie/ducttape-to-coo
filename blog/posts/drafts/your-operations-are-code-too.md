@@ -1,6 +1,6 @@
 ---
-title: "Your Operations Are Code Too"
-subtitle: "Why it comes up in diligence, and why the mess itself is the signal."
+title: "Business Ops: The Tech Debt Nobody's Refactoring"
+subtitle: "Why operations matter to investors in due diligence, and why you should care too."
 date: "September 2026"
 tag: "Operations"
 tag_color: "blue"
