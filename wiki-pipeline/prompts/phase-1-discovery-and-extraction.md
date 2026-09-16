@@ -299,3 +299,13 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Geographic gap: entirely US-focused or geography-unknown (HN); **no EU/NL board-governance content** (one-tier vs two-tier boards, `raad van commissarissen` norms) despite this process's existing NL-relevant variants in `data/processes.json` — flag for Phase 2
 - Content-fetch constraint: `WebFetch`/`curl` to HN, Substack, Forbes, NFX, TechCrunch and similar were all blocked by this environment's egress policy (org policy denial, confirmed via proxy status) — extraction was done from `WebSearch`-synthesized content rather than raw full-text fetch; confidence/why_quality capped at medium where synthesis was thin, high only where specific numeric/mechanism detail was repeated. A future run with working fetch access should spot-check the high-confidence atoms
 - Run date: 2026-09-15 — src-087–097, atoms atom-640–675
+
+### Convincing founders to change @ Early Revenue (founder-gap-theory crosscut)
+- Research question: how to get founders to delegate primary processes, lead, and fix ops duct tape (follow-up to blog identity gap)
+- Reuse mechanism atoms from src-083–086 (Greiner/Turner/McKeown/PAEI); do not re-extract
+- Vendor bias risk: **high** in raw search (fractional COO / coach blogs) — register HN + First Round + academic identity layer first
+- Key tension: “give away the job” vs Founder Mode false dichotomy — include adversarial HN (Beck/PG thread)
+- YC “Second Job of a Startup CEO” registered: src-111 (https://www.ycombinator.com/blog/the-second-job-of-a-startup-ceo), atoms atom-693–698
+- Academic identity layer registered: src-102–109, atoms atom-683–691 (March, Crocker/Wolfe, ITC, Markus, Ibarra, Kaiser/Kaplan, coaching metas)
+- IDs renumbered 2026-09-16 after main merged 1.2b board research into former src-087–097 / atom-640–675 range → this cell is now **src-098–111**, **atom-676–698**
+- Run date: 2026-09-15–16 — Phase 2 draft ready (`draft.md` + `trail.md`, 18 claims)
