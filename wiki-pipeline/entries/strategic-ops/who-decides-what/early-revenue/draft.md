@@ -3,11 +3,11 @@ process: strategic-ops
 subprocess: who-decides-what
 process_id: "1.4"
 phase: early-revenue
-last_updated: 2026-08-10
-claim_count: 23
+last_updated: 2026-09-16
+claim_count: 25
 synthesis_mode: backfill_from_published_page
 primary_source: src-063
-batch_addendum: src-070
+batch_addendum: src-070, src-098, src-100
 ---
 
 <!-- Backfill note: this draft was written after the page was published, not before it.
@@ -86,6 +86,10 @@ batch_addendum: src-070
 5. **Formalise when you add the page, not when you're already in conflict** — trigger: decisions get re-opened weekly, or two teams block each other on the same priority. That is the signal for named owners + thresholds, not a headcount rule alone — and what you add is that one page, not an imported rulebook: a full RACI matrix (a grid naming who is responsible, accountable, consulted and informed for every task) costs more than they return before the room actually stops working.
    <!-- sources: src-063 (synthesis), reStruggle ~15–25, src-070 (serial-ceo) -->
 
+<!-- claim-id: c-024 -->
+6. **When you keep a decision, write down the criteria and let others poke holes.** That is how they learn to take the next ones. Criteria that live only in the founder's head keep you as sole decider forever. Pair with [1.5 Organizational Design](1.5--early-revenue.md) — giving away the job — so teaching criteria is not an excuse to keep every call.
+   <!-- sources: src-098 (HN Ask: How/When to Delegate?) -->
+
 ## Warning signs you're behind
 
 ### Output quality
@@ -103,6 +107,12 @@ batch_addendum: src-070
 <!-- claim-id: c-018 -->
 - **Founder still has effective veto on every hire after naming a hiring manager** — candidates and recruiters lose context when every offer funnels back for a late culture veto. See [3.2 Recruitment & Hiring](../people/3.2--early-revenue.md) for the approval chain.
   <!-- sources: src-070 (serial-ceo), atom-448 -->
+
+### Process entry
+
+<!-- claim-id: c-025 -->
+- **You hire a COO or chief of staff because you are overloaded — without a mandate for structure and honest pushback.** Title without behaviour change leaves you overruling ops or dumping undifferentiated work. Change the decision rights first; then staff the role that holds them. See also [1.5 Organizational Design](1.5--early-revenue.md).
+  <!-- sources: src-100 (HN Should You Hire A COO?) -->
 
 ## How this evolves next
 

@@ -5,13 +5,18 @@ process_name: Convincing founders to change (delegate, lead, fix ops duct tape)
 phase: early-revenue
 phase_description: Early Revenue / Whitewater — the hard middle where ops duct tape breaks and founder identity resists the next mode
 last_updated: 2026-09-16
-step: 2
-status: phase2_draft_ready
+step: 4
+status: superseded_published_to_1.5_and_1.4
+publish_destinations:
+  - wiki/processes/strategic/1.5--early-revenue.md
+  - wiki/processes/strategic/1.4--early-revenue.md (c-006→c-024, c-013→c-025)
 related_blog: what-got-you-here-is-whats-hurting-you-now
 related_annex: ../blog/research-annex.md
 ---
 
 # Source discovery — Convincing founders to change
+
+> **Superseded 2026-09-16.** Approved claims were published into **1.5 Organizational Design** (bulk) and **1.4 Who Decides What** (thin addendum). Keep this cell as the research trail; do not publish a third wiki page from it. See `organizational-design/early-revenue/` and the src-098/src-100 addendum on `who-decides-what/early-revenue/`.
 
 **Research question (user, Sep 2026):** How can you convince founders to change — to start delegating the primary process, start being a leader, and fix Ops duct tape?
 
@@ -23,8 +28,9 @@ related_annex: ../blog/research-annex.md
 
 | Cell | Owns |
 |------|------|
-| **This entry** | Buy-in, identity shift, coaching/intervention, “give away the job,” why hiring ops alone fails |
-| **1.4 Who Decides What** | Naming owners, approval lists, DRI mechanics |
+| **This entry (research only)** | Buy-in, identity shift, coaching/intervention corpus |
+| **1.5 Organizational Design @ early-revenue** | Published home — founding-team role exit, fire departments, CEO-only jobs |
+| **1.4 Who Decides What** | Naming owners, approval lists, DRI mechanics + teach-criteria / COO-mandate addendum |
 | **Blog / src-083–086** | Greiner / Turner / McKeown / PAEI — *why* the gap exists (reuse, do not re-extract) |
 
 ---
@@ -117,7 +123,9 @@ related_annex: ../blog/research-annex.md
 | Identity/academic layer | **Done** — src-102–098, atom-683–655 |
 | YC Second Job (Rowghani) | **Done** — src-111, atom-693–662 (URL: ycombinator.com/blog/…; also library/3k) |
 | Remaining First Round (Altman, coach toolkit, EM spiral) | Optional — listed, not yet registered |
-| Phase 2 synthesis | **Done** — `draft.md` + `trail.md` (18 claims, 2026-09-16); ready for Phase 3 approval tool |
+| Phase 2 synthesis | **Done** — `draft.md` + `trail.md` (18 claims, 2026-09-16) |
+| Phase 3 approval | **Done** — aksie 2026-09-16 (c-007 rejected) |
+| Phase 4 publish | **Done** — bulk → `1.5--early-revenue.md`; c-006/c-013 → `1.4--early-revenue.md` addendum; this cell **superseded** (research only) |
 
 ### Intervention synthesis (identity + practitioner, for Phase 2)
 
