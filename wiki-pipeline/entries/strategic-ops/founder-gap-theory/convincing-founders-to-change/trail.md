@@ -2,8 +2,8 @@
 entry: strategic-ops/founder-gap-theory/convincing-founders-to-change
 phase: early-revenue
 last_updated: 2026-09-16
-claim_count: 18
-atoms_in_scope: atom-676–698
+claim_count: 24
+atoms_in_scope: atom-676–698, atom-651/654/655/656/666/667/673 (cross-mapped from 1.2b Shareholder Reporting research)
 synthesis_mode: new_draft
 ---
 
@@ -93,9 +93,25 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - Carried from: none
 - Synthesis notes: vc_portfolio_interest — still strongest concrete exec-management atom in corpus
 
+### c-019: Quarterly "not-a-board-meeting" checkpoint before a real board exists
+- Section: what_to_do
+- Supporting atoms: atom-654 (action), atom-656 (why)
+- Rejected atoms: none
+- Why-source: atom-656 (cheap practice for the narrative/discussion skill a real board demands)
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (board-founder-roles focus, src-092)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 per user request — same "practice before it's forced" pattern as c-004/c-008, illustrated through the board relationship specifically
+
+### c-020: Don't wait for Series A/B to take board discipline seriously
+- Section: what_to_do
+- Supporting atoms: atom-667
+- Rejected atoms: none
+- Why-source: atom-667
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (src-095)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 — direct echo of c-004's "continuous practice, not a one-time handoff"
+
 ---
 
-## Warning signs — c-010 to c-014
+## Warning signs — c-010 to c-014, c-022 to c-024
 
 ### c-010: Bad first delegations (urgent-unimportant)
 - Section: warning_signs
@@ -122,6 +138,15 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - Why-source: atom-695
 - Carried from: none
 
+### c-022: Justifying yourself in board meetings instead of asking for help
+- Section: warning_signs
+- Warning category: founder_time
+- Supporting atoms: atom-666
+- Rejected atoms: none
+- Why-source: atom-666
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (src-095)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 — same defensiveness pattern as c-012, in the board room specifically
+
 ### c-013: COO/CoS hire without mandate
 - Section: warning_signs
 - Warning category: process_entry
@@ -139,9 +164,27 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - Carried from: none
 - Synthesis notes: Links Whitewater "rough quarter" misread; also used in 1.7 process-documentation draft
 
+### c-023: Star-struck by the board, forgetting it's your meeting
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-673
+- Rejected atoms: none
+- Why-source: atom-673
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (src-097)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 — inverse of c-008 ("act like a leader first")
+
+### c-024: Avoiding bad news to the board out of fear of looking incompetent
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-651
+- Rejected atoms: none
+- Why-source: atom-651
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (src-091)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 — same competing-commitment pattern as c-011, aimed outward at the board
+
 ---
 
-## Evolution — c-015 to c-016
+## Evolution — c-015 to c-016, c-021
 
 ### c-015: Phase 2 trigger ~20–25
 - Section: evolution
@@ -157,6 +200,14 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - Why-source: src-111 summary Phase 3
 - Carried from: none
 - Synthesis notes: Light claim from same source; not a separate atom — recorded as synthesis from src-111 Phase 3 paragraph
+
+### c-021: Informal checkpoints pay off once a real board exists
+- Section: evolution
+- Supporting atoms: atom-655
+- Rejected atoms: none
+- Why-source: atom-655
+- Carried from: 1.2b Shareholder Reporting @ Early Revenue Phase 1 research (src-092)
+- Synthesis notes: Cross-mapped by Claude 2026-09-17 — pairs with c-019/c-020 as the same "practice early" cluster
 
 ---
 
@@ -193,3 +244,4 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - Several strong claims lean on **src-111 (YC)** and **src-099 (First Round)** — `vc_portfolio_interest`. Triangulated with HN practitioner atoms (098, 100, 101) and academic identity layer.
 - ITC / Ibarra / Kaiser claims carry `sells_book` — keep coaching as optional support, not the only path.
 - Corpus health: no fractional-COO vendor dominance; disclaimer not required for synthesis.
+- c-019/c-020/c-021/c-022/c-024 lean on VC-authored sources (`vc_investor_self_interest` on src-091/092, `vc_portfolio_interest` on src-095) cross-mapped in from the 1.2b Shareholder Reporting research — that cell's own corpus health already flags investor-perspective concentration; c-023 (src-097, The Juice HQ) is the one founder-authored source in this added batch.

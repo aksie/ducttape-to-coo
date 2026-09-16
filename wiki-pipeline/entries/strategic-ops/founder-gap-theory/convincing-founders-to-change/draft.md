@@ -4,7 +4,7 @@ subprocess: founder-gap-theory
 entry: convincing-founders-to-change
 phase: early-revenue
 last_updated: 2026-09-16
-claim_count: 18
+claim_count: 24
 synthesis_mode: new_draft
 primary_sources: src-098, src-099, src-104, src-111
 related_blog: what-got-you-here-is-whats-hurting-you-now
@@ -54,6 +54,14 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 6. **Manage senior people to quarterly and annual outputs — not weekly milestones — and fire underperforming leadership hires faster than feels comfortable.** Expect roughly a quarter of first executive hires not to work out. Weekly micromanagement recreates Doer-in-Chief one layer up; slow firing costs more credibility than a temporary void.
    <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
 
+<!-- claim-id: c-019 -->
+7. **Run a quarterly "not-a-board-meeting" checkpoint with investors and advisors, even before you have a formal board.** It's the cheapest way to practice the exact skill a real board will demand of you: synthesizing a complex business into a focused narrative and running a discussion, not a status readout.
+   <!-- sources: src-092 (Rishi Taparia / Garuda Ventures, vc_investor_self_interest) -->
+
+<!-- claim-id: c-020 -->
+8. **Don't wait for Series A or B to take this discipline seriously.** The communication and relationship-building skill compounds — starting early is worth more than starting formally.
+   <!-- sources: src-095 (NFX, vc_portfolio_interest) -->
+
 ## Warning signs you're behind
 
 ### Founder / key-person time
@@ -70,6 +78,10 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 - **You never replace yourself with leaders better than you** in each major domain — so you stay Doer-in-Chief and slow everyone else down. Hiring peers who still need your hands on every call is fake Phase 2.
   <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
 
+<!-- claim-id: c-022 -->
+- **You use board-meeting time to justify your own performance and decisions instead of asking for help.** It's the same Doer-in-Chief defensiveness as c-012, just relocated to the boardroom — and it can quietly eat the majority of the meeting without you noticing.
+  <!-- sources: src-095 (NFX, vc_portfolio_interest) -->
+
 ### Process entry
 
 <!-- claim-id: c-013 -->
@@ -80,6 +92,14 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 - **Every departure or leave feels like a crisis.** At scale, people leaving — and the temporary holes that creates — is a *constant*, not an exception. If processes only work when the same few people never quit or take leave, you are still mistaking Whitewater for "a rough quarter."
   <!-- sources: src-110 (practitioner, human:stefanverkerk) -->
 
+<!-- claim-id: c-023 -->
+- **You're intimidated or star-struck by your board members' reputations in the room.** That's a sign you've forgotten it's still your meeting to run — the inverse of "act like a leader first" (see c-008).
+  <!-- sources: src-097 (The Juice HQ) -->
+
+<!-- claim-id: c-024 -->
+- **You avoid sharing bad news with your board out of fear of looking incompetent.** By the time they hear about a real problem, it's too late for anyone to actually help — the same competing-commitment pattern as c-011, aimed outward at the board instead of inward at the team.
+  <!-- sources: src-091 (David Paul, vc_investor_self_interest) -->
+
 ## How this evolves next
 
 <!-- claim-id: c-015 -->
@@ -89,6 +109,10 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 <!-- claim-id: c-016 -->
 - **Later: shift company-building burden to the leadership team** so the CEO can invest core-business capacity in transformative new products (Phase 3). That only works if Phase 2 hiring, alignment, and culture actually landed.
   <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
+
+<!-- claim-id: c-021 -->
+- **If you already ran informal quarterly checkpoints before your board existed, you'll be dramatically better prepared once a real board is seated at your next round.** The habit — not the formality — is what compounds.
+  <!-- sources: src-092 (Rishi Taparia / Garuda Ventures, vc_investor_self_interest) -->
 
 ## Tools & resources
 
