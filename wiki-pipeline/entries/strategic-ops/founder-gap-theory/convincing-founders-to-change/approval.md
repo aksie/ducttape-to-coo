@@ -200,25 +200,25 @@ last_updated: 2026-09-16 15:32
 - Edited claim text: null
 
 ### c-025
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 17:56
 - Edited claim text: null
 
 ### c-026
-- Status: pending
+- Status: rejected
 - Flags: []
-- Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewer notes: "is from VC perspective, not a founder focused lesson"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 17:57
 - Edited claim text: null
 
 ### c-027
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 17:57
 - Edited claim text: null

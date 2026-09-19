@@ -228,7 +228,7 @@ Published on `wiki/processes/strategic/1.2b--early-revenue.md` 2026-09-16. Max-7
 - Rejected atoms: none
 - Why-source: atom-699
 - Carried from: none
-- Synthesis notes: Distinct from c-011 ("the board holds real formal authority") — this is about *when* that authority is practically exercisable, not whether it exists. From a second, independent partner interview at the same fund.
+- Synthesis notes: Distinct from c-011 ("the board holds real formal authority") — this is about *when* that authority is practically exercisable, not whether it exists. From a second, independent partner interview at the same fund. Rewritten 2026-09-19: founder-facing ("you treat the closing window…") not joint board/founder voice.
 
 ### c-024: Rotate the fund's own board seat to a trusted external industry expert
 - Section: what_to_do

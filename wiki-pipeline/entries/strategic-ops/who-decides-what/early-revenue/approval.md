@@ -237,9 +237,9 @@ that could not be traced (c-012, c-021), is in `trail.md`.
 - Edited claim text: null
 
 ### c-026
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 18:02
 - Edited claim text: null

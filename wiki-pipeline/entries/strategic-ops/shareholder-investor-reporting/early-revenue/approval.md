@@ -181,25 +181,26 @@ last_updated: 2026-09-17
 - Edited claim text: null
 
 ### c-023
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 17:59
 - Edited claim text: null
 
 ### c-024
-- Status: pending
+- Status: approved_with_edit
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
-- Edited claim text: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 18:01
+- Edited claim text: **Push for a trusted, neutral industry expert on the board, rather than have your investor sitting on it indefinitely** — so you can treat that person, not the investor, as your natural first call. Founders go to a credible, conflict-free operator faster than to the investor who has an obvious economic stake in the answer.
+   <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ### c-025
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 18:02
 - Edited claim text: null

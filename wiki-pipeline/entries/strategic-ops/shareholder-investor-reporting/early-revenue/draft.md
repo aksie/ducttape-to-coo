@@ -134,7 +134,7 @@ Six atoms from this research batch were first drafted on the crosscut [`convinci
 ## Second-interview addendum (src-112)
 
 <!-- claim-id: c-023 -->
-- **You and your board recognize that board leverage over a struggling company is strongest at the negotiating table, before financing closes, and structurally weaker afterward** — once the money is committed, board disagreement doesn't force a fix; the company usually has to hit a wall on its own first.
+- **You treat the closing window of a round as when hard board alignment actually happens** — role changes, reporting fixes, governance terms. Formal board power doesn't disappear after the round, but *practical* leverage to compel change usually peaks at the negotiating table; once the money is committed, a split board can disagree without forcing a fix until performance makes the reckoning unavoidable.
   <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 <!-- claim-id: c-024 -->

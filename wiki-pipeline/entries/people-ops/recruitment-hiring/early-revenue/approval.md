@@ -111,9 +111,9 @@ last_updated: 2026-06-11 13:34
 - Edited claim text: null
 
 ### c-014
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-19 17:56
 - Edited claim text: null
