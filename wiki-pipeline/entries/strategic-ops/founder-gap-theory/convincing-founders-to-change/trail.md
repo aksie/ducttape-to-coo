@@ -230,6 +230,33 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 
 ---
 
+## Second-interview addendum (src-112) — c-025 to c-027
+
+### c-025: OKR/board-pack complexity substituting for clarity
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-702
+- Rejected atoms: none
+- Why-source: atom-702
+- Carried from: none
+- Synthesis notes: Same underlying pattern as c-015's "80-100 slide deck" but from a second, independent partner interview at the same fund — cross-referenced to 1.2b Shareholder Reporting where the deck-length warning already lives
+
+### c-026: External structured assessment, not confidence at the table
+- Section: what_to_do
+- Supporting atoms: atom-703
+- Rejected atoms: none
+- Why-source: atom-703
+- Carried from: none
+- Synthesis notes: Rewritten as an action ("build a real assessment step") rather than a pure why-claim, specifically to avoid the c-007 rejection reason ("this is about the why, it does not point to a best practice"). The underlying epistemic-humility point is the same family as c-007, but this version is actionable.
+
+### c-027: Three recurring founder shortfalls across the portfolio
+- Section: what_good_looks_like
+- Supporting atoms: atom-704
+- Rejected atoms: none
+- Why-source: atom-704
+- Carried from: none
+- Synthesis notes: A portfolio-wide pattern synthesis rather than a single-crisis-moment claim — complements the more theory-driven existing claims with something a board/advisor could use as a checklist
+
 ## Dropped atoms
 
 | Atom | Reason |
@@ -245,3 +272,4 @@ Mechanism atoms src-083–086 (Greiner/Turner/McKeown/PAEI) were registered for 
 - ITC / Ibarra / Kaiser claims carry `sells_book` — keep coaching as optional support, not the only path.
 - Corpus health: no fractional-COO vendor dominance; disclaimer not required for synthesis.
 - c-019/c-020/c-021/c-022/c-024 lean on VC-authored sources (`vc_investor_self_interest` on src-091/092, `vc_portfolio_interest` on src-095) cross-mapped in from the 1.2b Shareholder Reporting research — that cell's own corpus health already flags investor-perspective concentration; c-023 (src-097, The Juice HQ) is the one founder-authored source in this added batch.
+- c-025/c-026/c-027 come from a single second-interview human source (src-112, `vc_portfolio_interest`) — not triangulated against an independent source. Same investor-perspective concentration as the rest of this entry.

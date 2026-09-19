@@ -73,3 +73,9 @@
 - Section: tools_resources
 - Supporting atoms: atom-259, atom-260, atom-262
 - Primary source: src-060
+
+### c-014: Warning — role reshaped around a likeable candidate instead of the defined gap
+- Section: warning_sign (process_entry)
+- Supporting atoms: atom-705
+- Primary source: src-112
+- Synthesis notes: Second-interview addendum, 2026-09-19. Upstream of the existing approval-chain warnings (c-009/c-010) — this is a role-definition-discipline failure, not a paperwork failure, so it's additive rather than overlapping.

@@ -4,10 +4,10 @@ subprocess: shareholder-investor-reporting
 process_id: "1.2b"
 phase: early-revenue
 last_updated: 2026-09-16
-claim_count: 22
+claim_count: 25
 synthesis_mode: new_draft
 primary_sources: src-087, src-088, src-093, src-094, src-096
-batch_addendum: src-091, src-092, src-095, src-097
+batch_addendum: src-091, src-092, src-095, src-097, src-112
 extends_published: wiki/processes/strategic/1.2b--early-revenue.md
 published: wiki/processes/strategic/1.2b--early-revenue.md
 note: "Phase 4 published 2026-09-16. c-004/c-009/c-016 rejected. c-017–c-022 ported from convincing-founders c-019–c-024."
@@ -130,3 +130,17 @@ Six atoms from this research batch were first drafted on the crosscut [`convinci
 <!-- claim-id: c-022 -->
 - **You avoid sharing bad news with your board out of fear of looking incompetent.** By the time they hear about a real problem, it's too late for anyone to actually help.
   <!-- sources: src-091 (David Paul, vc_investor_self_interest) -->
+
+## Second-interview addendum (src-112)
+
+<!-- claim-id: c-023 -->
+- **You and your board recognize that board leverage over a struggling company is strongest at the negotiating table, before financing closes, and structurally weaker afterward** — once the money is committed, board disagreement doesn't force a fix; the company usually has to hit a wall on its own first.
+  <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
+
+<!-- claim-id: c-024 -->
+9. **Expect your investor to hand their own board seat to a trusted, neutral industry expert after a year or two, rather than sitting on it indefinitely** — and treat that person, not the investor, as your natural first call. Founders go to a credible, conflict-free operator faster than to the investor who has an obvious economic stake in the answer.
+   <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
+
+<!-- claim-id: c-025 -->
+10. **Treat a proactive check-in call from your investor between scheduled meetings as normal, and answer straight rather than in pitch-mode.** That habit does more for early problem-surfacing than the monthly update alone.
+    <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->

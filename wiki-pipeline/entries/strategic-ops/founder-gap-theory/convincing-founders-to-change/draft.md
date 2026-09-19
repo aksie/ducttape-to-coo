@@ -4,7 +4,7 @@ subprocess: founder-gap-theory
 entry: convincing-founders-to-change
 phase: early-revenue
 last_updated: 2026-09-16
-claim_count: 24
+claim_count: 27
 synthesis_mode: new_draft
 primary_sources: src-098, src-099, src-104, src-111
 related_blog: what-got-you-here-is-whats-hurting-you-now
@@ -27,6 +27,10 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 <!-- claim-id: c-003 -->
 - **A practical success test: you have unscheduled time to think and stay ahead.** A calendar full of other people's work means you are still Phase 1 Doer-in-Chief. Substantial free time to think, drop in, and plan is the clearest sign the leadership team and alignment actually work without you.
   <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
+
+<!-- claim-id: c-027 -->
+- **The founders who scale well are recognizable by three things: they can tell what's good from what isn't in their own function, they dare to invest in and select genuinely strong hires rather than just agreeable ones, and they hold operational discipline even under daily pressure.** The third one especially often isn't innate — it shows up as mis-hires or culture clashes when it's missing.
+  <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ## What you actually need to do
 
@@ -61,6 +65,10 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 <!-- claim-id: c-020 -->
 8. **Don't wait for Series A or B to take this discipline seriously.** The communication and relationship-building skill compounds — starting early is worth more than starting formally.
    <!-- sources: src-095 (NFX, vc_portfolio_interest) -->
+
+<!-- claim-id: c-026 -->
+9. **Build a real, external, structured assessment step into how you decide whether to invest in developing someone further — including yourself.** Coachability is genuinely hard to predict at the table; don't substitute your own read in the moment for an actual process, and set a defined point where you act on the answer either way.
+   <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ## Warning signs you're behind
 
@@ -99,6 +107,10 @@ related_blog: what-got-you-here-is-whats-hurting-you-now
 <!-- claim-id: c-024 -->
 - **You avoid sharing bad news with your board out of fear of looking incompetent.** By the time they hear about a real problem, it's too late for anyone to actually help — the same competing-commitment pattern as c-011, aimed outward at the board instead of inward at the team.
   <!-- sources: src-091 (David Paul, vc_investor_self_interest) -->
+
+<!-- claim-id: c-025 -->
+- **Your board pack has a full treatise on how an OKR should be defined, but nowhere states an actual key result or who owns it.** If an experienced outside board member can't find the target and the owner, the rest of the organization won't either — complexity is substituting for clarity, not demonstrating rigor. Same pattern as an 80-100 slide deck (see [1.2b Shareholder Reporting](../../../../wiki/processes/strategic/1.2b--early-revenue.md)), just applied to goal-setting instead of reporting.
+  <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ## How this evolves next
 

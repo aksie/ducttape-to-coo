@@ -220,8 +220,35 @@ Published on `wiki/processes/strategic/1.2b--early-revenue.md` 2026-09-16. Max-7
 
 ---
 
+## Second-interview addendum (src-112) — c-023 to c-025
+
+### c-023: Board leverage is front-loaded, weak after financing closes
+- Section: what_good_looks_like
+- Supporting atoms: atom-699
+- Rejected atoms: none
+- Why-source: atom-699
+- Carried from: none
+- Synthesis notes: Distinct from c-011 ("the board holds real formal authority") — this is about *when* that authority is practically exercisable, not whether it exists. From a second, independent partner interview at the same fund.
+
+### c-024: Rotate the fund's own board seat to a trusted external industry expert
+- Section: what_to_do
+- Supporting atoms: atom-700
+- Rejected atoms: none
+- Why-source: atom-700 (leverage across portfolio + conflict-of-interest filter)
+- Carried from: none
+- Synthesis notes: Extends c-005/c-006 (board composition) with a concrete practice, not just a capability-mapping target
+
+### c-025: Proactive between-meeting check-ins as the real early-warning mechanism
+- Section: what_to_do
+- Supporting atoms: atom-701
+- Rejected atoms: none
+- Why-source: atom-701
+- Carried from: none
+- Synthesis notes: Companion to c-010/c-020 (never surprise the board / don't hide bad news) — this is the founder-facing flip side: expect and reward the investor's proactive check-ins rather than only reacting to the monthly update ritual
+
 ## Bias / disclosure notes for Phase 3
 
 - Corpus health (`wiki-pipeline/corpus_health-shareholder-reporting-early-revenue.md`) already flags investor-perspective concentration: 5 of 9 "practitioner" sources are working VCs writing first-person, and zero EU/NL sources exist. That flag applies to this draft too — c-001, c-005, c-006, c-013 lean most heavily on VC-authored sources with no independent founder-side corroboration.
 - The Phase 1 corpus health file also documents that `WebFetch` to HN/Substack/Forbes/NFX/TechCrunch was blocked in that environment, so extraction relied on `WebSearch`-synthesized content rather than raw fetches — recommend spot-checking c-001, c-013 (the two highest-confidence claims) against original source text before this reaches Phase 3.
 - No vendor bias — no source in this corpus sells a board-related product.
+- c-023/c-024/c-025 come from a single human interview (src-112), not triangulated against independent written sources — same `vc_portfolio_interest` concentration issue as the rest of the corpus, worth spot-checking against founder-side experience before treating as settled.

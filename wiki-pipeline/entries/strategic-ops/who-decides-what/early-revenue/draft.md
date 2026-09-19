@@ -4,7 +4,7 @@ subprocess: who-decides-what
 process_id: "1.4"
 phase: early-revenue
 last_updated: 2026-09-16
-claim_count: 25
+claim_count: 26
 synthesis_mode: backfill_from_published_page
 primary_source: src-063
 batch_addendum: src-070, src-098, src-100
@@ -89,6 +89,10 @@ batch_addendum: src-070, src-098, src-100
 <!-- claim-id: c-024 -->
 6. **When you keep a decision, write down the criteria and let others poke holes.** That is how they learn to take the next ones. Criteria that live only in the founder's head keep you as sole decider forever. Pair with [1.5 Organizational Design](1.5--early-revenue.md) — giving away the job — so teaching criteria is not an excuse to keep every call.
    <!-- sources: src-098 (HN Ask: How/When to Delegate?) -->
+
+<!-- claim-id: c-026 -->
+7. **Before you place a new senior hire, write down explicitly what they may and must decide on their own — not just where they sit on the org chart.** Whether someone reports "under" you or sits "beside" you as a peer matters less than whether you and they agree on the actual boundary of their authority; a clear "under" placement with real, explicit responsibility works better than an ambiguous "beside" one.
+   <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ## Warning signs you're behind
 

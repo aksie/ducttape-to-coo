@@ -383,6 +383,13 @@ Recorded so the gap is visible, not as a proposal to add them. All are src-070, 
 `atom-471` to `atom-484` are src-070 early-revenue atoms for **1.1 planning**, not 1.4, and are out
 of scope here.
 
+## Second-interview addendum (src-112) — c-026, 2026-09-19
+
+### c-026: Explicit authority boundary matters more than "under" vs. "beside" placement
+- Supporting atoms: atom-706
+- Primary source: src-112
+- Synthesis notes: Extends the "accountability and authority travel together" principle (preamble idea 1) to the specific moment a new senior hire is placed. `vc_portfolio_interest` — single-interview source, not triangulated.
+
 ## Not in this trail
 
 - `## Sources` from the published page is not reproduced in `draft.md`; the sibling drafts do not

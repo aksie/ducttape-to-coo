@@ -4,7 +4,7 @@ subprocess: recruitment-hiring
 process_id: "3.2"
 phase: early-revenue
 last_updated: 2026-06-10
-claim_count: 13
+claim_count: 14
 ---
 
 # Recruitment & Hiring — Early Revenue
@@ -54,6 +54,10 @@ claim_count: 13
 <!-- claim-id: c-009 -->
 - **Job openings are live but nobody can name who approved the budget or salary band for that role.** You are recruiting on manager urgency, not on a headcount plan.
   <!-- sources: src-060 (Practitioner — Hiring approval chain) -->
+
+<!-- claim-id: c-014 -->
+- **You get excited about a candidate for reasons that don't match the role you actually defined, and you quietly reshape the job to fit them instead of hiring for the real gap.** That's how you end up with a mis-hire, a second hire brought in to patch the first, a clash between the two, and eventually neither one left in the seat. This is upstream of the approval-chain problem above — the role definition itself drifted before any paperwork was involved.
+  <!-- sources: src-112 (impact-VC partner interview, vc_portfolio_interest) -->
 
 ### Output quality
 
