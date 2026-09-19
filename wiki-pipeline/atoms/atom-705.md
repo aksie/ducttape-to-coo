@@ -22,7 +22,7 @@ You get excited about a candidate for reasons that don't match the role you actu
 
 ## Source quote or paraphrase
 
-Partner describes a specific failed placement: "een heel groot deel zat daar in het hiringproces, waarbij dan uiteindelijk de koersvastheid niet voldoende is... komen ze iemand tegen, vinden ze heel erg interessant om de verkeerde redenen, en dan wordt de functie aangepast." A second hire brought in to fill the resulting gap had the role adjusted around them too, the two clashed, and the company ended up with neither.
+Partner describes a specific failed placement: a large part of the failure sat in the hiring process itself, where the team lost steadfastness on what was actually needed — they met someone they found interesting for the wrong reasons, and the role got adjusted to fit. A second hire brought in to fill the resulting gap had the role adjusted around them too, the two clashed, and the company ended up with neither.
 
 ## Why (inferred from source if not explicit)
 

@@ -21,7 +21,7 @@ Before you place a new senior hire, write down explicitly what they may and must
 
 ## Source quote or paraphrase
 
-Partner, asked whether placing a hire "under" a founder is worse than placing them "beside" them: "het ligt eraan, het is niet altijd... ik denk dat het heel veel fout gaat bij echt goed doordenken wat deze persoon moet en mag. Je kan iemand best eronder zetten, maar als die wel een hele duidelijke verantwoordelijkheid heeft en kennis meebrengt, dan kan dat ook wel werken."
+Partner, asked whether placing a hire "under" a founder is worse than placing them "beside" them: it depends, it's not always the case — most of what goes wrong traces back to not properly thinking through what this person may and must decide. You can place someone "under" you and have it work fine if they carry real, explicit responsibility and bring real expertise.
 
 ## Why (inferred from source if not explicit)
 

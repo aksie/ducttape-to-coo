@@ -21,7 +21,7 @@ You and your board recognize that board leverage over a struggling company is st
 
 ## Source quote or paraphrase
 
-Partner describes a real standoff: the fund pushed for a CEO hire before financing a down round, got it written in, but once the capital was committed the company didn't execute — "toen zit dat geld erin, dus je bent je leverage kwijt." At that point the board can voice disagreement but cannot compel action; the company has to run into the wall first.
+Partner describes a real standoff: the fund pushed for a CEO hire before financing a down round, got it written in, but once the capital was committed the company didn't execute. As the partner put it: once the money is committed, you've lost your leverage. At that point the board can voice disagreement but cannot compel action; the company has to run into the wall first.
 
 ## Why (inferred from source if not explicit)
 

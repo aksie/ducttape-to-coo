@@ -21,7 +21,7 @@ Treat a proactive check-in call from your investor between scheduled meetings as
 
 ## Source quote or paraphrase
 
-Partner distinguishes passive reporting from active relationship-building: "gewoon af en toe bellen, in plaats van alleen maar in de boardmeeting afwachten... mensen gaan niet tegen je liegen als je vraagt hoe het gaat." Notes founders otherwise default into the same practiced pitch narrative they use for prospective investors — proactive, informal contact breaks that script.
+Partner distinguishes passive reporting from active relationship-building: just calling in between times, not only waiting for the scheduled boardmeeting — most people won't lie to you outright if you ask directly how things are going. Notes founders otherwise default into the same practiced pitch narrative they use for prospective investors — proactive, informal contact breaks that script.
 
 ## Why (inferred from source if not explicit)
 

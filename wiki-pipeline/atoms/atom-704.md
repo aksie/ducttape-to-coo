@@ -21,7 +21,7 @@ The founders who scale well are recognizable by three things: they can tell what
 
 ## Source quote or paraphrase
 
-Partner's synthesis across the portfolio: "het begint allemaal met welke mensen zet ik waar neer en durf ik daarin te investeren... en het is ook heel vaak discipline. Dus discipline om in de waan van de dag dingen goed op orde te brengen. En dat zit vaak gewoon niet zo in de mens, in de founder mens... maar heel vaak heb je daar mis-hires of cultuurclashes."
+Partner's synthesis across the portfolio, paraphrased: it starts with which people you place where, and whether you dare invest in them; and it's very often discipline — staying on top of things amid the daily chaos — which often just isn't innate to the founder personality, and shows up later as mis-hires or culture clashes.
 
 ## Why (inferred from source if not explicit)
 

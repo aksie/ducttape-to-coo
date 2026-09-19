@@ -22,7 +22,7 @@ Your board pack has a full treatise on how an OKR should be defined, but nowhere
 
 ## Source quote or paraphrase
 
-Partner describes a real board pack: extensive explanation of what an objective/key-result *should* look like, but no actual key result stated, and the owner "staat ook ergens verstopt." Reaction: "als ik het niet begrijp als boardmember, een redelijk slimme persoon, dan gaat de rest van de organisatie het sowieso ook niet zien."
+Partner describes a real board pack: extensive explanation of what an objective/key-result *should* look like, but no actual key result stated, and the owner buried somewhere in the document. Reaction, paraphrased: if I can't find it as a fairly sharp outside board member, the rest of the organization definitely won't either.
 
 ## Why (inferred from source if not explicit)
 

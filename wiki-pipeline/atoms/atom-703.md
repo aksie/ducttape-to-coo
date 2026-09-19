@@ -21,7 +21,7 @@ Even with a structured external assessment, whether a founder or a candidate hir
 
 ## Source quote or paraphrase
 
-Partner, asked directly how they assess whether a founder can make the needed personal shift: "dat is super moeilijk te voorspellen," works with external parties for team assessments specifically because it's hard to do well internally, and describes results as "wisselend succes" even then — "ik heb er nog niet de silver bullet voor gevonden."
+Partner, asked directly how they assess whether a founder can make the needed personal shift, says it's genuinely very hard to predict. Works with external parties for team assessments specifically because it's hard to do well internally, and describes results as mixed even then — no silver bullet found yet.
 
 ## Why (inferred from source if not explicit)
 
