@@ -29,6 +29,7 @@ driven by headcount; revenue and funding stages gate the conditional processes.)
 |---|---|
 | Weekly check-in | _[YYYY-MM-DD]_ |
 | Quarterly health check | _[YYYY-MM-DD]_ |
+| Quarterly doc review | _[YYYY-MM-DD]_ |
 
 ## Recent events
 
@@ -56,5 +57,8 @@ Filled in on the **first conversation**; updated when a pillar moves. Status:
 | Company filing / ops registry (4.1) | `legal/4.1--foundation.md` | _not started_ | Ducttape OS path: _[optional]_ |
 
 ## Notes
+
+_Optional but useful for doc review and Processor work: **Processor owner**
+(name/role), **process doc home** (wiki/Notion URL or folder path)._
 
 _Anything else the COO should remember about how this company operates._

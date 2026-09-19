@@ -3,10 +3,9 @@
 **Status: DRAFT for review. Nothing has been created in Cursor.**
 
 A skill is reactive — it loads when invoked, it does not run itself on a clock.
-To make the weekly check-in and quarterly health check actually fire, pair the
-`virtual-coo` skill with two scheduled Cursor Automations. The drafts below are
-ready to hand to the `automate` skill (or to create manually in the Automations
-editor) once you've reviewed them.
+To make the weekly check-in, quarterly health check, and optional quarterly doc
+review actually fire, pair the `virtual-coo` skill with scheduled Cursor
+Automations.
 
 > Prerequisite: commit the skill files and `docs/company-state.md` first. A
 > scheduled automation checks out the repo and should reference committed files,
@@ -61,7 +60,34 @@ process that is critical or recommended at the current stage on the 5 dimensions
 in data/processes.json (skip conditional processes that don't apply). Rank the
 gaps, and for the top 3-5 give wiki-backed fixes with owners. Flag any stage cells
 the wiki doesn't cover yet. Update docs/company-state.md with the date and the
-prioritised gaps as open actions.
+prioritised gaps as open actions. If stage is early-revenue or later (or 1.7
+Documentation scored weak), offer the quarterly doc review — same session or same week.
+```
+
+---
+
+## Automation 3 — Quarterly doc review (optional, early-revenue+)
+
+| Field | Value |
+|---|---|
+| Name | Virtual COO — quarterly doc review |
+| Description | 30-minute pass on process wiki/Notion: stale, oral-only, repeat breakages. |
+| Trigger | On a schedule (cron) |
+| Schedule (plain) | First Monday of Jan, Apr, Jul, Oct at 09:45 (after health check) |
+| Cron | `45 9 1 1,4,7,10 *` |
+| Tools | None beyond default agent |
+| Repo / branch | this repo / default branch |
+
+**Prompt:**
+
+```
+Run the quarterly doc review from the virtual-coo skill
+(.cursor/skills/virtual-coo/SKILL.md, see reference.md#quarterly-doc-review).
+Read company-state.md. Fetch wiki/processes/strategic/1.7--{stage}.md. Walk
+stale / oral-only / broke-twice / founder-still-primary-process. Draft-first,
+max 5 actions. Update company-state.md; write ops-evaluations/YYYY-QN-doc-review.md
+if OS folder exists.
+Skip at first-hires unless a shared doc space already exists.
 ```
 
 ---

@@ -51,7 +51,7 @@
 
 <main id="coo-page">
   <h1>Set up your COO check-ins</h1>
-  <p class="lead">Two recurring moments keep your operations on track: a short weekly pulse and a quarterly health check. Pick a time, add them to your calendar, and you're done — no setup, no infrastructure.</p>
+  <p class="lead">Two recurring moments keep your operations on track: a short weekly pulse and a quarterly health check. From early-revenue onward, add an optional third — a 30-minute pass on your process wiki or Notion. Pick times, add them to your calendar, and you're done — no setup, no infrastructure.</p>
 
   <div class="card">
     <h2><span class="dot g"></span> Weekly check-in</h2>
@@ -88,8 +88,17 @@
   </div>
 
   <div class="card">
+    <h2><span class="dot o"></span> Quarterly doc review <span style="font-weight:400;color:var(--text-muted);font-size:.85rem">— optional, early-revenue+</span></h2>
+    <div class="sub">30 minutes right after the health check (or same week): stale pages, oral-only workflows, things that broke twice. Processor owner + area leads if you can.</div>
+    <div class="btns">
+      <a class="btn primary" id="gcal-docreview" target="_blank" rel="noopener">📅 Add to Google Calendar</a>
+    </div>
+    <div class="prompt-box"><button class="copy" data-copy="docreview">copy</button><span id="docreview-prompt"></span></div>
+  </div>
+
+  <div class="card">
     <h2>Apple Calendar / Outlook</h2>
-    <div class="sub">Prefer a file? Download both recurring events at once and open it in any calendar app.</div>
+    <div class="sub">Prefer a file? Download all recurring events at once and open it in any calendar app.</div>
     <div class="btns ics-row">
       <button class="btn" id="ics-download">⬇️ Download .ics (both events)</button>
     </div>
@@ -101,7 +110,8 @@
 <script>
 const PROMPTS = {
   weekly: "Run the weekly check-in from the virtual-coo skill. Read company-state.md in this workspace for current context. Detect what changed since the last check-in: new hires, paying customers, funding or fundraise prep. Check the stage-critical processes in the Duct Tape to COO wiki for your stage and surface any that are slipping. Propose at most 3 next actions, each with an owner, a next step, and the wiki page it came from. Ground everything in the wiki. If something is not covered, say so rather than inventing it. Update company-state.md when done.",
-  quarterly: "Run the quarterly operational health check from the virtual-coo skill. Read company-state.md in this workspace for stage, revenue and funding context. Score every process that is critical or recommended at the current stage on the 5 dimensions from the Duct Tape to COO framework. Skip conditional processes that do not apply. Rank the gaps, and for the top 3 to 5 give wiki-backed fixes with owners. Flag any stage cells the wiki does not cover yet. Update company-state.md with the date and the prioritised gaps as open actions."
+  quarterly: "Run the quarterly operational health check from the virtual-coo skill. Read company-state.md in this workspace for stage, revenue and funding context. Score every process that is critical or recommended at the current stage on the 5 dimensions from the Duct Tape to COO framework. Skip conditional processes that do not apply. Rank the gaps, and for the top 3 to 5 give wiki-backed fixes with owners. Flag any stage cells the wiki does not cover yet. Update company-state.md with the date and the prioritised gaps as open actions.\n\nIf stage is early-revenue or later (or 1.7 Process Documentation scored weak on Documentation), offer the quarterly doc review from reference.md — same session or same week.",
+  docreview: "Run the quarterly doc review from the virtual-coo skill. Read tone-of-voice.md and company-state.md. Stage should be early-revenue or later (first-hires only if a shared wiki/Notion already exists). Follow reference.md → Quarterly doc review. Fetch wiki/processes/strategic/1.7--{stage}.md. Confirm Processor owner and doc home URL/path.\n\nWalk: (1) what's stale — update or archive? (2) what's still oral-only — capture next? (3) what broke twice since last review — write down? (4) where is the founder still the primary process — delegate and document?\n\nDraft-first with [TODO] buckets, then interview. Close with at most 5 actions. Update company-state.md. If a Ducttape OS folder is on record, write ops-evaluations/YYYY-QN-doc-review.md."
 };
 const TZ = "Europe/Amsterdam";
 const DAYCODE = ["SU","MO","TU","WE","TH","FR","SA"];
@@ -153,7 +163,7 @@ function buildEvent(uid, start, durMin, rrule, summary, details){
     "END:VEVENT"
   ].join("\r\n");
 }
-function buildICS(weekly, quarterly){
+function buildICS(weekly, quarterly, docreview){
   const vtz = ["BEGIN:VTIMEZONE",`TZID:${TZ}`,
     "BEGIN:DAYLIGHT","TZOFFSETFROM:+0100","TZOFFSETTO:+0200","TZNAME:CEST",
     "DTSTART:19700329T020000","RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU","END:DAYLIGHT",
@@ -162,7 +172,7 @@ function buildICS(weekly, quarterly){
     "END:VTIMEZONE"].join("\r\n");
   return ["BEGIN:VCALENDAR","VERSION:2.0",
     "PRODID:-//Duct Tape to COO//Virtual COO Check-ins//EN",
-    "CALSCALE:GREGORIAN","METHOD:PUBLISH", vtz, weekly, quarterly, "END:VCALENDAR"].join("\r\n");
+    "CALSCALE:GREGORIAN","METHOD:PUBLISH", vtz, weekly, quarterly, docreview, "END:VCALENDAR"].join("\r\n");
 }
 
 function refresh(){
@@ -171,6 +181,7 @@ function refresh(){
 
   const wStart = nextWeekday(day, h, m);
   const qStart = firstMondayNextQuarter(h, m);
+  const dStart = new Date(qStart.getTime() + 45*60000);
   const wRule = `FREQ=WEEKLY;BYDAY=${DAYCODE[day]}`;
   const qRule = "FREQ=MONTHLY;INTERVAL=3;BYDAY=1MO";
 
@@ -178,16 +189,20 @@ function refresh(){
     gcalLink("Weekly COO check-in", wStart, 15, wRule, PROMPTS.weekly);
   document.getElementById("gcal-quarterly").href =
     gcalLink("Quarterly COO health check", qStart, 45, qRule, PROMPTS.quarterly);
+  document.getElementById("gcal-docreview").href =
+    gcalLink("Quarterly COO doc review", dStart, 30, qRule, PROMPTS.docreview);
 
   document.getElementById("weekly-prompt").textContent = PROMPTS.weekly;
   document.getElementById("quarterly-prompt").textContent = PROMPTS.quarterly;
+  document.getElementById("docreview-prompt").textContent = PROMPTS.docreview;
 
   refresh._w = buildEvent("weekly-coo-checkin@ducttape-to-coo", wStart, 15, wRule, "Weekly COO check-in", PROMPTS.weekly);
   refresh._q = buildEvent("quarterly-coo-healthcheck@ducttape-to-coo", qStart, 45, qRule, "Quarterly COO health check", PROMPTS.quarterly);
+  refresh._d = buildEvent("quarterly-coo-docreview@ducttape-to-coo", dStart, 30, qRule, "Quarterly COO doc review", PROMPTS.docreview);
 }
 
 document.getElementById("ics-download").addEventListener("click", () => {
-  const ics = buildICS(refresh._w, refresh._q);
+  const ics = buildICS(refresh._w, refresh._q, refresh._d);
   const blob = new Blob([ics], { type:"text/calendar;charset=utf-8" });
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);

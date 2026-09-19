@@ -22,7 +22,7 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:weekly-coo-checkin@ducttape-to-coo
-DTSTAMP:20260611T120000Z
+DTSTAMP:20260915T120000Z
 DTSTART;TZID=Europe/Amsterdam:20260615T140000
 DTEND;TZID=Europe/Amsterdam:20260615T141500
 RRULE:FREQ=WEEKLY;BYDAY=MO
@@ -44,7 +44,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:quarterly-coo-healthcheck@ducttape-to-coo
-DTSTAMP:20260611T120000Z
+DTSTAMP:20260915T120000Z
 DTSTART;TZID=Europe/Amsterdam:20260706T140000
 DTEND;TZID=Europe/Amsterdam:20260706T144500
 RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=1MO
@@ -57,11 +57,33 @@ DESCRIPTION:Quarterly COO health check (45 min).\n\nOpen your AI tool in your
  p conditional processes that do not apply. Rank the gaps\, and for the top 3 t
  o 5 give wiki-backed fixes with owners. Flag any stage cells the wiki does not
  cover yet. Update company-state.md with the date and the prioritised gaps as
- open actions.
+ open actions.\n\nIf stage is early-revenue or later (or 1.7 Process Documenta
+ tion scored weak on Documentation)\, offer the quarterly doc review from refer
+ ence.md — same session or same week.
 BEGIN:VALARM
 TRIGGER:-PT10M
 ACTION:DISPLAY
 DESCRIPTION:Quarterly COO health check
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:quarterly-coo-docreview@ducttape-to-coo
+DTSTAMP:20260915T120000Z
+DTSTART;TZID=Europe/Amsterdam:20260706T144500
+DTEND;TZID=Europe/Amsterdam:20260706T151500
+RRULE:FREQ=MONTHLY;INTERVAL=3;BYDAY=1MO
+SUMMARY:Quarterly COO doc review
+DESCRIPTION:Quarterly doc review (30 min\, optional\, early-revenue+).\n\nOpen
+  your AI tool and paste:\n\nRun the quarterly doc review from the virtual-coo
+  skill. Read tone-of-voice.md and company-state.md. Follow reference.md → Quar
+ terly doc review. Fetch wiki/processes/strategic/1.7--{stage}.md. Walk: (1) wh
+ at's stale (2) oral-only (3) broke twice since last review. Update company-st
+ ate.md. Write ops-evaluations/YYYY-QN-doc-review.md if Ducttape OS folder exi
+ sts.
+BEGIN:VALARM
+TRIGGER:-PT10M
+ACTION:DISPLAY
+DESCRIPTION:Quarterly COO doc review
 END:VALARM
 END:VEVENT
 END:VCALENDAR

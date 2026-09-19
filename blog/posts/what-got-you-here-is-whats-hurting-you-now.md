@@ -71,7 +71,7 @@ Les McKeown's *Predictable Success* (2010) gives the journey a different kind of
 4. **Predictable Success** — growth *plus* systems. Repeatable wins. The peak.
 5. **Treadmill → Big Rut → Death Rattle** — over-process, ossification, decline.
 
-Whitewater is the phase where most founders find me. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: *I used to enjoy this*.
+Whitewater is the phase where most founders find me. The business is succeeding hard enough that the old way is breaking, but the new way isn't built yet. The founder feels it before anyone has language for it: *I used to enjoy this*. Leadership may still dismiss it as "a rough quarter." At a certain scale that misread gets worse: people leaving — and the temporary holes that leaves — are a *constant*, not an exception. If your processes only work when the same three people never take leave or quit, you are not in a rough quarter. You are in Whitewater without a Processor.
 
 McKeown adds a team typology that explains *why* Whitewater is so hard to leave: every healthy company needs four styles working together — **Visionary** (typically the founder), **Operator** (gets things done), **Processor** (builds repeatability), and **Synergist** (translates between the other three). In Fun you only need Visionary and Operator. In Whitewater, you need the Processor — and that's exactly the person the Visionary and Operator instinctively reject as *slowing us down*.
 

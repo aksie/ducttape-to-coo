@@ -255,7 +255,9 @@ Weekly does not replace the full process pass. Connect them lightly:
   processes?"
 - **Week before a process review:** "Next week we'll do a quick run through the
   operational processes for your stage — good enough, or we pick an action. Nothing
-  to prepare."
+  to prepare." At **`early-revenue`+**, add: "If you keep process docs in a wiki or
+  Notion, we'll also run the [quarterly doc review](#quarterly-doc-review) — stale
+  pages, oral-only workflows, repeat breakages, founder still on primary processes."
 - **Week after a process review:** open the backlog with what the review flagged.
 
 → Full process review: [Quarterly health check](#quarterly-health-check)
@@ -379,7 +381,17 @@ consistent with the web diagnostic.)
    into concrete next steps with owners.
 6. **Update `company-state.md`** — record the date as the last quarterly
    health check, and log the prioritised gaps as open actions.
-7. **If a [Ducttape OS folder](#ducttape-os-setup) is on record and still
+7. **Offer the [quarterly doc review](#quarterly-doc-review)** when any of
+   these is true — don't skip silently:
+   - Stage is **`early-revenue` or later**, and the company has (or is
+     starting) a wiki / Notion / shared doc space for how work gets done.
+   - **1.7 Process Documentation** scored **≤2 on Documentation**, or
+     documentation was a weak dimension on multiple critical processes.
+   - The founder mentions stale docs, oral-only handoffs, or the same process
+     breaking again.
+   Offer to run it in the same session (add ~30 min) or schedule it for the
+   same week. If they decline, note that in **Notes** and move on.
+8. **If a [Ducttape OS folder](#ducttape-os-setup) is on record and still
    exists** (check `company-state.md`'s Notes for a confirmed path, then
    confirm the folder is actually there — see "Track progress in
    `company-state.md`" under Ducttape OS setup), also write this output
@@ -410,6 +422,122 @@ Scored [N] stage-relevant processes.
 ### Not covered by the wiki yet
 - [N.N] at [stage] — no page; flagged for the pipeline.
 ```
+
+---
+
+## Quarterly doc review
+
+A **30-minute maintenance pass** on the company's process documentation — wiki,
+Notion, shared drive, or wherever "how we work" lives. This is **not** the full
+operational health check: it does not rescore every process. It audits the **doc
+corpus** itself.
+
+Ground in `wiki/processes/strategic/1.7--{stage}.md` and the **1.7** `stage_focus`
+in `data/processes.json` ("review quarterly what needs updating"). At
+**`first-hires`**, only run a lighter founder-only version if a shared doc space
+already exists; the full ritual (Processor owner + area leads) targets
+**`early-revenue`+**.
+
+### When to run
+
+| Trigger | Action |
+|---|---|
+| Founder says "doc review" / "quarterly doc review" | Run this procedure |
+| End of [quarterly health check](#quarterly-health-check) (step 7) | Offer to continue now or same week |
+| **1.7** Documentation score ≤2 | Strong nudge — tie fixes to this ritual |
+| Same process broke twice since last review | Run ad hoc; log as doc-review actions |
+
+### Who's in the room
+
+Ideal: **Processor owner** (ops lead, chief of staff, fractional COO — whoever
+owns systematising) **plus area leads** (eng, sales, ops — whoever owns a
+workflow). The Virtual COO usually talks to the **founder** first; use
+[draft-first, then interview](#draft-first-then-interview):
+
+1. **Solo prep with founder** — build the four lists from memory and a quick
+   scroll of the doc home.
+2. **Async from leads** — founder sends four questions; COO helps draft the
+   message and merges replies into the review artifact.
+3. **Live meeting** — founder runs 30 min with the group; pastes notes or
+   bullet answers afterward; COO structures the output.
+
+Record **Processor owner** and **doc home URL/path** in `company-state.md`
+(**Notes**) when confirmed.
+
+### The four questions (non-negotiable)
+
+Walk these in order. Each item needs an **owner** and a **next step** — not
+"vague improve docs."
+
+1. **What's stale?** Pages with wrong steps, old tool names, or "last reviewed"
+   older than a quarter → **update or archive** (orphan pages are worse than no
+   pages).
+2. **What's still oral-only?** Workflows new hires still learn by Slack or
+   shadowing the founder → **schedule capture** (Loom + one-pager; see 1.7
+   "one process per cycle").
+3. **What broke twice since last review?** Same emergency, same mistake, same
+   "how do we…?" → **write it down this quarter**, prioritised over nice-to-have
+   docs.
+4. **Where is the founder still the primary process?** Recurring work still
+   routes through the founder — grabbing underperforming tasks, skipping
+   management rhythm, treating every problem as hands-on — when scale-up friction
+   needed **structure and delegation** instead. Often the sales motion, product
+   call, or support escalation. **Name an owner and capture the handoff**; don't
+   assume heroics scale (wiki warning sign on **1.7**; Turner via atom-632).
+
+### Procedure
+
+1. **Read `company-state.md`** — stage, Processor owner, doc home (ask if blank).
+2. **Fetch** `{BASE}/wiki/processes/strategic/1.7--{stage}.md`. If 404 or stub,
+   use **1.7** `stage_focus` from `data/processes.json` and say the wiki cell
+   is thin.
+3. **Draft first** — produce the [output format](#quarterly-doc-review-output)
+   skeleton with `[TODO]` buckets before a long interview.
+4. **Fill the four lists** — one or two items at a time; don't invent processes
+   the founder hasn't named.
+5. **Close with at most 5 actions** — bias toward capture and ownership (who
+   writes which one-pager by when). Tie repeat breakages to [weekly
+   pulse](reference.md#weekly-check-in) "almost went wrong" themes if relevant.
+6. **Update `company-state.md`** — set **Quarterly doc review** date in the
+   cadence log; add open actions with source `wiki/processes/strategic/1.7--{stage}.md`.
+7. **If a [Ducttape OS folder](#ducttape-os-setup) is on record and still
+   exists**, also write the output to
+   `<OS folder>/ops-evaluations/YYYY-QN-doc-review.md` and refresh the folder's
+   `README.md` link. Same quarter as the health check? Reference the health-check
+   file from one or the other — don't duplicate gap analysis.
+
+### Quarterly doc review output
+
+```
+## Quarterly doc review — [date]
+
+Stage: [stage] · Doc home: [URL or path]
+Processor owner: [name/role]
+Inputs: [live meeting / founder solo / async from leads]
+
+### Stale — update or archive
+- [page or process] · owner: [who] · next: [update / archive / merge]
+
+### Still oral-only — capture next
+- [workflow] · owner: [who] · next: [Loom + one-pager by date]
+
+### Broke twice since last review — write down
+- [what broke] · owner: [who] · next: [capture by date]
+
+### Founder still primary process — delegate + document
+- [workflow still on founder] · new owner: [who] · next: [capture handoff by date]
+
+### Actions this quarter (max 5)
+1. [action] · owner: [who]
+...
+```
+
+### Tone
+
+Same as the weekly: helpful peer, not audit. "Which pages would embarrass you if
+a new hire opened them?" beats "your documentation dimension scored 1."
+
+→ Calendar prompt: [prompts/quarterly-doc-review.txt](prompts/quarterly-doc-review.txt)
 
 ---
 
@@ -462,7 +590,7 @@ Ducttape Operational System (OS)/
   goals/                  — from Investor updates & goals
   company-ops-registry/   — scoped registry subfolders, see "Scope the registry"
   ops-evaluations/        — secondary; populated by the Quarterly health
-                            check's additive step, see that section
+                            check and Quarterly doc review (see those sections)
 ```
 
 ### Scope the registry — don't dump all 8 sections

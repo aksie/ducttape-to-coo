@@ -18,7 +18,7 @@ entry_target: "blog-what-got-you-here-is-whats-hurting-you-now"
 
 ## Claim
 
-Whitewater arrives when successful growth creates complexity the old way of working cannot handle — errors and emergencies rise, and it stops feeling like Fun.
+Whitewater arrives when successful growth creates complexity the old way of working cannot handle — errors and emergencies rise, it stops feeling like Fun, and leadership may still dismiss it as "a rough quarter" or bumps in the road.
 
 ## Source quote or paraphrase
 
@@ -26,4 +26,4 @@ McKeown: Whitewater is the third stage after Early Struggle and Fun; it grows ou
 
 ## Why (inferred from source if not explicit)
 
-The practices that produced Fun break under the volume and interdependence Fun created.
+The practices that produced Fun break under the volume and interdependence Fun created. Calling it a rough quarter delays the Processor and ownership work that actually exits Whitewater.

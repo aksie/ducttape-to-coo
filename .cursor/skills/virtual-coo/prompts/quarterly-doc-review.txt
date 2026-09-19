@@ -1,0 +1,23 @@
+Run the quarterly doc review from the virtual-coo skill.
+
+Open with a one-sentence beta note: Virtual COO is in beta — use with caution,
+guidance may be incomplete, feedback welcome.
+
+Read tone-of-voice.md and company-state.md in this workspace. Stage should be
+early-revenue or later (first-hires only if a shared wiki/Notion already exists).
+
+Follow reference.md → Quarterly doc review. Fetch wiki/processes/strategic/1.7--{stage}.md
+for grounding. Confirm Processor owner and doc home URL/path.
+
+Walk the four questions in order:
+1. What's stale — update or archive?
+2. What's still oral-only — capture next?
+3. What broke twice since last review — write down?
+4. Where is the founder still the primary process — name an owner and capture the handoff?
+
+Draft-first: skeleton with [TODO] buckets, then interview one or two items at a
+time. Close with at most 5 actions (owner + next step each). Update
+company-state.md (cadence log + open actions). If a Ducttape OS folder is on
+record, write ops-evaluations/YYYY-QN-doc-review.md and refresh README.md.
+
+Ground recommendations in the wiki. If 1.7 at this stage is not covered yet, say so.

@@ -11,6 +11,23 @@ entry, also bump the `version` field in `SKILL.md`'s frontmatter to match
 this file's date** — that's what the version check (rule 8) compares
 against.
 
+## 2026-09-15b
+
+- **Doc review: founder primary-process check.** Fourth agenda question — where
+  recurring work still routes through the founder (Turner / atom-632); output
+  bucket "Founder still primary process — delegate + document". Matches **1.7**
+  warning sign enrichment.
+
+## 2026-09-15
+
+- **Quarterly doc review ritual.** New `reference.md` section: 30-minute pass on
+  the process wiki/Notion (stale pages, oral-only workflows, repeat breakages)
+  with Processor owner + area leads — grounded in **1.7 Process Documentation**.
+  Wired into quarterly health check (auto-offer when 1.7 Documentation ≤2 or
+  `early-revenue`+ with a doc space), weekly pre-review nudge, OS folder write
+  (`ops-evaluations/YYYY-QN-doc-review.md`), `prompts/quarterly-doc-review.txt`,
+  `coo-setup.html` optional calendar slot, and `docs/company-state.md` cadence row.
+
 ## 2026-08-17c
 
 - **Read-back before finalize.** After draft → interview, show the **complete
