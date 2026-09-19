@@ -16,7 +16,7 @@ cta_secondary_href: "../wiki.html#1.2b--early-revenue"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
-Two separate conversations, with two different partners at the same impact-VC fund, kept landing on the same subject: boards. Not board mechanics — decks, pre-reads, cadence, all real but not the point — but what a board actually *is*, and when it actually has power over you. The sources here are investors. Every lesson below is really about what you, as a founder, should expect, demand, and do differently.
+A few conversations with partners at VC funds, kept landing on the same subject: boards. Not board mechanics — decks, pre-reads, cadence, all real but not the point — but what a board actually *is*, and when it actually has power over you. The sources here are investors. Every lesson below is really about what you, as a founder, should expect, demand, and do differently.
 
 ## Your board is not a report-card committee
 
