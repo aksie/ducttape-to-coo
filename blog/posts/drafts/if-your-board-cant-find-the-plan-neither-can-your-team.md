@@ -1,13 +1,13 @@
 ---
-title: "Your Board's Power Has a Shelf Life"
-subtitle: "What boards are actually for, who founders really call, and why the leverage disappears the moment the money lands."
+title: "If your board can't find the plan, neither can your team"
+subtitle: "What boards are actually for, when leverage disappears at term-sheet close, and why a pack your investors can't parse is a warning sign for your team."
 date: "September 2026"
 tag: "Governance"
 tag_color: "blue"
-slug: "your-boards-power-has-a-shelf-life"
+slug: "if-your-board-cant-find-the-plan-neither-can-your-team"
 order: 2
 listed: false
-description: "Two VC partners, two separate conversations, the same subject: what a board is actually for, when it actually has power over you, and why the board pack you can't parse is a warning sign about your own team, not theirs."
+description: "Two VC partners on what a board is actually for, when it has real leverage, and why the board pack you can't parse is a warning sign about your own team — not just your reporting."
 cta_intro: "The wiki has a full page on this — board rhythm, pre-reads, and composition, calibrated to your stage."
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
@@ -16,7 +16,7 @@ cta_secondary_href: "../wiki.html#1.2b--early-revenue"
 footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
-Two separate conversations, with two different partners at the same impact-VC fund, kept landing on the same subject: boards. Not board mechanics — decks, pre-reads, cadence, all real but not the point — but what a board actually *is*, and when it actually has power over you. The sources here are investors. Every lesson below is really about what you, as a founder, should expect, demand, and do differently.
+A few conversations with partners at VC funds, kept landing on the same subject: boards. Not board mechanics — decks, pre-reads, cadence, all real but not the point — but what a board actually *is*, and when it actually has power over you. The sources here are investors. Every lesson below is really about what you, as a founder, should expect, demand, and do differently.
 
 ## Your board is not a report-card committee
 
@@ -46,7 +46,7 @@ Ask them why, and the answer isn't subtle: founders go to that person faster tha
 
 If your board offers you that kind of arrangement — a credible, conflict-free operator with a real seat, not just an advisor on the side — take it. And if it doesn't, it's worth building that relationship yourself: someone with real domain experience, no financial stake in your next round, who you'd actually call at 11pm.
 
-## If your board can't find the plan, neither can your team
+## The OKR-less board pack
 
 The clearest single illustration in either conversation. A board pack, real, recent: a full page explaining how an objective and key result *should* be defined — the theory of it, carefully written — and nowhere in the document an actual key result. The owner was in there somewhere, but buried.
 
