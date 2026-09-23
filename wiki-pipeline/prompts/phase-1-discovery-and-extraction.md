@@ -310,3 +310,12 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - IDs renumbered 2026-09-16 after main merged 1.2b board research into former src-087–097 / atom-640–675 range → this cell is now **src-098–111**, **atom-676–698**
 - **Published 2026-09-16:** bulk → `1.5--early-revenue.md` (Organizational Design); thin addendum → `1.4--early-revenue.md` (c-024 teach criteria, c-025 COO without mandate). Research cell superseded — do not publish a third wiki page.
 - Run date: 2026-09-15–16 — Phase 2–4 complete
+
+### SHIFT Invest PEOPLE-dimension framework (org design + HR maturity, growth focus)
+- Single-document source, not a web corpus — no `corpus_health.md` (same convention as other single-source human/fund-document sources)
+- Source: the fund's own internal "COMPASS" maturity framework, PEOPLE dimension only (one slide of a larger deck — STRATEGY/OPERATIONS/FINANCE dimensions not shared); three phases (Pioneering <8p, Organising 8–25p, Managing 25–50p) map almost exactly onto Foundation+First Hires / Early Revenue / **Growth**, and the framework has no phase past 50p — it does not reach what this wiki calls Scaled
+- Primary target: `1.5--growth.md` and `3.5--growth.md`, both empty stubs before this run — the "Managing (25–50p)" phase content was extracted most fully for this reason
+- Skipped extraction of near-verbatim restatements of what's already in `processes.json` stageFocus text (e.g. "maintain living org chart, clear reporting lines") — thoroughness was traded for avoiding low-value duplicate atoms on a dense single-slide source
+- Bias risk: single VC fund's own internal framework — treat normative figures (>30% women on MT, specific toolbox items) as this fund's choice, not triangulated benchmarks; several atoms have `why_quality: absent/low` because the source states targets/checklist items without explaining mechanism
+- Geographic: NL (same fund as src-087–097/112)
+- Run date: 2026-09-21 — src-113, atoms atom-707–722
