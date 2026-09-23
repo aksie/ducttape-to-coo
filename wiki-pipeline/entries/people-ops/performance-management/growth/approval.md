@@ -4,89 +4,89 @@ last_updated: 2026-09-23
 ---
 
 ### c-001
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:45
 - Edited claim text: null
 
 ### c-002
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:45
 - Edited claim text: null
 
 ### c-003
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:45
 - Edited claim text: null
 
 ### c-004
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:45
 - Edited claim text: null
 
 ### c-005
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:46
 - Edited claim text: null
 
 ### c-006
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:46
 - Edited claim text: null
 
 ### c-007
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:46
 - Edited claim text: null
 
 ### c-008
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:48
 - Edited claim text: null
 
 ### c-009
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:48
 - Edited claim text: null
 
 ### c-010
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:48
 - Edited claim text: null
 
 ### c-011
-- Status: pending
+- Status: approved
 - Flags: []
 - Reviewer notes: ""
-- Reviewed by: ""
-- Reviewed date: null
+- Reviewed by: "aksie"
+- Reviewed date: 2026-09-23 13:48
 - Edited claim text: null

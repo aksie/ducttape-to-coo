@@ -3,7 +3,7 @@ entry: people-ops/performance-management/growth
 phase: growth
 last_updated: 2026-09-23
 claim_count: 11
-atoms_in_scope: atom-715–717 (new, src-113), atom-591/594/609/617 (carried/evolved from early-revenue)
+atoms_in_scope: atom-715–717 (src-113), atom-723–727 (src-114–116, addendum 2026-09-23), atom-591/594/609/617 (carried/evolved from early-revenue)
 synthesis_mode: new_draft
 ---
 
@@ -43,23 +43,26 @@ synthesis_mode: new_draft
 
 ### c-004: Formal review cycle tied to compensation
 - Section: what_good_looks_like
-- Supporting atoms: none (processes.json citation only, matching the early-revenue draft's own convention of citing "processes.json 3.5 stageFocus" as a source)
+- Supporting atoms: atom-725, atom-727
+- Why-source: atom-725 (why_quality: high — informal founder judgment doesn't scale)
 - Carried from: early-revenue c-016 (evolve — the review-cycle half)
-- Synthesis notes: Distinct from c-003 — this is about review-cycle mechanics (cadence + comp linkage + documented criteria), not the retention strategy itself.
+- Synthesis notes: Distinct from c-003 — this is about review-cycle mechanics (cadence + comp linkage + documented criteria), not the retention strategy itself. Addendum 2026-09-23: replaced processes.json-only citation with src-115 (Molly Graham perf/comp integration) + src-116 (AltSchool quarterly cycle + rubric).
 
 ## What you actually need to do — c-005 to c-007
 
 ### c-005: Train managers to give feedback
 - Section: what_to_do
-- Supporting atoms: none (processes.json citation only)
+- Supporting atoms: atom-723
+- Why-source: atom-723 (why_quality: high — founder example no longer scales at multiple managers)
 - Carried from: none
-- Synthesis notes: Directly sets up warning sign c-008.
+- Synthesis notes: Directly sets up warning sign c-008. Addendum 2026-09-23: src-114 (First Round / Raw Signal).
 
 ### c-006: Tie comp reviews to performance, document promotion criteria
 - Section: what_to_do
-- Supporting atoms: none (processes.json citation only)
+- Supporting atoms: atom-726, atom-727
+- Why-source: atom-726 (why_quality: high — bias and retention risk without documented criteria)
 - Carried from: none
-- Synthesis notes: Directly addresses warning sign c-010 (comp drift).
+- Synthesis notes: Directly addresses warning sign c-010 (comp drift). Addendum 2026-09-23: src-115 + src-116.
 
 ### c-007: Bring in dedicated HR help (35–50p)
 - Section: what_to_do
@@ -73,8 +76,10 @@ synthesis_mode: new_draft
 ### c-008: Managers avoid hard conversations
 - Section: warning_signs
 - Warning category: output_quality
-- Supporting atoms: none (processes.json citation only: "Common issue: managers avoid hard conversations, letting performance issues fester")
+- Supporting atoms: atom-724, atom-594 (src-077 — related surprise-at-review pattern)
+- Why-source: atom-724 (why_quality: high — formal cycles without feedback skill)
 - Carried from: none
+- Synthesis notes: Addendum 2026-09-23: src-114 primary; src-077 secondary (pairs with c-009, not merged — c-008 is the manager-habit warning, c-009 is the review-output symptom).
 
 ### c-009: First-time negative feedback in formal review
 - Section: warning_signs

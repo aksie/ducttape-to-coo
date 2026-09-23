@@ -67,7 +67,7 @@
 | URL | Verdict |
 |---|---|
 | [HN 427564](https://news.ycombinator.com/item?id=427564) — “Do you do individual performance reviews?” | **Skip** — only 3 comments; thin vs existing src-075–077 |
-| [First Round — AltSchool rebuilt Google reviews](https://review.firstround.com/altschools-ceo-rebuilt-googles-performance-review-system-to-work-for-startups-here-it-is/) | **Defer to 3.5 @ growth** — formal system from day one; useful warning on “loosey-goosey then hire over star” but heavier than early-revenue default |
+| [First Round — AltSchool rebuilt Google reviews](https://review.firstround.com/altschools-ceo-rebuilt-googles-performance-review-system-to-work-for-startups-here-it-is/) | **Added as src-116 @ 3.5 growth** (2026-09-23) — formal system from day one; useful warning on “loosey-goosey then hire over star” but heavier than early-revenue default |
 | [Adku 2011 peer reviews at 3 people](http://blog.adku.com/2011/01/peer-reviews-in-4-month-old-3-person.html) | **Skip** — first-hires scale, not early-revenue |
 
 ### Deliberately excluded (vendor / template SEO)
