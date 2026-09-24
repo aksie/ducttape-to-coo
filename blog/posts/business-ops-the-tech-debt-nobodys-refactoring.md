@@ -5,7 +5,7 @@ date: "September 2026"
 tag: "Operations"
 tag_color: "blue"
 slug: "business-ops-the-tech-debt-nobodys-refactoring"
-order: 1
+order: -1
 listed: true
 description: "Investors don't care about your paperwork for its own sake — they care what it tells them about whether you're coachable. Drawn from a conversation with an impact-VC partner about why operations matter, not just what good ones look like."
 cta_intro: "The diagnostic covers the same ground as this post — legal and hiring — calibrated to your stage."
