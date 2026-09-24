@@ -47,6 +47,8 @@ TEMPLATE     = os.path.join(SCRIPT_DIR, "_template.html")
 INDEX_OUT    = os.path.join(SCRIPT_DIR, "index.html")
 
 HTML_BLOCK_RE = re.compile(r"^\{\{html-block:([a-z0-9-]+)\}\}\s*$", re.MULTILINE)
+# Python-Markdown has no built-in ~~strike~~; map it before convert.
+STRIKE_RE = re.compile(r"~~(.+?)~~")
 
 # ── Markdown renderer ───────────────────────────────────────────────────────
 md = md_lib.Markdown(extensions=["tables", "fenced_code", "nl2br"])
@@ -74,6 +76,7 @@ def expand_html_blocks(text: str, source: str) -> str:
 
 def render_body(text: str, source: str = "post") -> str:
     text = expand_html_blocks(text, source)
+    text = STRIKE_RE.sub(r"<del>\1</del>", text)
     md.reset()
     return md.convert(text)
 
