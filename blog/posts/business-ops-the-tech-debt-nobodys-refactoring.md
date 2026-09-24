@@ -22,7 +22,7 @@ Last week I was interviewing a partner at an investment fund about best practice
 
 I am comparing notes and interviewing other operators about best practices to fill this knowledge base with the things they know. And when Thijs (Gitmans from SHIFT invest) and I talk we get inspired about this topic, and that's how we landed on this.
 
-*We went somewhere more interesting than best practices, to **why** operational hygiene matters enough for an investor to care about it before a term sheet is even close and **why** founders themselves should care about solving it.*
+***We went somewhere more interesting than best practices, to why operational hygiene matters enough for an investor to care about it before a term sheet is even close and why founders themselves should care about solving it.***
 
 Whether it is a messy shareholder agreement, an unsigned contract, an employment agreement that doesn't hold up — none of that is just about that document. An investor doing diligence isn't just grading your paperwork. Yes, they are checking whether the fundamentals are in place, whether you do own that IP, and whether there is anything blocking in your shareholder agreement. But more than that, they're using it as a proxy for some things they can't directly observe yet: ***whether you know outside of your own skills what it takes to run a business and whether you are coachable.***
 
