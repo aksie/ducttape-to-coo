@@ -39,6 +39,7 @@ You don't need all of these — even a partial contribution is useful. Write wha
 | `people-3.1--hr-filing.md` | HR filing from first hire |
 | `financial-2.5--formal-filing.md` | Financial formal filing |
 | `financial-2.1-2.2--scenario-planning-first-hires.md` | Scenario-style planning — blog-style source for wiki 2.1 / 2.2 @ first hires |
+| `scaling-thresholds--operator-interview.md` | Operator interview (NL, anonymised) — system becomes the constraint at ~40–100, culture transfer via decisions, in-house early training (1.5 / 1.4 / 3.5 / 3.3 / 3.7) |
 | `_template.md` | Copy this to start a new contribution |
 
 ## File naming
