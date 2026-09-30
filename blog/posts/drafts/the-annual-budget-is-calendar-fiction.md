@@ -1,10 +1,10 @@
 ---
-title: "Break the Budget Calendar Fiction tradition"
-subtitle: "Budget plus bandwidth plus if/then actions — why calendar fiction breaks, and what we did before Covid hit."
+title: "The annual budget is calendar fiction"
+subtitle: "The approach I use instead is IFTTT"
 date: "draft"
 tag: "Finance"
 tag_color: "green"
-slug: "scenario-style-planning-not-a-static-budget"
+slug: "the-annual-budget-is-calendar-fiction"
 status: draft
 description: "Static budgets lie from January 2nd. One active budget plus a trigger → action list on MRR, customers, and more — from first hires through early revenue."
 cta_intro: "The diagnostic covers cash flow and planning at your stage — see whether you're running on calendar fiction or something you can execute under stress."

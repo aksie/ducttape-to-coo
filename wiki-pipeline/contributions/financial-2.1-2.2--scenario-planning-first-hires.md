@@ -7,7 +7,7 @@ source_note: Practitioner experience. Scenario-style planning framing attributed
 attribution:
   - "Scenario-style planning (budget + bandwidth + if/then actions) — Nalden"
   - "Covid customer-cancellation scenario budget — Stefan (leadership team, prior company)"
-blog_slug: scenario-style-planning-not-a-static-budget
+blog_slug: the-annual-budget-is-calendar-fiction
 ---
 
 > **For the pipeline:** Targets **2.2** @ first hires (primary) and **2.1** @ first hires. **Single source file** — write here; to preview or publish the blog, copy body to `blog/posts/drafts/` and add blog frontmatter (see `contributions/README.md`).
@@ -166,5 +166,5 @@ Suggested source id when registered: `src-065` or next free — `extracted_by: h
 - **Source:** `src-065` — registered; canonical file is this contribution.
 - **Atoms:** `atom-393`–`atom-423` (31 atoms) — `extracted_by: human:stefanverkerk`, `practitioner_first_person: true`.
 - **External sources registered (atoms pending):** `src-066` (Medium dynamic hiring), `src-067` (under30ceo hire math), `src-068` (First Round Hayes cash plan). Remaining discovery list (HN, glencoyne, Forecastr, reuse src-005/002/006/007) — extract in next batch.
-- **Blog draft:** `blog/posts/drafts/scenario-style-planning-not-a-static-budget.md` (copy of body § above through Closing).
+- **Blog draft:** `blog/posts/drafts/the-annual-budget-is-calendar-fiction.md` (copy of body § above through Closing).
 - **Next:** Phase 2 synthesis → `financial-ops/cash-flow-management/first-hires/` and `financial-ops/financial-planning-budgeting/first-hires/`.
