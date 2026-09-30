@@ -23,15 +23,15 @@ Back when our scaleup became part of a large company, I went (back) to doing big
 The formal plan said *launch in the next country in April*. The real tactic was *launch when unit economics in country Y exceed X*. Still, all year you explain variance against a plan someone fixed in October. The budget isn't useless; it was the wrong *shape* for running the company day to day.
 
 ## My solution for it: IF-This-Then-That-Budgeting
-That was an itch I would love to scratch. I like building my own systems — as you may have gathered from [what I built here](https://www.ducttape-to-coo.com/skill-setup.html) ;-). So when I was back running a startups business ops, I could finally design planning and budgeting **my way**. Not a prettier spreadsheet. **Triggers instead of calendar fiction.**
+That was an itch I would love to scratch. I like building my own systems — as you may have gathered from [what I built here](https://www.ducttape-to-coo.com/skill-setup.html) ;-). So when I was back running a startup's business ops, I could finally design planning and budgeting **my way**. Not a prettier spreadsheet. **Triggers instead of calendar fiction.**
 
-Nalden gave it a name I keep using: **IFTTT**. It is a budget **and** bandwidth **and** if/then actions (like the web based IFTT workflow tool from web 2.0 days). You set the line. You set what happens when you cross it. So you're not inventing cuts or hires in a crisis meeting with adrenaline and Slack threads discussing strategic choices triggered in operational situations. 
+Nalden gave it a name I keep using: **IFTTT**. It is a budget **and** bandwidth **and** if/then actions (like the web-based IFTTT workflow tool from web 2.0 days). You set the line. You set what happens when you cross it. So you're not inventing cuts or hires in a crisis meeting with adrenaline and Slack threads discussing strategic choices triggered in operational situations. 
 
 The test isn't whether your Excel is sophisticated. It's whether you can **execute a bad month without panic** — because you already argued the downside when things were calm.
 
 ## If customers cancelled, our pandemic-resistant plan was already written
 
-At a 15 people scaleup, we had already built a budget as leadership team for when Corona hit, answering **what if a large share of customers cancelled due to the pandemic**. Not because we thought that was certain to happen — because we knew speed would matter if it did. And the last thing we wanted was to have to act late and hard, and loose people. 
+At a 15 people scaleup, we had already built a budget as leadership team for when Corona hit, answering **what if a large share of customers cancelled due to the pandemic**. Not because we thought that was certain to happen — because we knew speed would matter if it did. And the last thing we wanted was to have to act late and hard, and lose people. 
 
 So we agreed in advance which costs would go, in what order, and what we would **not** cut (keep the team as long as possible, for as long as we could). When the shock hit the market, we didn't need a week of panicked debate. We could execute immediately against a plan we'd already stress-tested. We didn't have to use the full downside plan in the end. Having it removed knee-jerk reactions and let us choose deliberately.
 
@@ -39,7 +39,7 @@ That was **one specific trigger → next budget** we had written down in advance
 
 ## What does good look like?
 
-In the wiki and the diagnose tool of the Ducttape to COO framework, I use this stracuture of 'what does good look like at this stage'. And translate it into action. So let's follow that structure. 
+In the wiki and the diagnostic tool of the Duct Tape to COO framework, I use this structure of 'what does good look like at this stage'. And translate it into action. So let's follow that structure. 
 
 When financial planning is working like this at the stage of first hires, you have **two layers** — not one spreadsheet pretending the future is fixed:
 
@@ -83,11 +83,11 @@ Triggers can sit on **different dimensions** — cash and MRR, customer count, g
 | MRR down >15% month-on-month | Freeze net-new hires; cut freelancers by Z%; defer discretionary spend |
 | MRR down >20% MoM, or anchor customer lost | Run the step-down sheet — ordered cuts/pauses; bank facility only if already named |
 
-Write the list **with** your co-founder (and board or lead investor if you have one) before you need it. Corona made us pre-writing the step-down row for mass cancellations.
+Write the list **with** your co-founder (and board or lead investor if you have one) before you need it. Corona made us pre-write the step-down row for mass cancellations.
 
-### 4. Optional: pre-write a budget for one nasty shock
+### 3. Optional: pre-write a budget for one nasty shock
 
-If there is a shock you can name in advance (mass churn, dependance on one customer, delayed fundraise), add a row: trigger, ordered actions, owners. Corona was that for us. You do not need a library of disasters — you need the **trigger → action list** from section 2.
+If there is a shock you can name in advance (mass churn, dependence on one customer, delayed fundraise), add a row: trigger, ordered actions, owners. Corona was that for us. You do not need a library of disasters — you need the **trigger → action list** from section 2.
 
 ## What breaks or goes wrong?
 
@@ -122,7 +122,7 @@ Evolution: static calendar hiring → trigger-linked hiring → trigger-linked b
 - **Accountant / bookkeeper** — loaded costs and payroll timing; founders own scenario rules.
 - **[Investor update template](https://aksie.github.io/ducttape-to-coo/templates/rendered/investor-update.html)** — external summary aligned with internal triggers.
 
-## Where this lives in the wiki and diagnose tool
+## Where this lives in the wiki and diagnostic tool
 
 | Wiki | Process |
 |------|---------|
