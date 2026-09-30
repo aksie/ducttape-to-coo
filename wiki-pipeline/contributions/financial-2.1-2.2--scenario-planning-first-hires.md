@@ -166,5 +166,5 @@ Suggested source id when registered: `src-065` or next free — `extracted_by: h
 - **Source:** `src-065` — registered; canonical file is this contribution.
 - **Atoms:** `atom-393`–`atom-423` (31 atoms) — `extracted_by: human:stefanverkerk`, `practitioner_first_person: true`.
 - **External sources registered (atoms pending):** `src-066` (Medium dynamic hiring), `src-067` (under30ceo hire math), `src-068` (First Round Hayes cash plan). Remaining discovery list (HN, glencoyne, Forecastr, reuse src-005/002/006/007) — extract in next batch.
-- **Blog draft:** `blog/posts/drafts/the-annual-budget-is-calendar-fiction.md` (copy of body § above through Closing).
+- **Blog post:** `blog/posts/the-annual-budget-is-calendar-fiction.md` (copy of body § above through Closing).
 - **Next:** Phase 2 synthesis → `financial-ops/cash-flow-management/first-hires/` and `financial-ops/financial-planning-budgeting/first-hires/`.

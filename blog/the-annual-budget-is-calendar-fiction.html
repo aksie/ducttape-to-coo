@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The annual budget is calendar fiction — Duct Tape to COO</title>
+    <meta name="description" content="Static budgets lie from January 2nd. One active budget plus a trigger → action list on MRR, customers, and more — from first hires through early revenue.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230d1117'/><text y='72' x='50' text-anchor='middle' font-size='60'>⚙</text></svg>">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        :root {
+            --bg:             #0d1117;
+            --surface:        #161b22;
+            --surface-raised: #21262d;
+            --border:         #30363d;
+            --border-bright:  #484f58;
+            --text:           #e6edf3;
+            --text-dim:       #8b949e;
+            --text-muted:     #6e7681;
+            --green:          #3fb950;
+            --blue:           #58a6ff;
+            --orange:         #f0883e;
+            --font:           'Space Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: var(--blue); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── Article layout ───────────────────────────── */
+        .post-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 32px 120px;
+        }
+
+        /* ── Meta block ───────────────────────────────── */
+        .post-meta { margin-bottom: 32px; }
+
+        .post-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 3px;
+            margin-bottom: 14px;
+        }
+        .post-tag--green { color: var(--green); border: 1px solid var(--green); }
+        .post-tag--blue  { color: var(--blue);  border: 1px solid var(--blue);  }
+
+        .post-wrap h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .post-subtitle {
+            font-size: 1.05rem;
+            color: #c9d1d9;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .post-byline { font-size: 0.82rem; color: var(--text-dim); }
+
+        /* ── Body copy ────────────────────────────────── */
+        .post-body {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .post-body p { margin-bottom: 1.4em; }
+
+        .post-body h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            margin: 2.5em 0 0.75em;
+            padding-top: 0.5em;
+            border-top: 1px solid var(--border);
+        }
+
+        .post-body h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 1.8em 0 0.5em;
+        }
+
+        .post-body strong { color: var(--text); font-weight: 600; }
+        .post-body em     { color: var(--text); font-style: italic; }
+
+        .post-body ol,
+        .post-body ul {
+            padding-left: 1.5em;
+            margin-bottom: 1.4em;
+        }
+        .post-body li { margin-bottom: 0.5em; }
+
+        .post-body hr { display: none; }
+
+        /* ── Embedded HTML blocks (blog/html-blocks/) ── */
+        .post-html-block {
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .post-body .post-html-block > :first-child { margin-top: 0; }
+        .post-body .post-html-block > :last-child  { margin-bottom: 0; }
+
+        /* ── Blockquotes → pattern callouts ───────────── */
+        .post-body blockquote {
+            border-left: 3px solid var(--orange);
+            padding: 4px 0 4px 20px;
+            margin: 1.8em 0;
+        }
+
+        .post-body blockquote p {
+            margin-bottom: 0.6em;
+            color: var(--text);
+        }
+        .post-body blockquote p:last-child { margin-bottom: 0; }
+
+        /* ── Tables ───────────────────────────────────── */
+        .post-body table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            margin: 1.6em 0 2em;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .post-body th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.78rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-bottom: 1px solid var(--border-bright);
+            white-space: nowrap;
+        }
+
+        .post-body td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text);
+        }
+
+        .post-body tr:last-child td { border-bottom: none; }
+        .post-body td strong { color: var(--text); }
+
+        .post-body tr.highlight td {
+            background: rgba(88, 166, 255, 0.06);
+            color: var(--text);
+        }
+        .post-body tr.highlight td strong { color: var(--blue); }
+
+        /* ── CTA block ────────────────────────────────── */
+        .post-cta {
+            margin-top: 3em;
+            padding: 28px 32px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+
+        .post-cta p {
+            margin-bottom: 16px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .cta-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn {
+            padding: 10px 20px;
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary { background: var(--blue); color: #0d1117; }
+        .btn-primary:hover { background: #79bcff; text-decoration: none; }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid var(--border-bright);
+        }
+        .btn-secondary:hover { color: var(--text); border-color: var(--text-dim); text-decoration: none; }
+
+        /* ── Footer ───────────────────────────────────── */
+        .post-footer {
+            margin-top: 4em;
+            padding-top: 2em;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* ── Responsive ───────────────────────────────── */
+        @media (max-width: 640px) {
+            .post-wrap h1 { font-size: 1.7rem; }
+            .post-wrap { padding: 40px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-top">
+            <a class="header-logo" href="../index.html">Duct Tape to COO</a>
+            <nav class="header-nav">
+                <a href="../diagnostic.html">Diagnostic</a>
+                <a href="../wiki.html">Wiki</a>
+                <a href="../skill-setup.html">Virtual COO</a>
+                <a href="index.html" class="active">Blog</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="post-wrap">
+
+    <div class="post-meta">
+        <span class="post-tag post-tag--green">Finance</span>
+        <h1>The annual budget is calendar fiction</h1>
+        <p class="post-subtitle">The approach I use instead is IFTTT</p>
+        <p class="post-byline">September 2026</p>
+    </div>
+
+    <div class="post-body">
+<h2>Why calendar budgets break (and how I got here)</h2>
+<p>Back when our scaleup became part of a large company, I went (back) to doing big-company strategic planning. Now, the annual budget made sense as a <strong>governance guardrail</strong> — boards need something to approve — but it was different from reality from January 2nd onward, and "Budget" stayed the guardrail anyway.</p>
+<p>The formal plan said <em>launch in the next country in April</em>. The real tactic was <em>launch when unit economics in country Y exceed X</em>. Still, all year you explain variance against a plan someone fixed in October. The budget isn't useless; it was the wrong <em>shape</em> for running the company day to day.</p>
+<h2>My solution for it: IF-This-Then-That-Budgeting</h2>
+<p>That was an itch I would love to scratch. I like building my own systems — as you may have gathered from <a href="https://www.ducttape-to-coo.com/skill-setup.html">what I built here</a> ;-). So when I was back running a startups business ops, I could finally design planning and budgeting <strong>my way</strong>. Not a prettier spreadsheet. <strong>Triggers instead of calendar fiction.</strong></p>
+<p>Nalden gave it a name I keep using: <strong>IFTTT</strong>. It is a budget <strong>and</strong> bandwidth <strong>and</strong> if/then actions (like the web based IFTT workflow tool from web 2.0 days). You set the line. You set what happens when you cross it. So you're not inventing cuts or hires in a crisis meeting with adrenaline and Slack threads discussing strategic choices triggered in operational situations. </p>
+<p>The test isn't whether your Excel is sophisticated. It's whether you can <strong>execute a bad month without panic</strong> — because you already argued the downside when things were calm.</p>
+<h2>If customers cancelled, our pandemic-resistant plan was already written</h2>
+<p>At a 15 people scaleup, we had already built a budget as leadership team for when Corona hit, answering <strong>what if a large share of customers cancelled due to the pandemic</strong>. Not because we thought that was certain to happen — because we knew speed would matter if it did. And the last thing we wanted was to have to act late and hard, and loose people. </p>
+<p>So we agreed in advance which costs would go, in what order, and what we would <strong>not</strong> cut (keep the team as long as possible, for as long as we could). When the shock hit the market, we didn't need a week of panicked debate. We could execute immediately against a plan we'd already stress-tested. We didn't have to use the full downside plan in the end. Having it removed knee-jerk reactions and let us choose deliberately.</p>
+<p>That was <strong>one specific trigger → next budget</strong> we had written down in advance. The method is general; the shock doesn't have to be a pandemic. The point is: when the line is crossed, you already know which budget applies <strong>from that moment forward</strong> — you are not inventing it in the crisis. </p>
+<h2>What does good look like?</h2>
+<p>In the wiki and the diagnose tool of the Ducttape to COO framework, I use this stracuture of 'what does good look like at this stage'. And translate it into action. So let's follow that structure. </p>
+<p>When financial planning is working like this at the stage of first hires, you have <strong>two layers</strong> — not one spreadsheet pretending the future is fixed:</p>
+<ol>
+<li><strong>A base plan</strong> — headcount, burn, cash runway, what you expect to spend and when. One Google Sheet is fine. Founders plus accountant sanity-check.</li>
+<li><strong>A guiding principle</strong> - this can be 'keep the team on as long as possible on temporary revenue decrease' or 'keep our runway at minimal 9 months'. Or 'maximize all growth opportunities and scale the team to support it'. </li>
+<li><strong>Scenario rules</strong> — pre-agreed <strong>if this, then that</strong>: when a metric crosses a line, you <strong>switch to the budget you already agreed for what happens next</strong> — not a second parallel plan you debate from scratch. This follows the guiding principle. </li>
+</ol>
+<p>Good looks like:</p>
+<ul>
+<li>Every planned hire has a <strong>trigger</strong>, not just a calendar date — e.g. <em>We hire the next developer when ARR passes €X and the hire still leaves us above Y months runway after fully loaded cost — currently pencilled for April, not locked for April.</em></li>
+<li>Material spend has <strong>pre-agreed responses</strong> when a named warning fires — not a vague "we'll tighten up."</li>
+<li>Founders <strong>already argued</strong> the downside in a calm month — execution in a bad month is follow-the-sheet.</li>
+<li>Leadership knows which numbers are watched and what happens at each threshold — no surprise <em>we're cutting tomorrow</em> without context.</li>
+</ul>
+<p><strong>Contrast with bad:</strong> Hire dates on January 1 and July 1. Revised only when cash gets tight — or when an investor forces the conversation. Slow death or reactive whiplash. Same failure mode, different tempo.</p>
+<h2>What should you actually do?</h2>
+<h3>1. Build the base plan</h3>
+<ul>
+<li><strong>Write a guiding principle</strong> - this is the outcome of a strategic discussion that should not happen when triggered by an operational or tactical event. It should follow your strategy and culture. </li>
+<li><strong>Main tab (simplified P&amp;L)</strong> — ledger lines as rows, months as columns, like a stripped-down version of your accounting software P&amp;L: revenue, COGS if you have it, major opex lines, payroll, the rest. Roll down through <strong>EBITDA → EBT → cash → cumulative cash</strong>. Start with guesses; each month drop in actuals from your accountant so plan vs actual lives in one sheet.</li>
+<li><strong>People tab</strong> — role, start month, base cost, fully loaded multiplier (~1.25–1.35× for NL/EU unless your accountant gives you better). Loaded costs feed the payroll line on the main tab.</li>
+<li><strong>Cash tab</strong> — opening balance, monthly burn, runway in months. Update monthly; weekly if cash is tight.</li>
+<li><strong>Monthly founder review (15–30 min)</strong> — actual vs plan, runway to the nearest month, which triggers are close or have fired, next hire gate status.</li>
+</ul>
+<p>Clean expense categories live in <strong>2.4 Accounts Payable &amp; Expense Management</strong> — without them, budget vs actual is fiction.</p>
+<h3>2. Trigger → action (one list, many dimensions)</h3>
+<p>This is <strong>not</strong> three scenarios you maintain in parallel all year. You run <strong>one active budget</strong> today, plus a <strong>list of if/then rules</strong>. When a trigger fires, you take the <strong>action you already agreed</strong> — which usually means the budget from that moment forward is different (a hire, a cut, a new spend line, a pause).</p>
+<p>Triggers can sit on <strong>different dimensions</strong> — cash and MRR, customer count, geography, product, headcount. Same pattern everywhere: <strong>when this metric crosses the line, then this happens.</strong> No scenario names required. Some examples: </p>
+<table>
+<thead>
+<tr>
+<th>If this (trigger)</th>
+<th>Then that (action — pre-agreed)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MRR ≥ €X for two consecutive months</td>
+<td>Hire next developer; refresh cash plan with fully loaded cost</td>
+</tr>
+<tr>
+<td>Paying customers &gt; N and support load sustained</td>
+<td>Hire dedicated support (not "when we feel overwhelmed")</td>
+</tr>
+<tr>
+<td>3+ paying customers in country X</td>
+<td>Country X is proven — budget local payment methods / compliance</td>
+</tr>
+<tr>
+<td>MRR down &gt;15% month-on-month</td>
+<td>Freeze net-new hires; cut freelancers by Z%; defer discretionary spend</td>
+</tr>
+<tr>
+<td>MRR down &gt;20% MoM, or anchor customer lost</td>
+<td>Run the step-down sheet — ordered cuts/pauses; bank facility only if already named</td>
+</tr>
+</tbody>
+</table>
+<p>Write the list <strong>with</strong> your co-founder (and board or lead investor if you have one) before you need it. Corona made us pre-writing the step-down row for mass cancellations.</p>
+<h3>4. Optional: pre-write a budget for one nasty shock</h3>
+<p>If there is a shock you can name in advance (mass churn, dependance on one customer, delayed fundraise), add a row: trigger, ordered actions, owners. Corona was that for us. You do not need a library of disasters — you need the <strong>trigger → action list</strong> from section 2.</p>
+<h2>What breaks or goes wrong?</h2>
+<ul>
+<li><strong>Static budget only</strong> — hire dates on the calendar, no link to revenue or triggers.</li>
+<li><strong>Triggers live in founders' heads</strong> — you "know" you'll cut freelancers, but disagree on when the moment hits.</li>
+<li><strong>Optimistic revenue in the base case</strong> — downside never named (plan at zero revenue for survival math).</li>
+<li><strong>Bank line counted in runway</strong> — facility hides how fast you burn through both.</li>
+<li><strong>Budget vs actual without categories</strong> — variance review is useless; see <strong>2.4</strong>.</li>
+<li><strong>Only the CEO holds the numbers</strong> — everyone else optimizes locally, burn compounds collectively.</li>
+</ul>
+<p>Warning signs you are behind:</p>
+<ul>
+<li>Can't answer <em>what happens to cash if we hire X next month?</em> within a working day.</li>
+<li>Last cuts conversation was <strong>after</strong> something broke.</li>
+<li>Every hire debate is moral (<em>we need this person</em>) not arithmetic (<em>trigger met or not</em>).</li>
+</ul>
+<h2>How does this change as you grow?</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>First hires (2–10 people)</strong></td>
+<td>One page of rules + spreadsheet. Founders own review. Coarse triggers.</td>
+</tr>
+<tr>
+<td><strong>Early revenue (10–30 people)</strong></td>
+<td>More lines, rolling cash view; investor update scenario section mirrors internal sheet — doesn't replace it (<strong>1.2b</strong>).</td>
+</tr>
+<tr>
+<td><strong>Growth+</strong></td>
+<td>Same if/then discipline; add <strong>dedicated finance team + board cycle</strong> — quarterly reforecast, department owners, board packs. Learn the habit at 10 people first.</td>
+</tr>
+</tbody>
+</table>
+<p>Later you may add board decks and a finance team. That helps — but a slick slide deck without trigger rules is still calendar fiction, just in a slicker form. </p>
+<p>Evolution: static calendar hiring → trigger-linked hiring → trigger-linked budgets with a finance team and board rhythm.</p>
+<h2>Tools and resources</h2>
+<ul>
+<li><strong>Google Sheet</strong> — base plan + trigger table (metric | threshold | action | owner | last reviewed).</li>
+<li><strong>Accountant / bookkeeper</strong> — loaded costs and payroll timing; founders own scenario rules.</li>
+<li><strong><a href="https://aksie.github.io/ducttape-to-coo/templates/rendered/investor-update.html">Investor update template</a></strong> — external summary aligned with internal triggers.</li>
+</ul>
+<h2>Where this lives in the wiki and diagnose tool</h2>
+<table>
+<thead>
+<tr>
+<th>Wiki</th>
+<th>Process</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://aksie.github.io/ducttape-to-coo/wiki.html#2.1--first-hires">2.1 Cash Flow — First Hires</a></td>
+<td>Cash tab, runway math, weekly review when tight</td>
+</tr>
+<tr>
+<td><a href="https://aksie.github.io/ducttape-to-coo/wiki.html#2.2--first-hires">2.2 Financial Planning — First Hires</a></td>
+<td>Headcount budget, trigger → action list, monthly review</td>
+</tr>
+<tr>
+<td><a href="https://aksie.github.io/ducttape-to-coo/wiki.html#2.4--first-hires">2.4 AP &amp; Expense — First Hires</a></td>
+<td>Categories and accountant — foundation for variance</td>
+</tr>
+<tr>
+<td><a href="https://aksie.github.io/ducttape-to-coo/wiki.html#1.4--first-hires">1.4 Who Decides What</a></td>
+<td>Spend/hire approval list connects to playbook</td>
+</tr>
+</tbody>
+</table>
+<h2>Closing</h2>
+<p>In big-company planning I saw what a governance budget is for — and where it stops matching how decisions actually get made. The useful calls were always conditional: <em>when unit economics work, then we expand</em>. The paperwork still wanted dates and comparison to the original plan.</p>
+<p>At first hires you do not need that machinery. So choose a different form that does work for this phase.</p>
+<p>There are two main reasons to do this differently: <br />
+1. You don't get into the same discussion defending differences against budget with your shareholders. Which is a bad chemistry and distracts from the real discussions. This applies once you have more scale. <br />
+2. You can decide more quickly and with higher quality. </p>
+<p>Triggers are how you run the company on what is true now, not on a story fixed months ago.</p>
+    </div>
+
+<div class="post-cta">
+    <p>The diagnostic covers cash flow and planning at your stage — see whether you're running on calendar fiction or something you can execute under stress.</p>
+    <div class="cta-links">
+        <a class="btn btn-primary"  href="../diagnostic.html">Run the diagnostic</a>
+        <a class="btn btn-secondary" href="../wiki.html#2.2--first-hires">Wiki: Financial Planning (2.2) →</a>
+    </div>
+</div>
+
+<div class="post-footer"><p>Part of the Duct Tape to COO framework. Practitioner material (Stefan + Nalden IFTTT framing). Canonical source: wiki-pipeline/contributions/financial-2.1-2.2--scenario-planning-first-hires.md</p></div>
+
+</div>
+
+</body>
+</html>

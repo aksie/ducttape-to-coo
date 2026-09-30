@@ -1,11 +1,12 @@
 ---
 title: "The annual budget is calendar fiction"
 subtitle: "The approach I use instead is IFTTT"
-date: "draft"
+date: "September 2026"
 tag: "Finance"
 tag_color: "green"
 slug: "the-annual-budget-is-calendar-fiction"
-status: draft
+order: -2
+listed: true
 description: "Static budgets lie from January 2nd. One active budget plus a trigger → action list on MRR, customers, and more — from first hires through early revenue."
 cta_intro: "The diagnostic covers cash flow and planning at your stage — see whether you're running on calendar fiction or something you can execute under stress."
 cta_primary_text: "Run the diagnostic"
