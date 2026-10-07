@@ -38,22 +38,6 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 ---
 
-## A 600-year-old example that makes this concrete
-
-In October 1415, Henry V stood with roughly 6,000 to 8,000 exhausted English soldiers at Agincourt, facing a French force of somewhere between 20,000 and 30,000. The French had more men, heavier armour, and a cavalry advantage that should have been decisive. The outcome looked obvious.
-
-The French did what armies with overwhelming advantages tended to do: they prepared for a frontal assault, concentrated their elite men-at-arms at the front for maximum glory and ransoms, and pushed their archers and crossbowmen to the rear where they couldn't slow things down. There was no strategy here. There was a posture — *we have more, so we'll win* — combined with a status game that put the wrong people in the wrong places.
-
-Henry made different choices. He chose terrain: a narrow field hemmed in by woodland, which would compress the French cavalry charge and negate their numbers. He chose to have his men-at-arms dismount and fight on foot, avoiding the risk of heavy horses floundering in rain-softened ground. He chose to wait — to let the French cross the muddy field rather than advance into them. And he positioned his longbowmen on the flanks, protected by sharpened stakes, able to fire into the sides of any cavalry charge.
-
-Each of those was a choice that excluded alternatives. Dismounting the cavalry meant not using cavalry as cavalry. Waiting meant accepting the psychological pressure of facing a larger force. Choosing that field meant fighting on terms that suited a smaller, lighter force rather than a larger one.
-
-The result: the French cavalry charge slowed in the mud, horses panicked under arrow fire, and the compressed mass of dismounted French knights — too many men in too little space — was methodically defeated by a much smaller force. Henry's casualties numbered in the low hundreds. French casualties numbered in the thousands.
-
-This is what strategic choice looks like. Not a vision of winning. An active set of decisions that shape the terms of engagement in your favour, made possible precisely because of what you chose not to do.
-
----
-
 ## What strategy is not
 
 Before getting to how to build one, it's worth being precise about what tends to get called strategy but isn't.
@@ -74,11 +58,11 @@ Richard Rumelt, in *Good Strategy Bad Strategy*, calls the last category "bad st
 
 Not every decision is a strategic choice. A strategic choice has a specific character.
 
-**It's differentiating.** You're doing something different from competitors, not just doing it better. Southwest Airlines didn't try to be a better version of United. They chose a fundamentally different model: short point-to-point routes, one aircraft type, no frills, secondary airports. Every major airline could theoretically have made those choices. None of them did, because each choice involved giving something up.
+**It's differentiating.** You're doing something different from competitors, not just doing it better. WeTransfer didn't try to be a better YouSendIt. It refused the thing YouSendIt was built on: the account and the paywall at the door.
 
-**It implies trade-offs.** Southwest's choices meant no international routes, no business class, no frequent flyers who want flexibility. Those were real losses. The model only works because the losses were accepted. A choice that doesn't close off alternatives isn't a strategic choice — it's a preference.
+**It implies trade-offs.** Peer-to-peer car sharing gave up control of the car, its condition, and the check-in. WeTransfer gave up revenue per user. Those were real losses. Each model only works because the losses were accepted. A choice that doesn't close off alternatives isn't a strategic choice — it's a preference.
 
-**It creates coherence.** Strategic choices work as a system. Southwest's single aircraft type, point-to-point routing, and secondary airports reinforce each other. Faster turnarounds are possible because the aircraft and routes are simple. Lower costs are possible because of faster turnarounds. The choices compound. Pulling one out destabilises the others. This is what makes a strategy hard to copy — not any single choice, but the interdependence of all of them.
+**It creates coherence.** Strategic choices work as a system. WeTransfer's no login, file first, and unsold background were not three decisions but one: less friction, more volume. SnappCar's semi-pro owners, lockboxes, vans and weekends all fix the same weakness. Pull one out and the others weaken. This is what makes a strategy hard to copy — not any single choice, but the interdependence of all of them.
 
 **It's hard to reverse.** Tactical decisions can be adjusted weekly. Strategic choices shape the company for years. This is part of what makes them hard. You're committing to something before you know for certain it will work.
 
@@ -88,21 +72,13 @@ Not every decision is a strategic choice. A strategic choice has a specific char
 
 The examples that stay with you have a visible refusal in them. Someone took the obvious road. Someone else closed it, and you can see what that cost.
 
-**Game Boy (1989).** The obvious fight in handhelds was a better screen. Atari's Lynx and Sega's Game Gear took it: colour, and a battery that died in a few hours. Nintendo shipped a green monochrome screen, a price a child could reach, and a battery that lasted through the play. They lost the spec sheet. The opponent's advantage only counted if Nintendo stood on that field.
-
-**DeWalt (1992).** Black & Decker already owned the DIY aisle, and tradespeople had left for Makita. A contractor will not turn up on a job with the same brand as a kitchen gadget. The professional path was closed for that name. Black & Decker already owned DeWalt, bought in 1960 for radial-arm saws, and the trades still trusted it. Joseph Galli put the professional tools back out under DeWalt: yellow, priced above Makita, a 48-hour repair promise, and deliberately not called Black & Decker. The first tools were mostly the old professional line in a new colour. The choice was the name and the channel. Inside the company they called it the Acura move: Honda could not sell a luxury car as a Honda. US professional share went from about 8% in 1991 to over 40% by 1995. DeWalt went from under $30 million in the launch year to over $600 million by 1997. The path they had closed — a tool someone earns with — could not be reopened under the old name.
-
-**Burberry.** Licences had put the check on caps, dog coats, and market stalls. The trench-coat customer left. In 2006 Angela Ahrendts found her own executives standing in the rain in London, and not one of them was wearing the coat. She bought back 23 licences, including a Spanish business that was a large share of revenue, and took the check off the categories that had made it cheap. Each licence was profitable on its own. Together they had made the expensive path impossible. Getting the original customer back meant paying to close a path the company had sold.
-
-**Lego.** By 2003 the company was nearly broke, and the brand had wandered into theme parks, clothing, video games, and a long tail of sets. From 2004 Jørgen Vig Knudstorp sold the parks and cut the range back to the brick. "A brand that can be anything" had almost killed the only system that compounded. Reinstating it meant giving the side businesses up.
-
 **Peer-to-peer car sharing, as Erik tells it.** Every car-sharing pitch deck says the same thing: people have to move, owned cars sit still, cities are full. All true. And car sharing still doesn't spread, because it has to be as easy and as insured as the car at your door — and it puts its price on a receipt, while ownership hides it in depreciation.
 
 The asset path — Greenwheels, Zipcar — owns the cars. Full control, high costs. So it chose: heavy users, subscriptions, B2B, big cities, short trips, ruthless margin control — on fines, deductibles, buying and selling the fleet, and pricing that is not fully transparent. Not cars everywhere and hope. No wonder lease companies and carmakers took it: it's asset management.
 
 SnappCar, and Turo in the US, chose the opposite: peer-to-peer. Costs solved — the cars already exist. Experience broken — dirty cars, no check-in, owners who don't reply. Renters leave, then owners leave. The fix was a refusal: stop courting the casual lender, build on semi-pro owners who rent for profit, keep the car clean, and pay for a lockbox. You *could* be everywhere; the long tail is SEO, not business. The money was vans — older, cheap to own, a dent doesn't matter, the fee is high relative to the car — and weekends, long enough for a renter to accept a stranger's car and worth the owner's effort. Turo landed in the same place: professional hosts, specialty cars. Even the cheap path had to choose who it was for.
 
-That is *the opposite test* passing in plain sight. Own the cars or own none of them — two opposite answers to the same problem, both defensible, and each one forced its own set of refusals. Neither was a generally correct preference. Both were choices.
+Run it through the rules. *Differentiating:* Greenwheels and Zipcar owned the fleet; SnappCar owned none of it. *Trade-off:* no control over the car, its condition or the check-in — and then saying no to the casual lender who made the network look big. *Coherent:* semi-pro owners, lockboxes, vans and weekends all fix the same weakness without bringing the costs back onto the platform. *The opposite test:* the asset path made the opposite call and worked too, so this was a choice, not a preference.
 
 **WeTransfer, as Stefan tells it.** YouSendIt was there first, and it sat on conversion: an account, a paywall, a competitor everybody loved to hate. We chose a different path. No login to upload or download. File first, recipient after. And when the background could finally be sold as ad space, we chose not to sell all of it. One bet sat behind all three: growing the number of transfers would make more money than growing conversion.
 
