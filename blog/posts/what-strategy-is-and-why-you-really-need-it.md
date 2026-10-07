@@ -94,13 +94,22 @@ The asset path — Greenwheels, Zipcar — owns the cars. Full control, high cos
 
 SnappCar, and Turo in the US, chose the opposite: peer-to-peer. Costs solved — the cars already exist. Experience broken — dirty cars, no check-in, owners who don't reply. Renters leave, then owners leave. The fix was a refusal: stop courting the casual lender, build on semi-pro owners who rent for profit, keep the car clean, and pay for a lockbox. You *could* be everywhere; the long tail is SEO, not business. The money was vans — older, cheap to own, a dent doesn't matter, the fee is high relative to the car — and weekends, long enough for a renter to accept a stranger's car and worth the owner's effort. Turo landed in the same place: professional hosts, specialty cars. Even the cheap path had to choose who it was for.
 
-Run it through the rules. *Differentiating:* Greenwheels and Zipcar owned the fleet; SnappCar owned none of it. *Trade-off:* no control over the car, its condition or the check-in — and then saying no to the casual lender who made the network look big. *Coherent:* semi-pro owners, lockboxes, vans and weekends all fix the same weakness without bringing the costs back onto the platform. *The opposite test:* the asset path made the opposite call and worked too, so this was a choice, not a preference.
+Run it through the rules. 
+- *Differentiating:* Greenwheels and Zipcar owned the fleet; SnappCar owned none of it. 
+- *Trade-off:* no control over the car, its condition or the check-in — and then saying no to the casual lender who made the network look big. 
+- *Coherent:* semi-pro owners, lockboxes, vans and weekends all fix the same weakness without bringing the costs back onto the platform. 
+- *The opposite test:* the asset path made the opposite call and worked too, so this was a choice, not a preference.
 
-**WeTransfer, as Stefan tells it.** YouSendIt was there first, and it sat on conversion: an account, a paywall, a competitor everybody loved to hate. We chose a different path. No login to upload or download. File first, recipient after. And when the background could finally be sold as ad space, we chose not to sell all of it. One bet sat behind all three: growing the number of transfers would make more money than growing conversion.
+**WeTransfer, as Stefan tells it.** YouSendIt was the competitor everybody loved to hate. They chose maximum revenue from the users they could grab: an account, a paywall, revenue per user over users. 
+
+We chose a different path. Low firction, beauty instead. No login to upload or download. File first, recipient after. And when the background could finally be sold as ad space, we chose not to sell all of it. One guiding principle sat behind all three: growing the number of transfers rather than than grow conversion.
 
 That bet had a price. Less revenue per user, and more risk: with free users not paying, the advertising shown to them had to work for the business to break even.
 
-Run it through the rules. *Differentiating:* the incumbent sat on conversion; we did the opposite. *Trade-off:* every skipped login and every unsold background was revenue left on the table on purpose. *Coherent:* the three choices are really one choice — less friction, more volume. *The opposite test:* YouSendIt made the opposite call and was a real business, so this was a choice, not a preference. Adoption in the Netherlands and France showed the market was big enough. Growing to about 100 million in revenue on that choice showed it was right.
+LEt's test this against the rules of what strategy is: 
+- *Differentiating:* the incumbent sat on maximum revenue per user; we did the opposite. 
+- *Trade-off:* every skipped conversion to paid and every anonymous user and every unsold background was revenue left on the table on purpose. - *Coherent:* the three choices are really one choice — less friction, more volume. 
+- *The opposite test:* YouSendIt made the opposite call and was a real business. Adoption in the Netherlands and France showed the market was big enough. Growing to 100 million in revenue, profitable and loved by users showed it was right.
 
 ---
 
