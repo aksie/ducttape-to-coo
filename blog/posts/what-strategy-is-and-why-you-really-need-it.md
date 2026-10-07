@@ -38,7 +38,7 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 ---
 
-## A 600-year-old example that makes this concrete
+## The classic 600-year-old example that makes this concrete
 
 In October 1415, Henry V stood with roughly 6,000 to 8,000 exhausted English soldiers at Agincourt, facing a French force of somewhere between 20,000 and 30,000. The French had more men, heavier armour, and a cavalry advantage that should have been decisive. The outcome looked obvious.
 
