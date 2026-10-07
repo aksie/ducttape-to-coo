@@ -38,6 +38,22 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 ---
 
+## A 600-year-old example that makes this concrete
+
+In October 1415, Henry V stood with roughly 6,000 to 8,000 exhausted English soldiers at Agincourt, facing a French force of somewhere between 20,000 and 30,000. The French had more men, heavier armour, and a cavalry advantage that should have been decisive. The outcome looked obvious.
+
+The French did what armies with overwhelming advantages tended to do: they prepared for a frontal assault, concentrated their elite men-at-arms at the front for maximum glory and ransoms, and pushed their archers and crossbowmen to the rear where they couldn't slow things down. There was no strategy here. There was a posture — *we have more, so we'll win* — combined with a status game that put the wrong people in the wrong places.
+
+Henry made different choices. He chose terrain: a narrow field hemmed in by woodland, which would compress the French cavalry charge and negate their numbers. He chose to have his men-at-arms dismount and fight on foot, avoiding the risk of heavy horses floundering in rain-softened ground. He chose to wait — to let the French cross the muddy field rather than advance into them. And he positioned his longbowmen on the flanks, protected by sharpened stakes, able to fire into the sides of any cavalry charge.
+
+Each of those was a choice that excluded alternatives. Dismounting the cavalry meant not using cavalry as cavalry. Waiting meant accepting the psychological pressure of facing a larger force. Choosing that field meant fighting on terms that suited a smaller, lighter force rather than a larger one.
+
+The result: the French cavalry charge slowed in the mud, horses panicked under arrow fire, and the compressed mass of dismounted French knights — too many men in too little space — was methodically defeated by a much smaller force. Henry's casualties numbered in the low hundreds. French casualties numbered in the thousands.
+
+This is what strategic choice looks like. Not a vision of winning. An active set of decisions that shape the terms of engagement in your favour, made possible precisely because of what you chose not to do.
+
+---
+
 ## What strategy is not
 
 Before getting to how to build one, it's worth being precise about what tends to get called strategy but isn't.
