@@ -2,6 +2,8 @@
 
 Deploy your DNS site on a European VPS with auto-deploy from GitHub, managed nginx, and automatic SSL — without touching a terminal after setup.
 
+> **Status:** live since 2026-06-04 (Coolify auto-deploy confirmed by test commits). Production: `https://www.ducttape-to-coo.com`. Sections marked ⚠️ are not confirmed to be active on the server — check with `ls /etc/cron.weekly/coolify-update`, `ls /etc/cron.d/nginx-update-check` and `systemctl status unattended-upgrades`, then remove the marker.
+
 ---
 
 ## Prerequisites
@@ -78,7 +80,7 @@ http://<server-ip>:8000
 
 **Before leaving the terminal, do the one-time security setup:**
 
-### Enable automatic OS security updates
+### ⚠️ Enable automatic OS security updates
 
 Ubuntu ships with `unattended-upgrades` — this keeps the OS, Docker engine, OpenSSL, and all apt-installed packages patched automatically, including security fixes. Enable it now so you never have to think about it again:
 
@@ -98,7 +100,7 @@ EOF
 
 This runs daily. You never need to SSH in for OS or Docker security patches.
 
-### Keep Coolify itself up to date
+### ⚠️ Keep Coolify itself up to date
 
 Coolify updates are separate from apt packages. Add a weekly cron to auto-update it:
 
@@ -110,7 +112,7 @@ EOF
 chmod +x /etc/cron.weekly/coolify-update
 ```
 
-### Keep nginx up to date
+### ⚠️ Keep nginx up to date
 
 Nginx runs inside a Docker container that Coolify rebuilds on every deploy. To also catch zero-day CVEs between deploys, set up a smart hourly check: it queries the Docker Hub registry API for the current `nginx:alpine` digest, compares it to a stored value on the server, and only triggers a Coolify redeploy if the image actually changed. No unnecessary rebuilds.
 
