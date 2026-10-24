@@ -32,8 +32,8 @@ cd wiki-pipeline && python3 server.py
 │   └── stages.json         # stage definitions (headcount ranges, revenue, funding)
 ├── docs/
 │   ├── proposals/          # undecided / not-yet-implemented proposals
-│   │   ├── 1.2b-variants.md
-│   │   └── deploy-hetzner-coolify.md
+│   │   └── 1.2b-variants.md
+│   ├── deploy-hetzner-coolify.md  # live hosting setup (Hetzner + Coolify)
 │   ├── pipeline.md         # wiki pipeline architecture reference
 │   └── session-YYYY-MM-DD.md  # session summaries
 ├── wiki/
@@ -178,6 +178,7 @@ Required Python packages (one-time): `pip install markdown python-frontmatter`
 
 - Full pipeline schema: `wiki-pipeline/schema.md`
 - Pipeline architecture overview: `docs/pipeline.md`
+- Hosting / deploy setup: `docs/deploy-hetzner-coolify.md`
 - Practitioner reverse workflow: `wiki-pipeline/prompts/practitioner-to-pipeline.md`
 - Session summaries: `docs/session-YYYY-MM-DD.md`
 - Wiki page template: `wiki/processes/_template.md`
