@@ -1,28 +1,37 @@
 ---
 title: "Nobody Really Knows What Strategy Is — But Everyone Has the Slide"
 subtitle: "Goals nobody would argue against aren't a strategy. A strategy is a set of choices — especially what you're not going to do."
-date: "May 2026"
+date: "Draft v2 — October 2026"
+authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
 slug: "what-strategy-is-and-why-you-really-need-it"
 order: 5
 listed: false
+status: draft
+practitioner_review: pending
 description: "Most founders have a strategy - they think. Most of those strategies are not actually strategies. Here's how to tell the difference — and what to do about it."
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "what-got-you-here-is-whats-hurting-you-now.html"
-
+footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework. Draft v2 — the practitioner case has not yet been reviewed by its subject."
 ---
 
-I have seen how this goes wrong. A team of twenty smart, motivated people, all working hard, but all pulling in slightly different directions — because every one of them has a different mental model of where the company needs to go. The engineer optimises for the most fully-featured product. The salesperson closes the smallest deals because they close fastest. The founder assumes it's obvious from context. Nobody is fully wrong. But the cumulative friction of twenty slightly misaligned interpretations is enormous. When you're all in one room, founders can correct it reactively, constantly, without ever naming it. When you're no longer all in the same room, it will kill your momentum.
+*By Stefan Verkerk and Erik Rutten*
 
-Strategy has a bad reputation among people who value execution over slides. That reputation is mostly earned. Most "strategy" work is slideware: written once, presented earnestly, and never consulted again. A deck full of "increase revenue," "improve customer satisfaction," and "be more innovative" is not a strategy — it's a list of things nobody would argue against, which means it helps nobody make a decision. The tragedy is that this kind of deck gets called strategy, poisons the word, and gives founders a reasonable-sounding excuse to skip the real thing.
+This post isn't for strategy geeks. It's for founders and operators who have goals, a roadmap, probably a slide with the word "strategy" on it somewhere, a nagging feeling that the team is still pulling in slightly different directions — and a healthy dislike of slideware with "Strategy" in the title.
 
-That's the part that costs them. A real strategy — specific enough to be useful, communicated often enough to stick — means that people can make the right call in hard situations without asking anyone else. At ten people that's a nice property to have. At thirty, it's the difference between moving fast and grinding to a halt.
+Erik and I are strategy geeks. We know how that sounds. Please keep reading anyway. We think the thing you're missing has a name, and that the name has been so badly abused that you've been avoiding it for good reasons.
 
-If you're sceptical that strategy is worth your time, I'd ask one thing: read this first, then decide. What follows is an attempt to describe what strategy actually is — not the slideware version, but the thing that makes teams faster, not slower. You might still disagree. But at least you'll be disagreeing with the right thing.
+We'd been circling this post for a while without finding the way in. Then I had lunch with Paul.
+
+Paul co-founded an IT consultancy and grew it to about five hundred people. He hates strategy slideware as much as anyone we know. His company once wrote a booklet about itself; the chapter called "Our strategy" is three sentences long, and mostly says that strategy is something that happens on the work floor while you're busy doing the work. Ask him what won them their market and he'll tell you, with conviction: culture eats strategy for breakfast.
+
+And yet, reading the rest of that booklet — the parts not labelled strategy — we found one of the best strategies we've ever seen written down. Real choices, each with a price, each one a refusal a competitor made the other way, all of them holding each other up. His successors still use it, a decade on, to turn down paying work without asking him.
+
+That was the angle. Someone who despised the word and had the thing. So here's our attempt to describe what strategy actually is — not the slideware, but what Paul had and didn't call by its name. We'll come back to his booklet at the end and run it through the tests.
 
 ---
 
@@ -35,6 +44,14 @@ That second part is the part that gets omitted. Michael Porter, who has spent mo
 If your 'strategy' doesn't make hard choices, if ....
 
 This is why strategy is hard. Not conceptually hard. Emotionally hard. Because real strategic choices mean giving things up. They mean saying no to customers who would pay you, features that would be useful, markets that look attractive. If your strategy doesn't make you a little uncomfortable — if it doesn't involve closing some doors — it probably isn't a strategy.
+
+---
+
+## Why it matters: three hundred small decisions
+
+Nobody builds the wrong company in one decision. They build it in three hundred small ones. A designer picks the flow with the fewest clicks for a customer you'd decided not to serve. An engineer builds the integration properly — abstracted, configurable — for a partner you wanted to test cheaply and drop. A salesperson closes the smallest deal because it closes fastest. Every one of those calls is defensible on its own. None of them get escalated, because they're too small. Together they ship a company that drifts a few degrees off course every quarter.
+
+Goals don't stop that drift; every one of those three hundred decisions can be argued to serve a goal. Only a set of choices does — because a choice tells the designer, the engineer and the salesperson which option is *not* ours, at the moment they're picking, without anyone having to ask.
 
 ---
 
@@ -56,7 +73,9 @@ This is what strategic choice looks like. Not a vision of winning. An active set
 
 ## What strategy is not
 
-Before getting to how to build one, it's worth being precise about what tends to get called strategy but isn't.
+Paul's dislike of the word is well earned. Most "strategy" work is slideware: written once, presented earnestly, and never consulted again. A deck full of "increase revenue," "improve customer satisfaction," and "be more innovative" is not a strategy — it's a list of things nobody would argue against, which means it helps nobody make a decision. That kind of deck gets called strategy, poisons the word, and hands anyone who values execution over slides a reasonable-sounding excuse to skip the real thing.
+
+So before getting to how to build one, it's worth being precise about what tends to get called strategy but isn't.
 
 **Goals are not strategy.** "Reach €5M ARR by end of year" is a goal. It tells you where you want to be. It says nothing about how you'll get there or why your approach would work against competition. Every company wants to grow. The goal doesn't distinguish you.
 
@@ -145,10 +164,27 @@ Once you have a draft, three tests are worth running:
 
 ---
 
+## The company that refused the word and had the thing
+
+Back to Paul's booklet. The chapter headed "Our strategy" is three sentences. Strategy emerges on the work floor, it says; focus is the recurring word; choices stay within our specialism. That's it. The founders would have nodded along with everything above about slideware. They weren't a slides company.
+
+The rest of the booklet is where it gets interesting. Under headings like "rules of thumb" and "our view on leadership" sit the actual decisions. No head office. No staff departments — HR, finance and legal outsourced on principle. No sales or recruitment department: consultants sold, from their first months, after an in-house academy that was half people skills. Management only from the inside, never hired in. Market-rate pay and no bonuses, as doctrine. Cells of at most sixty people, each setting its own goals. Growth measured, but not in money: the company's stated annual targets were a customer-satisfaction score and a position in a best-employer ranking, and the booklet explicitly keeps its distance from financial growth goals. And one line any strategist would recognise: we choose to make our culture our main differentiator; we pay what the market pays, and the real difference is what it's like to work here.
+
+Run it through the tests. *Differentiating:* every competitor in that market placed experienced people on the strength of a CV, ran a sales team and a central HR function. *Trade-off:* cold acquisition stayed their weak spot for years; young people on projects are harder to sell than seniors on secondment; all-round managers are heavy roles; and twice the firm walked away from a large, paying client because the work was making its people miserable. *Coherent:* pull one out and the rest sags — without projects no training ground, without training no home-grown managers, without those no cells. *The opposite test:* the conventional model was a perfectly good business. This was a choice.
+
+So the founders had a strategy, specific enough that their successors still turn down work with it a decade later, without asking. They just never filed it under that name.
+
+---
+
 ## You can't duct tape a missing strategy
-Go back to the team of twenty in the introduction. The misalignment isn't usually caused by people being difficult or disengaged. It's caused by the founder holding a strategy that exists primarily in their own head — clear to them, invisible to everyone else. At ten people this is fine. The founder is in every conversation, course-correcting constantly, without ever needing to make the strategy explicit. The strategy travels by proximity.
+
+Go back to the three hundred small decisions. The drift they add up to isn't usually caused by people being difficult or disengaged. It's caused by the founder holding a strategy that exists primarily in their own head — clear to them, invisible to everyone else. At ten people this is fine. The founder is in every conversation, course-correcting constantly, without ever needing to make the strategy explicit. The strategy travels by proximity.
+
 When the company grows past the point where that proximity exists, the strategy stops travelling. People fill the gap with their best guess. And their best guesses, however reasonable individually, pull in different directions.
+
 Strategy that lives only in the founder's head isn't strategy. It's a competitive advantage that leaves with the founder every evening. Making it explicit — specific, written, repeated — is what allows the team to move without you in the room. That's not a communication problem. That's the transition.
+
+Paul's booklet is the proof that it can be done — in a few pages, by people who didn't even like the word. You can't duct tape a missing strategy. But you can write one down.
 
 ---
 
