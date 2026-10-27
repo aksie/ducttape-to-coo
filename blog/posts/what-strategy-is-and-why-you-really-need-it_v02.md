@@ -5,7 +5,7 @@ date: "Draft v2 — October 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
-slug: "what-strategy-is-and-why-you-really-need-it-v2"
+slug: "what-strategy-is-and-why-you-really-need-it_v02"
 order: 5
 listed: false
 status: draft
