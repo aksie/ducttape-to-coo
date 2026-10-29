@@ -1,22 +1,22 @@
 ---
-title: "Nobody Really Knows What Strategy Is — But Everyone Has the Slide"
-subtitle: "Goals nobody would argue against aren't a strategy. A strategy is a set of choices — especially what you're not going to do."
-date: "Draft v2 — October 2026"
+title: "He Thought “Strategy” Slides Were Fluff. But He Had the Real Thing."
+subtitle: "Strategy isn’t a slide with goals. It’s how you consistently make the hardest choices, and the doors you close because of them."
+date: "October 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
-slug: "what-strategy-is-and-why-you-really-need-it"
+slug: "scaleup-strategy-choices-not-slides"
 order: 5
 listed: false
-status: draft
-practitioner_review: pending
-description: "Most founders have a strategy - they think. Most of those strategies are not actually strategies. Here's how to tell the difference — and what to do about it."
+status: published
+practitioner_review: approved
+description: "Most strategy slides are just goals. Real strategy is a few hard choices about what you won't do. How founders and scale-ups build one, with real examples."
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "what-got-you-here-is-whats-hurting-you-now.html"
-footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework. Draft v2 — the practitioner case has not yet been reviewed by its subject."
+footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
 *By Stefan Verkerk and Erik Rutten*
@@ -49,7 +49,7 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 Nobody builds the wrong company in one decision. They build it in 99 small ones. A designer picks the flow with the fewest clicks for a customer you'd decided not to serve. An engineer builds the integration properly — abstracted, configurable — for a partner you wanted to test cheaply and drop. A salesperson closes the smallest deal because it closes the fastest. Every one of those calls is defensible on its own. None of them get escalated, because they're too small. Together they ship a company that drifts a few degrees off course every quarter.
 
-Goals don't stop that drift; every one of those three hundred decisions can be argued to serve a goal. Only a set of choices does — because a choice tells the designer, the engineer and the salesperson which option is *not* ours, at the moment they're picking, without anyone having to ask. Choices that need to be communicated, explained and reinforced all the time, because drift also happens in storytelling (keep this in mind the this next time when your team says “do we need to talk about the strategy AGAIN?”)
+Goals don't stop that drift; every one of those 99 decisions can be argued to serve a goal. Only a set of choices does — because a choice tells the designer, the engineer and the salesperson which option is *not* ours, at the moment they're picking, without anyone having to ask. Choices that need to be communicated, explained and reinforced all the time, because drift also happens in storytelling (keep this in mind the next time when your team says “do we need to talk about the strategy AGAIN?”)
 
 ---
 
@@ -103,7 +103,7 @@ Strategic choices work as a system that creates coherence. WeTransfer's no login
 
 The examples that stay with you have a visible refusal in them. Someone took the obvious road. Someone else took another road, and you can see what that costs.
 
-Peer-to-peer car sharing, as Erik tells it. Every car-sharing pitch deck says the same thing: people have to move, owned cars sit still, cities are full. All true. Yet, car sharing still doesn't spread like wildfire, because it has to be as easy and safe as the car lingering in front of your door — and it is put its price on a receipt, while ownership hides it in depreciation.
+Peer-to-peer car sharing, as Erik tells it. Every car-sharing pitch deck says the same thing: people have to move, owned cars sit still, cities are full. All true. Yet, car sharing still doesn't spread like wildfire, because it has to be as easy and safe as the car lingering in front of your door — and it puts its price on a receipt, while ownership hides it in depreciation.
 
 The asset path — Greenwheels, Zipcar — owns the cars. Full control, high convenience, but also high costs. So it chose: heavy users, subscriptions, B2B, big cities, short trips, ruthless margin control — on fines, deductibles, buying and selling the fleet, and pricing that is not fully transparent. Not cars everywhere and hope. No wonder lease companies and carmakers took it: it's asset management. There are many advantages from this path: shinier cars that act as rolling billboards for you brand, high convenience, brand advocacy and stickiness with a small group of heavy users, dedicated parking spots. The disadvantage (and risk): high cost and a real challenge when you want to scale beyond high traffic areas and heavy users
 
@@ -111,7 +111,7 @@ SnappCar, and Turo in the US, chose the opposite: peer-to-peer car sharing. Cost
 
 Run it through the rules. *Differentiating:* Greenwheels and Zipcar owned the fleet; SnappCar owned none of it. *Trade-off:* no control over the car, its condition or the check-in — and then saying no to the casual lender who made the network look big. *Coherent:* semi-pro owners, keyless technology, car types and rental duration tuned to the local conditions all fix the same weakness without bringing the costs back onto the platform. *The opposite test:* the asset path made the opposite call and worked too, so this was a choice, not a preference.
 
-WeTransfer, as Stefan tells it. YouSendIt was there first, and it sat on revenue per user: an account, a paywall, maximum revenue creating annoyance, as much as an end user would accept before leaving. A competitor everybody loved to hate. We chose a different path. No login to upload or download. File first, recipient after. Curating the ads and saying no to ugly ads. One bet sat behind all three: Prioritisting end user experience in the end would lead to more growth in users, and later revenue, than growing conversion at the cost of end user experience.
+WeTransfer, as Stefan tells it. YouSendIt was there first, and it sat on revenue per user: an account, a paywall, maximum revenue creating annoyance, as much as an end user would accept before leaving. A competitor everybody loved to hate. We chose a different path. No login to upload or download. File first, recipient after. Curating the ads and saying no to ugly ads. One bet sat behind all three: Prioritising end user experience in the end would lead to more growth in users, and later revenue, than growing conversion at the cost of end user experience.
 
 That bet had a price. Less revenue per user, and more risk: with free users not paying, the advertising side to free users had to scale up for the business to break even.
 
@@ -178,26 +178,20 @@ Back to the question behind this series: how does this translate to each maturit
 
 We believe there is no fix for a lack of sharp thinking on how you’re going to win, and on how what you do today fits the company you’re trying to become. You either have a coherent set of choices or you don’t. There’s no half set.
 
-So you need a strategy, but it can be ducttaped together.
+So you need a strategy, but it can be duct-taped together.
 
 First: It can be short. A strategy doesn’t need the analysis, the competitive deep-dive or the deck. Paul’s fit on a few pages, between photos of a company outing. At the kitchen table it may be one sentence: “if we can build this and get the cost down, we have a business.” That’s a guiding policy. It counts.
 
 Second: It should change. Early on, your time horizon is months, not years. You haven’t been pinned to a business model or a customer segment yet, and the market may move faster than you can write it down. Treat the strategy like a prototype: cheap, explicit enough to test, and dropped without ceremony when it’s wrong. Polishing it makes you attached to it.
 
-But you can’t skip the thinking. Short is fine. Vague isn’t. “We’ll figure it out as we go” is a plan to have three hundred small decisions made for you.
+But you can’t skip the thinking. Short is fine. Vague isn’t. “We’ll figure it out as we go” is a plan to have 99 small decisions made for you.
 
 And between changes it has to be clear to the whole team. A strategy that lives in the founders’ heads works at five people and quietly stops working at fifteen. Whatever you call it — founder intuition, principles, values — the guiding policy and the actions that follow from it have to be known by everyone making decisions in your name. Change it as often as you need to. But at any given moment, there should be one version, and everyone should know it.
 
-As you are growing, building the strategy goes from Ducttape to a real 4 story building. Early on, the job is just to get the core right and align the handful of people around you, including your advisors, then get back to validating it. Later, your management team, employees and investors will expect a strategy, your choices get harder to reverse, and there are more interests to balance — so communication, repetition and constructive challenge become real work, because saying no or changing course gets expensive once you have something to lose.
+As you are growing, building the strategy goes from duct tape to a real four-storey building. Early on, the job is just to get the core right and align the handful of people around you, including your advisors, then get back to validating it. Later, your management team, employees and investors will expect a strategy, your choices get harder to reverse, and there are more interests to balance — so communication, repetition and constructive challenge become real work, because saying no or changing course gets expensive once you have something to lose.
 
 We both like the size best where it is complex enough to need the real thing, free enough to shape it and execute it.
 
-And as a bonus you can make a book a call the strategy whatever you want to call it. Right Paul? ;-)
+And as a bonus, you can call your strategy whatever you like. Right, Paul? ;-)
 
 PS Tell us whether we’ve convinced you strategy isn’t fluff slides?
-
----
-
-[Run the diagnostic](https://aksie.github.io/ducttape-to-coo/diagnostic.html) [Read: What Got You Here Is What’s Hurting You Now →](https://aksie.github.io/ducttape-to-coo/blog/what-got-you-here-is-whats-hurting-you-now.html)
-
-Part of an ongoing series on the Duct Tape to COO operational maturity framework.
