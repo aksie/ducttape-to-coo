@@ -10,7 +10,7 @@ order: 5
 listed: false
 status: draft
 practitioner_review: pending
-description: "Most founders have a strategy - they think. Most of those strategies are not actually strategies. Here's how to tell the difference — and what to do about it."
+description: "Most strategy slides are just goals. Real strategy is a few hard choices about what you won't do. How founders and scale-ups build one, with real examples."
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
