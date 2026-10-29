@@ -1,11 +1,11 @@
 ---
-title: "Nobody Really Knows What Strategy Is — But Everyone Has the Slide"
-subtitle: "Goals nobody would argue against aren't a strategy. A strategy is a set of choices — especially what you're not going to do."
+title: "He Thought “Strategy” Slides Were Fluff. But He Had the Real Thing."
+subtitle: "Strategy isn’t a slide with goals. It’s how you consistently make the hardest choices, and the doors you close because of them."
 date: "Draft v2 — October 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
-slug: "what-strategy-is-and-why-you-really-need-it"
+slug: "scaleup-strategy-choices-not-slides"
 order: 5
 listed: false
 status: draft
