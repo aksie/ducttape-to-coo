@@ -1,22 +1,22 @@
 ---
 title: "He Thought “Strategy” Slides Were Fluff. But He Had the Real Thing."
 subtitle: "Strategy isn’t a slide with goals. It’s how you consistently make the hardest choices, and the doors you close because of them."
-date: "Draft v2 — October 2026"
+date: "October 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
 slug: "scaleup-strategy-choices-not-slides"
 order: 5
 listed: false
-status: draft
-practitioner_review: pending
+status: published
+practitioner_review: approved
 description: "Most strategy slides are just goals. Real strategy is a few hard choices about what you won't do. How founders and scale-ups build one, with real examples."
 cta_intro: " "
 cta_primary_text: "Run the diagnostic"
 cta_primary_href: "../diagnostic.html"
 cta_secondary_text: "Read: What Got You Here Is What’s Hurting You Now →"
 cta_secondary_href: "what-got-you-here-is-whats-hurting-you-now.html"
-footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework. Draft v2 — the practitioner case has not yet been reviewed by its subject."
+footer: "Part of an ongoing series on the Duct Tape to COO operational maturity framework."
 ---
 
 *By Stefan Verkerk and Erik Rutten*
