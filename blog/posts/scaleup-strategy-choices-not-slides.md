@@ -125,48 +125,9 @@ Run it through the rules. *Differentiating:* the incumbent sat on conversion; we
 
 ---
 
-## How to start building one
-
-The fastest way to test whether you have a strategy is to ask: *what are we explicitly not doing, that a well-funded competitor could reasonably do?*
-
-If you can't answer that, you probably don't have a strategy yet. You have a direction.
-
-Here's a practical starting point. Work through two dimensions:
-
-Externally — what do you do differently in the market?
-
-- Which customers are you *not* serving, that Competitor X actively pursues?
-- Write it down specifically: not "we're focused on SMB" but "we don't take clients without an in-house technical lead, while Competitor X will take anyone with a credit card."
-- What does that cost you? Which deals do you lose because of this?
-- What does it buy you? Why is losing those deals worth it?
-- Which problems are you *not* solving, that Competitor Y invests heavily in?
-- Again, specifically. Not "we focus on our core product" but "we don't build reporting features, while Competitor Y has half their roadmap committed to them."
-- What do you lose? What do you gain?
-
-Internally — how do you work differently from comparable companies?
-
-- How do you build the product in a way that's different from how others in your space do it?
-- Specific differences: release cadence, team structure, build-vs-buy decisions, technical choices.
-- What are the costs? What are the advantages?
-- Where do you *not* invest resources, while comparable companies treat it as standard?
-- Not hiring a sales team. Not building an enterprise tier. Not opening a second office. Not doing outbound.
-- Why? What does that make possible?
-
-The answers to these questions are the raw material of strategy. What you're looking for is a set of choices that fit together — that reinforce each other — and that reflect a specific theory of how you're going to win. Not a theory that works for every company. A theory that works for *your* company, in *your* market, with *your* constraints and advantages.
-
-Once you have a draft, three tests are worth running:
-
-The opposite test. Could a reasonable competitor make the opposite choice and still succeed? If yes, you have a real choice on your hands — strategy lives in the space where both answers are defensible. If no — if the opposite would be clearly wrong — then you don't have a strategic choice, you have a generally correct preference.
-
-The cost test. What are you giving up? If the answer is nothing significant, the choice probably isn't strategic. Strategy costs something. That cost is what makes it real.
-
-The coherence test. Do your choices reinforce each other? A strategy where the individual choices don't compound is a list of preferences, not a system. The question is whether the choices, taken together, create a position that's harder to replicate than any single element on its own.
-
----
-
 ## The company that refused the word and had the thing
 
-Back to Paul's booklet. The chapter headed "Our strategy" is three sentences. Strategy emerges on the work floor, it says; focus is the recurring word; choices stay within our specialism. That's it. The founders would have nodded along with everything above about slideware, they clearly did not like the word Strategy. And they weren't a slides company.
+Which brings us back to Paul’s booklet. The chapter headed "Our strategy" is three sentences. Strategy emerges on the work floor, it says; focus is the recurring word; choices stay within our specialism. That's it. The founders would have nodded along with everything above about slideware, they clearly did not like the word Strategy. And they weren't a slides company.
 
 The rest of the booklet is where it gets interesting. Under “rules of thumb” and “our view on leadership” sit the actual decisions, the set of coherent actions as Richard Rumelt would call them. No sales or recruitment department — management does that, and management comes from ranks who have done the actual consulting work. No managers hired from outside. No head office, no staff departments; HR, finance and legal are outsourced. Pay is market-rate, no bonuses. Cells of max sixty people, each setting its own goals. Their own academy, half of it people skills. Guest lectures and internships at universities “to show ourselves to future consultants”. People who need “a growing stream of challenges, in size and in complexity”. And one sentence that gives it away: we choose culture as our main differentiator; we pay what the market pays, the difference is what it’s like to work here.
 
@@ -178,21 +139,48 @@ So the founders had a strategy, specific enough that their successors still turn
 
 ---
 
+## How to start building one
+
+Paul’s booklet was not a strategy process. It was a short, explicit set of hard choices. That is the bar. Not a deck. Not a workshop series. A draft clear enough that someone else can use it to turn work down.
+
+Start with one question: *what are we explicitly not doing, that a well-funded competitor could reasonably do?* If you can’t answer that, you have a direction, not a strategy.
+
+Then write the choices down — externally and internally — in the same spirit as the examples above:
+
+- Which customers are you *not* serving that a competitor pursues — and what does that cost you / buy you?
+- Which problems are you *not* solving that others invest in heavily?
+- Where do you *not* put resources that comparable companies treat as standard — sales team, enterprise tier, second office, outbound — and what does that make possible?
+- How do you build or sell differently in a way that fits those refusals?
+
+You’re looking for a small set of choices that reinforce each other: one theory of how *you* win, not a list of preferences. Keep it short enough to remember and say out loud. If it only lives in the founders’ heads, it isn’t finished yet.
+
+When you have a draft, run the same tests we used on Paul, SnappCar and WeTransfer:
+
+**The opposite test.** Could a reasonable competitor make the opposite choice and still succeed? If yes, you have a real choice. If the opposite would clearly be wrong, you have a preference dressed up as strategy.
+
+**The cost test.** What are you giving up? If nothing significant, it probably isn’t strategic.
+
+**The coherence test.** Do the choices strengthen each other? If pulling one out doesn’t weaken the rest, you still have a list, not a system.
+
+That draft is enough to start. How polished it needs to become depends on the size of the company — which is the next point.
+
+---
+
 ## Can you duct tape a strategy?
 
 Back to the question behind this series: how does this translate to each maturity phase of a company?
 
-We believe there is no fix for a lack of sharp thinking on how you’re going to win, and on how what you do today fits the company you’re trying to become. You either have a coherent set of choices or you don’t. There’s no half set.
+We believe there is no fix for a lack of sharp thinking on how you’re going to win, and on how what you do today fits the company you’re trying to become. You either have a coherent set of hard choices or you don’t. There’s no half set.
 
 So you need a strategy, but it can be duct-taped together.
 
-First: It can be short. A strategy doesn’t need the analysis, the competitive deep-dive or the deck. Paul’s fit on a few pages, between photos of a company outing. At the kitchen table it may be one sentence: “if we can build this and get the cost down, we have a business.” That’s a guiding policy. It counts.
+First: it can be short. A strategy doesn’t need the analysis, the competitive deep-dive or the deck. Paul’s fit on a few pages, between photos of a company outing. The how-to above is meant to produce that kind of draft — not a slide.
 
-Second: It should change. Early on, your time horizon is months, not years. You haven’t been pinned to a business model or a customer segment yet, and the market may move faster than you can write it down. Treat the strategy like a prototype: cheap, explicit enough to test, and dropped without ceremony when it’s wrong. Polishing it makes you attached to it.
+Second: it should change. Early on, your time horizon is months, not years. You haven’t been pinned to a business model or a customer segment yet, and the market may move faster than you can write it down. Treat the strategy like a prototype: cheap, explicit enough to test, and dropped without ceremony when it’s wrong. Polishing it makes you attached to it.
 
 But you can’t skip the thinking. Short is fine. Vague isn’t. “We’ll figure it out as we go” is a plan to have 99 small decisions made for you.
 
-And between changes it has to be clear to the whole team. A strategy that lives in the founders’ heads works at five people and quietly stops working at fifteen. Whatever you call it — founder intuition, principles, values — the guiding policy and the actions that follow from it have to be known by everyone making decisions in your name. Change it as often as you need to. But at any given moment, there should be one version, and everyone should know it.
+And between changes it has to be clear to the whole team. A strategy that lives in the founders’ heads works at five people and quietly stops working at fifteen. Whatever you call it — founder intuition, principles, values — the hard choices and the actions that follow from them have to be known by everyone making decisions in your name. Change it as often as you need to. But at any given moment, there should be one version, and everyone should know it.
 
 As you are growing, building the strategy goes from duct tape to a real four-storey building. Early on, the job is just to get the core right and align the handful of people around you, including your advisors, then get back to validating it. Later, your management team, employees and investors will expect a strategy, your choices get harder to reverse, and there are more interests to balance — so communication, repetition and constructive challenge become real work, because saying no or changing course gets expensive once you have something to lose.
 
