@@ -21,7 +21,7 @@ footer: "Part of an ongoing series on the Duct Tape to COO operational maturity 
 
 *By Stefan Verkerk and Erik Rutten*
 
-Erik and I have wanted to rehab this word for years. This post is that attempt.
+We’ve wanted to rehab this word "Strategy" for years. In this post we finally got together to do so. 
 
 This post isn't for strategy geeks. It's for founders and operators who have goals, a roadmap, a nagging feeling that the team is still pulling in slightly different directions — and a healthy dislike of slideware with "Strategy" in the title.
 
