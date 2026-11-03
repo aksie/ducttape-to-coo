@@ -49,7 +49,7 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 ---
 
-## Why it matters: 99 small decisions
+## Why it matters: without coherence, 99 defensible decisions drift the company
 
 Nobody builds the wrong company in one decision. They build it in 99 small ones. A designer picks the flow with the fewest clicks for a customer you'd decided not to serve. An engineer builds the integration properly — abstracted, configurable — for a partner you wanted to test cheaply and drop. A salesperson closes the smallest deal because it closes the fastest. Every one of those calls is defensible on its own. None of them get escalated, because they're too small. Together they ship a company that drifts a few degrees off course every quarter.
 
@@ -105,7 +105,7 @@ Strategic choices work as a system that creates coherence. WeTransfer's no login
 
 ---
 
-## Another path
+## Choosing a different path: two examples from our experience
 
 The examples that stay with you have a visible refusal in them. Someone took the obvious road. Someone else took another road, and you can see what that costs.
 
