@@ -1,6 +1,6 @@
 ---
-title: "He Thought “Strategy” Slides Were Fluff. But He Had the Real Thing."
-subtitle: "Strategy isn’t a slide with goals. It’s how you consistently make the hardest choices, and the doors you close because of them."
+title: "A Strategy Is Hard Choices — Not a Fluff Slide"
+subtitle: "Strategy isn’t a deck of goals nobody would argue against. It’s a coherent set of hard choices — destination, not decoration."
 date: "October 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
@@ -21,9 +21,13 @@ footer: "Part of an ongoing series on the Duct Tape to COO operational maturity 
 
 *By Stefan Verkerk and Erik Rutten*
 
+Erik and I have wanted to rehab this word for years. This post is that attempt.
+
 This post isn't for strategy geeks. It's for founders and operators who have goals, a roadmap, a nagging feeling that the team is still pulling in slightly different directions — and a healthy dislike of slideware with "Strategy" in the title.
 
 We, Erik and Stefan, are strategy geeks. We admit it. We know how that sounds. Please keep reading anyway. We think the thing you're missing has a name, and that the name has been so badly abused that you've been avoiding it for good reasons.
+
+## Strategy for people who hate the word Strategy
 
 We'd been circling this post for a while without finding the way in. Then Stefan had lunch with Paul.
 
