@@ -49,7 +49,9 @@ This is why strategy is hard. Not conceptually hard. Emotionally hard. Because r
 
 Nobody builds the wrong company in one decision. They build it in 99 small ones. A designer picks the flow with the fewest clicks for a customer you'd decided not to serve. An engineer builds the integration properly — abstracted, configurable — for a partner you wanted to test cheaply and drop. A salesperson closes the smallest deal because it closes the fastest. Every one of those calls is defensible on its own. None of them get escalated, because they're too small. Together they ship a company that drifts a few degrees off course every quarter.
 
-Goals don't stop that drift; every one of those 99 decisions can be argued to serve a goal. Only a set of choices does — because a choice tells the designer, the engineer and the salesperson which option is *not* ours, at the moment they're picking, without anyone having to ask. Choices that need to be communicated, explained and reinforced all the time, because drift also happens in storytelling (keep this in mind the next time when your team says “do we need to talk about the strategy AGAIN?”)
+Goals don't stop that drift; every one of those 99 decisions can be argued to serve a goal. Only a set of choices does — because a choice tells the designer, the engineer and the salesperson which option is *not* ours, at the moment they're picking, without anyone having to ask. Choices that need to be communicated, explained and reinforced all the time.
+
+This is why you need a strategy so you can communicate about the coherence in all the hard choices you make all the time.
 
 ---
 
@@ -111,7 +113,7 @@ SnappCar, and Turo in the US, chose the opposite: peer-to-peer car sharing. Cost
 
 Run it through the rules. *Differentiating:* Greenwheels and Zipcar owned the fleet; SnappCar owned none of it. *Trade-off:* no control over the car, its condition or the check-in — and then saying no to the casual lender who made the network look big. *Coherent:* semi-pro owners, keyless technology, car types and rental duration tuned to the local conditions all fix the same weakness without bringing the costs back onto the platform. *The opposite test:* the asset path made the opposite call and worked too, so this was a choice, not a preference.
 
-WeTransfer, as Stefan tells it. YouSendIt was there first, and it sat on revenue per user: an account, a paywall, maximum revenue creating annoyance, as much as an end user would accept before leaving. A competitor everybody loved to hate. We chose a different path. No login to upload or download. File first, recipient after. Curating the ads and saying no to ugly ads. One bet sat behind all three: Prioritising end user experience in the end would lead to more growth in users, and later revenue, than growing conversion at the cost of end user experience.
+WeTransfer, as Stefan tells it. YouSendIt was there first, and it sat on revenue per user: an account, a paywall, maximum revenue creating annoyance, as much as an end user would accept before leaving. A competitor everybody loved to hate. We took a different path. No login to upload or download. File first, recipient after. Curating the ads and saying no to ugly ads. One bet sat behind all three: Prioritising end user experience in the end would lead to more growth in users, and later revenue, than growing conversion at the cost of end user experience.
 
 That bet had a price. Less revenue per user, and more risk: with free users not paying, the advertising side to free users had to scale up for the business to break even.
 
