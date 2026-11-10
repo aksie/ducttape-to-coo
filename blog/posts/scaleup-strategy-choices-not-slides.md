@@ -6,8 +6,8 @@ authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
 slug: "scaleup-strategy-choices-not-slides"
-order: 5
-listed: false
+order: -3
+listed: true
 status: published
 practitioner_review: approved
 description: "Most strategy slides are just goals. Real strategy is a few hard choices about what you won't do. How founders and scale-ups build one, with real examples."
