@@ -1,7 +1,7 @@
 ---
 title: "A Strategy Is Hard Choices — Not a Fluff Slide"
 subtitle: "Strategy isn’t a deck of goals nobody would argue against. It’s a coherent set of hard choices — destination, not decoration."
-date: "October 2026"
+date: "November 2026"
 authors: "Stefan Verkerk and Erik Rutten"
 tag: "Entry point"
 tag_color: "green"
