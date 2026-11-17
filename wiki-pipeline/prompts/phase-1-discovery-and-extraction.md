@@ -266,6 +266,15 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Geographic: NL-specific content exists and is valuable (Arbowet / RI&E compliance is mandatory from first hire); explicitly search for EU/NL content on arbo obligations
 - Employee handbook templates are a useful Tier 3 source for this cell — they document what small companies formally codify about office/remote policy
 
+### Employee Satisfaction & Feedback @ First Hires (3.6)
+- Sparse on purpose: at 2–10 the process is a conversation, not a survey. Anonymity fails, and the leader is the manager.
+- Maintainer proposal (src-118): monthly walk or lunch, likes / dislikes / felt engagement / full use of talent. Practitioner sources support the monthly deeper questions and add: do not cancel, do not use it for status, do not save this week's friction for the lunch.
+- Dissent registered (src-123): while everyone still talks all day, keep the formal round light.
+- Vendor bias risk: survey and eNPS tools dominate search. Not registered. SoapBox (src-121) and Canopy (src-122) are flagged; do not promote their products.
+- Evolution: early revenue is where this becomes each manager's more frequent written 1:1 (already src-079 on performance).
+- Geographic: US-heavy HN. No NL-specific satisfaction rule found for this size.
+- Run date: 2026-11-17 — src-118–123, atoms atom-773–791. Numbering skips src-117 / atom-728–772, which live on the commercial-operator branch.
+
 ### Operational Internal Communication Norms @ First Hires (1.3)
 - Rich practitioner corpus: HN threads + operator essays (Gaurav Vohra, 37signals guide, Antoine Buteau channel strategy)
 - Vendor bias risk: low for registered sources; Slack-as-product not pushed — practitioners warn against Slack as system of record
