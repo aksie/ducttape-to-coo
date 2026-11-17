@@ -52,6 +52,8 @@ The framework is a set of questions per process that determines where you stand.
 
 For each process we look at how broken it is right now, who owns it (and whether it has a clear owner), whether it's documented, what tooling supports it, and how much extra scale it can handle.
 
+The diagnostic is the map: what's actually broken, and where to focus. The wiki is what you do with that map — for each process, at your stage, what good looks like and what to do next. Foundation and First Hires are written; later stages are filling in. The Virtual COO is the same material as a beta check-in, weekly and quarterly, so you are not starting from a blank page between conversations.
+
 ## Why this exists
 
 My ambition is to make this kind of operational clarity available to more founders and organisations than I could ever personally help. Through the framework being open and free, through other ops people picking it up and using it with their own clients, and increasingly with AI doing more of the heavy lifting.
