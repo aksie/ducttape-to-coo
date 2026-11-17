@@ -250,6 +250,8 @@ attribution:
 
 # 1.3 Communication Norms (partial · planning visibility)
 
+> **Maintainer decision, 2026-11-17:** do not publish these notes on 1.3. Hold them for a future team-alignment page (the point where one-room alignment breaks, around 8–20 people). 1.3 stays the channel-and-routing page.
+
 ## Early Revenue → Growth
 
 ### What good looks like
@@ -295,7 +297,7 @@ attribution:
 | 4 | **1.1 @ growth** | Quarterly rhythm; 3–5 projects; COO owns process; multi-quarter phases; resource planning |
 | 5 | **1.1 @ early-revenue** | Three things / not-list; accept drop-out; strategy ≠ planning chain |
 | 6 | **3.2 @ early-revenue / growth** | Three-lens scored model; single decider; no cautious onboarding |
-| 7 | **1.3 @ early-revenue / growth** | Founder → org priority comms; CEO story + COO cadence |
+| 7 | **Team alignment @ 8–20** (held 2026-11-17; not 1.3) | Founder → org priority comms; CEO story + COO cadence |
 
 **Cross-cutting atoms (tag on multiple cells):**
 - Accountability requires authority (spine)
