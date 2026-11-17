@@ -110,3 +110,50 @@ No claim — no evolution-type atoms in scope for this cell. See placeholder com
 ## Dropped atoms
 
 None — all 3 new atoms in scope for this process/phase (atom-715–717) were used.
+
+## src-117 addendum (Commercial Operator — pay experiments)
+
+People business, cell margin as the fence around local pay freedom. Good looks like is 5, actions 4, warnings 6. Inside the cap. The evolution claim is a pattern from after the contributor left.
+
+### c-012: Cell pay inside a margin, correct runaway specialisms
+- Section: what_good_looks_like
+- Supporting atoms: atom-759
+- Why-source: atom-759
+- Synthesis notes: none
+
+### c-013: Self-set pay, hard call stays with the manager
+- Section: what_to_do
+- Supporting atoms: atom-758, atom-753
+- Why-source: atom-753
+- Synthesis notes: "We gave up too fast" is kept as his judgment inside the claim.
+
+### c-014: Raise case, colleague backup, director decides
+- Section: evolution
+- Supporting atoms: atom-760
+- Why-source: atom-760
+- Synthesis notes: confidence medium. He had already left.
+
+### c-015: Token votes level pay
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-761
+- Why-source: atom-761
+- Synthesis notes: none
+
+### c-016: The process makes salary the topic
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-762
+- Why-source: atom-762
+- Synthesis notes: none
+
+### c-017: People say pay is management's job
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-763
+- Why-source: atom-763
+- Synthesis notes: none
+
+## Dropped atoms
+
+None in this cell.

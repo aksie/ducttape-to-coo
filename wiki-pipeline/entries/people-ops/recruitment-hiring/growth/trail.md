@@ -127,3 +127,25 @@ batch: src-064
 ### c-018: Hire authority handoff ~50–100
 - Section: evolution
 - Supporting atoms: atom-515
+
+## src-117 addendum (Commercial Operator — culture underminers)
+
+Two warnings. This section was already at 7 bullets and is now at 9. Pending, so review can swap rather than stack. Offboarding (3.4) has no growth entry yet. The exit decision lives here because the failure was keeping and promoting the person.
+
+### c-019: Top performer who breaks the culture
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-769, atom-770
+- Why-source: atom-772 (every miss traced back to keeping someone who undermined the culture)
+- Synthesis notes: The "cork" argument — protect the strong cell because weak ones always exist — is the mechanism inside this claim, not a second bullet.
+
+### c-020: Someone rejects the mission out loud
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-757
+- Why-source: atom-757
+- Synthesis notes: none
+
+## Dropped atoms
+
+None in this cell.
