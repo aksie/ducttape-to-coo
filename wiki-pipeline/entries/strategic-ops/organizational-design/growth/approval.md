@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/organizational-design/growth
-last_updated: 2026-09-23
+last_updated: 2026-11-17
 ---
 
 ### c-001
@@ -116,4 +116,69 @@ last_updated: 2026-09-23
 - Reviewer notes: ""
 - Reviewed by: "aksie"
 - Reviewed date: 2026-09-23 18:29
+- Edited claim text: null
+
+### c-015
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:00
+- Edited claim text: null
+
+### c-016
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Specific for Cell approach only in this wording"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:01
+- Edited claim text: null
+
+### c-017
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific for their approach, not a common wisdom to always work like this. "
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:03
+- Edited claim text: null
+
+### c-018
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:03
+- Edited claim text: **Write the culture down with the board, and use that written down text in hiring, in training, and in what you celebrate.** Make a vision, select people who feel it, let the others go elsewhere, and give everyone clear goals and a clear frame. 
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
+### c-019
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:04
+- Edited claim text: null
+
+### c-020
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:04
+- Edited claim text: null
+
+### c-021
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:04
+- Edited claim text: null
+
+### c-022
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:05
 - Edited claim text: null

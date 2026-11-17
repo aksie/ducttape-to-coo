@@ -3,9 +3,9 @@ process: strategic-ops
 subprocess: who-decides-what
 process_id: "1.4"
 phase: growth
-last_updated: 2026-08-03
-claim_count: 21
-batch_addendum: src-070
+last_updated: 2026-11-17
+claim_count: 29
+batch_addendum: src-070, src-117
 primary_source: src-064
 ---
 
@@ -62,6 +62,14 @@ Growth adds C-level rules. It does not replace what you built at 2–25 people:
 - **Recreate "small-room magic" deliberately** — clear roles plus a maturity and trust layer: the right people on their domain whom you respect and who will push harder than you would. Structural clarity without trusted domain owners still fails.
   <!-- sources: src-070 (serial-ceo) -->
 
+<!-- claim-id: c-022 -->
+- **Equal founders can choose to have no CEO.** Consensus is the default. A majority vote exists, and one person can still pause a decision when they feel it is wrong and cannot yet explain why. The pause is time to turn a felt objection into an argument, not a standing veto. A CEO title on a design that refused hierarchy recreates the thing the structure was built to avoid.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-025 -->
+- **What the board does is the rule. What the board says is commentary.** Cells copy the board's own unit, not the booklet. Holding that standard takes discipline, and a board member who cannot sustain it should leave.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## What you actually need to do
 
 <!-- claim-id: c-013 -->
@@ -84,6 +92,14 @@ Growth adds C-level rules. It does not replace what you built at 2–25 people:
 5. **When three teams are each locally right but the platform outcome fails, ask whether cross-cutting ownership is missing** — don't bolt coordination onto one function's extra hat. Naming a neutral owner for the combined outcome is one pattern that works on multi-sided platforms; it's not required for every company at this stage.
    <!-- sources: src-070 (serial-ceo) -->
 
+<!-- claim-id: c-023 -->
+6. **When someone blocks a decision without an argument, ask what the delay buys.** A short time to get the argument in order is valid. An open postpone is not. After that, trust each other's expertise.
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-024 -->
+7. **When people ask what to do, send them back to the values instead of deciding for them.** A board that answers every case becomes the bottleneck the values were meant to replace.
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## Warning signs you're behind
 
 ### Output quality
@@ -104,6 +120,18 @@ Growth adds C-level rules. It does not replace what you built at 2–25 people:
 - **Cracks between teams** — dev, marketing, and monetization each locally right; platform wrong globally. Signal that traffic control is missing or weak.
   <!-- sources: src-070 (serial-ceo) -->
 
+<!-- claim-id: c-027 -->
+- **Felt equality on the founder board holds only while the majority owner chooses to act as an equal.** The decision rule and the shareholding are different facts.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-028 -->
+- **A founder's own cell lives the vision differently, or does the opposite of what the board tells the other cells.** The other cells copy that unit. One board member grew distant from the work while their own branch abandoned the model everyone else was told to run.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-029 -->
+- **A generous chance the board funds, and then does not judge, is copied as slack.** Visible slack is a decision. Other cells treat it as the new standard.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ### Founder / key-person time
 
 <!-- claim-id: c-019 -->
@@ -119,6 +147,10 @@ Growth adds C-level rules. It does not replace what you built at 2–25 people:
 <!-- claim-id: c-017 -->
 - **Full framework rollouts before the org is ready** — the team spends more time keeping the process running than moving the business forward. Frameworks like Holacracy contain useful ideas — integrative objection, explicit decision rights — but importing the whole rulebook often becomes theatre at this stage. Extract the principles and adapt them to how your team already works.
   <!-- sources: src-070 (serial-ceo) -->
+
+<!-- claim-id: c-026 -->
+- **The board aligns on offsites and never gives its own members the hard feedback it requires of cell directors.** The people below notice the double standard, and things simmer.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
 
 ## How this evolves next
 

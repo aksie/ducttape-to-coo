@@ -4,10 +4,11 @@ subprocess: performance-management
 process_id: "3.5"
 entry: performance-management/growth
 phase: growth
-last_updated: 2026-09-23
-claim_count: 11
+last_updated: 2026-11-17
+claim_count: 17
 synthesis_mode: new_draft
 primary_sources: src-113, src-114, src-115, src-116
+batch_addendum: src-117
 carried_from: people-ops/performance-management/early-revenue
 ---
 
@@ -33,6 +34,10 @@ carried_from: people-ops/performance-management/early-revenue
 - **A formal review cycle (bi-annual or annual) is in place and tied to compensation, with promotion criteria documented** — not left as an unwritten judgment call each cycle.
   <!-- sources: src-115 (Molly Graham, sells_book), src-116 (First Round / AltSchool, vc_portfolio_interest) -->
 
+<!-- claim-id: c-012 -->
+- **Let a cell settle its own pay while it holds the margin, and correct from outside when one specialism's pay runs away from the others.** The branch cannot see that unfairness from inside.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## What you actually need to do
 
 <!-- claim-id: c-005 -->
@@ -47,6 +52,10 @@ carried_from: people-ops/performance-management/early-revenue
 3. **Bring in dedicated HR help in this headcount range** — the informal, founder-plus-spreadsheet system breaks under legal and calibration load before you reach 50 people; treat 35–50 as when it becomes mandatory, not optional. See [3.1 HR Administration](3.1--early-revenue.md) for when to make the hire.
    <!-- sources: src-076 (hacker_news) -->
 
+<!-- claim-id: c-013 -->
+4. **If top-down raises feel unjust, you can try self-set pay — and keep the hard call with the manager.** No raise, and a bad review, stay management's work. Do not hand them to peers. Stopping the experiment at the first mess can be too fast. That last judgment is the contributor's, not a measured result.
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## Warning signs you're behind
 
 ### Output quality
@@ -59,15 +68,31 @@ carried_from: people-ops/performance-management/early-revenue
 - **Negative performance feedback still appears for the first time in a formal review** — now with multiple managers running reviews instead of just the founder, this is a sign a manager individually avoided hard conversations for months, not just a company-wide gap.
   <!-- sources: src-077 (hacker_news) -->
 
+<!-- claim-id: c-015 -->
+- **Giving everyone tokens to award raises levels pay.** Managers are seen as already earning enough. One cell gave its directors no raise at all.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-016 -->
+- **The pay process makes salary the topic of the company.** That is the obsession the process was meant to avoid.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ### Founder / key-person time
 
 <!-- claim-id: c-010 -->
 - **Top performers' pay drifts below market because nobody formalized recognition** — they'll leave and you'll be shocked. Formal comp reviews (c-006) exist specifically to force this conversation before it becomes a resignation.
   <!-- sources: src-081 (hoffdigital.com, atom-617) -->
 
+### Process entry
+
+<!-- claim-id: c-017 -->
+- **People will say that autonomy is welcome and that pay is still management's job.** Pushing the decision down fails if they do not want it.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## How this evolves next
 
-<!-- No evolution-type atoms available for this cell. The SHIFT framework this batch draws from has no phase past ~50 people — it does not describe what changes moving into Scaled. See processes.json 3.5 stageFocus for the current placeholder: "Full performance management system. Structured review cycles, calibration across departments, clear career frameworks, compensation bands. 360 feedback for senior leaders." -->
+<!-- claim-id: c-014 -->
+- **A later pattern, seen after this contributor had left: the person writes their own raise case, a colleague backs it, and the cell director decides.** The person makes the case, a peer checks it, and a manager still owns the decision. Treat this as one company's next step, not as a standard.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
 
 ## Tools & resources
 
