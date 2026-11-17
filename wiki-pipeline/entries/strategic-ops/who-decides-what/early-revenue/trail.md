@@ -4,7 +4,7 @@ process_id: "1.4"
 phase: early-revenue
 primary_source: src-063
 batch_addendum: src-070
-last_updated: 2026-08-10
+last_updated: 2026-10-06
 ---
 
 # Trail — Who Decides What / Early revenue (1.4)
@@ -182,8 +182,8 @@ this stage specifically.
 - Supporting atoms: atom-306
 - Primary source: src-063 (synthesis)
 - Equivalent claim: first-hires c-003, first-hires c-004 (consult → decide → commit); first-hires c-010 (codify within ~48 hours per 1.3)
-- Origin not established: the `src-064 (anonymous-practitioner)` half of this bullet's source comment. src-064's atoms are atom-368 to atom-372, and none of them covers gathering dissent in the room or the 48-hour codification rule. The nearest is atom-370 / growth c-002 — "return a debate outside your domain to the domain owner" — which is adjacent but is not what this bullet says. Recorded as unresolved rather than mapped to atom-370.
-- Synthesis notes: the src-063 half is solid and covers the whole bullet on its own. This is the meeting-level mechanic behind principle c-002.
+- Origin resolved 2026-10-06: `src-064 (anonymous-practitioner)` was **dropped** from this bullet's source comment. src-064's atoms are atom-368 to atom-372, and none of them covers gathering dissent in the room or the 48-hour codification rule — they cover founders aligning by talking (atom-368), C-level allegiance (atom-369), returning out-of-domain debates to the owner (atom-370), functional advocacy (atom-371) and people-pleasing local optimisation (atom-372). The nearest, atom-370 / growth c-002, is adjacent but is not what this bullet says. The material is src-063's (first-hires c-003, c-004, c-010), so the comment now reads `src-063 (synthesis)` alone rather than keeping a source with no atom behind it.
+- Synthesis notes: the src-063 half always covered the whole bullet on its own, which is why dropping src-064 changes no published wording. This is the meeting-level mechanic behind principle c-002.
 
 ### c-013: Mark which decisions are cheap to reverse and which are hard to undo
 - Section: what_to_do
@@ -261,11 +261,11 @@ this stage specifically.
 
 ### c-021: Link — Who Decides What, Growth
 - Section: tools_resources
-- Supporting atoms: atom-453, atom-462
-- Primary source: src-070 (serial CEO practitioner)
+- Supporting atoms: atom-453, atom-462, atom-369
+- Primary source: src-070 (serial CEO practitioner) + src-064 (anonymous chief-of-staff practitioner)
 - Equivalent claim: growth c-006 ("two decision paths", `atom-453`), growth c-014 (executive handover, `atom-462`), growth c-001 (C-level allegiance, `atom-369`)
-- Origin not established: the "C-level allegiance" half of the link text. Growth c-001 is **src-064**, but this bullet's comment claims src-070 only, so `atom-369` is named as the equivalent claim and deliberately left out of `Supporting atoms`. Either the comment should gain src-064 or the phrase should change — a maintainer call, not a backfill call.
-- Synthesis notes: the pass reworded "Type 1/2" to "two decision paths" here to match the growth page.
+- Origin resolved 2026-10-06: `src-064 (anonymous-practitioner)` was **added** to this bullet's source comment, and `atom-369` promoted into `Supporting atoms`. The "C-level allegiance" phrase in the link text describes growth c-001, which is src-064 via atom-369 ("leaders should play for the highest team, not the lowest"); the other two phrases, "two decision paths" and "executive handover", remain src-070. The comment was under-attributed by one source.
+- Synthesis notes: the pass reworded "Type 1/2" to "two decision paths" here to match the growth page. Adding src-064 changes no published wording — only the source comment.
 
 ### c-022: Link — Director vs shareholder decisions
 - Section: tools_resources
@@ -344,23 +344,26 @@ with `http`, so the external URL renders as an ordinary outbound link with no re
 `docs/proposals/` and `wiki-pipeline/` paths get converted to GitHub blob URLs, and only bare `.md`
 links become SPA hash navigation.
 
-**Other pages that mention the map — not edited in this task.** `1.4--first-hires.md` action 3
-(where the map is actually defined, and which already carries the `Ascent ABC` attribution string),
-`1.4--growth.md` and `1.4--scaled.md` carry-forward paragraphs, plus `1.4--first-hires.md` and
-`1.4--growth.md` Tools entries, `wiki/processes/legal/director-and-shareholder-decisions.md` and
-`wiki/processes/people/3.6--foundation.md`. See the report for the recommended treatment.
+**Other pages that mention the map — all credited on 2026-10-06.** The maintainer's instruction was
+to give the credit at every location. `1.4--first-hires.md` action 3 carries the fullest version,
+including the Bucket B divergence, because that is where the map is defined; the
+`1.4--growth.md` and `1.4--scaled.md` carry-forward paragraphs,
+`wiki/processes/legal/director-and-shareholder-decisions.md` and
+`wiki/processes/people/3.6--foundation.md` carry a short credit plus link. The credit appears once
+per page; the Tools entries on `1.4--first-hires.md` and `1.4--growth.md` point at the pages that
+carry it rather than repeating it. See "Cross-page alignment pass (2026-10-06)" below.
 
 ---
 
-## Origins that could not be established
+## Origins that could not be established — both closed 2026-10-06
 
-Two, both partial. Neither invalidates its bullet — in both cases the rest of the source comment
-holds — and neither was closed with an invented atom or source.
+Two, both partial, both now resolved by the maintainer and applied to the page's source comments.
+Neither was closed with an invented atom or source, and neither changed any published wording.
 
-| Claim | What could not be traced | Detail |
+| Claim | What could not be traced | Resolution |
 |---|---|---|
-| c-012 | the `src-064 (anonymous-practitioner)` half | src-064's atoms (atom-368 to atom-372) cover C-level allegiance, returning out-of-domain debates, functional advocacy and people-pleasing managers. None covers "gather dissent in the room, then the area owner states the decision" or the 48-hour codification rule, both of which are src-063 material (first-hires c-003, c-004, c-010). Either src-064 should be dropped from the comment, or the atom it refers to has not been extracted. |
-| c-021 | the `src-070` attribution for "C-level allegiance" | That phrase describes growth c-001, which is src-064 (`atom-369`). The other two phrases in the link text — "two decision paths" and "executive handover" — are correctly src-070. The comment is under-attributed by one source. |
+| c-012 | the `src-064 (anonymous-practitioner)` half | **src-064 dropped.** Re-read of src-064's atoms confirmed the gap: atom-368 (two founders align by talking), atom-369 (play for the highest team), atom-370 (return out-of-domain debates to the owner), atom-371 (C-level defending a function as a team vote), atom-372 (people-pleasing managers optimising locally). None covers "gather dissent in the room, then the area owner states the decision" or the 48-hour codification rule; both are src-063 material via first-hires c-003, c-004 and c-010. The comment now reads `src-063 (synthesis)`. |
+| c-021 | the `src-070` attribution for "C-level allegiance" | **src-064 added.** atom-369 is src-064 and is exactly the "play for the highest team" claim that growth c-001 publishes, so the phrase in this link text is src-064's. "Two decision paths" (atom-453) and "executive handover" (atom-462) stay src-070. The comment now reads `src-070 (serial-ceo), src-064 (anonymous-practitioner)`. |
 
 ## Atoms available at this stage but not on the page
 
@@ -397,3 +400,141 @@ of scope here.
 - Source-discovery Tracks A–C behind src-063 stay bibliography, exactly as the first-hires trail
   records. The strings `HSG seed article`, `reStruggle ~15–25` and `Ascent ABC` are entries in those
   tracks, not source files, and were not promoted to `src-NNN` by this backfill.
+
+---
+
+## Cross-page alignment pass (2026-10-06)
+
+Four maintainer-approved changes, applied across all four published 1.4 stages. This page was the
+template for the first of them. Written as a section rather than as `### c-NNN:` blocks so the
+existing claim records stay the single source of truth for each claim; the trail parser splits on
+`###\s+(c-\d+):` and a duplicate header would shadow the original record. Per-claim edited text
+lives in `approval.md`.
+
+**1. The preamble order and wording became the template for the other three pages.** Nothing on this
+page changed. The 17:05 position-2 placement of the consult principle, and its fuller wording, were
+copied verbatim onto `1.4--first-hires.md`, `1.4--growth.md` and `1.4--scaled.md`, so items 1, 2 and
+3 are now character-identical across all four.
+
+| Page | Preamble order after the pass |
+|---|---|
+| first-hires | accountability, consult, decide-who-decides, formalise (4 — walk-back still omitted at 2–10 people) |
+| early-revenue | accountability, consult, decide-who-decides, walk-back, formalise (unchanged) |
+| growth | accountability, consult, decide-who-decides, walk-back, formalise |
+| scaled | accountability, consult, decide-who-decides, walk-back, formalise |
+
+Principle 1 was not touched on any page: accountability-requires-authority is a structurally
+different idea from consult-then-decide, even though the new principle 2 contains a callback to it.
+The deliberate partial overlap between c-001 and c-002 recorded under "The 17:05 edit" above is the
+precedent the other three pages now follow — `src-070` travels with the power-and-responsibility
+clause rather than being reassigned, so on `1.4--first-hires.md` the consult principle's comment
+moved from `src-063 (synthesis)` to `src-063 (synthesis), src-070 (serial-ceo)`. The clause traces
+to atom-424 and atom-435. Growth and scaled already carried both sources on that principle, so only
+their wording and position changed.
+
+**2. The ABC decision map now credits its origin on every page that mentions it.** The attribution
+string is `Ascent ABC (Andres Perea)` everywhere, extending the pattern first-hires c-007 already
+used. Where the map's bucket rules are actually specified, the credit also carries the Bucket B
+divergence, so a reader following the link is not surprised to find a majority vote there.
+
+| Location | Claim | Credit given |
+|---|---|---|
+| `1.4--first-hires.md` action 3 | first-hires c-007 | Fullest version: the three-bucket split comes from Perea's guide at Ascent Incubator, synthesised with Ramp's and Mercury's variants, adapted not reproduced — Ascent's Bucket B is a majority vote where this wiki discusses then tie-breaks on the CEO. Comment extended to `src-063 (synthesis), Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup`. A source line was added to that page's `## Sources`, matching the one this page already carries. |
+| `1.4--early-revenue.md` carry-forward paragraph | c-006 | Reworded from naming Perea alone to the three-source framing, plus the Bucket B divergence in one clause. Comment extended with `Ramp founders agreement, Mercury cofounder prenup`. |
+| `1.4--growth.md` carry-forward paragraph | none — carried from first-hires | Short credit plus link inside the existing bucket gloss, with the Bucket B divergence. Comment extended with the three attribution strings. |
+| `1.4--scaled.md` carry-forward paragraph | none — carried from first-hires | Short credit plus link; this paragraph does not specify the bucket rules, so no divergence clause. Comment extended with `Ascent ABC (Andres Perea)`. |
+| `wiki/processes/legal/director-and-shareholder-decisions.md` | no pipeline entry owns this page | Short credit plus link on the 1.4 cross-reference that names the ABC buckets. That page carries no source comments in prose, so none was invented. |
+| `wiki/processes/people/3.6--foundation.md` action 3 | no pipeline entry owns this page | Short credit plus link; `Ascent ABC (Andres Perea)` appended to that bullet's existing comment string. |
+
+Credit for the three-bucket split names Perea and not Harvard Business School: Ascent credits an HBS
+note for its four building blocks, but the A/B/C split is Perea's own step 3, which is the part this
+wiki borrowed. The evidence chain is in "ABC decision map — origin" above.
+
+**3. The stray provenance line was removed from the published page.** The paragraph that began
+"Second pass 2026-08-10 17:05: the consult-then-decide principle was rewritten to state that power
+and responsibility travel together…" was deleted from `1.4--early-revenue.md`'s `## Sources`
+section. It was pipeline bookkeeping in the body of a public page, and the same information already
+lives in this file under "The 17:05 edit — what changed on the page", which has been through review.
+Nothing was lost.
+
+Checked the other three pages for the same kind of leak. One found, on `1.4--growth.md`: its
+Tools & resources entry for 3.2 @ growth read "three-lens hiring without a veto (src-070; 3.2 @
+growth still to be synthesised separately)" — a bare source ID and a stale pipeline status note in
+rendered text. `wiki/processes/people/3.2--growth.md` has since been written, so the note was also
+wrong. Recorded in the growth entry's trail. No other page carries provenance text above its
+`## Sources` section.
+
+**4. Two loose attributions closed.** c-012 dropped `src-064`; c-021 gained it. Both verified
+against the atoms first — see "Origins that could not be established — both closed 2026-10-06"
+above. Neither changed any published wording, so both keep their original review status; the
+resolution is recorded in their `Reviewer notes`.
+
+**Page mirror.** `draft.md` is this entry's verbatim copy of the published page, so it was re-synced
+with the three source-comment and wording changes above. `claim_count` is unchanged at 26.
+
+### Follow-up decision 2 — pipeline bookkeeping removed from the page body (2026-10-06)
+
+Change 3 above removed one stray provenance paragraph from this page. The maintainer extended that
+to all pipeline bookkeeping on all four 1.4 pages: any sentence whose audience is the pipeline rather
+than a founder. Two things are explicitly **not** in scope and stayed. Reader-facing source credits —
+authors, titles, URLs, practitioner descriptions — are what a `## Sources` section is for. And the
+links that expose the pipeline trail are a deliberate transparency feature of this repo:
+`interceptContentLinks()` in `wiki.html` rewrites `wiki-pipeline/` paths to public GitHub URLs on
+purpose. It is the prose *about* pass history and review state that goes, not the credits and not the
+links.
+
+This page carried the most of it — two sentences out of the opening paragraph, one sentence out of
+the pipeline-entry paragraph, a whole closing paragraph, and one parenthetical, all inside
+`## Sources`. Recorded verbatim below, because once removed from the page this file is the only
+record.
+
+**Removed from paragraph 1** — the readability-pass summary and the attribution note. The paragraph's
+opening sentence is a reader-facing credit to src-063 and src-070 with links a reader can follow, so
+it stayed and the paragraph is now that sentence alone. These two sentences went:
+
+> Readability pass 2026-08-10: the non-standard carry-forward section became the principles preamble plus one sourced paragraph, the reversibility labels and door metaphors were dropped in favour of plain wording, and the premature-formalisation warning was folded into action 5. The carry-forward attribution (`src-063`) is taken from the first-hires entry's `trail.md`, where the ABC map (c-007), the named decider with a duty to consult (c-003) and the visible approval list (c-002) all sit under `src-063`.
+
+Already in this file: the carry-forward attribution is argued in full in the c-006 record, whose
+`Equivalent claim` field names the same three first-hires claims under the same source; the
+door-metaphor removal is in the c-013 synthesis note; the premature-formalisation fold-in is in the
+c-015 synthesis note; and the preamble rewrite is in the "Backfill note (2026-08-10)" at the top.
+
+**Removed from paragraph 2** — the review tally. The `Pipeline entry:` link that opens the paragraph
+stayed, for the transparency reason above, and is now the whole paragraph. This sentence went:
+
+> Backfilled from this page after publication; all 23 claims reviewed in the approval tool on 2026-08-24 (c-015 approved with edit — Holacracy/heavy-methodology examples dropped).
+
+This is the sentence the maintainer flagged as wrong, and it was wrong twice over: the entry holds 26
+claims, not 23, and since the alignment pass c-006 is a second `approved_with_edit`, so the
+parenthetical no longer identified the only one. `approval.md` carries the real record — per-claim
+statuses, reviewers and 2026-08-24 timestamps — and is counted by `server.py` rather than restated by
+hand, so removing the tally removes the only copy that could drift.
+
+**Removed paragraph 3** — the two addenda:
+
+> Addendum 2026-09-16: action 6 + Process entry COO warning ported from approved founder-change claims; role-exit bulk lives on [1.5 — Early Revenue](1.5--early-revenue.md). Addendum 2026-09-19: action 7 from src-112 second interview.
+
+The ports are recorded in the `Reviewer notes` of the claims that received them, naming the
+originating entry and claim. The one reader-facing fragment here was the pointer to 1.5
+Organizational Design, and the page still links it twice in the body — from action 6 and from the
+COO warning sign — so a reader loses nothing.
+
+**Removed parenthetical** — in the otherwise reader-facing source bullet for the second impact-VC
+interview, `(src-112, c-026)` was dropped, leaving the description, the pipeline-record link that
+already points at src-112, and the bias signal. A claim ID in rendered prose was the specific thing
+the maintainer asked to be swept.
+
+**What stayed.** The opening credit, "Synthesized from [src-063](…) (first-hires direction) and
+[src-070](…) (serial CEO practitioner, early-revenue atoms)" — it names sources a reader can follow,
+which is the opposite of bookkeeping. The `Pipeline entry:` link. The `## Sources` bullet list, which
+credits real sources with titles, authors, URLs and practitioner descriptions a reader can follow.
+Every `<!-- sources: ... -->` comment on the page and in `draft.md` is untouched.
+
+**Kept and flagged rather than deleted,** on the judgement that they belong to a bullet convention
+shared by the whole of `wiki/processes/`: the `[pipeline record]` links, the source-type slugs
+(`research_note`, `human_experience`, `hn`), the bias signals, and the "cited through `src-063`, no
+separate pipeline record" note on the Ascent bullet. Deleting them on four pages would make those
+four the odd ones out among ~130, and the bias signals arguably tell a reader something useful about
+a source. Flagged for the maintainer rather than decided here.
+
+`draft.md` does not reproduce `## Sources`, so it needed no further change for this.

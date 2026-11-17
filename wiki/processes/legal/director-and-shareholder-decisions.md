@@ -4,7 +4,7 @@ category: "legal-and-other-ops"
 type: "cross-cutting"
 related_processes: ["4.1", "1.2b", "1.4"]
 typical_stage: "first-hires"
-last_updated: "2026-08-06 13:20:00 +0200"
+last_updated: "2026-10-06 15:40:00 +0200"
 ---
 
 # Director vs shareholder decisions
@@ -20,7 +20,7 @@ last_updated: "2026-08-06 13:20:00 +0200"
 | **2+ founders, SHA or solid founder terms** (often before external investors) | Articles + founder SHA already split director vs shareholder decisions. Internalise that list; document material board decisions; do not treat shareholder matters as "we agreed on Slack." |
 | **Priced round** (investor SHA / reserved matters) | Same machinery + investor consent rights, board rhythm, CoI policy, and DD that tests whether paper matches practice. |
 
-[1.4 Who Decides What](../strategic/1.4--first-hires.md) owns the operating map (ABC buckets, founder approval list). Keep that list **aligned** with what the articles/SHA already require legally — especially Bucket C (equity, fundraising, pivots, and related-party deals).
+[1.4 Who Decides What](../strategic/1.4--first-hires.md) owns the operating map (ABC buckets, founder approval list) — the buckets adapted from [Andres Perea's founders'-agreement guide at Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/). Keep that list **aligned** with what the articles/SHA already require legally — especially Bucket C (equity, fundraising, pivots, and related-party deals).
 
 ---
 

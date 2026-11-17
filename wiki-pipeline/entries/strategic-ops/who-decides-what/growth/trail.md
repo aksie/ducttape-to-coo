@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/growth
-last_updated: 2026-08-10
+last_updated: 2026-10-06
 batch: src-064, src-070
 ---
 
@@ -194,3 +194,86 @@ records stay the single source of truth for each claim.
 **Not changed:** c-021 remains rejected; the second "How this evolves next" bullet on the published
 page (the pointer to 1.4 @ scaled, src-064) remains editorial with no claim ID, as it was at
 publish time.
+
+---
+
+## Cross-page alignment pass (2026-10-06)
+
+Four maintainer-approved changes across the four published 1.4 stages; three touched this page. No
+atom was added, dropped, or reassigned, and **no claim in this entry changed** — all three edits
+landed on material that publishes claims from other entries, or on bullets that were never
+registered as claims here. Written as a section rather than as `### c-NNN:` blocks so the existing
+claim records stay the single source of truth, since the trail parser splits on `###\s+(c-\d+):`.
+
+**1. Preamble aligned to the early-revenue template.** `1.4--early-revenue.md` is now the template:
+its position-2 placement of the consult principle, and its fuller wording, were the maintainer's
+editorial choice and were propagated to the other three pages.
+
+| Page item | Before | After |
+|---|---|---|
+| 1 | Accountability and authority travel together | unchanged, verbatim |
+| 2 | Decide who decides before you need it | Consult, then decide — fuller wording, taken verbatim from early revenue |
+| 3 | A decision you can walk back deserves less process | Decide who decides before you need it, text unchanged |
+| 4 | Consult, then decide — shorter wording | A decision you can walk back deserves less process, text unchanged |
+| 5 | Formalise only when the informal version visibly breaks | unchanged |
+
+Source comments did not move. The consult principle on this page already carried
+`src-063 (synthesis), src-070 (serial-ceo)`, which covers both halves of the fuller wording: src-063
+for the consult duty (atom-306, via first-hires c-003 and c-004) and src-070 for accountability
+paired with authority (atom-424, atom-435). Principle 1 is untouched, so atom-424 now supports both
+items — the same deliberate overlap early revenue's `trail.md` records under "The 17:05 edit",
+rather than reassigning the atom. The home entry for all five principles is still `first-hires/`
+(and `growth/` for the atoms behind items 3 and 4), as the readability-pass table above records.
+
+**2. ABC decision map credited in the carry-forward paragraph.** The bucket gloss now carries a
+short credit plus link, kept short because `1.4--first-hires.md` action 3 is where the map is
+defined and where the fullest credit sits.
+
+| What | Detail |
+|---|---|
+| Credit | The three buckets adapt Andres Perea's founders'-agreement guide at Ascent Incubator, synthesised in this wiki with Ramp's and Mercury's variants. Named to Perea rather than the HBS note Ascent itself credits, because the A/B/C split is Perea's own step 3. |
+| Divergence clause | Included, because this paragraph specifies the bucket rules: Ascent's Bucket B is a majority vote rather than a tie-break. A reader following the link would otherwise be surprised. |
+| Comment | `src-063 (synthesis), src-064 (anonymous-practitioner)` gained `Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup` — extending the pattern first-hires c-007 established, not a new format. All three stay attribution strings cited through src-063's Track C bibliography; none was promoted to a `src-NNN` record. |
+| Home claims | first-hires c-002, c-007 and c-010 for the three mechanics in the paragraph; the evidence chain for the credit is in the early-revenue entry's `trail.md` under "ABC decision map — origin". |
+
+**3. A stray pipeline note left the page body.** The Tools & resources entry for 3.2 @ growth read
+"three-lens hiring without a veto (src-070; 3.2 @ growth still to be synthesised separately)" — a
+bare source ID and a pipeline status note in rendered text on a public page, which is the same class
+of leak the maintainer asked to be removed from `1.4--early-revenue.md`. It was also out of date:
+`wiki/processes/people/3.2--growth.md` is a written page with the three-lens content. Replaced with
+a reader-facing description — "score each lens, and let the hiring manager decide" — drawn from that
+page's own `stage_focus`. The bullet's `src-070 (serial-ceo)` source comment is unchanged, and this
+entry's Tools bullets were never registered as claims, so no claim record moves.
+
+**Not changed:** every section bullet, every claim status, and c-021's rejection. The 3.2 @ growth
+pipeline addendum that the removed note referred to is still outstanding — it is item 2 of the
+"what happens next" list in `docs/proposals/who-decides-what-summary-and-direction.md`, which is
+where that kind of backlog belongs.
+
+### Follow-up decision 2 — pipeline bookkeeping removed from the page body (2026-10-06)
+
+Change 3 above removed the Tools & resources leak. The maintainer extended that to all pipeline
+bookkeeping on all four 1.4 pages: any sentence whose audience is the pipeline rather than a founder.
+The links that expose the pipeline trail are explicitly **not** in scope — they are a deliberate
+transparency feature, and `interceptContentLinks()` in `wiki.html` rewrites `wiki-pipeline/` paths to
+public GitHub URLs on purpose. It is the prose *about* pass history and review state that goes.
+
+One sentence remained on this page, the second half of the paragraph that opens its `## Sources`
+section. Recorded verbatim, because once removed from the page this file is the only record:
+
+> Readability pass 2026-08-10: claims reworded in plain language, c-005 merged into c-010 and c-003 into c-004 — see the entry's `trail.md` for the merge record.
+
+It already lives here: the two merges are recorded claim-by-claim in the "Editorial pass —
+readability (2026-08-10)" section above, which is also where the sentence pointed. It pointed a
+founder at a merge record they have no use for — and it had one of the merges backwards. c-003 is
+the surviving claim and c-004 the absorbed one, as the merge table above and `approval.md` both
+record. The error went with the sentence and was not carried anywhere.
+
+**What stayed.** The `Pipeline entry:` link that opens the same paragraph, which is now the whole
+paragraph. The `## Sources` bullet list, which credits real sources with titles, authors, URLs
+and practitioner descriptions. Every `<!-- sources: ... -->` comment on the page is untouched.
+
+**Kept and flagged rather than deleted:** the `[pipeline record]` links, the source-type slugs
+(`research_note`, `human_experience`), the `carry-forward` marker and the bias signals inside those
+bullets. They belong to a bullet convention shared by the whole of `wiki/processes/`, so deleting
+them on four pages would make those four inconsistent with the other ~126. Left for the maintainer.

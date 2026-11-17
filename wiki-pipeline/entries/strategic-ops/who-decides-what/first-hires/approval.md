@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/first-hires
-last_updated: 2026-08-10 16:35
+last_updated: 2026-10-06 16:20
 ---
 
 ## Editorial pass — readability, 2026-08-10
@@ -19,6 +19,67 @@ with `Reviewed date` set to the pass date. For the merged pair, the absorbed cla
 at the surviving claim rather than repeating the text, so the page cannot pick up the same bullet
 twice. Claim-to-bullet lineage for the pass is recorded in `trail.md` under "Editorial pass —
 readability (2026-08-10)".
+
+## Cross-page alignment pass — 2026-10-06
+
+Four maintainer-approved changes across all four published 1.4 stages; two of them touched this
+page. This file is edited in place rather than appended to, for the same reason as the readability
+pass: `server.py` splits claim blocks on `### c-NNN` and counts statuses file-wide with
+`^-\s*Status:`, so a duplicate claim header would leave two blocks for one claim and inflate the
+reviewed/total summary. This section sits above the first claim block, where the parser treats it as
+preamble and ignores it, and it contains no status lines.
+
+**1. The principles preamble was aligned to `1.4--early-revenue.md`,** which the maintainer made the
+template. The consult principle moved from item 3 to item 2 and took early revenue's fuller wording
+verbatim, which adds that power and responsibility travel together; decide-who-decides moved from
+item 2 to item 3. This page still carries four items — the walk-back principle stays omitted at
+2–10 people, as the readability pass decided — so the page reads 1, 2, 3, then formalise as item 4.
+Principle 1 is unchanged: accountability-requires-authority is a structurally different idea from
+consult-then-decide, even though the new principle 2 contains a callback to it.
+
+The fuller wording introduces the power-and-responsibility clause on this page for the first time,
+so `src-070 (serial-ceo)` travels with it and the principle's comment moved from
+`src-063 (synthesis)` to `src-063 (synthesis), src-070 (serial-ceo)`. The clause traces to atom-424
+and atom-435, which is why principle 1 (c-020, atom-424) and principle 2 now deliberately share part
+of one src-070 lineage. Early revenue's `trail.md` records that overlap explicitly rather than
+reassigning the atom; this entry follows that precedent. Nothing was orphaned or reassigned.
+
+The preamble item is published by c-003 — the surviving claim of the c-003 / c-004 merge — so its
+block below gains the reworded item as a second published bullet, the same way c-016 publishes both
+an evolution bullet and a Tools entry. c-004 and c-020 keep their original review records: their
+published text did not change, and their contribution to the principle is recorded in `trail.md`.
+
+**2. The ABC decision map now credits its origin,** and this page gets the fullest version because
+this is where the map is defined. c-007's action 3 names Andres Perea's founders'-agreement guide at
+Ascent Incubator as the source of the three-bucket split, states that the wiki's version is
+synthesised with Ramp's and Mercury's variants, and flags the divergence a reader would otherwise
+trip over: Ascent's Bucket B is a majority vote, where this wiki discusses and then tie-breaks on the
+CEO. The credit names Perea and not Harvard Business School — Ascent credits an HBS note for its four
+building blocks, but the A/B/C split is Perea's own step 3, which is the part this wiki borrowed.
+
+A matching source line was added to the page's `## Sources` list, in the same form
+`1.4--early-revenue.md` already used. `## Sources` is generated at publish time and no claim owns
+it, so no claim block records that line.
+
+**Follow-up, 2026-10-06 — principle 4's stage tail was trimmed.** The alignment above left principle
+4 as the only preamble item not character-identical across pages: it ended "— and at 2–10 people
+there is nothing structural to fix yet", where the other three pages stop at "costs more than it
+saves." The maintainer chose to trim rather than propagate. The item is published by c-022, whose
+block below now carries it as a second published bullet alongside action 7, and whose reviewer note
+records the trim. c-023 publishes the warning-sign form of the same idea and is unchanged. The
+trimmed idea is not lost: c-019, c-021 and c-023 each state it already, all from src-070 — which is
+what c-022's original readability note said when it called the point "stated three times". No source
+comment, atom or status changed; c-022 was already `approved_with_edit`.
+
+**Follow-up, 2026-10-06 — pipeline bookkeeping was removed from the page body.** The paragraph that
+opens the page's `## Sources` section carried a readability-pass summary — preamble added, c-004
+merged into c-003, c-020 generalised, SPADE moved — which was written for the pipeline, not for a
+founder, and which already lives in this entry. That sentence was removed and is recorded verbatim
+in `trail.md` under this pass. The src-070 addendum credit in the same paragraph was trimmed to the
+credit itself, losing the claim range and the review date; the `Pipeline entry:` and
+`source-discovery.md` links stay, because exposing the pipeline trail is deliberate. The
+`## Sources` bullet list and every `<!-- sources: ... -->` comment were left alone. No claim owns
+`## Sources`, so no claim block changed for this.
 
 ### c-001
 - Status: approved_with_edit
@@ -40,11 +101,14 @@ readability (2026-08-10)".
 ### c-003
 - Status: approved_with_edit
 - Flags: []
-- Reviewer notes: "Readability pass 2026-08-10: absorbs c-004 — 'meetings name a decider and the decider consults the room' and 'disagreements use consult → decide → commit' were one principle told twice. Published as a single bullet carrying the script; the duty-to-consult half became principle 3 in the preamble. 'DRI' spelled out as 'one directly responsible person'. c-004's forward reference to 'Bucket A in your ABC map' now points at action 3, where the map is actually defined."
+- Reviewer notes: "Readability pass 2026-08-10: absorbs c-004 — 'meetings name a decider and the decider consults the room' and 'disagreements use consult → decide → commit' were one principle told twice. Published as a single bullet carrying the script; the duty-to-consult half became principle 3 in the preamble. 'DRI' spelled out as 'one directly responsible person'. c-004's forward reference to 'Bucket A in your ABC map' now points at action 3, where the map is actually defined. Cross-page alignment pass 2026-10-06: the preamble principle this claim generalises took `1.4--early-revenue.md`'s fuller wording verbatim and moved from item 3 to item 2, so all four pages now state it identically. Its comment gained src-070, which travels with the new power-and-responsibility clause (atom-424, atom-435) rather than being reassigned from c-020 — the overlap with principle 1 is deliberate and follows the early-revenue precedent. The good-looks-like bullet below is unchanged."
 - Reviewed by: "aksie"
-- Reviewed date: 2026-08-10 16:35
+- Reviewed date: 2026-10-06 15:40
 - Edited claim text: - **Meetings name a decider and a deadline, and disagreement closes out loud.** One directly responsible person, not a matrix: "Alex decides by Friday." On the day-to-day calls the domain owner owns (Bucket A, once you write the map in action 3), the owner states the decision clearly and the non-owner commits aloud with a reopen trigger — *"I've said my piece. Your call. I back it until [date]."*
   <!-- sources: src-063 (synthesis), Advice process, Coinbase DRI, Grove, blog draft who-decides-when-founders-disagree -->
+
+  Second published bullet, principles preamble item 2: 2. **Consult, then decide — don't decide by committee, and power and responsibility travel together as well.** One named person owns the call and has the responsibility to gather input from the people affected and the people with relevant expertise first. Gathering input is not the same as needing everyone to agree — the named person then has the power to decide.
+  <!-- sources: src-063 (synthesis), src-070 (serial-ceo) -->
 
 ### c-004
 - Status: approved_with_edit
@@ -74,11 +138,11 @@ readability (2026-08-10)".
 ### c-007
 - Status: approved_with_edit
 - Flags: []
-- Reviewer notes: "Readability pass 2026-08-10: 'articles/SHA' spelled out as 'the articles and shareholders' agreement (SHA)' at first use on the page. ABC map substance unchanged."
+- Reviewer notes: "Readability pass 2026-08-10: 'articles/SHA' spelled out as 'the articles and shareholders' agreement (SHA)' at first use on the page. ABC map substance unchanged. Cross-page alignment pass 2026-10-06: this is where the map is defined, so it carries the fullest credit — the three-bucket split named as Andres Perea's, at Ascent Incubator, synthesised here with Ramp's and Mercury's variants, plus the divergence a reader following the link would otherwise trip over: Ascent's Bucket B is a majority vote where this wiki discusses then tie-breaks on the CEO. The credit names Perea rather than the HBS note Ascent itself credits, because the A/B/C split is Perea's own step 3 and that is the part borrowed here. The comment extends the existing pattern — `Ascent ABC` becomes `Ascent ABC (Andres Perea)`, matching the string early revenue already used, and gains `Mercury cofounder prenup` alongside the Ramp entry. All three are Track C bibliography entries cited through src-063, not separate source files, and none was promoted to a `src-NNN` record. The bucket rules themselves are unchanged."
 - Reviewed by: "aksie"
-- Reviewed date: 2026-08-10 16:35
-- Edited claim text: 3. **Write one page: approval list + ABC decision map.** Bucket A — domain owner decides after consult. Bucket B — discuss, then CEO tie-break at two founders. Bucket C — unanimous (equity, fundraising, hire approval, spend above €X, pivot). Show the team the Bucket C subset; keep the full map among founders. Template in the [who-decides proposal](../../../docs/proposals/who-decides-what-summary-and-direction.md#optional-team-template-first-hires). Align Bucket C with what your articles and shareholders' agreement (SHA) already reserve to shareholders — director pay, loans, related-party deals, share issues — see [Director vs shareholder decisions](../legal/director-and-shareholder-decisions.md).
-   <!-- sources: src-063 (synthesis), Ascent ABC, Ramp founders agreement -->
+- Reviewed date: 2026-10-06 15:40
+- Edited claim text: 3. **Write one page: approval list + ABC decision map.** Bucket A — domain owner decides after consult. Bucket B — discuss, then CEO tie-break at two founders. Bucket C — unanimous (equity, fundraising, hire approval, spend above €X, pivot). Show the team the Bucket C subset; keep the full map among founders. Template in the [who-decides proposal](../../../docs/proposals/who-decides-what-summary-and-direction.md#optional-team-template-first-hires). The three-bucket split comes from [Andres Perea's founders'-agreement guide at Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/), synthesised here with Ramp's and Mercury's variants — and adapted, not reproduced: Ascent's Bucket B is a majority vote, where the version above discusses and then tie-breaks on the CEO. Align Bucket C with what your articles and shareholders' agreement (SHA) already reserve to shareholders — director pay, loans, related-party deals, share issues — see [Director vs shareholder decisions](../legal/director-and-shareholder-decisions.md).
+   <!-- sources: src-063 (synthesis), Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup -->
 
 ### c-008
 - Status: approved
@@ -203,11 +267,14 @@ readability (2026-08-10)".
 ### c-022
 - Status: approved_with_edit
 - Flags: []
-- Reviewer notes: "Readability pass 2026-08-10: trimmed to its distinct half. The 'don't over-formalise yet' clause became principle 4 in the preamble, and the same point already stands as a process-entry warning on this page (c-023), so it was stated three times. The hiring instruction is what remains."
+- Reviewer notes: "Readability pass 2026-08-10: trimmed to its distinct half. The 'don't over-formalise yet' clause became principle 4 in the preamble, and the same point already stands as a process-entry warning on this page (c-023), so it was stated three times. The hiring instruction is what remains. Follow-up to the cross-page alignment pass, 2026-10-06: the preamble item that clause became carried a stage-specific tail — 'and at 2–10 people there is nothing structural to fix yet' — which was the only thing keeping principle 4 from being character-identical to the other three pages. Trimmed. The idea survives in c-019 ('there is nothing to coordinate between teams, because there are no teams yet'), c-021 ('at this size that is a feature, not a gap') and c-023, all src-070, so this is the same three-times-stated redundancy noted above, now resolved. No source change."
 - Reviewed by: "aksie"
-- Reviewed date: 2026-08-10 16:35
+- Reviewed date: 2026-10-06 16:20
 - Edited claim text: 7. **Hire people who operate when things are vague.** Screen for self-starters who can act inside loose boundaries — not people who stall until process is written down.
    <!-- sources: src-070 (serial-ceo) -->
+
+  Second published bullet, principles preamble item 4 (the generalised 'don't over-formalise yet' clause, shared with c-023): 4. **Formalise only when the informal version visibly breaks.** Process added ahead of the pain costs more than it saves.
+  <!-- sources: src-070 (serial-ceo) -->
 
 ### c-023
 - Status: approved_with_edit

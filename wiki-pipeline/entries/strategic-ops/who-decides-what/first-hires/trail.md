@@ -3,7 +3,7 @@ entry: strategic-ops/who-decides-what/first-hires
 process_id: "1.4"
 phase: first-hires
 primary_source: src-063
-last_updated: 2026-08-10
+last_updated: 2026-10-06
 ---
 
 # Trail — Who Decides What / First hires (1.4)
@@ -223,3 +223,142 @@ two places. Per-claim edited text lives in `approval.md`. Written as a section r
 **Not changed:** c-023 keeps its standalone process-entry warning. The proposal offered a choice
 between folding the premature-formalisation warning at first-hires or at early-revenue; the
 maintainer chose to fold it at early-revenue, so first-hires and growth keep theirs.
+
+---
+
+## Cross-page alignment pass (2026-10-06)
+
+Four maintainer-approved changes across the four published 1.4 stages; two of them touched this
+page. No atom was added, dropped, or reassigned, and no claim changed in substance. Written as a
+section rather than as `### c-NNN:` blocks so the existing claim records stay the single source of
+truth for each claim — the trail parser splits on `###\s+(c-\d+):` and a duplicate header would
+shadow the original record. Per-claim edited text lives in `approval.md`.
+
+**Preamble aligned to the early-revenue template.** `1.4--early-revenue.md` is now the template for
+the preamble: its position-2 placement of the consult principle, and its fuller wording, were the
+maintainer's editorial choice and were propagated. This page keeps four items — the walk-back
+principle stays omitted at 2–10 people, per deviation 1 of the readability pass — so the relative
+order is the same with one omission.
+
+| Page item | Before | After | Durable principle |
+|---|---|---|---|
+| 1 | Accountability and authority travel together | unchanged, verbatim | 1 |
+| 2 | Decide who decides before you need it | Consult, then decide — fuller wording, taken verbatim from early revenue | 4 |
+| 3 | Consult, then decide — shorter wording | Decide who decides before you need it, text unchanged | 2 |
+| 4 | Formalise only when the informal version visibly breaks | unchanged | 5 |
+
+Updated lineage for the two items that moved, superseding the "Principles preamble — claim lineage"
+table above:
+
+| Page item | Generalises | Supporting atoms | Source comment |
+|---|---|---|---|
+| 2 — Consult, then decide, and power and responsibility travel together | c-003, c-004 (duty-to-consult and the consult → decide → commit close); c-020 for the power-and-responsibility clause | atom-306; atom-424, atom-435 | src-063 (synthesis), src-070 (serial-ceo) |
+| 3 — Decide who decides before you need it | c-007, c-009 — unchanged | atom-306 | src-063 (synthesis) |
+
+The comment on item 2 gained `src-070 (serial-ceo)` because the fuller wording introduces the
+power-and-responsibility clause on this page for the first time, and that clause traces to atom-424
+and atom-435. The atom was **not** moved off c-020: principle 1 stays verbatim, so atom-424 now
+supports both items. That partial overlap already exists on early revenue, whose `trail.md` records
+it explicitly under "The 17:05 edit" rather than reassigning the atom, and this entry follows that
+precedent. c-004 and c-020 keep their original review records, since neither one's published text
+changed.
+
+**ABC decision map credited, fullest version here.** This page defines the map (c-007, action 3), so
+it carries the full framing: the three-bucket split is Andres Perea's, in his founders'-agreement
+guide at Ascent Incubator; this wiki's version synthesises it with Ramp's and Mercury's variants; and
+it is an adaptation, not a reproduction — Ascent's Bucket B is a majority vote where this wiki
+discusses and then tie-breaks on the CEO.
+
+| What | Detail |
+|---|---|
+| Credited to | Andres Perea, not Harvard Business School. Ascent credits an HBS note for its four building blocks (roles, rights, commitments, contingencies), but the A/B/C split is Perea's own step 3, which is the part this wiki borrowed. The evidence chain is in the early-revenue entry's `trail.md` under "ABC decision map — origin". |
+| Comment string | `src-063 (synthesis), Ascent ABC, Ramp founders agreement` became `src-063 (synthesis), Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup` — extending the existing pattern, and matching the `Ascent ABC (Andres Perea)` string early revenue already used. |
+| Not promoted | `Ascent ABC (Andres Perea)`, `Ramp founders agreement` and `Mercury cofounder prenup` stay attribution strings — Track C bibliography entries cited through src-063, with no `src-NNN` file of their own. Nothing was invented and nothing was orphaned. |
+| `## Sources` | A source line for the Ascent article was added to the page's list, in the same form early revenue uses. That section is generated at publish time and no claim owns it. |
+
+**Pages outside this entry that also gained the credit.** `wiki/processes/legal/director-and-shareholder-decisions.md`
+(the 1.4 cross-reference that names the ABC buckets) and `wiki/processes/people/3.6--foundation.md`
+(action 3) each gained a short credit plus link. Neither page has a pipeline entry of its own, so the
+change is recorded here, in the entry that owns the map, rather than against an unrelated entry. The
+`3.6` bullet's existing comment string gained `Ascent ABC (Andres Perea)`; the legal page carries no
+source comments in prose, so none was invented there.
+
+**Not changed on this page.** Principle 1 and every section bullet other than action 3. No
+provenance text was found in this page's body above its `## Sources` section.
+
+### Follow-up decision 1 — the formalise principle's stage tail was trimmed (2026-10-06)
+
+The alignment pass left principle 4 as the one preamble item that was not character-identical across
+the four pages, because it carried a stage-specific tail the readability pass had added:
+
+> 4. **Formalise only when the informal version visibly breaks.** Process added ahead of the pain costs more than it saves — and at 2–10 people there is nothing structural to fix yet.
+
+The maintainer chose to trim. The item now ends at "costs more than it saves.", matching
+`1.4--early-revenue.md`, `1.4--growth.md` and `1.4--scaled.md` exactly, so every preamble item that
+appears on a given page is now character-identical across pages, source comments included. The
+comment is unchanged at `src-070 (serial-ceo)`; no atom was added, dropped or reassigned.
+
+**The trimmed idea is not lost — the page already states it twice, both times from the same source.**
+Checked before trimming:
+
+| Where | What it says | Claim |
+|---|---|---|
+| What good looks like, bullet 4 | "Coordination stays invisible: there is nothing to coordinate between teams, because there are no teams yet." | c-019 (src-070) |
+| What good looks like, bullet 5 | "Speed comes from talking, not documenting — at this size that is a feature, not a gap." | c-021 (src-070) |
+| Warning signs, process entry | "Premature RACI, or project methodology appears before the one-room model breaks." | c-023 (src-070) |
+
+Bullets 4 and 5 are the "nothing structural to fix yet" claim stated in the two domains where it
+bites at this stage — coordination and documentation — and c-023 is its symptom form. All three are
+src-070, the same source as the tail, so the tail was a third restatement of material already on the
+page. That is the same redundancy the readability pass was removing elsewhere, so nothing needs a new
+home.
+
+**One incidental loss, reported rather than fixed:** the tail was the only place on the page that
+named the 2–10 headcount band. The sibling pages carry their band in the H1 — "Early Revenue (~11–25
+people)", "Growth (~50–150 people)", "Scaled (150+ people)" — but this page's H1 is just "Who
+Decides What — First Hires". That is a heading change, not a preamble change, so it was left for the
+maintainer.
+
+**Maintainer decision, 2026-11-17:** keep the H1 as "Who Decides What — First Hires". The stage name
+is enough; the 2–10 band stays in the stage definition, not in this title.
+
+### Follow-up decision 2 — pipeline bookkeeping removed from the page body (2026-10-06)
+
+The maintainer extended the treatment given to `1.4--early-revenue.md`'s stray provenance paragraph
+to every 1.4 page: process metadata that addresses the pipeline rather than a founder leaves the
+rendered page and lives here instead. The links that expose the pipeline trail are not in scope —
+they are a deliberate transparency feature, and `interceptContentLinks()` in `wiki.html` rewrites
+`wiki-pipeline/` paths to public GitHub URLs on purpose. It is the prose *about* pass history and
+review state that goes.
+
+One sentence was removed from the paragraph that opens this page's `## Sources` section. Recorded
+here verbatim so nothing is lost:
+
+> Readability pass 2026-08-10: principles preamble added, c-004 merged into c-003, c-020 generalised into principle 1, and the SPADE definition moved out of "How this evolves next" — see the entry's `trail.md` for the record.
+
+Every fact in it already lives in this entry, in the "Editorial pass — readability (2026-08-10)"
+section above, which carries the same merge and generalisation record in more detail. Nothing in the
+removed sentence was addressed to a founder reading the page.
+
+The src-070 addendum credit in the same paragraph was trimmed rather than removed. It read
+"Addendum: src-070 serial-CEO practitioner interview (c-019–c-024, 2026-08-10)" and now reads
+"Addendum: [src-070](…) — serial-CEO practitioner interview", linked to
+`wiki-pipeline/sources/src-070.md` from the page. The credit names a real contribution a reader can
+follow, so it stays; the claim range
+and the review date are bookkeeping and are already recorded in the "src-070 addendum" section
+above. The bare ID became a link to the source record, which is the form `1.4--early-revenue.md`
+uses for the same kind of credit, so no bare `src-NNN` is left in the page's prose.
+
+**What stayed.** The `Pipeline entry:` link and the `Discovery: source-discovery.md` link, both
+untouched — exposing the trail is intentional. The `## Sources` bullet list, untouched: it credits
+real sources with titles, authors and URLs a reader can follow. Every `<!-- sources: ... -->`
+comment on the page is also untouched; they are invisible when rendered and are the attribution
+record.
+
+**Kept and flagged rather than deleted,** because they sit inside a bullet convention used across the
+whole of `wiki/processes/` and changing it on four pages would make those four inconsistent with the
+other ~126: the `[pipeline record]` links, the source-type slugs (`research_note`,
+`human_experience`, `practitioner_blog`, `vc_firm`, `hn`, `reference`), the bias signals, the
+`· super-atom [atom-306](...)` tail on the src-063 bullet, and the "cited through `src-063`, no
+separate pipeline record" note on the Ascent bullet. The `super-atom` tail is the most
+pipeline-facing of these and the likeliest candidate if the maintainer wants to go further.

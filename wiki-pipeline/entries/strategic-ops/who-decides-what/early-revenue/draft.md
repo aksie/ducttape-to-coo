@@ -3,7 +3,7 @@ process: strategic-ops
 subprocess: who-decides-what
 process_id: "1.4"
 phase: early-revenue
-last_updated: 2026-09-16
+last_updated: 2026-10-06
 claim_count: 26
 synthesis_mode: backfill_from_published_page
 primary_source: src-063
@@ -11,10 +11,11 @@ batch_addendum: src-070, src-098, src-100
 ---
 
 <!-- Backfill note: this draft was written after the page was published, not before it.
-     The body below is `wiki/processes/strategic/1.4--early-revenue.md` as it stands on
-     2026-08-10 17:05, verbatim, with claim-id markers added. Nothing was reworded here.
-     Claim IDs run in page order. See trail.md for where each claim came from and
-     approval.md for why every claim is still `pending`. -->
+     The body below is `wiki/processes/strategic/1.4--early-revenue.md` verbatim, with
+     claim-id markers added. Nothing was reworded here. Claim IDs run in page order.
+     Re-synced 2026-10-06 after the cross-page alignment pass: c-006 gained the fuller
+     ABC credit, c-012 dropped src-064 and c-021 gained it. The page's `## Sources`
+     section is not reproduced here. See trail.md for where each claim came from. -->
 
 # Who Decides What — Early Revenue (~11–25 people)
 
@@ -43,8 +44,8 @@ batch_addendum: src-070, src-098, src-100
    <!-- sources: src-070 (serial-ceo) -->
 
 <!-- claim-id: c-006 -->
-**Carried over unchanged from earlier stages:** the ABC decision map (domain owner decides after consulting / discuss then tie-break / unanimous), a named decider who has to consult before closing anything, and one visible list of what still needs founder OK — hiring, spend above €X, pivots — against what the owner of the work decides alone. The three buckets come from [Andres Perea's founders'-agreement guide at Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/); the version this wiki uses lives in [1.4 — First Hires](1.4--first-hires.md). Early revenue extends the same pattern from founders to area owners: product, engineering, sales/GTM, and ops.
-<!-- sources: src-063 (synthesis), Ascent ABC (Andres Perea) -->
+**Carried over unchanged from earlier stages:** the ABC decision map (domain owner decides after consulting / discuss then tie-break / unanimous), a named decider who has to consult before closing anything, and one visible list of what still needs founder OK — hiring, spend above €X, pivots — against what the owner of the work decides alone. The three buckets adapt [Andres Perea's founders'-agreement guide at Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/), synthesised here with Ramp's and Mercury's variants — Ascent's Bucket B is a majority vote, not a tie-break. The version this wiki uses lives in [1.4 — First Hires](1.4--first-hires.md). Early revenue extends the same pattern from founders to area owners: product, engineering, sales/GTM, and ops.
+<!-- sources: src-063 (synthesis), Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup -->
 
 ## What good looks like at this stage
 
@@ -72,7 +73,7 @@ batch_addendum: src-070, src-098, src-100
 
 <!-- claim-id: c-012 -->
 2. **Run meetings with founder input, area-owner decision** — in the room: gather dissent, then the area owner states the decision and who needs to know. Codify within 48h per [1.3 Communication Norms](1.3--first-hires.md).
-   <!-- sources: src-063 (synthesis), src-064 (anonymous-practitioner) -->
+   <!-- sources: src-063 (synthesis) -->
 
 <!-- claim-id: c-013 -->
 3. **Mark which decisions are cheap to reverse and which are hard to undo.** Put worked examples next to the thresholds: cheap to reverse — a local vendor, a pricing test; hard to undo — a multi-year contract, a company-wide price lock. The first kind gets one owner and a light consult; the second gets more people, more time, and an explicit close.
@@ -132,7 +133,7 @@ batch_addendum: src-070, src-098, src-100
 
 <!-- claim-id: c-021 -->
 - [Who Decides What — Growth](1.4--growth.md) — two decision paths, C-level allegiance, executive handover (preview where you're heading).
-  <!-- sources: src-070 (serial-ceo) -->
+  <!-- sources: src-070 (serial-ceo), src-064 (anonymous-practitioner) -->
 
 <!-- claim-id: c-022 -->
 - [Director vs shareholder decisions](../legal/director-and-shareholder-decisions.md) — keep escalation thresholds aligned with the articles and shareholders' agreement (pay, loans, related-party deals, share issues).

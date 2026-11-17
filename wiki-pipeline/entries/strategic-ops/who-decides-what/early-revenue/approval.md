@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/early-revenue
-last_updated: 2026-08-10 17:10
+last_updated: 2026-10-06 16:20
 ---
 
 ## Backfill, not a review — 2026-08-10
@@ -32,8 +32,49 @@ source comment moved and nothing was orphaned; see `trail.md`, "The 17:05 edit".
 the ABC decision map its origin credit, which lands on c-006.
 
 `Reviewer notes` on each block records where the claim came from, in one line, so a reviewer opening
-the tool sees the lineage without leaving the claim. The full mapping, including the two attributions
-that could not be traced (c-012, c-021), is in `trail.md`.
+the tool sees the lineage without leaving the claim. The full mapping is in `trail.md`.
+
+## Cross-page alignment pass — 2026-10-06
+
+Four maintainer-approved changes, applied across all four published 1.4 stages. This file is edited
+in place rather than appended to: `server.py` splits claim blocks on `### c-NNN` and counts statuses
+file-wide with `^-\s*Status:`, so a duplicate claim header would leave two blocks for one claim and
+inflate the reviewed/total summary. This section sits above the first claim block, where the parser
+treats it as preamble and ignores it, and it contains no status lines.
+
+Three of the four changes landed on this page. The preamble was **not** one of them — this page's
+17:05 preamble is the template the other three pages were aligned to, so items 1 to 5 here are
+untouched, and principle 1 in particular stays verbatim.
+
+What changed on the page, and which claims own it:
+
+| Change | Claim | Effect on the review record |
+|---|---|---|
+| The carry-forward paragraph's ABC credit was reworded from naming Andres Perea alone to the agreed three-source framing (Ascent synthesised with Ramp's and Mercury's variants), and gained the Bucket B divergence clause. Its comment gained `Ramp founders agreement, Mercury cofounder prenup`. | c-006 | Published wording changed, so the block below moves to `approved_with_edit` with the new paragraph in `Edited claim text`. |
+| `src-064 (anonymous-practitioner)` dropped from the source comment, after re-reading atom-368 to atom-372 and confirming none of them covers gathering dissent in the room or the 48-hour codification rule. | c-012 | Attribution only — no published wording changed, so the status stays `approved` and the original review record stands. The `UNRESOLVED` note is replaced with the resolution. |
+| `src-064 (anonymous-practitioner)` added to the source comment, because the "C-level allegiance" phrase in the link text is growth c-001 via atom-369, which is src-064. | c-021 | Attribution only — status stays `approved`, note updated the same way. |
+| The "Second pass 2026-08-10 17:05…" provenance paragraph was deleted from the page's `## Sources` section and the information kept in `trail.md`. | none | `## Sources` is generated at publish time and is not reproduced in `draft.md`, so no claim owns it. |
+
+`draft.md` is this entry's verbatim copy of the published page and was re-synced with the same three
+edits. The review debt flagged in the backfill note above is unchanged by this pass: these claims
+still have not been walked one at a time in the approval tool.
+
+**Follow-up, 2026-10-06 — pipeline bookkeeping was removed from the page body.** The maintainer
+extended the provenance-paragraph deletion above to every sentence on the four 1.4 pages written for
+the pipeline rather than for a founder. Reader-facing source credits and the links that expose the
+pipeline trail are not in that class and stayed. Four pieces went from this page's `## Sources`
+section — two sentences out of the opening paragraph, the review tally after the `Pipeline entry:`
+link, the closing addenda paragraph and one parenthetical — and all four are recorded verbatim in
+`trail.md` under this pass. The opening credit to src-063 and src-070, and the `Pipeline entry:`
+link itself, are untouched.
+
+One of them bears on this file directly. The page claimed "all 23 claims reviewed in the approval
+tool on 2026-08-24 (c-015 approved with edit — Holacracy/heavy-methodology examples dropped)". The
+entry holds 26 claims, and since the change above c-006 is a second `approved_with_edit`, so the
+sentence was wrong on both counts. It is not restated anywhere; this file's per-claim `Status`,
+`Reviewed by` and `Reviewed date` lines are the record, and `server.py` counts them, so there is no
+longer a hand-maintained copy to drift. No claim block changed for any of this — `## Sources` is
+generated at publish time and no claim owns it.
 
 ### c-001
 - Status: approved
@@ -76,12 +117,13 @@ that could not be traced (c-012, c-021), is in `trail.md`.
 - Edited claim text: null
 
 ### c-006
-- Status: approved
+- Status: approved_with_edit
 - Flags: []
-- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Published as the carry-forward paragraph. Origin: src-063 via atom-306, carrying first-hires c-007 (ABC map), c-003 (named decider + consult duty) and c-002 (visible approval list). At 17:05 it gained the ABC credit — the three buckets are step 3 of Andres Perea's founders'-agreement guide at Ascent Incubator, cited through src-063's Track C bibliography, matching the Ascent ABC string first-hires c-007 already carried."
+- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Published as the carry-forward paragraph. Origin: src-063 via atom-306, carrying first-hires c-007 (ABC map), c-003 (named decider + consult duty) and c-002 (visible approval list). At 17:05 it gained the ABC credit — the three buckets are step 3 of Andres Perea's founders'-agreement guide at Ascent Incubator, cited through src-063's Track C bibliography, matching the Ascent ABC string first-hires c-007 already carried. Cross-page alignment pass 2026-10-06: the credit was brought in line with the agreed framing — naming one person for a three-source synthesis was the thing being fixed — so it now reads as an adaptation of Perea's buckets synthesised with Ramp's and Mercury's variants, with the Bucket B divergence stated in one clause because this paragraph specifies the bucket rules. The comment gained Ramp founders agreement and Mercury cofounder prenup, both entries in src-063's Track C bibliography. The src-063 attribution is unchanged: the buckets are Perea's, the version on this page is src-063's synthesis of them."
 - Reviewed by: "aksie"
-- Reviewed date: 2026-08-24 11:43
-- Edited claim text: null
+- Reviewed date: 2026-10-06 15:40
+- Edited claim text: **Carried over unchanged from earlier stages:** the ABC decision map (domain owner decides after consulting / discuss then tie-break / unanimous), a named decider who has to consult before closing anything, and one visible list of what still needs founder OK — hiring, spend above €X, pivots — against what the owner of the work decides alone. The three buckets adapt [Andres Perea's founders'-agreement guide at Ascent Incubator](https://ascentincubator.com/legal-administrative/founders-agreements-the-founder-prenup-that-prevents-cofounder-conflict-and-speeds-up-mvp-execution/), synthesised here with Ramp's and Mercury's variants — Ascent's Bucket B is a majority vote, not a tie-break. The version this wiki uses lives in [1.4 — First Hires](1.4--first-hires.md). Early revenue extends the same pattern from founders to area owners: product, engineering, sales/GTM, and ops.
+  <!-- sources: src-063 (synthesis), Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup -->
 
 ### c-007
 - Status: approved
@@ -126,7 +168,7 @@ that could not be traced (c-012, c-021), is in `trail.md`.
 ### c-012
 - Status: approved
 - Flags: []
-- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Origin: src-063 via atom-306, carrying first-hires c-003 / c-004 (consult then decide) and c-010 (codify within 48h). UNRESOLVED: the src-064 half of the source comment traces to no atom — src-064's atoms 368-372 cover none of this. Decide whether to drop src-064 or extract the missing atom."
+- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Origin: src-063 via atom-306, carrying first-hires c-003 / c-004 (consult then decide) and c-010 (codify within 48h). RESOLVED 2026-10-06: src-064 dropped from the source comment. Re-read of atom-368 to atom-372 confirmed the gap — they cover founders aligning by talking, playing for the highest team, returning out-of-domain debates to the owner, functional advocacy and people-pleasing local optimisation, and none covers gathering dissent in the room or the 48-hour rule. Attribution only; no published wording changed, so this claim keeps its original review record."
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-24 11:45
 - Edited claim text: null
@@ -199,7 +241,7 @@ that could not be traced (c-012, c-021), is in `trail.md`.
 ### c-021
 - Status: approved
 - Flags: []
-- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Navigational link. Origin: src-070 via atom-453 (growth c-006) and atom-462 (growth c-014). UNRESOLVED: the 'C-level allegiance' phrase describes growth c-001, which is src-064, but the comment claims src-070 only. Add src-064 or change the phrase."
+- Reviewer notes: "Backfilled 2026-08-10, never reviewed claim-by-claim. Navigational link. Origin: src-070 via atom-453 (growth c-006) and atom-462 (growth c-014). RESOLVED 2026-10-06: src-064 added to the source comment and atom-369 promoted into the trail's supporting atoms, because the 'C-level allegiance' phrase in the link text is growth c-001, which is src-064 via atom-369. 'Two decision paths' and 'executive handover' stay src-070. Attribution only; no published wording changed, so this claim keeps its original review record."
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-24 11:50
 - Edited claim text: null

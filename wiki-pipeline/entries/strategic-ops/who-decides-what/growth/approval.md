@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/growth
-last_updated: 2026-08-10
+last_updated: 2026-10-06
 ---
 
 ## Editorial pass — readability, 2026-08-10
@@ -16,6 +16,38 @@ The blocks below carry the reworded text in `Edited claim text`, with `Reviewed 
 pass date. For the two merged pairs, the absorbed claim's block points at the surviving claim
 rather than repeating the text, so the page cannot pick up the same bullet twice. Atom lineage for
 the merged bullets is recorded in `trail.md` under "Editorial pass — readability (2026-08-10)".
+
+## Cross-page alignment pass — 2026-10-06
+
+Four maintainer-approved changes across the four published 1.4 stages. Three of them touched
+`wiki/processes/strategic/1.4--growth.md`, and **none of this entry's claims changed**: c-001 to
+c-021 keep their statuses, their wording and their review records exactly as the readability pass
+left them. The edited material all lives above the first `##` or in Tools & resources, which this
+entry's claims do not own — the preamble and the carry-forward paragraph publish claims that live in
+the `first-hires/` and `early-revenue/` entries, as `trail.md` already records.
+
+This section is written in place, above the first claim block, where the parser treats it as
+preamble and ignores it. It contains no status lines, so the file still holds exactly one block and
+one `- Status:` line per claim ID.
+
+What changed on the page:
+
+| Change | Owned by |
+|---|---|
+| Preamble aligned to `1.4--early-revenue.md`, now the template: the consult principle moved from item 4 to item 2 and took early revenue's fuller wording verbatim, which adds that power and responsibility travel together. Decide-who-decides moved 2 → 3 and walk-back 3 → 4; both texts unchanged. Principle 1 untouched. The consult principle already carried `src-063 (synthesis), src-070 (serial-ceo)` on this page, so no source comment changed. | first-hires c-003 / c-004, with atom-424 and atom-435 behind the new clause — see the `first-hires/` trail |
+| Carry-forward paragraph: the ABC decision map now credits its origin. The bucket gloss gained a short credit plus link to Andres Perea's founders'-agreement guide at Ascent Incubator, the note that this wiki synthesises it with Ramp's and Mercury's variants, and the divergence — Ascent's Bucket B is a majority vote rather than a tie-break — because this paragraph specifies the bucket rules. The comment gained `Ascent ABC (Andres Perea), Ramp founders agreement, Mercury cofounder prenup`. | first-hires c-007, where the map is defined and the fullest credit now sits |
+| Tools & resources: a stray pipeline note was removed from rendered text — the 3.2 @ growth entry read "three-lens hiring without a veto (src-070; 3.2 @ growth still to be synthesised separately)". That is a bare source ID and a stale status note in the body of a public page, and `wiki/processes/people/3.2--growth.md` has since been written, so it was also wrong. Replaced with a reader-facing description of what the link leads to. | no claim — this entry's Tools bullets were never registered as claims |
+
+**Follow-up, 2026-10-06 — pipeline bookkeeping was removed from the page body.** The maintainer
+extended the Tools & resources removal above to every sentence on the four 1.4 pages written for the
+pipeline rather than for a founder. Reader-facing source credits and the links that expose the
+pipeline trail are not in that class and stayed. One sentence went from this page: the second half
+of the paragraph opening its `## Sources` section, which summarised the readability pass's two claim
+merges by ID — and got one of them backwards. It is recorded verbatim in `trail.md` under this pass,
+where the merge record it pointed at already sits. The `Pipeline entry:` link that opens the same
+paragraph, the `## Sources` bullet list and every `<!-- sources: ... -->` comment were left alone.
+Still no claim block changed:
+`## Sources` is generated at publish time and no claim owns it.
 
 ### c-001
 - Status: approved_with_edit
