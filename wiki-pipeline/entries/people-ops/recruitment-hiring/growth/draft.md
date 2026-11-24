@@ -3,9 +3,9 @@ process: people-ops
 subprocess: recruitment-hiring
 process_id: "3.2"
 phase: growth
-last_updated: 2026-08-03
-claim_count: 18
-batch_addendum: src-064, src-070
+last_updated: 2026-11-17
+claim_count: 20
+batch_addendum: src-064, src-070, src-117
 primary_source: src-064
 ---
 
@@ -78,6 +78,14 @@ primary_source: src-064
 <!-- claim-id: c-016 -->
 - **The hiring manager compromises on profile because the market is tight, then delivery gets blocked** — the system is blamed when the tradeoff was never owned explicitly. If you hire below the bar, the hiring manager must say so and accept the consequence.
   <!-- sources: src-070 (serial-ceo) -->
+
+<!-- claim-id: c-019 -->
+- **A top performer who breaks the culture is kept because their cell's numbers hold the others up.** People leave, absenteeism rises, and the board keeps debating the results. Protecting the strong cells because some cells are always weak gives that person a permanent exemption. In a people business that cell starts breaking people.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-020 -->
+- **Someone says out loud that they do not believe the mission, and it is left standing.** Silence from the manager is read as agreement. Correct it immediately.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
 
 ### Founder / key-person time
 

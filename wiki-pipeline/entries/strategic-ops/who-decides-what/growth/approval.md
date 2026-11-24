@@ -1,6 +1,6 @@
 ---
 entry: strategic-ops/who-decides-what/growth
-last_updated: 2026-10-06
+last_updated: 2026-11-17
 ---
 
 ## Editorial pass — readability, 2026-08-10
@@ -234,3 +234,70 @@ Still no claim block changed:
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-03 11:20
 - Edited claim text: null
+
+### c-022
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific, a quite specific flavour of working. Not a best practice that will work for all. "
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:06
+- Edited claim text: null
+
+### c-023
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:06
+- Edited claim text: null
+
+### c-024
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:06
+- Edited claim text: null
+
+### c-025
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:07
+- Edited claim text: - **What the board does is the rule. What the board says is commentary.** Example behaviour is extremely strong. Holding that standard takes discipline, and a board member who cannot sustain it should leave.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+### c-026
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:08
+- Edited claim text: - **The board aligns on offsites and never gives its own members the tough feedback when required.** The people below notice the double standard, and things simmer.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+### c-027
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:08
+- Edited claim text: null
+
+### c-028
+- Status: rejected
+- Flags: []
+- Reviewer notes: "Too specific"
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:09
+- Edited claim text: null
+
+### c-029
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:44
+- Edited claim text: - **Generously give chances, but hold people strictly accountable. People expected the board to be strict about a funded trip that produced nothing, for example. The slack left standing spread through the company, so a board member who can no longer hold that standard should leave.
+  <!-- sources: src-117 (commercial-operator, people_business) -->

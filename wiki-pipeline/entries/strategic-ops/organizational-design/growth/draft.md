@@ -4,10 +4,11 @@ subprocess: organizational-design
 process_id: "1.5"
 entry: organizational-design/growth
 phase: growth
-last_updated: 2026-09-23
-claim_count: 14
+last_updated: 2026-11-17
+claim_count: 22
 synthesis_mode: new_draft
 primary_sources: src-113
+batch_addendum: src-117
 carried_from: strategic-ops/organizational-design/early-revenue
 ---
 
@@ -33,6 +34,14 @@ carried_from: strategic-ops/organizational-design/early-revenue
 - **The organization has little dependency on any one or a few individuals.** If one person leaving would still be a crisis, org design hasn't caught up with headcount yet.
   <!-- sources: src-113 (SHIFT Invest framework, vc_portfolio_interest) -->
 
+<!-- claim-id: c-015 -->
+- **Around 40 people, split into cells that still feel like small businesses, and treat autonomy as cloning the model.** The first split can be as simple as dividing the directors you already have. Later splits get harder. A cell that invents its own business is no longer a cell. In this people's business the culture, not the plan, was what won — the cells were how that culture stayed local.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-016 -->
+- **Refuse staff functions. Cell leaders are all-rounders — commerce, delivery and people — and standardised finance, HR admin and legal are outsourced.** Functional care of the people sits in the management team. The leadership role is heavy on purpose. Building those back-office processes in-house recreates the head office the cells were meant to avoid.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## What you actually need to do
 
 <!-- claim-id: c-005 -->
@@ -55,6 +64,14 @@ carried_from: strategic-ops/organizational-design/early-revenue
 5. **Manage senior people to quarterly and annual outputs — not weekly milestones — and fire underperforming leadership hires faster than feels comfortable.** Expect roughly 25 percent of your first executive hires not to work out.
    <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
 
+<!-- claim-id: c-017 -->
+6. **Say at entry that there are two careers: all-round leadership, or a well-paid specialist path that does not enter the management team.** Without that sentence, strong specialists get promoted into a job they did not want, or resent the people who were.
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-018 -->
+7. **Write the culture down with the board, and use that text in hiring, in the academy, and in what you celebrate.** Make a vision, select people who feel it, let the others go elsewhere, and give everyone clear goals and a clear frame. An unwritten culture is whatever the loudest cell does this quarter.
+   <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ## Warning signs you're behind
 
 ### Founder / key-person time
@@ -63,11 +80,29 @@ carried_from: strategic-ops/organizational-design/early-revenue
 - **You never replace yourself with leaders better than you in each major domain** — so you stay Doer-in-Chief and slow everyone else down.
   <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
 
+<!-- claim-id: c-022 -->
+- **Managers are promoted to cell director before they can run one, and the founders step back into operating branches.** The cell model only frees the founders if the directors can hold the all-round job.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
 ### Process entry
 
 <!-- claim-id: c-011 -->
 - **Every departure or leave still feels like a crisis.** At this size that should be even less true than it was at early revenue — if losing one person can still derail the org, the bus-factor problem hasn't been fixed.
   <!-- sources: src-110 (practitioner, human:stefanverkerk), src-113 (SHIFT Invest framework, vc_portfolio_interest) -->
+
+### Output quality
+
+<!-- claim-id: c-019 -->
+- **A cell decides the model does not fit its market, and nobody corrects it.** That cell is where the culture slides first. One branch dropped junior project work, hired older people for secondment, and was later closed. Guarding the clone is the management job.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-020 -->
+- **A cell beats the margin and spends the surplus on itself while a sister cell is struggling.** The norm here was about a 10 percent margin, above which the board stayed quiet. One director made about 20 percent and spent it on parties. The surplus was meant to help a weak branch. That rule was never made clear enough.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+<!-- claim-id: c-021 -->
+- **A director who is investing in the team is removed the moment the margin dips.** A margin floor with no room for a deliberate investment reads every development spend as failure.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
 
 ## How this evolves next
 

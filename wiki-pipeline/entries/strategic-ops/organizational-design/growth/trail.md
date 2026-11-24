@@ -136,3 +136,63 @@ No claim — no evolution-type atoms in scope for this cell. See placeholder com
 ## Dropped atoms
 
 None — all 8 new atoms in scope for this process/phase (atom-707–714) were used. (atom-718, also `process: organizational-design`, targets `phase: early-revenue` and is handled as a Mode B addendum to the existing early-revenue entry, not this draft.)
+
+## src-117 addendum (Commercial Operator — cells, culture)
+
+People business, board seat, about 40 people through a few hundred. Sales claims from the same interview are not in this entry. Good-looks-like is now 6 bullets and actions are 7, inside the cap. Warnings are 6, inside the cap.
+
+### c-015: Cells around 40, autonomy means cloning
+- Section: what_good_looks_like
+- Supporting atoms: atom-731, atom-732, atom-737
+- Why-source: atom-748 (culture, not the plan, is what won)
+- Synthesis notes: Three target states merged. The culture line is the reason the cells existed.
+
+### c-016: No staff functions, all-round leaders, outsource the standard work
+- Section: what_good_looks_like
+- Supporting atoms: atom-733, atom-734, atom-735
+- Why-source: atom-733
+- Synthesis notes: The outsource action is the practical half of refusing staff functions, so it is one claim.
+
+### c-017: Two careers, said at entry
+- Section: what_to_do
+- Supporting atoms: atom-736
+- Why-source: atom-736
+- Synthesis notes: none
+
+### c-018: Write the culture down and select for it
+- Section: what_to_do
+- Supporting atoms: atom-749, atom-754
+- Why-source: atom-749
+- Synthesis notes: The booklet and the "vision, select, clear frame" line are the same practice.
+
+### c-019: A cell abandons the model
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-738
+- Why-source: atom-738
+- Synthesis notes: The secondment example is services-specific. The claim is the failure to correct the drift.
+
+### c-020: Surplus skimmed inside a strong cell
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-739
+- Why-source: atom-739
+- Synthesis notes: The 10 percent and 20 percent figures are theirs.
+
+### c-021: Investing director removed too fast
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-740
+- Why-source: atom-740
+- Synthesis notes: The contributor's judgment that the removal was too fast.
+
+### c-022: Directors promoted before they can run a cell
+- Section: warning_signs
+- Warning category: founder_time
+- Supporting atoms: atom-741
+- Why-source: atom-741
+- Synthesis notes: none
+
+## Dropped atoms
+
+None in this cell. Board-behaviour atoms went to 1.4. Pay atoms went to 3.5.

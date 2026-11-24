@@ -277,3 +277,63 @@ and practitioner descriptions. Every `<!-- sources: ... -->` comment on the page
 (`research_note`, `human_experience`), the `carry-forward` marker and the bias signals inside those
 bullets. They belong to a bullet convention shared by the whole of `wiki/processes/`, so deleting
 them on four pages would make those four inconsistent with the other ~126. Left for the maintainer.
+
+## src-117 addendum (Commercial Operator — founder board)
+
+People business, three founders, no CEO by choice. This page was already at the 7-bullet cap in "what good looks like" (now 9) and in warnings (now 11). Actions land on 7. These claims are pending so review can swap them in and retire older bullets. Nothing here is published yet.
+
+### c-022: No CEO, consensus, bounded pause
+- Section: what_good_looks_like
+- Supporting atoms: atom-742, atom-743
+- Why-source: atom-743
+- Synthesis notes: The pause is not a standing veto. Tension with src-070, which wants a reasoned objection rather than a felt one. Left for review.
+
+### c-023: Delay must earn its keep
+- Section: what_to_do
+- Supporting atoms: atom-744
+- Why-source: atom-744
+- Synthesis notes: The week is their example, not a rule.
+
+### c-024: Send the question back to the values
+- Section: what_to_do
+- Supporting atoms: atom-750
+- Why-source: atom-750
+- Synthesis notes: none
+
+### c-025: Board behaviour is the rule
+- Section: what_good_looks_like
+- Supporting atoms: atom-752
+- Why-source: atom-752
+- Synthesis notes: none
+
+### c-026: The board does not coach itself
+- Section: warning_signs
+- Warning category: process_entry
+- Supporting atoms: atom-745
+- Why-source: atom-745
+- Synthesis notes: none
+
+### c-027: Felt equality versus the majority stake
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-746
+- Why-source: atom-746
+- Synthesis notes: none
+
+### c-028: The board's own cell does the opposite
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-747, atom-755
+- Why-source: atom-755
+- Synthesis notes: Merged the "lived differently" warning with the distant-shareholder example.
+
+### c-029: Visible slack gets copied
+- Section: warning_signs
+- Warning category: output_quality
+- Supporting atoms: atom-756
+- Why-source: atom-756
+- Synthesis notes: none
+
+## Dropped atoms
+
+None in this cell.

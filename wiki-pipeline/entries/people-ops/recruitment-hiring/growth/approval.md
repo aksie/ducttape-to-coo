@@ -1,6 +1,6 @@
 ---
 entry: people-ops/recruitment-hiring/growth
-last_updated: 2026-08-03
+last_updated: 2026-11-17
 note: "src-064 batch approved 2026-06-24; src-070 addendum pending review."
 ---
 
@@ -153,3 +153,21 @@ note: "src-064 batch approved 2026-06-24; src-070 addendum pending review."
 - Reviewed by: "aksie"
 - Reviewed date: 2026-08-03 14:03
 - Edited claim text: null
+
+### c-019
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 14:51
+- Edited claim text: - **A top performer who breaks the culture is kept because their numbers hold the others up.** People leave, absenteeism rises, and the leasership keeps debating the results. Protecting the strong performers on numbers cells because some others underperform gives that person a permanent exemption. In a people business that cell starts breaking people.
+  <!-- sources: src-117 (commercial-operator, people_business) -->
+
+### c-020
+- Status: approved_with_edit
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 15:00
+- Edited claim text: - **Someone says out loud that they do not believe the mission, and it is left standing.** Silence from the manager is read as agreement. Correct it immediately (by explaining what it does to others).
+  <!-- sources: src-117 (commercial-operator, people_business) -->
