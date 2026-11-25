@@ -123,3 +123,11 @@ note: "Ported from founder-gap-theory/convincing-founders-to-change approvals (a
 - Reviewed by: "aksie"
 - Reviewed date: 2026-09-16 16:32
 - Edited claim text: null
+
+### c-016
+- Status: approved
+- Flags: []
+- Reviewer notes: ""
+- Reviewed by: "aksie"
+- Reviewed date: 2026-11-17 18:46
+- Edited claim text: null

@@ -275,6 +275,13 @@ When running this prompt for a specific cell, append cell-specific guidance here
 - Geographic: US-heavy HN. No NL-specific satisfaction rule found for this size.
 - Run date: 2026-11-17 — src-118–123, atoms atom-773–791. Numbering skips src-117 / atom-728–772, which live on the commercial-operator branch.
 
+### Organizational Design — founder role by revenue (1.5)
+- One source on purpose: fund-partner LinkedIn post, src-124, `vc_portfolio_interest`. Revenue bands, not headcount.
+- Early and middle bands overlap the existing early-revenue page (give the jobs away, hire and coach). New piece there is only: an executive can tell the story without the founder in the room (c-016).
+- Third band is a new scaled draft: story, and finance turned into operations. Hire the operator. Do not try to hire a substitute visionary.
+- No growth addendum: that draft is already edited on the commercial-operator pull request.
+- Run date: 2026-11-17 — src-124, atoms atom-792–798. Numbering skips src-117–123.
+
 ### Operational Internal Communication Norms @ First Hires (1.3)
 - Rich practitioner corpus: HN threads + operator essays (Gaurav Vohra, 37signals guide, Antoine Buteau channel strategy)
 - Vendor bias risk: low for registered sources; Slack-as-product not pushed — practitioners warn against Slack as system of record

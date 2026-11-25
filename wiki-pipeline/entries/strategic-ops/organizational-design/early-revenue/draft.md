@@ -4,8 +4,9 @@ subprocess: organizational-design
 process_id: "1.5"
 entry: organizational-design/early-revenue
 phase: early-revenue
-last_updated: 2026-09-16
-claim_count: 15
+last_updated: 2026-11-17
+claim_count: 16
+batch_addendum: src-124
 synthesis_mode: new_draft
 primary_sources: src-098, src-099, src-104, src-111
 ported_from: strategic-ops/founder-gap-theory/convincing-founders-to-change
@@ -47,6 +48,10 @@ note: "Approved claims from convincing-founders cell, retargeted to 1.5. Origina
 <!-- claim-id: c-007 -->
 4. **Manage senior people to quarterly and annual outputs — not weekly milestones — and fire underperforming leadership hires faster than feels comfortable.** Expect roughly 25 percent of first executive hires not to work out. Weekly micromanagement recreates Doer-in-Chief one layer up; slow firing costs more credibility than a temporary void.
    <!-- sources: src-111 (Rowghani / YC, vc_portfolio_interest) -->
+
+<!-- claim-id: c-016 -->
+5. **Hire executives who can run a function and tell the company's story without you in the room.** Teach them the work you were doing, and manage them until they do it better than you. Hiring and coaching are the skills. If the story still needs you in every room, the handover has not landed.
+   <!-- sources: src-124 (fund partner, vc_portfolio_interest) -->
 
 ## Warning signs you're behind
 

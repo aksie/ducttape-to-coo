@@ -142,3 +142,17 @@ Claims ported from `founder-gap-theory/convincing-founders-to-change` after Phas
 
 - Strong claims lean on **src-111 (YC)** and **src-099 (First Round)** — `vc_portfolio_interest`. Triangulated with HN (098, 100, 101) and academic identity layer.
 - ITC / Ibarra carry `sells_book` — coaching is optional support beside structural job-giving.
+
+---
+
+## src-124 addendum (2026-11-17)
+
+One fund-partner post. Revenue bands, not headcount. Early-revenue already covers giving the jobs away and hiring and coaching (c-002, c-005, c-010). This addendum keeps only the part those claims do not say: the executive can tell the story with the founder out of the room.
+
+### c-016: Executives tell the story without you
+- Section: what_to_do
+- Supporting atoms: atom-793, atom-794
+- Rejected atoms (and why): atom-792 (the "you are the work" band is the prior stage; early revenue already warns about staying Doer-in-Chief in c-003 and c-010)
+- Why-source: atom-794 (a function that still needs you to explain why it matters has not been handed over)
+- Carried from: none
+- Synthesis notes: Bias `vc_portfolio_interest`. Dollar lines are the post's, not a new stage definition. The third band (story plus financial operator) is proposed on 1.5 at scaled, not here. No growth addendum: that draft is already edited on the open commercial-operator pull request.
